@@ -2,7 +2,7 @@
 
 (require 'doom)
 
-(doom-init 'doom-one-dark)
+(doom-init 'doom-one)
 
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)
@@ -77,7 +77,7 @@
          (vc-deleted     red))
 
     (custom-theme-set-faces
-     'doom-one-dark
+     'doom-one
      ;; Doom faces
      `(doom-default           ((,c (:inherit default :background ,bg))))
      `(doom-minibuffer-active ((,c (:background ,bg))))
@@ -317,7 +317,7 @@
      )
 
     (custom-theme-set-variables
-     'doom-one-dark
+     'doom-one
      `(vc-annotate-color-map
        '((20 .  ,green)
          (40 .  ,(doom-blend yellow green (/ 1.0 3)))
@@ -340,7 +340,7 @@
      `(vc-annotate-very-old-color nil)
      `(vc-annotate-background ,black))))
 
-(provide-theme 'doom-one-dark)
+(provide-theme 'doom-one)
 
 ;; Local Variables:
 ;; no-byte-compile: t
