@@ -1,6 +1,4 @@
 [![MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
-[![MELPA](http://melpa.org/packages/emacs-doom-theme-badge.svg)](http://melpa.org/#/emacs-doom-theme)
-[![MELPA Stable](http://stable.melpa.org/packages/emacs-doom-theme-badge.svg)](http://stable.melpa.org/#/emacs-doom-theme)
 
 # DOOM for Emacs
 
