@@ -18,7 +18,7 @@
 (require 'dash)
 
 (defgroup doom nil
-  "Options for doom-one"
+  "Options for doom"
   :group 'faces)
 
 (defface doom-default '((t (:inherit default)))
@@ -97,10 +97,10 @@ temporary buffers."
     (when doom-enable-bright-buffers
       (defun doom|brighten-buffer (&rest _)
         (setq-local face-remapping-alist
-                    '((default doom-one-default)
-                      (linum doom-one-linum))))
+                    '((default doom-default)
+                      (linum doom-linum))))
 
-      (add-hook 'find-file-hook 'doom-one|brighten-buffer))
+      (add-hook 'find-file-hook 'doom|brighten-buffer))
 
     ;; Brighter minibuffer when active + no fringe in minibuffer
     (when doom-enable-bright-minibuffer
