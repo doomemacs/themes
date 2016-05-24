@@ -79,10 +79,10 @@ temporary buffers."
                      (doom-name-to-rgb color2))))
 
 (defun doom-darken (color alpha)
-  (doom-blend color "#000000" alpha))
+  (doom-blend color "#000000" (- 1 alpha)))
 
 (defun doom-lighten (color alpha)
-  (doom-blend color "#FFFFFF" alpha))
+  (doom-blend color "#FFFFFF" (- 1 alpha)))
 
 ;;
 
