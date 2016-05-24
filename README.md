@@ -14,4 +14,8 @@ A pack of themes inspired by Atom One Dark and Light, developed for
 
 ## Screenshots
 
-Soon!
+### doom-one (dark)
+
+![](../screenshots/one-dark/01.png)
+
+(more to come)
