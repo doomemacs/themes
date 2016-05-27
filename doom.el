@@ -25,10 +25,6 @@
   "Face for source code windows."
   :group 'doom)
 
-(defface doom-fringe '((t (:inherit doom-default)))
-  "Face for source code window fringes."
-  :group 'doom)
-
 (defface doom-minibuffer-active '((t (:inherit mode-line)))
   "Face for active minibuffer. See `doom-enable-bright-minibuffer'."
   :group 'doom)
