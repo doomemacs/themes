@@ -6,7 +6,7 @@ A pack of themes made for [DOOM Emacs](https://github.com/hlissner/emacs.d) and
 inspired by the One Dark/Light UI and syntax themes for [Atom](http://atom.io).
 
 + **doom-one**: inspired by Atom One Dark
-+ **doom-one-light**: inspired by Atom One Light
++ **doom-one-light** (WIP): inspired by Atom One Light
 + **doom-dark**: inspired by Molokai, used for terminal emacs
 
 NOTE: Makes use of `face-remapping-alist`. See `doom-enable-bright-minibuffer`
