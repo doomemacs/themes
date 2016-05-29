@@ -3,8 +3,10 @@
 
 (require 'doom)
 
-(let (doom-enable-bright-buffers)
-  (doom-init 'doom-dark))
+(deftheme doom-dark
+  "A dark theme inspired by molokai"
+  (let (doom-enable-bright-buffers)
+    (doom-init)))
 
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)

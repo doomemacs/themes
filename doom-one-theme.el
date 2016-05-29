@@ -2,7 +2,9 @@
 
 (require 'doom)
 
-(doom-init 'doom-one)
+(deftheme doom-one
+  "A dark theme inspired by Atom One Dark"
+  (doom-init))
 
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)

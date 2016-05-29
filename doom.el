@@ -82,9 +82,7 @@ temporary buffers."
 
 ;;
 
-(defun doom-init (name)
-  (deftheme name)
-
+(defun doom-init ()
   (when (display-graphic-p)
     (put 'face-remapping-alist 'permanent-local t)
     (make-variable-buffer-local 'face-remapping-alist)
