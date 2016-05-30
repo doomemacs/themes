@@ -80,6 +80,7 @@
      ;; Doom faces
      `(doom-default           ((,c (:inherit default :background ,bg))))
      `(doom-minibuffer-active ((,c (:background ,bg))))
+     `(doom-hl-line           ((,c (:background ,current-line))))
      `(doom-linum             ((,c (:inherit linum :background ,bg))))
      `(doom-nlinum-highlight  ((,c (:background ,current-line :foreground ,linum-hl-fg :bold nil))))
      `(doom-flycheck-error    ((,c (:underline nil :foreground ,black :background ,red))))
@@ -94,7 +95,7 @@
      `(fringe                 ((,c (:inherit doom-default))))
      `(region                 ((,c (:background ,blue-d :bold ,bold))))
      `(highlight              ((,c (:background ,blue :foreground ,black))))
-     `(hl-line                ((,c (:background ,current-line))))
+     `(hl-line                ((,c (:background ,(if doom-enable-bright-buffers bg current-line)))))
      `(cursor                 ((,c (:background ,white))))
      `(shadow                 ((,c (:foreground ,violet))))
      `(minibuffer-prompt      ((,c (:foreground ,blue))))

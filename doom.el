@@ -37,6 +37,10 @@
   "A face for the nlinum overlay on the current line."
   :group 'doom)
 
+(defface doom-hl-line '((t (:inherit hl-line)))
+  "A face for the current line highlight."
+  :group 'doom)
+
 ;;
 
 (defcustom doom-enable-bright-minibuffer t
@@ -92,6 +96,7 @@ temporary buffers."
       (defun doom|brighten-buffer (&rest _)
         (setq-local face-remapping-alist
                     '((default doom-default)
+                      (hl-line doom-hl-line)
                       (linum doom-linum))))
 
       (add-hook 'find-file-hook 'doom|brighten-buffer))
