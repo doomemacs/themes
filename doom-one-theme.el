@@ -262,8 +262,10 @@
      ;; js2-mode
      `(js2-function-param  ((,c (:foreground ,variables))))
      `(js2-function-call   ((,c (:foreground ,functions))))
-     `(js2-object-property ((,c (:foreground ,methods))))
+     `(js2-object-property ((,c (:foreground ,violet))))
      `(js2-jsdoc-tag       ((,c (:foreground ,comments))))
+     ;; typescript-mode
+     `(ts-object-property  ((,c (:inherit js2-object-property))))
      ;; web-mode
      `(web-mode-doctype-face           ((,c (:foreground ,comments))))
      `(web-mode-html-tag-face          ((,c (:foreground ,methods))))
