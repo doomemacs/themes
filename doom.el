@@ -43,7 +43,7 @@
 
 ;;
 
-(defcustom doom-enable-bright-minibuffer t
+(defcustom doom-enable-bright-minibuffer nil
   "If non-nil, minibuffer will be brighter when active."
   :group 'doom
   :type 'boolean)
