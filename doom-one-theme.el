@@ -326,6 +326,7 @@
      `(org-done                  ((,c (:foreground ,green  :bold inherit))))
      `(org-headline-done         ((,c (:foreground ,grey-l :bold nil :strike-through t))))
      `(org-special-keyword       ((,c (:foreground ,magenta))))
+     `(org-checkbox              ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-todo ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
      )
