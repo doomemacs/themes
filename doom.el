@@ -9,7 +9,7 @@
 ;; Version: 1.0.0
 ;; Keywords: dark, blue, atom, one, seek
 ;; Homepage: https://github.com/hlissner/evil-snipe
-;; Package-Requires: ((dash "2.12.1"))
+;; Package-Requires: ((dash "2.12.0"))
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
