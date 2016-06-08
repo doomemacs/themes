@@ -14,14 +14,16 @@ and `doom-enable-bright-buffers`.
 
 ## Configuration
 
-+ `doom-enable-bright-minibuffer` (`t`): if non-nil, the minibuffer's background
++ `doom-enable-bright-minibuffer` (default: `t`): if non-nil, the minibuffer's background
   will be slightly brighter when in use (see `doom-minibuffer-active` face)
-+ `doom-enable-bright-buffers` (`t`): if non-nil, source buffers' backgrounds
++ `doom-enable-bright-buffers` (default: `t`): if non-nil, source buffers' backgrounds
   will be slightly brighter than special buffers. This looks great for
   distinguishing sidebars and popups from source code buffers (See
   `doom-default` face)
-+ `doom-enable-bold` (`t`)
-+ `doom-enable-italic` (`t`)
++ `doom-enable-bold` (default: `t`)
++ `doom-enable-italic` (default: `t`)
++ `doom-enable-neotree-theme` (default: `nil`): if non-nil, Neotree will use
+  the unicode icons depicted in screenshots.
 
 ## Screenshots
 
