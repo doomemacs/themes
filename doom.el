@@ -95,8 +95,8 @@ temporary buffers."
     (when doom-enable-bright-buffers
       ;; Don't let this interface with face-remap
       (defun doom*face-remap-add-relative (orig-fn &rest args)
-        (when (eq (nth 0 args) 'default)
-          (setf (nth 0 args) 'doom-default))
+        (let ((remap (assq (nth 0 args) face-remapping-alist)))
+          (when remap (setf (nth 0 args) (cadr remap))))
         (apply orig-fn args))
 
       (advice-add 'face-remap-add-relative :around 'doom*face-remap-add-relative)
