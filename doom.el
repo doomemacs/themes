@@ -5,8 +5,8 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: June 7, 2016
-;; Version: 1.0.1
+;; Modified: June 8, 2016
+;; Version: 1.0.2
 ;; Keywords: dark, blue, atom, one, seek
 ;; Homepage: https://github.com/hlissner/evil-snipe
 ;; Package-Requires: ((dash "2.12.0"))
