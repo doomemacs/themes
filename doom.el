@@ -103,9 +103,10 @@ temporary buffers."
 
       (defun doom|brighten-buffer (&rest _)
         (setq-local face-remapping-alist
-                    '((default doom-default)
-                      (hl-line doom-hl-line)
-                      (linum doom-linum))))
+                    (append face-remapping-alist
+                            '((default doom-default)
+                              (hl-line doom-hl-line)
+                              (linum doom-linum)))))
 
       (add-hook 'find-file-hook 'doom|brighten-buffer))
 
@@ -114,7 +115,10 @@ temporary buffers."
       (defun doom|brighten-minibuffer ()
         (with-selected-window (minibuffer-window)
           (setq-local face-remapping-alist
-                      '((default doom-minibuffer-active)))))
+                      (append face-remapping-alist
+                              '((default doom-minibuffer-active))))))
+
+      (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))
 
       (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))))
 
