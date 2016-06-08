@@ -64,6 +64,11 @@ temporary buffers."
   :group 'doom
   :type 'boolean)
 
+(defcustom doom-enable-neotree-theme nil
+  "If non-nil, Neotree will use unicode icons as depicted in screenshots."
+  :group 'doom
+  :type 'boolean)
+
 ;;
 
 ;; Color helper functions
@@ -120,7 +125,16 @@ temporary buffers."
 
       (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))
 
-      (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))))
+    (when doom-enable-neotree-theme
+      (eval-after-load 'neotree
+        `(progn
+           (defun doom*neo-insert-fold-symbol (name)
+             "Custom hybrid unicode theme with leading whitespace."
+             (or (and (eq name 'open)  (neo-buffer--insert-with-face " -  " 'neo-expand-btn-face))
+                 (and (eq name 'close) (neo-buffer--insert-with-face " +  " 'neo-expand-btn-face))
+                 (and (eq name 'leaf)  (neo-buffer--insert-with-face "   " 'neo-expand-btn-face))))
+
+           (advice-add 'neo-buffer--insert-fold-symbol :override 'doom*neo-insert-fold-symbol))))))
 
 (provide 'doom)
 ;;; doom.el ends here
