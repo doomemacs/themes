@@ -128,12 +128,17 @@ temporary buffers."
     (when doom-enable-neotree-theme
       (eval-after-load 'neotree
         `(progn
+           (defun doom*neo-insert-root-entry (node)
+             "Pretty-print pwd in neotree"
+             (list (concat "  " (projectile-project-name))))
+
            (defun doom*neo-insert-fold-symbol (name)
              "Custom hybrid unicode theme with leading whitespace."
              (or (and (eq name 'open)  (neo-buffer--insert-with-face " -  " 'neo-expand-btn-face))
                  (and (eq name 'close) (neo-buffer--insert-with-face " +  " 'neo-expand-btn-face))
                  (and (eq name 'leaf)  (neo-buffer--insert-with-face "   " 'neo-expand-btn-face))))
 
+           (advice-add 'neo-buffer--insert-root-entry :filter-args 'doom*neo-insert-root-entry)
            (advice-add 'neo-buffer--insert-fold-symbol :override 'doom*neo-insert-fold-symbol))))))
 
 (provide 'doom)

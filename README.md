@@ -23,7 +23,8 @@ and `doom-enable-bright-buffers`.
 + `doom-enable-bold` (default: `t`)
 + `doom-enable-italic` (default: `t`)
 + `doom-enable-neotree-theme` (default: `nil`): if non-nil, Neotree will use
-  the unicode icons depicted in screenshots.
+  the unicode icons depicted in screenshots (has only been tested in the
+  emacs-mac port on OSX).
 
 ## Screenshots
 
