@@ -22,9 +22,6 @@ and `doom-enable-bright-buffers`.
   `doom-default` face)
 + `doom-enable-bold` (default: `t`)
 + `doom-enable-italic` (default: `t`)
-+ `doom-enable-neotree-theme` (default: `nil`): if non-nil, Neotree will use
-  the unicode icons depicted in screenshots (has only been tested in the
-  emacs-mac port on OSX).
 
 ## Screenshots
 
@@ -34,3 +31,23 @@ and `doom-enable-bright-buffers`.
 
 (more to come)
 
+## Neotree integration
+
+I use the following to get an Atom-esque neotree display:
+
+``` emacs-lisp
+(defun doom*neo-insert-root-entry (node)
+  "Pretty-print pwd in neotree"
+  (list (concat "  " (projectile-project-name))))
+
+(defun doom*neo-insert-fold-symbol (name)
+  "Custom hybrid unicode theme with leading whitespace."
+  (or (and (eq name 'open)  (neo-buffer--insert-with-face " -  " 'neo-expand-btn-face))
+      (and (eq name 'close) (neo-buffer--insert-with-face " +  " 'neo-expand-btn-face))
+      (and (eq name 'leaf)  (neo-buffer--insert-with-face "   " 'neo-expand-btn-face))))
+
+(advice-add 'neo-buffer--insert-fold-symbol :override 'doom*neo-insert-fold-symbol)
+(advice-add 'neo-buffer--insert-root-entry :filter-args 'doom*neo-insert-root-entry)
+```
+
+NOTE: Doesn't work if neo-vc-integration is on.
