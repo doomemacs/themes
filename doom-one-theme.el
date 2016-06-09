@@ -310,7 +310,7 @@
      `(org-block-background      ((,c (:background ,current-line))))
      `(org-archived              ((,c (:foreground ,grey))))
      `(org-document-title        ((,c (:foreground ,cyan))))
-     `(org-level-1               ((,c (:background ,current-line :foreground ,blue :bold ,bold :height 1.2 :box (:line-width 4 :color ,bg-d)))))
+     `(org-level-1               ((,c (:background ,current-line :foreground ,blue :bold ,bold :height 1.2 :box (:line-width 4 :color ,current-line)))))
      `(org-level-2               ((,c (                          :foreground ,blue-l))))
      `(org-level-3               ((,c (                          :foreground nil))))
      `(org-level-4               ((,c (                          :foreground nil))))
