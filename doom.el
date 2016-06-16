@@ -48,7 +48,7 @@
   :group 'doom
   :type 'boolean)
 
-(defcustom doom-enable-bright-buffers t
+(defcustom doom-enable-bright-buffers window-system
   "If non-nil, code and source buffers will be brighter than special, popup or
 temporary buffers."
   :group 'doom
