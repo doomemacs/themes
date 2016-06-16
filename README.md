@@ -21,7 +21,7 @@ Soon to come:
 
 ## Screenshots
 
-Find them [in the screenshots branch](https://github.com/hlissner/.emacs.d/tree/screenshots)
+Find them [in the screenshots branch](https://github.com/hlissner/emacs-doom-theme/tree/screenshots)
 
 ## Configuration
 
