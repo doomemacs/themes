@@ -6,14 +6,14 @@
 (deftheme doom-dark
   "A dark theme inspired by molokai")
 
-(let (doom-enable-bright-buffers)
-    (doom-init))
+(doom-init)
 
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)
       (italic doom-enable-italic)
 
-      (bg             "#1E2021")
+      (bg             "#1D1F20")
+      (bg-l           "#222425")
       (fg             "#D6D6D4")
       (subtle         "#aab6c7")
       (vsubtle        "#556172")
@@ -46,7 +46,7 @@
          (search-rest-fg black)
          (highlight      orange)
          (vertical-bar   grey-2)
-         (current-line   "#181818")
+         (current-line   "#1F1F1F")
          (selection      "#535556")
          (builtin        orange)
          (comments       grey-1)
@@ -84,13 +84,19 @@
     (custom-theme-set-faces
      'doom-dark
      ;; Doom faces
-     `(doom-nlinum-highlight-face     ((,c (:inherit linum :foreground ,linum-hl-fg :background ,current-line))))
-     `(doom-minibuffer-active         ((,c (:background ,active-minibuffer))))
+     `(doom-default           ((,c (:inherit default :background ,bg-l))))
+     `(doom-minibuffer-active ((,c (:background ,bg-l))))
+     `(doom-hl-line           ((,c (:background ,bg))))
+     `(doom-linum             ((,c (:inherit linum :background ,bg-l))))
+     `(doom-nlinum-highlight  ((,c (:foreground ,linum-hl-fg :bold nil))))
+     `(doom-flycheck-error    ((,c (:underline nil :foreground ,black :background ,red))))
+     `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
+     `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
      ;; Text
      `(default                             ((,c (:foreground ,fg :background ,bg))))
-     `(fringe                              ((,c (:background ,bg :foreground ,grey-1))))
+     `(fringe                              ((,c (:background ,(if doom-enable-bright-buffers bg-l bg) :foreground ,grey-1))))
      `(cursor                              ((,c (:background ,white))))
-     `(hl-line                             ((,c (:background ,current-line))))
+     `(hl-line                             ((,c (:background ,(if doom-enable-bright-buffers bg-l current-line)))))
      `(region                              ((,c (:background ,grey-2 :foreground ,white))))
      `(highlight                           ((,c (:foreground ,yellow :inverse-video t))))
      `(shadow                              ((,c (:foreground ,orange))))
