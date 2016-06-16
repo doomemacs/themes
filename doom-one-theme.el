@@ -208,7 +208,7 @@
      `(highlight-quoted-quote                    ((,c (:foreground ,operators))))
      `(highlight-numbers-number                  ((,c (:foreground ,constants))))
      ;; hide-show
-     `(hs-face            ((,c (:foreground ,comments :background ,black))))
+     `(hs-face            ((,c (:foreground ,comments :background ,bg-d))))
      `(hs-fringe-face     ((,c (:foreground ,blue))))
      ;; iedit
      `(iedit-occurrence           ((,c (:foreground ,magenta :bold ,bold :inverse-video t))))
