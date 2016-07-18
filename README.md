@@ -55,6 +55,11 @@ To get unicode icons in [neotree]:
 
 NOTE: Doesn't work if neo-vc-integration is on.
 
+## Mode-line
 
+My mode-line configuration can be found at the bottom of [core-ui in my emacs.d][mode-line-cfg].
+
+
+[mode-line-cfg]: https://github.com/hlissner/.emacs.d/blob/master/core/core-ui.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [daylerees]: http://daylerees.github.io/
