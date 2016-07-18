@@ -126,19 +126,23 @@
      `(font-lock-regexp-grouping-construct   ((,c (:foreground ,operators :bold ,bold))))
      ;; Modeline
      `(mode-line                   ((,c (:foreground ,modeline-fg :background ,modeline-bg))))
+     `(mode-line-2                 ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
      `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
+
+     ;; Custom modeline faces
+     `(mode-line-highlight         ((,c (:foreground ,black :background ,yellow))))
+     `(mode-line-is-modified       ((,c (:foreground ,red :bold ,bold))))
+     `(mode-line-buffer-path       ((,c (:foreground ,modeline-fg-l))))
+     `(mode-line-count-face        ((,c (:foreground ,black :background ,modeline-fg-l))))
+     `(mode-line-vcs-info          ((,c (:inherit success))))
+     `(mode-line-vcs-warning       ((,c (:inherit error))))
+     ;; Powerline/Spaceline
      `(spaceline-highlight-face    ((,c (:foreground ,black :background ,yellow))))
      `(powerline-active1           ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
      `(powerline-active2           ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
      `(powerline-inactive1         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(powerline-inactive2         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
-     ;; Custom modeline faces
-     `(mode-line-is-modified       ((,c (:foreground ,red :bold ,bold))))
-     `(mode-line-buffer-file       ((,c (:foreground ,modeline-fg :bold ,bold))))
-     `(mode-line-buffer-path       ((,c (:foreground ,modeline-fg-l))))
-     `(mode-line-count-face        ((,c (:foreground ,black :background ,modeline-fg-l))))
-     `(mode-line-vcs-info          ((,c (:inherit success))))
-     `(mode-line-vcs-warning       ((,c (:inherit error))))
+
      ;; Search
      `(isearch                     ((,c (:foreground ,search-bg :inverse-video t))))
      `(isearch-lazy-highlight-face ((,c (:background ,search-rest-bg))))
