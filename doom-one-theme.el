@@ -309,17 +309,17 @@
      `(org-document-info         ((,c (:foreground ,orange))))
      `(org-document-info-keyword ((,c (:foreground ,grey-d))))
      `(org-meta-line             ((,c (:foreground ,doc-comments))))
-     `(org-block-begin-line      ((,c (:background ,current-line :foreground ,doc-comments))))
+     `(org-block-begin-line      ((,c (:background ,current-line :foreground ,comments))))
      `(org-block-end-line        ((,c (:inherit org-block-begin-line))))
      `(org-block-background      ((,c (:background ,current-line))))
      `(org-archived              ((,c (:foreground ,grey))))
-     `(org-document-title        ((,c (:foreground ,cyan))))
+     `(org-document-title        ((,c (:foreground ,cyan :height 1.2))))
      `(org-level-1               ((,c (:background ,current-line :foreground ,blue :bold ,bold :height 1.2 :box (:line-width 4 :color ,current-line)))))
      `(org-level-2               ((,c (                          :foreground ,blue-l))))
-     `(org-level-3               ((,c (                          :foreground nil))))
-     `(org-level-4               ((,c (                          :foreground nil))))
-     `(org-level-5               ((,c (                          :foreground nil))))
-     `(org-level-6               ((,c (                          :foreground nil))))
+     `(org-level-3               ((,c (                          :foreground ,white))))
+     `(org-level-4               ((,c (                          :foreground ,white))))
+     `(org-level-5               ((,c (                          :foreground ,white))))
+     `(org-level-6               ((,c (                          :foreground ,white))))
      `(org-code                  ((,c (:foreground ,orange))))
      `(org-verbatim              ((,c (:foreground ,green))))
      `(org-formula               ((,c (:foreground ,cyan))))
@@ -334,7 +334,8 @@
      `(org-checkbox              ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-todo ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
-     )
+     ;; Custom org-mode faces
+     `(org-list-bullet           ((,c (:foreground ,cyan)))))
 
     (custom-theme-set-variables
      'doom-one
