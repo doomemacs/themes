@@ -13,7 +13,7 @@
 
       (black          "#141a22")
       (white          "#EEEEEE")
-      (grey           "#525E6C")
+      (grey           (if window-system "#525E6C" "#525252"))
       (grey-d         "#3D3D48")
       (grey-dd        "#20272e")
       (yellow         "#ECBE7B")
@@ -32,12 +32,12 @@
       (green-d        "#86B20E"))
 
   (let* ((bg             "#262c34")
-         (bg-d           "#1f252b")
+         (bg-d           (if window-system "#1f252b" "#1f1f1f"))
          (fg             "#C5CACF")
 
          (highlight      blue)
          (vertical-bar   black)
-         (current-line   "#21272d")
+         (current-line   (if window-system "#21272d" "#000000"))
          (selection      blue-d)
          (builtin        magenta)
          (comments       grey)
@@ -58,7 +58,7 @@
          (search-rest-fg blue)
          ;; line number column
          (linum-bg       bg-d)
-         (linum-fg       (doom-darken cyan-d 0.55))
+         (linum-fg       (if window-system (doom-darken cyan-d 0.55) grey))
          (linum-hl-fg    blue)
          (linum-hl-bg    bg-d)
          ;; mode line
