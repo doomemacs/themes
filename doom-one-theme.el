@@ -64,9 +64,9 @@
          ;; mode line
          (modeline-fg    white)
          (modeline-fg-l  blue)
-         (modeline-bg    bg-d)
+         (modeline-bg    (if window-system bg-d current-line))
          (modeline-fg-inactive grey)
-         (modeline-bg-inactive bg-d)
+         (modeline-bg-inactive (if window-system bg-d current-line))
          ;; vcs
          (vc-modified    yellow-d)
          (vc-added       green)
