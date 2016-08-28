@@ -230,6 +230,8 @@
      ;; pos-tip
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
+     ;; stripe-buffer
+     `(stripe-highlight            ((,c (:background ,bg))))
      ;; Volatile highlights
      `(vhl/default-face            ((,c (:background ,grey-d))))
      ;; Rainbow delimiters
