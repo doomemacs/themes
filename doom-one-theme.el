@@ -143,6 +143,11 @@
      `(powerline-inactive1         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(powerline-inactive2         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
 
+     ;; Dired/dired-k
+     `(dired-directory             ((,c (:foreground ,orange))))
+     `(dired-ignored               ((,c (:foreground ,comments))))
+     `(dired-k-directory           ((,c (:foreground ,blue))))
+
      ;; Search
      `(isearch                     ((,c (:foreground ,search-bg :inverse-video t))))
      `(isearch-lazy-highlight-face ((,c (:background ,search-rest-bg))))
