@@ -33,7 +33,7 @@
 
   (let* ((bg             "#262c34")
          (bg-d           (if window-system "#1f252b" "#1f1f1f"))
-         (fg             "#C5CACF")
+         (fg             "#B5BABF")
 
          (highlight      blue)
          (vertical-bar   black)
