@@ -28,14 +28,16 @@ Find them [in the screenshots branch](https://github.com/hlissner/emacs-doom-the
 
 doom-theme isn't on MELPA yet, but it will be soon.
 
-Until it is, you have to:
+Until it is:
 
-1. Download this repo
-2. Add the repo's path to `load-path`.
-3. `(require 'doom-theme)`
-
-Then you use `load-theme` to load the theme of your choice: e.g.
-`(load-theme 'doom-one-theme)`
+1. Download this repo:
+   `git clone https://github.com/hlissner/emacs-doom-theme ~/.emacs.d/themes/doom-theme`
+2. Add the repo's path to `load-path`:
+   `(add-to-list 'load-path "~/.emacs.d/themes/doom-theme")`
+3. Load doom-theme:
+   `(require 'doom-theme)`
+4. Load the theme you want, e.g.:
+   `(load-theme 'doom-one t)`
 
 ## Configuration
 
