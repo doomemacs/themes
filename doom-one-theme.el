@@ -84,12 +84,12 @@
      `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
      `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
      ;; Base
-     `(bold                   ((,c (:weight ,(if bold 'bold 'normal)))))
+     `(bold                   ((,c (:weight ,(if bold 'bold 'normal) :color ,white))))
      `(italic                 ((,c (:slant  ,(if italic 'italic 'normal)))))
      `(bold-italic            ((,c (:weight ,(if bold 'bold 'normal) :slant ,(if italic 'italic 'normal) :foreground ,white))))
      ;; Global
      `(default                ((,c (:background ,bg-d :foreground ,fg))))
-     `(fringe                 ((,c (:inherit doom-default))))
+     `(fringe                 ((,c (:inherit doom-default :foreground ,comments))))
      `(region                 ((,c (:background ,blue-d :bold ,bold))))
      `(highlight              ((,c (:background ,blue :foreground ,black))))
      `(hl-line                ((,c (:background ,(if doom-enable-bright-buffers bg current-line)))))
