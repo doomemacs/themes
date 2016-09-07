@@ -220,8 +220,14 @@
      `(hs-face            ((,c (:foreground ,comments :background ,bg-d))))
      `(hs-fringe-face     ((,c (:foreground ,blue))))
      ;; iedit
-     `(iedit-occurrence           ((,c (:foreground ,magenta :bold ,bold :inverse-video t))))
-     `(iedit-read-only-occurrence ((,c (:inherit region))))
+     `(iedit-occurrence            ((,c (:foreground ,magenta :bold ,bold :inverse-video t))))
+     `(iedit-read-only-occurrence  ((,c (:inherit region))))
+     ;; ivy
+     ;; `(ivy-current-match  ((,c (:foreground ,orange))))
+     `(ivy-minibuffer-match-face-1 ((,c (:background ,grey-d))))
+     `(ivy-minibuffer-match-face-2 ((,c (:background ,green :foreground ,black))))
+     `(ivy-minibuffer-match-face-3 ((,c (:background ,orange :foreground ,black))))
+     `(ivy-minibuffer-match-face-4 ((,c (:background ,magenta :foreground ,black))))
      ;; neotree
      `(neo-root-dir-face           ((,c (:foreground ,green))))
      `(neo-file-link-face          ((,c (:foreground ,fg))))
@@ -230,6 +236,12 @@
      ;; pos-tip
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
+     ;; swiper
+     `(swiper-line-face            ((,c (:background ,blue-d))))
+     `(swiper-match-face-1         ((,c (:background ,grey-d))))
+     `(swiper-match-face-2         ((,c (:background ,green :foreground ,black))))
+     `(swiper-match-face-3         ((,c (:background ,orange :foreground ,black))))
+     `(swiper-match-face-4         ((,c (:background ,magenta :foreground ,black))))
      ;; stripe-buffer
      `(stripe-highlight            ((,c (:background ,bg))))
      ;; Volatile highlights
