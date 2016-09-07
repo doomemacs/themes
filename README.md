@@ -15,13 +15,27 @@ Soon to come:
 
 **Notes:**
 
-+ Makes use of `face-remapping-alist`. See `doom-enable-bright-minibuffer` and
-  `doom-enable-bright-buffers`.
++ Makes use of `face-remapping-alist`. See
+  `doom-enable-bright-minibuffer` and `doom-enable-bright-buffers` --
+  this does not work in the terminal but will degrade gracefully.
 + Designed for Emacs 24.5+
 
 ## Screenshots
 
 Find them [in the screenshots branch](https://github.com/hlissner/emacs-doom-theme/tree/screenshots)
+
+## Installation
+
+doom-theme isn't on MELPA yet, but it will be soon.
+
+Until it is, you have to:
+
+1. Download this repo
+2. Add the repo's path to `load-path`.
+3. `(require 'doom-theme)`
+
+Then you use `load-theme` to load the theme of your choice: e.g.
+`(load-theme 'doom-one-theme)`
 
 ## Configuration
 
@@ -31,8 +45,10 @@ Find them [in the screenshots branch](https://github.com/hlissner/emacs-doom-the
   will be slightly brighter than special buffers. This looks great for
   distinguishing sidebars and popups from source code buffers (See
   `doom-default` face)
-+ `doom-enable-bold` (default: `t`)
-+ `doom-enable-italic` (default: `t`)
++ `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
+  across all faces.
++ `doom-enable-italic` (default: `t`): if nil, italicization will be
+  disabled across all faces.
 
 ## Neotree integration
 
