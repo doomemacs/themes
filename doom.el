@@ -1,20 +1,3 @@
-;;; doom.el --- a dark theme inspired by Atom's One
-;;
-;; Copyright (C) 2016 Henrik Lissner
-;;
-;; Author: Henrik Lissner <http://github/hlissner>
-;; Maintainer: Henrik Lissner <henrik@lissner.net>
-;; Created: May 22, 2016
-;; Modified: June 15, 2016
-;; Version: 1.0.4
-;; Keywords: dark, blue, atom, one, seek
-;; Homepage: https://github.com/hlissner/evil-snipe
-;; Package-Requires: ((dash "2.12.0"))
-;;
-;; This file is not part of GNU Emacs.
-;;
-;;; Code:
-
 (require 'dash)
 
 (defgroup doom nil
@@ -118,6 +101,11 @@ temporary buffers."
                               '((default doom-minibuffer-active))))))
 
       (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))))
+
+;;;###autoload
+(when (and (boundp 'custom-theme-load-path) load-file-name)
+  (add-to-list 'custom-theme-load-path
+               (file-name-as-directory (file-name-directory load-file-name))))
 
 (provide 'doom)
 ;;; doom.el ends here
