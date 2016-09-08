@@ -54,6 +54,10 @@ Until it is:
 
 ## Neotree integration
 
+> **NOTE:** The code below has proved unreliable for some folks.
+> Neotree integration will be in the next version of
+> doom-theme [once it's on MELPA](https://github.com/hlissner/emacs-doom-theme/issues/1).
+
 To get unicode icons in [neotree]:
 
 ```emacs-lisp
@@ -74,6 +78,9 @@ To get unicode icons in [neotree]:
 NOTE: Doesn't work if neo-vc-integration is on.
 
 ## Mode-line
+
+> The mode-line in the screenshots will be included in this theme once
+> it is on MELPA (see [Issue #1](https://github.com/hlissner/emacs-doom-theme/issues/1))
 
 My mode-line configuration can be found at the bottom of [core-ui in my emacs.d][mode-line-cfg].
 
