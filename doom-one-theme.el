@@ -356,7 +356,8 @@
      `(org-checkbox-statistics-todo ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
      ;; Custom org-mode faces
-     `(org-list-bullet           ((,c (:foreground ,cyan)))))
+     `(org-list-bullet           ((,c (:foreground ,cyan))))
+     `(message-header-name ((,c (:foreground ,green)))))
 
     (custom-theme-set-variables
      'doom-one
