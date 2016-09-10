@@ -106,7 +106,7 @@ temporary buffers."
 (defun doom-init-neotree ()
   (interactive)
   (when (display-graphic-p)
-    (require 'doom-theme-setup-neotree)))
+    (require 'doom-theme-neotree)))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
