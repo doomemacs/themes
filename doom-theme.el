@@ -52,3 +52,4 @@
 
 (require 'doom)
 (provide 'doom-theme)
+;;; doom-theme.el ends here
