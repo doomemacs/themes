@@ -2,9 +2,14 @@
 
 # DOOM for Emacs
 
-A pack of themes made for my [emacs.d] and inspired by the One
-Dark/Light UI and syntax themes for [Atom](http://atom.io).
+An opinionated UI plugin/pack of themes extracted from my [emacs.d],
+inspired by the One Dark/Light UI and syntax themes
+in [Atom](http://atom.io).
 
+Includes optional dimming of non-source buffers (and minibuffer), a
+[neotree] theme with font icons, and (soon) a mode-line config.
+
+Currently available colorschemes:
 + **doom-one**: inspired by Atom One Dark
 + **doom-dark**: based on Molokai
 
