@@ -9,7 +9,7 @@
 ;; Version: 1.0.5
 ;; Keywords: dark, blue, atom, one, seek
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
-;; Package-Requires: ((dash "2.12.0"))
+;; Package-Requires: ((dash "2.12.0") (all-the-icons "1.0.0"))
 ;;
 ;; This file is not part of GNU Emacs.
 ;;

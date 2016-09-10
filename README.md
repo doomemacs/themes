@@ -15,14 +15,13 @@ Soon to come:
 
 **Notes:**
 
-+ Makes use of `face-remapping-alist`. See
-  `doom-enable-bright-minibuffer` and `doom-enable-bright-buffers` --
-  this does not work in the terminal but will degrade gracefully.
-+ Designed for Emacs 24.5+
++ Uses `face-remapping-alist`, which won't work in terminal emacs (but
+  degrades gracefully).
++ Tested mainly on Emacs 24.5+
 
 ## Screenshots
 
-Find them [in the screenshots branch](https://github.com/hlissner/emacs-doom-theme/tree/screenshots)
+Find them [in the screenshots branch][screenshots]
 
 ## Installation
 
@@ -54,37 +53,24 @@ Until it is:
 
 ## Neotree integration
 
-> **NOTE:** The code below has proved unreliable for some folks.
-> Neotree integration will be in the next version of
-> doom-theme [once it's on MELPA](https://github.com/hlissner/emacs-doom-theme/issues/1).
+To make [neotree] match the screenshots, use `(doom-init-neotree)`.
 
-To get unicode icons in [neotree]:
+Note:
++ doom-theme disables `neo-vc-integration`, because the two are
+  incompatible.
 
-```emacs-lisp
-(defun doom*neo-insert-root-entry (node)
-  "Pretty-print pwd in neotree"
-  (list (concat "  " (projectile-project-name))))
+## Mode-line config
 
-(defun doom*neo-insert-fold-symbol (name)
-  "Custom hybrid unicode theme with leading whitespace."
-  (or (and (eq name 'open)  (neo-buffer--insert-with-face " -  " 'neo-expand-btn-face))
-      (and (eq name 'close) (neo-buffer--insert-with-face " +  " 'neo-expand-btn-face))
-      (and (eq name 'leaf)  (neo-buffer--insert-with-face "   " 'neo-expand-btn-face))))
+You can find [my mode-line configuration][mode-line] in my [emacs.d].
+I've documented it to make it easier to grok.
 
-(advice-add 'neo-buffer--insert-fold-symbol :override 'doom*neo-insert-fold-symbol)
-(advice-add 'neo-buffer--insert-root-entry :filter-args 'doom*neo-insert-root-entry)
-```
-
-NOTE: Doesn't work if neo-vc-integration is on.
-
-## Mode-line
-
-> The mode-line in the screenshots will be included in this theme once
-> it is on MELPA (see [Issue #1](https://github.com/hlissner/emacs-doom-theme/issues/1))
-
-My mode-line configuration can be found at the bottom of [core-ui in my emacs.d][mode-line-cfg].
+I will include a mode-line component for doom-theme as soon as I can
+decide the best way to do so.
 
 
-[mode-line-cfg]: https://github.com/hlissner/.emacs.d/blob/master/core/core-ui.el
-[neotree]: https://github.com/jaypei/emacs-neotree
+[all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [daylerees]: http://daylerees.github.io/
+[emacs.d]: https://github.com/hlissner/.emacs.d
+[mode-line]: https://github.com/hlissner/.emacs.d/blob/master/core/core-modeline.el
+[neotree]: https://github.com/jaypei/emacs-neotree
+[screenshots]: https://github.com/hlissner/emacs-doom-theme/tree/screenshots

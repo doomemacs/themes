@@ -103,6 +103,12 @@ temporary buffers."
       (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))))
 
 ;;;###autoload
+(defun doom-init-neotree ()
+  (interactive)
+  (when (display-graphic-p)
+    (require 'doom-theme-setup-neotree)))
+
+;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
