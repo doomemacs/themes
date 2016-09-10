@@ -2,8 +2,8 @@
 
 # DOOM for Emacs
 
-A pack of themes made for my [emacs.d](https://github.com/hlissner/emacs.d) and
-inspired by the One Dark/Light UI and syntax themes for [Atom](http://atom.io).
+A pack of themes made for my [emacs.d] and inspired by the One
+Dark/Light UI and syntax themes for [Atom](http://atom.io).
 
 + **doom-one**: inspired by Atom One Dark
 + **doom-dark**: based on Molokai
