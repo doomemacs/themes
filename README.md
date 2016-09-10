@@ -25,18 +25,12 @@ Find them [in the screenshots branch][screenshots]
 
 ## Installation
 
-doom-theme isn't on MELPA yet, but it will be soon.
-
-Until it is:
-
-1. Download this repo:
-   `git clone https://github.com/hlissner/emacs-doom-theme ~/.emacs.d/themes/doom-theme`
-2. Add the repo's path to `load-path`:
-   `(add-to-list 'load-path "~/.emacs.d/themes/doom-theme")`
-3. Load doom-theme:
-   `(require 'doom-theme)`
-4. Load the theme you want, e.g.:
-   `(load-theme 'doom-one t)`
+1. Clone the repo somewhere in your `load-path`.
+2. If you want the neotree theme, install the fonts in the `fonts/` folder in
+   [all-the-icons].
+3. `(require 'doom-theme)`
+5. **Optional:** `(doom-init-neotree)`
+6. Load the theme you want: `(load-theme 'doom-one t)`
 
 ## Configuration
 
