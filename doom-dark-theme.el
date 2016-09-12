@@ -82,10 +82,16 @@
     (custom-theme-set-faces
      'doom-dark
      ;; Doom faces
-     `(doom-default           ((,c (:inherit default :background ,bg-l))))
+     `(doom-default
+       ((((type graphic)) :inherit default :background ,bg-l)
+        (t                :inherit default)))
+     `(doom-hl-line
+       ((((type graphic)) :background ,bg)
+        (t                :inherit hl-line)))
+     `(doom-linum
+       ((((type graphic)) :inherit linum :background ,bg-l)
+        (t                :inherit linum)))
      `(doom-minibuffer-active ((,c (:background ,bg-l))))
-     `(doom-hl-line           ((,c (:background ,bg))))
-     `(doom-linum             ((,c (:inherit linum :background ,bg-l))))
      `(doom-nlinum-highlight  ((,c (:foreground ,linum-hl-fg :bold nil))))
      `(doom-flycheck-error    ((,c (:underline nil :foreground ,black :background ,red))))
      `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
