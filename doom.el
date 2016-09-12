@@ -1,3 +1,5 @@
+;;; doom.el
+
 (require 'dash)
 
 (defgroup doom nil
@@ -5,7 +7,7 @@
   :group 'faces)
 
 (defface doom-default '((t (:inherit default)))
-  "Face for source code windows."
+  "Background face for source code windows."
   :group 'doom)
 
 (defface doom-minibuffer-active '((t (:inherit mode-line)))
