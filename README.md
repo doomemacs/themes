@@ -15,8 +15,10 @@ Currently available colorschemes:
 
 Soon to come:
 + **doom-one-light**: inspired by Atom One Light
-+ **doom-tron**: doom-one, but with daylerees' [Tron Legacy][daylerees] colorscheme
-+ **doom-peacock**: doom-one, but with daylerees' [Peacock][daylerees] colorscheme
++ **doom-tron**: doom-one, but with
+  daylerees' [Tron Legacy][daylerees] colorscheme
++ **doom-peacock**: doom-one, but with daylerees' [Peacock][daylerees]
+  colorscheme
 
 **Notes:**
 
@@ -31,40 +33,73 @@ Find them [in the screenshots branch][screenshots]
 ## Installation
 
 1. Clone the repo somewhere in your `load-path`.
-2. If you want the neotree theme, install the fonts in the `fonts/` folder in
-   [all-the-icons].
-3. `(require 'doom-theme)`
-5. **Optional:** `(doom-init-neotree)`
-6. Load the theme you want: `(load-theme 'doom-one t)`
+
+2. If you want the neotree theme, install the fonts in the `fonts/`
+folder of [all-the-icons].
+
+3. Load `doom-themes` and load the theme you want.
+
+Example configuration:
+
+``` emacs-lisp
+(require 'doom-themes)
+(load-theme 'doom-one t) ;; or doom-dark, etc.
+
+;;; OPTIONAL
+;; brighter source buffers
+(add-hook 'find-file-hook 'doom-buffer-mode)
+;; brighter minibuffer when active
+(add-hook 'minibuffer-setup-hook 'doom-buffer-mode)
+;; Custom neotree theme
+(require 'doom-neotree)
+```
 
 ## Configuration
 
-+ `doom-enable-bright-minibuffer` (default: `t`): if non-nil, the minibuffer's background
-  will be slightly brighter when in use (see `doom-minibuffer-active` face)
-+ `doom-enable-bright-buffers` (default: `t`): if non-nil, source buffers' backgrounds
-  will be slightly brighter than special buffers. This looks great for
-  distinguishing sidebars and popups from source code buffers (See
-  `doom-default` face)
 + `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
   across all faces.
 + `doom-enable-italic` (default: `t`): if nil, italicization will be
   disabled across all faces.
 
-## Neotree integration
+## Enabling other features
 
-To make [neotree] match the screenshots, use `(doom-init-neotree)`.
+### Dimmed non-source buffers/windows
+
+`(add-hook 'find-file-hook 'doom-buffer-mode)`
+
+Enable `doom-buffer-mode` in buffers where you want a slightly
+brighter background. I use it to visually set apart source buffers
+from popups, the minibuffer, or temporary buffers.
+
+### Neotree integration
+
+`(require 'doom-neotree)`
+
+Modifies [neotree] to use file icons (as shown in the [screenshots]).
 
 Note:
-+ doom-theme disables `neo-vc-integration`, because the two are
++ This disables `neo-vc-integration`, because the two are
   incompatible.
++ This can be customized by changing these variables:
+  + `doom-theme-neotree-root-icon` (string)
+  + `doom-theme-neotree-open-folder-icon` (string)
+  + `doom-theme-neotree-closed-folder-icon` (string)
+  + `doom-theme-neotree-file-icons` (boolean): whether or not to
+    display icons for each individual file. Disabled by default. Can
+    mess up line spacing depending. YMMV.
+  + `doom-theme-neotree-line-spacing` (int): line-spacing to
+  use in the neotree buffer.
 
-## Mode-line config
+### Mode-line config
 
-You can find [my mode-line configuration][mode-line] in my [emacs.d].
-I've documented it to make it easier to grok.
+The custom mode-line isn't part of doom-themes yet, but will be soon.
 
-I will include a mode-line component for doom-theme as soon as I can
-decide the best way to do so.
+In the meantime, check out [my mode-line configuration][mode-line] in
+my [emacs.d].
+
+### Brighter minibuffer
+
+To brighten the minibuffer, use `(doom-brighten-minibuffer)` in your emacs.d.
 
 
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
@@ -73,3 +108,4 @@ decide the best way to do so.
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/core/core-modeline.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [screenshots]: https://github.com/hlissner/emacs-doom-theme/tree/screenshots
+[config]: https://github.com/hlissner/.emacs.d/blob/master/core/core-ui.el#L91
