@@ -71,6 +71,9 @@ Enable `doom-buffer-mode` in buffers where you want a slightly
 brighter background. I use it to visually set apart source buffers
 from popups, the minibuffer, or temporary buffers.
 
+This works by remapping the `default`, `hl-line` and `linum` faces to
+`doom-default`, `doom-hl-line` and `doom-linum`.
+
 ### Neotree integration
 
 `(require 'doom-neotree)`
@@ -99,7 +102,13 @@ my [emacs.d].
 
 ### Brighter minibuffer
 
-To brighten the minibuffer, use `(doom-brighten-minibuffer)` in your emacs.d.
+`(add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)`
+
+This highlights the minibuffer while its active by remapping the
+`default` face to `doom-minibuffer-active`.
+
+Note: there is no way to reliably change the minibuffer's background
+permanently.
 
 
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
