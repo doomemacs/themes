@@ -25,18 +25,6 @@
   :group 'doom)
 
 ;;
-
-(defcustom doom-enable-bright-minibuffer nil
-  "If non-nil, minibuffer will be brighter when active."
-  :group 'doom
-  :type 'boolean)
-
-(defcustom doom-enable-bright-buffers window-system
-  "If non-nil, code and source buffers will be brighter than special, popup or
-temporary buffers."
-  :group 'doom
-  :type 'boolean)
-
 (defcustom doom-enable-bold t
   "If nil, bold will remove removed from all faces."
   :group 'doom
@@ -66,47 +54,41 @@ temporary buffers."
 (defun doom-lighten (color alpha)
   (doom-blend color "#FFFFFF" (- 1 alpha)))
 
-;;
 
-(defun doom-init ()
-  (when (display-graphic-p)
-    (put 'face-remapping-alist 'permanent-local t)
-    (make-variable-buffer-local 'face-remapping-alist)
+;; Don't reset remapped faces on `kill-all-local-variables'
+(put 'face-remapping-alist 'permanent-local t)
+(make-variable-buffer-local 'face-remapping-alist)
 
-    ;; Brighten up file buffers; darken special and popup buffers
-    (when doom-enable-bright-buffers
-      ;; Don't let this interface with face-remap
-      (defun doom*face-remap-add-relative (orig-fn &rest args)
-        (let ((remap (assq (nth 0 args) face-remapping-alist)))
-          (when remap (setf (nth 0 args) (cadr remap))))
-        (apply orig-fn args))
-
-      (advice-add 'face-remap-add-relative :around 'doom*face-remap-add-relative)
-
-      (defun doom|brighten-buffer (&rest _)
-        (setq-local face-remapping-alist
-                    (append face-remapping-alist
-                            '((default doom-default)
-                              (hl-line doom-hl-line)
-                              (linum doom-linum)))))
-
-      (add-hook 'find-file-hook 'doom|brighten-buffer))
-
-    ;; Brighter minibuffer when active + no fringe in minibuffer
-    (when doom-enable-bright-minibuffer
-      (defun doom|brighten-minibuffer ()
-        (with-selected-window (minibuffer-window)
-          (setq-local face-remapping-alist
-                      (append face-remapping-alist
-                              '((default doom-minibuffer-active))))))
-
-      (add-hook 'minibuffer-setup-hook 'doom|brighten-minibuffer))))
+(defun doom--face-remap-add-relative (orig-fn &rest args)
+  "Advice function "
+  (when (and (display-graphic-p) doom-buffer-mode)
+    (let ((remap (assq (nth 0 args) face-remapping-alist)))
+      (when remap (setf (nth 0 args) (cadr remap)))))
+  (apply orig-fn args))
+(advice-add 'face-remap-add-relative :around 'doom--face-remap-add-relative)
 
 ;;;###autoload
-(defun doom-init-neotree ()
-  (interactive)
-  (when (display-graphic-p)
-    (require 'doom-theme-neotree)))
+(defun doom-brighten-minibuffer ()
+  (with-selected-window (minibuffer-window)
+    (setq-local face-remapping-alist
+                (append face-remapping-alist '((default doom-minibuffer-active))))))
+
+;;;###autoload
+(define-minor-mode doom-buffer-mode
+  "Brighten source buffers by remapping common faces (like default, hl-line and
+linum) to their doom-theme variants."
+  :lighter " doom"
+  :init-value nil
+  (if doom-buffer-mode
+      ;; Brighten up file buffers; darken special and popup buffers
+      (setq-local face-remapping-alist
+                  (append face-remapping-alist
+                          '((default doom-default)
+                            (hl-line doom-hl-line)
+                            (linum doom-linum))))
+    ;; Remove face remaps
+    (mapc (lambda (key) (setq-local face-remapping-alist (assq-delete-all key face-remapping-alist)))
+          '(default hl-line linum))))
 
 ;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)

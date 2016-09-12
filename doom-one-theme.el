@@ -5,8 +5,6 @@
 (deftheme doom-one
   "A dark theme inspired by Atom One Dark")
 
-(doom-init)
-
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)
       (italic doom-enable-italic)
@@ -92,7 +90,7 @@
      `(fringe                 ((,c (:inherit doom-default :foreground ,comments))))
      `(region                 ((,c (:background ,blue-d :bold ,bold))))
      `(highlight              ((,c (:background ,blue :foreground ,black))))
-     `(hl-line                ((,c (:background ,(if doom-enable-bright-buffers bg current-line)))))
+     `(hl-line                ((,c (:background ,bg))))
      `(cursor                 ((,c (:background ,white))))
      `(shadow                 ((,c (:foreground ,violet))))
      `(minibuffer-prompt      ((,c (:foreground ,blue))))

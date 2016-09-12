@@ -6,8 +6,6 @@
 (deftheme doom-dark
   "A dark theme inspired by molokai")
 
-(doom-init)
-
 (let ((c '((class color) (min-colors 89)))
       (bold   doom-enable-bold)
       (italic doom-enable-italic)
@@ -94,9 +92,9 @@
      `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
      ;; Text
      `(default                             ((,c (:foreground ,fg :background ,bg))))
-     `(fringe                              ((,c (:background ,(if doom-enable-bright-buffers bg-l bg) :foreground ,grey-1))))
+     `(fringe                              ((,c (:background ,bg-l :foreground ,grey-1))))
      `(cursor                              ((,c (:background ,white))))
-     `(hl-line                             ((,c (:background ,(if doom-enable-bright-buffers bg-l current-line)))))
+     `(hl-line                             ((,c (:background ,bg-l))))
      `(region                              ((,c (:background ,grey-2 :foreground ,white))))
      `(highlight                           ((,c (:foreground ,yellow :inverse-video t))))
      `(shadow                              ((,c (:foreground ,orange))))
