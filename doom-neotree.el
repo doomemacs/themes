@@ -47,7 +47,7 @@
                       (concat "\t"
                               (propertize (all-the-icons-octicon "chevron-down")
                                           'face `(:family ,(all-the-icons-octicon-family) :height 0.8)
-                                          'display '(raise 0))))
+                                          'display '(raise 0.1))))
                     (when doom-neotree-enable-dir-icons
                       (concat "\t"
                               (propertize (all-the-icons-faicon "folder")
@@ -60,7 +60,7 @@
                       (concat "\t"
                               (propertize (all-the-icons-octicon "chevron-right")
                                           'face `(:family ,(all-the-icons-octicon-family) :height 1)
-                                          'display '(raise 0))))
+                                          'display '(raise 0.1))))
                     (when doom-neotree-enable-dir-icons
                       (concat "\t"
                               (propertize (all-the-icons-faicon "folder")
