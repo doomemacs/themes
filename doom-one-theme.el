@@ -233,7 +233,7 @@
      `(ivy-minibuffer-match-face-3 ((,c (:background ,orange :foreground ,black))))
      `(ivy-minibuffer-match-face-4 ((,c (:background ,magenta :foreground ,black))))
      ;; neotree
-     `(neo-root-dir-face           ((,c (:foreground ,green))))
+     `(neo-root-dir-face           ((,c (:foreground ,green :background ,bg))))
      `(neo-file-link-face          ((,c (:foreground ,fg))))
      `(neo-dir-link-face           ((,c (:foreground ,blue))))
      `(neo-expand-btn-face         ((,c (:foreground ,blue))))
