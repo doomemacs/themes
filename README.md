@@ -88,13 +88,24 @@ Note:
   incompatible.
 + This can be customized by changing these variables:
   + `doom-neotree-enable-file-icons` (default: `nil`) If non-nil,
-    display file icons next to each file.
-  + `doom-neotree-enable-dir-icons` (default: `t`): If non-nil,
-    display folder icons next to each directory.
-  + `doom-neotree-enable-dir-chevrons` (default: `t`): If non-nil,
-    display chevron icons next to each directory.
+    display filetype icons next to each file.
   + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
     the neotree buffer.
++ These faces can be customized:
+  + `doom-neotree-folder-face`: base face for folder icons (inherited
+    by other folder faces)
+  + `doom-neotree-open-folder-face`
+  + `doom-neotree-closed-folder-face`
+  + `doom-neotree-chevron-face`: base face for chevron icons
+    (inherited by other folder faces)
+  + `doom-neotree-open-chevron-face`
+  + `doom-neotree-closed-chevron-face`
++ For granular control of what the theme, you can change these
+  variables, which represent the chevron+folder icons in a string with
+  text-properties. These are prepended to directories verbatim.
+  + `doom-neotree-open-folder-prefix`
+  + `doom-neotree-closed-folder-prefix`
+  + `doom-neotree-leaf-folder-prefix`: for files
 
 ### Mode-line config
 
