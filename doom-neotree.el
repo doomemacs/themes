@@ -22,6 +22,11 @@
   :type 'boolean
   :group 'doom)
 
+(defcustom doom-neotree-folder-size 1.1
+  "What :height to display the folder icons at."
+  :type 'float
+  :group 'doom)
+
 
 (defun doom--neotree-no-fringes ()
   "Remove fringes in neotree"
