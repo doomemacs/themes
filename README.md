@@ -1,6 +1,8 @@
-[![MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
+[![MELPA](http://melpa.org/packages/doom-themes-badge.svg)](http://melpa.org/#/doom-themes)
+[![MELPA Stable](http://stable.melpa.org/packages/doom-themes-badge.svg)](http://stable.melpa.org/#/doom-themes)
 
-# DOOM for Emacs
+# doom-themes
 
 An opinionated UI plugin/pack of themes extracted from my [emacs.d],
 inspired by the One Dark/Light UI and syntax themes
@@ -32,12 +34,13 @@ Find them [in the screenshots branch][screenshots]
 
 ## Installation
 
-1. Clone the repo somewhere in your `load-path`.
+1. Install from MELPA `M-x package-install RET doom-themes`, or clone
+   the repo somewhere in your `load-path`.
 
-2. If you want the neotree theme, install the fonts in the `fonts/`
-folder of [all-the-icons].
+2. If you want the neotree theme, download the [all-the-icons] ZIP file
+   and install the fonts in the `fonts/` folder.
 
-3. Load `doom-themes` and load the theme you want.
+3. `(require 'doom-themes)` and then load the theme you want.
 
 Example configuration:
 
