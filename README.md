@@ -87,14 +87,14 @@ Note:
 + This disables `neo-vc-integration`, because the two are
   incompatible.
 + This can be customized by changing these variables:
-  + `doom-theme-neotree-root-icon` (string)
-  + `doom-theme-neotree-open-folder-icon` (string)
-  + `doom-theme-neotree-closed-folder-icon` (string)
-  + `doom-theme-neotree-file-icons` (boolean): whether or not to
-    display icons for each individual file. Disabled by default. Can
-    mess up line spacing depending. YMMV.
-  + `doom-theme-neotree-line-spacing` (int): line-spacing to
-  use in the neotree buffer.
+  + `doom-neotree-enable-file-icons` (default: `nil`) If non-nil,
+    display file icons next to each file.
+  + `doom-neotree-enable-dir-icons` (default: `t`): If non-nil,
+    display folder icons next to each directory.
+  + `doom-neotree-enable-dir-chevrons` (default: `t`): If non-nil,
+    display chevron icons next to each directory.
+  + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
+    the neotree buffer.
 
 ### Mode-line config
 
