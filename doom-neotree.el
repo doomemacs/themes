@@ -113,7 +113,7 @@ pane and are highlighted incorrectly."
     (when (memq 'char neo-vc-integration)
       (insert-char ?\s 2))
     ;; Added this line
-    (neo-buffer--insert-fold-symbol
+    (doom--neo-insert-fold-symbol
      (if expanded 'open 'close) node)
     ;;
     (insert-button (concat node-short-name "/")
@@ -132,7 +132,7 @@ pane and are highlighted incorrectly."
       (insert-char (car vc))
       (insert-char ?\s))
     ;; Added this line
-    (neo-buffer--insert-fold-symbol 'leaf node-short-name)
+    (doom--neo-insert-fold-symbol 'leaf node-short-name)
     ;;
     (insert-button node-short-name
                    'follow-link t
@@ -154,9 +154,7 @@ pane and are highlighted incorrectly."
     (setq neo-vc-integration nil)
     ;; Remove fringes in Neotree pane
     (advice-add 'neo-global--select-window :after 'doom--neotree-no-fringes)
-    ;; A custom and simple theme for neotree
-    (advice-add 'neo-buffer--insert-fold-symbol :override 'doom--neo-insert-fold-symbol)
-    ;; Custom icons for each file & dir
+    ;; Patch neotree to use `doom--neo-insert-fold-symbol'
     (advice-add 'neo-buffer--insert-file-entry :override 'doom--neo-buffer--insert-file-entry)
     (advice-add 'neo-buffer--insert-dir-entry  :override 'doom--neo-buffer--insert-dir-entry)
     ;; Shorter pwd in neotree
