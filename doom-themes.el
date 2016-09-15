@@ -30,11 +30,6 @@
 ;; + doom-tron**: doom-one, but with daylerees' Tron Legacy colorscheme
 ;; + doom-peacock**: doom-one, but with daylerees' Peacock colorscheme
 ;;
-;; Notes:
-;; + Uses `face-remapping-alist`, which won't work in terminal emacs (but
-;;   degrades gracefully).
-;; + Tested mainly on Emacs 24.5+
-;;
 ;;
 ;; ## Configuration
 ;;
@@ -52,9 +47,13 @@
 ;;   (require 'doom-themes)
 ;;   (load-theme 'doom-one t) ;; or doom-dark, etc.
 ;;
-;;   ;; OPTIONAL (more info below)
-;;   (add-hook 'find-file-hook 'doom-buffer-mode) ;; brighter source buffers
-;;   (require 'doom-neotree)                      ;; neotree theme
+;;   ;;; OPTIONAL (more info below)
+;;   ;; brighter source buffers
+;;   (add-hook 'find-file-hook 'doom-buffer-mode)
+;;   ;; brighter minibuffer when active
+;;   (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
+;;   ;; Custom neotree theme
+;;   (require 'doom-neotree)
 ;;
 ;;; Code:
 
