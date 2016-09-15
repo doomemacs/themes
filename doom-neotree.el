@@ -7,17 +7,9 @@
   :group 'doom)
 
 ;;
-(defface doom-neotree-folder-face '((t (:inherit neo-dir-link-face :height 1.1)))
+(defface doom-neotree-folder-face '((t (:inherit neo-dir-link-face)))
   "Base face for neotree folder icons. Also see `doom-neotree-open-folder-face' and
 `doom-neotree-closed-folder-face'."
-  :group 'doom-neotree)
-
-(defface doom-neotree-open-folder-face '((t (:inherit doom-neotree-folder-face)))
-  "Face for the 'open folder' icon. See `doom-neotree-open-folder-prefix'."
-  :group 'doom-neotree)
-
-(defface doom-neotree-closed-folder-face '((t (:inherit doom-neotree-folder-face)))
-  "Face for the 'closed folder' icon. See `doom-neotree-closed-folder-prefix'."
   :group 'doom-neotree)
 
 (defface doom-neotree-chevron-face '((t (:inherit neo-dir-link-face)))
@@ -25,16 +17,18 @@
 `doom-neotree-closed-chevron-icon' and `doom-neotree-open-chevron-icon'."
   :group 'doom-neotree)
 
-(defface doom-neotree-open-chevron-face '((t (:inherit doom-neotree-chevron-face :height 0.8)))
-  "Face for neotree folder chevron icons"
-  :group 'doom-neotree)
-
-(defface doom-neotree-closed-chevron-face '((t (:inherit doom-neotree-chevron-face :height 1)))
-  "Face for neotree folder chevron icons"
-  :group 'doom-neotree)
-
 
 ;;
+(defcustom doom-neotree-folder-size 1.0
+  "What :height to display the folder icons at."
+  :type 'float
+  :group 'doom-neotree)
+
+(defcustom doom-neotree-chevron-size 0.8
+  "What :height to display the chevron icons at."
+  :type 'float
+  :group 'doom-neotree)
+
 (defcustom doom-neotree-line-spacing 2
   "Line-spacing for neotree buffer."
   :type 'symbol
@@ -46,45 +40,22 @@ some displays or at certain font sizes. YMMV."
   :type 'boolean
   :group 'doom-neotree)
 
-(defcustom doom-neotree-open-folder-prefix
-  (concat "\t"
-          (propertize (all-the-icons-octicon "chevron-down")
-                      'face `(:inherit doom-neotree-open-chevron-face :family ,(all-the-icons-octicon-family))
-                      'display '(raise 0.1))
-          "\t"
-          (propertize (all-the-icons-faicon "folder")
-                      'face `(:inherit doom-neotree-open-folder-face :family ,(all-the-icons-faicon-family))
-                      'display '(raise -0.1))
-          "\t")
-  "The string to prefix open directories with. Can be nil."
-  :type 'string
+(defcustom doom-neotree-enable-folder-icons t
+  "If non-nil, display folder icons next to each file. Different icons are used
+depending on whether the folder is a repo, symlink or regular folder."
+  :type 'boolean
   :group 'doom-neotree)
 
-(defcustom doom-neotree-closed-folder-prefix
-  (concat "\t"
-          (propertize (all-the-icons-octicon "chevron-right")
-                      'face `(:inherit doom-neotree-closed-chevron-face :family ,(all-the-icons-octicon-family))
-                      'display '(raise 0.1))
-          "\t"
-          (propertize (all-the-icons-faicon "folder")
-                      'face `(:inherit doom-neotree-open-folder-face :family ,(all-the-icons-faicon-family))
-                      'display '(raise -0.1))
-          "\t")
-  "The string to prefix closed directories with. Can be nil."
-  :type 'string
-  :group 'doom-neotree)
-
-(defcustom doom-neotree-leaf-prefix
-  "\t\t"
-  "The string to prefix files with. Can be nil. Does not affect
-`doom-neotree-enable-file-icons'."
-  :type 'string
+(defcustom doom-neotree-enable-chevron-icons t
+  "If non-nil, display chevron icons next to each folder."
+  :type 'boolean
   :group 'doom-neotree)
 
 
 ;;
 (defun doom--neotree-no-fringes ()
-  "Remove fringes in neotree"
+  "Remove fringes in neotree. They get reset each time you select the neotree
+pane and are highlighted incorrectly."
   (set-window-fringes neo-global--window 1 0))
 
 (defun doom--neotree-setup (&rest _)
@@ -94,14 +65,37 @@ some displays or at certain font sizes. YMMV."
     (set (make-local-variable 'hl-line-sticky-flag) t)
     (hl-line-mode +1)))
 
+(defun doom--folder-icon-for (dir chevron)
+  (let* ((path (expand-file-name dir))
+         (chevron
+          (if doom-neotree-enable-chevron-icons
+              (all-the-icons-octicon
+               (format "chevron-%s" chevron)
+               :height doom-neotree-chevron-size
+               :v-adjust 0.1
+               :face 'doom-neotree-chevron-face)
+            ""))
+         (icon
+          (when doom-neotree-enable-folder-icons
+            (all-the-icons-octicon
+             (cond ((file-symlink-p path) "file-symlink-directory")
+                   ((file-exists-p (format "%s/.git" path)) "file-submodule")
+                   ((all-the-icons-dir-is-submodule path) "file-submodule")
+                   (t "file-directory"))
+             :height doom-neotree-folder-size
+             :v-adjust 0
+             :face 'doom-neotree-folder-face))))
+    (format "\t%s\t%s\t" chevron icon)))
+
 (defun doom--neo-insert-fold-symbol (type file-name)
   "Custom hybrid unicode theme with leading whitespace."
   (or (and (eq type 'open)
-           (insert doom-neotree-open-folder-prefix))
+           (insert (doom--folder-icon-for file-name "down")))
       (and (eq type 'close)
-           (insert doom-neotree-closed-folder-prefix))
+           (insert (doom--folder-icon-for file-name "right")))
       (and (eq type 'leaf)
-           (insert (concat doom-neotree-leaf-prefix
+           (insert (concat (when doom-neotree-enable-chevron-icons "\t")
+                           (when doom-neotree-enable-folder-icons "\t")
                            (when doom-neotree-enable-file-icons
                              (concat "\t" (all-the-icons-icon-for-file file-name)))
                            "\t")))))
@@ -109,19 +103,19 @@ some displays or at certain font sizes. YMMV."
 (defun doom--neo-buffer--insert-root-entry (&rest _)
   "Pretty-print pwd in neotree"
   (insert
-   (concat (propertize (concat "\t" (all-the-icons-octicon "repo"))
-                       'face `(:inherit neo-root-dir-face :family ,(all-the-icons-octicon-family) :height 1.4)
-                       'display '(raise -0.1))
-           (propertize (concat " " (projectile-project-name) "\n")
-                       'face '(:inherit neo-root-dir-face)))))
+   (format "%s %s\n"
+           (all-the-icons-octicon "repo" :height 1.4 :face 'neo-root-dir-face :v-adjust -0.1)
+           (propertize (projectile-project-name) 'face 'neo-root-dir-face))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
   (let ((node-short-name (neo-path--file-short-name node)))
     (insert-char ?\s (* (- depth 1) 2)) ; indent
     (when (memq 'char neo-vc-integration)
       (insert-char ?\s 2))
+    ;; Added this line
     (neo-buffer--insert-fold-symbol
      (if expanded 'open 'close) node)
+    ;;
     (insert-button (concat node-short-name "/")
                    'follow-link t
                    'face neo-dir-link-face
@@ -137,7 +131,9 @@ some displays or at certain font sizes. YMMV."
     (when (memq 'char neo-vc-integration)
       (insert-char (car vc))
       (insert-char ?\s))
+    ;; Added this line
     (neo-buffer--insert-fold-symbol 'leaf node-short-name)
+    ;;
     (insert-button node-short-name
                    'follow-link t
                    'face (if (memq 'face neo-vc-integration)

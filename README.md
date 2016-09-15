@@ -87,25 +87,19 @@ Note:
 + This disables `neo-vc-integration`, because the two are
   incompatible.
 + This can be customized by changing these variables:
-  + `doom-neotree-enable-file-icons` (default: `nil`) If non-nil,
-    display filetype icons next to each file.
+  + `doom-neotree-folder-size` (default: `1.0`) The `:height` to
+    display folder icons at.
+  + `doom-neotree-chevron-size` (default: `0.8`) The `:height` to
+    display chevron icons at.
   + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
     the neotree buffer.
+  + `doom-neotree-enable-file-icons` (default: `nil`) If non-nil,
+    display filetype icons next to each file.
+  + `doom-neotree-enable-folder-icons` (default: `t`)
+  + `doom-neotree-enable-chevron-icons` (default: `t`)
 + These faces can be customized:
-  + `doom-neotree-folder-face`: base face for folder icons (inherited
-    by other folder faces)
-  + `doom-neotree-open-folder-face`
-  + `doom-neotree-closed-folder-face`
-  + `doom-neotree-chevron-face`: base face for chevron icons
-    (inherited by other folder faces)
-  + `doom-neotree-open-chevron-face`
-  + `doom-neotree-closed-chevron-face`
-+ For granular control of what the theme, you can change these
-  variables, which represent the chevron+folder icons in a string with
-  text-properties. These are prepended to directories verbatim.
-  + `doom-neotree-open-folder-prefix`
-  + `doom-neotree-closed-folder-prefix`
-  + `doom-neotree-leaf-folder-prefix`: for files
+  + `doom-neotree-folder-face`: face for folder icons
+  + `doom-neotree-chevron-face`: face for chevron icons
 
 ### Mode-line config
 
