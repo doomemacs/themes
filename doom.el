@@ -57,10 +57,6 @@
   (doom-blend color "#FFFFFF" (- 1 alpha)))
 
 
-;; Don't reset remapped faces on `kill-all-local-variables'
-(put 'face-remapping-alist 'permanent-local t)
-(make-variable-buffer-local 'face-remapping-alist)
-
 (defun doom--face-remap-add-relative (orig-fn &rest args)
   "Advice function "
   (when (and (display-graphic-p) doom-buffer-mode)
@@ -82,12 +78,17 @@ linum) to their doom-theme variants."
   :lighter " doom"
   :init-value nil
   (if doom-buffer-mode
-      ;; Brighten up file buffers; darken special and popup buffers
-      (setq-local face-remapping-alist
-                  (append face-remapping-alist
-                          '((default doom-default)
-                            (hl-line doom-hl-line)
-                            (linum doom-linum))))
+      (progn
+        ;; Don't reset remapped faces on `kill-all-local-variables'
+        (make-variable-buffer-local 'face-remapping-alist)
+        (put 'face-remapping-alist 'permanent-local t)
+        ;; Brighten up file buffers; darken special and popup buffers
+        (setq-local face-remapping-alist
+                    (append face-remapping-alist
+                            '((default doom-default)
+                              (hl-line doom-hl-line)
+                              (linum doom-linum)))))
+    (put 'face-remapping-alist 'permanent-local nil)
     ;; Remove face remaps
     (mapc (lambda (key) (setq-local face-remapping-alist (assq-delete-all key face-remapping-alist)))
           '(default hl-line linum))))
