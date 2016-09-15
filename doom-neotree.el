@@ -46,8 +46,13 @@ depending on whether the folder is a repo, symlink or regular folder."
   :type 'boolean
   :group 'doom-neotree)
 
-(defcustom doom-neotree-enable-chevron-icons t
-  "If non-nil, display chevron icons next to each folder."
+(defcustom doom-neotree-enable-open-chevron-icons t
+  "If non-nil, display the chevron-down icon next to each expanded folder."
+  :type 'boolean
+  :group 'doom-neotree)
+
+(defcustom doom-neotree-enable-closed-chevron-icons t
+  "If non-nil, display the chevron-right icon next to each collapsed folder."
   :type 'boolean
   :group 'doom-neotree)
 
@@ -68,13 +73,13 @@ pane and are highlighted incorrectly."
 (defun doom--folder-icon-for (dir chevron)
   (let* ((path (expand-file-name dir))
          (chevron
-          (if doom-neotree-enable-chevron-icons
+          (if chevron
               (all-the-icons-octicon
                (format "chevron-%s" chevron)
                :height doom-neotree-chevron-size
                :v-adjust 0.1
                :face 'doom-neotree-chevron-face)
-            ""))
+            "\t"))
          (icon
           (when doom-neotree-enable-folder-icons
             (all-the-icons-octicon
@@ -90,15 +95,17 @@ pane and are highlighted incorrectly."
 (defun doom--neo-insert-fold-symbol (type file-name)
   "Custom hybrid unicode theme with leading whitespace."
   (or (and (eq type 'open)
-           (insert (doom--folder-icon-for file-name "down")))
+           (insert (doom--folder-icon-for file-name (if doom-neotree-enable-open-chevron-icons "down"))))
       (and (eq type 'close)
-           (insert (doom--folder-icon-for file-name "right")))
+           (insert (doom--folder-icon-for file-name (if doom-neotree-enable-closed-chevron-icons "right"))))
       (and (eq type 'leaf)
-           (insert (concat (when doom-neotree-enable-chevron-icons "\t")
-                           (when doom-neotree-enable-folder-icons "\t")
-                           (when doom-neotree-enable-file-icons
-                             (concat "\t" (all-the-icons-icon-for-file file-name)))
-                           "\t")))))
+           (insert
+            (concat (when (or doom-neotree-enable-open-chevron-icons
+                              doom-neotree-enable-closed-chevron-icons) "\t")
+                    (when doom-neotree-enable-folder-icons "\t")
+                    (when doom-neotree-enable-file-icons
+                      (concat "\t" (all-the-icons-icon-for-file file-name)))
+                    "\t")))))
 
 (defun doom--neo-buffer--insert-root-entry (&rest _)
   "Pretty-print pwd in neotree"
