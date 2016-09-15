@@ -110,9 +110,8 @@ pane and are highlighted incorrectly."
 (defun doom--neo-buffer--insert-root-entry (&rest _)
   "Pretty-print pwd in neotree"
   (insert
-   (format "%s %s\n"
-           (all-the-icons-octicon "repo" :height 1.4 :face 'neo-root-dir-face :v-adjust -0.1)
-           (propertize (projectile-project-name) 'face 'neo-root-dir-face))))
+   (concat (all-the-icons-octicon "repo" :height 1.4 :face 'neo-root-dir-face :v-adjust -0.1)
+           (propertize (concat " " (projectile-project-name) "\n") 'face 'neo-root-dir-face))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
   (let ((node-short-name (neo-path--file-short-name node)))
