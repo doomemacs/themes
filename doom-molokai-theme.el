@@ -1,9 +1,8 @@
-;; DOOM Dark (inspired by molokai)
-;; Used for the terminal
+;; DOOM Molokai (inspired by molokai)
 
 (require 'doom)
 
-(deftheme doom-dark
+(deftheme doom-molokai
   "A dark theme inspired by molokai")
 
 (let ((c '((class color) (min-colors 89)))
@@ -80,7 +79,7 @@
          (vc-deleted     red))
 
     (custom-theme-set-faces
-     'doom-dark
+     'doom-molokai
      ;; Doom faces
      `(doom-default
        ((((type graphic)) :inherit default :background ,bg-l)
@@ -318,7 +317,7 @@
      )
 
     (custom-theme-set-variables
-     'doom-dark
+     'doom-molokai
      `(vc-annotate-color-map
        '((20 .  ,green)
          (40 .  ,(doom-blend yellow green (/ 1.0 3)))
@@ -341,7 +340,7 @@
      `(vc-annotate-very-old-color nil)
      `(vc-annotate-background ,black))))
 
-(provide-theme 'doom-dark)
+(provide-theme 'doom-molokai)
 
 ;; Local Variables:
 ;; no-byte-compile: t

@@ -13,7 +13,7 @@ Includes optional dimming of non-source buffers (and minibuffer), a
 
 Currently available colorschemes:
 + **doom-one**: inspired by Atom One Dark
-+ **doom-dark**: based on Molokai
++ **doom-molokai**: based on molokai
 
 Soon to come:
 + **doom-one-light**: inspired by Atom One Light
