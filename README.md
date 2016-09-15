@@ -81,9 +81,12 @@ This works by remapping the `default`, `hl-line` and `linum` faces to
 
 `(require 'doom-neotree)`
 
-Modifies [neotree] to use file icons (as shown in the [screenshots]).
+Modifies [neotree] to use icons for folders and files (as shown in the
+[screenshots]).
 
 Note:
++ File icons are **disabled by default**. Use
+  `(setq doom-neotree-enable-file-icons t)` to enable them
 + This disables `neo-vc-integration`, because the two are
   incompatible.
 + This can be customized by changing these variables:
