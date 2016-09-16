@@ -48,6 +48,9 @@
          (type           yellow)
          (strings        green)
          (variables      (doom-lighten cyan 0.4))
+         ;; tabs
+         (tab-unfocused-bg "#353a42")
+         (tab-unfocused-fg "#1e2022")
          ;; main search regions
          (search-bg      blue)
          (search-fg      black)
@@ -182,6 +185,11 @@
      `(diff-hl-change              ((,c (:foreground ,vc-modified))))
      `(diff-hl-delete              ((,c (:foreground ,vc-deleted))))
      `(diff-hl-insert              ((,c (:foreground ,vc-added))))
+     ;; elscreen
+     `(elscreen-tab-background-face     ((,c (:background ,bg-d))))
+     `(elscreen-tab-control-face        ((,c (:background ,bg-d :foreground ,bg-d))))
+     `(elscreen-tab-current-screen-face ((,c (:background ,bg :foreground ,fg))))
+     `(elscreen-tab-other-screen-face   ((,c (:background ,tab-unfocused-bg :foreground ,tab-unfocused-fg))))
      ;; evil-mode
      `(evil-ex-substitute-matches                   ((,c (:background ,black :foreground ,red :strike-through t :bold ,bold))))
      `(evil-ex-substitute-replacement               ((,c (:background ,black :foreground ,green :bold ,bold))))
