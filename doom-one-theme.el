@@ -93,7 +93,7 @@
      `(bold-italic            ((,c (:weight ,(if bold 'bold 'normal) :slant ,(if italic 'italic 'normal) :foreground ,white))))
      ;; Global
      `(default                ((,c (:background ,bg-d :foreground ,fg))))
-     `(fringe                 ((,c (:inherit doom-default :foreground ,comments))))
+     `(fringe                 ((,c (:inherit default :foreground ,comments))))
      `(region                 ((,c (:background ,blue-d :bold ,bold))))
      `(highlight              ((,c (:background ,blue :foreground ,black))))
      `(hl-line                ((,c (:background ,bg))))

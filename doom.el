@@ -83,11 +83,13 @@ linum) to their doom-theme variants."
         (make-variable-buffer-local 'face-remapping-alist)
         (put 'face-remapping-alist 'permanent-local t)
         ;; Brighten up file buffers; darken special and popup buffers
+        (set-face-attribute 'fringe nil :background (face-attribute 'doom-default :background))
         (setq-local face-remapping-alist
                     (append face-remapping-alist
                             '((default doom-default)
                               (hl-line doom-hl-line)
                               (linum doom-linum)))))
+    (set-face-attribute 'fringe nil :background (face-attribute 'default :background))
     (put 'face-remapping-alist 'permanent-local nil)
     ;; Remove face remaps
     (mapc (lambda (key) (setq-local face-remapping-alist (assq-delete-all key face-remapping-alist)))
