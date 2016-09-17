@@ -19,6 +19,11 @@
 
 
 ;;
+(defcustom doom-neotree-project-size 1.4
+  "What :height to display the project icon at the top at."
+  :type 'float
+  :group 'doom-neotree)
+
 (defcustom doom-neotree-folder-size 1.0
   "What :height to display the folder icons at."
   :type 'float
@@ -107,11 +112,16 @@ pane and are highlighted incorrectly."
                       (concat "\t" (all-the-icons-icon-for-file file-name)))
                     "\t")))))
 
-(defun doom--neo-buffer--insert-root-entry (&rest _)
+(defun doom--neo-buffer--insert-root-entry (node)
   "Pretty-print pwd in neotree"
   (insert
-   (concat (all-the-icons-octicon "repo" :height 1.4 :face 'neo-root-dir-face :v-adjust -0.1)
-           (propertize (concat " " (projectile-project-name) "\n") 'face 'neo-root-dir-face))))
+   (concat (propertize " " 'face 'neo-root-dir-face)
+           (all-the-icons-octicon "repo"
+                                  :height doom-neotree-project-size
+                                  :face 'neo-root-dir-face
+                                  :v-adjust -0.1)
+           (propertize (concat " " (file-name-nondirectory node) "\n")
+                       'face 'neo-root-dir-face))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
   (let ((node-short-name (neo-path--file-short-name node)))
