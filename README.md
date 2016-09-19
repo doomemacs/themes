@@ -44,7 +44,7 @@ Find them [in the screenshots branch][screenshots]
 
 Example configuration:
 
-``` emacs-lisp
+```emacs-lisp
 (require 'doom-themes)
 (load-theme 'doom-one t) ;; or doom-dark, etc.
 
@@ -96,8 +96,10 @@ Note:
     display chevron icons at.
   + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
     the neotree buffer.
-  + `doom-neotree-enable-file-icons` (default: `nil`) If non-nil,
-    display filetype icons next to each file.
+  + `doom-neotree-enable-file-icons` (default: `nil`) If `t`, display
+    filetype icons next to each file. If set to `simple`, a
+    minimalistic set of icons will be used (much closer to Atom's
+    look).
   + `doom-neotree-enable-folder-icons` (default: `t`)
   + `doom-neotree-enable-chevron-icons` (default: `t`)
 + These faces can be customized:
