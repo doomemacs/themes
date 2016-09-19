@@ -1,6 +1,6 @@
 ;; DOOM One Dark (inspired by Atom One Dark)
 
-(require 'doom)
+(require 'doom-themes)
 
 (deftheme doom-one
   "A dark theme inspired by Atom One Dark")

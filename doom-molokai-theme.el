@@ -1,6 +1,6 @@
 ;; DOOM Molokai (inspired by molokai)
 
-(require 'doom)
+(require 'doom-themes)
 
 (deftheme doom-molokai
   "A dark theme inspired by molokai")

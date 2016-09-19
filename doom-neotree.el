@@ -4,7 +4,7 @@
 
 (defgroup doom-neotree nil
   "Options for doom's neotree theme"
-  :group 'doom)
+  :group 'doom-themes)
 
 ;;
 (defface doom-neotree-folder-face '((t (:inherit neo-dir-link-face)))

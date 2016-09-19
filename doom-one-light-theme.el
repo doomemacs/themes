@@ -1,6 +1,6 @@
 ;; DOOM One Light (inspired by Atom One Light)
 
-(require 'doom)
+(require 'doom-themes)
 
 ;; (doom-init 'doom-one-light)
 
