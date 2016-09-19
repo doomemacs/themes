@@ -159,6 +159,11 @@
      `(isearch-lazy-highlight-face ((,c (:background ,search-rest-bg))))
      `(yas-field-highlight-face    ((,c (:inherit match))))
 
+     ;; `window-divider'
+     `(window-divider              ((,c (:foreground ,vertical-bar))))
+     `(window-divider-first-pixel  ((,c (:foreground ,vertical-bar))))
+     `(window-divider-last-pixel   ((,c (:foreground ,vertical-bar))))
+
      ;;
      ;; Plugins
      ;;
