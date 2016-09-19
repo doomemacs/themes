@@ -96,7 +96,7 @@
      ;; Global
      `(default                ((,c (:background ,bg-d :foreground ,fg))))
      `(fringe                 ((,c (:inherit default :foreground ,comments))))
-     `(region                 ((,c (:background ,blue-d :bold ,bold))))
+     `(region                 ((,c (:background "#3d4451"))))
      `(highlight              ((,c (:background ,blue :foreground ,black))))
      `(hl-line                ((,c (:background ,bg))))
      `(cursor                 ((,c (:background ,white))))
