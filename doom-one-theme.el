@@ -134,21 +134,21 @@
      `(font-lock-regexp-grouping-backslash   ((,c (:foreground ,operators :bold ,bold))))
      `(font-lock-regexp-grouping-construct   ((,c (:foreground ,operators :bold ,bold))))
      ;; Modeline
-     `(mode-line                   ((,c (:foreground ,modeline-fg :background ,modeline-bg))))
-     `(mode-line-2                 ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
+     `(mode-line                   ((,c (:foreground ,modeline-fg          :background ,modeline-bg))))
      `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
+     `(header-line                 ((,c (:inherit mode-line))))
+     ;; Custom (doom)
+     `(doom-modeline-alternate     ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
+     `(doom-modeline-highlight     ((,c (:foreground ,black         :background ,yellow))))
+     `(doom-modeline-count         ((,c (:foreground ,black         :background ,modeline-fg-l))))
+     `(doom-modeline-bar           ((,c (:background ,blue))))
+     `(doom-modeline-eldoc-bar     ((,c (:background ,green))))
+     `(doom-modeline-inactive-bar  ((,c (:inherit doom-default))))
 
-     ;; Custom modeline faces
-     `(mode-line-highlight         ((,c (:foreground ,black :background ,yellow))))
-     `(mode-line-is-modified       ((,c (:foreground ,red :bold ,bold))))
-     `(mode-line-buffer-path       ((,c (:foreground ,modeline-fg-l))))
-     `(mode-line-count-face        ((,c (:foreground ,black :background ,modeline-fg-l))))
-     `(mode-line-vcs-info          ((,c (:inherit success))))
-     `(mode-line-vcs-warning       ((,c (:inherit error))))
      ;; Powerline/Spaceline
-     `(spaceline-highlight-face    ((,c (:foreground ,black :background ,yellow))))
-     `(powerline-active1           ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
-     `(powerline-active2           ((,c (:foreground ,modeline-fg-l :background ,modeline-bg))))
+     `(spaceline-highlight-face    ((,c (:foreground ,black                :background ,yellow))))
+     `(powerline-active1           ((,c (:foreground ,modeline-fg-l        :background ,modeline-bg))))
+     `(powerline-active2           ((,c (:foreground ,modeline-fg-l        :background ,modeline-bg))))
      `(powerline-inactive1         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(powerline-inactive2         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
 
