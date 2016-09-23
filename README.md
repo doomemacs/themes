@@ -64,6 +64,16 @@ Example configuration:
 + `doom-enable-italic` (default: `t`): if nil, italicization will be
   disabled across all faces.
 
+### Org-mode
+
+To get the most out of these themes in org-mode, you need:
+
+``` emacs-lisp
+(setq org-fontify-whole-heading-line t
+      org-fontify-done-headline t
+      org-fontify-quote-and-verse-blocks t)
+```
+
 ## Enabling other features
 
 ### Dimmed non-source buffers/windows
