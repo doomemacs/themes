@@ -94,6 +94,11 @@
   :group 'doom-themes
   :type 'boolean)
 
+(defcustom doom-enable-brighter-comments nil
+  "If non-nil, comments are brighter and easier to see."
+  :group 'doom-themes
+  :type 'boolean)
+
 
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized

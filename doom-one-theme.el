@@ -11,8 +11,9 @@
 
       (black          "#181e26")
       (white          "#DFDFDF")
-      (grey           (if window-system "#5D656B" "#525252"))
+      (grey           (if window-system "#5B6268" "#525252"))
       (grey-d         "#3D3D48")
+      (grey-dd        "#404850")
       (yellow         "#ECBE7B")
       (yellow-d       "#CDB464")
       (orange         "#E69055")
@@ -20,7 +21,7 @@
       (magenta        "#C57BDB")
       (violet         "#a9a1e1")
       (cyan           "#46D9FF")
-      (cyan-d         "#8FA1B3")
+      (cyan-d         "#5699AF")
       (teal           "#4db5bd")
       (blue           "#00B3EF")
       (blue-l         "#42D5FF")
@@ -36,8 +37,8 @@
          (current-line   (if window-system "#21272d" "#000000"))
          (selection      blue-d)
          (builtin        red)
-         (comments       grey)
-         (doc-comments   violet)
+         (comments       (if doom-enable-brighter-comments cyan-d grey))
+         (doc-comments   (if doom-enable-brighter-comments teal (doom-lighten grey 0.2)))
          (constants      yellow)
          (functions      magenta)
          (keywords       blue)
@@ -58,7 +59,7 @@
          (search-rest-fg blue)
          ;; line number column
          (linum-bg       bg-d)
-         (linum-fg       (if window-system (doom-darken cyan-d 0.55) grey))
+         (linum-fg       (if window-system grey-dd grey))
          (linum-hl-fg    "#BBBBBB")
          (linum-hl-bg    bg-d)
          ;; mode line
@@ -113,7 +114,7 @@
      `(vertical-border             ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
      `(show-paren-match            ((,c (:foreground ,blue :inverse-video t))))
      `(linum
-       ((((type graphic)) :background ,bg-d :foreground ,(doom-darken cyan-d 0.55) :bold nil)
+       ((((type graphic)) :background ,bg-d :foreground ,grey-dd :bold nil)
         (t                :background ,bg-d :foreground ,grey :bold nil)))
 
      `(font-lock-builtin-face           ((,c (:foreground ,builtin))))
