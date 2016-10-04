@@ -37,8 +37,8 @@ Find them [in the screenshots branch][screenshots]
 1. Install from MELPA `M-x package-install RET doom-themes`, or clone
    the repo somewhere in your `load-path`.
 
-2. If you want the neotree theme, download the [all-the-icons] ZIP file
-   and install the fonts in the `fonts/` folder.
+2. If you want the neotree theme, download and install the fonts included
+   with [all-the-icons].
 
 3. `(require 'doom-themes)` and then load the theme you want.
 
