@@ -353,6 +353,7 @@
      ;;`(markdown-url-face               ((,c (:inherit link))))
      ;; org-mode
      `(org-tag                   ((,c (:foreground ,yellow :bold nil))))
+     `(org-priority              ((,c (:foreground ,red))))
      ;;`(org-ellipsis            ((,c (:inherit hs-face))))
      `(org-hide                  ((,c (:foreground ,bg))))
      `(org-table                 ((,c (:foreground ,cyan))))
