@@ -63,6 +63,8 @@ Example configuration:
   across all faces.
 + `doom-enable-italic` (default: `t`): if nil, italicization will be
   disabled across all faces.
++ `doom-enable-brighter-comments` (default: `nil`): If non-nil,
+  comments are brighter and easier to see.
 
 ### Org-mode
 

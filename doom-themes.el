@@ -35,6 +35,7 @@
 ;;
 ;; + `doom-enable-bold` (default: `t`)
 ;; + `doom-enable-italic` (default: `t`)
+;; + `doom-enable-brighter-comments` (default: `nil`)
 ;;
 ;;
 ;; ## Installation
