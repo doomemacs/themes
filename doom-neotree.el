@@ -85,10 +85,13 @@ depending on whether the folder is a repo, symlink or regular folder."
   :group 'doom-neotree)
 
 (defvar doom--neotree-file-re
-  '((markup  . "\\.\\(html?\\|xml\\)$")
-    (media   . "\\.\\(png\\|jpe?g\\|gif\\|tiff\\|svg\\|bmp\\|mov\\|avi\\|mp[34]\\|webm\\)$")
-    (archive . "\\.\\(zip\\|rar\\|7z\\|tar\\(\\.gz\\)?\\)$")
-    (pdf     . "\\.pdf$"))
+  `((code    . ,(concat "\\.\\(p?html?\\|xml\\|ya?ml\\|json\\|tpl\\|conf\\|erb\\|mustache\\|twig\\|ejs\\|haml\\|pug\\|jade\\)$"))
+    (media   . ,(concat "\\.\\("
+                        "png\\|jpe?g\\|gif\\|tiff\\|svg\\|bmp" ; images
+                        "\\|mov\\|avi\\|mp[34]\\|webm"         ; media
+                        "\\)$"
+                        ))
+    (archive . "\\.\\(zip\\|rar\\|7z\\|tar\\(\\.gz\\)?\\)$"))
   "An alist mapping file type to regular expressions, used to determine what
 type of icon to display for the file if `doom-neotree-file-icons' is set to
 `simple'.")
@@ -133,12 +136,18 @@ pane and are highlighted incorrectly."
   (cond ((eq doom-neotree-file-icons 'simple)
          (if file-name
              (propertize
-               (cond ((string-match-p (cdr (assq 'media doom--neotree-file-re)) file-name)
+               (cond ((string-match-p (cdr (assq 'code doom--neotree-file-re)) file-name)
+                      (all-the-icons-octicon "file-code"))
+                     ((string-match-p (cdr (assq 'media doom--neotree-file-re)) file-name)
                       (all-the-icons-octicon "file-media"))
                      ((string-match-p (cdr (assq 'archive doom--neotree-file-re)) file-name)
                       (all-the-icons-octicon "file-zip"))
-                     ((string-match-p (cdr (assq 'pdf doom--neotree-file-re)) file-name)
+                     ((string= (or (file-name-extension file-name) "") "pdf")
                       (all-the-icons-octicon "file-pdf"))
+                     ((file-symlink-p file-name)
+                      (all-the-icons-octicon "file-symlink-file"))
+                     ((file-executable-p file-name)
+                      (all-the-icons-octicon "file-binary"))
                      (t
                       (all-the-icons-octicon "file-text")))
                'face `(:family ,(all-the-icons-octicon-family) :height 1.3)
