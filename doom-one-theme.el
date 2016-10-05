@@ -39,8 +39,8 @@
          (comments       (if doom-enable-brighter-comments cyan-d grey))
          (doc-comments   (if doom-enable-brighter-comments teal (doom-lighten grey 0.2)))
          (constants      yellow)
-         (functions      blue)
-         (keywords       magenta)
+         (functions      magenta)
+         (keywords       blue)
          (methods        cyan)
          (operators      blue)
          (type           yellow)
@@ -49,7 +49,6 @@
          (numbers        orange)
          (region         "#3d4451")
          ;; tabs
-
          (tab-unfocused-bg "#353a42")
          (tab-unfocused-fg "#1e2022")
          ;; main search regions
@@ -285,8 +284,8 @@
      ;; Volatile highlights
      `(vhl/default-face            ((,c (:background ,grey-d))))
      ;; Rainbow delimiters
-     `(rainbow-delimiters-depth-1-face   ((,c (:bold ,bold :foreground ,magenta))))
-     `(rainbow-delimiters-depth-2-face   ((,c (:bold ,bold :foreground ,blue))))
+     `(rainbow-delimiters-depth-1-face   ((,c (:bold ,bold :foreground ,blue))))
+     `(rainbow-delimiters-depth-2-face   ((,c (:bold ,bold :foreground ,magenta))))
      `(rainbow-delimiters-depth-3-face   ((,c (:bold ,bold :foreground ,green))))
      `(rainbow-delimiters-depth-4-face   ((,c (:bold ,bold :foreground ,orange))))
      `(rainbow-delimiters-depth-5-face   ((,c (:bold ,bold :foreground ,violet))))
