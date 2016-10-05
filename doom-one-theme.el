@@ -146,7 +146,7 @@
      `(doom-modeline-buffer-major-mode ((,c (:bold ,bold))))
 
      `(doom-modeline-highlight     ((,c (:foreground ,blue))))
-     `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue :bold ,bold))))
+     `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue))))
      `(doom-modeline-bar           ((,c (:background ,blue))))
      `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
 
