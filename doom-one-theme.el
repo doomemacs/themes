@@ -141,18 +141,15 @@
      `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(header-line                 ((,c (:inherit mode-line))))
      ;; Custom (doom)
-     ;; `(doom-modeline-buffer-path   ((,c (:bold ,bold))))
-     ;; `(doom-modeline-buffer-name   ((,c (:bold ,bold))))
+     `(doom-modeline-buffer-path       ((,c (:bold ,bold))))
      `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
      `(doom-modeline-buffer-modified   ((,c (:foreground ,blue))))
      `(doom-modeline-buffer-major-mode ((,c (:bold ,bold))))
 
-     `(doom-modeline-alternate     ((,c (:foreground ,white :bold ,bold))))
      `(doom-modeline-highlight     ((,c (:foreground ,blue))))
      `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue :bold ,bold))))
      `(doom-modeline-bar           ((,c (:background ,blue))))
      `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
-     `(doom-modeline-inactive-bar  ((,c (:inherit doom-default))))
 
      ;; Powerline/Spaceline
      `(spaceline-highlight-face    ((,c (:foreground ,black                :background ,yellow))))
