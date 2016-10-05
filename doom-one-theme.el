@@ -151,11 +151,11 @@
      `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
 
      ;; Powerline/Spaceline
-     `(spaceline-highlight-face    ((,c (:foreground ,black                :background ,yellow))))
-     `(powerline-active1           ((,c (:foreground ,modeline-fg-l        :background ,modeline-bg))))
-     `(powerline-active2           ((,c (:foreground ,modeline-fg-l        :background ,modeline-bg))))
-     `(powerline-inactive1         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
-     `(powerline-inactive2         ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
+     `(spaceline-highlight-face    ((,c (:inherit doom-modeline-panel))))
+     `(powerline-active1           ((,c (:inherit doom-modeline-panel))))
+     `(powerline-active2           ((,c (:inherit doom-modeline-highlight))))
+     `(powerline-inactive1         ((,c (:inherit mode-line-inactive))))
+     `(powerline-inactive2         ((,c (:inherit mode-line-inactive))))
 
      ;; Dired/dired-k
      `(dired-directory             ((,c (:foreground ,orange))))
