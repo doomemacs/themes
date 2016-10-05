@@ -109,7 +109,7 @@
      `(warning                ((,c (:foreground ,yellow))))
      `(success                ((,c (:foreground ,green))))
      ;;`(secondary-selection  ((,c (:background ,orange))))
-     `(lazy-highlight         ((,c (:background ,blue-d))))
+     `(lazy-highlight         ((,c (:background ,blue-d :foreground ,white))))
      `(match                       ((,c (:foreground ,green :background ,black :bold ,bold))))
      `(trailing-whitespace         ((,c (:background ,doc-comments))))
      `(vertical-border             ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
@@ -163,7 +163,7 @@
      `(dired-k-directory           ((,c (:foreground ,blue))))
 
      ;; Search
-     `(isearch                     ((,c (:foreground ,search-bg :inverse-video t))))
+     `(isearch                     ((,c (:background ,search-bg :foreground ,black :bold ,bold))))
      `(isearch-lazy-highlight-face ((,c (:background ,search-rest-bg))))
      `(yas-field-highlight-face    ((,c (:inherit match))))
 
@@ -261,10 +261,10 @@
      `(iedit-read-only-occurrence  ((,c (:inherit region))))
      ;; ivy
      `(ivy-current-match           ((,c (:background ,blue :foreground ,black))))
-     `(ivy-minibuffer-match-face-1 ((,c (:background ,grey-d))))
-     `(ivy-minibuffer-match-face-2 ((,c (:background ,orange :foreground ,black))))
-     `(ivy-minibuffer-match-face-3 ((,c (:background ,yellow :foreground ,black))))
-     `(ivy-minibuffer-match-face-4 ((,c (:background ,green :foreground ,black))))
+     `(ivy-minibuffer-match-face-1 ((,c (:background ,black :foreground ,grey))))
+     `(ivy-minibuffer-match-face-2 ((,c (:background ,black :foreground ,orange  :bold ,bold))))
+     `(ivy-minibuffer-match-face-3 ((,c (:background ,black :foreground ,magenta :bold ,bold))))
+     `(ivy-minibuffer-match-face-4 ((,c (:background ,black :foreground ,green   :bold ,bold))))
      ;; neotree
      `(neo-root-dir-face           ((,c (:foreground ,green :background ,bg))))
      `(neo-file-link-face          ((,c (:foreground ,fg))))
@@ -274,11 +274,11 @@
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
      ;; swiper
-     `(swiper-line-face            ((,c (:background ,blue-d))))
-     `(swiper-match-face-1         ((,c (:background ,grey-d))))
-     `(swiper-match-face-2         ((,c (:background ,green :foreground ,black))))
-     `(swiper-match-face-3         ((,c (:background ,orange :foreground ,black))))
-     `(swiper-match-face-4         ((,c (:background ,magenta :foreground ,black))))
+     `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
+     `(swiper-match-face-1         ((,c (:background ,black   :foreground ,grey))))
+     `(swiper-match-face-2         ((,c (:background ,orange  :foreground ,black :bold ,bold))))
+     `(swiper-match-face-3         ((,c (:background ,magenta :foreground ,black :bold ,bold))))
+     `(swiper-match-face-4         ((,c (:background ,green   :foreground ,black :bold ,bold))))
      ;; stripe-buffer
      `(stripe-highlight            ((,c (:background ,bg))))
      ;; Volatile highlights
