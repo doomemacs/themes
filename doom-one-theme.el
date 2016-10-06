@@ -18,7 +18,7 @@
       (yellow-d       "#CDB464")
       (orange         "#da8548")
       (red            "#ff6c6b")
-      (magenta        "#c678dd") ; C57BDB
+      (magenta        "#c678dd")
       (violet         "#a9a1e1")
       (cyan           "#46D9FF")
       (cyan-d         "#5699AF")
@@ -110,10 +110,10 @@
      `(success                ((,c (:foreground ,green))))
      ;;`(secondary-selection  ((,c (:background ,orange))))
      `(lazy-highlight         ((,c (:background ,blue-d :foreground ,white))))
-     `(match                       ((,c (:foreground ,green :background ,black :bold ,bold))))
-     `(trailing-whitespace         ((,c (:background ,doc-comments))))
-     `(vertical-border             ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
-     `(show-paren-match            ((,c (:foreground ,blue :inverse-video t))))
+     `(match                  ((,c (:foreground ,green :background ,black :bold ,bold))))
+     `(trailing-whitespace    ((,c (:background ,doc-comments))))
+     `(vertical-border        ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
+     `(show-paren-match       ((,c (:foreground ,blue :inverse-video t))))
      `(linum
        ((((type graphic)) :background ,bg-d :foreground ,grey-dd :bold nil)
         (t                :background ,bg-d :foreground ,grey :bold nil)))
