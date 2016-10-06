@@ -98,7 +98,12 @@ Modifies [neotree] to use icons for folders and files (as shown in the
 
 Note:
 + File icons are **disabled by default**. Use
-  `(setq doom-neotree-enable-file-icons t)` to enable them
+  `(setq doom-neotree-enable-file-icons t)` to enable them.
++ `doom-neotree-file-icons` determines what style of icons to use:
+  + `t`: use the wide range of [all-the-icons] file icons.
+  + `'simple`: use a minimialistic set of file icons (most akin to
+    Atom's default iconset).
+  + `nil`: only use the folder icon for directories. No icons for files.
 + This disables `neo-vc-integration`, because the two are
   incompatible.
 + This can be customized by changing these variables:
