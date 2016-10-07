@@ -151,9 +151,9 @@
      `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
 
      ;; Powerline/Spaceline
-     `(spaceline-highlight-face    ((,c (:inherit doom-modeline-panel))))
-     `(powerline-active1           ((,c (:inherit doom-modeline-panel))))
-     `(powerline-active2           ((,c (:inherit doom-modeline-highlight))))
+     `(spaceline-highlight-face    ((,c (:foreground ,blue))))
+     `(powerline-active1           ((,c (:inherit mode-line))))
+     `(powerline-active2           ((,c (:inherit mode-line))))
      `(powerline-inactive1         ((,c (:inherit mode-line-inactive))))
      `(powerline-inactive2         ((,c (:inherit mode-line-inactive))))
 
