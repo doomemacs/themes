@@ -63,7 +63,7 @@
          (linum-hl-fg    "#BBBBBB")
          (linum-hl-bg    bg-d)
          ;; mode line
-         (modeline-fg    "#bbc2cf")
+         (modeline-fg    fg)
          (modeline-fg-l  blue)
          (modeline-bg    (if window-system bg-d current-line))
          (modeline-bg-l  (if window-system blue current-line))
