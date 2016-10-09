@@ -140,10 +140,10 @@
      `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(header-line                 ((,c (:inherit mode-line))))
      ;; Custom (doom)
-     `(doom-modeline-buffer-path       ((,c (:foreground ,white :bold ,bold))))
+     `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white cyan) :bold ,bold))))
      `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
-     `(doom-modeline-buffer-modified   ((,c (:foreground ,blue))))
-     `(doom-modeline-buffer-major-mode ((,c (:foreground ,white :bold ,bold))))
+     `(doom-modeline-buffer-modified   ((,c (:foreground ,red))))
+     `(doom-modeline-buffer-major-mode ((,c (:foreground ,(if bold white blue) :bold ,bold))))
 
      `(doom-modeline-highlight     ((,c (:foreground ,blue))))
      `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue))))
