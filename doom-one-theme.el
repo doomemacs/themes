@@ -260,7 +260,7 @@
      `(iedit-occurrence            ((,c (:foreground ,magenta :bold ,bold :inverse-video t))))
      `(iedit-read-only-occurrence  ((,c (:inherit region))))
      ;; ivy
-     `(ivy-current-match           ((,c (:background ,blue-d)))
+     `(ivy-current-match           ((,c (:background ,blue-d))))
      `(ivy-minibuffer-match-face-1 ((,c (:background ,black :foreground ,(doom-lighten grey 0.1)))))
      `(ivy-minibuffer-match-face-2 ((,c (:background ,black :foreground ,magenta :bold ,bold))))
      `(ivy-minibuffer-match-face-3 ((,c (:background ,black :foreground ,green   :bold ,bold))))
