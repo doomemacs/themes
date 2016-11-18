@@ -278,7 +278,7 @@
      `(tabbar-default              ((,c (:foreground ,bg-d :background ,bg-d :height 0.9))))
      `(tabbar-modified             ((,c (:inherit 'tabbar-default :foreground "#712222" :bold ,bold))))
      `(tabbar-unselected           ((,c (:inherit 'tabbar-default :foreground ,modeline-fg-inactive))))
-     `(tabbar-selected             ((,c (:inherit 'tabbar-default :foreground ,modeline-fg :bold ,bold))))
+     `(tabbar-selected             ((,c (:inherit 'tabbar-default :foreground ,modeline-fg :background ,bg :bold ,bold))))
      `(tabbar-selected-modified    ((,c (:inherit 'tabbar-selected :foreground "PaleGreen3"))))
      `(tabbar-highlight            ((,c (:foreground ,fg :background ,bg-d :inverse-video t))))
      `(tabbar-button               ((,c (:foreground ,modeline-fg :background ,modeline-bg-inactive))))
