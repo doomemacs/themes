@@ -113,7 +113,7 @@
      `(match                  ((,c (:foreground ,green :background ,black :bold ,bold))))
      `(trailing-whitespace    ((,c (:background ,doc-comments))))
      `(vertical-border        ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
-     `(show-paren-match       ((,c (:foreground ,blue :inverse-video t))))
+     `(show-paren-match       ((,c (:foreground ,blue))))
      `(linum
        ((((type graphic)) :background ,bg-d :foreground ,grey-dd :bold nil)
         (t                :background ,bg-d :foreground ,grey :bold nil)))
