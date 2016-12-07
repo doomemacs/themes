@@ -113,7 +113,7 @@
      `(match                  ((,c (:foreground ,green :background ,black :bold ,bold))))
      `(trailing-whitespace    ((,c (:background ,doc-comments))))
      `(vertical-border        ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
-     `(show-paren-match       ((,c (:foreground ,blue :inverse-video t))))
+     `(show-paren-match       ((,c (:foreground ,red :bold ,bold))))
      `(linum
        ((((type graphic)) :background ,bg-d :foreground ,grey-dd :bold nil)
         (t                :background ,bg-d :foreground ,grey :bold nil)))
@@ -294,12 +294,12 @@
      ;; Volatile highlights
      `(vhl/default-face            ((,c (:background ,grey-d))))
      ;; Rainbow delimiters
-     `(rainbow-delimiters-depth-1-face   ((,c (:bold ,bold :foreground ,blue))))
-     `(rainbow-delimiters-depth-2-face   ((,c (:bold ,bold :foreground ,magenta))))
-     `(rainbow-delimiters-depth-3-face   ((,c (:bold ,bold :foreground ,green))))
-     `(rainbow-delimiters-depth-4-face   ((,c (:bold ,bold :foreground ,orange))))
-     `(rainbow-delimiters-depth-5-face   ((,c (:bold ,bold :foreground ,violet))))
-     `(rainbow-delimiters-unmatched-face ((,c (:bold ,bold :foreground ,red :inverse-video t))))
+     `(rainbow-delimiters-depth-1-face   ((,c (:foreground ,blue))))
+     `(rainbow-delimiters-depth-2-face   ((,c (:foreground ,magenta))))
+     `(rainbow-delimiters-depth-3-face   ((,c (:foreground ,green))))
+     `(rainbow-delimiters-depth-4-face   ((,c (:foreground ,orange))))
+     `(rainbow-delimiters-depth-5-face   ((,c (:foreground ,violet))))
+     `(rainbow-delimiters-unmatched-face ((,c (:foreground ,red :bold ,bold :inverse-video t))))
      ;; re-builder
      `(reb-match-0 ((,c (:foreground ,orange   :inverse-video t))))
      `(reb-match-1 ((,c (:foreground ,magenta  :inverse-video t))))
