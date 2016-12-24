@@ -9,7 +9,7 @@
 ;; Version: 1.1.3
 ;; Keywords: dark blue atom one theme
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
-;; Package-Requires: ((emacs "24.4") (dash "2.12.0") (all-the-icons "1.0.0"))
+;; Package-Requires: ((emacs "24.4") (dash "2.12.0") (all-the-icons "1.0.0") (font-lock+ "0"))
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
