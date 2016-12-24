@@ -5,8 +5,8 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: October 10, 2016
-;; Version: 1.1.3
+;; Modified: December 23, 2016
+;; Version: 1.1.4
 ;; Keywords: dark blue atom one theme
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "24.4") (dash "2.12.0") (all-the-icons "1.0.0") (font-lock+ "0"))
