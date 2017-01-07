@@ -12,6 +12,14 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(define-obsolete-variable-alias 'doom-enable-brighter-comments 'doom-one-brighter-comments "1.1.5"
+  "If non-nil, comments are brighter and easier to see.")
+
+(defcustom doom-one-brighter-comments nil
+  "If non-nil, comments are brighter and easier to see."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 ;;
 (deftheme doom-one
   "A dark theme inspired by Atom One Dark")
@@ -47,8 +55,8 @@
          (current-line   (if window-system "#23272e" "#262626"))
          (selection      blue-d)
          (builtin        magenta)
-         (comments       (if doom-enable-brighter-comments cyan-d grey))
-         (doc-comments   (if doom-enable-brighter-comments teal (doom-lighten grey 0.2)))
+         (comments       (if doom-one-brighter-comments cyan-d grey))
+         (doc-comments   (if doom-one-brighter-comments teal (doom-lighten grey 0.2)))
          (constants      violet)
          (functions      magenta)
          (keywords       blue)
