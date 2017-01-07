@@ -95,8 +95,8 @@ This works by remapping the `default`, `hl-line` and `linum` faces to
 
 ### Ediff and `doom-buffer-mode`
 
-The temporary buffers ediff spin up will not be dimmed. You can fix
-this with:
+The temporary buffers ediff spins up aren't dimmed. You can fix this
+with:
 
 `(add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)`
 
