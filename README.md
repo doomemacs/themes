@@ -59,12 +59,16 @@ Example configuration:
 
 ## Configuration
 
-+ `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
-  across all faces.
-+ `doom-enable-italic` (default: `t`): if nil, italicization will be
-  disabled across all faces.
-+ `doom-enable-brighter-comments` (default: `nil`): If non-nil,
-  comments are brighter and easier to see.
++ global
+    + `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
+    across all faces.
+    + `doom-enable-italic` (default: `t`): if nil, italicization will be
+    disabled across all faces.
++ doom-one
+    + `doom-one-brighter-modeline` (default: `nil`): If non-nil, the
+    mode-line background is slightly brighter.
+    + `doom-one-brighter-comments` (default: `nil`): If non-nil, comments
+    are brighter and easier to see.
 
 ### Org-mode
 
@@ -88,6 +92,13 @@ from popups, the minibuffer, or temporary buffers.
 
 This works by remapping the `default`, `hl-line` and `linum` faces to
 `doom-default`, `doom-hl-line` and `doom-linum`.
+
+### Ediff and `doom-buffer-mode`
+
+The temporary buffers ediff spin up will not be dimmed. You can fix
+this with:
+
+`(add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)`
 
 ### Neotree integration
 
