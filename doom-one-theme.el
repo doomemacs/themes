@@ -2,6 +2,17 @@
 
 (require 'doom-themes)
 
+;;
+(defgroup doom-one-theme nil
+  "Options for doom-themes"
+  :group 'doom-themes)
+
+(defcustom doom-one-brighter-modeline nil
+  "If non-nil, the mode-line is brighter than normal."
+  :group 'doom-one-theme
+  :type 'boolean)
+
+;;
 (deftheme doom-one
   "A dark theme inspired by Atom One Dark")
 
@@ -137,8 +148,10 @@
      `(font-lock-regexp-grouping-backslash   ((,c (:foreground ,operators :bold ,bold))))
      `(font-lock-regexp-grouping-construct   ((,c (:foreground ,operators :bold ,bold))))
      ;; Modeline
-     `(mode-line                   ((,c (:foreground ,modeline-fg          :background ,modeline-bg))))
-     `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
+     `(mode-line                   ((,c (:foreground ,modeline-fg
+                                         :background ,(if doom-one-brighter-modeline bg modeline-bg)))))
+     `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive
+                                         :background ,(if doom-one-brighter-modeline bg modeline-bg-inactive)))))
      `(header-line                 ((,c (:inherit mode-line))))
      ;; Custom (doom)
      `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white cyan) :bold ,bold))))
