@@ -70,9 +70,7 @@
          (search-rest-fg blue)
          ;; line number column
          (linum-bg       bg-d)
-         (linum-fg       (if window-system grey-dd grey))
          (linum-hl-fg    "#BBBBBB")
-         (linum-hl-bg    bg-d)
          ;; mode line
          (modeline-fg    fg)
          (modeline-fg-l  blue)
@@ -127,8 +125,8 @@
      `(show-paren-match       ((,c (:foreground ,red :background ,black :bold ,bold))))
      `(show-paren-mismatch    ((,c (:foreground ,black :background ,red :bold ,bold))))
      `(linum
-       ((((type graphic)) :background ,bg-d :foreground ,grey-dd :bold nil)
-        (t                :background ,bg-d :foreground ,grey :bold nil)))
+       ((((type graphic)) :background ,linum-bg :foreground ,grey-dd :bold nil)
+        (t                :background ,linum-bg :foreground ,grey    :bold nil)))
 
      `(font-lock-builtin-face           ((,c (:foreground ,builtin))))
      `(font-lock-comment-face           ((,c (:foreground ,comments))))
