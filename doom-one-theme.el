@@ -428,7 +428,17 @@
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
      ;; Custom org-mode faces
      `(org-list-bullet           ((,c (:foreground ,cyan))))
-     `(message-header-name ((,c (:foreground ,green)))))
+     `(message-header-name ((,c (:foreground ,green))))
+     ;; rpm-spec-mode
+     `(rpm-spec-macro-face        ((,c (:foreground ,yellow))))
+     `(rpm-spec-var-face          ((,c (:foreground ,violet))))
+     `(rpm-spec-tag-face          ((,c (:foreground ,blue))))
+     `(rpm-spec-obsolete-tag-face ((,c (:foreground ,red))))
+     `(rpm-spec-package-face      ((,c (:foreground ,orange))))
+     `(rpm-spec-dir-face          ((,c (:foreground ,green))))
+     `(rpm-spec-doc-face          ((,c (:foreground ,orange))))
+     `(rpm-spec-ghost-face        ((,c (:foreground ,(doom-lighten grey 0.2)))))
+     `(rpm-spec-section-face      ((,c (:foreground ,magenta)))))
 
     (custom-theme-set-variables
      'doom-one
