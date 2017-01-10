@@ -297,13 +297,13 @@
      `(popup-tip-face              ((,c (:inherit tooltip))))
      ;; tabbar
      `(tabbar-default              ((,c (:foreground ,bg-d :background ,bg-d :height 0.9))))
-     `(tabbar-modified             ((,c (:inherit 'tabbar-default :foreground "#712222" :bold ,bold))))
-     `(tabbar-unselected           ((,c (:inherit 'tabbar-default :foreground ,modeline-fg-inactive))))
-     `(tabbar-selected             ((,c (:inherit 'tabbar-default :foreground ,modeline-fg :background ,bg :bold ,bold))))
-     `(tabbar-selected-modified    ((,c (:inherit 'tabbar-selected :foreground "PaleGreen3"))))
+     `(tabbar-modified             ((,c (:inherit tabbar-default :foreground "#712222" :bold ,bold))))
+     `(tabbar-unselected           ((,c (:inherit tabbar-default :foreground ,modeline-fg-inactive))))
+     `(tabbar-selected             ((,c (:inherit tabbar-default :foreground ,modeline-fg :background ,bg :bold ,bold))))
+     `(tabbar-selected-modified    ((,c (:inherit tabbar-selected :foreground "PaleGreen3"))))
      `(tabbar-highlight            ((,c (:foreground ,fg :background ,bg-d :inverse-video t))))
      `(tabbar-button               ((,c (:foreground ,modeline-fg :background ,modeline-bg-inactive))))
-     `(tabbar-button-highlight     ((,c (:inherit 'tabbar-button :inverse-video t))))
+     `(tabbar-button-highlight     ((,c (:inherit tabbar-button :inverse-video t))))
      ;; swiper
      `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
      `(swiper-match-face-1         ((,c (:background ,black   :foreground ,grey))))
