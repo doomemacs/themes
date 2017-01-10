@@ -26,16 +26,23 @@
 ;; + doom-dark: based on Molokai
 ;;
 ;; Soon to come:
-;; + doom-one-light**: inspired by Atom One Light
-;; + doom-tron**: doom-one, but with daylerees' Tron Legacy colorscheme
-;; + doom-peacock**: doom-one, but with daylerees' Peacock colorscheme
+;; + doom-one-light: inspired by Atom One Light
+;; + doom-tron: doom-one, but with daylerees' Tron Legacy colorscheme
+;; + doom-peacock: doom-one, but with daylerees' Peacock colorscheme
 ;;
 ;;
 ;; ## Configuration
 ;;
-;; + `doom-enable-bold` (default: `t`)
-;; + `doom-enable-italic` (default: `t`)
-;; + `doom-enable-brighter-comments` (default: `nil`)
+;; + global
+;;     + `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
+;;     across all faces.
+;;     + `doom-enable-italic` (default: `t`): if nil, italicization will be
+;;     disabled across all faces.
+;; + doom-one
+;;     + `doom-one-brighter-modeline` (default: `nil`): If non-nil, the
+;;     mode-line background is slightly brighter.
+;;     + `doom-one-brighter-comments` (default: `nil`): If non-nil, comments
+;;     are brighter and easier to see.
 ;;
 ;;
 ;; ## Installation
