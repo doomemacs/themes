@@ -217,11 +217,10 @@ pane and are highlighted incorrectly."
   (when doom-neotree-enable-type-colors
     (let ((name (concat "/" (file-relative-name name neo-buffer--start-node)))
           case-fold-search)
-      (doom--first-match
-       (lambda (re)
-         (when (string-match-p (car re) name)
-           (cdr re)))
-       doom-neotree-file-face-re-alist))))
+      (cdr-safe
+       (doom--first-match
+        (lambda (re) (string-match-p (car re) name))
+        doom-neotree-file-face-re-alist)))))
 
 (defun doom--neo-buffer--insert-root-entry (node)
   "Pretty-print pwd in neotree"

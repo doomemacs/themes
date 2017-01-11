@@ -135,9 +135,8 @@
   "Return the first item where (PRED x) is non-nil."
   (let ((items list) item ret)
     (while (and items (setq item (pop items)))
-      (let ((res (funcall pred item)))
-        (when res
-          (setq items nil ret res))))
+      (when (funcall pred item)
+        (setq items nil ret item)))
     ret))
 
 (defun doom--face-remap-add-relative (orig-fn &rest args)

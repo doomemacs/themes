@@ -30,7 +30,7 @@
               (setq doom--nlinum-hl-overlay nil)
               disp))
           (let ((ov (doom--first-match (lambda (ov) (overlay-get ov 'nlinum))
-                                      (overlays-in pbol peol))))
+                                       (overlays-in pbol peol))))
             (when ov
               (let ((str (nth 1 (get-text-property 0 'display (overlay-get ov 'before-string)))))
                 (put-text-property 0 (length str) 'face 'doom-nlinum-highlight str)
