@@ -136,18 +136,14 @@ Note:
     file/folder labels will have the `variable-pitch` face applied to
     them.
 + These faces can be customized:
-  + `doom-neotree-folder-face`: face for folder icons
-  + `doom-neotree-chevron-face`: face for chevron icons
-  + `doom-neotree-dir-face`: face for folder labels
-  + `doom-neotree-file-face`: face for file labels
-  + `doom-neotree-root-face`: face for root project label
+  + `doom-neotree-dir-face`: face for folders
+  + `doom-neotree-file-face`: face for files
 + If `doom-neotree-enable-type-colors` is non-nil, file and folder
   entries will be colored with these faces, depending on their "type":
   + `doom-neotree-hidden-file-face` (dotfiles, *.o, *.pyc, *.elc, etc)
   + `doom-neotree-text-file-face` (READMEs, LICENSEs, org, md, etc.)
   + `doom-neotree-media-file-face` (images, video, audio, archives, etc.)
   + `doom-neotree-data-file-face` (json, xml, toml, yaml, etc.)
-  + `doom-neotree-build-file-face` ([MR]akefile, Cask, Gulpfile.js, etc.)
 
 ### mode-line config
 

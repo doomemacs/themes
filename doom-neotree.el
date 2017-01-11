@@ -5,16 +5,6 @@
   :group 'doom-themes)
 
 ;;
-(defface doom-neotree-folder-face '((t (:inherit neo-dir-link-face)))
-  "Base face for neotree folder icons. Also see `doom-neotree-open-folder-face' and
-`doom-neotree-closed-folder-face'."
-  :group 'doom-neotree)
-
-(defface doom-neotree-chevron-face '((t (:inherit neo-dir-link-face)))
-  "Face for chevron icons next to folders. See
-`doom-neotree-closed-chevron-icon' and `doom-neotree-open-chevron-icon'."
-  :group 'doom-neotree)
-
 (defface doom-neotree-dir-face  '((t (:inherit neo-dir-link-face)))
   "Face for directory labels."
   :group 'doom-neotree)
@@ -112,7 +102,8 @@ depending on whether the folder is a repo, symlink or regular folder."
      . doom-neotree-media-file-face)
     ("\\.\\([jc]son\\|\\(ya?\\|x\\|to\\)ml\\|xml\\)"
      . doom-neotree-data-file-face))
-  "Regexps used to determine what face to assign each file/folder."
+  "Regexps used to determine what category each file/folder belongs to, and what
+face to assign them."
   :type '(repeat (cons (regexp :tag "Pattern")
                        (symbol :tag "Face")))
   :group 'doom-neotree)
