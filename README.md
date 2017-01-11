@@ -53,8 +53,10 @@ Example configuration:
 (add-hook 'find-file-hook 'doom-buffer-mode)
 ;; brighter minibuffer when active
 (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
-;; Custom neotree theme
-(require 'doom-neotree)
+;; Enable custom neotree theme
+(require 'doom-neotree)    ; all-the-icons fonts must be installed!
+;; Enable nlinum line highlighting
+(require 'doom-nlinum)     ; requires nlinum and hl-line-mode
 ```
 
 ## Configuration
