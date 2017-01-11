@@ -130,6 +130,15 @@
 (defun doom-lighten (color alpha)
   (doom-blend color "#FFFFFF" (- 1 alpha)))
 
+;; FIXME Messy
+(defun doom--first-match (pred list)
+  "Return the first item where (PRED x) is non-nil."
+  (let ((items list) item ret)
+    (while (and items (setq item (pop items)))
+      (let ((res (funcall pred item)))
+        (when res
+          (setq items nil ret res))))
+    ret))
 
 (defun doom--face-remap-add-relative (orig-fn &rest args)
   "Advice function "

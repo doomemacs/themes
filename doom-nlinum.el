@@ -29,11 +29,8 @@
               (put-text-property 0 (length str) 'face 'linum str)
               (setq doom--nlinum-hl-overlay nil)
               disp))
-          (let ((ov (let ((overlays (overlays-in pbol peol)) ov)
-                      (while (and overlays (setq ov (pop overlays)))
-                        (when (overlay-get ov 'nlinum)
-                          (setq overlays nil)))
-                      ov)))
+          (let ((ov (doom--first-match (lambda (ov) (overlay-get ov 'nlinum))
+                                      (overlays-in pbol peol))))
             (when ov
               (let ((str (nth 1 (get-text-property 0 'display (overlay-get ov 'before-string)))))
                 (put-text-property 0 (length str) 'face 'doom-nlinum-highlight str)
