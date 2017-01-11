@@ -1,7 +1,5 @@
 ;;; doom-neotree.el
 
-(require 'all-the-icons)
-
 (defgroup doom-neotree nil
   "Options for doom's neotree theme"
   :group 'doom-themes)
@@ -242,6 +240,8 @@ pane and are highlighted incorrectly."
 ;;
 (eval-after-load "neotree"
   (lambda ()
+    (require 'all-the-icons)
+
     ;; Enable buffer-local hl-line and adjust line-spacing
     (add-hook 'neo-after-create-hook 'doom--neotree-setup)
     ;; Incompatible
