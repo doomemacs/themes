@@ -42,11 +42,6 @@
 `doom-neotree-file-face-re-alist'."
   :group 'doom-neotree)
 
-(defface doom-neotree-build-file-face '((t (:inherit neo-file-link-face)))
-  "Face for labels of build files (makefiles, rakefiles, etc). See
-`doom-neotree-file-face-re-alist'."
-  :group 'doom-neotree)
-
 
 ;;
 (defcustom doom-neotree-project-size 1.4
@@ -116,9 +111,7 @@ depending on whether the folder is a repo, symlink or regular folder."
     ("\\.\\(png\\|jpe?g\\|gif\\|tiff\\|svg\\|bmp\\|mov\\|avi\\|mp[34]\\|webm\\|zip\\|tar\\(\\.gz\\)?\\|7z\\|rar\\)$"
      . doom-neotree-media-file-face)
     ("\\.\\([jc]son\\|\\(ya?\\|x\\|to\\)ml\\|xml\\)"
-     . doom-neotree-data-file-face)
-    ("/\\(\\([MR]ake\\|Vagrant\\|Docker\\|Cart\\|Grunt\\)file\\|Cask\\|Gulpfile\\.js\\)$"
-     . doom-neotree-build-file-face))
+     . doom-neotree-data-file-face))
   "Regexps used to determine what face to assign each file/folder."
   :type '(repeat (cons (regexp :tag "Pattern")
                        (symbol :tag "Face")))
