@@ -34,7 +34,7 @@ Currently available colorschemes:
 + **doom-molokai**: based on molokai
 
 Soon to come:
-+ **doom-classic**: a more vibrant version of doom-one
++ **doom-one-classic**: a more vibrant version of doom-one
 + **doom-one-light**: inspired by Atom One Light
 + **doom-tron**: daylerees' [Tron Legacy][daylerees] colorscheme
 + **doom-peacock**: daylerees' [Peacock][daylerees] colorscheme
@@ -119,6 +119,11 @@ Note:
     Atom's default iconset).
   + `nil`: only use the folder icon for directories. No icons for files.
 + Customize the icons with:
+  + `doom-neotree-enable-type-colors` (default: `t`): if non-nil, and
+    `doom-neotree-file-icons` is `simple`, then color files/folders by
+    category (hidden, media, documentation, data or build file). See
+    `doom-neotree-file-face-re-alist` to configure this, and what face
+    to assign each file type.
   + `doom-neotree-project-size` (default: `1.4`) The `:height` to
     display the project icons (at the top) at.
   + `doom-neotree-folder-size` (default: `1.05`) The `:height` to
@@ -127,12 +132,22 @@ Note:
     display chevron icons at.
   + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
     the neotree buffer.
+  + `doom-neotree-enable-variable-pitch` (default: `t`): if non-nil,
+    file/folder labels will have the `variable-pitch` face applied to
+    them.
 + These faces can be customized:
   + `doom-neotree-folder-face`: face for folder icons
   + `doom-neotree-chevron-face`: face for chevron icons
   + `doom-neotree-dir-face`: face for folder labels
   + `doom-neotree-file-face`: face for file labels
   + `doom-neotree-root-face`: face for root project label
++ If `doom-neotree-enable-type-colors` is non-nil, file and folder
+  entries will be colored with these faces, depending on their "type":
+  + `doom-neotree-hidden-file-face` (dotfiles, *.o, *.pyc, *.elc, etc)
+  + `doom-neotree-text-file-face` (READMEs, LICENSEs, org, md, etc.)
+  + `doom-neotree-media-file-face` (images, video, audio, archives, etc.)
+  + `doom-neotree-data-file-face` (json, xml, toml, yaml, etc.)
+  + `doom-neotree-build-file-face` ([MR]akefile, Cask, Gulpfile.js, etc.)
 
 ### mode-line config
 
