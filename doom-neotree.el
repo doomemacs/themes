@@ -186,14 +186,15 @@ pane and are highlighted incorrectly."
         (face (if doom-neotree-enable-variable-pitch
                   'doom-neotree-root-face
                 'neo-root-dir-face)))
-    (insert
-     (concat (propertize " " 'face 'neo-root-dir-face)
-             (all-the-icons-octicon "repo"
-                                    :height doom-neotree-project-size
-                                    :face 'neo-root-dir-face
-                                    :v-adjust -0.1)
-             (propertize " " 'face 'neo-root-dir-face)
-             (propertize (concat project-name "\n") 'face face)))))
+    (if (display-graphic-p)
+        (insert
+         (concat (propertize " " 'face 'neo-root-dir-face)
+                 (all-the-icons-octicon "repo"
+                                        :height doom-neotree-project-size
+                                        :face 'neo-root-dir-face
+                                        :v-adjust -0.1)
+                 (propertize " " 'face 'neo-root-dir-face))))
+    (insert (propertize (concat project-name "\n") 'face face))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
   (let ((node-short-name (neo-path--file-short-name node)))
@@ -201,8 +202,9 @@ pane and are highlighted incorrectly."
     (when (memq 'char neo-vc-integration)
       (insert-char ?\s 2))
     ;; Added this line
-    (doom--neo-insert-fold-symbol
-     (if expanded 'open 'close) node)
+    (if (display-graphic-p)
+        (doom--neo-insert-fold-symbol (if expanded 'open 'close) node)
+      (neo-buffer--insert-fold-symbol (if expanded 'open 'close) node))
     ;;
     (insert-button node-short-name
                    'follow-link t
@@ -222,7 +224,9 @@ pane and are highlighted incorrectly."
       (insert-char (car vc))
       (insert-char ?\s))
     ;; Added this line
-    (doom--neo-insert-fold-symbol 'leaf node)
+    (if (display-graphic-p)
+        (doom--neo-insert-fold-symbol 'leaf node)
+      (neo-buffer--insert-fold-symbol 'leaf node))
     ;;
     (insert-button node-short-name
                    'follow-link t
