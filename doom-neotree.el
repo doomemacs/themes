@@ -15,16 +15,36 @@
 `doom-neotree-closed-chevron-icon' and `doom-neotree-open-chevron-icon'."
   :group 'doom-neotree)
 
-(defface doom-neotree-dir-face  '((t (:inherit (variable-pitch neo-dir-link-face))))
+(defface doom-neotree-dir-face  '((t (:inherit neo-dir-link-face)))
   "Face for directory labels."
   :group 'doom-neotree)
 
-(defface doom-neotree-file-face '((t (:inherit (variable-pitch neo-file-link-face))))
+(defface doom-neotree-file-face '((t (:inherit neo-file-link-face)))
   "Face for file name labels."
   :group 'doom-neotree)
 
-(defface doom-neotree-root-face '((t (:inherit (variable-pitch neo-root-dir-face))))
-  "Face used for root entry (the project name at the top)."
+;; file type faces
+(defface doom-neotree-hidden-file-face '((t (:inherit font-lock-comment-face)))
+  "Face for labels of hidden files. See `doom-neotree-file-face-re-alist'."
+  :group 'doom-neotree)
+
+(defface doom-neotree-text-file-face '((t (:inherit neo-file-link-face)))
+  "Face for labels of text/documentation files (readmes, org files, etc). See
+`doom-neotree-file-face-re-alist'."
+  :group 'doom-neotree)
+
+(defface doom-neotree-media-file-face '((t (:inherit neo-file-link-face)))
+  "Face for labels of media files. See `doom-neotree-file-face-re-alist'."
+  :group 'doom-neotree)
+
+(defface doom-neotree-data-file-face '((t (:inherit neo-file-link-face)))
+  "Face for labels of data files (json, yaml, xml, etc). See
+`doom-neotree-file-face-re-alist'."
+  :group 'doom-neotree)
+
+(defface doom-neotree-build-file-face '((t (:inherit neo-file-link-face)))
+  "Face for labels of build files (makefiles, rakefiles, etc). See
+`doom-neotree-file-face-re-alist'."
   :group 'doom-neotree)
 
 
@@ -77,9 +97,31 @@ depending on whether the folder is a repo, symlink or regular folder."
   :group 'doom-neotree)
 
 (defcustom doom-neotree-enable-variable-pitch nil
-  "If non-nil, labels will be use the `doom-neotree-dir-face' and
+  "If non-nil, labels will use the `doom-neotree-dir-face' and
 `doom-neotree-dir-face' faces, which inherit from the `variable-pitch' face."
   :type 'boolean
+  :group 'doom-neotree)
+
+(defcustom doom-neotree-enable-type-colors t
+  "If non-nil, color each file/folder based on the categories determined by
+`doom-neotree-file-face-re-alist'."
+  :type 'boolean
+  :group 'doom-neotree)
+
+(defcustom doom-neotree-file-face-re-alist
+  '(("\\(/\\.[^$/]+\\|\\.\\(lock\\|resolved\\|o\\|pyc\\|elc\\)$\\|/\\(node_modules\\|vendor\\)[/$]\\)"
+     . doom-neotree-hidden-file-face)
+    ("\\(\\.\\(md\\|org\\|rst\\|log\\)\\|/[A-Z_-]+\\(\\.[a-z]+\\)?\\)$"
+     . doom-neotree-text-file-face)
+    ("\\.\\(png\\|jpe?g\\|gif\\|tiff\\|svg\\|bmp\\|mov\\|avi\\|mp[34]\\|webm\\|zip\\|tar\\(\\.gz\\)?\\|7z\\|rar\\)$"
+     . doom-neotree-media-file-face)
+    ("\\.\\([jc]son\\|\\(ya?\\|x\\|to\\)ml\\|xml\\)"
+     . doom-neotree-data-file-face)
+    ("/\\(\\([MR]ake\\|Vagrant\\|Docker\\|Cart\\|Grunt\\)file\\|Cask\\|Gulpfile\\.js\\)$"
+     . doom-neotree-build-file-face))
+  "Regexps used to determine what face to assign each file/folder."
+  :type '(repeat (cons (regexp :tag "Pattern")
+                       (symbol :tag "Face")))
   :group 'doom-neotree)
 
 (defvar doom--neotree-file-re
@@ -108,15 +150,16 @@ pane and are highlighted incorrectly."
     (set (make-local-variable 'hl-line-sticky-flag) t)
     (hl-line-mode +1)))
 
-(defun doom--neotree-folder-icon-for (dir chevron)
+(defun doom--neotree-folder-icon-for (dir chevron &optional faces)
   (let* ((path (expand-file-name dir))
          (chevron
           (if chevron
               (all-the-icons-octicon
                (format "chevron-%s" chevron)
-               :height doom-neotree-chevron-size
                :v-adjust 0.1
-               :face 'doom-neotree-chevron-face)
+               :face `(:inherit (,@faces)
+                       :family ,(all-the-icons-octicon-family)
+                       :height ,doom-neotree-chevron-size))
             spc))
          (icon
           (when doom-neotree-enable-folder-icons
@@ -125,12 +168,13 @@ pane and are highlighted incorrectly."
                    ((file-exists-p (format "%s/.git" path)) "file-submodule")
                    ((all-the-icons-dir-is-submodule path) "file-submodule")
                    (t "file-directory"))
-             :height doom-neotree-folder-size
              :v-adjust 0
-             :face 'doom-neotree-folder-face))))
+             :face `(:inherit (,@faces)
+                     :family ,(all-the-icons-octicon-family)
+                     :height ,doom-neotree-folder-size)))))
     (concat chevron "\t" icon)))
 
-(defun doom--neotree-file-icon-for (file-name)
+(defun doom--neotree-file-icon-for (file-name &optional faces)
   (cond ((eq doom-neotree-file-icons 'simple)
          (if file-name
              (propertize
@@ -148,28 +192,33 @@ pane and are highlighted incorrectly."
                       (all-the-icons-octicon "file-binary"))
                      (t
                       (all-the-icons-octicon "file-text")))
-               'face `(:family ,(all-the-icons-octicon-family) :height 1.3)
+               'face `(:inherit (,@faces)
+                       :family ,(all-the-icons-octicon-family)
+                       :height 1.3)
                'display '(raise 0))
            (all-the-icons-fileicon "default")))
         (t (all-the-icons-icon-for-file file-name))))
 
-(defun doom--neo-insert-fold-symbol (type file-name)
+(defun doom--neo-insert-fold-symbol (type file-name &optional faces)
   "Custom hybrid unicode theme with leading whitespace."
-  (let ((spc "\t"))
+  (let ((spc "\t")
+        (vspc (propertize "  " 'face 'variable-pitch)))
     (or (and (eq type 'open)
              (insert
               (concat spc
                       (doom--neotree-folder-icon-for
                        file-name
-                       (if doom-neotree-enable-open-chevron-icons "down"))
-                      spc)))
+                       (if doom-neotree-enable-open-chevron-icons "down")
+                       faces)
+                      vspc)))
         (and (eq type 'close)
              (insert
               (concat spc
                       (doom--neotree-folder-icon-for
                        file-name
-                       (if doom-neotree-enable-closed-chevron-icons "right"))
-                      spc)))
+                       (if doom-neotree-enable-closed-chevron-icons "right")
+                       faces)
+                      vspc)))
         (and (eq type 'leaf)
              (insert
               (concat (when (or doom-neotree-enable-open-chevron-icons
@@ -177,40 +226,54 @@ pane and are highlighted incorrectly."
                         spc)
                       (when doom-neotree-enable-folder-icons spc)
                       (when doom-neotree-file-icons
-                        (concat spc (doom--neotree-file-icon-for file-name)))
-                      spc))))))
+                        (concat spc (doom--neotree-file-icon-for file-name faces)))
+                      vspc))))))
+
+(defun doom--neo-get-file-face (name)
+  (when doom-neotree-enable-type-colors
+    (let ((name (concat "/" (file-relative-name name neo-buffer--start-node)))
+          case-fold-search)
+      (doom--first-match
+       (lambda (re)
+         (when (string-match-p (car re) name)
+           (cdr re)))
+       doom-neotree-file-face-re-alist))))
 
 (defun doom--neo-buffer--insert-root-entry (node)
   "Pretty-print pwd in neotree"
   (let ((project-name (file-name-nondirectory (substring node 0 (1- (length node)))))
-        (face (if doom-neotree-enable-variable-pitch
-                  'doom-neotree-root-face
-                'neo-root-dir-face)))
+        (faces '(neo-root-dir-face)))
+    (when doom-neotree-enable-variable-pitch
+      (push 'variable-pitch faces))
     (if (display-graphic-p)
         (insert
-         (concat (propertize " " 'face 'neo-root-dir-face)
+         (concat (propertize " " 'face `(:inherit (,@faces)))
                  (all-the-icons-octicon "repo"
                                         :height doom-neotree-project-size
                                         :face 'neo-root-dir-face
                                         :v-adjust -0.1)
-                 (propertize " " 'face 'neo-root-dir-face))))
-    (insert (propertize (concat project-name "\n") 'face face))))
+                 (propertize " " 'face `(:inherit (,@faces))))))
+    (insert (propertize (concat project-name "\n") 'face `(:inherit (,@faces))))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
-  (let ((node-short-name (neo-path--file-short-name node)))
+  (let ((node-short-name (neo-path--file-short-name node))
+        (faces '(doom-neotree-dir-face))
+        (add-face (doom--neo-get-file-face node)))
     (insert-char ?\s (* (- depth 1) 2)) ; indent
-    (when (memq 'char neo-vc-integration)
-      (insert-char ?\s 2))
-    ;; Added this line
+    ;; (when (memq 'char neo-vc-integration)
+    ;;   (insert-char ?\s 2))
+    (when add-face (setq faces (list add-face)))
+    ;; (when (memq 'face neo-vc-integration)
+    ;;   (push (cdr vc) faces))
     (if (display-graphic-p)
-        (doom--neo-insert-fold-symbol (if expanded 'open 'close) node)
+        (doom--neo-insert-fold-symbol (if expanded 'open 'close) node faces)
       (neo-buffer--insert-fold-symbol (if expanded 'open 'close) node))
+    (when doom-neotree-enable-variable-pitch
+      (push 'variable-pitch faces))
     ;;
     (insert-button node-short-name
                    'follow-link t
-                   'face (if doom-neotree-enable-variable-pitch
-                             'doom-neotree-dir-face
-                           'neo-dir-link-face)
+                   'face `(:inherit (,@faces))
                    'neo-full-path node
                    'keymap neotree-dir-button-keymap)
     (neo-buffer--node-list-set nil node)
@@ -218,23 +281,25 @@ pane and are highlighted incorrectly."
 
 (defun doom--neo-buffer--insert-file-entry (node depth)
   (let ((node-short-name (neo-path--file-short-name node))
-        (vc (when neo-vc-integration (neo-vc-for-node node))))
+        ;; (vc (when neo-vc-integration (neo-vc-for-node node)))
+        (faces '(doom-neotree-file-face))
+        (add-face (doom--neo-get-file-face node)))
     (insert-char ?\s (* (- depth 1) 2)) ; indent
-    (when (memq 'char neo-vc-integration)
-      (insert-char (car vc))
-      (insert-char ?\s))
-    ;; Added this line
+    ;; (when (memq 'char neo-vc-integration)
+    ;;   (insert-char (car vc))
+    ;;   (insert-char ?\s))
+    (when add-face (setq faces (list add-face)))
+    ;; (when (memq 'face neo-vc-integration)
+    ;;   (push (cdr vc) faces))
     (if (display-graphic-p)
-        (doom--neo-insert-fold-symbol 'leaf node)
+        (doom--neo-insert-fold-symbol 'leaf node faces)
       (neo-buffer--insert-fold-symbol 'leaf node))
+    (when doom-neotree-enable-variable-pitch
+      (push 'variable-pitch faces))
     ;;
     (insert-button node-short-name
                    'follow-link t
-                   'face (if (memq 'face neo-vc-integration)
-                             (cdr vc)
-                           (if doom-neotree-enable-variable-pitch
-                               'doom-neotree-file-face
-                             'neo-file-link-face))
+                   'face `(:inherit (,@faces))
                    'neo-full-path node
                    'keymap neotree-file-button-keymap)
     (neo-buffer--node-list-set nil node)
