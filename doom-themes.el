@@ -9,7 +9,7 @@
 ;; Version: 1.1.5
 ;; Keywords: dark blue atom one theme
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
-;; Package-Requires: ((emacs "24.4") (dash "2.12.0") (all-the-icons "1.0.0"))
+;; Package-Requires: ((emacs "24.4") (all-the-icons "1.0.0") (cl-lib "0.5"))
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -70,7 +70,7 @@
 ;;
 ;;; Code:
 
-(require 'dash)
+(require 'cl-lib)
 
 (defgroup doom-themes nil
   "Options for doom-themes"
@@ -120,9 +120,9 @@
 
 (defun doom-blend (color1 color2 alpha)
   (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
-         (--zip-with (+ (* alpha it) (* other (- 1 alpha)))
-                     (doom-name-to-rgb color1)
-                     (doom-name-to-rgb color2))))
+         (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
+                    (doom-name-to-rgb color1)
+                    (doom-name-to-rgb color2))))
 
 (defun doom-darken (color alpha)
   (doom-blend color "#000000" (- 1 alpha)))
