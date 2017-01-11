@@ -291,10 +291,19 @@
      `(ivy-minibuffer-match-face-4 ((,c (:background ,black :foreground ,yellow  :bold ,bold))))
      `(ivy-virtual                 ((,c (:foreground ,fg))))
      ;; neotree
-     `(neo-root-dir-face           ((,c (:foreground ,green :background ,bg))))
-     `(neo-file-link-face          ((,c (:foreground ,fg))))
-     `(neo-dir-link-face           ((,c (:foreground ,blue))))
-     `(neo-expand-btn-face         ((,c (:foreground ,blue))))
+     `(neo-root-dir-face           ((,c (:foreground ,fg :background ,bg))))
+     `(neo-file-link-face          ((,c (:foreground ,(doom-darken fg 0.1)))))
+     `(neo-dir-link-face           ((,c (:foreground ,(doom-darken fg 0.1)))))
+     `(neo-expand-btn-face         ((,c (:foreground ,(doom-darken fg 0.1)))))
+
+     `(doom-neotree-dir-face  ((,c (:foreground ,fg))))
+     `(doom-neotree-file-face ((,c (:foreground ,fg)))) ;"#888888"
+
+     `(doom-neotree-hidden-file-face ((,c (:foreground ,grey))))
+     `(doom-neotree-text-file-face   ((,c (:foreground ,yellow)))) ;"#888888"
+     `(doom-neotree-media-file-face  ((,c (:foreground ,grey))))
+     `(doom-neotree-data-file-face   ((,c (:foreground ,violet))))
+     `(doom-neotree-build-file-face  ((,c (:foreground ,magenta))))
      ;; pos-tip
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
