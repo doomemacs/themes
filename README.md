@@ -96,7 +96,7 @@ with:
 To highlight the current line number, you need `hl-line-mode` and
 `nlinum` installed. Then put this into your emacs.d:
 
-`(require 'doom/nlinum)`
+`(require 'doom-nlinum)`
 
 It will take effect as soon as nlinum-mode is activated.
 
