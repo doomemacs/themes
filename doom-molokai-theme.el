@@ -14,8 +14,6 @@
       (fg             "#D6D6D4")
       (subtle         "#aab6c7")
       (vsubtle        "#556172")
-      (vvsubtle       "#354152")
-      (dim-highlight  "#3f4b56")
 
       (black          "#000000")
       (grey           "#C0C5CF")
@@ -23,7 +21,6 @@
       (grey-1         "#525254")
       (grey-2         "#39393D")
       (white          "#FFFFFF")
-      (white-1        "#EAEADB")
       (yellow         "#E2C770")
       (orange         "#FD971F")
       (red            "#E74C3C")
@@ -34,8 +31,7 @@
       (cyan           "#66D9EF")
       (green          "#B6E63E")
       (green-3        "#86B20E")
-      (dark-cyan      "#8FA1B3")
-      (light-cyan     "#CBECFF"))
+      (dark-cyan      "#8FA1B3"))
 
   (let* ((search-bg      green)
          (search-fg      black)
@@ -98,7 +94,7 @@
      ;; Text
      `(default                             ((,c (:foreground ,fg :background ,bg))))
      `(fringe                              ((,c (:background ,bg-l :foreground ,grey-1))))
-     `(cursor                              ((,c (:background ,white))))
+     `(cursor                              ((,c (:background ,orange))))
      `(hl-line                             ((,c (:background ,bg-l))))
      `(region                              ((,c (:background ,grey-2 :foreground ,white))))
      `(highlight                           ((,c (:foreground ,yellow :inverse-video t))))
@@ -152,42 +148,37 @@
      `(powerline-active2                   ((,c (:foreground ,modeline-fg-3 :background ,modeline-bg-3))))
      `(powerline-inactive1                 ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
      `(powerline-inactive2                 ((,c (:foreground ,modeline-fg-inactive :background ,modeline-bg-inactive))))
+     ;; Custom (doom)
+     `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white yellow) :bold ,bold))))
+     `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
+     `(doom-modeline-buffer-modified   ((,c (:foreground ,orange))))
+     `(doom-modeline-buffer-major-mode ((,c (:foreground ,white :bold ,bold))))
+
+     `(doom-modeline-highlight     ((,c (:foreground ,orange))))
+     `(doom-modeline-panel         ((,c (:foreground ,black :background ,orange))))
+     `(doom-modeline-bar           ((,c (:background ,yellow))))
+     `(doom-modeline-eldoc-bar     ((,c (:background ,red))))
+
+     `(doom-modeline-info         ((,c (:foreground ,yellow))))
+     `(doom-modeline-warning      ((,c (:background ,green))))
+     `(doom-modeline-urgent       ((,c (:background ,red))))
      ;; Search
      `(isearch                             ((,c (:foreground ,search-fg :background ,search-bg))))
      `(isearch-lazy-highlight-face         ((,c (:foreground ,search-rest-fg :background ,search-rest-bg))))
+     ;; `window-divider'
+     `(window-divider              ((,c (:foreground ,vertical-bar))))
+     `(window-divider-first-pixel  ((,c (:foreground ,vertical-bar))))
+     `(window-divider-last-pixel   ((,c (:foreground ,vertical-bar))))
 
      ;;
      ;; Plugins
      ;;
 
-     ;; hide-show
-     `(hs-face                     ((,c (:foreground ,comments :background ,black))))
-     `(hs-fringe-face              ((,c (:foreground ,orange))))
-     ;; flycheck
-     `(flycheck-error              ((,c (:underline (:style wave :color ,red)    :background ,grey-2))))
-     `(flycheck-warning            ((,c (:underline (:style wave :color ,yellow) :background ,grey-2))))
-     `(flycheck-info               ((,c (:underline (:style wave :color ,green)  :background ,grey-2))))
-     `(flyspell-incorrect          ((,c (:underline (:style wave :color ,error-highlight) :inherit unspecified))))
-     ;; indent-guide, highlight-{quoted,numbers,indentation}-mode
-     `(highlight-indentation-face                 ((,c (:background ,current-line))))
-     `(highlight-indentation-current-column-face  ((,c (:background ,current-line))))
-     `(highlight-quoted-symbol     ((,c (:foreground ,yellow))))
-     `(highlight-quoted-quote      ((,c (:foreground ,magenta))))
-     `(highlight-numbers-number    ((,c (:foreground ,constants))))
-     `(indent-guide-face           ((,c (:foreground "#2F2F38"))))
-     ;; re-builder
-     `(reb-match-0                 ((,c (:foreground ,orange   :inverse-video t))))
-     `(reb-match-1                 ((,c (:foreground ,magenta  :inverse-video t))))
-     `(reb-match-2                 ((,c (:foreground ,green    :inverse-video t))))
-     `(reb-match-3                 ((,c (:foreground ,yellow   :inverse-video t))))
-     ;; workgroups2
-     `(wg-current-workgroup-face   ((,c (:foreground ,black   :background ,orange))))
-     `(wg-other-workgroup-face     ((,c (:foreground ,grey-.5 :background ,current-line))))
-     ;; neotree
-     `(neo-root-dir-face           ((,c (:foreground ,cyan))))
-     `(neo-file-link-face          ((,c (:foreground ,white))))
-     `(neo-dir-link-face           ((,c (:foreground ,orange))))
-     `(neo-expand-btn-face         ((,c (:foreground ,magenta))))
+     ;; Avy
+     `(avy-lead-face-0    ((,c (:background ,orange :foreground ,black))))
+     `(avy-lead-face-1    ((,c (:background ,orange :foreground ,black))))
+     `(avy-lead-face-2    ((,c (:background ,orange :foreground ,black))))
+     `(avy-lead-face      ((,c (:background ,orange :foreground ,black))))
      ;; company-mode
      `(company-tooltip             ((,c (:background ,black :foreground ,fg))))
      `(company-tooltip-common      ((,c (:foreground ,orange))))
@@ -199,34 +190,31 @@
      `(company-preview             ((,c (:foreground ,orange))))
      `(company-preview-common      ((,c (:foreground ,magenta :background ,grey-1))))
      `(company-preview-search      ((,c (:inherit company-tooltip-search))))
-     ;; pop-tip
-     `(popup                       ((,c (:inherit tooltip))))
-     `(popup-tip-face              ((,c (:inherit tooltip))))
+     ;; diff-hl
+     `(diff-hl-change              ((,c (:foreground ,vc-modified))))
+     `(diff-hl-delete              ((,c (:foreground ,vc-deleted))))
+     `(diff-hl-insert              ((,c (:foreground ,vc-added))))
      ;; evil-mode
      `(evil-ex-substitute-replacement ((,c (:foreground ,magenta :background ,black :bold ,bold))))
      `(evil-search-highlight-persist-highlight-face ((,c (:background ,search-rest-bg))))
      ;; evil-snipe
      `(evil-snipe-first-match-face ((,c (:foreground ,search-fg :background ,search-bg))))
      `(evil-snipe-matches-face     ((,c (:foreground ,search-bg :underline t))))
-     ;; Volatile highlights
-     `(vhl/default-face            ((,c (:background ,grey-2))))
-     ;; VCS
-     `(diff-hl-change              ((,c (:foreground ,vc-modified))))
-     `(diff-hl-delete              ((,c (:foreground ,vc-deleted))))
-     `(diff-hl-insert              ((,c (:foreground ,vc-added))))
+     ;; flycheck
+     `(flycheck-error              ((,c (:underline (:style wave :color ,red)    :background ,grey-2))))
+     `(flycheck-warning            ((,c (:underline (:style wave :color ,yellow) :background ,grey-2))))
+     `(flycheck-info               ((,c (:underline (:style wave :color ,green)  :background ,grey-2))))
+     `(flyspell-incorrect          ((,c (:underline (:style wave :color ,error-highlight) :inherit unspecified))))
+     ;; git-gutter
      `(git-gutter:modified         ((,c (:foreground ,vc-modified))))
      `(git-gutter:added            ((,c (:foreground ,vc-added))))
      `(git-gutter:deleted          ((,c (:foreground ,vc-deleted))))
+     `(git-gutter-fr:modified      ((,c (:foreground ,vc-modified))))
+     `(git-gutter-fr:added         ((,c (:foreground ,vc-added))))
+     `(git-gutter-fr:deleted       ((,c (:foreground ,vc-deleted))))
      `(git-gutter+-modified        ((,c (:foreground ,vc-modified :background nil))))
      `(git-gutter+-added           ((,c (:foreground ,vc-added :background nil))))
      `(git-gutter+-deleted         ((,c (:foreground ,vc-deleted :background nil))))
-     ;; Rainbow delimiters
-     `(rainbow-delimiters-depth-1-face   ((,c (:foreground ,magenta))))
-     `(rainbow-delimiters-depth-2-face   ((,c (:foreground ,orange))))
-     `(rainbow-delimiters-depth-3-face   ((,c (:foreground ,yellow))))
-     `(rainbow-delimiters-depth-4-face   ((,c (:foreground ,green))))
-     `(rainbow-delimiters-depth-5-face   ((,c (:foreground ,cyan))))
-     `(rainbow-delimiters-unmatched-face ((,c (:foreground ,red :inverse-video t))))
      ;; Helm
      `(helm-selection              ((,c (:background ,selection))))
      `(helm-match                  ((,c (:foreground ,magenta))))
@@ -237,11 +225,57 @@
      `(helm-ff-dotted-directory  ((,c (:foreground ,grey-1))))
      `(helm-ff-directory         ((,c (:foreground ,orange))))
      `(helm-ff-executable        ((,c (:foreground ,white :slant italic))))
-     ;; Avy
-     `(avy-lead-face-0    ((,c (:background ,orange :foreground ,black))))
-     `(avy-lead-face-1    ((,c (:background ,orange :foreground ,black))))
-     `(avy-lead-face-2    ((,c (:background ,orange :foreground ,black))))
-     `(avy-lead-face      ((,c (:background ,orange :foreground ,black))))
+     ;; hide-show
+     `(hs-face                     ((,c (:foreground ,comments :background ,black))))
+     `(hs-fringe-face              ((,c (:foreground ,orange))))
+     ;; highlight-{quoted,numbers,indentation}-mode
+     `(highlight-indentation-face                 ((,c (:background ,current-line))))
+     `(highlight-indentation-current-column-face  ((,c (:background ,current-line))))
+     `(highlight-quoted-symbol     ((,c (:foreground ,yellow))))
+     `(highlight-quoted-quote      ((,c (:foreground ,magenta))))
+     `(highlight-numbers-number    ((,c (:foreground ,constants))))
+     ;; indent-guide,
+     `(indent-guide-face           ((,c (:foreground "#2F2F38"))))
+     ;; ivy
+     `(ivy-current-match           ((,c (:background ,grey-2))))
+     `(ivy-minibuffer-match-face-1 ((,c (:foreground ,yellow))))
+     `(ivy-minibuffer-match-face-2 ((,c (:background ,black :foreground ,red :bold ,bold))))
+     `(ivy-minibuffer-match-face-3 ((,c (:background ,black :foreground ,red :bold ,bold))))
+     `(ivy-minibuffer-match-face-4 ((,c (:background ,black :foreground ,red :bold ,bold))))
+     `(ivy-virtual                 ((,c (:foreground ,fg))))
+     ;; neotree
+     `(neo-root-dir-face           ((,c (:foreground ,green))))
+     `(neo-file-link-face          ((,c (:foreground ,white))))
+     `(neo-dir-link-face           ((,c (:foreground ,cyan))))
+     `(neo-expand-btn-face         ((,c (:foreground ,magenta))))
+     ;; pop-tip
+     `(popup                       ((,c (:inherit tooltip))))
+     `(popup-tip-face              ((,c (:inherit tooltip))))
+     ;; rainbow-delimiters
+     `(rainbow-delimiters-depth-1-face   ((,c (:foreground ,magenta))))
+     `(rainbow-delimiters-depth-2-face   ((,c (:foreground ,orange))))
+     `(rainbow-delimiters-depth-3-face   ((,c (:foreground ,yellow))))
+     `(rainbow-delimiters-depth-4-face   ((,c (:foreground ,green))))
+     `(rainbow-delimiters-depth-5-face   ((,c (:foreground ,cyan))))
+     `(rainbow-delimiters-unmatched-face ((,c (:foreground ,red :inverse-video t))))
+     ;; re-builder
+     `(reb-match-0                 ((,c (:foreground ,orange   :inverse-video t))))
+     `(reb-match-1                 ((,c (:foreground ,magenta  :inverse-video t))))
+     `(reb-match-2                 ((,c (:foreground ,green    :inverse-video t))))
+     `(reb-match-3                 ((,c (:foreground ,yellow   :inverse-video t))))
+     ;; swiper
+     `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
+     `(swiper-match-face-1         ((,c (:background ,black   :foreground ,grey))))
+     `(swiper-match-face-2         ((,c (:background ,orange  :foreground ,black :bold ,bold))))
+     `(swiper-match-face-3         ((,c (:background ,magenta :foreground ,black :bold ,bold))))
+     `(swiper-match-face-4         ((,c (:background ,green   :foreground ,black :bold ,bold))))
+     ;; stripe-buffer
+     `(stripe-highlight            ((,c (:inherit doom-default))))
+     ;; volatile highlights
+     `(vhl/default-face            ((,c (:background ,grey-2))))
+     ;; workgroups2
+     `(wg-current-workgroup-face   ((,c (:foreground ,black   :background ,orange))))
+     `(wg-other-workgroup-face     ((,c (:foreground ,grey-.5 :background ,current-line))))
 
      ;;
      ;; Language-specific
@@ -314,6 +348,16 @@
      `(org-special-keyword          ((,c (:foreground ,magenta))))
      `(org-checkbox-statistics-todo ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
+     ;;; rpm-spec-mode
+     `(rpm-spec-macro-face        ((,c (:foreground ,yellow))))
+     `(rpm-spec-var-face          ((,c (:foreground ,violet))))
+     `(rpm-spec-tag-face          ((,c (:foreground ,blue))))
+     `(rpm-spec-obsolete-tag-face ((,c (:foreground ,red))))
+     `(rpm-spec-package-face      ((,c (:foreground ,orange))))
+     `(rpm-spec-dir-face          ((,c (:foreground ,green))))
+     `(rpm-spec-doc-face          ((,c (:foreground ,orange))))
+     `(rpm-spec-ghost-face        ((,c (:foreground ,(doom-lighten grey-1 0.2)))))
+     `(rpm-spec-section-face      ((,c (:foreground ,magenta))))
      )
 
     (custom-theme-set-variables
