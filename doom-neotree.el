@@ -252,7 +252,7 @@ pane and are highlighted incorrectly."
                                         :height doom-neotree-project-size
                                         :face 'neo-root-dir-face
                                         :v-adjust -0.1)
-                 (propertize " " 'face `(:inherit (,@faces))))))
+                 (propertize " " 'face 'neo-root-dir-face))))
     (insert (propertize (concat project-name "\n") 'face `(:inherit (,@faces))))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
