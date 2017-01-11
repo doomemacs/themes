@@ -346,34 +346,24 @@
      ;; Language-specific
      ;;
 
-     ;; (css|scss)-mode
+     ;;; (css|scss)-mode
      `(css-proprietary-property ((,c (:foreground ,orange))))
      `(css-property             ((,c (:foreground ,green))))
      `(css-selector             ((,c (:foreground ,blue))))
-     ;; js2-mode
+     ;;; js2-mode
      `(js2-function-param  ((,c (:foreground ,variables))))
      `(js2-function-call   ((,c (:foreground ,functions))))
      `(js2-object-property ((,c (:foreground ,violet))))
      `(js2-jsdoc-tag       ((,c (:foreground ,comments))))
-     ;; typescript-mode
-     `(ts-object-property  ((,c (:inherit js2-object-property))))
-     ;; web-mode
-     `(web-mode-doctype-face           ((,c (:foreground ,comments))))
-     `(web-mode-html-tag-face          ((,c (:foreground ,methods))))
-     `(web-mode-html-tag-bracket-face  ((,c (:foreground ,methods))))
-     `(web-mode-html-attr-name-face    ((,c (:foreground ,type))))
-     `(web-mode-html-entity-face       ((,c (:foreground ,cyan :italic ,italic))))
-     `(web-mode-block-control-face     ((,c (:foreground ,orange))))
-     ;;`(web-mode-html-tag-bracket-face  ((,c (:foreground ,operators))))
-     ;; makefile-*-mode
+     ;;; makefile-*-mode
      `(makefile-targets     ((,c (:foreground ,blue))))
-     ;; markdown-mode
+     ;;; markdown-mode
      `(markdown-header-face           ((,c (:foreground ,red :bold nil))))
      `(markdown-header-delimiter-face ((,c (:inherit markdown-header-face))))
      `(markdown-metadata-key-face     ((,c (:foreground ,red))))
-     ;; `(markdown-blockquote-face ((,c (:foreground ,violet))))
+     ;;`(markdown-blockquote-face ((,c (:foreground ,violet))))
      `(markdown-markup-face     ((,c (:foreground ,grey))))
-     ;; `(markdown-markup-face     ((,c (:foreground ,operators))))
+     ;;`(markdown-markup-face     ((,c (:foreground ,operators))))
      `(markdown-pre-face        ((,c (:foreground ,green))))
      `(markdown-inline-face     ((,c (:foreground ,cyan))))
      `(markdown-list-face       ((,c (:foreground ,red))))
@@ -426,10 +416,9 @@
      `(org-checkbox              ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-todo ((,c (:inherit org-todo))))
      `(org-checkbox-statistics-done ((,c (:inherit org-done))))
-     ;; Custom org-mode faces
-     `(org-list-bullet           ((,c (:foreground ,cyan))))
-     `(message-header-name ((,c (:foreground ,green))))
-     ;; rpm-spec-mode
+     `(org-list-bullet           ((,c (:foreground ,cyan))))  ; custom
+     `(message-header-name       ((,c (:foreground ,green)))) ; custom
+     ;;; rpm-spec-mode
      `(rpm-spec-macro-face        ((,c (:foreground ,yellow))))
      `(rpm-spec-var-face          ((,c (:foreground ,violet))))
      `(rpm-spec-tag-face          ((,c (:foreground ,blue))))
@@ -438,7 +427,18 @@
      `(rpm-spec-dir-face          ((,c (:foreground ,green))))
      `(rpm-spec-doc-face          ((,c (:foreground ,orange))))
      `(rpm-spec-ghost-face        ((,c (:foreground ,(doom-lighten grey 0.2)))))
-     `(rpm-spec-section-face      ((,c (:foreground ,magenta)))))
+     `(rpm-spec-section-face      ((,c (:foreground ,magenta))))
+     ;;; typescript-mode
+     `(ts-object-property  ((,c (:inherit js2-object-property))))
+     ;;; web-mode
+     `(web-mode-doctype-face           ((,c (:foreground ,comments))))
+     `(web-mode-html-tag-face          ((,c (:foreground ,methods))))
+     `(web-mode-html-tag-bracket-face  ((,c (:foreground ,methods))))
+     `(web-mode-html-attr-name-face    ((,c (:foreground ,type))))
+     `(web-mode-html-entity-face       ((,c (:foreground ,cyan :italic ,italic))))
+     `(web-mode-block-control-face     ((,c (:foreground ,orange))))
+     ;;`(web-mode-html-tag-bracket-face  ((,c (:foreground ,operators))))
+     )
 
     (custom-theme-set-variables
      'doom-one
