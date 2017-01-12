@@ -47,7 +47,7 @@
       (green          "#98be65"))
 
   (let* ((bg             "#282c34")
-         (bg-d           (if window-system "#22252c" "#222222"))
+         (bg-d           (if window-system "#21242b" "#222222"))
          (fg             "#bbc2cf")
 
          (highlight      blue)
