@@ -109,6 +109,23 @@
      `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
      `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
      `(doom-folded-face       ((,c (:foreground ,comments :background ,black))))
+     ;; mode-line
+     `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white cyan) :bold ,bold))))
+     `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
+     `(doom-modeline-buffer-modified   ((,c (:foreground ,red))))
+     `(doom-modeline-buffer-major-mode ((,c (:foreground ,(if bold white blue) :bold ,bold))))
+     `(doom-modeline-highlight     ((,c (:foreground ,blue))))
+     `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue))))
+     `(doom-modeline-bar           ((,c (:background ,blue))))
+     `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
+     ;; doom neotree mods
+     `(doom-neotree-dir-face         ((,c (:foreground ,blue))))
+     `(doom-neotree-file-face        ((,c (:foreground ,fg)))) ;"#888888"
+     `(doom-neotree-hidden-file-face ((,c (:foreground ,grey))))
+     `(doom-neotree-text-file-face   ((,c (:foreground "#888888")))) ;"#888888"
+     `(doom-neotree-media-file-face  ((,c (:foreground ,grey))))
+     `(doom-neotree-data-file-face   ((,c (:foreground ,violet))))
+
      ;; Base
      `(bold                   ((,c (:weight ,(if bold 'bold 'normal) :color ,white))))
      `(italic                 ((,c (:slant  ,(if italic 'italic 'normal)))))
@@ -160,16 +177,6 @@
      `(mode-line-inactive          ((,c (:foreground ,modeline-fg-inactive
                                          :background ,(if doom-one-brighter-modeline bg modeline-bg-inactive)))))
      `(header-line                 ((,c (:inherit mode-line))))
-     ;; Custom (doom)
-     `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white cyan) :bold ,bold))))
-     `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
-     `(doom-modeline-buffer-modified   ((,c (:foreground ,red))))
-     `(doom-modeline-buffer-major-mode ((,c (:foreground ,(if bold white blue) :bold ,bold))))
-
-     `(doom-modeline-highlight     ((,c (:foreground ,blue))))
-     `(doom-modeline-panel         ((,c (:foreground ,black :background ,blue))))
-     `(doom-modeline-bar           ((,c (:background ,blue))))
-     `(doom-modeline-eldoc-bar     ((,c (:background ,yellow))))
 
      ;; Powerline/Spaceline
      `(spaceline-highlight-face    ((,c (:foreground ,blue))))
@@ -293,12 +300,6 @@
      `(neo-file-link-face          ((,c (:foreground ,fg))))
      `(neo-dir-link-face           ((,c (:foreground ,blue))))
      `(neo-expand-btn-face         ((,c (:foreground ,blue))))
-     `(doom-neotree-dir-face         ((,c (:foreground ,blue))))
-     `(doom-neotree-file-face        ((,c (:foreground ,fg)))) ;"#888888"
-     `(doom-neotree-hidden-file-face ((,c (:foreground ,grey))))
-     `(doom-neotree-text-file-face   ((,c (:foreground "#888888")))) ;"#888888"
-     `(doom-neotree-media-file-face  ((,c (:foreground ,grey))))
-     `(doom-neotree-data-file-face   ((,c (:foreground ,violet))))
      ;; pos-tip
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
