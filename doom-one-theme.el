@@ -108,6 +108,7 @@
      `(doom-flycheck-error    ((,c (:underline nil :foreground ,black :background ,red))))
      `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
      `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
+     `(doom-folded-face       ((,c (:foreground ,comments :background ,black))))
      ;; Base
      `(bold                   ((,c (:weight ,(if bold 'bold 'normal) :color ,white))))
      `(italic                 ((,c (:slant  ,(if italic 'italic 'normal)))))
@@ -277,9 +278,6 @@
      `(highlight-quoted-symbol                   ((,c (:foreground ,type))))
      `(highlight-quoted-quote                    ((,c (:foreground ,operators))))
      `(highlight-numbers-number                  ((,c (:foreground ,numbers))))
-     ;; hide-show
-     `(hs-face            ((,c (:foreground ,comments :background ,bg-d))))
-     `(hs-fringe-face     ((,c (:foreground ,blue))))
      ;; iedit
      `(iedit-occurrence            ((,c (:foreground ,magenta :bold ,bold :inverse-video t))))
      `(iedit-read-only-occurrence  ((,c (:inherit region))))
