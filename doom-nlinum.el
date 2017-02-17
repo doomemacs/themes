@@ -35,9 +35,17 @@
               (put-text-property 0 (length str) 'face 'doom-nlinum-highlight str)
               (setq doom--nlinum-hl-overlay ov))))))))
 
+(defun doom-nlinum-unhl-first-line ()
+  "Removes the hanging overlay hl-line sometimes leaves on the first line."
+  (ignore-errors
+    (dolist (overlay (overlays-at (point-min)))
+      (when (eq (overlay-get overlay 'face) 'hl-line)
+        (delete-overlay overlay)))))
+
 (eval-after-load "nlinum"
   (lambda ()
     (add-hook 'nlinum-mode-hook 'doom-nlinum-hl-hook)
+    (add-hook 'nlinum-mode-hook 'doom-nlinum-unhl-first-line)
     (unless (bound-and-true-p global-hl-line-mode)
       (add-hook 'nlinum-mode-hook 'hl-line-mode))))
 
