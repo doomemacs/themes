@@ -351,6 +351,8 @@
      `(reb-match-1 ((,c (:foreground ,magenta  :inverse-video t))))
      `(reb-match-2 ((,c (:foreground ,green    :inverse-video t))))
      `(reb-match-3 ((,c (:foreground ,yellow   :inverse-video t))))
+     ;; which-func
+     `(which-func                           ((,c (:foreground ,blue))))
      ;; which-key
      `(which-key-key-face                   ((,c (:foreground ,green))))
      `(which-key-group-description-face     ((,c (:foreground ,violet))))
