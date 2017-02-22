@@ -317,6 +317,9 @@
      `(neo-file-link-face          ((,c (:foreground ,fg))))
      `(neo-dir-link-face           ((,c (:foreground ,blue))))
      `(neo-expand-btn-face         ((,c (:foreground ,blue))))
+     ;; popup
+     `(popup-face                  ((,c (:inherit tooltip))))
+     `(popup-selection-face        ((,c (:background ,selection))))
      ;; pos-tip
      `(popup                       ((,c (:inherit tooltip))))
      `(popup-tip-face              ((,c (:inherit tooltip))))
