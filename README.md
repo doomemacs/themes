@@ -63,12 +63,19 @@ A comprehensive configuration example:
       )
 
 ;;; OPTIONAL
-;; brighter source buffers
-(add-hook 'find-file-hook 'doom-buffer-mode)
+;; brighter source buffers (that represent files)
+(add-hook 'find-file-hook 'doom-buffer-mode-maybe)
+;; if you use auto-revert-mode
+(add-hook 'after-revert-hook 'doom-buffer-mode-maybe)
+;; you can brighten other buffers (unconditionally) with:
+(add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)
+
 ;; brighter minibuffer when active
 (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
+
 ;; Enable custom neotree theme
 (require 'doom-neotree)    ; all-the-icons fonts must be installed!
+
 ;; Enable nlinum line highlighting
 (require 'doom-nlinum)     ; requires nlinum and hl-line-mode
 ```
@@ -83,22 +90,6 @@ To get the most out of these themes in org-mode, you need:
       org-fontify-done-headline t
       org-fontify-quote-and-verse-blocks t)
 ```
-
-### ediff and doom-buffer-mode
-
-The temporary buffers ediff spins up aren't dimmed. You can fix this
-with:
-
-`(add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)`
-
-### nlinum
-
-To highlight the current line number, you need `hl-line-mode` and
-`nlinum` installed. Then put this into your emacs.d:
-
-`(require 'doom-nlinum)`
-
-It will take effect as soon as nlinum-mode is activated.
 
 ### neotree
 

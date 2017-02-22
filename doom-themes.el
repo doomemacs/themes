@@ -176,6 +176,14 @@ linum) to their doom-theme variants."
           '(default hl-line linum org-hide))))
 
 ;;;###autoload
+(defun doom-buffer-mode-maybe ()
+  "Enable `doom-buffer-mode' in the current buffer, if it isn't already and the
+buffer represents a real file."
+  (when (and (not doom-buffer-mode)
+             buffer-file-name)
+    (doom-buffer-mode +1)))
+
+;;;###autoload
 (when (and (boundp 'custom-theme-load-path) load-file-name)
   (add-to-list 'custom-theme-load-path
                (file-name-as-directory (file-name-directory load-file-name))))
