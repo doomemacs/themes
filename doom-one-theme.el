@@ -195,6 +195,16 @@
      `(isearch-lazy-highlight-face ((,c (:background ,search-rest-bg))))
      `(yas-field-highlight-face    ((,c (:inherit match))))
 
+     ;; Terminal colors
+     `(term-color-black            ((,c (:foreground ,black :background ,black))))
+     `(term-color-red              ((,c (:foreground ,red :background ,red))))
+     `(term-color-green            ((,c (:foreground ,green :background ,green))))
+     `(term-color-yellow           ((,c (:foreground ,yellow :background ,yellow))))
+     `(term-color-blue             ((,c (:foreground ,blue :background ,blue))))
+     `(term-color-magenta          ((,c (:foreground ,magenta :background ,magenta))))
+     `(term-color-cyan             ((,c (:foreground ,cyan :background ,cyan))))
+     `(term-color-white            ((,c (:foreground ,white :background ,white))))
+
      ;; `window-divider'
      `(window-divider              ((,c (:foreground ,vertical-bar))))
      `(window-divider-first-pixel  ((,c (:foreground ,vertical-bar))))
