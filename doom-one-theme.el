@@ -189,6 +189,22 @@
      `(dired-directory             ((,c (:foreground ,orange))))
      `(dired-ignored               ((,c (:foreground ,comments))))
      `(dired-k-directory           ((,c (:foreground ,blue))))
+     ;; dired+
+     `(diredp-file-name            ((,c (:foreground ,white))))
+     `(diredp-dir-name             ((,c (:foreground ,white :bold ,bold))))
+     `(diredp-ignored-file-name    ((,c (:foreground ,grey))))
+     `(diredp-compressed-file-suffix ((,c (:foreground ,grey))))
+     `(diredp-symlink              ((,c (:foreground ,violet))))
+     `(diredp-dir-heading          ((,c (:foreground ,blue :bold ,bold))))
+     `(diredp-file-suffix          ((,c (:foreground ,violet))))
+     `(diredp-read-priv            ((,c (:foreground ,magenta))))
+     `(diredp-write-priv           ((,c (:foreground ,green))))
+     `(diredp-exec-priv            ((,c (:foreground ,yellow))))
+     `(diredp-rare-priv            ((,c (:foreground ,red :bold ,bold))))
+     `(diredp-dir-priv             ((,c (:foreground ,blue :bold ,bold))))
+     `(diredp-no-priv              ((,c (:foreground ,grey))))
+     `(diredp-number               ((,c (:foreground ,magenta))))
+     `(diredp-date-time            ((,c (:foreground ,blue))))
 
      ;; Search
      `(isearch                     ((,c (:background ,search-bg :foreground ,black :bold ,bold))))
