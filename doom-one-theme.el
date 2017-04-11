@@ -365,7 +365,7 @@
      `(swiper-match-face-3         ((,c (:background ,magenta :foreground ,black :bold ,bold))))
      `(swiper-match-face-4         ((,c (:background ,green   :foreground ,black :bold ,bold))))
      ;; stripe-buffer
-     `(stripe-highlight            ((,c (:background ,bg))))
+     `(stripe-highlight            ((,c (:background ,bg-d))))
      ;; Volatile highlights
      `(vhl/default-face            ((,c (:background ,grey-d))))
      ;; Rainbow delimiters
