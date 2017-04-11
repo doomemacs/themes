@@ -108,7 +108,6 @@
      `(doom-flycheck-error    ((,c (:underline nil :foreground ,black :background ,red))))
      `(doom-flycheck-warning  ((,c (:underline nil :foreground ,black :background ,yellow))))
      `(doom-flycheck-info     ((,c (:underline nil :foreground ,black :background ,green))))
-     `(doom-folded-face       ((,c (:foreground ,comments :background ,black))))
      ;; mode-line
      `(doom-modeline-buffer-path       ((,c (:foreground ,(if bold white cyan) :bold ,bold))))
      `(doom-modeline-buffer-project    ((,c (:foreground ,fg))))
