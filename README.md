@@ -4,16 +4,15 @@
 
 # doom-themes
 
-An opinionated UI plugin/pack of themes extracted from my [emacs.d],
-inspired by the One Dark/Light UI and syntax themes
-in [Atom](http://atom.io).
+An opinionated UI plugin/pack of themes extracted from my [emacs.d], inspired by
+the One Dark/Light UI and syntax themes in [Atom](http://atom.io).
 
 [See the screenshots.][screenshots]
 
 **Notes:**
 
-+ Uses `face-remapping-alist`, which won't work in terminal emacs (but
-  fails gracefully).
++ Uses `face-remapping-alist`, which won't work in terminal emacs (but fails
+  gracefully).
 + Tested mainly on Emacs 25.1+
 
 ## Features
@@ -21,10 +20,10 @@ in [Atom](http://atom.io).
 + An assortment of color schemes (feel free to request or contribute more)
 
 Optional features:
-+ Dimming of non-source buffers (and minibuffer) to visually
-  distinguish file buffers from temporary or special buffers.
-+ A [neotree] theme with configurable font icons (requires the fonts
-  in [all-the-icons] to be installed).
++ Dimming of non-source buffers (and minibuffer) to visually distinguish file
+  buffers from temporary or special buffers.
++ A [neotree] theme with configurable font icons (requires the fonts in
+  [all-the-icons] to be installed).
 + Highlighting of the current line number (requires `nlinum` and
   `hl-line-mode`).
 + _(soon)_ A mode-line config.
@@ -51,7 +50,6 @@ A comprehensive configuration example:
 
 ```emacs-lisp
 (require 'doom-themes)
-(load-theme 'doom-one t) ;; or doom-dark, etc.
 
 ;;; Settings (defaults)
 (setq doom-enable-bold t    ; if nil, bolding are universally disabled
@@ -59,8 +57,10 @@ A comprehensive configuration example:
 
       ;; doom-one specific settings
       doom-one-brighter-modeline nil
-      doom-one-brighter-comments nil
-      )
+      doom-one-brighter-comments nil)
+
+;; Load the theme (doom-one, doom-dark, etc.)
+(load-theme 'doom-one t)
 
 ;;; OPTIONAL
 ;; brighter source buffers (that represent files)
