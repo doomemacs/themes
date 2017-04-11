@@ -159,21 +159,22 @@ linum) to their doom-theme variants."
         (set-face-attribute 'fringe nil :background (face-attribute 'doom-default :background))
         ;; Update `doom-org-hide'
         (when (eq major-mode 'org-mode)
-          (set-face-attribute 'doom-org-hide nil
-                              :inherit 'org-hide
+          (set-face-attribute 'org-hide nil
                               :background (face-attribute 'doom-default :background)
                               :foreground (face-attribute 'doom-default :background)))
         (setq-local face-remapping-alist
                     (append face-remapping-alist
                             '((default doom-default)
                               (hl-line doom-hl-line)
-                              (linum doom-linum)
-                              (org-hide doom-org-hide)))))
+                              (linum doom-linum)))))
     (set-face-attribute 'fringe nil :background (face-attribute 'default :background))
     (put 'face-remapping-alist 'permanent-local nil)
+    (set-face-attribute 'org-hide nil
+                        :background (face-attribute 'default :background)
+                        :foreground (face-attribute 'default :background))
     ;; Remove face remaps
     (mapc (lambda (key) (setq-local face-remapping-alist (assq-delete-all key face-remapping-alist)))
-          '(default hl-line linum org-hide))))
+          '(default hl-line linum))))
 
 ;;;###autoload
 (defun doom-buffer-mode-maybe ()
