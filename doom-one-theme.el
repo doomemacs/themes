@@ -357,6 +357,8 @@
      `(tabbar-highlight            ((,c (:foreground ,fg :background ,bg-d :inverse-video t))))
      `(tabbar-button               ((,c (:foreground ,modeline-fg :background ,modeline-bg-inactive))))
      `(tabbar-button-highlight     ((,c (:inherit tabbar-button :inverse-video t))))
+     ;; smartparens
+     `(sp-pair-overlay-face        ((,c (:background ,region))))
      ;; swiper
      `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
      `(swiper-match-face-1         ((,c (:background ,black   :foreground ,grey))))
