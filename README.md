@@ -26,15 +26,16 @@ Optional features:
   [all-the-icons] to be installed).
 + Highlighting of the current line number (requires `nlinum` and
   `hl-line-mode`).
-+ _(soon)_ A mode-line config.
++ _(soon)_ A mode-line config. Until this is added, check
+  out [my mode-line configuration][mode-line] in my [emacs.d].
 
 Currently available colorschemes:
 + **doom-one**: inspired by Atom One Dark
++ **doom-one-light**: inspired by Atom One Light
 + **doom-molokai**: based on molokai
 
 Soon to come:
 + **doom-one-classic**: a more vibrant version of doom-one
-+ **doom-one-light**: inspired by Atom One Light
 + **doom-tron**: daylerees' [Tron Legacy][daylerees] colorscheme
 + **doom-peacock**: daylerees' [Peacock][daylerees] colorscheme
 + **doom-spacegrey**: [I'm sure you've heard of it][spacegrey]
@@ -65,9 +66,9 @@ A comprehensive configuration example:
 ;;; OPTIONAL
 ;; brighter source buffers (that represent files)
 (add-hook 'find-file-hook 'doom-buffer-mode-maybe)
-;; if you use auto-revert-mode
+;; ...if you use auto-revert-mode
 (add-hook 'after-revert-hook 'doom-buffer-mode-maybe)
-;; you can brighten other buffers (unconditionally) with:
+;; And you can brighten other buffers (unconditionally) with:
 (add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)
 
 ;; brighter minibuffer when active
@@ -78,72 +79,24 @@ A comprehensive configuration example:
 
 ;; Enable nlinum line highlighting
 (require 'doom-nlinum)     ; requires nlinum and hl-line-mode
-```
 
-## Integrations
-### Org-mode
-
-To get the most out of these themes in org-mode, you need:
-
-``` emacs-lisp
+;; Necessary for org-mode
 (setq org-fontify-whole-heading-line t
       org-fontify-done-headline t
       org-fontify-quote-and-verse-blocks t)
 ```
 
-### neotree
+[Check the wiki for details on customizing doom-themes][wiki].
 
-`(require 'doom-neotree)`
+## Contributing
 
-Modifies [neotree] to use icons for folders and files (as shown in the
-[screenshots]).
+Contributions in the way of bug fixes, additional themes, plugin support
+requests or code reviews are welcome and encouraged.
 
-Note:
-+ This disables `neo-vc-integration`, because the two are
-  incompatible.
-+ `doom-neotree-enable-file-icons` (default: `t`)
-+ `doom-neotree-enable-folder-icons` (default: `t`)
-+ `doom-neotree-enable-chevron-icons` (default: `t`)
-+ `doom-neotree-file-icons` determines what style of icons to use:
-  + `t`: use the wide range of [all-the-icons] file type icons.
-  + `'simple`: use a minimialistic set of file icons (most akin to
-    Atom's default iconset).
-  + `nil`: only use the folder icon for directories. No icons for files.
-+ Customize the icons with:
-  + `doom-neotree-enable-type-colors` (default: `t`): if non-nil, and
-    `doom-neotree-file-icons` is `simple`, then color files/folders by
-    category (hidden, media, documentation, data or build file). See
-    `doom-neotree-file-face-re-alist` to configure this, and what face
-    to assign each file type.
-  + `doom-neotree-project-size` (default: `1.4`) The `:height` to
-    display the project icons (at the top) at.
-  + `doom-neotree-folder-size` (default: `1.05`) The `:height` to
-    display folder icons at.
-  + `doom-neotree-chevron-size` (default: `0.8`) The `:height` to
-    display chevron icons at.
-  + `doom-neotree-line-spacing` (default: `2`): line-spacing to use in
-    the neotree buffer.
-  + `doom-neotree-enable-variable-pitch` (default: `t`): if non-nil,
-    file/folder labels will have the `variable-pitch` face applied to
-    them.
-+ These faces can be customized:
-  + `doom-neotree-dir-face`: face for folders
-  + `doom-neotree-file-face`: face for files
-+ If `doom-neotree-enable-type-colors` is non-nil, file and folder
-  entries will be colored with these faces, depending on their "type":
-  + `doom-neotree-hidden-file-face` (dotfiles, *.o, *.pyc, *.elc, etc)
-  + `doom-neotree-text-file-face` (READMEs, LICENSEs, org, md, etc.)
-  + `doom-neotree-media-file-face` (images, video, audio, archives, etc.)
-  + `doom-neotree-data-file-face` (json, xml, toml, yaml, etc.)
-
-### mode-line config
-
-The custom mode-line isn't part of doom-themes yet, but will be soon.
-
-In the meantime, check out [my mode-line configuration][mode-line] in
-my [emacs.d].
+[Don't hesitate to report bugs and request features][issues]!
 
 
+[issues]: https://github.com/hlissner/emacs-doom-theme/issues
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [spacegrey]: http://kkga.github.io/spacegray/
 [daylerees]: http://daylerees.github.io/
@@ -151,4 +104,5 @@ my [emacs.d].
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/core/core-modeline.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [screenshots]: https://github.com/hlissner/emacs-doom-theme/tree/screenshots
-[config]: https://github.com/hlissner/.emacs.d/blob/master/core/core-ui.el#L91
+[config]: https://github.com/hlissner/.emacs.d/tree/master/modules/ui/doom-modeline
+[wiki]: https://github.com/hlissner/emacs-doom-theme/wiki
