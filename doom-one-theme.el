@@ -128,8 +128,6 @@
    `(vertical-border
      ((((type graphic)) :foreground ,black  :background ,black)
       (t                :foreground "black" :background "black")))
-   `(show-paren-match       ((,c (:foreground ,red :background ,black :bold ,bold))))
-   `(show-paren-mismatch    ((,c (:foreground ,black :background ,red :bold ,bold))))
 
    `(font-lock-builtin-face           ((,c (:foreground ,builtin))))
    `(font-lock-comment-face           ((,c (:foreground ,comments))))
@@ -428,12 +426,15 @@
    `(powerline-inactive2         ((,c (:inherit mode-line-inactive))))
 
    ;; rainbow-delimiters
-   `(rainbow-delimiters-depth-1-face   ((,c (:foreground ,blue))))
-   `(rainbow-delimiters-depth-2-face   ((,c (:foreground ,magenta))))
-   `(rainbow-delimiters-depth-3-face   ((,c (:foreground ,green))))
-   `(rainbow-delimiters-depth-4-face   ((,c (:foreground ,orange))))
-   `(rainbow-delimiters-depth-5-face   ((,c (:foreground ,violet))))
-   `(rainbow-delimiters-unmatched-face ((,c (:foreground ,red :bold ,bold :inverse-video t))))
+   `(rainbow-delimiters-depth-1-face    ((,c (:foreground ,blue))))
+   `(rainbow-delimiters-depth-2-face    ((,c (:foreground ,magenta))))
+   `(rainbow-delimiters-depth-3-face    ((,c (:foreground ,green))))
+   `(rainbow-delimiters-depth-4-face    ((,c (:foreground ,orange))))
+   `(rainbow-delimiters-depth-5-face    ((,c (:foreground ,violet))))
+   `(rainbow-delimiters-depth-6-face    ((,c (:foreground ,yellow))))
+   `(rainbow-delimiters-depth-7-face    ((,c (:foreground ,teal))))
+   `(rainbow-delimiters-unmatched-face  ((,c (:foreground ,red :bold ,bold :inverse-video t))))
+   `(rainbow-delimiters-mismatched-face ((,c (:inherit rainbow-delimiters-unmatched-face))))
 
    ;; re-builder
    `(reb-match-0 ((,c (:foreground ,orange   :inverse-video t))))
@@ -443,6 +444,10 @@
 
    ;; smartparens
    `(sp-pair-overlay-face        ((,c (:background ,region))))
+
+   ;; show-paren
+   `(show-paren-match       ((,c (:foreground ,red   :background ,black :bold ,bold))))
+   `(show-paren-mismatch    ((,c (:foreground ,black :background ,red   :bold ,bold))))
 
    ;; spaceline
    `(spaceline-highlight-face    ((,c (:foreground ,blue))))
