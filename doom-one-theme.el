@@ -427,34 +427,6 @@
    `(powerline-inactive1         ((,c (:inherit mode-line-inactive))))
    `(powerline-inactive2         ((,c (:inherit mode-line-inactive))))
 
-   ;; spaceline
-   `(spaceline-highlight-face    ((,c (:foreground ,blue))))
-
-   ;; tabbar
-   `(tabbar-default              ((,c (:foreground ,bg-alt :background ,bg-alt :height 0.9))))
-   `(tabbar-modified             ((,c (:inherit tabbar-default :foreground ,red :bold ,bold))))
-   `(tabbar-unselected           ((,c (:inherit tabbar-default :foreground ,grey))))
-   `(tabbar-selected             ((,c (:inherit tabbar-default :foreground ,fg :background ,bg :bold ,bold))))
-   `(tabbar-selected-modified    ((,c (:inherit tabbar-selected :foreground ,green))))
-   `(tabbar-highlight            ((,c (:foreground ,fg :background ,bg-alt :inverse-video t))))
-   `(tabbar-button
-     ((((type graphic)) :background ,bg-alt    :foreground ,fg)
-      (t                :background ,dark-grey :foreground ,fg)))
-   `(tabbar-button-highlight     ((,c (:inherit tabbar-button :inverse-video t))))
-
-   ;; smartparens
-   `(sp-pair-overlay-face        ((,c (:background ,region))))
-
-   ;; swiper
-   `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
-   `(swiper-match-face-1         ((,c (:background ,black   :foreground ,light-grey))))
-   `(swiper-match-face-2         ((,c (:background ,orange  :foreground ,black :bold ,bold))))
-   `(swiper-match-face-3         ((,c (:background ,magenta :foreground ,black :bold ,bold))))
-   `(swiper-match-face-4         ((,c (:background ,green   :foreground ,black :bold ,bold))))
-
-   ;; stripe-buffer
-   `(stripe-highlight            ((,c (:background ,bg-alt))))
-
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face   ((,c (:foreground ,blue))))
    `(rainbow-delimiters-depth-2-face   ((,c (:foreground ,magenta))))
@@ -468,6 +440,37 @@
    `(reb-match-1 ((,c (:foreground ,magenta  :inverse-video t))))
    `(reb-match-2 ((,c (:foreground ,green    :inverse-video t))))
    `(reb-match-3 ((,c (:foreground ,yellow   :inverse-video t))))
+
+   ;; smartparens
+   `(sp-pair-overlay-face        ((,c (:background ,region))))
+
+   ;; spaceline
+   `(spaceline-highlight-face    ((,c (:foreground ,blue))))
+
+   ;; stripe-buffer
+   `(stripe-highlight            ((,c (:background ,bg-alt))))
+
+   ;; swiper
+   `(swiper-line-face            ((,c (:background ,blue    :foreground ,black))))
+   `(swiper-match-face-1         ((,c (:background ,black   :foreground ,light-grey))))
+   `(swiper-match-face-2         ((,c (:background ,orange  :foreground ,black :bold ,bold))))
+   `(swiper-match-face-3         ((,c (:background ,magenta :foreground ,black :bold ,bold))))
+   `(swiper-match-face-4         ((,c (:background ,green   :foreground ,black :bold ,bold))))
+
+   ;; tabbar
+   `(tabbar-default              ((,c (:foreground ,bg-alt :background ,bg-alt :height 0.9))))
+   `(tabbar-modified             ((,c (:inherit tabbar-default :foreground ,red :bold ,bold))))
+   `(tabbar-unselected           ((,c (:inherit tabbar-default :foreground ,grey))))
+   `(tabbar-selected             ((,c (:inherit tabbar-default :foreground ,fg :background ,bg :bold ,bold))))
+   `(tabbar-selected-modified    ((,c (:inherit tabbar-selected :foreground ,green))))
+   `(tabbar-highlight            ((,c (:foreground ,fg :background ,bg-alt :inverse-video t))))
+   `(tabbar-button
+     ((((type graphic)) :background ,bg-alt    :foreground ,fg)
+      (t                :background ,dark-grey :foreground ,fg)))
+   `(tabbar-button-highlight     ((,c (:inherit tabbar-button :inverse-video t))))
+
+   ;; volatile-highlights
+   `(vhl/default-face            ((,c (:background ,grey))))
 
    ;; wgrep
    `(wgrep-face ((,c (:background ,dark-grey))))
@@ -493,12 +496,9 @@
    `(wg-divider-face             ((,c (:foreground ,grey))))
    `(wg-brace-face               ((,c (:foreground ,blue))))
 
-   ;; volatile-highlights
-   `(vhl/default-face            ((,c (:background ,grey))))
-
 
    ;; --- major-mode faces -------------------
-   ;; (css|scss)-mode
+   ;; css-mode / scss-mode
    `(css-proprietary-property ((,c (:foreground ,orange))))
    `(css-property             ((,c (:foreground ,green))))
    `(css-selector             ((,c (:foreground ,blue))))
@@ -576,6 +576,9 @@
    `(org-checkbox-statistics-done ((,c (:inherit org-done))))
    `(message-header-name       ((,c (:foreground ,green)))) ; custom
 
+   ;; typescript-mode
+   `(ts-object-property         ((,c (:inherit js2-object-property))))
+
    ;; rpm-spec-mode
    `(rpm-spec-macro-face        ((,c (:foreground ,yellow))))
    `(rpm-spec-var-face          ((,c (:foreground ,violet))))
@@ -586,9 +589,6 @@
    `(rpm-spec-doc-face          ((,c (:foreground ,orange))))
    `(rpm-spec-ghost-face        ((,c (:foreground ,(doom-lighten grey 0.2)))))
    `(rpm-spec-section-face      ((,c (:foreground ,magenta))))
-
-   ;; typescript-mode
-   `(ts-object-property         ((,c (:inherit js2-object-property))))
 
    ;; web-mode
    `(web-mode-doctype-face           ((,c (:foreground ,comments))))
