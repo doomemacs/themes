@@ -102,39 +102,43 @@
 
 ;;
 (defcustom doom-enable-bold t
-  "If nil, bold will remove removed from all faces."
+  "If nil, bold will be disabled across all faces."
   :group 'doom-themes
   :type 'boolean)
 
 (defcustom doom-enable-italic t
-  "If nil, italics will remove removed from all faces."
+  "If nil, italics will be disabled across all faces."
   :group 'doom-themes
   :type 'boolean)
 
 (defvar doom--colors nil
-  "An alist, storing the colors of the currently active doom theme.")
+  "An alist of the color definitions for the currently active doom theme.")
 
 
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized
 (defun doom-name-to-rgb (color &optional frame)
-  "TODO"
+  "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
+for FRAME (defaults to the current frame)."
   (mapcar (lambda (x) (/ x (float (car (color-values "#ffffff")))))
           (color-values color frame)))
 
 (defun doom-blend (color1 color2 alpha)
-  "TODO"
+  "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
+float between 0 and 1)"
   (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
          (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
                     (doom-name-to-rgb color1)
                     (doom-name-to-rgb color2))))
 
 (defun doom-darken (color alpha)
-  "TODO"
+  "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
+0 and 1)."
   (doom-blend color "#000000" (- 1 alpha)))
 
 (defun doom-lighten (color alpha)
-  "TODO"
+  "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
+between 0 and 1)."
   (doom-blend color "#FFFFFF" (- 1 alpha)))
 
 (defun doom--face-remap-add-relative (orig-fn &rest args)
@@ -155,7 +159,7 @@ faces."
           (bold   doom-enable-bold)
           (italic doom-enable-italic)
           ,@defs)
-     (setq doom-colors ',defs)
+     (setq doom--colors ',defs)
      (deftheme ,name ,docstring)
      (custom-theme-set-faces ',name ,@faces)
      ,(when vars `(custom-theme-set-variables ',name ,@vars))
@@ -163,12 +167,12 @@ faces."
 
 ;;;###autoload
 (defun doom-color (name)
-  "TODO"
-  (assq name doom--colors))
+  "Retrieve a specific color named NAME (a symbol) from the current DOOM theme."
+  (nth 1 (assq name doom--colors)))
 
 ;;;###autoload
 (defun doom-brighten-minibuffer ()
-  "TODO"
+  "Highlight the minibuffer whenever it is in use."
   (with-selected-window (minibuffer-window)
     (setq-local face-remapping-alist
                 (append face-remapping-alist '((default doom-minibuffer-active))))))
