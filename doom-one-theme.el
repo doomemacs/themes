@@ -23,10 +23,10 @@
    (bg-alt     "#21242b")
    (fg         "#bbc2cf")
    (fg-alt     "#BBBBBB")
-   (black      (if window-system "#1B2229"))
-   (dark-grey  (if window-system "#23272e" "#262626"))
+   (black      "#1B2229")
+   (dark-grey  (if gui "#23272e" "#262626"))
    (grey       "#3B3F46")
-   (light-grey (if window-system "#5B6268" "#525252"))
+   (light-grey (if gui "#5B6268" "#525252"))
    (white      "#DFDFDF")
    (red        "#ff6c6b")
    (orange     "#da8548")
@@ -69,7 +69,11 @@
    (vc-added       green)
    (vc-deleted     red))
 
-  ;; --- faces ------------------------------
+
+  ;;
+  ;; doom-one faces
+  ;;
+
   (`(doom-default
      ((((type graphic)) :inherit default :background ,bg)
       (t                :inherit default)))
@@ -103,7 +107,6 @@
 
    `(default
       ((((class color) (type graphic)) :background ,bg-alt :foreground ,fg)
-       (((class color) (type tty)) :background "black")
        (t :foreground ,fg)))
    `(fringe                 ((,c (:inherit default :foreground ,comments))))
    `(region                 ((,c (:background ,region))))
@@ -122,7 +125,9 @@
    `(lazy-highlight         ((,c (:background ,dark-blue :foreground ,white))))
    `(match                  ((,c (:foreground ,green :background ,black :bold ,bold))))
    `(trailing-whitespace    ((,c (:background ,red))))
-   `(vertical-border        ((,c (:foreground ,vertical-bar :background ,vertical-bar))))
+   `(vertical-border
+     ((((type graphic)) :foreground ,black  :background ,black)
+      (t                :foreground "black" :background "black")))
    `(show-paren-match       ((,c (:foreground ,red :background ,black :bold ,bold))))
    `(show-paren-mismatch    ((,c (:foreground ,black :background ,red :bold ,bold))))
 
@@ -146,14 +151,14 @@
 
    `(mode-line
      ((((type graphic)) :background ,(if doom-one-brighter-modeline bg bg-alt))
-      (t                :background ,black)))
+      (t                :background "brightblack")))
    `(mode-line-inactive
      ((((type graphic))
        :foreground ,light-grey
        :background ,(if doom-one-brighter-modeline bg dark-grey))
       (t
        :foreground ,grey
-       :background ,black)))
+       :background "black")))
    `(header-line ((,c (:inherit mode-line))))
 
    `(linum
@@ -312,11 +317,17 @@
    `(iedit-read-only-occurrence  ((,c (:inherit region))))
 
    ;; ivy
-   `(ivy-current-match           ((,c (:background ,dark-blue))))
-   `(ivy-minibuffer-match-face-1 ((,c (:background ,black :foreground ,(doom-lighten grey 0.1)))))
-   `(ivy-minibuffer-match-face-2 ((,c (:background ,black :foreground ,magenta :bold ,bold))))
-   `(ivy-minibuffer-match-face-3 ((,c (:background ,black :foreground ,green   :bold ,bold))))
-   `(ivy-minibuffer-match-face-4 ((,c (:background ,black :foreground ,yellow  :bold ,bold))))
+   `(ivy-current-match
+     ((((type graphic)) :background ,dark-blue)
+      (((class color) (min-colors 16)) :background "brightblack")
+      (t :background "black")))
+   `(ivy-minibuffer-match-face-1
+     ((((type graphic)) :background ,black :foreground ,(doom-lighten grey 0.1) :bold ,bold)
+      (((class color) (min-colors 16)) :background "black" :foreground "brightblack" :bold ,bold)
+      (t :background "black" :foreground "black" :bold ,bold)))
+   `(ivy-minibuffer-match-face-2 ((,c (:inherit ivy-minibuffer-match-face-1 :foreground ,magenta :bold ,bold))))
+   `(ivy-minibuffer-match-face-3 ((,c (:inherit ivy-minibuffer-match-face-1 :foreground ,green   :bold ,bold))))
+   `(ivy-minibuffer-match-face-4 ((,c (:inherit ivy-minibuffer-match-face-1 :foreground ,yellow  :bold ,bold))))
    `(ivy-virtual                 ((,c (:foreground ,fg))))
 
    ;; jabber
@@ -533,7 +544,11 @@
    ;;`(web-mode-html-tag-bracket-face  ((,c (:foreground ,operators))))))
    )
 
-  ;; --- variables --------------------------
+
+  ;;
+  ;; Settings
+  ;;
+
   (`(vc-annotate-color-map
      '((20 .  ,green)
        (40 .  ,(doom-blend yellow green (/ 1.0 3)))

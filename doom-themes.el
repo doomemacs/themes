@@ -151,6 +151,7 @@ faces."
   "Define a DOOM theme."
   (declare (doc-string 2))
   `(let* ((c '((class color) (min-colors 89)))
+          (gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
           (bold   doom-enable-bold)
           (italic doom-enable-italic)
           ,@defs)
