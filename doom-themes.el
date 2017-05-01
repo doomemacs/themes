@@ -118,23 +118,29 @@
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized
 (defun doom-name-to-rgb (color &optional frame)
+  "TODO"
   (mapcar (lambda (x) (/ x (float (car (color-values "#ffffff")))))
           (color-values color frame)))
 
 (defun doom-blend (color1 color2 alpha)
+  "TODO"
   (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
          (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
                     (doom-name-to-rgb color1)
                     (doom-name-to-rgb color2))))
 
 (defun doom-darken (color alpha)
+  "TODO"
   (doom-blend color "#000000" (- 1 alpha)))
 
 (defun doom-lighten (color alpha)
+  "TODO"
   (doom-blend color "#FFFFFF" (- 1 alpha)))
 
 (defun doom--face-remap-add-relative (orig-fn &rest args)
-  "Advice function "
+  "Ensure that other themes, functions or packages that use
+`face-remap-add-relative' (like `text-scale-set') don't undo doom's overriden
+faces."
   (when (and (display-graphic-p) doom-buffer-mode)
     (let ((remap (assq (nth 0 args) face-remapping-alist)))
       (when remap (setf (nth 0 args) (cadr remap)))))
@@ -161,6 +167,7 @@
 
 ;;;###autoload
 (defun doom-brighten-minibuffer ()
+  "TODO"
   (with-selected-window (minibuffer-window)
     (setq-local face-remapping-alist
                 (append face-remapping-alist '((default doom-minibuffer-active))))))
