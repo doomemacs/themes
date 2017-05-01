@@ -12,9 +12,6 @@
   :group 'doom-one-theme
   :type 'boolean)
 
-(define-obsolete-variable-alias 'doom-enable-brighter-comments 'doom-one-brighter-comments "1.1.5"
-  "If non-nil, comments are brighter and easier to see.")
-
 (defcustom doom-one-brighter-comments nil
   "If non-nil, comments are brighter and easier to see."
   :group 'doom-one-theme
