@@ -111,6 +111,9 @@
   :group 'doom-themes
   :type 'boolean)
 
+(defvar doom--colors nil
+  "An alist, storing the colors of the currently active doom theme.")
+
 
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized
@@ -137,6 +140,24 @@
       (when remap (setf (nth 0 args) (cadr remap)))))
   (apply orig-fn args))
 (advice-add 'face-remap-add-relative :around 'doom--face-remap-add-relative)
+
+(defmacro def-doom-theme (name docstring defs faces &optional vars)
+  "Define a DOOM theme."
+  (declare (doc-string 2))
+  `(let* ((c '((class color) (min-colors 89)))
+          (bold   doom-enable-bold)
+          (italic doom-enable-italic)
+          ,@defs)
+     (setq doom-colors ',defs)
+     (deftheme ,name ,docstring)
+     (custom-theme-set-faces ',name ,@faces)
+     ,(when vars `(custom-theme-set-variables ',name ,@vars))
+     (provide-theme ',name)))
+
+;;;###autoload
+(defun doom-color (name)
+  "TODO"
+  (assq name doom--colors))
 
 ;;;###autoload
 (defun doom-brighten-minibuffer ()
