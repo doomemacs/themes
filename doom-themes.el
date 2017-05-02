@@ -126,10 +126,11 @@ for FRAME (defaults to the current frame)."
 (defun doom-blend (color1 color2 alpha)
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
-  (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
-         (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
-                    (doom-name-to-rgb color1)
-                    (doom-name-to-rgb color2))))
+  (when (and color1 color2)
+    (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
+           (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
+                      (doom-name-to-rgb color1)
+                      (doom-name-to-rgb color2)))))
 
 (defun doom-darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
