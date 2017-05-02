@@ -155,16 +155,33 @@ faces."
 (defmacro def-doom-theme (name docstring defs faces &optional vars)
   "Define a DOOM theme."
   (declare (doc-string 2))
-  `(let* ((c '((class color) (min-colors 89)))
-          (gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
-          (bold   doom-enable-bold)
-          (italic doom-enable-italic)
-          ,@defs)
-     (setq doom--colors ',defs)
-     (deftheme ,name ,docstring)
-     (custom-theme-set-faces ',name ,@faces)
-     ,(when vars `(custom-theme-set-variables ',name ,@vars))
-     (provide-theme ',name)))
+  ;; FIXME Refactor me!
+  (let* ((cls '((class color) (min-colors 89)))
+         (defs
+           (mapcar (lambda (cl)
+                     (if (> (length cl) 2)
+                         (list (car cl) `(if gui ,(nth 1 cl) ,(nth 2 cl)))
+                       cl))
+                   defs))
+         (faces
+          (mapcar (lambda (spec)
+                    `(list ',(car spec)
+                           ,(if (listp (cadr spec))
+                                spec
+                              `(list (list ',cls (list ,@(cdr spec)))))))
+                  faces)))
+    `(let* ((gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
+            (bold   doom-enable-bold)
+            (italic doom-enable-italic)
+            ,@defs)
+       (setq doom--colors ',defs)
+       (deftheme ,name ,docstring)
+       (custom-theme-set-faces ',name ,@faces)
+       ,(when vars
+          `(custom-theme-set-variables
+            ',name
+            ,@(mapcar (lambda (var) `(list ',(car var) ,(cadr var))) vars)))
+       (provide-theme ',name))))
 
 ;;;###autoload
 (defun doom-color (name)
