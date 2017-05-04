@@ -1,5 +1,8 @@
 ;;; doom-neotree.el
 
+(unless doom--inhibit-warning
+  (message "doom-themes: loading `doom-neotree' directly is obsolete, call `doom-themes-nlinum-config' instead"))
+
 (defgroup doom-neotree nil
   "Options for doom's neotree theme"
   :group 'doom-themes)

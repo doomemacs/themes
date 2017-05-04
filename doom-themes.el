@@ -58,7 +58,7 @@
 ;; Example configuration:
 ;;
 ;;   (require 'doom-themes)
-;;   (load-theme 'doom-one t) ;; or doom-dark, etc.
+;;   (load-theme 'doom-one t) ;; or doom-molokai, etc.
 ;;
 ;;   ;;; OPTIONAL
 ;;   ;; brighter source buffers
@@ -66,7 +66,7 @@
 ;;   ;; brighter minibuffer when active
 ;;   (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
 ;;   ;; Custom neotree theme
-;;   (require 'doom-neotree)
+;;   (doom-themes-neotree-config)
 ;;
 ;;; Code:
 
@@ -97,7 +97,8 @@
   :group 'doom-themes)
 
 (defface doom-org-hide '((t (:inherit org-hide)))
-  "A face for hidden elements in org-mode. Only active if `doom-buffer-mode' is active."
+  "A face for hidden elements in org-mode. Only active if `doom-buffer-mode' is
+active."
   :group 'doom-themes)
 
 ;;
@@ -111,8 +112,9 @@
   :group 'doom-themes
   :type 'boolean)
 
-(defvar doom--colors nil
-  "An alist of the color definitions for the currently active doom theme.")
+;;
+(defvar doom--colors nil)
+(defvar doom--inhibit-warning nil)
 
 
 ;; Color helper functions
@@ -152,24 +154,17 @@ faces."
   (apply orig-fn args))
 (advice-add 'face-remap-add-relative :around 'doom--face-remap-add-relative)
 
-(defmacro def-doom-theme (name docstring defs faces &optional vars)
+(defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme."
   (declare (doc-string 2))
-  ;; FIXME Refactor me!
-  (let* ((cls '((class color) (min-colors 89)))
-         (defs
-           (mapcar (lambda (cl)
-                     (if (> (length cl) 2)
-                         (list (car cl) `(if gui ,(nth 1 cl) ,(nth 2 cl)))
-                       cl))
-                   defs))
-         (faces
-          (mapcar (lambda (spec)
-                    `(list ',(car spec)
-                           ,(if (listp (cadr spec))
-                                spec
-                              `(list (list ',cls (list ,@(cdr spec)))))))
-                  faces)))
+  (load "doom-themes-common" nil t)
+  (let ((faces (doom-common-faces extra-faces))
+        (vars (doom-common-variables extra-vars))
+        (defs (mapcar (lambda (cl)
+                        (if (> (length cl) 2)
+                            (list (car cl) `(if gui ,(nth 1 cl) ,(nth 2 cl)))
+                          cl))
+                      defs)))
     `(let* ((gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
             (bold   doom-enable-bold)
             (italic doom-enable-italic)
@@ -177,10 +172,7 @@ faces."
        (setq doom--colors ',defs)
        (deftheme ,name ,docstring)
        (custom-theme-set-faces ',name ,@faces)
-       ,(when vars
-          `(custom-theme-set-variables
-            ',name
-            ,@(mapcar (lambda (var) `(list ',(car var) ,(cadr var))) vars)))
+       ,(if vars `(custom-theme-set-variables ',name ,@vars))
        (provide-theme ',name))))
 
 ;;;###autoload
@@ -195,31 +187,47 @@ faces."
     (setq-local face-remapping-alist
                 (append face-remapping-alist '((default doom-minibuffer-active))))))
 
+(defun doom-themes-current-bg (orig-fn &rest args)
+  (if doom-buffer-mode
+      (face-background 'doom-default)
+    (apply orig-fn args)))
+(advice-add #'org-find-invisible-foreground :around #'doom-themes-current-bg)
+
 ;;;###autoload
 (define-minor-mode doom-buffer-mode
   "Brighten source buffers by remapping common faces (like default, hl-line and
 linum) to their doom-theme variants."
   :lighter " doom"
   :init-value nil
-  (if doom-buffer-mode
-      (progn
-        ;; Don't reset remapped faces on `kill-all-local-variables'
-        (make-variable-buffer-local 'face-remapping-alist)
-        (put 'face-remapping-alist 'permanent-local t)
-        ;; Brighten up file buffers; darken special and popup buffers
-        (set-face-attribute 'fringe nil :background (face-attribute 'doom-default :background))
-        ;; Update `doom-org-hide'
-        (setq-local face-remapping-alist
-                    (append face-remapping-alist
-                            '((default doom-default)
-                              (hl-line doom-hl-line)
-                              (linum doom-linum)
-                              (org-hide doom-org-hide)))))
-    (set-face-attribute 'fringe nil :background (face-attribute 'default :background))
-    (put 'face-remapping-alist 'permanent-local nil)
-    ;; Remove face remaps
-    (mapc (lambda (key) (setq-local face-remapping-alist (assq-delete-all key face-remapping-alist)))
-          '(default hl-line linum org-hide))))
+  (let ((bg (face-background (if doom-buffer-mode 'doom-default 'default))))
+    ;; Don't reset remapped faces on `kill-all-local-variables'
+    (put (make-variable-buffer-local 'face-remapping-alist)
+         'permanent-local doom-buffer-mode)
+    (set-face-background 'fringe bg)
+    (when (derived-mode-p 'org-mode)
+      (set-face-foreground 'org-hide bg))
+    (if doom-buffer-mode
+        (setq face-remapping-alist
+              (append face-remapping-alist
+                      '((default doom-default)
+                        (hl-line doom-hl-line)
+                        (linum doom-linum))))
+      (mapc (lambda (key)
+              (setq face-remapping-alist
+                    (assq-delete-all key face-remapping-alist)))
+            '(default hl-line linum)))))
+
+;;;###autoload
+(defun doom-themes-neotree-config ()
+  "Install DOOM neotree configuration."
+  (let ((doom--inhibit-warning t))
+    (require 'doom-neotree)))
+
+;;;###autoload
+(defun doom-themes-nlinum-config ()
+  "Install DOOM nlinum configuration."
+  (let ((doom--inhibit-warning t))
+    (require 'doom-nlinum)))
 
 ;;;###autoload
 (defun doom-buffer-mode-maybe ()

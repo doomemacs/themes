@@ -1,5 +1,8 @@
 ;;; doom-nlinum.el
 
+(unless doom--inhibit-warning
+  (message "doom-themes: loading doom-nlinum directly is obsolete, call `doom-themes-nlinum-config' instead"))
+
 (defvar doom--nlinum-hl-overlay nil)
 (defvar doom--nlinum-hl-line 0)
 
