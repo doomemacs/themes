@@ -75,10 +75,10 @@ A comprehensive configuration example:
 (add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
 
 ;; Enable custom neotree theme
-(require 'doom-neotree)    ; all-the-icons fonts must be installed!
+(doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
 
 ;; Enable nlinum line highlighting
-(require 'doom-nlinum)     ; requires nlinum and hl-line-mode
+(doom-themes-nlinum-config)   ; requires nlinum and hl-line-mode
 
 ;; Necessary for org-mode
 (setq org-fontify-whole-heading-line t
