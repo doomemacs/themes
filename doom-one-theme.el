@@ -68,7 +68,7 @@
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (if doom-one-brighter-modeline bg bg-alt)    "brightblack")
+   (modeline-bg     (if doom-one-brighter-modeline bg bg-alt)        "brightblack")
    (modeline-bg-alt (if doom-one-brighter-modeline bg-alt dark-grey) "black")
    (modeline-fg     nil)
    (modeline-fg-alt light-grey grey))
@@ -77,8 +77,7 @@
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (linum :foreground (if gui (doom-lighten grey 0.05) light-grey)
-          :distant-foreground nil
+   (linum :foreground (if gui (doom-lighten grey 0.1) light-grey)
           :background bg-alt
           :bold nil)
    (doom-nlinum-highlight :foreground (doom-darken white 0.25) :distant-foreground nil :bold nil)

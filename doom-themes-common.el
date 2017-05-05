@@ -106,7 +106,7 @@
      (doom-hl-line :background current-line)
 
      ;; linum
-     (linum :foreground fg-alt :background bg-alt :bold nil :distance-foreground nil)
+     (linum :foreground fg-alt :background bg-alt :bold nil :distant-foreground nil)
      (doom-linum :inherit 'linum :background bg)
 
      ;; term
@@ -120,7 +120,7 @@
      (term-color-white   :background white   :foreground white)
 
      ;; window-divider
-     (window-divider             :foreground vertical-bar)
+     (window-divider :foreground vertical-bar)
      (window-divider-first-pixel  :inherit 'window-divider)
      (window-divider-last-pixel   :inherit 'window-divider)
 
@@ -128,8 +128,8 @@
      ;; --- plugin faces -----------------------
      ;; avy
      (avy-lead-face
-      `((((background dark))  (:background ,highlight :foreground ,black :distance-foreground ,white))
-        (((background light)) (:background ,highlight :foreground ,white :distance-foreground ,black))))
+      `((((background dark))  (:background ,highlight :foreground ,black :distant-foreground ,white))
+        (((background light)) (:background ,highlight :foreground ,white :distant-foreground ,black))))
      (avy-lead-face-0 :inherit 'avy-lead-face)
      (avy-lead-face-1 :inherit 'avy-lead-face)
      (avy-lead-face-2 :inherit 'avy-lead-face)
