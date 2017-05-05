@@ -49,8 +49,8 @@
      (success :foreground success)
 
      (font-lock-builtin-face                :foreground builtin)
-     (font-lock-comment-face                :foreground comments :distant-foreground doc-comments)
-     (font-lock-comment-delimiter-face      :foreground comments :distant-foreground doc-comments)
+     (font-lock-comment-face                :foreground comments)
+     (font-lock-comment-delimiter-face      :foreground comments)
      (font-lock-doc-face                    :foreground doc-comments)
      (font-lock-doc-string-face             :foreground doc-comments)
      (font-lock-constant-face               :foreground constants)
