@@ -445,9 +445,12 @@
      (jdee-font-lock-constant-face :inherit 'font-lock-constant-face)
      (jdee-font-lock-constructor-face :foreground methods)
      (jdee-font-lock-public-face :inherit 'font-lock-keyword-face)
+     (jdee-font-lock-protected-face :inherit 'font-lock-keyword-face)
      (jdee-font-lock-private-face :inherit 'font-lock-keyword-face)
      (jdee-font-lock-modifier-face :inherit 'font-lock-type-face)
      (jdee-font-lock-doc-tag-face :foreground violet)
+     (jdee-font-lock-italic-face :inherit 'italic)
+     (jdee-font-lock-bold-face :inherit 'bold)
      (jdee-font-lock-link-face :foreground blue :italic nil :underline t)
 
      ;; js2-mode
