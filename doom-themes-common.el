@@ -439,6 +439,17 @@
 
 
      ;; --- major-mode faces -------------------
+     ;; jdee-mode
+     (jdee-font-lock-number-face :foreground numbers)
+     (jdee-font-lock-operator-face :foreground operators)
+     (jdee-font-lock-constant-face :inherit 'font-lock-constant-face)
+     (jdee-font-lock-constructor-face :foreground methods)
+     (jdee-font-lock-public-face :inherit 'font-lock-keyword-face)
+     (jdee-font-lock-private-face :inherit 'font-lock-keyword-face)
+     (jdee-font-lock-modifier-face :inherit 'font-lock-type-face)
+     (jdee-font-lock-doc-tag-face :foreground violet)
+     (jdee-font-lock-link-face :foreground blue :italic nil :underline t)
+
      ;; js2-mode
      (js2-function-param  :foreground variables)
      (js2-function-call   :foreground functions)
