@@ -94,12 +94,6 @@
      (isearch :background highlight :foreground black :bold bold)
      (isearch-lazy-highlight-face :background dark-grey)
 
-     ;; hide-show
-     (hs-face
-      `((((background dark))  (:background ,black      :foreground ,comments))
-        (((background light)) (:background ,light-grey :foreground ,comments))))
-     (hs-fringe-face :foreground highlight)
-
      ;; hl-line
      (hl-line `((((background dark))  (:background ,black))
                 (((background light)) (:background ,bg-alt))))
