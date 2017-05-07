@@ -169,7 +169,8 @@ faces."
             (bold   doom-enable-bold)
             (italic doom-enable-italic)
             ,@defs)
-       (setq doom--colors ',defs)
+       (setq doom--colors
+             (mapcar (lambda (x) (list (car x) (eval (cadr x)))) ',defs))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces ',name ,@faces)
        ,(if vars `(custom-theme-set-variables ',name ,@vars))
