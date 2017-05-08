@@ -586,7 +586,7 @@
 (defun doom-common-variables (&optional extra-vars)
   (mapcar
    (lambda (var)
-     (let ((var (or (assq (car var) nil) var)))
+     (let ((var (or (assq (car var) extra-vars) var)))
        `(list ',(car var) ,(cadr var))))
    '((vc-annotate-color-map
       `(list (cons 20  ,green)
