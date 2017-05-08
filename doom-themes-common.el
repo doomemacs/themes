@@ -177,6 +177,12 @@
      (evil-ex-substitute-replacement :background black :foreground green :bold bold)
      (evil-search-highlight-persist-highlight-face :inherit 'isearch-lazy-highlight-face)
 
+     ;; evil-mc
+     (evil-mc-cursor-default-face :background magenta :foreground black :inverse-video nil)
+     (evil-mc-region-face :inherit 'region)
+     (evil-mc-cursor-bar-face :height 1 :background magenta :foreground black)
+     (evil-mc-cursor-hbar-face :underline `(:color ,highlight))
+
      ;; evil-snipe
      (evil-snipe-first-match-face :foreground highlight :background dark-blue)
      (evil-snipe-matches-face     :foreground highlight :underline t :bold bold)
