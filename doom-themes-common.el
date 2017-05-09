@@ -393,9 +393,9 @@
      ;; swiper
      (swiper-line-face    :background blue    :foreground black)
      (swiper-match-face-1 :background black   :foreground light-grey)
-     (swiper-match-face-2 :background orange  :foreground fg :bold bold)
-     (swiper-match-face-3 :background magenta :foreground fg :bold bold)
-     (swiper-match-face-4 :background green   :foreground fg :bold bold)
+     (swiper-match-face-2 :background orange  :foreground black :bold bold)
+     (swiper-match-face-3 :background magenta :foreground black :bold bold)
+     (swiper-match-face-4 :background green   :foreground black :bold bold)
 
      ;; tabbar
      (tabbar-default           :foreground bg-alt :background bg-alt :height 0.9)
