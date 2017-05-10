@@ -200,23 +200,21 @@ faces."
 linum) to their doom-theme variants."
   :lighter " doom"
   :init-value nil
-  (let ((bg (face-background (if doom-buffer-mode 'doom-default 'default))))
-    ;; Don't reset remapped faces on `kill-all-local-variables'
-    (put (make-variable-buffer-local 'face-remapping-alist)
-         'permanent-local doom-buffer-mode)
-    (set-face-background 'fringe bg)
-    (when (derived-mode-p 'org-mode)
-      (set-face-foreground 'org-hide bg))
-    (if doom-buffer-mode
-        (setq face-remapping-alist
-              (append face-remapping-alist
-                      '((default doom-default)
-                        (hl-line doom-hl-line)
-                        (linum doom-linum))))
+  ;; Don't reset remapped faces on `kill-all-local-variables'
+  (put (make-variable-buffer-local 'face-remapping-alist)
+       'permanent-local doom-buffer-mode)
+  (if (not doom-buffer-mode)
       (mapc (lambda (key)
-              (setq face-remapping-alist
-                    (assq-delete-all key face-remapping-alist)))
-            '(default hl-line linum)))))
+            (setq face-remapping-alist
+                  (assq-delete-all key face-remapping-alist)))
+          '(default hl-line linum org-hide))
+    (set-face-background 'fringe (face-background 'doom-default))
+    (setq face-remapping-alist
+            (append face-remapping-alist
+                    '((default doom-default)
+                      (hl-line doom-hl-line)
+                      (linum doom-linum)
+                      (org-hide doom-org-hide))))))
 
 ;;;###autoload
 (defun doom-themes-neotree-config ()
