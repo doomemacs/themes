@@ -411,7 +411,9 @@
      (vhl/default-face :background grey)
 
      ;; wgrep
-     (wgrep-face :background dark-grey)
+     (wgrep-face
+      `((((background dark))  (:background ,black      :bold ,bold :foreground ,green))
+        (((background light)) (:background ,light-grey :bold ,bold :foreground ,green))))
 
      ;; which-func
      (which-func :foreground blue)
