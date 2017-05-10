@@ -15,7 +15,7 @@
      (doom-modeline-buffer-path
       `((((background dark))  (:foreground ,(if bold white cyan) :bold ,bold))
         (((background light)) (:foreground ,(if bold black blue) :bold ,bold))))
-     (doom-modeline-buffer-project    :foreground fg)
+     (doom-modeline-buffer-project    :foreground fg :distant-foreground bg)
      (doom-modeline-buffer-modified   :foreground error)
      (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
      (doom-modeline-highlight         :foreground highlight)
@@ -95,7 +95,7 @@
      (isearch-lazy-highlight-face :background dark-grey)
 
      ;; hl-line
-     (hl-line `((((background dark))  (:background ,black))
+     (hl-line `((((background dark))  (:background ,bg))
                 (((background light)) (:background ,bg-alt))))
      (doom-hl-line :background current-line)
 
@@ -513,7 +513,7 @@
 
      ;; org-mode
      (org-level-1
-      `((((background dark))  (:background ,dark-grey  :bold ,bold :foreground ,blue :height 1.2))
+      `((((background dark))  (:background ,black  :bold ,bold :foreground ,blue :height 1.2))
         (((background light)) (:background ,light-grey :bold ,bold :foreground ,blue :height 1.2))))
      (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
      (org-level-3
@@ -526,10 +526,11 @@
      (org-priority :foreground red)
      (org-ellipsis
       `((((background dark))
-         (:background ,dark-grey :foreground ,light-grey :underline nil))
+         (:background ,black :foreground ,violet :underline nil))
         (((background light))
          (:background ,light-grey :foreground ,dark-grey :underline nil))))
      (org-hide :foreground bg-alt)
+     (doom-org-hide :foreground bg)
      (org-table :foreground violet)
      (org-quote
       `((((background dark)) (:inherit 'italic :background ,dark-grey))
