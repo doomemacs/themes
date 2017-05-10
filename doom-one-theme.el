@@ -16,6 +16,11 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-linum-height 1.0
+  "The :height to render line numbers with."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 ;;
 (def-doom-theme doom-one
   "A dark theme inspired by Atom One Dark"
@@ -79,8 +84,12 @@
 
    (linum :foreground (if gui (doom-lighten grey 0.1) light-grey)
           :background bg-alt
-          :bold nil)
-   (doom-nlinum-highlight :foreground (doom-darken white 0.25) :distant-foreground nil :bold nil)
+          :bold nil
+          :height doom-one-linum-height)
+   (doom-nlinum-highlight :foreground (doom-darken white 0.25)
+                          :distant-foreground nil
+                          :bold nil
+                          :height doom-one-linum-height)
 
    (mode-line          :background modeline-bg     :foreground modeline-fg)
    (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt)
