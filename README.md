@@ -32,10 +32,10 @@ Optional features:
 Currently available colorschemes:
 + **doom-one**: inspired by Atom One Dark
 + **doom-one-light**: inspired by Atom One Light
++ **doom-vibrant**: a more vibrant take on doom-one
 + **doom-molokai**: based on molokai
 
 Soon to come:
-+ **doom-one-classic**: a more vibrant version of doom-one
 + **doom-tron**: daylerees' [Tron Legacy][daylerees] colorscheme
 + **doom-peacock**: daylerees' [Peacock][daylerees] colorscheme
 + **doom-spacegrey**: [I'm sure you've heard of it][spacegrey]
