@@ -82,7 +82,7 @@
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (linum :foreground (if gui (doom-lighten grey 0.1) light-grey)
+   (linum :foreground (if gui "#42454E" light-grey)
           :background bg-alt
           :bold nil
           :height doom-one-linum-height)
