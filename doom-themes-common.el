@@ -297,7 +297,7 @@
        (iedit-read-only-occurrence :inherit 'region)
 
        ;; ivy
-       (ivy-current-match :background (if gui dark-blue "brightblack"))
+       (ivy-current-match :background (if gui dark-blue "brightblack") :distant-foreground black :bold bold)
        (ivy-minibuffer-match-face-1
         :background black
         :foreground (if gui (doom-lighten grey 0.1) "brightblack")
