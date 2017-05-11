@@ -185,7 +185,7 @@
        (evil-mc-cursor-hbar-face :underline `(:color ,highlight))
 
        ;; evil-snipe
-       (evil-snipe-first-match-face :foreground highlight :background dark-blue)
+       (evil-snipe-first-match-face :foreground highlight :background dark-blue :bold bold)
        (evil-snipe-matches-face     :foreground highlight :underline t :bold bold)
 
        ;; flycheck
