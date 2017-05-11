@@ -41,7 +41,7 @@
    (teal       "#4db5bd" "#44b9b1")
    (yellow     "#ECBE7B"          )
    (blue       "#51afef"          )
-   (dark-blue  "#1f5572"          )
+   (dark-blue  "#2257A0"          )
    (magenta    "#c678dd"          )
    (violet     "#a9a1e1"          )
    (cyan       "#46D9FF"          )
