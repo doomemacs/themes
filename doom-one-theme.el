@@ -83,11 +83,12 @@
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    (linum :foreground (if gui "#42454E" light-grey)
+          :distant-foreground nil
           :background bg-alt
           :bold nil
           :height doom-one-linum-height)
-   (doom-nlinum-highlight :foreground (doom-darken white 0.25)
-                          :distant-foreground nil
+   (doom-nlinum-highlight :foreground black
+                          :distant-foreground (doom-darken white 0.2)
                           :bold nil
                           :height doom-one-linum-height)
 
