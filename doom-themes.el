@@ -5,8 +5,8 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: May 10, 2017
-;; Version: 1.2.5
+;; Modified: May 11, 2017
+;; Version: 1.2.6
 ;; Keywords: dark blue atom one theme neotree nlinum icons
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "24.4") (all-the-icons "1.0.0") (cl-lib "0.5"))
