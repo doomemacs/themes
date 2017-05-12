@@ -292,6 +292,13 @@
        ;; highlight-numbers-mode
        (highlight-numbers-number :foreground numbers)
 
+       ;; hydra
+       (hydra-face-red      :foreground red     :bold bold)
+       (hydra-face-blue     :foreground blue    :bold bold)
+       (hydra-face-amaranth :foreground magenta :bold bold)
+       (hydra-face-pink     :foreground violet  :bold bold)
+       (hydra-face-teal     :foreground teal    :bold bold)
+
        ;; iedit
        (iedit-occurrence :foreground magenta :bold bold :inverse-video t)
        (iedit-read-only-occurrence :inherit 'region)
