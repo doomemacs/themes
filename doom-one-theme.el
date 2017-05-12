@@ -12,9 +12,10 @@
   :type 'boolean)
 
 (defcustom doom-one-padded-modeline nil
-  "If non-nil, add padding to the mode-line."
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
+determine the exact padding."
   :group 'doom-one-theme
-  :type 'boolean)
+  :type '(or integer boolean))
 
 (defcustom doom-one-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
@@ -81,7 +82,9 @@
    (modeline-bg     (if doom-one-brighter-modeline bg bg-alt)        "brightblack")
    (modeline-bg-alt (if doom-one-brighter-modeline bg-alt dark-grey) "black")
    (modeline-fg     nil)
-   (modeline-fg-alt light-grey grey))
+   (modeline-fg-alt light-grey grey)
+   (modeline-pad    (when doom-one-padded-modeline
+                      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
 
 
   ;; --- extra faces ------------------------
@@ -97,12 +100,12 @@
                           :bold nil
                           :height doom-one-linum-height)
 
-   (mode-line          :background modeline-bg     :foreground modeline-fg
-                       :box (when doom-one-padded-modeline
-                              (list :line-width 4 :color modeline-bg)))
-   (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt
-                       :box (when doom-one-padded-modeline
-                              (list :line-width 4 :color modeline-bg-alt)))
+   (mode-line
+    :background modeline-bg     :foreground modeline-fg
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
