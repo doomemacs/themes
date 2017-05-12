@@ -11,6 +11,11 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-padded-modeline nil
+  "If non-nil, add padding to the mode-line."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-one-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-one-theme
@@ -92,8 +97,12 @@
                           :bold nil
                           :height doom-one-linum-height)
 
-   (mode-line          :background modeline-bg     :foreground modeline-fg)
-   (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt)
+   (mode-line          :background modeline-bg     :foreground modeline-fg
+                       :box (when doom-one-padded-modeline
+                              (list :line-width 4 :color modeline-bg)))
+   (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt
+                       :box (when doom-one-padded-modeline
+                              (list :line-width 4 :color modeline-bg-alt)))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
