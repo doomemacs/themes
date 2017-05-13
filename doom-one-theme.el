@@ -68,7 +68,7 @@ determine the exact padding."
    (operators      blue)
    (type           yellow)
    (strings        green)
-   (variables      white)
+   (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
    (region         (doom-lighten bg 0.075))
    (error          red)
