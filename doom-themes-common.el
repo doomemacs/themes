@@ -278,9 +278,6 @@
        (helm-ff-directory           :foreground orange)
        (helm-ff-executable          :foreground white :inherit 'italic)
 
-       ;; indent-guide
-       (indent-guide-face :foreground (doom-lighten bg 0.1))
-
        ;; highlight-indentation-mode
        (highlight-indentation-face                :background (doom-darken bg 0.1))
        (highlight-indentation-current-column-face :background (doom-darken bg 0.1))
@@ -307,6 +304,9 @@
        ;; iedit
        (iedit-occurrence :foreground magenta :bold bold :inverse-video t)
        (iedit-read-only-occurrence :inherit 'region)
+
+       ;; indent-guide
+       (indent-guide-face :foreground (doom-lighten bg 0.1))
 
        ;; ivy
        (ivy-current-match :background (if gui dark-blue "brightblack") :distant-foreground black :bold bold)
