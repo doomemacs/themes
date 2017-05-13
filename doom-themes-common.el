@@ -499,6 +499,16 @@
        (js2-object-property :foreground violet)
        (js2-jsdoc-tag       :foreground comments)
 
+       ;; ledger-mode
+       (ledger-font-posting-date-face :foreground blue)
+       (ledger-font-posting-amount-face :foreground yellow)
+       (ledger-font-posting-account-face :foreground white)
+       (ledger-font-payee-cleared-face :foreground violet :bold t :height 1.2)
+       (ledger-font-payee-uncleared-face :foreground light-grey :bold t :height 1.2)
+       (ledger-font-xact-highlight-face
+        `((((background dark))  (:background ,dark-grey))
+          (((background light)) (:background ,light-grey))))
+
        ;; makefile-*-mode
        (makefile-targets :foreground blue)
 
