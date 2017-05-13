@@ -294,6 +294,9 @@
        ;; highlight-numbers-mode
        (highlight-numbers-number :foreground numbers)
 
+       ;; hlinum
+       (linum-highlight-face :inherit 'doom-nlinum-highlight)
+
        ;; hydra
        (hydra-face-red      :foreground red     :bold bold)
        (hydra-face-blue     :foreground blue    :bold bold)
