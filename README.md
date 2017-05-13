@@ -4,8 +4,9 @@
 
 # doom-themes
 
-An opinionated UI plugin/pack of themes extracted from my [emacs.d], inspired by
-the One Dark/Light UI and syntax themes in [Atom](http://atom.io).
+DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
+[emacs.d], inspired by the One Dark/Light UI and syntax themes
+in [Atom](http://atom.io).
 
 [See the screenshots.][screenshots]
 
@@ -20,10 +21,10 @@ the One Dark/Light UI and syntax themes in [Atom](http://atom.io).
 + An assortment of color schemes (feel free to request or contribute more)
 
 Optional features:
-+ Dimming of non-source buffers (and minibuffer) to visually distinguish file
-  buffers from temporary or special buffers.
-+ A [neotree] theme with configurable font icons (requires the fonts in
-  [all-the-icons] to be installed).
++ Dimming of non-file buffers to visually distinguish file buffers from
+  temporary or special buffers.
++ A simple [neotree] theme that follows after Atom's file drawer. This requires
+  the fonts in [all-the-icons] to be installed.
 + Highlighting of the current line number (requires `nlinum` and
   `hl-line-mode`).
 + _(soon)_ A mode-line config. Until this is added, check
@@ -35,6 +36,8 @@ Currently available colorschemes:
 + **doom-molokai**: based on molokai
 
 Soon to come:
++ **doom-tomorrow-night**: [Chris Kempson's Tomorrow Night][tomorrow] (dark)
++ **doom-tomorrow**: [Chris Kempson's Tomorrow][tomorrow] (light)
 + **doom-one-light**: inspired by Atom One Light
 + **doom-tron**: daylerees' [Tron Legacy][daylerees] colorscheme
 + **doom-peacock**: daylerees' [Peacock][daylerees] colorscheme
@@ -44,8 +47,7 @@ Soon to come:
 
 ## Installation
 
-`M-x package-install RET doom-themes`, or clone the repo somewhere in
-your `load-path`.
+`M-x package-install RET doom-themes`
 
 A comprehensive configuration example:
 
@@ -53,8 +55,8 @@ A comprehensive configuration example:
 (require 'doom-themes)
 
 ;;; Settings (defaults)
-(setq doom-enable-bold t    ; if nil, bolding are universally disabled
-      doom-enable-italic t  ; if nil, italics are universally disabled
+(setq doom-enable-bold t    ; if nil, bold is universally disabled
+      doom-enable-italic t  ; if nil, italics is universally disabled
 
       ;; doom-one specific settings
       doom-one-brighter-modeline nil
@@ -65,14 +67,14 @@ A comprehensive configuration example:
 
 ;;; OPTIONAL
 ;; brighter source buffers (that represent files)
-(add-hook 'find-file-hook 'doom-buffer-mode-maybe)
+(add-hook 'find-file-hook #'doom-buffer-mode-maybe)
 ;; ...if you use auto-revert-mode
-(add-hook 'after-revert-hook 'doom-buffer-mode-maybe)
+(add-hook 'after-revert-hook #'doom-buffer-mode-maybe)
 ;; And you can brighten other buffers (unconditionally) with:
-(add-hook 'ediff-prepare-buffer-hook 'doom-buffer-mode)
+(add-hook 'ediff-prepare-buffer-hook #'doom-buffer-mode)
 
 ;; brighter minibuffer when active
-(add-hook 'minibuffer-setup-hook 'doom-brighten-minibuffer)
+(add-hook 'minibuffer-setup-hook #'doom-brighten-minibuffer)
 
 ;; Enable custom neotree theme
 (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
@@ -96,13 +98,14 @@ requests or code reviews are welcome and encouraged.
 [Don't hesitate to report bugs and request features][issues]!
 
 
-[issues]: https://github.com/hlissner/emacs-doom-theme/issues
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
-[spacegrey]: http://kkga.github.io/spacegray/
+[config]: https://github.com/hlissner/.emacs.d/tree/master/modules/ui/doom-modeline
 [daylerees]: http://daylerees.github.io/
 [emacs.d]: https://github.com/hlissner/.emacs.d
+[issues]: https://github.com/hlissner/emacs-doom-theme/issues
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/core/core-modeline.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [screenshots]: https://github.com/hlissner/emacs-doom-theme/tree/screenshots
-[config]: https://github.com/hlissner/.emacs.d/tree/master/modules/ui/doom-modeline
+[spacegrey]: http://kkga.github.io/spacegray/
+[tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [wiki]: https://github.com/hlissner/emacs-doom-theme/wiki
