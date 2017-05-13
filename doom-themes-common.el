@@ -30,14 +30,16 @@
        (bold-italic :inherit '(bold italic))
 
        (default              :background bg-alt     :foreground fg)
-       (fringe               :inherit 'default      :foreground comments)
+       (fringe
+        `((((background dark))  (:inherit 'default :foreground ,grey))
+          (((background light)) (:inherit 'default :foreground ,light-grey))))
        (region               :background region     :foreground nil :distant-foreground (doom-darken fg 0.3))
        (highlight            :background highlight  :foreground black)
        (cursor               :background highlight)
        (shadow               :foreground light-grey)
        (minibuffer-prompt    :foreground highlight)
        (tooltip              :inherit 'doom-default :background bg-alt)
-       (secondary-selection  :background highlight  :foreground fg :distant-foreground bg)
+       (secondary-selection  :background grey)
        (lazy-highlight       :background dark-blue  :foreground white :distant-foreground black :bold bold)
        (match                :foreground green      :background black :bold bold)
        (trailing-whitespace  :background red)
