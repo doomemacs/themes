@@ -15,7 +15,7 @@
        ;; mode-line
        (doom-modeline-buffer-path       :foreground blue :bold bold)
        (doom-modeline-buffer-file       :inherit 'doom-modeline-buffer-path :foreground fg)
-       (doom-modeline-buffer-modified   :foreground error)
+       (doom-modeline-buffer-modified   :foreground error :bold bold)
        (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
        (doom-modeline-highlight         :foreground highlight)
        (doom-modeline-panel             :foreground black :distant-foreground white :background highlight)
@@ -41,9 +41,7 @@
        (lazy-highlight       :background dark-blue  :foreground white :distant-foreground black :bold bold)
        (match                :foreground green      :background black :bold bold)
        (trailing-whitespace  :background red)
-       (vertical-border
-        `((((background dark))  (:background ,black      :foreground ,black))
-          (((background light)) (:background ,light-grey :foreground ,light-grey))))
+       (vertical-border :background vertical-bar :foreground vertical-bar)
 
        (error   :foreground error)
        (warning :foreground warning)
@@ -115,7 +113,7 @@
        (term-color-white   :background white   :foreground white)
 
        ;; window-divider
-       (window-divider :foreground vertical-bar)
+       (window-divider :inherit 'vertical-border)
        (window-divider-first-pixel  :inherit 'window-divider)
        (window-divider-last-pixel   :inherit 'window-divider)
 
@@ -358,7 +356,7 @@
        (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
        ;; nlinum
-       (doom-nlinum-highlight :foreground fg :background bg-alt :bold nil :distant-foreground nil)
+       (doom-nlinum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
 
        ;; popup
        (popup-face :inherit 'tooltip)

@@ -34,10 +34,10 @@ Currently available colorschemes:
 + **doom-one**: inspired by Atom One Dark
 + **doom-vibrant**: a more vibrant take on doom-one
 + **doom-molokai**: based on molokai
++ **doom-tomorrow-night**: [Chris Kempson's Tomorrow Night][tomorrow] (dark)
 
 Soon to come:
-+ **doom-tomorrow-night**: [Chris Kempson's Tomorrow Night][tomorrow] (dark)
-+ **doom-tomorrow**: [Chris Kempson's Tomorrow][tomorrow] (light)
++ **doom-tomorrow-day**: [Chris Kempson's Tomorrow Day][tomorrow] (light)
 + **doom-one-light**: inspired by Atom One Light
 + **doom-tron**: daylerees' [Tron Legacy][daylerees] colorscheme
 + **doom-peacock**: daylerees' [Peacock][daylerees] colorscheme
