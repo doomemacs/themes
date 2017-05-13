@@ -13,10 +13,8 @@
        (doom-default           :inherit 'default :background bg)
        (doom-minibuffer-active :background bg)
        ;; mode-line
-       (doom-modeline-buffer-path
-        `((((background dark))  (:foreground ,(if bold white cyan) :bold ,bold))
-          (((background light)) (:foreground ,(if bold black blue) :bold ,bold))))
-       (doom-modeline-buffer-project    :foreground fg :distant-foreground bg)
+       (doom-modeline-buffer-path       :foreground blue :bold bold)
+       (doom-modeline-buffer-file       :inherit 'doom-modeline-buffer-path :foreground fg)
        (doom-modeline-buffer-modified   :foreground error)
        (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
        (doom-modeline-highlight         :foreground highlight)
