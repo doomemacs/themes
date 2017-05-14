@@ -639,9 +639,9 @@
 
        (org-ellipsis "  ")
 
-       (jdee-db-spec-breakpoint-face-colors (cons black grey))
-       (jdee-db-requested-breakpoint-face-colors (cons black green))
-       (jdee-db-active-breakpoint-face-colors (cons black highlight))
+       (jdee-db-spec-breakpoint-face-colors `(cons ,black ,grey))
+       (jdee-db-requested-breakpoint-face-colors `(cons ,black ,green))
+       (jdee-db-active-breakpoint-face-colors `(cons ,black ,highlight))
 
        (ansi-color-names-vector
         (vector black red green yellow blue magenta cyan white)))
