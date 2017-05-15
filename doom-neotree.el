@@ -294,19 +294,20 @@ pane and are highlighted incorrectly."
 ;;
 (eval-after-load "neotree"
   (lambda ()
-    (require 'all-the-icons)
+    (unless (require 'all-the-icons nil t)
+      (error "all-the-icons isn't installed"))
 
     ;; Enable buffer-local hl-line and adjust line-spacing
-    (add-hook 'neo-after-create-hook 'doom--neotree-setup)
+    (add-hook 'neo-after-create-hook #'doom--neotree-setup)
     ;; Incompatible
     (setq neo-vc-integration nil)
     ;; Remove fringes in Neotree pane
-    (advice-add 'neo-global--select-window :after 'doom--neotree-no-fringes)
+    (advice-add #'neo-global--select-window :after #'doom--neotree-no-fringes)
     ;; Patch neotree to use `doom--neo-insert-fold-symbol'
-    (advice-add 'neo-buffer--insert-file-entry :override 'doom--neo-buffer--insert-file-entry)
-    (advice-add 'neo-buffer--insert-dir-entry  :override 'doom--neo-buffer--insert-dir-entry)
+    (advice-add #'neo-buffer--insert-file-entry :override #'doom--neo-buffer--insert-file-entry)
+    (advice-add #'neo-buffer--insert-dir-entry  :override #'doom--neo-buffer--insert-dir-entry)
     ;; Shorter pwd in neotree
-    (advice-add 'neo-buffer--insert-root-entry :override 'doom--neo-buffer--insert-root-entry)))
+    (advice-add #'neo-buffer--insert-root-entry :override #'doom--neo-buffer--insert-root-entry)))
 
 (provide 'doom-neotree)
 ;;; doom-neotree.el ends here
