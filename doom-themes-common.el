@@ -337,7 +337,7 @@
        (mc/cursor-face :inherit 'cursor)
 
        ;; nav-flash
-       (nav-flash-face :inherit 'highlight :bold bold)
+       (nav-flash-face :background dark-blue :foreground white :bold bold)
 
        ;; neotree
        (neo-root-dir-face   :foreground green :background bg :box `(:line-width 4 :color ,bg))
@@ -418,6 +418,10 @@
        (tabbar-highlight         :foreground fg :background bg-alt :inverse-video t)
        (tabbar-button            :background (if gui bg-alt dark-grey) :foreground fg)
        (tabbar-button-highlight  :inherit 'tabbar-button :inverse-video t)
+
+       ;; vimish-fold
+       (vimish-fold-overlay :inherit 'font-lock-comment-face :background black)
+       (vimish-fold-fringe  :foreground magenta)
 
        ;; volatile-highlights
        (vhl/default-face :background grey)
