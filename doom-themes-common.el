@@ -647,6 +647,9 @@ Variables in EXTRA-VARS override the default ones."
        (vc-annotate-background black)
 
        (org-ellipsis "  ")
+       (org-fontify-whole-heading-line t)
+       (org-fontify-done-headline t)
+       (org-fontify-quote-and-verse-blocks t)
 
        (jdee-db-spec-breakpoint-face-colors `(cons ,black ,grey))
        (jdee-db-requested-breakpoint-face-colors `(cons ,black ,green))
