@@ -11,16 +11,16 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-brighter-comments nil
+  "If non-nil, comments will be highlighted in more vivid colors."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-one-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-one-theme
   :type '(or integer boolean))
-
-(defcustom doom-one-brighter-comments nil
-  "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-one-theme
-  :type 'boolean)
 
 (defcustom doom-one-linum-height 1.0
   "The :height to render line numbers with."

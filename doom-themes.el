@@ -86,7 +86,7 @@
   "Background face for source code windows."
   :group 'doom-themes)
 
-(defface doom-minibuffer-active '((t (:inherit mode-line)))
+(defface doom-minibuffer-active '((t (:inherit doom-default)))
   "Face for active minibuffer. See `doom-enable-bright-minibuffer'."
   :group 'doom-themes)
 
@@ -111,9 +111,9 @@
   :group 'doom-themes)
 
 (defface doom-org-hide '((t (:inherit org-hide)))
-  "A face for hidden elements in org-mode. Only active if `doom-buffer-mode' is
-active."
+  "A face for hidden elements in org-mode when `doom-buffer-mode' is active."
   :group 'doom-themes)
+
 
 ;;
 (defcustom doom-enable-bold t
@@ -171,7 +171,7 @@ faces."
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme."
   (declare (doc-string 2))
-  (load "doom-themes-common" nil t)
+  (load "doom-themes-common" nil t) ; force-refresh while debugging
   (let ((faces (doom-common-faces extra-faces))
         (vars (doom-common-variables extra-vars))
         (defs (mapcar (lambda (cl)
@@ -245,8 +245,9 @@ linum) to their doom-theme variants."
 
 ;;;###autoload
 (defun doom-buffer-mode-maybe ()
-  "Enable `doom-buffer-mode' in the current buffer, if it isn't already and the
-buffer represents a real file."
+  "Enable `doom-buffer-mode' in the current buffer.
+
+Does nothing if it doesn't represent a real, file-visiting buffer."
   (when (and (not doom-buffer-mode)
              buffer-file-name)
     (doom-buffer-mode +1)))

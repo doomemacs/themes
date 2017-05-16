@@ -23,7 +23,7 @@ in [Atom](http://atom.io).
 Optional features:
 + Dimming of non-file buffers to visually distinguish file buffers from
   temporary or special buffers.
-+ A simple [neotree] theme that follows after Atom's file drawer. This requires
++ A [neotree] icon theme that follows after Atom's file drawer. This requires
   the fonts in [all-the-icons] to be installed.
 + Highlighting of the current line number (requires `nlinum` and
   `hl-line-mode`).
@@ -81,11 +81,6 @@ A comprehensive configuration example:
 
 ;; Enable nlinum line highlighting
 (doom-themes-nlinum-config)   ; requires nlinum and hl-line-mode
-
-;; Necessary for org-mode
-(setq org-fontify-whole-heading-line t
-      org-fontify-done-headline t
-      org-fontify-quote-and-verse-blocks t)
 ```
 
 [Check the wiki for details on customizing doom-themes][wiki].

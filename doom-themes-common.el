@@ -1,6 +1,9 @@
 ;;; doom-themes-common.el
 
 (defun doom-common-faces (&optional extra-faces)
+  "Return an alist of face definitions for `custom-theme-set-faces'.
+
+Faces in EXTRA-FACES override the default faces."
   (mapcar
    (lambda (spec)
      `(list ',(car spec)
@@ -614,6 +617,9 @@
     :key #'car)))
 
 (defun doom-common-variables (&optional extra-vars)
+  "Return an alist of variable definitions for `custom-theme-set-variables'.
+
+Variables in EXTRA-VARS override the default ones."
   (mapcar
    (lambda (var) `(list ',(car var) ,(cadr var)))
    (cl-delete-duplicates
