@@ -32,8 +32,8 @@ determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name      gui       term (256)
-  ((bg         "#282c34" nil      )
-   (bg-alt     "#21242b" nil      )
+  ((bg         "#21242b" nil      )
+   (bg-alt     "#282c34" nil      )
    (fg         "#bbc2cf" "#bfbfbf")
    (fg-alt     "#5B6268" "#3d3d3d")
    (black      "#1B2229" "black"  )
@@ -55,7 +55,7 @@ determine the exact padding."
 
    ;; face categories
    (highlight      blue)
-   (vertical-bar   black)
+   (vertical-bar   (doom-darken dark-grey 0.2))
    (current-line   dark-grey "black")
    (selection      dark-blue)
    (builtin        magenta)
@@ -79,12 +79,13 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (if doom-one-brighter-modeline bg bg-alt)        "brightblack")
-   (modeline-bg-alt (if doom-one-brighter-modeline bg-alt dark-grey) "black")
    (modeline-fg     nil)
    (modeline-fg-alt light-grey grey)
-   (modeline-pad    (when doom-one-padded-modeline
-                      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
+   (modeline-bg     bg-alt "brightblack")
+   (modeline-bg-alt (doom-darken bg 0.075) "black")
+   (modeline-pad
+    (when doom-one-padded-modeline
+      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
 
 
   ;; --- extra faces ------------------------
@@ -92,7 +93,6 @@ determine the exact padding."
 
    (linum :foreground (if gui "#42454E" light-grey)
           :distant-foreground nil
-          :background bg-alt
           :bold nil
           :height doom-one-linum-height)
    (doom-nlinum-highlight :foreground black
@@ -101,11 +101,18 @@ determine the exact padding."
                           :height doom-one-linum-height)
 
    (mode-line
-    :background modeline-bg     :foreground modeline-fg
+    :background modeline-bg :foreground modeline-fg
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+
+   (doom-mode-line
+    :inherit 'mode-line
+    :background (doom-darken bg 0.075))
+   (doom-mode-line-inactive
+    :inherit 'mode-line-inactive
+    :background (if doom-one-brighter-modeline violet bg))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode

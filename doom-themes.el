@@ -102,6 +102,14 @@
   "A face for the current line highlight."
   :group 'doom-themes)
 
+(defface doom-mode-line '((t (:inherit mode-line)))
+  "A face for the mode-line when `doom-buffer-mode' is active."
+  :group 'doom-themes)
+
+(defface doom-mode-line-inactive '((t (:inherit mode-line-inactive)))
+  "A face for the inactive mode-line when `doom-buffer-mode' is active."
+  :group 'doom-themes)
+
 (defface doom-org-hide '((t (:inherit org-hide)))
   "A face for hidden elements in org-mode. Only active if `doom-buffer-mode' is
 active."
@@ -194,33 +202,34 @@ faces."
     (setq-local face-remapping-alist
                 (append face-remapping-alist '((default doom-minibuffer-active))))))
 
-(defun doom-themes-current-bg (orig-fn &rest args)
-  (if doom-buffer-mode
-      (face-background 'doom-default)
-    (apply orig-fn args)))
-(advice-add #'org-find-invisible-foreground :around #'doom-themes-current-bg)
-
 ;;;###autoload
 (define-minor-mode doom-buffer-mode
   "Brighten source buffers by remapping common faces (like default, hl-line and
 linum) to their doom-theme variants."
-  :lighter " doom"
+  :lighter "" ; should be obvious it's on
   :init-value nil
   ;; Don't reset remapped faces on `kill-all-local-variables'
   (put (make-variable-buffer-local 'face-remapping-alist)
        'permanent-local doom-buffer-mode)
   (if (not doom-buffer-mode)
-      (mapc (lambda (key)
-            (setq face-remapping-alist
-                  (assq-delete-all key face-remapping-alist)))
-          '(default hl-line linum org-hide))
+      (progn
+        (mapc (lambda (key)
+                (setq face-remapping-alist
+                      (assq-delete-all key face-remapping-alist)))
+              '(default hl-line linum mode-line mode-line-inactive org-hide))
+        (unless (cl-remove-if-not
+                 (lambda (buf) (buffer-local-value 'doom-buffer-mode buf))
+                 (buffer-list))
+          (set-face-background 'fringe (face-background 'default))))
     (set-face-background 'fringe (face-background 'doom-default))
     (setq face-remapping-alist
-            (append face-remapping-alist
-                    '((default doom-default)
-                      (hl-line doom-hl-line)
-                      (linum doom-linum)
-                      (org-hide doom-org-hide))))))
+          (append face-remapping-alist
+                  '((default doom-default)
+                    (hl-line doom-hl-line)
+                    (linum doom-linum)
+                    (mode-line doom-mode-line)
+                    (mode-line-inactive doom-mode-line-inactive)
+                    (org-hide doom-org-hide))))))
 
 ;;;###autoload
 (defun doom-themes-neotree-config ()

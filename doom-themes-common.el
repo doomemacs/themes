@@ -10,8 +10,8 @@
    (cl-delete-duplicates
     (append
      '(;; --- custom faces -----------------------
-       (doom-default           :inherit 'default :background bg)
-       (doom-minibuffer-active :background bg)
+       (doom-default           :inherit 'default :background bg-alt)
+       ;; (doom-minibuffer-active :inherit 'doom-default)
        ;; mode-line
        (doom-modeline-buffer-path       :foreground blue :bold bold)
        (doom-modeline-buffer-file       :inherit 'doom-modeline-buffer-path :foreground fg)
@@ -27,7 +27,7 @@
        (italic      :slant  (if italic 'italic 'normal))
        (bold-italic :inherit '(bold italic))
 
-       (default              :background bg-alt     :foreground fg)
+       (default :background bg :foreground fg)
        (fringe
         `((((background dark))  (:inherit 'default :foreground ,grey))
           (((background light)) (:inherit 'default :foreground ,light-grey))))
@@ -36,7 +36,7 @@
        (cursor               :background highlight)
        (shadow               :foreground light-grey)
        (minibuffer-prompt    :foreground highlight)
-       (tooltip              :inherit 'doom-default :background bg-alt)
+       (tooltip              :inherit 'doom-default :background bg)
        (secondary-selection  :background grey)
        (lazy-highlight       :background dark-blue  :foreground white :distant-foreground black :bold bold)
        (match                :foreground green      :background black :bold bold)
@@ -94,13 +94,12 @@
        (isearch-lazy-highlight-face :background dark-grey)
 
        ;; hl-line
-       (hl-line `((((background dark))  (:background ,bg))
-                  (((background light)) (:background ,bg-alt))))
+       (hl-line :background bg-alt)
        (doom-hl-line :background current-line)
 
        ;; linum
        (linum :foreground fg-alt :background bg-alt :bold nil :distant-foreground nil)
-       (doom-linum :inherit 'linum :background bg)
+       (doom-linum :inherit 'linum :background bg-alt)
 
        ;; term
        (term-color-black   :background black   :foreground black)
@@ -166,10 +165,10 @@
        (dired-k-directory :foreground blue)
 
        ;; elscreen
-       (elscreen-tab-background-face     :background bg-alt)
-       (elscreen-tab-control-face        :background bg-alt :foreground bg-alt)
-       (elscreen-tab-current-screen-face :background bg     :foreground fg)
-       (elscreen-tab-other-screen-face   :background bg-alt :foreground fg-alt)
+       (elscreen-tab-background-face     :background bg)
+       (elscreen-tab-control-face        :background bg     :foreground bg)
+       (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
+       (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
 
        ;; evil
        (evil-ex-substitute-matches     :background black :foreground red   :strike-through t :bold bold)
@@ -410,13 +409,13 @@
        (swiper-match-face-4 :background green   :foreground black :bold bold)
 
        ;; tabbar
-       (tabbar-default           :foreground bg-alt :background bg-alt :height 0.9)
+       (tabbar-default           :foreground bg :background bg :height 0.9)
        (tabbar-modified          :inherit 'tabbar-default  :foreground red :bold bold)
        (tabbar-unselected        :inherit 'tabbar-default  :foreground grey)
        (tabbar-selected          :inherit 'tabbar-default  :foreground fg :background bg :bold bold)
        (tabbar-selected-modified :inherit 'tabbar-selected :foreground green)
-       (tabbar-highlight         :foreground fg :background bg-alt :inverse-video t)
-       (tabbar-button            :background (if gui bg-alt dark-grey) :foreground fg)
+       (tabbar-highlight         :foreground fg :background bg :inverse-video t)
+       (tabbar-button            :background (if gui bg dark-grey) :foreground fg)
        (tabbar-button-highlight  :inherit 'tabbar-button :inverse-video t)
 
        ;; vimish-fold
@@ -555,8 +554,8 @@
            (:background ,black :foreground ,violet :underline nil))
           (((background light))
            (:background ,light-grey :foreground ,dark-grey :underline nil))))
-       (org-hide :foreground bg-alt)
-       (doom-org-hide :foreground bg)
+       (org-hide :foreground bg)
+       (doom-org-hide :foreground bg-alt)
        (org-table :foreground violet)
        (org-quote
         `((((background dark)) (:inherit 'italic :background ,dark-grey))
