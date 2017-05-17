@@ -70,7 +70,7 @@ determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
-   (region         (doom-lighten bg 0.075))
+   (region         (doom-lighten bg-alt 0.1))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -96,8 +96,8 @@ determine the exact padding."
           :bold nil
           :height doom-one-linum-height)
    (doom-nlinum-highlight :foreground black
-                          :distant-foreground (doom-darken white 0.2)
-                          :bold nil
+                          :distant-foreground (doom-darken white 0.3)
+                          :bold bold
                           :height doom-one-linum-height)
 
    (mode-line
