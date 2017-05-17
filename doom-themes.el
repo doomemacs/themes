@@ -132,6 +132,17 @@ to work: `hlinum' for `linum-mode' or use `doom-themes-nlinum-config'."
 (define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.8")
 (define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.8")
 
+(defcustom doom-themes-remapped-faces
+  '((default doom-default)
+    (hl-line doom-hl-line)
+    (linum doom-linum)
+    (mode-line doom-mode-line)
+    (mode-line-inactive doom-mode-line-inactive)
+    (org-hide doom-org-hide))
+  "An alist of faces to remap when enabling `doom-buffer-mode'."
+  :group 'doom-themes
+  :type '(list face))
+
 (defvar doom--colors nil)
 (defvar doom--inhibit-warning nil)
 
@@ -219,17 +230,11 @@ linum) to their doom-theme variants."
       (progn
         (set-face-background 'fringe (face-background 'doom-default))
         (setq face-remapping-alist
-              (append face-remapping-alist
-                      '((default doom-default)
-                        (hl-line doom-hl-line)
-                        (linum doom-linum)
-                        (mode-line doom-mode-line)
-                        (mode-line-inactive doom-mode-line-inactive)
-                        (org-hide doom-org-hide)))))
+              (append face-remapping-alist doom-themes-remapped-faces)))
     (mapc (lambda (key)
             (setq face-remapping-alist
-                  (assq-delete-all key face-remapping-alist)))
-          '(default hl-line linum mode-line mode-line-inactive org-hide))
+                  (assq-delete-all (car key) face-remapping-alist)))
+          doom-themes-remapped-faces)
     (unless (cl-remove-if-not
              (lambda (buf) (buffer-local-value 'doom-buffer-mode buf))
              (buffer-list))
