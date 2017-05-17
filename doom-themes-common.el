@@ -335,6 +335,9 @@ Faces in EXTRA-FACES override the default faces."
        (jabber-roster-user-online     :foreground green :bold bold)
        (jabber-roster-user-xa         :foreground cyan)
 
+       ;; linum-relative
+       (linum-relative-current-face :inherit 'doom-nlinum-highlight)
+
        ;; multiple cursors
        (mc/cursor-face :inherit 'cursor)
 
@@ -359,6 +362,9 @@ Faces in EXTRA-FACES override the default faces."
 
        ;; nlinum
        (doom-nlinum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
+
+       ;; nlinum-relative
+       (nlinum-relative-current-face :inherit 'doom-nlinum-highlight)
 
        ;; popup
        (popup-face :inherit 'tooltip)
