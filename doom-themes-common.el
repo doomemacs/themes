@@ -594,12 +594,12 @@ Faces in EXTRA-FACES override the default faces."
 
        ;; org-mode
        (org-level-1
-        `((((background dark))  (:background ,black  :bold ,bold :foreground ,blue :height 1.2))
-          (((background light)) (:background ,light-grey :bold ,bold :foreground ,blue :height 1.2))))
+        `((((background dark))  (:background ,dark-grey  :foreground ,blue :bold ,bold :height 1.2))
+          (((background light)) (:background ,light-grey :foreground ,blue :bold ,bold :height 1.2))))
        (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
        (org-level-3
-        `((((background dark))  (:bold ,bold :foreground ,white))
-          (((background light)) (:bold ,bold :foreground ,black))))
+        `((((background dark))  (:foreground ,white :bold ,bold))
+          (((background light)) (:foreground ,black :bold ,bold))))
        (org-level-4 :inherit 'org-level-3)
        (org-level-5 :inherit 'org-level-3)
        (org-level-6 :inherit 'org-level-3)
@@ -607,7 +607,7 @@ Faces in EXTRA-FACES override the default faces."
        (org-priority :foreground red)
        (org-ellipsis
         `((((background dark))
-           (:background ,black :foreground ,violet :underline nil))
+           (:background ,dark-grey :foreground ,violet :underline nil))
           (((background light))
            (:background ,light-grey :foreground ,dark-grey :underline nil))))
        (org-hide :foreground bg)
