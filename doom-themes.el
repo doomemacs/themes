@@ -5,8 +5,8 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: May 16, 2017
-;; Version: 1.2.8
+;; Modified: May 17, 2017
+;; Version: 1.2.9
 ;; Keywords: dark blue atom one theme neotree nlinum icons
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "24.4") (all-the-icons "1.0.0") (cl-lib "0.5"))
@@ -129,8 +129,8 @@ to work: `hlinum' for `linum-mode' or use `doom-themes-nlinum-config'."
   :group 'doom-themes
   :type 'boolean)
 
-(define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.8")
-(define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.8")
+(define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.9")
+(define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.9")
 
 (defcustom doom-themes-remapped-faces
   '((default doom-default)
