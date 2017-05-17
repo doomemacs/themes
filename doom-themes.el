@@ -77,6 +77,7 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'doom-themes-common)
 
 (defgroup doom-themes nil
   "Options for doom-themes"
@@ -171,9 +172,8 @@ faces."
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme."
   (declare (doc-string 2))
-  (load "doom-themes-common" nil t) ; force-refresh while debugging
-  (let ((faces (doom-common-faces extra-faces))
-        (vars (doom-common-variables extra-vars))
+  (let ((faces (doom-themes-common-faces extra-faces))
+        (vars (doom-themes-common-variables extra-vars))
         (defs (mapcar (lambda (cl)
                         (if (> (length cl) 2)
                             (list (car cl) `(if gui ,(nth 1 cl) ,(nth 2 cl)))
@@ -211,25 +211,25 @@ linum) to their doom-theme variants."
   ;; Don't reset remapped faces on `kill-all-local-variables'
   (put (make-variable-buffer-local 'face-remapping-alist)
        'permanent-local doom-buffer-mode)
-  (if (not doom-buffer-mode)
+  (if doom-buffer-mode
       (progn
-        (mapc (lambda (key)
-                (setq face-remapping-alist
-                      (assq-delete-all key face-remapping-alist)))
-              '(default hl-line linum mode-line mode-line-inactive org-hide))
-        (unless (cl-remove-if-not
-                 (lambda (buf) (buffer-local-value 'doom-buffer-mode buf))
-                 (buffer-list))
-          (set-face-background 'fringe (face-background 'default))))
-    (set-face-background 'fringe (face-background 'doom-default))
-    (setq face-remapping-alist
-          (append face-remapping-alist
-                  '((default doom-default)
-                    (hl-line doom-hl-line)
-                    (linum doom-linum)
-                    (mode-line doom-mode-line)
-                    (mode-line-inactive doom-mode-line-inactive)
-                    (org-hide doom-org-hide))))))
+        (set-face-background 'fringe (face-background 'doom-default))
+        (setq face-remapping-alist
+              (append face-remapping-alist
+                      '((default doom-default)
+                        (hl-line doom-hl-line)
+                        (linum doom-linum)
+                        (mode-line doom-mode-line)
+                        (mode-line-inactive doom-mode-line-inactive)
+                        (org-hide doom-org-hide)))))
+    (mapc (lambda (key)
+            (setq face-remapping-alist
+                  (assq-delete-all key face-remapping-alist)))
+          '(default hl-line linum mode-line mode-line-inactive org-hide))
+    (unless (cl-remove-if-not
+             (lambda (buf) (buffer-local-value 'doom-buffer-mode buf))
+             (buffer-list))
+      (set-face-background 'fringe (face-background 'default)))))
 
 ;;;###autoload
 (defun doom-themes-neotree-config ()

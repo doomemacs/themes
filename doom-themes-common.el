@@ -1,20 +1,25 @@
 ;;; doom-themes-common.el
 
-(defun doom-common-faces (&optional extra-faces)
+(defun doom-themes--build-face (spec)
+  `(list ',(car spec)
+         ,(if (listp (cadr spec))
+              (cadr spec)
+            `(list (list '((class color) (min-colors 89)) (list ,@(cdr spec)))))))
+
+(defun doom-themes--build-var (var)
+  `(list ',(car var) ,(cadr var)))
+
+;;
+(defun doom-themes-common-faces (&optional extra-faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
 
 Faces in EXTRA-FACES override the default faces."
   (mapcar
-   (lambda (spec)
-     `(list ',(car spec)
-            ,(if (listp (cadr spec))
-                 (cadr spec)
-               `(list (list '((class color) (min-colors 89)) (list ,@(cdr spec)))))))
+   #'doom-themes--build-face
    (cl-delete-duplicates
     (append
      '(;; --- custom faces -----------------------
-       (doom-default           :inherit 'default :background bg-alt)
-       ;; (doom-minibuffer-active :inherit 'doom-default)
+       (doom-default :inherit 'default :background bg-alt)
        ;; mode-line
        (doom-modeline-buffer-path       :foreground blue :bold bold)
        (doom-modeline-buffer-file       :inherit 'doom-modeline-buffer-path :foreground fg)
@@ -622,12 +627,12 @@ Faces in EXTRA-FACES override the default faces."
      extra-faces)
     :key #'car)))
 
-(defun doom-common-variables (&optional extra-vars)
+(defun doom-themes-common-variables (&optional extra-vars)
   "Return an alist of variable definitions for `custom-theme-set-variables'.
 
 Variables in EXTRA-VARS override the default ones."
   (mapcar
-   (lambda (var) `(list ',(car var) ,(cadr var)))
+   #'doom-themes--build-var
    (cl-delete-duplicates
     (append
      '((vc-annotate-color-map
