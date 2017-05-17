@@ -55,8 +55,8 @@ A comprehensive configuration example:
 (require 'doom-themes)
 
 ;;; Settings (defaults)
-(setq doom-enable-bold t    ; if nil, bold is universally disabled
-      doom-enable-italic t  ; if nil, italics is universally disabled
+(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+      doom-themes-enable-italic t  ; if nil, italics is universally disabled
 
       ;; doom-one specific settings
       doom-one-brighter-modeline nil

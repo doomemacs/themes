@@ -40,9 +40,9 @@
 ;; ## Configuration
 ;;
 ;; + global
-;;     + `doom-enable-bold` (default: `t`): if nil, bolding will be disabled
+;;     + `doom-themes-enable-bold` (default: `t`): if nil, bolding will be disabled
 ;;     across all faces.
-;;     + `doom-enable-italic` (default: `t`): if nil, italicization will be
+;;     + `doom-themes-enable-italic` (default: `t`): if nil, italicization will be
 ;;     disabled across all faces.
 ;;
 ;;   Each colorscheme has their own sub-options, and can be looked up via
@@ -52,8 +52,8 @@
 ;;
 ;;   (require 'doom-themes)
 ;;   ;;; Settings (defaults)
-;;   (setq doom-enable-bold t    ; if nil, bold is universally disabled
-;;         doom-enable-italic t) ; if nil, italics is universally disabled
+;;   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+;;         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 ;;
 ;;   (load-theme 'doom-one t) ;; or doom-molokai, etc.
 ;;
@@ -119,17 +119,19 @@ to work: `hlinum' for `linum-mode' or use `doom-themes-nlinum-config'."
 
 
 ;;
-(defcustom doom-enable-bold t
+(defcustom doom-themes-enable-bold t
   "If nil, bold will be disabled across all faces."
   :group 'doom-themes
   :type 'boolean)
 
-(defcustom doom-enable-italic t
+(defcustom doom-themes-enable-italic t
   "If nil, italics will be disabled across all faces."
   :group 'doom-themes
   :type 'boolean)
 
-;;
+(define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.8")
+(define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.8")
+
 (defvar doom--colors nil)
 (defvar doom--inhibit-warning nil)
 
@@ -182,8 +184,8 @@ faces."
                           cl))
                       defs)))
     `(let* ((gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
-            (bold   doom-enable-bold)
-            (italic doom-enable-italic)
+            (bold   doom-themes-enable-bold)
+            (italic doom-themes-enable-italic)
             ,@defs)
        (setq doom--colors
              (mapcar (lambda (x) (list (car x) (eval (cadr x)))) ',defs))
