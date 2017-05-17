@@ -244,6 +244,12 @@ Faces in EXTRA-FACES override the default faces."
        (flycheck-error     :underline `(:style wave :color ,red))
        (flycheck-warning   :underline `(:style wave :color ,yellow))
        (flycheck-info      :underline `(:style wave :color ,green))
+
+       ;; flymake
+       (flymake-warnline :background bg :underline `(:style wave :color ,orange))
+       (flymake-errline  :background bg :underline `(:style wave :color ,red))
+
+       ;; flyspell
        (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
 
        ;; git-gutter
