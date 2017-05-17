@@ -97,13 +97,23 @@ Faces in EXTRA-FACES override the default faces."
        (ediff-odd-diff-B     :inherit 'hl-line)
        (ediff-odd-diff-C     :inherit 'hl-line)
 
-       ;; isearch
-       (isearch :background highlight :foreground black :bold bold)
-       (isearch-lazy-highlight-face :background dark-grey)
+       ;; flx-ido
+       (flx-highlight-face :inherit 'bold :foreground yellow :underline nil)
 
        ;; hl-line
        (hl-line :background bg-alt)
        (doom-hl-line :background current-line)
+
+       ;; ido
+       (ido-first-match :foreground orange)
+       (ido-indicator   :foreground red :background bg)
+       (ido-only-match  :foreground green)
+       (ido-subdir      :foreground violet)
+       (ido-virtual     :foreground comments)
+
+       ;; isearch
+       (isearch :background highlight :foreground black :bold bold)
+       (isearch-lazy-highlight-face :background dark-grey)
 
        ;; linum
        (linum :foreground fg-alt :background bg-alt :bold nil :distant-foreground nil)
