@@ -194,6 +194,16 @@ Faces in EXTRA-FACES override the default faces."
        (diff-hl-delete :foreground vc-deleted)
        (diff-hl-insert :foreground vc-added)
 
+       ;; diff-mode
+       (diff-added   :inherit 'hl-line :foreground green)
+       (diff-changed :foreground violet)
+       (diff-removed :foreground red :background dark-grey)
+       (diff-header  :foreground cyan :background nil)
+       (diff-file-header :foreground blue :background nil)
+       (diff-hunk-header :foreground violet)
+       (diff-refine-added   :inherit 'diff-added :inverse-video t)
+       (diff-refine-removed :inherit 'diff-removed :inverse-video t)
+
        ;; dired+
        (diredp-file-name              :foreground white)
        (diredp-dir-name               :foreground white :inherit 'bold)
