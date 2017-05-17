@@ -665,9 +665,6 @@ Faces in EXTRA-FACES override the default faces."
        (org-checkbox-statistics-done :inherit 'org-done)
        (message-header-name :foreground green)
 
-       ;; typescript-mode
-       (ts-object-property :inherit 'js2-object-property)
-
        ;; rpm-spec-mode
        (rpm-spec-macro-face        :foreground yellow)
        (rpm-spec-var-face          :foreground violet)
@@ -678,6 +675,13 @@ Faces in EXTRA-FACES override the default faces."
        (rpm-spec-doc-face          :foreground orange)
        (rpm-spec-ghost-face        :foreground comments)
        (rpm-spec-section-face      :foreground magenta)
+
+       ;; typescript-mode
+       (ts-object-property :inherit 'js2-object-property)
+
+       ;; sh-mode
+       (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
+       (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
 
        ;; web-mode
        (web-mode-doctype-face           :foreground comments)
