@@ -80,35 +80,37 @@
 (require 'doom-themes-common)
 
 (defgroup doom-themes nil
-  "Options for doom-themes"
+  "Options for doom-themes."
   :group 'faces)
 
 (defface doom-default '((t (:inherit default)))
-  "Background face for source code windows."
+  "Background face for buffers when `doom-buffer-mode' is active."
   :group 'doom-themes)
 
 (defface doom-minibuffer-active '((t (:inherit doom-default)))
-  "Face for active minibuffer. See `doom-enable-bright-minibuffer'."
+  "A face for the minibuffer when it is active. See
+`doom-enable-bright-minibuffer'."
   :group 'doom-themes)
 
 (defface doom-linum '((t (:inherit linum)))
-  "Another linum face for darker windows (like popups)."
+  "A face for line-numbers when `doom-buffer-mode' is enabled."
   :group 'doom-themes)
 
-(defface doom-nlinum-highlight '((t (:inherit linum)))
-  "A face for the nlinum overlay on the current line."
+(defface doom-linum-highlight '((t (:inherit linum)))
+  "A face for line-numbers on the current line. This requires an external plugin
+to work: `hlinum' for `linum-mode' or use `doom-themes-nlinum-config'."
   :group 'doom-themes)
 
 (defface doom-hl-line '((t (:inherit hl-line)))
-  "A face for the current line highlight."
+  "The current line highlight."
   :group 'doom-themes)
 
 (defface doom-mode-line '((t (:inherit mode-line)))
-  "A face for the mode-line when `doom-buffer-mode' is active."
+  "The `mode-line' face when `doom-buffer-mode' is active."
   :group 'doom-themes)
 
 (defface doom-mode-line-inactive '((t (:inherit mode-line-inactive)))
-  "A face for the inactive mode-line when `doom-buffer-mode' is active."
+  "The `mode-line-inactive' face when `doom-buffer-mode' is active."
   :group 'doom-themes)
 
 (defface doom-org-hide '((t (:inherit org-hide)))
@@ -233,13 +235,15 @@ linum) to their doom-theme variants."
 
 ;;;###autoload
 (defun doom-themes-neotree-config ()
-  "Install DOOM neotree configuration."
+  "Install doom-themes' neotree configuration.
+
+Includes an Atom-esque icon theme and highlighting based on filetype."
   (let ((doom--inhibit-warning t))
     (require 'doom-neotree)))
 
 ;;;###autoload
 (defun doom-themes-nlinum-config ()
-  "Install DOOM nlinum configuration."
+  "Install current-line-number highlighting for `nlinum-mode'."
   (let ((doom--inhibit-warning t))
     (require 'doom-nlinum)))
 
