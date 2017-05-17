@@ -41,6 +41,7 @@ Faces in EXTRA-FACES override the default faces."
        (match                :foreground green      :background black :bold bold)
        (trailing-whitespace  :background red)
        (vertical-border :background vertical-bar :foreground vertical-bar)
+       (link                 :foreground blue :underline t)
 
        (error   :foreground error)
        (warning :foreground warning)
