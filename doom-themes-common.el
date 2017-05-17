@@ -595,8 +595,12 @@ Faces in EXTRA-FACES override the default faces."
 
        ;; wgrep
        (wgrep-face
-        `((((background dark))  (:background ,black      :bold ,bold :foreground ,green))
+        `((((background dark))  (:background ,dark-grey  :bold ,bold :foreground ,green))
           (((background light)) (:background ,light-grey :bold ,bold :foreground ,green))))
+       (wgrep-delete-face :foreground dark-grey :background red)
+       (wgrep-done-face   :foreground blue)
+       (wgrep-file-face   :foreground comments)
+       (wgrep-reject-face :foreground red :bold bold)
 
        ;; which-func
        (which-func :foreground blue)
