@@ -700,6 +700,12 @@ Faces in EXTRA-FACES override the default faces."
        ;; (markdown-url-face              :inherit 'link)
        ;; (markdown-blockquote-face       :foreground violet)
 
+       ;; org-agenda
+       (org-agenda-structure :foreground blue)
+       (org-agenda-date      :foreground violet)
+       (org-agenda-done      :inherit 'org-done)
+       (org-agenda-dimmed-todo-face :foreground comments)
+
        ;; org-mode
        (org-level-1
         `((((background dark))  (:background ,dark-grey  :foreground ,blue :bold ,bold :height 1.2))
