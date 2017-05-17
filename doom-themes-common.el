@@ -461,7 +461,9 @@ Faces in EXTRA-FACES override the default faces."
        (spaceline-highlight-face :foreground blue)
 
        ;; stripe-buffer
-       (stripe-highlight :background bg-alt)
+       (stripe-highlight
+        `((((background dark))  (:background ,dark-grey))
+          (((background light)) (:background ,light-grey))))
 
        ;; swiper
        (swiper-line-face    :background blue    :foreground black)
