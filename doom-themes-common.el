@@ -92,6 +92,19 @@ Faces in EXTRA-FACES override the default faces."
        (ediff-odd-diff-B     :inherit 'hl-line)
        (ediff-odd-diff-C     :inherit 'hl-line)
 
+       ;; elfeed
+       (elfeed-log-debug-level-face :foreground comments)
+       (elfeed-log-error-level-face :inherit 'error)
+       (elfeed-log-info-level-face  :inherit 'success)
+       (elfeed-log-warn-level-face  :inherit 'warning)
+       (elfeed-search-date-face     :foreground violet)
+       (elfeed-search-feed-face     :foreground blue)
+       (elfeed-search-tag-face      :foreground comments)
+       (elfeed-search-title-face    :foreground comments)
+       (elfeed-search-filter-face   :foreground violet)
+       (elfeed-search-unread-count-face :foreground yellow)
+       (elfeed-search-unread-title-face :foreground fg :bold bold)
+
        ;; flx-ido
        (flx-highlight-face :inherit 'bold :foreground yellow :underline nil)
 
