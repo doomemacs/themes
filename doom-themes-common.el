@@ -348,7 +348,7 @@ Faces in EXTRA-FACES override the default faces."
        (highlight-numbers-number :foreground numbers)
 
        ;; hlinum
-       (linum-highlight-face :inherit 'doom-nlinum-highlight)
+       (linum-highlight-face :inherit 'doom-linum-highlight)
 
        ;; hydra
        (hydra-face-red      :foreground red     :bold bold)
@@ -394,7 +394,7 @@ Faces in EXTRA-FACES override the default faces."
        (jabber-roster-user-xa         :foreground cyan)
 
        ;; linum-relative
-       (linum-relative-current-face :inherit 'doom-nlinum-highlight)
+       (linum-relative-current-face :inherit 'doom-linum-highlight)
 
        ;; multiple cursors
        (mc/cursor-face :inherit 'cursor)
@@ -419,10 +419,10 @@ Faces in EXTRA-FACES override the default faces."
        (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
        ;; nlinum
-       (doom-nlinum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
+       (doom-linum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
 
        ;; nlinum-relative
-       (nlinum-relative-current-face :inherit 'doom-nlinum-highlight)
+       (nlinum-relative-current-face :inherit 'doom-linum-highlight)
 
        ;; popup
        (popup-face :inherit 'tooltip)

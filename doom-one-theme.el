@@ -95,10 +95,10 @@ determine the exact padding."
           :distant-foreground nil
           :bold nil
           :height doom-one-linum-height)
-   (doom-nlinum-highlight :foreground black
-                          :distant-foreground (doom-darken white 0.3)
-                          :bold bold
-                          :height doom-one-linum-height)
+   (doom-linum-highlight :foreground black
+                         :distant-foreground (doom-darken white 0.3)
+                         :bold bold
+                         :height doom-one-linum-height)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg

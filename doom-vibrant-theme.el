@@ -86,10 +86,10 @@
           :background bg-alt
           :bold nil
           :height doom-vibrant-linum-height)
-   (doom-nlinum-highlight :foreground blue
-                          :distant-foreground nil
-                          :bold nil
-                          :height doom-vibrant-linum-height)
+   (doom-linum-highlight :foreground blue
+                         :distant-foreground nil
+                         :bold nil
+                         :height doom-vibrant-linum-height)
 
    (mode-line          :background modeline-bg     :foreground modeline-fg)
    (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt)
