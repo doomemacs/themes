@@ -504,6 +504,13 @@ Faces in EXTRA-FACES override the default faces."
        (tabbar-button            :background (if gui bg dark-grey) :foreground fg)
        (tabbar-button-highlight  :inherit 'tabbar-button :inverse-video t)
 
+       ;; undo-tree
+       (undo-tree-visualizer-default-face :foreground light-grey)
+       (undo-tree-visualizer-current-face :foreground green :bold bold)
+       (undo-tree-visualizer-unmodified-face :foreground light-grey)
+       (undo-tree-visualizer-active-branch-face :foreground blue)
+       (undo-tree-visualizer-register-face :foreground yellow)
+
        ;; vimish-fold
        (vimish-fold-overlay :inherit 'font-lock-comment-face :background black)
        (vimish-fold-fringe  :foreground magenta)
