@@ -795,7 +795,21 @@ Variables in EXTRA-VARS override the default ones."
    #'doom-themes--build-var
    (cl-delete-duplicates
     (append
-     '((vc-annotate-color-map
+     '((ansi-color-names-vector
+        (vector black red green yellow blue magenta cyan white))
+
+       (fci-rule-color light-grey)
+
+       (jdee-db-spec-breakpoint-face-colors `(cons ,black ,grey))
+       (jdee-db-requested-breakpoint-face-colors `(cons ,black ,green))
+       (jdee-db-active-breakpoint-face-colors `(cons ,black ,highlight))
+
+       (org-ellipsis "  ")
+       (org-fontify-whole-heading-line t)
+       (org-fontify-done-headline t)
+       (org-fontify-quote-and-verse-blocks t)
+
+       (vc-annotate-color-map
         `(list (cons 20  ,green)
                (cons 40  ,(doom-blend yellow green (/ 1.0 3)))
                (cons 60  ,(doom-blend yellow green (/ 2.0 3)))
@@ -815,19 +829,7 @@ Variables in EXTRA-VARS override the default ones."
                (cons 340 ,light-grey)
                (cons 360 ,light-grey)))
        (vc-annotate-very-old-color nil)
-       (vc-annotate-background black)
-
-       (org-ellipsis "  ")
-       (org-fontify-whole-heading-line t)
-       (org-fontify-done-headline t)
-       (org-fontify-quote-and-verse-blocks t)
-
-       (jdee-db-spec-breakpoint-face-colors `(cons ,black ,grey))
-       (jdee-db-requested-breakpoint-face-colors `(cons ,black ,green))
-       (jdee-db-active-breakpoint-face-colors `(cons ,black ,highlight))
-
-       (ansi-color-names-vector
-        (vector black red green yellow blue magenta cyan white)))
+       (vc-annotate-background black))
      extra-vars)
     :key #'car)))
 
