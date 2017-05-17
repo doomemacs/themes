@@ -20,15 +20,6 @@ Faces in EXTRA-FACES override the default faces."
     (append
      '(;; --- custom faces -----------------------
        (doom-default :inherit 'default :background bg-alt)
-       ;; mode-line
-       (doom-modeline-buffer-path       :foreground blue :bold bold)
-       (doom-modeline-buffer-file       :inherit 'doom-modeline-buffer-path :foreground fg)
-       (doom-modeline-buffer-modified   :foreground error :bold bold)
-       (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-       (doom-modeline-highlight         :foreground highlight)
-       (doom-modeline-panel             :foreground black :distant-foreground white :background highlight)
-       (doom-modeline-bar               :background highlight)
-       (doom-modeline-eldoc-bar         :background yellow)
 
        ;; --- base faces -------------------------
        (bold        :weight (if bold 'bold 'normal) :color white)
@@ -40,7 +31,7 @@ Faces in EXTRA-FACES override the default faces."
         `((((background dark))  (:inherit 'default :foreground ,grey))
           (((background light)) (:inherit 'default :foreground ,light-grey))))
        (region               :background region     :foreground nil :distant-foreground (doom-darken fg 0.3))
-       (highlight            :background highlight  :foreground black)
+       (highlight            :background highlight  :foreground black :distant-foreground white)
        (cursor               :background highlight)
        (shadow               :foreground light-grey)
        (minibuffer-prompt    :foreground highlight)
@@ -73,8 +64,12 @@ Faces in EXTRA-FACES override the default faces."
        (font-lock-regexp-grouping-backslash   :inherit 'bold :foreground operators)
        (font-lock-regexp-grouping-construct   :inherit 'bold :foreground operators)
 
-       (mode-line          :background bg-alt :foreground fg)
-       (mode-line-inactive :background bg     :foreground fg-alt)
+       ;; mode-line / header-line
+       (mode-line           :background bg-alt :foreground fg)
+       (mode-line-inactive  :background bg     :foreground fg-alt)
+       (mode-line-emphasis  :foreground highlight)
+       (mode-line-highlight :inherit 'highlight)
+       (mode-line-buffer-id :foreground fg :bold bold)
        (header-line :inherit 'mode-line)
 
 
