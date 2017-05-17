@@ -419,6 +419,14 @@ Faces in EXTRA-FACES override the default faces."
        ;; nlinum-relative
        (nlinum-relative-current-face :inherit 'doom-linum-highlight)
 
+       ;; mic-paren
+       (paren-face-match    :inherit 'show-paren-match)
+       (paren-face-mismatch :inherit 'show-paren-mismatch)
+       (paren-face-no-match :inherit 'show-paren-mismatch)
+
+       ;; parenface
+       (paren-face :foreground comments)
+
        ;; popup
        (popup-face :inherit 'tooltip)
        (popup-selection-face :background selection)
@@ -456,6 +464,10 @@ Faces in EXTRA-FACES override the default faces."
        ;; show-paren
        (show-paren-match    :foreground red   :background black :bold bold)
        (show-paren-mismatch :foreground black :background red   :bold bold)
+
+       ;; smartparens
+       (sp-show-pair-match-face :inherit 'show-paren-match)
+       (sp-show-pair-mismatch-face :inherit 'show-paren-mismatch)
 
        ;; spaceline
        (spaceline-highlight-face :foreground blue)
