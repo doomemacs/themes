@@ -524,17 +524,9 @@ Faces in EXTRA-FACES override the default faces."
        (font-latex-bold-face         :inherit 'bold)
        (font-latex-italic-face       :inherit 'italic)
        (font-latex-math-face         :foreground blue)
-       (font-latex-sectioning-0-face
-        ;; org-level-1
-        `((((background dark))  (:background ,dark-grey  :bold ,bold :foreground ,blue :height 1.2))
-          (((background light)) (:background ,light-grey :bold ,bold :foreground ,blue :height 1.2))))
-       (font-latex-sectioning-1-face
-        ;; org-level-2
-        :inherit 'font-latex-sectioning-0-face :foreground violet :height 1.0)
-       (font-latex-sectioning-2-face
-        ;; org-level-3
-        `((((background dark))  (:bold ,bold :foreground ,white))
-          (((background light)) (:bold ,bold :foreground ,black))))
+       (font-latex-sectioning-0-face :inherit 'org-level-1)
+       (font-latex-sectioning-1-face :inherit 'org-level-2)
+       (font-latex-sectioning-2-face :inherit 'org-level-3)
        (font-latex-sectioning-3-face :inherit 'font-latex-sectioning-2-face)
        (font-latex-sectioning-4-face :inherit 'font-latex-sectioning-2-face)
        (font-latex-sectioning-5-face :inherit 'font-latex-sectioning-2-face)
