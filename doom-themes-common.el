@@ -747,9 +747,9 @@ Faces in EXTRA-FACES override the default faces."
        (org-date                  :foreground violet)
        (org-todo                  :foreground blue :bold 'inherit)
        (org-done
-        `((((background dark))  (:bold 'inherit :foreground ,light-grey))
-          (((background light)) (:bold 'inherit :foreground ,dark-grey))))
-       (org-headline-done         :foreground light-grey :bold nil)
+        `((((background dark))  (:bold inherit :foreground ,light-grey))
+          (((background light)) (:bold inherit :foreground ,dark-grey))))
+       (org-headline-done         :foreground light-grey)
        (org-special-keyword       :foreground magenta)
        (org-checkbox :inherit 'org-todo)
        (org-checkbox-statistics-todo :inherit 'org-todo)
