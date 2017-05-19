@@ -35,7 +35,7 @@ Faces in EXTRA-FACES override the default faces."
        (cursor               :background highlight)
        (shadow               :foreground light-grey)
        (minibuffer-prompt    :foreground highlight)
-       (tooltip              :inherit 'doom-default :background bg)
+       (tooltip              :inherit 'doom-default :background bg :foreground fg)
        (secondary-selection  :background grey)
        (lazy-highlight       :background dark-blue  :foreground white :distant-foreground black :bold bold)
        (match                :foreground green      :background black :bold bold)
