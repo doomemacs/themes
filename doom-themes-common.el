@@ -125,8 +125,9 @@ Faces in EXTRA-FACES override the default faces."
        (isearch-lazy-highlight-face :background dark-grey)
 
        ;; linum
-       (linum :foreground fg-alt :background bg-alt :bold nil :distant-foreground nil)
+       (linum :foreground fg-alt :background bg :bold nil :distant-foreground nil)
        (doom-linum :inherit 'linum :background bg-alt)
+       (doom-linum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
 
        ;; term
        (term-color-black   :background black   :foreground black)
@@ -436,9 +437,6 @@ Faces in EXTRA-FACES override the default faces."
        (doom-neotree-text-file-face :foreground fg)
        (doom-neotree-data-file-face :foreground violet)
        (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
-
-       ;; nlinum
-       (doom-linum-highlight :foreground fg :background current-line :bold nil :distant-foreground nil)
 
        ;; nlinum-relative
        (nlinum-relative-current-face :inherit 'doom-linum-highlight)
