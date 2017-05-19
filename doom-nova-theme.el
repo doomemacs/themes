@@ -37,7 +37,7 @@ determine the exact padding."
    (dark-cyan  (doom-darken cyan 0.4))
 
    ;; face categories
-   (highlight      dark-blue)
+   (highlight      blue)
    (vertical-bar   (doom-darken dark-grey 0.2))
    (current-line   (doom-darken bg-alt 0.05))
    (selection      (doom-lighten bg 0.1))
