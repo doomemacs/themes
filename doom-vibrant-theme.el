@@ -16,6 +16,12 @@
   :group 'doom-vibrant-theme
   :type 'boolean)
 
+(defcustom doom-vibrant-padded-modeline nil
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
+determine the exact padding."
+  :group 'doom-vibrant-theme
+  :type '(or integer boolean))
+
 (defcustom doom-vibrant-linum-height 1.0
   "The :height to render line numbers with."
   :group 'doom-vibrant-theme
@@ -73,27 +79,52 @@
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (if doom-vibrant-brighter-modeline bg bg-alt)                        "brightblack")
-   (modeline-bg-alt (if doom-vibrant-brighter-modeline bg-alt (doom-darken bg-alt 0.25)) "black")
+   (modeline-bright doom-vibrant-brighter-modeline)
+   (modeline-pad
+    (when doom-vibrant-padded-modeline
+      (if (integerp doom-vibrant-padded-modeline) doom-vibrant-padded-modeline 4)))
+
    (modeline-fg     "#bbc2cf")
-   (modeline-fg-alt (doom-blend blue grey 0.08)))
+   (modeline-fg-alt (doom-blend blue grey (if modeline-bright 0.4 0.08)))
+
+   (modeline-bg     (if modeline-bright (doom-darken blue 0.5) bg-alt)                 "brightblack")
+   (modeline-bg-l   (if modeline-bright modeline-bg            (doom-darken bg 0.075)) "black")
+   (modeline-bg-inactive   (doom-darken bg 0.25))
+   (modeline-bg-inactive-l (doom-darken bg-alt 0.3)))
 
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    (linum :foreground (if gui (doom-darken light-grey 0.3) light-grey)
-          :background bg-alt
+          :distant-foreground nil
           :bold nil
           :height doom-vibrant-linum-height)
    (doom-linum-highlight :foreground blue
-                         :distant-foreground nil
+                         :distant-foreground (doom-darken white 0.3)
                          :bold nil
                          :height doom-vibrant-linum-height)
 
-   (mode-line          :background modeline-bg     :foreground modeline-fg)
-   (mode-line-inactive :background modeline-bg-alt :foreground modeline-fg-alt)
-   (doom-modeline-buffer-path :foreground blue :bold bold)
+   (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
+   (doom-modeline-buffer-path :foreground (if modeline-bright white blue) :bold bold)
+
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis
+    :foreground (if modeline-bright white highlight))
+
+   (doom-mode-line
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-l)))
+   (doom-mode-line-inactive
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
