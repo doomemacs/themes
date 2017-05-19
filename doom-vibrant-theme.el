@@ -26,8 +26,8 @@
   "A more vibrant (and dark) theme, based off of DOOM One's classic look."
 
   ;; name      gui       term (256)
-  ((bg         "#282c34" nil      )
-   (bg-alt     "#22252c" nil      )
+  ((bg         "#22252c" nil      )
+   (bg-alt     "#282c34" nil      )
    (fg         "#bbc2cf" "#bfbfbf")
    (fg-alt     "#5D656B" "#5d5d5d")
    (black      "#181e26" "black"  )
