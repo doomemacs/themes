@@ -79,13 +79,18 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-fg     nil)
-   (modeline-fg-alt light-grey grey)
-   (modeline-bg     bg-alt "brightblack")
-   (modeline-bg-alt (doom-darken bg 0.075) "black")
+   (modeline-bright doom-one-brighter-modeline)
    (modeline-pad
     (when doom-one-padded-modeline
-      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
+      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4)))
+
+   (modeline-fg     nil)
+   (modeline-fg-alt (doom-blend violet grey (if modeline-bright 0.5 0.3)) grey)
+
+   (modeline-bg     (if modeline-bright (doom-darken blue 0.475) bg-alt)                "brightblack")
+   (modeline-bg-l   (if modeline-bright (doom-darken blue 0.45) (doom-darken bg 0.085)) "black")
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l (doom-darken bg 0.025)))
 
 
   ;; --- extra faces ------------------------
@@ -100,19 +105,25 @@ determine the exact padding."
                          :bold bold
                          :height doom-one-linum-height)
 
+   (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis
+    :foreground (if modeline-bright white highlight))
 
    (doom-mode-line
     :inherit 'mode-line
-    :background (doom-darken bg 0.075))
+    :background modeline-bg-l
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-l)))
    (doom-mode-line-inactive
     :inherit 'mode-line-inactive
-    :background (if doom-one-brighter-modeline violet bg))
+    :background modeline-bg-inactive-l
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
