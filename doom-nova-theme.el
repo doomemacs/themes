@@ -40,11 +40,11 @@ determine the exact padding."
    (highlight      blue)
    (vertical-bar   (doom-darken dark-grey 0.2))
    (current-line   (doom-darken bg-alt 0.05))
-   (selection      (doom-lighten bg 0.1))
+   (selection      (doom-lighten highlight 0.3))
    (builtin        blue)
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.1))
-   (constants      orange)
+   (constants      highlight)
    (functions      blue)
    (keywords       violet)
    (methods        blue)
@@ -52,7 +52,7 @@ determine the exact padding."
    (type           yellow)
    (strings        green)
    (variables      red)
-   (numbers        orange)
+   (numbers        highlight)
    (region         selection)
    (error          red)
    (warning        yellow)
@@ -73,7 +73,7 @@ determine the exact padding."
         4))))
 
   ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground violet :bold bold)
+  ((doom-modeline-buffer-path       :foreground violet :bold nil)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
    ;; rainbow-delimiters
