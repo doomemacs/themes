@@ -61,7 +61,6 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
-
    ;; custom categories
    (modeline-bg     (doom-darken bg-alt 0.3))
    (modeline-bg-alt (doom-darken bg 0.2))
@@ -91,7 +90,13 @@ determine the exact padding."
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt))))
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+
+   ;; linum
+   (linum :foreground grey :background bg :bold nil :distant-foreground nil)
+   (doom-linum-highlight :foreground highlight :background bg :bold nil :distant-foreground nil)
+   (cursor :background highlight))
+
 
   ;; --- variables --------------------------
   ;; ()
@@ -99,4 +104,3 @@ determine the exact padding."
 
 (provide 'doom-nova-theme)
 ;;; doom-nova-theme.el ends here
-
