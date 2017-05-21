@@ -98,7 +98,7 @@ requests or code reviews are welcome and encouraged.
 [daylerees]: http://daylerees.github.io/
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [issues]: https://github.com/hlissner/emacs-doom-theme/issues
-[mode-line]: https://github.com/hlissner/.emacs.d/blob/master/core/core-modeline.el
+[mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [screenshots]: https://github.com/hlissner/emacs-doom-theme/tree/screenshots
 [spacegrey]: http://kkga.github.io/spacegray/
