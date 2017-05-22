@@ -40,7 +40,7 @@ determine the exact padding."
    (highlight      cyan)
    (vertical-bar   (doom-darken dark-grey 0.2))
    (current-line   (doom-darken bg-alt 0.05))
-   (selection      (doom-lighten highlight 0.3))
+   (selection      (doom-lighten highlight 0.6))
    (builtin        blue)
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.1))
@@ -95,8 +95,16 @@ determine the exact padding."
    ;; linum
    (linum :foreground grey :background bg :bold nil :distant-foreground nil)
    (doom-linum-highlight :foreground highlight :background bg :bold nil :distant-foreground nil)
-   (cursor :background highlight))
+   (cursor :background highlight)
 
+   ;; helm
+   (helm-selection :foreground dark-grey :background selection)
+   (helm-match     :foreground highlight)
+
+   ;; company
+   (company-tooltip-selection  :background selection :foreground dark-grey)
+
+   )
 
   ;; --- variables --------------------------
   ;; ()
