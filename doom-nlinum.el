@@ -14,6 +14,9 @@
     (remove-hook 'after-change-major-mode-hook #'doom-nlinum-unhl-line t)
     (remove-hook 'post-command-hook #'doom-nlinum-hl-line t)))
 
+(defun doom--nlinum-overlay-p (ov)
+  (overlay-get ov 'nlinum))
+
 (defun doom-nlinum-hl-line (&rest _)
   "Highlight current line number."
   (while-no-input
@@ -34,8 +37,11 @@
             (put-text-property 0 (length str) 'face 'linum str)
             (setq doom--nlinum-hl-overlay nil)
             disp))
-        (let ((ov (cl-find-if (lambda (ov) (overlay-get ov 'nlinum))
-                              (overlays-in pbol peol))))
+        (let ((ov (cl-find-if #'doom--nlinum-overlay-p (overlays-in pbol peol))))
+          ;; Try to deal with evaporating line numbers (a known nlinum bug)
+          (unless (or ov (eobp))
+            (nlinum--flush)
+            (setq ov (cl-find-if #'doom--nlinum-overlay-p (overlays-in pbol peol))))
           (when ov
             (let ((str (nth 1 (get-text-property 0 'display (overlay-get ov 'before-string)))))
               (put-text-property 0 (length str) 'face 'doom-linum-highlight str)
