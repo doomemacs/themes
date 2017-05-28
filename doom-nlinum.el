@@ -8,17 +8,14 @@
 
 (defun doom-nlinum-hl-hook ()
   (if nlinum-mode
-      (progn
-        (add-hook 'after-change-major-mode-hook #'doom-nlinum-unhl-line nil t)
-        (add-hook 'post-command-hook #'doom-nlinum-hl-line nil t))
-    (remove-hook 'after-change-major-mode-hook #'doom-nlinum-unhl-line t)
-    (remove-hook 'post-command-hook #'doom-nlinum-hl-line t)))
+      (add-hook 'post-command-hook 'doom-nlinum-hl-line nil t)
+    (remove-hook 'post-command-hook 'doom-nlinum-hl-line t)))
 
 (defun doom--nlinum-overlay-p (ov)
   (overlay-get ov 'nlinum))
 
 (defun doom-nlinum-hl-line (&rest _)
-  "Highlight current line number."
+  "Highlight the current line number with nlinum."
   (while-no-input
     (let* ((pbol (line-beginning-position))
            (peol (1+ pbol))
@@ -47,16 +44,20 @@
               (put-text-property 0 (length str) 'face 'doom-linum-highlight str)
               (setq doom--nlinum-hl-overlay ov))))))))
 
-(defun doom-nlinum-unhl-line ()
-  "Removes the hanging overlay hl-line sometimes leaves on the first line."
+(defun doom-nlinum-unhl-first-line (&optional pt)
+  "Removes the hanging overlay hl-line sometimes leaves behind."
   (ignore-errors
-    (dolist (overlay (overlays-at (point)))
+    (dolist (overlay (overlays-at (or pt (point))))
       (when (eq (overlay-get overlay 'face) 'hl-line)
         (delete-overlay overlay)))))
 
 (eval-after-load "nlinum"
   (lambda ()
     (add-hook 'nlinum-mode-hook #'doom-nlinum-hl-hook)
+    (add-hook 'nlinum-mode-hook #'doom-nlinum-unhl-first-line)
+    (add-hook 'after-change-major-mode-hook #'doom-nlinum-unhl-first-line)
+    ;; hl-line-mode forces the current line number to redraw.
+    ;; TODO manual redraw without hl-line
     (unless (bound-and-true-p global-hl-line-mode)
       (add-hook 'nlinum-mode-hook #'hl-line-mode))))
 
