@@ -217,6 +217,7 @@ Faces in EXTRA-FACES override the default faces."
        (diff-file-header :foreground blue :background nil)
        (diff-hunk-header :foreground violet)
        (diff-refine-added   :inherit 'diff-added :inverse-video t)
+       (diff-refine-changed :inherit 'diff-changed :inverse-video t)
        (diff-refine-removed :inherit 'diff-removed :inverse-video t)
 
        ;; dired+
