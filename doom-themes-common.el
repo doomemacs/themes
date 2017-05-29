@@ -441,6 +441,11 @@ Faces in EXTRA-FACES override the default faces."
        ;; nlinum-relative
        (nlinum-relative-current-face :inherit 'doom-linum-highlight)
 
+       ;; lsp
+       (lsp-face-highlight-textual :background dark-blue :foreground white :distant-foreground black :bold bold)
+       (lsp-face-hightlight-read   :background dark-blue :foreground white :distant-foreground black :bold bold)
+       (lsp-face-hightlight-write  :background dark-blue :foreground white :distant-foreground black :bold bold)
+
        ;; magit
        (magit-bisect-bad        :foreground red)
        (magit-bisect-good       :foreground green)
