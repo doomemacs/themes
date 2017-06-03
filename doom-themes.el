@@ -245,8 +245,9 @@ Includes an Atom-esque icon theme and highlighting based on filetype."
       (run-with-timer 0.15 nil
                       (lambda (remap buf)
                         (with-current-buffer buf
-                          (setq face-remapping-alist remap
-                                doom-themes--bell-p nil)
+                          (when (assq 'mode-line face-remapping-alist)
+                            (setq face-remapping-alist remap
+                                  doom-themes--bell-p nil))
                           (force-mode-line-update)))
                       old-remap
                       (current-buffer)))))
