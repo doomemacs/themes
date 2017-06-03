@@ -76,7 +76,7 @@ determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
-   (region         (doom-lighten bg-alt 0.1))
+   (region         `(,(doom-lighten (car bg-alt) 0.1) ,@(doom-lighten (cdr base0) 0.3)))
    (error          red)
    (warning        yellow)
    (success        green)
