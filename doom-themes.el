@@ -82,6 +82,10 @@
   "Options for doom-themes."
   :group 'faces)
 
+(defface doom-modeline-error '((t (:inherit error :inverse-video t)))
+  "Face to use for the mode-line when `doom-themes-visual-bell-config' is used."
+  :group 'doom-themes)
+
 ;;
 (defcustom doom-themes-enable-bold t
   "If nil, bold will be disabled across all faces."
