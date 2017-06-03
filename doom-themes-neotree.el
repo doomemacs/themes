@@ -1,6 +1,6 @@
-;;; doom-neotree.el
+;;; doom-themes-neotree.el
 
-(unless doom--inhibit-warning
+(unless doom-themes--inhibit-warning
   (message "doom-themes: loading `doom-neotree' directly is obsolete, call `doom-themes-nlinum-config' instead"))
 
 (defgroup doom-neotree nil
@@ -309,5 +309,5 @@ pane and are highlighted incorrectly."
     ;; Shorter pwd in neotree
     (advice-add #'neo-buffer--insert-root-entry :override #'doom--neo-buffer--insert-root-entry)))
 
-(provide 'doom-neotree)
-;;; doom-neotree.el ends here
+(provide 'doom-themes-neotree)
+;;; doom-themes-neotree.el ends here

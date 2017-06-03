@@ -1,7 +1,4 @@
-;;; doom-nlinum.el
-
-(unless doom--inhibit-warning
-  (message "doom-themes: loading doom-nlinum directly is obsolete, call `doom-themes-nlinum-config' instead"))
+;;; doom-themes-nlinum.el
 
 (defvar doom--nlinum-hl-overlay nil)
 (defvar doom--nlinum-hl-line 0)
@@ -37,7 +34,7 @@
         (let ((ov (cl-find-if #'doom--nlinum-overlay-p (overlays-in pbol peol))))
           ;; Try to deal with evaporating line numbers (a known nlinum bug)
           (unless (or ov (eobp))
-            (nlinum--flush)
+            (nlinum--region pbol peol)
             (setq ov (cl-find-if #'doom--nlinum-overlay-p (overlays-in pbol peol))))
           (when ov
             (let ((str (nth 1 (get-text-property 0 'display (overlay-get ov 'before-string)))))
@@ -61,5 +58,5 @@
     (unless (bound-and-true-p global-hl-line-mode)
       (add-hook 'nlinum-mode-hook #'hl-line-mode))))
 
-(provide 'doom-nlinum)
-;;; doom-nlinum.el ends here
+(provide 'doom-themes-nlinum)
+;;; doom-themes-nlinum.el ends here
