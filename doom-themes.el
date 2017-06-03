@@ -173,7 +173,7 @@ between 0 and 1)."
                                          ',defs))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces ',name ,@(doom-themes-common-faces extra-faces))
-       ;; FIXME (custom-theme-set-variables ',name ,@(doom-themes-common-variables extra-vars))
+       (custom-theme-set-variables ',name ,@(doom-themes-common-variables extra-vars))
        (provide-theme ',name))))
 
 (defun doom-themes-common-faces (&optional extra-faces)
