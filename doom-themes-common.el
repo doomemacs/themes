@@ -3,28 +3,26 @@
 (defconst doom-themes-common-faces
   '(;; --- custom faces -----------------------
     (doom-modeline-error
-     (&all   :background (doom-darken red 0.25) :distant-foreground black)
-     (&dark  :foreground bg)
-     (&light :foreground fg))
+     :background (doom-darken red 0.25)
+     :foreground base0
+     :distant-foreground base0)
 
     ;; --- base faces -------------------------
-    (bold        :weight (if bold 'bold 'normal) :foreground white)
+    (bold        :weight (if bold 'bold 'normal) :foreground base8)
     (italic      :slant  (if italic 'italic 'normal))
     (bold-italic :inherit '(bold italic))
 
     (default :background bg :foreground fg)
-    (fringe (&all   :inherit 'default)
-            (&dark  :foreground grey)
-            (&light :foreground light-grey))
+    (fringe :inherit 'default :foreground base5)
     (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.3))
-    (highlight            :background highlight  :foreground black :distant-foreground white)
+    (highlight            :background highlight  :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
-    (shadow               :foreground light-grey)
+    (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
     (tooltip              :inherit 'doom-default :background bg :foreground fg)
     (secondary-selection  :background grey)
-    (lazy-highlight       :background dark-blue  :foreground white :distant-foreground black :bold bold)
-    (match                :foreground green      :background black :bold bold)
+    (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :bold bold)
+    (match                :foreground green      :background base0 :bold bold)
     (trailing-whitespace  :background red)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground blue :underline t)
@@ -65,12 +63,12 @@
     (dired-ignored   :foreground comments)
 
     ;; ediff
-    (ediff-fine-diff-A    :background dark-grey :inherit 'bold)
-    (ediff-fine-diff-B    :background dark-grey :inherit 'bold)
-    (ediff-fine-diff-C    :background dark-grey :inherit 'bold)
-    (ediff-current-diff-A :background black)
-    (ediff-current-diff-B :background black)
-    (ediff-current-diff-C :background black)
+    (ediff-fine-diff-A    :background base3 :inherit 'bold)
+    (ediff-fine-diff-B    :background base3 :inherit 'bold)
+    (ediff-fine-diff-C    :background base3 :inherit 'bold)
+    (ediff-current-diff-A :background base0)
+    (ediff-current-diff-B :background base0)
+    (ediff-current-diff-C :background base0)
     (ediff-even-diff-A    :inherit 'hl-line)
     (ediff-even-diff-B    :inherit 'hl-line)
     (ediff-even-diff-C    :inherit 'hl-line)
@@ -105,34 +103,31 @@
     (ido-virtual     :foreground comments)
 
     ;; isearch
-    (isearch :background highlight :foreground black :bold bold)
-    (isearch-lazy-highlight-face :background dark-grey)
+    (isearch :background highlight :foreground base0 :bold bold)
+    (isearch-lazy-highlight-face :background base3)
 
     ;; linum
     (linum :foreground fg-alt :background bg :bold nil :distant-foreground nil)
 
     ;; term
-    (term-color-black   :background black   :foreground black)
+    (term-color-black   :background base0   :foreground base0)
     (term-color-red     :background red     :foreground red)
     (term-color-green   :background green   :foreground green)
     (term-color-yellow  :background yellow  :foreground yellow)
     (term-color-blue    :background blue    :foreground blue)
     (term-color-magenta :background magenta :foreground magenta)
     (term-color-cyan    :background cyan    :foreground cyan)
-    (term-color-white   :background white   :foreground white)
+    (term-color-white   :background base8   :foreground base8)
 
     ;; window-divider
     (window-divider :inherit 'vertical-border)
-    (window-divider-first-pixel  :inherit 'window-divider)
-    (window-divider-last-pixel   :inherit 'window-divider)
+    (window-divider-first-pixel :inherit 'window-divider)
+    (window-divider-last-pixel  :inherit 'window-divider)
 
 
     ;; --- plugin faces -----------------------
     ;; avy
-    (avy-lead-face
-     (&all :background highlight)
-     (&dark  :foreground black :distant-foreground white)
-     (&light :foreground white :distant-foreground black))
+    (avy-lead-face :background highlight :foreground base0 :distant-foreground base8)
     (avy-lead-face-0 :inherit 'avy-lead-face)
     (avy-lead-face-1 :inherit 'avy-lead-face)
     (avy-lead-face-2 :inherit 'avy-lead-face)
@@ -184,7 +179,7 @@
     (company-scrollbar-bg       :inherit 'tooltip)
     (company-scrollbar-fg       :background highlight)
     (company-preview                                  :foreground highlight)
-    (company-preview-common     :background dark-grey :foreground magenta)
+    (company-preview-common     :background base3 :foreground magenta)
     (company-preview-search     :inherit 'company-tooltip-search)
 
     ;; diff-hl
@@ -195,7 +190,7 @@
     ;; diff-mode
     (diff-added   :inherit 'hl-line :foreground green)
     (diff-changed :foreground violet)
-    (diff-removed :foreground red :background dark-grey)
+    (diff-removed :foreground red :background base3)
     (diff-header  :foreground cyan :background nil)
     (diff-file-header :foreground blue :background nil)
     (diff-hunk-header :foreground violet)
@@ -204,10 +199,10 @@
     (diff-refine-removed :inherit 'diff-removed :inverse-video t)
 
     ;; dired+
-    (diredp-file-name              :foreground white)
-    (diredp-dir-name               :foreground white :inherit 'bold)
-    (diredp-ignored-file-name      :foreground light-grey)
-    (diredp-compressed-file-suffix :foreground light-grey)
+    (diredp-file-name              :foreground base8)
+    (diredp-dir-name               :foreground base8 :inherit 'bold)
+    (diredp-ignored-file-name      :foreground base5)
+    (diredp-compressed-file-suffix :foreground base5)
     (diredp-symlink                :foreground violet)
     (diredp-dir-heading            :foreground blue  :inherit 'bold)
     (diredp-file-suffix            :foreground violet)
@@ -216,7 +211,7 @@
     (diredp-exec-priv              :foreground yellow)
     (diredp-rare-priv              :foreground red   :inherit 'bold)
     (diredp-dir-priv               :foreground blue  :inherit 'bold)
-    (diredp-no-priv                :foreground light-grey)
+    (diredp-no-priv                :foreground base5)
     (diredp-number                 :foreground magenta)
     (diredp-date-time              :foreground blue)
 
@@ -230,14 +225,14 @@
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
 
     ;; evil
-    (evil-ex-substitute-matches     :background black :foreground red   :strike-through t :bold bold)
-    (evil-ex-substitute-replacement :background black :foreground green :bold bold)
+    (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :bold bold)
+    (evil-ex-substitute-replacement :background base0 :foreground green :bold bold)
     (evil-search-highlight-persist-highlight-face :inherit 'isearch-lazy-highlight-face)
 
     ;; evil-mc
-    (evil-mc-cursor-default-face :background magenta :foreground black :inverse-video nil)
+    (evil-mc-cursor-default-face :background magenta :foreground base0 :inverse-video nil)
     (evil-mc-region-face :inherit 'region)
-    (evil-mc-cursor-bar-face :height 1 :background magenta :foreground black)
+    (evil-mc-cursor-bar-face :height 1 :background magenta :foreground base0)
     (evil-mc-cursor-hbar-face :underline `(:color ,highlight))
 
     ;; evil-snipe
@@ -275,7 +270,7 @@
     (gnus-group-mail-1           :bold bold :foreground fg)
     (gnus-group-mail-2           :inherit 'gnus-group-mail-1)
     (gnus-group-mail-3           :inherit 'gnus-group-mail-1)
-    (gnus-group-mail-1-empty     :foreground light-grey)
+    (gnus-group-mail-1-empty     :foreground base5)
     (gnus-group-mail-2-empty     :inherit 'gnus-group-mail-1-empty)
     (gnus-group-mail-3-empty     :inherit 'gnus-group-mail-1-empty)
     (gnus-group-news-1           :inherit 'gnus-group-mail-1)
@@ -292,7 +287,7 @@
     (gnus-group-news-6-empty     :inherit 'gnus-groupnews-1-empty)
     (gnus-group-mail-low         :inherit 'gnus-group-mail-1 :bold nil)
     (gnus-group-mail-low-empty   :inherit 'gnus-group-mail-1-empty)
-    (gnus-group-news-low         :inherit 'gnus-group-mail-1 :foreground light-grey)
+    (gnus-group-news-low         :inherit 'gnus-group-mail-1 :foreground base5)
     (gnus-group-news-low-empty   :inherit 'gnus-group-news-low :bold nil)
     (gnus-header-content         :inherit 'message-header-other)
     (gnus-header-from            :inherit 'message-header-other)
@@ -300,15 +295,15 @@
     (gnus-header-newsgroups      :inherit 'message-header-other)
     (gnus-header-subject         :inherit 'message-header-subject)
     (gnus-summary-cancelled      :foreground red :strike-through t)
-    (gnus-summary-high-ancient   :foreground (doom-lighten light-grey 0.2) :inherit 'italic)
+    (gnus-summary-high-ancient   :foreground (doom-lighten base5 0.2) :inherit 'italic)
     (gnus-summary-high-read      :foreground (doom-lighten fg 0.2))
     (gnus-summary-high-ticked    :foreground (doom-lighten magenta 0.2))
     (gnus-summary-high-unread    :foreground (doom-lighten green 0.2))
-    (gnus-summary-low-ancient    :foreground (doom-darken light-grey 0.2) :inherit 'italic)
+    (gnus-summary-low-ancient    :foreground (doom-darken base5 0.2) :inherit 'italic)
     (gnus-summary-low-read       :foreground (doom-darken fg 0.2))
     (gnus-summary-low-ticked     :foreground (doom-darken magenta 0.2))
     (gnus-summary-low-unread     :foreground (doom-darken green 0.2))
-    (gnus-summary-normal-ancient :foreground light-grey :inherit 'italic)
+    (gnus-summary-normal-ancient :foreground base5 :inherit 'italic)
     (gnus-summary-normal-read    :foreground fg)
     (gnus-summary-normal-ticked  :foreground magenta)
     (gnus-summary-normal-unread  :foreground green :inherit 'bold)
@@ -325,18 +320,18 @@
     (gnus-cite-10                :foreground yellow)
     (gnus-cite-11                :foreground yellow)
     (gnus-signature              :foreground yellow)
-    (gnus-x-face                 :background light-grey :foreground fg)
+    (gnus-x-face                 :background base5 :foreground fg)
 
     ;; helm
     (helm-selection              :background selection)
     (helm-match                  :foreground blue :underline t)
-    (helm-source-header          :background current-line :foreground light-grey)
+    (helm-source-header          :background current-line :foreground base5)
     (helm-swoop-target-line-face :foreground highlight :inverse-video t)
     (helm-ff-file                :foreground fg)
     (helm-ff-prefix              :foreground magenta)
     (helm-ff-dotted-directory    :foreground grey)
     (helm-ff-directory           :foreground orange)
-    (helm-ff-executable          :foreground white :inherit 'italic)
+    (helm-ff-executable          :foreground base8 :inherit 'italic)
 
     ;; highlight-indentation-mode
     (highlight-indentation-face                :background (doom-darken bg 0.1))
@@ -352,7 +347,7 @@
     (highlight-numbers-number :foreground numbers)
 
     ;; hlinum
-    (linum-highlight-face :background dark-grey :foreground fg :distant-foreground nil :bold nil)
+    (linum-highlight-face :background base3 :foreground fg :distant-foreground nil :bold nil)
 
     ;; hydra
     (hydra-face-red      :foreground red     :bold bold)
@@ -369,9 +364,9 @@
     (indent-guide-face :foreground (doom-lighten bg 0.1))
 
     ;; ivy
-    (ivy-current-match :background dark-blue :distant-foreground black :bold bold)
+    (ivy-current-match :background dark-blue :distant-foreground base0 :bold bold)
     (ivy-minibuffer-match-face-1
-     :background black
+     :background base0
      :foreground (doom-lighten grey 0.1)
      :bold bold)
     (ivy-minibuffer-match-face-2 :inherit 'ivy-minibuffer-match-face-1 :foreground magenta)
@@ -404,7 +399,7 @@
     (mc/cursor-face :inherit 'cursor)
 
     ;; nav-flash
-    (nav-flash-face :background dark-blue :foreground white :bold bold)
+    (nav-flash-face :background dark-blue :foreground base8 :bold bold)
 
     ;; neotree
     (neo-root-dir-face   :foreground green :background bg :box `(:line-width 4 :color ,bg))
@@ -412,12 +407,8 @@
     (neo-dir-link-face   :foreground blue)
     (neo-expand-btn-face :foreground blue)
     (doom-neotree-dir-face :foreground highlight)
-    (doom-neotree-file-face
-     (&dark :foreground white)
-     (&light :foreground black))
-    (doom-neotree-hidden-file-face
-     (&dark :foreground light-grey)
-     (&light :foreground dark-grey))
+    (doom-neotree-file-face :foreground base8)
+    (doom-neotree-hidden-file-face :foreground base3)
     (doom-neotree-text-file-face :foreground fg)
     (doom-neotree-data-file-face :foreground violet)
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
@@ -427,9 +418,9 @@
 
     ;; lsp
     ;; TODO Add light versions
-    (lsp-face-highlight-textual :background dark-blue :foreground white :distant-foreground black :bold bold)
-    (lsp-face-highlight-read    :background dark-blue :foreground white :distant-foreground black :bold bold)
-    (lsp-face-highlight-write   :background dark-blue :foreground white :distant-foreground black :bold bold)
+    (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
+    (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
+    (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
 
     ;; magit
     (magit-bisect-bad        :foreground red)
@@ -452,14 +443,14 @@
     (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :bold bold)
     (magit-diff-hunk-heading           :foreground bg                    :background (doom-blend violet bg 0.3))
     (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :bold bold)
-    (magit-diff-removed                :foreground (doom-darken red 0.3) :background (doom-blend red dark-grey 0.05))
-    (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red dark-grey 0.1) :bold bold)
+    (magit-diff-removed                :foreground (doom-darken red 0.3) :background (doom-blend red base3 0.05))
+    (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red base3 0.1) :bold bold)
     (magit-diff-lines-heading          :foreground yellow     :background red)
     (magit-diffstat-added              :foreground green)
     (magit-diffstat-removed            :foreground red)
     (magit-dimmed :foreground comments)
     (magit-hash :foreground comments)
-    (magit-header-line :background dark-blue :foreground white :bold bold
+    (magit-header-line :background dark-blue :foreground base8 :bold bold
                        :box `(:line-width 3 :color ,dark-blue))
     (magit-log-author :foreground orange)
     (magit-log-date :foreground blue)
@@ -533,8 +524,8 @@
     (reb-match-3 :foreground yellow  :inverse-video t)
 
     ;; show-paren
-    (show-paren-match    :foreground red   :background black :bold bold)
-    (show-paren-mismatch :foreground black :background red   :bold bold)
+    (show-paren-match    :foreground red   :background base0 :bold bold)
+    (show-paren-mismatch :foreground base0 :background red   :bold bold)
 
     ;; smartparens
     (sp-pair-overlay-face :background region)
@@ -547,7 +538,7 @@
     (solaire-default-face :inherit 'default :background bg-alt)
     (solaire-linum-face-face :inherit 'linum :background bg-alt)
     (solaire-linum-highlight-face :inherit 'linum-highlight-face)
-    (solaire-hl-line-face :background dark-grey)
+    (solaire-hl-line-face :background base3)
     (solaire-org-hide-face :foreground bg-alt)
 
     ;; spaceline
@@ -555,15 +546,15 @@
 
     ;; stripe-buffer
     (stripe-highlight
-     `((((background dark))  (:background ,dark-grey))
-       (((background light)) (:background ,light-grey))))
+     `((((background dark))  (:background ,base3))
+       (((background light)) (:background ,base5))))
 
     ;; swiper
-    (swiper-line-face    :background blue    :foreground black)
-    (swiper-match-face-1 :background black   :foreground light-grey)
-    (swiper-match-face-2 :background orange  :foreground black :bold bold)
-    (swiper-match-face-3 :background magenta :foreground black :bold bold)
-    (swiper-match-face-4 :background green   :foreground black :bold bold)
+    (swiper-line-face    :background blue    :foreground base0)
+    (swiper-match-face-1 :background base0   :foreground base5)
+    (swiper-match-face-2 :background orange  :foreground base0 :bold bold)
+    (swiper-match-face-3 :background magenta :foreground base0 :bold bold)
+    (swiper-match-face-4 :background green   :foreground base0 :bold bold)
 
     ;; tabbar
     (tabbar-default           :foreground bg :background bg :height 0.9)
@@ -576,25 +567,22 @@
     (tabbar-button-highlight  :inherit 'tabbar-button :inverse-video t)
 
     ;; undo-tree
-    (undo-tree-visualizer-default-face :foreground light-grey)
+    (undo-tree-visualizer-default-face :foreground base5)
     (undo-tree-visualizer-current-face :foreground green :bold bold)
-    (undo-tree-visualizer-unmodified-face :foreground light-grey)
+    (undo-tree-visualizer-unmodified-face :foreground base5)
     (undo-tree-visualizer-active-branch-face :foreground blue)
     (undo-tree-visualizer-register-face :foreground yellow)
 
     ;; vimish-fold
-    (vimish-fold-overlay :inherit 'font-lock-comment-face :background black)
+    (vimish-fold-overlay :inherit 'font-lock-comment-face :background base0)
     (vimish-fold-fringe  :foreground magenta)
 
     ;; volatile-highlights
     (vhl/default-face :background grey)
 
     ;; wgrep
-    (wgrep-face
-     (&all :bold bold :foreground green)
-     (&dark :background dark-grey)
-     (&light :background light-grey))
-    (wgrep-delete-face :foreground dark-grey :background red)
+    (wgrep-face :bold bold :foreground green :background base5)
+    (wgrep-delete-face :foreground base3 :background red)
     (wgrep-done-face   :foreground blue)
     (wgrep-file-face   :foreground comments)
     (wgrep-reject-face :foreground red :bold bold)
@@ -609,14 +597,14 @@
     (which-key-local-map-description-face :foreground magenta)
 
     ;; whitespace
-    (whitespace-tab      :foreground light-grey)
-    (whitespace-newline  :foreground light-grey)
+    (whitespace-tab      :foreground base5)
+    (whitespace-newline  :foreground base5)
     (whitespace-trailing :inherit 'trailing-whitespace)
-    (whitespace-line     :background black :foreground red :bold bold)
+    (whitespace-line     :background base0 :foreground red :bold bold)
 
     ;; workgroups2
-    (wg-current-workgroup-face :foreground black      :background blue)
-    (wg-other-workgroup-face   :foreground light-grey :background current-line)
+    (wg-current-workgroup-face :foreground base0 :background blue)
+    (wg-other-workgroup-face   :foreground base5 :background current-line)
     (wg-divider-face           :foreground grey)
     (wg-brace-face             :foreground blue)
 
@@ -662,12 +650,10 @@
     ;; ledger-mode
     (ledger-font-posting-date-face :foreground blue)
     (ledger-font-posting-amount-face :foreground yellow)
-    (ledger-font-posting-account-face :foreground white)
+    (ledger-font-posting-account-face :foreground base8)
     (ledger-font-payee-cleared-face :foreground violet :bold t :height 1.2)
-    (ledger-font-payee-uncleared-face :foreground light-grey :bold t :height 1.2)
-    (ledger-font-xact-highlight-face
-     (&dark :background dark-grey)
-     (&light :background light-grey))
+    (ledger-font-payee-uncleared-face :foreground base5 :bold t :height 1.2)
+    (ledger-font-xact-highlight-face :background base5)
 
     ;; makefile-*-mode
     (makefile-targets :foreground blue)
@@ -676,7 +662,7 @@
     (markdown-header-face           :foreground red)
     (markdown-header-delimiter-face :inherit 'markdown-header-face)
     (markdown-metadata-key-face     :foreground red)
-    (markdown-markup-face           :foreground light-grey)
+    (markdown-markup-face           :foreground base5)
     (markdown-pre-face              :foreground green)
     (markdown-inline-face           :foreground cyan)
     (markdown-list-face             :foreground red)
@@ -704,30 +690,18 @@
     (org-agenda-dimmed-todo-face :foreground comments)
 
     ;; org-mode
-    (org-level-1
-     (&all :foreground blue :bold bold :height 1.2)
-     (&dark  :background dark-grey)
-     (&light :background light-grey))
+    (org-level-1 :foreground blue :background base5 :bold bold :height 1.2)
     (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
-    (org-level-3
-     (&all :bold bold)
-     (&dark  :foreground white)
-     (&light :foreground black))
+    (org-level-3 :bold bold :foreground base8)
     (org-level-4 :inherit 'org-level-3)
     (org-level-5 :inherit 'org-level-3)
     (org-level-6 :inherit 'org-level-3)
     (org-tag :foreground green :bold nil)
     (org-priority :foreground red)
-    (org-ellipsis
-     (&all :underline nil)
-     (&dark :background dark-grey :foreground violet)
-     (&light :background light-grey :foreground dark-grey))
+    (org-ellipsis :underline nil :background base5 :foreground violet)
     (org-hide :foreground bg)
     (org-table :foreground violet)
-    (org-quote
-     (&all :inherit 'italic)
-     (&dark :background dark-grey)
-     (&light :background light-grey))
+    (org-quote :inherit 'italic :background base5)
     (org-document-info         :foreground builtin)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
@@ -736,7 +710,7 @@
     (org-block-end-line        :inherit 'org-block-begin-line)
     (org-block-background      :background current-line)
     (org-block                 :background current-line)
-    (org-archived              :foreground light-grey)
+    (org-archived              :foreground base5)
     (org-code                  :foreground orange)
     (org-verbatim              :foreground green)
     (org-formula               :foreground cyan)
@@ -745,11 +719,8 @@
     (org-link                  :foreground green :underline t :bold 'inherit)
     (org-date                  :foreground violet)
     (org-todo                  :foreground blue :bold 'inherit)
-    (org-done
-     (&all :bold 'inherit)
-     (&dark  :foreground light-grey)
-     (&light :foreground dark-grey))
-    (org-headline-done         :foreground light-grey)
+    (org-done                  :bold 'inherit :foreground base5)
+    (org-headline-done         :foreground base5)
     (org-special-keyword       :foreground magenta)
     (org-checkbox :inherit 'org-todo)
     (org-checkbox-statistics-todo :inherit 'org-todo)
@@ -786,13 +757,13 @@
 
 (defconst doom-themes-common-vars
   '(;;(ansi-color-names-vector
-    ;;   (vector (mapcar #'car (list black red green yellow blue magenta cyan white))))
+    ;;   (vector (mapcar #'car (list base0 red green yellow blue magenta cyan base8))))
 
-    ;;  (fci-rule-color (car light-grey))
+    ;;  (fci-rule-color (car base5))
 
-    ;;  (jdee-db-spec-breakpoint-face-colors `(cons ,(car black) ,(car grey)))
-    ;;  (jdee-db-requested-breakpoint-face-colors `(cons ,(car black) ,(car green)))
-    ;;  (jdee-db-active-breakpoint-face-colors `(cons ,(car black) ,(car highlight)))
+    ;;  (jdee-db-spec-breakpoint-face-colors `(cons ,(car base0) ,(car grey)))
+    ;;  (jdee-db-requested-breakpoint-face-colors `(cons ,(car base0) ,(car green)))
+    ;;  (jdee-db-active-breakpoint-face-colors `(cons ,(car base0) ,(car highlight)))
 
     ;;  (org-ellipsis "  ")
     ;;  (org-fontify-whole-heading-line t)
@@ -816,10 +787,10 @@
     ;;          (cons 280 ,(doom-blend (car grey) (car red) (/ 1.0 4)))
     ;;          (cons 300 ,(doom-blend (car grey) (car red) (/ 2.0 4)))
     ;;          (cons 320 ,(doom-blend (car grey) (car red) (/ 3.0 4)))
-    ;;          (cons 340 ,(car light-grey))
-    ;;          (cons 360 ,(car light-grey))))
+    ;;          (cons 340 ,(car base5))
+    ;;          (cons 360 ,(car base5))))
     ;;  (vc-annotate-very-old-color nil)
-    ;;  (vc-annotate-background (car black))
+    ;;  (vc-annotate-background (car base0))
     )
   "TODO")
 
