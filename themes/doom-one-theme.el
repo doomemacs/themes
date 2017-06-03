@@ -31,36 +31,47 @@ determine the exact padding."
 (def-doom-theme doom-one
   "A dark theme inspired by Atom One Dark"
 
-  ;; name      gui       term (256)
-  ((bg         "#21242b" nil      )
-   (bg-alt     "#282c34" nil      )
-   (fg         "#bbc2cf" "#bfbfbf")
-   (fg-alt     "#5B6268" "#3d3d3d")
-   (black      "#1B2229" "black"  )
-   (light-grey fg-alt    "#525252")
-   (grey       "#3B3F46" fg-alt   )
-   (dark-grey  "#23272e" "#262626")
-   (white      "#DFDFDF" "#dfdfdf")
-   (red        "#ff6c6b" "#ff6655")
-   (orange     "#da8548" "#dd8844")
-   (green      "#98be65" "#99bb66")
-   (teal       "#4db5bd" "#44b9b1")
-   (yellow     "#ECBE7B"          )
-   (blue       "#51afef"          )
-   (dark-blue  "#2257A0"          )
-   (magenta    "#c678dd"          )
-   (violet     "#a9a1e1"          )
-   (cyan       "#46D9FF"          )
-   (dark-cyan  "#5699AF"          )
+  ;; name        default   256       16
+  ((bg         '("#21242b" nil       nil            ))
+   (bg-alt     '("#282c34" "#242428" "black"        ))
+   (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
+   (fg-alt     '("#5B6268" "#3d3d3d" "white"        ))
 
-   ;; face categories
+   (base0      '("#1B2229" "black"   "black"        ))
+   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
+   (base2      '("#23272e" "#262626" "brightblack"  ))
+   (base3      '("#3B3F46" "#3d3d3d" "brightblack"  ))
+   (base4      '("#5B6268" "#525252" "brightblack"  ))
+   (base5      '("#73797e" "#6b6b6b" "brightblack"  ))
+   (base6      '("#9ca0a4" "#979797" "brightblack"  ))
+   (base7      '("#DFDFDF" "#dfdfdf" "white"        ))
+
+   (red        '("#ff6c6b" "#ff6655" "red"          ))
+   (orange     '("#da8548" "#dd8844" "brightred"    ))
+   (green      '("#98be65" "#99bb66" "green"        ))
+   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
+   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
+   (blue       '("#51afef" "#51afef" "brightblue"   ))
+   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
+   (magenta    '("#c678dd" "#c678dd" "magenta"      ))
+   (violet     '("#a9a1e1" "#a9a1e1" "brightmagenta"))
+   (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
+   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+
+   (white      base7)
+   (light-grey base4)
+   (grey       base3)
+   (dark-grey  base2)
+   (black      base0)
+
+   ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   (doom-darken dark-grey 0.2))
-   (current-line   dark-grey "black")
+   (vertical-bar   dark-grey)
+   (current-line   `(,(car base1) ,@(cdr black)))
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-one-brighter-comments dark-cyan light-grey))
-   (doc-comments   (if doom-one-brighter-comments (doom-lighten dark-cyan 0.1) (doom-lighten light-grey 0.2)))
+   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan light-grey) 0.15))
    (constants      violet)
    (functions      magenta)
    (keywords       blue)
@@ -85,10 +96,10 @@ determine the exact padding."
       (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4)))
 
    (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet grey (if modeline-bright 0.5 0.3)) grey)
+   (modeline-fg-alt (doom-blend violet grey (if modeline-bright 0.5 0.2)))
 
-   (modeline-bg     (if modeline-bright (doom-darken blue 0.475) bg-alt)                "brightblack")
-   (modeline-bg-l   (if modeline-bright (doom-darken blue 0.45) (doom-darken bg 0.085)) "black")
+   (modeline-bg     (if modeline-bright (doom-darken blue 0.475) bg-alt))
+   (modeline-bg-l   (apply #'doom-darken (if modeline-bright (list blue 0.45) (list bg 0.085))))
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-l (doom-darken bg 0.025)))
 
@@ -96,14 +107,16 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (linum :foreground (if gui "#42454E" light-grey)
-          :distant-foreground nil
-          :bold nil
-          :height doom-one-linum-height)
-   (doom-linum-highlight :foreground black
-                         :distant-foreground (doom-darken white 0.3)
-                         :bold bold
-                         :height doom-one-linum-height)
+   (linum
+    `((((min-colors 257))
+       (:foreground ,(if gui "#42454E" light-grey) :distant-foreground nil :bold nil))
+      (((min-colors 256))
+       (:foreground "#414141" :distant-foreground nil :bold nil))))
+   ;; (doom-linum-highlight
+   ;;  `((((min-colors 257))
+   ;;     (:foreground ,black :distant-foreground ,(doom-darken white 0.3) :bold ,bold :height ,doom-one-linum-height))
+   ;;    (((min-colors 256))
+   ;;     (:foreground ,(c fg 256) :distant-foreground ,white :bold nil))))
 
    (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
 
@@ -116,11 +129,11 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground (if modeline-bright white highlight))
 
-   (doom-mode-line
+   (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-l)))
-   (doom-mode-line-inactive
+   (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive-l)))
@@ -132,7 +145,7 @@ determine the exact padding."
    (css-selector             :foreground blue))
 
 
-  ;; --- extra variables --------------------
+  ;; --- extra variables ---------------------
   ;; ()
   )
 
