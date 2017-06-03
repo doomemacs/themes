@@ -690,7 +690,7 @@
     (org-agenda-dimmed-todo-face :foreground comments)
 
     ;; org-mode
-    (org-level-1 :foreground blue :background base5 :bold bold :height 1.2)
+    (org-level-1 :foreground blue :background base3 :bold bold :height 1.2)
     (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
     (org-level-3 :bold bold :foreground base8)
     (org-level-4 :inherit 'org-level-3)
@@ -698,10 +698,10 @@
     (org-level-6 :inherit 'org-level-3)
     (org-tag :foreground green :bold nil)
     (org-priority :foreground red)
-    (org-ellipsis :underline nil :background base5 :foreground violet)
+    (org-ellipsis :underline nil :background base3 :foreground violet)
     (org-hide :foreground bg)
     (org-table :foreground violet)
-    (org-quote :inherit 'italic :background base5)
+    (org-quote :inherit 'italic :background base3)
     (org-document-info         :foreground builtin)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
@@ -710,7 +710,7 @@
     (org-block-end-line        :inherit 'org-block-begin-line)
     (org-block-background      :background current-line)
     (org-block                 :background current-line)
-    (org-archived              :foreground base5)
+    (org-archived              :foreground base3)
     (org-code                  :foreground orange)
     (org-verbatim              :foreground green)
     (org-formula               :foreground cyan)
@@ -718,14 +718,14 @@
     (org-footnote              :foreground orange)
     (org-link                  :foreground green :underline t :bold 'inherit)
     (org-date                  :foreground violet)
-    (org-todo                  :foreground blue :bold 'inherit)
-    (org-done                  :bold 'inherit :foreground base5)
     (org-headline-done         :foreground base5)
+    (org-todo                  :bold 'inherit :foreground blue)
+    (org-done                  :inherit 'org-headline-done :bold 'inherit)
     (org-special-keyword       :foreground magenta)
     (org-checkbox :inherit 'org-todo)
     (org-checkbox-statistics-todo :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
-    (message-header-name :foreground green)
+    (message-header-name :foreground green) ; FIXME move this
 
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
