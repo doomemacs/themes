@@ -825,7 +825,7 @@
 
 
 ;; Library
-(defvar doom-themes--colors nil)
+(defvar doom-themes--colors)
 (defvar doom-themes--min-colors '(257 256 16))
 
 (defun doom-themes--colors-p (item)

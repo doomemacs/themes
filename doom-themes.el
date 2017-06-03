@@ -96,8 +96,9 @@
 (define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.9")
 (define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.9")
 
-(defvar doom--colors nil)
-(defvar doom--inhibit-warning nil)
+(defvar doom-themes--colors nil)
+(defvar doom-themes--inhibit-warning nil)
+(defvar doom-themes--bell-p nil)
 
 
 ;; Color helper functions
