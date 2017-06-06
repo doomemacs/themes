@@ -400,7 +400,7 @@
     (mc/cursor-face :inherit 'cursor)
 
     ;; nav-flash
-    (nav-flash-face :background dark-blue :foreground base8 :bold bold)
+    (nav-flash-face :background selection :foreground base8 :bold bold)
 
     ;; neotree
     (neo-root-dir-face   :foreground green :background bg :box `(:line-width 4 :color ,bg))
