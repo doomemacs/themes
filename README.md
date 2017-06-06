@@ -11,8 +11,8 @@
 >     plugin: [solaire-mode]
 >   + `doom-nlinum` and `doom-themes-nlinum-config` have been moved to a new
 >     plugin: [nlinum-hl]
->   + A rewrite of doom-themes' backend and themes means there problems or
->     breakages may have slipped through. [Let me know][issues] if you find one!
+>   + A rewrite of doom-themes' backend and themes means problems or breakages
+>     may have slipped through. [Let me know][issues] if you find one!
 
 DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 [emacs.d], inspired by some of my favorite color themes.

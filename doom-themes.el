@@ -18,17 +18,17 @@
 ;; DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 ;; [emacs.d], inspired by some of my favorite color themes including:
 ;;
-;;   [X] `doom-one': inspired by [Atom]'s One Dark themes
+;;   [X] `doom-one': inspired by Atom's One Dark themes
 ;;   [-] `doom-one-light': light version of doom-one
 ;;   [X] `doom-vibrant': a more vibrant version of `doom-one`
 ;;   [X] `doom-molokai': based on Textmate's monokai
-;;   [-] `doom-nova': adapted from [Nova] (thanks to [bigardone])
+;;   [X] `doom-nova': adapted from Nova (thanks to bigardone)
 ;;   [ ] `doom-x': reads your colors from ~/.Xresources
-;;   [-] `doom-tomorrow-night' / `doom-tomorrow-day': by [Chris Kempson][tomorrow]
-;;   [ ] `doom-spacegrey': [I'm sure you've heard of it][spacegrey]
+;;   [-] `doom-tomorrow-night' / `doom-tomorrow-day': by Chris Kempson
+;;   [ ] `doom-spacegrey': I'm sure you've heard of it
 ;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
-;;   [ ] `doom-tron': based on Tron Legacy from [daylerees' themes][daylerees]
-;;   [ ] `doom-peacock': based on Peacock from [daylerees' themes][daylerees]
+;;   [ ] `doom-tron': based on Tron Legacy from daylerees' themes
+;;   [ ] `doom-peacock': based on Peacock from daylerees' themes
 ;;
 ;; ## Install
 ;;
