@@ -181,6 +181,7 @@
     (company-preview                                  :foreground highlight)
     (company-preview-common     :background base3 :foreground magenta)
     (company-preview-search     :inherit 'company-tooltip-search)
+    (company-template-field     :inherit 'match)
 
     ;; diff-hl
     (diff-hl-change :foreground vc-modified)
