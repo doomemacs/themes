@@ -403,13 +403,13 @@
     (nav-flash-face :background selection :foreground base8 :bold bold)
 
     ;; neotree
-    (neo-root-dir-face   :foreground green :background bg :box `(:line-width 4 :color ,bg))
+    (neo-root-dir-face   :foreground strings :background bg :box `(:line-width 4 :color ,bg))
     (neo-file-link-face  :foreground fg)
-    (neo-dir-link-face   :foreground blue)
-    (neo-expand-btn-face :foreground blue)
+    (neo-dir-link-face   :foreground highlight)
+    (neo-expand-btn-face :foreground highlight)
     (doom-neotree-dir-face :foreground highlight)
     (doom-neotree-file-face :foreground base8)
-    (doom-neotree-hidden-file-face :foreground base3)
+    (doom-neotree-hidden-file-face :foreground comments)
     (doom-neotree-text-file-face :foreground fg)
     (doom-neotree-data-file-face :foreground violet)
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
@@ -541,7 +541,7 @@
     ;; solaire-mode
     (solaire-default-face :inherit 'default :background bg-alt)
     (solaire-linum-face :inherit 'linum :background bg-alt)
-    (solaire-hl-line-face :background base3)
+    (solaire-hl-line-face :inherit 'hl-line :background base3)
     (solaire-org-hide-face :foreground bg-alt)
 
     ;; spaceline
