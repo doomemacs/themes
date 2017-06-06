@@ -335,10 +335,10 @@
     (helm-ff-executable          :foreground base8 :inherit 'italic)
 
     ;; highlight-indentation-mode
-    (highlight-indentation-face                :background (doom-darken bg 0.1))
-    (highlight-indentation-current-column-face :background (doom-darken bg 0.1))
-    (highlight-indentation-guides-odd-face     :background bg)
-    (highlight-indentation-guides-even-face    :background (doom-darken bg 0.1))
+    (highlight-indentation-face                :inherit 'hl-line)
+    (highlight-indentation-current-column-face :background base1)
+    (highlight-indentation-guides-odd-face     :inherit 'highlight-idnentation-face)
+    (highlight-indentation-guides-even-face    :inherit 'highlight-idnentation-face)
 
     ;; highlight-quoted-mode
     (highlight-quoted-symbol :foreground type)
