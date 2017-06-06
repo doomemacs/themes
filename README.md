@@ -84,9 +84,9 @@ support requests and code reviews are welcome and encouraged.
 [Don't hesitate to report bugs, request features/faces or just tell me my Elisp-fu sucks][issues]!
 
 
-[@bigardone]: https://github.com/bigardone
 [Atom]: http://atom.io
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
+[bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [hlinum]: https://melpa.org/#/hlinum
