@@ -16,6 +16,12 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-comment-bg doom-one-brighter-comments
+  "If non-nil, comments will have a subtle, darker background. Enhancing their
+legibility."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-one-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -66,7 +72,7 @@ determine the exact padding."
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-one-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan base5) 0.15))
+   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan base5) 0.25))
    (constants      violet)
    (functions      magenta)
    (keywords       blue)
@@ -108,6 +114,13 @@ determine the exact padding."
    ;;     (:foreground ,black :distant-foreground ,(doom-darken base8 0.3) :bold ,bold :height ,doom-one-linum-height))
    ;;    (((min-colors 256))
    ;;     (:foreground ,(c fg 256) :distant-foreground ,base8 :bold nil))))
+   (font-lock-comment-face
+    :foreground comments
+    :background (if doom-one-comment-bg (doom-darken bg-alt 0.095)))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
+
 
    (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
 

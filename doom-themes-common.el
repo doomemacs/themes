@@ -33,8 +33,8 @@
 
     (font-lock-builtin-face                :foreground builtin)
     (font-lock-comment-face                :foreground comments)
-    (font-lock-comment-delimiter-face      :foreground comments)
-    (font-lock-doc-face                    :foreground doc-comments)
+    (font-lock-comment-delimiter-face      :inherit 'font-lock-comment-face)
+    (font-lock-doc-face                    :inherit 'font-lock-comment-face :foreground doc-comments)
     (font-lock-constant-face               :foreground constants)
     (font-lock-function-name-face          :foreground functions)
     (font-lock-keyword-face                :foreground keywords)

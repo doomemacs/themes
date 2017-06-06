@@ -16,6 +16,12 @@
   :group 'doom-vibrant-theme
   :type 'boolean)
 
+(defcustom doom-vibrant-comment-bg doom-vibrant-brighter-comments
+  "If non-nil, comments will have a subtle, darker background. Enhancing their
+legibility."
+  :group 'doom-vibrant-theme
+  :type 'boolean)
+
 (defcustom doom-vibrant-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -66,7 +72,7 @@ determine the exact padding."
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-vibrant-brighter-comments dark-cyan base5))
-   (doc-comments   (if doom-vibrant-brighter-comments teal (doom-lighten base5 0.2)))
+   (doc-comments   (if doom-vibrant-brighter-comments (doom-lighten dark-cyan 0.15) (doom-lighten base4 0.3)))
    (constants      violet)
    (functions      magenta)
    (keywords       blue)
@@ -101,6 +107,13 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+   (font-lock-comment-face
+    :foreground comments
+    :background (if doom-vibrant-comment-bg (doom-darken bg-alt 0.095)))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
    (linum :foreground base4
           :distant-foreground nil
