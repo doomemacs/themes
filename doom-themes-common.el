@@ -107,7 +107,7 @@
     (isearch-lazy-highlight-face :background base3)
 
     ;; linum
-    (linum :foreground base5 :bold nil :distant-foreground nil)
+    (linum :inherit 'default :foreground base5 :bold nil :distant-foreground nil)
 
     ;; term
     (term-color-black   :background base0   :foreground base0)
@@ -540,7 +540,7 @@
 
     ;; solaire-mode
     (solaire-default-face :inherit 'default :background bg-alt)
-    (solaire-linum-face-face :inherit 'linum :background bg-alt)
+    (solaire-linum-face :inherit 'linum :background bg-alt)
     (solaire-hl-line-face :background base3)
     (solaire-org-hide-face :foreground bg-alt)
 

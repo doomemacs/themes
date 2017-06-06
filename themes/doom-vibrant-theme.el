@@ -114,11 +114,13 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (linum :foreground base4
+   (linum :inherit 'default
+          :foreground base4
           :distant-foreground nil
           :bold nil
           :height doom-vibrant-linum-height)
-   (nlinum-hl-face :foreground blue
+   (nlinum-hl-face :inherit 'default
+                   :foreground blue
                    :distant-foreground base8
                    :bold bold
                    :height doom-vibrant-linum-height)
