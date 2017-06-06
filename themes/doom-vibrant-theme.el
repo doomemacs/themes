@@ -119,8 +119,7 @@ determine the exact padding."
           :distant-foreground nil
           :bold nil
           :height doom-vibrant-linum-height)
-   (nlinum-hl-face :inherit 'default
-                   :foreground blue
+   (nlinum-hl-face :foreground blue
                    :distant-foreground base8
                    :bold bold
                    :height doom-vibrant-linum-height)
