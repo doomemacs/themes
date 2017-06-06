@@ -431,7 +431,7 @@
     (magit-bisect-good       :foreground green)
     (magit-bisect-skip       :foreground orange)
     (magit-blame-date        :foreground red)
-    (magit-blame-heading     :foreground orange :background highlight)
+    (magit-blame-heading     :foreground orange :background base3)
     (magit-branch-current    :foreground blue)
     (magit-branch-local      :foreground cyan)
     (magit-branch-remote     :foreground green)
