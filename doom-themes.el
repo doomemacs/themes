@@ -128,10 +128,12 @@ between 0 and 1)."
   "Retrieve a specific color named NAME (a symbol) from the current theme."
   (let ((colors (cdr-safe (assq name doom-themes--colors))))
     (and colors
-         (let ((i (or (plist-get '(256 1 16 2 8 3) type) 0)))
-           (if (> i (1- (length colors)))
-               (car (last colors))
-             (nth i colors))))))
+         (cond ((listp colors)
+                (let ((i (or (plist-get '(256 1 16 2 8 3) type) 0)))
+                  (if (> i (1- (length colors)))
+                      (car (last colors))
+                    (nth i colors))))
+               (t colors)))))
 
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
