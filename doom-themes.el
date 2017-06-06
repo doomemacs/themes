@@ -16,63 +16,41 @@
 ;;; Commentary:
 ;;
 ;; DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
-;; emacs.d, inspired by the One Dark/Light UI and syntax themes in Atom.
+;; [emacs.d], inspired by some of my favorite color themes including:
 ;;
-;; Includes optional dimming of non-source buffers, a neotree theme with font
-;; icons, and (soon) a mode-line config.
+;;   [X] `doom-one': inspired by [Atom]'s One Dark themes
+;;   [-] `doom-one-light': light version of doom-one
+;;   [X] `doom-vibrant': a more vibrant version of `doom-one`
+;;   [X] `doom-molokai': based on Textmate's monokai
+;;   [-] `doom-nova': adapted from [Nova] (thanks to [bigardone])
+;;   [ ] `doom-x': reads your colors from ~/.Xresources
+;;   [-] `doom-tomorrow-night' / `doom-tomorrow-day': by [Chris Kempson][tomorrow]
+;;   [ ] `doom-spacegrey': [I'm sure you've heard of it][spacegrey]
+;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
+;;   [ ] `doom-tron': based on Tron Legacy from [daylerees' themes][daylerees]
+;;   [ ] `doom-peacock': based on Peacock from [daylerees' themes][daylerees]
 ;;
-;; Currently available colorschemes:
-;; + doom-one: inspired by Atom One Dark
-;; + doom-vibrant: a more vibrant take on doom-one
-;; + doom-molokai: based on molokai
-;; + doom-tomorrow-night: Chris Kempson's Tomorrow Night (dark)
+;; ## Install
 ;;
-;; Soon to come:
-;; + doom-tomorrow-day: Chris Kempson's Tomorrow Day (light)
-;; + doom-one-light: inspired by Atom One Light
-;; + doom-tron: daylerees' Tron Legacy colorscheme
-;; + doom-peacock: daylerees' Peacock colorscheme
-;; + doom-spacegrey: I'm sure you've heard of it
-;; + doom-mono-dark: A minimalistic, custom colorscheme
-;; + doom-mono-light: A minimalistic, custom colorscheme
+;;   `M-x package-install RET doom-themes`
 ;;
-;;
-;; ## Configuration
-;;
-;; + global
-;;     + `doom-themes-enable-bold` (default: `t`): if nil, bolding will be disabled
-;;     across all faces.
-;;     + `doom-themes-enable-italic` (default: `t`): if nil, italicization will be
-;;     disabled across all faces.
-;;
-;;   Each colorscheme has their own sub-options, and can be looked up via
-;;   `customize'.
-;;
-;; Example:
+;; A comprehensive configuration example:
 ;;
 ;;   (require 'doom-themes)
-;;   ;;; Settings (defaults)
+;;
+;;   ;; Global settings (defaults)
 ;;   (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
 ;;         doom-themes-enable-italic t) ; if nil, italics is universally disabled
 ;;
-;;   (load-theme 'doom-one t) ;; or doom-molokai, etc.
+;;   ;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each
+;;   ;; theme may have their own settings.
+;;   (load-theme 'doom-one t)
 ;;
-;;   ;;; OPTIONAL
-;;   ;; brighter source buffers (that represent files)
-;;   (add-hook 'find-file-hook #'doom-buffer-mode-maybe)
-;;   ;; ...if you use auto-revert-mode
-;;   (add-hook 'after-revert-hook #'doom-buffer-mode-maybe)
-;;   ;; And you can brighten other buffers (unconditionally) with:
-;;   (add-hook 'ediff-prepare-buffer-hook #'doom-buffer-mode)
-;;
-;;   ;; brighter minibuffer when active
-;;   (add-hook 'minibuffer-setup-hook #'doom-brighten-minibuffer)
+;;   ;; Enable flashing mode-line on errors
+;;   (doom-themes-visual-bell-config)
 ;;
 ;;   ;; Enable custom neotree theme
 ;;   (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
-;;
-;;   ;; Enable nlinum line highlighting
-;;   (doom-themes-nlinum-config)   ; requires nlinum and hl-line-mode
 ;;
 ;;; Code:
 
