@@ -413,8 +413,11 @@
     (doom-neotree-data-file-face :foreground violet)
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
+    ;; nlinum-hl
+    (nlinum-hl-face :foreground fg :distant-foreground nil :bold nil)
+
     ;; nlinum-relative
-    (nlinum-relative-current-face :inherit 'solaire-linum-highlight-face)
+    (nlinum-relative-current-face :foreground fg :distant-foreground nil :bold nil)
 
     ;; lsp
     ;; TODO Add light versions
@@ -537,7 +540,6 @@
     ;; solaire-mode
     (solaire-default-face :inherit 'default :background bg-alt)
     (solaire-linum-face-face :inherit 'linum :background bg-alt)
-    (solaire-linum-highlight-face :inherit 'linum-highlight-face)
     (solaire-hl-line-face :background base3)
     (solaire-org-hide-face :foreground bg-alt)
 
