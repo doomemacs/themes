@@ -25,7 +25,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-one`: inspired by [Atom]'s One Dark themes
   - [X] `doom-vibrant`: a more vibrant version of `doom-one`
   - [X] `doom-molokai`: based on Textmate's monokai
-  - [ ] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+  - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
   - [ ] `doom-one-light`: light version of doom-one
   - [ ] `doom-x`: reads your colors from ~/.Xresources
   - [ ] `doom-tomorrow-night` / `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
