@@ -15,15 +15,26 @@ determine the exact padding."
   "A light theme inspired by Atom One Light."
 
   ;; name      gui
-  ((bg         "#3f4c55")
-   (bg-alt     "#556873")
-   (fg         "#c5c8c6") ;; TODO set correct color
+  ((bg         '("#3c4c55" nil       nil))
+   (bg-alt     '("#44545d" "#445566" "black"))
+
+   ;; FIXME Tweak these
+   (base0      '("#0d0f11" "#0d0f11" "black"      )) ; FIXME black
+   (base1      '("#1e272c" "#1b1b1b"              ))
+   (base2      '("#212122" "#1e1e1e"              )) ;
+   (base3      '("#292a2b" "#292929" "brightblack")) ;
+   (base4      '("#3c4c55" "#3f3f3f" "brightblack")) ;
+   (base5      '("#556873" "#525252" "brightblack"))
+   (base6      '("#6A7D89" "#6b6b6b" "brightblack"))
+   (base7      '("#899BA6" "#878797" "brightblack"))
+   (base8      '("#e6eef3" "#efefef" "brightwhite")) ; FIXME white
+   (fg         '("#c5c8c6" "#c5c6c6" "white"      )) ;; TODO set correct color
    (fg-alt     (doom-darken fg 0.6)) ;; TODO set correct color
-   (black      "#0d0f11") ;; TODO set correct color
+
    (light-grey "#E6EEF3")
-   (grey       (doom-darken light-grey 0.4))
-   (dark-grey  (doom-darken grey 0.7))
-   (white      "#ffffff")
+   (grey       base7)
+   (dark-grey  base3)
+
    (red        "#DF8C8C")
    (orange     "#F2C38F")
    (yellow     "#DADA93")
@@ -38,8 +49,8 @@ determine the exact padding."
 
    ;; face categories
    (highlight      cyan)
-   (vertical-bar   (doom-darken dark-grey 0.2))
-   (current-line   (doom-darken bg-alt 0.05))
+   (vertical-bar   (doom-lighten bg-alt 0.1))
+   (current-line   (doom-lighten bg-alt 0.04))
    (selection      (doom-lighten highlight 0.6))
    (builtin        blue)
    (comments       grey)
@@ -57,15 +68,15 @@ determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    fg-alt)
+   (vc-modified    violet)
    (vc-added       green)
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (doom-darken bg-alt 0.3))
-   (modeline-bg-alt (doom-darken bg 0.2))
+   (modeline-bg     bg-alt)
+   (modeline-bg-alt (doom-lighten bg 0.035))
    (modeline-fg     blue)
-   (modeline-fg-alt grey)
+   (modeline-fg-alt (doom-lighten bg-alt 0.4))
    (modeline-pad
     (when doom-nova-padded-modeline
       (if (integerp doom-nova-padded-modeline)
@@ -75,6 +86,7 @@ determine the exact padding."
   ;; --- faces ------------------------------
   ((doom-modeline-buffer-path       :foreground violet :bold nil)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   (doom-modeline-bar :inherit 'mode-line-highlight)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
@@ -92,19 +104,24 @@ determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
 
+   (solaire-mode-line-face
+    :background (doom-darken modeline-bg 0.1) :foreground modeline-fg
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+   (solaire-mode-line-inactive-face
+    :background (doom-lighten modeline-bg 0.05) :foreground modeline-fg-alt
+    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+   (solaire-hl-line-face :inherit 'hl-line :background current-line)
+
    ;; linum
-   (linum :foreground grey :background bg :bold nil :distant-foreground nil)
-   (doom-linum-highlight :foreground highlight :background bg :bold nil :distant-foreground nil)
-   (cursor :background highlight)
+   (linum :foreground grey :bold nil :distant-foreground nil)
+   (nlinum-hl-face :inherit 'linum :background current-line :foreground highlight)
 
    ;; helm
    (helm-selection :foreground dark-grey :background selection)
    (helm-match     :foreground highlight)
 
    ;; company
-   (company-tooltip-selection  :background selection :foreground dark-grey)
-
-   )
+   (company-tooltip-selection  :background selection :foreground dark-grey))
 
   ;; --- variables --------------------------
   ;; ()
