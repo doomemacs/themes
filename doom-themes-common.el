@@ -25,7 +25,7 @@
     (match                :foreground green      :background base0 :bold bold)
     (trailing-whitespace  :background red)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
-    (link                 :foreground blue :underline t)
+    (link                 :foreground highlight :underline t :bold 'inherit)
 
     (error   :foreground error)
     (warning :foreground warning)
@@ -107,7 +107,7 @@
     (isearch-lazy-highlight-face :background base3)
 
     ;; linum
-    (linum :foreground fg-alt :background bg :bold nil :distant-foreground nil)
+    (linum :foreground base5 :bold nil :distant-foreground nil)
 
     ;; term
     (term-color-black   :background base0   :foreground base0)
@@ -717,12 +717,11 @@
     (org-code                  :foreground orange)
     (org-verbatim              :foreground green)
     (org-formula               :foreground cyan)
-    (org-list-dt               :foreground blue)
+    (org-list-dt               :foreground highlight)
     (org-footnote              :foreground orange)
-    (org-link                  :foreground green :underline t :bold 'inherit)
     (org-date                  :foreground violet)
     (org-headline-done         :foreground base5)
-    (org-todo                  :bold 'inherit :foreground blue)
+    (org-todo                  :bold 'inherit :foreground highlight)
     (org-done                  :inherit 'org-headline-done :bold 'inherit)
     (org-special-keyword       :foreground magenta)
     (org-checkbox :inherit 'org-todo)
