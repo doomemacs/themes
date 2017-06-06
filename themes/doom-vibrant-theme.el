@@ -38,15 +38,15 @@ determine the exact padding."
   "A more vibrant (and dark) theme, based off of DOOM One's classic look."
 
   ;; name        gui       256       16
-  ((bg         '("#22252c" nil       nil))
-   (bg-alt     '("#282c34" nil       nil))
+  ((bg         '("#242730" nil       nil))
+   (bg-alt     '("#2a2e38" nil       nil))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#21272d" "#21212d" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#3D3D48" "#5d5d5d" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
+   (base4      '("#484854" "#5e5e5e" "brightblack"  ))
+   (base5      '("#62686E" "#666666" "brightblack"  ))
+   (base6      '("#757B80" "#7b7b7b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
    (fg         '("#bbc2cf" "#bfbfbf" ))
@@ -57,13 +57,13 @@ determine the exact padding."
    (orange     '("#e69055" "#dd8844" ))
    (green      '("#7bc275" "#99bb66" ))
    (teal       '("#4db5bd" "#44b9b1" ))
-   (yellow     '("#ECBE7B"           ))
+   (yellow     '("#FCCE7B"           ))
    (blue       '("#51afef"           ))
    (dark-blue  '("#1f5582"           ))
    (magenta    '("#C57BDB"           ))
-   (violet     '("#a9a1e1"           ))
-   (cyan       '("#46D9FF"           ))
-   (dark-cyan  '("#5699AF"           ))
+   (violet     '("#a991f1"           )) ;a9a1e1
+   (cyan       '("#5cEfFF"           ))
+   (dark-cyan  '("#6A8FBF"           ))
 
    ;; face categories
    (highlight      blue)
@@ -74,10 +74,10 @@ determine the exact padding."
    (comments       (if doom-vibrant-brighter-comments dark-cyan base5))
    (doc-comments   (if doom-vibrant-brighter-comments (doom-lighten dark-cyan 0.15) (doom-lighten base4 0.3)))
    (constants      violet)
-   (functions      magenta)
+   (functions      cyan)
    (keywords       blue)
-   (methods        cyan)
-   (operators      blue)
+   (methods        violet)
+   (operators      magenta)
    (type           yellow)
    (strings        green)
    (variables      base8)
@@ -91,16 +91,15 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bright doom-vibrant-brighter-modeline)
    (modeline-pad
     (when doom-vibrant-padded-modeline
       (if (integerp doom-vibrant-padded-modeline) doom-vibrant-padded-modeline 4)))
 
    (modeline-fg     "#bbc2cf")
-   (modeline-fg-alt (doom-blend blue grey (if modeline-bright 0.4 0.08)))
+   (modeline-fg-alt (doom-blend blue grey (if doom-vibrant-brighter-modeline 0.4 0.08)))
 
-   (modeline-bg     (if modeline-bright (doom-darken blue 0.5) bg-alt)                 "brightblack")
-   (modeline-bg-l   (if modeline-bright modeline-bg            (doom-darken bg 0.075)) "black")
+   (modeline-bg     (if doom-vibrant-brighter-modeline "#383f58" bg-alt))
+   (modeline-bg-l   (if doom-vibrant-brighter-modeline modeline-bg (doom-darken bg 0.075)))
    (modeline-bg-inactive   (doom-darken bg 0.25))
    (modeline-bg-inactive-l (doom-darken bg-alt 0.3)))
 
@@ -119,13 +118,13 @@ determine the exact padding."
           :distant-foreground nil
           :bold nil
           :height doom-vibrant-linum-height)
-   (linum-highlight-face :foreground blue
-                         :distant-foreground base8
-                         :bold nil
-                         :height doom-vibrant-linum-height)
+   (nlinum-hl-face :foreground blue
+                   :distant-foreground base8
+                   :bold bold
+                   :height doom-vibrant-linum-height)
 
-   (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-path :foreground (if modeline-bright base8 blue) :bold bold)
+   (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
+   (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -134,7 +133,7 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if modeline-bright base8 highlight))
+    :foreground (if doom-vibrant-brighter-modeline base8 highlight))
 
    (solaire-mode-line-face
     :inherit 'mode-line
