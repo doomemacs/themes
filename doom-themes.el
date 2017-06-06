@@ -195,40 +195,12 @@ Variables in EXTRA-VARS override the default ones."
                          :key #'car)))
 
 ;;;###autoload
-(defun doom-brighten-minibuffer ()
-  "Highlight the minibuffer whenever it is in use."
-  (message "doom-themes: doom-brighten-minibuffer has moved to the solaire-mode package"))
-
-;;;###autoload
-(define-minor-mode doom-buffer-mode
-  "Brighten source buffers by remapping common faces (like default, hl-line and
-linum) to their doom-theme variants."
-  :lighter "" ; should be obvious it's on
-  :init-value nil
-  (message "doom-themes: doom-buffer-mode has moved to the solaire-mode package"))
-
-;;;###autoload
-(defun doom-buffer-mode-maybe ()
-  "Enable `doom-buffer-mode' in the current buffer.
-
-Does nothing if it doesn't represent a real, file-visiting buffer."
-  (when (and (not doom-buffer-mode)
-             buffer-file-name)
-    (doom-buffer-mode +1)))
-
-;;;###autoload
 (defun doom-themes-neotree-config ()
   "Install doom-themes' neotree configuration.
 
 Includes an Atom-esque icon theme and highlighting based on filetype."
   (let ((doom-themes--inhibit-warning t))
     (require 'doom-themes-neotree)))
-
-;;;###autoload
-(defun doom-themes-nlinum-config ()
-  "Install current-line-number highlighting for `nlinum-mode'."
-  (let ((doom-themes--inhibit-warning t))
-    (message "doom-themes: nlinum config has moved to the nlinum-hl package" )))
 
 ;;;###autoload
 (defun doom-themes-visual-bell-config ()
@@ -263,6 +235,34 @@ Includes an Atom-esque icon theme and highlighting based on filetype."
     (add-to-list 'custom-theme-load-path
                  (or (and (file-directory-p dir) dir)
                      base))))
+
+
+;; DEPRECATED FUNCTIONS
+;;;###autoload
+(defun doom-brighten-minibuffer ()
+  "Does nothing. `doom-brighten-minibuffer' has been moved to the `solaire-mode'
+package as `solaire-mode-in-minibuffer'. This function is deprecated."
+  (message "doom-themes: doom-brighten-minibuffer has moved to the solaire-mode package"))
+
+;;;###autoload
+(define-minor-mode doom-buffer-mode
+  "Does nothing. `doom-buffer-mode' has been moved to the `solaire-mode'
+package. This function is deprecated."
+  :lighter "" ; should be obvious it's on
+  :init-value nil
+  (message "doom-themes: doom-buffer-mode has moved to the solaire-mode package"))
+
+;;;###autoload
+(defun doom-buffer-mode-maybe ()
+  "Does nothing. `doom-buffer-mode' has been moved to the `solaire-mode'
+package. This function is deprecated."
+  (doom-buffer-mode +1))
+
+;;;###autoload
+(defun doom-themes-nlinum-config ()
+  "Does nothing. This functionality has been moved to the `nlinum-hl' package.
+This function is deprecated."
+  (require 'doom-themes-nlinum))
 
 (provide 'doom-themes)
 ;;; doom-themes.el ends here
