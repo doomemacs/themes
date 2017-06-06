@@ -345,7 +345,7 @@
     (highlight-quoted-quote  :foreground operators)
 
     ;; highlight-numbers-mode
-    (highlight-numbers-number :foreground numbers)
+    (highlight-numbers-number :inherit 'bold :foreground numbers)
 
     ;; hlinum
     (linum-highlight-face :background base3 :foreground fg :distant-foreground nil :bold nil)
