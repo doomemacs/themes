@@ -12,34 +12,40 @@ determine the exact padding."
   :type '(or integer boolean))
 
 (def-doom-theme doom-tomorrow-night
-  "A light theme inspired by Atom One Light."
+  "A theme based off of Chris Kempson's Tomorrow Dark."
 
-  ;; name      gui
-  ((bg         "#2c2f32")
-   (bg-alt     "#25282b")
-   (fg         "#c5c8c6")
+  ;; name        gui       256       16
+  ((bg         '("#1d1f21" nil       nil          ))
+   (bg-alt     '("#232527" nil       nil          ))
+   (base0      '("#0d0d0d" "black"   "black"      ))
+   (base1      '("#1b1b1b" "#1b1b1b"              ))
+   (base2      '("#212122" "#1e1e1e"              ))
+   (base3      '("#292b2b" "#292929" "brightblack"))
+   (base4      '("#3f4040" "#3f3f3f" "brightblack"))
+   (base5      '("#5c5e5e" "#525252" "brightblack"))
+   (base6      '("#757878" "#6b6b6b" "brightblack"))
+   (base7      '("#969896" "#979797" "brightblack"))
+   (base8      '("#ffffff" "#ffffff" "white"      ))
+   (fg         '("#c5c8c6" "#c5c5c5" "white"))
    (fg-alt     (doom-darken fg 0.6))
-   (black      "#0d0f11")
-   (light-grey "#969896")
-   (grey       (doom-darken light-grey 0.4))
-   (dark-grey  (doom-darken grey 0.7))
-   (white      "#ffffff")
-   (red        "#cc6666")
-   (orange     "#de935f")
-   (yellow     "#f0c674")
-   (green      "#b5bd68")
-   (blue       "#81a2be")
-   (dark-blue  "#41728e")
-   (teal       blue)
-   (magenta    (doom-lighten "#b294bb" 0.3)) ; FIXME
-   (violet     "#b294bb")
-   (cyan       "#8abeb7")
+
+   (grey       '("#5a5b5a" "#5a5a5a" "brightblack"))
+   (red        '("#cc6666" "#cc6666" "red"))
+   (orange     '("#de935f" "#dd9955" "brightred"))
+   (yellow     '("#f0c674" "#f0c674" "yellow"))
+   (green      '("#b5bd68" "#b5bd68" "green"))
+   (blue       '("#81a2be" "#88aabb" "brightblue"))
+   (dark-blue  '("#41728e" "#41728e" "blue"))
+   (teal       blue) ; FIXME replace with real teal
+   (magenta    '("#c9b4cf" "#c9b4cf" "magenta"))
+   (violet     '("#b294bb" "#b294bb" "brightmagenta"))
+   (cyan       '("#8abeb7" "#8abeb7" "cyan"))
    (dark-cyan  (doom-darken cyan 0.4))
 
    ;; face categories
    (highlight      dark-blue)
-   (vertical-bar   (doom-darken dark-grey 0.2))
-   (current-line   (doom-darken bg-alt 0.05))
+   (vertical-bar   base1)
+   (current-line   base3)
    (selection      (doom-lighten bg 0.1))
    (builtin        blue)
    (comments       grey)
@@ -76,6 +82,9 @@ determine the exact padding."
   ;; --- faces ------------------------------
   ((doom-modeline-buffer-path       :foreground violet :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+
+   (linum :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
+   (nlinum-hl-face :inherit 'bold :foreground blue :background nil)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
