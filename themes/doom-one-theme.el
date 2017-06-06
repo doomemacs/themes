@@ -28,11 +28,6 @@ determine the exact padding."
   :group 'doom-one-theme
   :type '(or integer boolean))
 
-(defcustom doom-one-linum-height 1.0
-  "The :height to render line numbers with."
-  :group 'doom-one-theme
-  :type 'boolean)
-
 ;;
 (def-doom-theme doom-one
   "A dark theme inspired by Atom One Dark"
@@ -108,12 +103,6 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (linum :foreground base5 :distant-foreground nil :bold nil)
-   ;; (doom-linum-highlight
-   ;;  `((((min-colors 257))
-   ;;     (:foreground ,black :distant-foreground ,(doom-darken base8 0.3) :bold ,bold :height ,doom-one-linum-height))
-   ;;    (((min-colors 256))
-   ;;     (:foreground ,(c fg 256) :distant-foreground ,base8 :bold nil))))
    (font-lock-comment-face
     :foreground comments
     :background (if doom-one-comment-bg (doom-darken bg-alt 0.095)))
@@ -121,6 +110,8 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
+   (linum :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
+   (nlinum-hl-face :foreground base7)
 
    (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
 
