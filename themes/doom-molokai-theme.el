@@ -25,11 +25,11 @@ determine the exact padding."
   ((bg         '("#1c1e1f" nil       nil))
    (bg-alt     '("#222323" nil       nil))
    (base0      '("#000000"))
-   (base1      '("#0f1e20" "#0f1f1f" "brightblack"))
-   (base2      `("#1d1f20" "#141414" "brightblack"))
-   (base3      `(,(doom-lighten (car bg-alt) 0.05) "#252525" "brightblack"))
-   (base4      `(,(doom-lighten (car bg-alt) 0.2) "#353535" "brightblack"))
-   (base5      '("#4a5050" "#4d5d5d" "brightblack"))
+   (base1      '("#151617" "#101010" "brightblack"))
+   (base2      `("#1d1f20" "#191919" "brightblack"))
+   (base3      `("#2d2e2e" "#252525" "brightblack"))
+   (base4      `("#4e4e4e" "#454545" "brightblack"))
+   (base5      '("#555556" "#5d5d5d" "brightblack"))
    (base6      '("#767679" "#6b6b6b" "brightblack"))
    (base7      '("#cfc0c5" "#c1c1c1" "brightblack"))
    (base8      '("#ffffff" "#ffffff" "brightwhite"))
@@ -65,7 +65,7 @@ determine the exact padding."
    (type           cyan)
    (strings        yellow)
    (variables      orange)
-   (numbers        blue)
+   (numbers        violet)
    (region         base4)
    (error          red)
    (warning        yellow)
@@ -81,12 +81,16 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((mode-line
+  ((lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
+   (cursor :background magenta)
+
+   (mode-line
     :background base3 :foreground base8
     :box (if modeline-pad `(:line-width ,modeline-pad :color base3)))
    (mode-line-inactive
-    :background base2 :foreground base4
+    :background (doom-darken base2 0.2) :foreground base4
     :box (if modeline-pad `(:line-width ,modeline-pad :color base2)))
+   (doom-modeline-bar :background green)
 
    ;;(solaire-mode-line-face :inherit 'mode-line :background base3)
    ;;(solaire-mode-line-inactive-face :inherit 'mode-line-inactive :background base2)
@@ -95,10 +99,9 @@ determine the exact padding."
    (doom-modeline-buffer-path :foreground (if bold base8 orange))
 
    (linum :foreground base5 :distant-foreground nil :bold nil)
-   (nlinum-hl-face :foreground orange :distant-foreground nil :bold bold)
+   (nlinum-hl-face :foreground base7 :distant-foreground nil :bold nil)
 
    (isearch :foreground base0 :background green)
-   (isearch-lazy-highlight-face :foreground base0 :background violet)
 
    ;; evil-mode
    (evil-search-highlight-persist-highlight-face :background violet)
@@ -126,11 +129,11 @@ determine the exact padding."
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
-   (rainbow-delimiters-depth-3-face :foreground yellow)
-   (rainbow-delimiters-depth-4-face :foreground green)
-   (rainbow-delimiters-depth-5-face :foreground cyan)
-   (rainbow-delimiters-depth-6-face :foreground magenta)
-   (rainbow-delimiters-depth-7-face :foreground orange)
+   (rainbow-delimiters-depth-3-face :foreground green)
+   (rainbow-delimiters-depth-4-face :foreground cyan)
+   (rainbow-delimiters-depth-5-face :foreground magenta)
+   (rainbow-delimiters-depth-6-face :foreground orange)
+   (rainbow-delimiters-depth-7-face :foreground green)
 
 
    ;; --- major-mode faces -------------------
