@@ -76,8 +76,8 @@ determine the exact padding."
 
    ;; custom categories
    (modeline-pad
-    (when doom-one-padded-modeline
-      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
+    (when doom-molokai-padded-modeline
+      (if (integerp doom-molokai-padded-modeline) doom-molokai-padded-modeline 4))))
 
 
   ;; --- extra faces ------------------------
