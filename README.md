@@ -9,8 +9,7 @@
 >
 >   + `doom-buffer-mode` and `doom-brighten-minibuffer` have been moved to a new
 >     plugin: [solaire-mode]
->   + `doom-nlinum` and `doom-themes-nlinum-config` have been moved to a new
->     plugin: [nlinum-hl]
+>   + `doom-nlinum` was removed; line highlighting is now supported in nlinum 1.7
 >   + A rewrite of doom-themes' backend and themes means problems or breakages
 >     may have slipped through. [Let me know][issues] if you find one!
 

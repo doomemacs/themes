@@ -1,8 +1,6 @@
 ;;; doom-themes-nlinum.el
 
-(message "doom-themes: nlinum config has moved to the nlinum-hl package" )
-
-;; see https://github.com/hlissner/emacs-nlinum-hl
+(message "doom-themes: nlinum support is gone. nlinum 1.7+ has the nlinum-highlight-current-line option." )
 
 (provide 'doom-themes-nlinum)
 ;;; doom-themes-nlinum.el ends here

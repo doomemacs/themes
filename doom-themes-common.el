@@ -413,11 +413,14 @@
     (doom-neotree-data-file-face :foreground violet)
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
+    ;; nlinum
+    (nlinum-current-line :foreground fg :distant-foreground nil :bold nil)
+
     ;; nlinum-hl
-    (nlinum-hl-face :foreground fg :distant-foreground nil :bold nil)
+    (nlinum-hl-face :inherit 'nlinum-current-line)
 
     ;; nlinum-relative
-    (nlinum-relative-current-face :foreground fg :distant-foreground nil :bold nil)
+    (nlinum-relative-current-face :inherit 'nlinum-current-line)
 
     ;; lsp
     ;; TODO Add light versions
