@@ -11,6 +11,12 @@
   :group 'doom-molokai-theme
   :type 'boolean)
 
+(defcustom doom-molokai-padded-modeline nil
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
+determine the exact padding."
+  :group 'doom-molokai-theme
+  :type '(or integer boolean))
+
 ;;
 (def-doom-theme doom-molokai
   "A dark, vibrant theme inspired by Textmate's monokai."
@@ -69,13 +75,18 @@
    (vc-deleted     red)
 
    ;; custom categories
-   ;; n/a
-   )
+   (modeline-pad
+    (when doom-one-padded-modeline
+      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4))))
 
 
   ;; --- extra faces ------------------------
-  ((mode-line          :background base3 :foreground base8)
-   (mode-line-inactive :background base2 :foreground base4)
+  ((mode-line
+    :background base3 :foreground base8
+    :box (if modeline-pad `(:line-width ,modeline-pad :color base3)))
+   (mode-line-inactive
+    :background base2 :foreground base4
+    :box (if modeline-pad `(:line-width ,modeline-pad :color base2)))
 
    ;;(solaire-mode-line-face :inherit 'mode-line :background base3)
    ;;(solaire-mode-line-inactive-face :inherit 'mode-line-inactive :background base2)
