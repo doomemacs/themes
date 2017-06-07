@@ -118,6 +118,7 @@ determine the exact padding."
 
    ;; ivy
    (ivy-current-match :background base3)
+   (ivy-minibuffer-match-face-1 :background base1 :foreground base4)
 
    ;; neotree
    (neo-dir-link-face   :foreground cyan)
