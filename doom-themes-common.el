@@ -104,7 +104,6 @@
 
     ;; isearch
     (isearch :background highlight :foreground base0 :bold bold)
-    (isearch-lazy-highlight-face :background base3)
 
     ;; linum
     (linum :inherit 'default :foreground base5 :bold nil :distant-foreground nil)
@@ -228,7 +227,7 @@
     ;; evil
     (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :bold bold)
     (evil-ex-substitute-replacement :background base0 :foreground green :bold bold)
-    (evil-search-highlight-persist-highlight-face :inherit 'isearch-lazy-highlight-face)
+    (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
 
     ;; evil-mc
     (evil-mc-cursor-default-face :background magenta :foreground base0 :inverse-video nil)
