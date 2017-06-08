@@ -1,4 +1,4 @@
-![DOOM Themes v2.0.0](https://img.shields.io/badge/DOOM-v2.0.0-blue.svg)
+![DOOM Themes v2.0.1](https://img.shields.io/badge/doom%20themes-v2.0.1-blue.svg)
 [![MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 [![MELPA](http://melpa.org/packages/doom-themes-badge.svg)](http://melpa.org/#/doom-themes)
 [![Build Status](https://travis-ci.org/hlissner/emacs-doom-themes.svg?branch=master)](https://travis-ci.org/hlissner/emacs-doom-themes)
