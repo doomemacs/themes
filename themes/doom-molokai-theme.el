@@ -38,7 +38,7 @@ determine the exact padding."
 
    (grey       '("#525254" "#515154" "brightblack"))
    (red        '("#e74c3c" "#e74c3c" "red"))
-   (orange     '("#fd971f" "#F99919" "brightred"))
+   (orange     '("#fd971f" "#fd971f" "brightred"))
    (green      '("#b6e63e" "#b6e63e" "green"))
    (teal       green)
    (yellow     '("#e2c770" "#e2c770" "yellow"))
