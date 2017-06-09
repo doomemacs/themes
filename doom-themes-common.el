@@ -614,6 +614,8 @@
     (which-key-local-map-description-face :foreground magenta)
 
     ;; whitespace
+    (whitespace-empty    :background base3)
+    (whitespace-space    :background base3)
     (whitespace-tab      :foreground base5)
     (whitespace-newline  :foreground base5)
     (whitespace-trailing :inherit 'trailing-whitespace)
