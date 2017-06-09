@@ -8,13 +8,13 @@
      :distant-foreground base0)
 
     ;; --- base faces -------------------------
-    (bold        :weight (if bold 'bold 'normal) :foreground base8)
+    (bold        :weight (if bold 'bold 'normal) :foreground (unless bold base8))
     (italic      :slant  (if italic 'italic 'normal))
     (bold-italic :inherit '(bold italic))
 
     (default :background bg :foreground fg)
     (fringe :inherit 'default :foreground base5)
-    (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.3))
+    (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2))
     (highlight            :background highlight  :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
     (shadow               :foreground base5)
@@ -768,7 +768,7 @@
     (web-mode-html-attr-name-face    :foreground type)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
-    (web-mode-html-tag-bracket-face :foreground operators))
+    (web-mode-html-tag-bracket-face  :foreground operators))
   "TODO")
 
 (defconst doom-themes-common-vars
