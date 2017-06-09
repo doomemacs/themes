@@ -620,10 +620,10 @@
     (whitespace-line     :background base0 :foreground red :bold bold)
 
     ;; workgroups2
-    (wg-current-workgroup-face :foreground base0 :background blue)
+    (wg-current-workgroup-face :foreground base0 :background highlight)
     (wg-other-workgroup-face   :foreground base5 :background current-line)
     (wg-divider-face           :foreground grey)
-    (wg-brace-face             :foreground blue)
+    (wg-brace-face             :foreground highlight)
 
     ;; yasnippet
     (yas-field-highlight-face :inherit 'match)
