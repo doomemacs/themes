@@ -113,7 +113,6 @@ determine the exact padding."
    (flycheck-info    :underline `(:style wave :color ,green)  :background base3)
 
    ;; helm
-   (helm-match :foreground keywords)
    (helm-swoop-target-line-face :foreground magenta :inverse-video t)
 
    ;; ivy

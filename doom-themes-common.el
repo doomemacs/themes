@@ -323,15 +323,27 @@
     (gnus-x-face                 :background base5 :foreground fg)
 
     ;; helm
-    (helm-selection              :background selection)
-    (helm-match                  :foreground blue :underline t)
+    (helm-selection
+     (&all :inherit 'bold :background current-line)
+     (&dark  :distant-foreground highlight)
+     (&light :distant-foreground base0))
+    (helm-match :foreground highlight :distant-foreground base8 :underline t)
     (helm-source-header          :background current-line :foreground base5)
     (helm-swoop-target-line-face :foreground highlight :inverse-video t)
+    (helm-visible-mark           :inherit '(bold highlight))
     (helm-ff-file                :foreground fg)
-    (helm-ff-prefix              :foreground magenta)
+    (helm-ff-prefix              :foreground keywords)
     (helm-ff-dotted-directory    :foreground grey)
-    (helm-ff-directory           :foreground orange)
+    (helm-ff-directory           :foreground variables)
     (helm-ff-executable          :foreground base8 :inherit 'italic)
+    (helm-grep-match             :foreground highlight :distant-foreground red)
+    (helm-grep-file              :foreground methods)
+    (helm-grep-lineno            :foreground base5)
+    (helm-grep-finish            :foreground green)
+    (helm-swoop-target-line-face       :foreground highlight :inverse-video t)
+    (helm-swoop-target-line-block-face :foreground yellow)
+    (helm-swoop-target-word-face       :foreground green :inherit 'bold)
+    (helm-swoop-target-number-face     :foreground base5)
 
     ;; highlight-indentation-mode
     (highlight-indentation-face                :inherit 'hl-line)
