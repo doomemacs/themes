@@ -66,12 +66,11 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
-
    ;; custom categories
-   (modeline-bg     (doom-darken bg-alt 0.3))
-   (modeline-bg-alt (doom-darken bg 0.2))
-   (modeline-fg     blue)
-   (modeline-fg-alt grey)
+   (modeline-bg     `(,(doom-darken (car bg-alt) 0.3) ,@(cdr base3)))
+   (modeline-bg-alt `(,(car bg) ,@(cdr base1)))
+   (modeline-fg     base8)
+   (modeline-fg-alt comments)
    (modeline-pad
     (when doom-tomorrow-night-padded-modeline
       (if (integerp doom-tomorrow-night-padded-modeline)
