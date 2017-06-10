@@ -56,7 +56,7 @@ determine the exact padding."
    (selection      base0)
    (builtin        orange)
    (comments       (if doom-molokai-brighter-comments violet base5))
-   (doc-comments   (if doom-molokai-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.2)))
+   (doc-comments   (if doom-molokai-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.25)))
    (constants      orange)
    (functions      green)
    (keywords       magenta)
