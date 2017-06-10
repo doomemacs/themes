@@ -1,4 +1,4 @@
-;;; doom-themes.el --- a pack of themes inspired by Atom One
+;;; doom-themes.el --- a opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (C) 2016 Henrik Lissner
 ;;
@@ -88,24 +88,23 @@
 (defun doom-name-to-rgb (color &optional frame)
   "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
 for FRAME (defaults to the current frame)."
-  (mapcar (lambda (x) (/ x (float (car (color-values "#ffffff")))))
-          (color-values color frame)))
+  (cl-loop for x in (color-values color frame)
+           collect (/ x (float (car (color-values "#ffffff"))))))
 
 (defun doom-blend (color1 color2 alpha)
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
   (when (and color1 color2)
     (cond ((or (listp color1) (listp color2))
-           (mapcar (lambda (x)
-                     (let ((c2 (if (listp color2) (pop color2) color2)))
-                       (when c2 (doom-blend x c2 alpha))))
-                   color1))
+           (cl-loop for x in color1
+                    when (if (listp color2) (pop color2) color2)
+                    collect (doom-blend x it alpha)))
 
           ((and (string-prefix-p "#" color1) (string-prefix-p "#" color2))
            (apply (lambda (r g b) (format "#%02x%02x%02x" (* r 255) (* g 255) (* b 255)))
-                  (cl-mapcar (lambda (it other) (+ (* alpha it) (* other (- 1 alpha))))
-                             (doom-name-to-rgb color1)
-                             (doom-name-to-rgb color2))))
+                  (cl-loop for it    in (doom-name-to-rgb color1)
+                           for other in (doom-name-to-rgb color2)
+                           collect (+ (* alpha it) (* other (- 1 alpha))))))
 
           (t color1))))
 
@@ -113,14 +112,14 @@ float between 0 and 1)"
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
 0 and 1)."
   (if (listp color)
-      (mapcar (lambda (c) (doom-darken c alpha)) color)
+      (cl-loop for c in color collect (doom-darken c alpha))
     (doom-blend color "#000000" (- 1 alpha))))
 
 (defun doom-lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
 between 0 and 1)."
   (if (listp color)
-      (mapcar (lambda (c) (doom-lighten c alpha)) color)
+      (cl-loop for c in color collect (doom-lighten c alpha))
     (doom-blend color "#FFFFFF" (- 1 alpha))))
 
 ;;;###autoload
@@ -140,17 +139,12 @@ between 0 and 1)."
   (declare (doc-string 2))
   (require 'doom-themes-common)
   (let ((doom-themes--colors defs))
-    `(let* ((gui (or (display-graphic-p) (= (tty-display-color-cells) 16777216)))
-            (bold   doom-themes-enable-bold)
+    `(let* ((bold   doom-themes-enable-bold)
             (italic doom-themes-enable-italic)
             ,@defs)
-       (setq doom-themes--colors (mapcar (lambda (d)
-                                           (cons (car d)
-                                                 (eval
-                                                  (if (eq (cadr d) 'quote)
-                                                      (caddr d)
-                                                    (cadr d)))))
-                                         ',defs))
+       (setq doom-themes--colors
+             (cl-loop for (var val) in ',defs
+                      collect (cons var (eval val))))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces ',name ,@(doom-themes-common-faces extra-faces))
        (custom-theme-set-variables ',name ,@(doom-themes-common-variables extra-vars))
@@ -195,7 +189,8 @@ Includes an Atom-esque icon theme and highlighting based on filetype."
     (let ((old-remap (copy-alist face-remapping-alist)))
       (setq doom-themes--bell-p t)
       (setq face-remapping-alist
-            (append (delete (assq 'mode-line face-remapping-alist) face-remapping-alist)
+            (append (delete (assq 'mode-line face-remapping-alist)
+                            face-remapping-alist)
                     '((mode-line doom-modeline-error))))
       (force-mode-line-update)
       (run-with-timer 0.15 nil

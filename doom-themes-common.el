@@ -1,4 +1,4 @@
-;;; doom-themes-common.el
+;;; doom-themes-common.el -*- lexical-binding: t; -*-
 
 (defconst doom-themes-common-faces
   '(;; --- custom faces -----------------------
@@ -814,7 +814,8 @@
 
 ;; Library
 (defvar doom-themes--colors)
-(defvar doom-themes--min-colors '(257 256 16))
+(defvar doom--min-colors '(257 256 16))
+(defvar doom--quoted-p nil)
 
 (defun doom-themes--colors-p (item)
   "TODO"
@@ -824,11 +825,11 @@
              (cond ((memq car '(quote doom-color)) nil)
 
                    ((memq car '(backquote \`))
-                    (let ((quoted t))
+                    (let ((doom--quoted-p t))
                       (doom-themes--colors-p (cdr item))))
 
                    ((eq car '\,)
-                    (let (quoted)
+                    (let (doom--quoted-p)
                       (doom-themes--colors-p (cdr item))))
 
                    (t
@@ -837,14 +838,13 @@
 
           ((and (symbolp item)
                 (not (keywordp item))
-                (assq item doom-themes--colors)
-                (not (bound-and-true-p quoted)))))))
+                (not doom--quoted-p)
+                (assq item doom-themes--colors))))))
 
 (defun doom-themes--colorize (item type)
   "TODO"
   (when item
-    (let ((quoted (bound-and-true-p quoted))
-          (type (and (boundp 'type) type)))
+    (let ((doom--quoted-p doom--quoted-p))
       (cond ((and (listp item)
                   (memq (car item) '(quote doom-color)))
              item)
@@ -852,18 +852,19 @@
             ((listp item)
              (let* ((item (append item nil))
                     (car (car item))
-                    (quoted (cond ((memq car '(backquote \`)) t)
-                                  ((eq car '\,) nil)
-                                  (t quoted))))
+                    (doom--quoted-p
+                     (cond ((memq car '(backquote \`)) t)
+                           ((eq car '\,) nil)
+                           (t doom--quoted-p))))
                `(,car
-                 ,@(let (forms)
-                     (dolist (i (cdr item) (nreverse forms))
-                       (push (doom-themes--colorize i type) forms))))))
+                 ,@(cl-loop
+                    for i in (cdr item)
+                    collect (doom-themes--colorize i type)))))
 
             ((and (symbolp item)
                   (not (keywordp item))
                   (assq item doom-themes--colors)
-                  (not quoted))
+                  (not doom--quoted-p))
              `(doom-color ',item ',type))
 
             (t item)))))
@@ -876,7 +877,7 @@
             (let ((real-attrs (cdr face))
                   defs)
               (cond ((doom-themes--colors-p real-attrs)
-                     (dolist (cl doom-themes--min-colors `(list ,@(nreverse defs)))
+                     (dolist (cl doom--min-colors `(list ,@(nreverse defs)))
                        (push `(list '((class color) (min-colors ,cl))
                                     (list ,@(doom-themes--colorize real-attrs cl)))
                              defs)))
@@ -897,7 +898,7 @@
                        (let ((bg (if (eq (car attrs) '&dark) 'dark 'light))
                              (real-attrs (append all-attrs (cdr attrs) '())))
                          (cond ((doom-themes--colors-p real-attrs)
-                                (dolist (cl doom-themes--min-colors)
+                                (dolist (cl doom--min-colors)
                                   (push `(list '((class color) (min-colors ,cl) (background ,bg))
                                                (list ,@(doom-themes--colorize real-attrs cl)))
                                         defs)))

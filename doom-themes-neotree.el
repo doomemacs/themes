@@ -1,4 +1,4 @@
-;;; doom-themes-neotree.el
+;;; doom-themes-neotree.el -*- lexical-binding: t; -*-
 
 (unless doom-themes--inhibit-warning
   (message "doom-themes: loading `doom-neotree' directly is obsolete, call `doom-themes-nlinum-config' instead"))
@@ -221,8 +221,9 @@ pane and are highlighted incorrectly."
     (let ((name (concat "/" (file-relative-name name neo-buffer--start-node)))
           case-fold-search)
       (cdr-safe
-       (cl-find-if (lambda (re) (string-match-p (car re) name))
-                   doom-neotree-file-face-re-alist)))))
+       (cl-loop for re in doom-neotree-file-face-re-alist
+                when (string-match-p (car re) name)
+                return re)))))
 
 (defun doom--neo-buffer--insert-root-entry (node)
   "Pretty-print pwd in neotree"

@@ -1,4 +1,4 @@
-;; DOOM Molokai (inspired by Textmate's monokai)
+;; doom-molokai-theme.el --- inspired by Textmate's monokai
 (require 'doom-themes)
 
 ;;
@@ -26,9 +26,9 @@ determine the exact padding."
    (bg-alt     '("#222323" nil       nil))
    (base0      '("#000000"))
    (base1      '("#151617" "#101010" "brightblack"))
-   (base2      `("#1d1f20" "#191919" "brightblack"))
-   (base3      `("#2d2e2e" "#252525" "brightblack"))
-   (base4      `("#4e4e4e" "#454545" "brightblack"))
+   (base2      '("#1d1f20" "#191919" "brightblack"))
+   (base3      '("#2d2e2e" "#252525" "brightblack"))
+   (base4      '("#4e4e4e" "#454545" "brightblack"))
    (base5      '("#555556" "#6b6b6b" "brightblack"))
    (base6      '("#767679" "#7b7b7b" "brightblack"))
    (base7      '("#cfc0c5" "#c1c1c1" "brightblack"))

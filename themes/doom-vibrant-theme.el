@@ -1,4 +1,4 @@
-;; DOOM Vibrant (a more vibrant version of DOOM One)
+;; doom-vibrant-theme.el --- a more vibrant version of doom-one
 (require 'doom-themes)
 
 ;;
@@ -35,7 +35,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-vibrant
-  "A more vibrant (and dark) theme, based off of DOOM One's classic look."
+  "A dark theme based off of doom-one with more vibrant colors."
 
   ;; name        gui       256       16
   ((bg         '("#242730" nil       nil))

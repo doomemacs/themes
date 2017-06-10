@@ -1,4 +1,4 @@
-;; DOOM One Dark (inspired by Atom One Dark)
+;;; doom-one-theme.el --- inspired by Atom One Dark
 (require 'doom-themes)
 
 ;;

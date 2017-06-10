@@ -1,4 +1,4 @@
-;;; doom-nova-theme.el
+;;; doom-nova-theme.el --- inspired by Trevord Miller's Nova
 (require 'doom-themes)
 
 (defgroup doom-nova-theme nil
@@ -12,7 +12,8 @@ determine the exact padding."
   :type '(or integer boolean))
 
 (def-doom-theme doom-nova
-  "A light theme inspired by Atom One Light."
+  "A light theme inspired by Trevord Miller's Nova. See
+<https://trevordmiller.com/projects/nova>."
 
   ;; name      gui
   ((bg         '("#3c4c55" nil       nil))
