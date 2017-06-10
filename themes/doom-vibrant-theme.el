@@ -149,7 +149,9 @@ determine the exact padding."
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-   )
+
+   ;; markdown-mode
+   (markdown-header-face :inherit 'bold :foreground red))
 
 
   ;; --- extra variables --------------------

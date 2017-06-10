@@ -136,7 +136,12 @@ determine the exact padding."
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
-   (css-selector             :foreground blue))
+   (css-selector             :foreground blue)
+
+   ;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   (markdown-code-face :background (doom-lighten base3 0.05)))
 
 
   ;; --- extra variables ---------------------

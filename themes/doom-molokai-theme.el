@@ -138,11 +138,11 @@ determine the exact padding."
    (css-proprietary-property :foreground keywords)
 
    ;; markdown-mode
-   (markdown-header-face     :foreground orange)
-   (markdown-blockquote-face :foreground dark-blue)
-   (markdown-markup-face     :foreground cyan)
-   (markdown-list-face       :foreground magenta)
-   (markdown-pre-face        :foreground cyan)
+   (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
+   (markdown-list-face :foreground magenta)
+   (markdown-pre-face  :foreground cyan)
+   (markdown-link-face :inherit 'bold :foreground blue)
+   (markdown-code-face :background (doom-lighten base2 0.045))
 
    ;; org-mode
    (org-level-1 :background base2 :foreground magenta :bold bold :height 1.2)
