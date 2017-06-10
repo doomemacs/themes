@@ -40,7 +40,7 @@ determine the exact padding."
   ;; name        gui       256       16
   ((bg         '("#242730" nil       nil))
    (bg-alt     '("#2a2e38" nil       nil))
-   (base0      '("#1B2229" "black"   "black"        ))
+   (base0      '("#1c1f24" "#101010" "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#21272d" "#21212d" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
@@ -67,7 +67,7 @@ determine the exact padding."
 
    ;; face categories
    (highlight      blue)
-   (vertical-bar   base0)
+   (vertical-bar   (doom-darken bg 0.15))
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-vibrant-brighter-comments dark-cyan base5))
@@ -97,10 +97,16 @@ determine the exact padding."
    (modeline-fg     "#bbc2cf")
    (modeline-fg-alt (doom-blend blue grey (if doom-vibrant-brighter-modeline 0.4 0.08)))
 
-   (modeline-bg     (if doom-vibrant-brighter-modeline "#383f58" bg-alt))
-   (modeline-bg-l   (if doom-vibrant-brighter-modeline modeline-bg (doom-darken bg 0.075)))
+   (modeline-bg
+    (if doom-vibrant-brighter-modeline
+        `("#383f58" ,@(cdr base1))
+      `(,(car bg-alt) ,@(cdr base0))))
+   (modeline-bg-l
+    (if doom-vibrant-brighter-modeline
+        modeline-bg
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
    (modeline-bg-inactive   (doom-darken bg 0.25))
-   (modeline-bg-inactive-l (doom-darken bg-alt 0.3)))
+   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
 
 
   ;; --- extra faces ------------------------
