@@ -37,7 +37,7 @@ determine the exact padding."
    (bg-alt     '("#282c34" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#1e1e1e" "brightblack"  ))
+   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
    (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
    (base5      '("#5B6268" "#525252" "brightblack"  ))
@@ -93,10 +93,16 @@ determine the exact padding."
    (modeline-fg     nil)
    (modeline-fg-alt (doom-blend violet base4 (if modeline-bright 0.5 0.2)))
 
-   (modeline-bg     (if modeline-bright (doom-darken blue 0.475) bg-alt))
-   (modeline-bg-l   (apply #'doom-darken (if modeline-bright (list blue 0.45) (list bg 0.085))))
+   (modeline-bg
+    (if modeline-bright
+        (doom-darken blue 0.475)
+      `(,(car bg-alt) ,@(cdr base0))))
+   (modeline-bg-l
+    (if modeline-bright
+        (doom-darken blue 0.45)
+      `(,(doom-darken (car bg) 0.125) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l (doom-darken bg 0.025)))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
