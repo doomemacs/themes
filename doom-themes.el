@@ -1,4 +1,4 @@
-;;; doom-themes.el --- a opinionated pack of modern color-themes -*- lexical-binding: t; -*-
+;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (C) 2016 Henrik Lissner
 ;;
