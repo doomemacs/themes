@@ -51,7 +51,6 @@ determine the exact padding."
    ;; face categories
    (highlight      cyan)
    (vertical-bar   (doom-lighten bg-alt 0.1))
-   (current-line   (doom-lighten bg-alt 0.04))
    (selection      (doom-lighten highlight 0.6))
    (builtin        blue)
    (comments       grey)
@@ -74,6 +73,7 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (current-line    (doom-lighten bg-alt 0.04))
    (modeline-bg     bg-alt)
    (modeline-bg-alt (doom-lighten bg 0.035))
    (modeline-fg     blue)

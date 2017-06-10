@@ -52,7 +52,6 @@ determine the exact padding."
    ;; face categories
    (highlight      orange)
    (vertical-bar   base2)
-   (current-line   `(,(doom-lighten (car bg) 0.05) "#1f1f1f"))
    (selection      base0)
    (builtin        orange)
    (comments       (if doom-molokai-brighter-comments violet base5))
@@ -75,6 +74,7 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (org-quote   `(,(doom-lighten (car bg) 0.05) "#1f1f1f"))
    (modeline-pad
     (when doom-molokai-padded-modeline
       (if (integerp doom-molokai-padded-modeline) doom-molokai-padded-modeline 4))))
@@ -153,7 +153,7 @@ determine the exact padding."
    (org-level-6 :inherit 'org-level-3)
    (org-ellipsis :underline nil :background base2 :foreground orange)
    (org-tag :foreground yellow :bold nil)
-   (org-quote :inherit 'italic :foreground base7 :background current-line)
+   (org-quote :inherit 'italic :foreground base7 :background org-quote)
    (org-todo :foreground yellow :bold 'inherit)
    (org-list-dt :foreground yellow))
 

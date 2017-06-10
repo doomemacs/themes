@@ -324,11 +324,11 @@
 
     ;; helm
     (helm-selection
-     (&all :inherit 'bold :background current-line)
+     (&all :inherit 'bold :background base2)
      (&dark  :distant-foreground highlight)
      (&light :distant-foreground base0))
     (helm-match :foreground highlight :distant-foreground base8 :underline t)
-    (helm-source-header          :background current-line :foreground base5)
+    (helm-source-header          :background base2 :foreground base5)
     (helm-swoop-target-line-face :foreground highlight :inverse-video t)
     (helm-visible-mark           :inherit '(bold highlight))
     (helm-ff-file                :foreground fg)
@@ -623,7 +623,7 @@
 
     ;; workgroups2
     (wg-current-workgroup-face :foreground base0 :background highlight)
-    (wg-other-workgroup-face   :foreground base5 :background current-line)
+    (wg-other-workgroup-face   :foreground base5)
     (wg-divider-face           :foreground grey)
     (wg-brace-face             :foreground highlight)
 
