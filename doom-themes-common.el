@@ -563,8 +563,8 @@
 
     ;; stripe-buffer
     (stripe-highlight
-     `((((background dark))  (:background ,base3))
-       (((background light)) (:background ,base5))))
+     (&light :background base5)
+     (&dark  :background base3))
 
     ;; swiper
     (swiper-line-face    :background blue    :foreground base0)
