@@ -85,20 +85,20 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bright doom-one-brighter-modeline)
-   (modeline-pad
+   (-modeline-bright doom-one-brighter-modeline)
+   (-modeline-pad
     (when doom-one-padded-modeline
       (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4)))
 
    (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet base4 (if modeline-bright 0.5 0.2)))
+   (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
-    (if modeline-bright
+    (if -modeline-bright
         (doom-darken blue 0.475)
       `(,(car bg-alt) ,@(cdr base0))))
    (modeline-bg-l
-    (if modeline-bright
+    (if -modeline-bright
         (doom-darken blue 0.45)
       `(,(doom-darken (car bg) 0.125) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg 0.1))
@@ -118,25 +118,25 @@ determine the exact padding."
    (linum :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
    (nlinum-hl-face :foreground base7)
 
-   (doom-modeline-bar :background (if modeline-bright modeline-bg highlight))
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if modeline-bright base8 highlight))
+    :foreground (if -modeline-bright base8 highlight))
 
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-l)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-inactive-l)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode

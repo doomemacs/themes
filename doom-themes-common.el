@@ -835,6 +835,7 @@
           ((and (symbolp item)
                 (not (keywordp item))
                 (not doom--quoted-p)
+                (not (equal (substring (symbol-name item) 0 1) "-"))
                 (assq item doom-themes--colors))))))
 
 (defun doom-themes--colorize (item type)
@@ -859,8 +860,9 @@
 
             ((and (symbolp item)
                   (not (keywordp item))
-                  (assq item doom-themes--colors)
-                  (not doom--quoted-p))
+                  (not doom--quoted-p)
+                  (not (equal (substring (symbol-name item) 0 1) "-"))
+                  (assq item doom-themes--colors))
              `(doom-color ',item ',type))
 
             (t item)))))

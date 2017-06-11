@@ -74,10 +74,13 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (org-quote   `(,(doom-lighten (car bg) 0.05) "#1f1f1f"))
-   (modeline-pad
+   (-modeline-pad
     (when doom-molokai-padded-modeline
-      (if (integerp doom-molokai-padded-modeline) doom-molokai-padded-modeline 4))))
+      (if (integerp doom-molokai-padded-modeline)
+          doom-molokai-padded-modeline
+        4)))
+
+   (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
 
   ;; --- extra faces ------------------------
@@ -86,10 +89,10 @@ determine the exact padding."
 
    (mode-line
     :background base3 :foreground base8
-    :box (if modeline-pad `(:line-width ,modeline-pad :color base3)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
    (mode-line-inactive
     :background (doom-darken base2 0.2) :foreground base4
-    :box (if modeline-pad `(:line-width ,modeline-pad :color base2)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
    (doom-modeline-bar :background green)
 
    (doom-modeline-buffer-modified :inherit 'bold :foreground orange)

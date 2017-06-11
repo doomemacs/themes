@@ -71,7 +71,7 @@ determine the exact padding."
    (modeline-bg-alt `(,(car bg) ,@(cdr base1)))
    (modeline-fg     base8)
    (modeline-fg-alt comments)
-   (modeline-pad
+   (-modeline-pad
     (when doom-tomorrow-night-padded-modeline
       (if (integerp doom-tomorrow-night-padded-modeline)
           doom-tomorrow-night-padded-modeline
@@ -95,10 +95,10 @@ determine the exact padding."
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
 
   ;; --- variables --------------------------
   ;; ()

@@ -78,7 +78,8 @@ determine the exact padding."
    (modeline-bg-alt (doom-lighten bg 0.035))
    (modeline-fg     blue)
    (modeline-fg-alt (doom-lighten bg-alt 0.4))
-   (modeline-pad
+
+   (-modeline-pad
     (when doom-nova-padded-modeline
       (if (integerp doom-nova-padded-modeline)
           doom-nova-padded-modeline
@@ -100,17 +101,17 @@ determine the exact padding."
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
    (solaire-mode-line-face
     :background (doom-darken modeline-bg 0.1) :foreground modeline-fg
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (solaire-mode-line-inactive-face
     :background (doom-lighten modeline-bg 0.05) :foreground modeline-fg-alt
-    :box (if modeline-pad `(:line-width ,modeline-pad :color ,modeline-bg-alt)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-hl-line-face :inherit 'hl-line :background current-line)
 
    ;; linum
