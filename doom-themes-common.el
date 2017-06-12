@@ -182,6 +182,13 @@
     (company-preview-search     :inherit 'company-tooltip-search)
     (company-template-field     :inherit 'match)
 
+    ;; circe
+    (circe-fool :foreground doc-comments)
+    (circe-highlight-nick-face :inherit 'bold :foreground constants)
+    (circe-prompt-face :inherit 'bold :foreground highlight)
+    (circe-server-face :foreground comments)
+    (circe-my-message-face :inherit 'bold)
+
     ;; diff-hl
     (diff-hl-change :foreground vc-modified)
     (diff-hl-delete :foreground vc-deleted)
@@ -406,6 +413,11 @@
 
     ;; linum-relative
     (linum-relative-current-face :inherit 'linum-highlight-face)
+
+    ;; lui
+    (lui-time-stamp-face :foreground violet)
+    (lui-highlight-face :foreground highlight)
+    (lui-button-face :foreground builtin :underline t)
 
     ;; multiple cursors
     (mc/cursor-face :inherit 'cursor)
