@@ -825,6 +825,9 @@
 (defvar doom--min-colors '(257 256 16))
 (defvar doom--quoted-p nil)
 
+(defvar doom-themes--common-faces nil)
+(defvar doom-themes--common-vars nil)
+
 (defun doom-themes--colors-p (item)
   "TODO"
   (when item
@@ -854,21 +857,23 @@
   "TODO"
   (when item
     (let ((doom--quoted-p doom--quoted-p))
-      (cond ((and (listp item)
-                  (memq (car item) '(quote doom-color)))
-             item)
-
-            ((listp item)
-             (let* ((item (append item nil))
-                    (car (car item))
-                    (doom--quoted-p
-                     (cond ((memq car '(backquote \`)) t)
-                           ((eq car '\,) nil)
-                           (t doom--quoted-p))))
-               `(,car
-                 ,@(cl-loop
-                    for i in (cdr item)
-                    collect (doom-themes--colorize i type)))))
+      (cond ((listp item)
+             (cond ((memq (car item) '(quote doom-color))
+                    item)
+                   ((eq (car item) 'doom-ref)
+                    (doom-themes--colorize
+                     (apply #'doom-ref (cdr item)) type))
+                   (t
+                    (let* ((item (append item nil))
+                           (car (car item))
+                           (doom--quoted-p
+                            (cond ((memq car '(backquote \`)) t)
+                                  ((eq car '\,) nil)
+                                  (t doom--quoted-p))))
+                      (cons car
+                            (cl-loop
+                             for i in (cdr item)
+                             collect (doom-themes--colorize i type)))))))
 
             ((and (symbolp item)
                   (not (keywordp item))
@@ -881,45 +886,70 @@
 
 (defun doom-themes--build-face (face)
   "TODO"
-  `(list
-    ',(car face)
-    ,(cond ((keywordp (cadr face))
-            (let ((real-attrs (cdr face))
-                  defs)
-              (cond ((doom-themes--colors-p real-attrs)
-                     (dolist (cl doom--min-colors `(list ,@(nreverse defs)))
-                       (push `(list '((class color) (min-colors ,cl))
-                                    (list ,@(doom-themes--colorize real-attrs cl)))
-                             defs)))
+  (let ((cadr (cadr face)))
+    (if (eq (car-safe cadr) '&inherit)
+        (doom-themes--build-face
+         `(,(car face)
+           ,@(or (cdr (assq (cadr cadr) doom-themes--common-faces))
+                 (error "Couldn't find the '%s' face to inherit it for '%s'"
+                        (cadr cadr) (car face)))))
+      `(list
+        ',(car face)
+        ,(cond ((keywordp cadr)
+                (let ((real-attrs (cdr face))
+                      defs)
+                  (cond ((doom-themes--colors-p real-attrs)
+                         (dolist (cl doom--min-colors `(list ,@(nreverse defs)))
+                           (push `(list '((class color) (min-colors ,cl))
+                                        (list ,@(doom-themes--colorize real-attrs cl)))
+                                 defs)))
 
-                    (t
-                     `(list (list 't (list ,@real-attrs)))))))
+                        (t
+                         `(list (list 't (list ,@real-attrs)))))))
 
-           ((memq (car-safe (cadr face)) '(quote backquote \`))
-            (cadr face))
+               ((memq (car-safe cadr) '(quote backquote \`))
+                cadr)
 
-           (t
-            (let (all-attrs defs)
-              (dolist (attrs (cdr face) `(list ,@(nreverse defs)))
-                (cond ((eq (car attrs) '&all)
-                       (setq all-attrs (append all-attrs (cdr attrs))))
+               (t
+                (let (all-attrs defs)
+                  (dolist (attrs (cdr face) `(list ,@(nreverse defs)))
+                    (cond ((eq (car attrs) '&all)
+                           (setq all-attrs (append all-attrs (cdr attrs))))
 
-                      ((memq (car attrs) '(&dark &light))
-                       (let ((bg (if (eq (car attrs) '&dark) 'dark 'light))
-                             (real-attrs (append all-attrs (cdr attrs) '())))
-                         (cond ((doom-themes--colors-p real-attrs)
-                                (dolist (cl doom--min-colors)
-                                  (push `(list '((class color) (min-colors ,cl) (background ,bg))
-                                               (list ,@(doom-themes--colorize real-attrs cl)))
-                                        defs)))
+                          ((memq (car attrs) '(&dark &light))
+                           (let ((bg (if (eq (car attrs) '&dark) 'dark 'light))
+                                 (real-attrs (append all-attrs (cdr attrs) '())))
+                             (cond ((doom-themes--colors-p real-attrs)
+                                    (dolist (cl doom--min-colors)
+                                      (push `(list '((class color) (min-colors ,cl) (background ,bg))
+                                                   (list ,@(doom-themes--colorize real-attrs cl)))
+                                            defs)))
 
-                               (t
-                                (push `(list '((background ,bg)) (list ,@real-attrs))
-                                      defs))))))))))))
+                                   (t
+                                    (push `(list '((background ,bg)) (list ,@real-attrs))
+                                          defs))))))))))))))
 
 (defun doom-themes--build-var (var)
   "TODO"
   `(list ',(car var) ,(cadr var)))
+
+(defun doom-themes-common-faces (&optional extra-faces)
+  "Return an alist of face definitions for `custom-theme-set-faces'.
+
+Faces in EXTRA-FACES override the default faces."
+  (setq doom-themes--common-faces
+        (cl-remove-duplicates (append doom-themes-common-faces extra-faces)
+                              :key #'car))
+  (mapcar #'doom-themes--build-face doom-themes--common-faces))
+
+(defun doom-themes-common-variables (&optional extra-vars)
+  "Return an alist of variable definitions for `custom-theme-set-variables'.
+
+Variables in EXTRA-VARS override the default ones."
+  (setq doom-themes--common-vars
+        (cl-remove-duplicates (append doom-themes-common-vars extra-vars)
+                              :key #'car))
+  (mapcar #'doom-themes--build-var doom-themes--common-vars))
 
 (provide 'doom-themes-common)
 ;;; doom-themes-common.el ends here

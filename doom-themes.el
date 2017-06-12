@@ -134,6 +134,23 @@ between 0 and 1)."
                     (nth i colors))))
                (t colors)))))
 
+;;;###autoload
+(defun doom-ref (face prop &optional class)
+  "TODO"
+  (let ((spec (or (cdr (assq face doom-themes--common-faces))
+                  (error "Couldn't find the '%s' face" face))))
+    (when (memq (car spec) '(quote backquote \`))
+      (user-error "Can't fetch the literal spec for '%s'" face))
+    (when class
+      (setq spec (cdr (assq class spec)))
+      (unless spec
+        (error "Couldn't find the '%s' class in the '%s' face"
+               class face)))
+    (unless (plist-member spec prop)
+      (error "Couldn't find the '%s' property in the '%s' face%s"
+             prop face (if class (format "'s '%s' class" class) "")))
+    (plist-get spec prop)))
+
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
   (declare (doc-string 2))
@@ -149,24 +166,6 @@ between 0 and 1)."
        (custom-theme-set-faces ',name ,@(doom-themes-common-faces extra-faces))
        (custom-theme-set-variables ',name ,@(doom-themes-common-variables extra-vars))
        (provide-theme ',name))))
-
-(defun doom-themes-common-faces (&optional extra-faces)
-  "Return an alist of face definitions for `custom-theme-set-faces'.
-
-Faces in EXTRA-FACES override the default faces."
-  (mapcar
-   #'doom-themes--build-face
-   (cl-remove-duplicates (append doom-themes-common-faces extra-faces)
-                         :key #'car)))
-
-(defun doom-themes-common-variables (&optional extra-vars)
-  "Return an alist of variable definitions for `custom-theme-set-variables'.
-
-Variables in EXTRA-VARS override the default ones."
-  (mapcar
-   #'doom-themes--build-var
-   (cl-remove-duplicates (append doom-themes-common-vars extra-vars)
-                         :key #'car)))
 
 ;;;###autoload
 (defun doom-themes-neotree-config ()
