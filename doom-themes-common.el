@@ -366,7 +366,7 @@
     (highlight-numbers-number :inherit 'bold :foreground numbers)
 
     ;; hlinum
-    (linum-highlight-face :background base3 :foreground fg :distant-foreground nil :bold nil)
+    (linum-highlight-face :foreground fg :distant-foreground nil :bold nil)
 
     ;; hydra
     (hydra-face-red      :foreground red     :bold bold)
@@ -412,7 +412,7 @@
     (jabber-roster-user-xa         :foreground cyan)
 
     ;; linum-relative
-    (linum-relative-current-face :inherit 'linum-highlight-face)
+    (linum-relative-current-face (&inherit linum-highlight-face))
 
     ;; lui
     (lui-time-stamp-face :foreground violet)
@@ -438,13 +438,13 @@
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
     ;; nlinum
-    (nlinum-current-line :foreground fg :distant-foreground nil :bold nil)
+    (nlinum-current-line (&inherit linum-highlight-face))
 
     ;; nlinum-hl
-    (nlinum-hl-face :inherit 'nlinum-current-line)
+    (nlinum-hl-face (&inherit nlinum-current-line))
 
     ;; nlinum-relative
-    (nlinum-relative-current-face :inherit 'nlinum-current-line)
+    (nlinum-relative-current-face (&inherit nlinum-current-line))
 
     ;; lsp
     ;; TODO Add light versions
