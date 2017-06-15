@@ -515,9 +515,9 @@
     (magit-section-secondary-heading :foreground violet :bold bold)
 
     ;; mic-paren
-    (paren-face-match    :inherit 'show-paren-match)
-    (paren-face-mismatch :inherit 'show-paren-mismatch)
-    (paren-face-no-match :inherit 'show-paren-mismatch)
+    (paren-face-match    (&inherit show-paren-match))
+    (paren-face-mismatch (&inherit show-paren-mismatch))
+    (paren-face-no-match (&inherit show-paren-mismatch))
 
     ;; parenface
     (paren-face :foreground comments)
@@ -561,8 +561,8 @@
     (sp-pair-overlay-face :background region)
 
     ;; smartparens
-    (sp-show-pair-match-face :inherit 'show-paren-match)
-    (sp-show-pair-mismatch-face :inherit 'show-paren-mismatch)
+    (sp-show-pair-match-face    (&inherit show-paren-match))
+    (sp-show-pair-mismatch-face (&inherit show-paren-mismatch))
 
     ;; solaire-mode
     (solaire-default-face :inherit 'default :background bg-alt)
@@ -765,7 +765,7 @@
     (rpm-spec-section-face      :foreground magenta)
 
     ;; typescript-mode
-    (ts-object-property :inherit 'js2-object-property)
+    (ts-object-property (&inherit js2-object-property))
 
     ;; sh-mode
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
