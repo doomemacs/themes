@@ -628,8 +628,8 @@
     ;; whitespace
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
-    (whitespace-tab      :foreground base5)
-    (whitespace-newline  :foreground base5)
+    (whitespace-tab      :foreground base4)
+    (whitespace-newline  :foreground base4)
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :bold bold)
 
