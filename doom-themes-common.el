@@ -49,12 +49,12 @@
     (font-lock-regexp-grouping-construct   :inherit 'bold :foreground operators)
 
     ;; mode-line / header-line
-    (mode-line           :background bg-alt :foreground fg)
-    (mode-line-inactive  :background bg     :foreground fg-alt)
-    (mode-line-emphasis  :foreground highlight)
-    (mode-line-highlight :inherit 'highlight)
-    (mode-line-buffer-id :foreground fg :bold bold)
-    (header-line :inherit 'mode-line)
+    (mode-line           :background bg-alt :foreground fg     :distant-foreground bg-alt)
+    (mode-line-inactive  :background bg     :foreground fg-alt :distant-foreground bg)
+    (mode-line-emphasis  :foreground highlight :distant-foreground bg)
+    (mode-line-highlight :inherit 'highlight :distant-foreground bg)
+    (mode-line-buffer-id :foreground fg :bold bold :distant-foreground bg)
+    (header-line :inherit 'mode-line :distant-foreground bg)
 
 
     ;; --- built-in plugin faces --------------
