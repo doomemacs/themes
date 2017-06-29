@@ -591,14 +591,18 @@
     (swiper-match-face-4 :background green   :foreground base0 :bold bold)
 
     ;; tabbar
-    (tabbar-default           :foreground bg :background bg :height 0.9)
-    (tabbar-modified          :inherit 'tabbar-default  :foreground red :bold bold)
-    (tabbar-unselected        :inherit 'tabbar-default  :foreground grey)
-    (tabbar-selected          :inherit 'tabbar-default  :foreground fg :background bg :bold bold)
+    (tabbar-default             :foreground bg :background bg :height 1.0)
+    (tabbar-highlight           :foreground fg :background bg :inverse-video t)
+    (tabbar-button              :foreground fg :background bg)
+    (tabbar-button-highlight    :inherit 'tabbar-button :inverse-video t)
+    (tabbar-modified            :inherit 'tabbar-default :foreground red :bold bold)
+    (tabbar-unselected          :inherit 'tabbar-default :foreground base5)
+    (tabbar-unselected-modified :inherit 'tabbar-modified)
+    (tabbar-selected
+     :inherit 'tabbar-default :bold bold
+     :foreground fg :background bg-alt
+     :box `(:line-width 4 :color ,bg-alt))
     (tabbar-selected-modified :inherit 'tabbar-selected :foreground green)
-    (tabbar-highlight         :foreground fg :background bg :inverse-video t)
-    (tabbar-button            :foreground fg :background bg)
-    (tabbar-button-highlight  :inherit 'tabbar-button :inverse-video t)
 
     ;; undo-tree
     (undo-tree-visualizer-default-face :foreground base5)
