@@ -600,8 +600,7 @@
     (tabbar-unselected-modified :inherit 'tabbar-modified)
     (tabbar-selected
      :inherit 'tabbar-default :bold bold
-     :foreground fg :background bg-alt
-     :box `(:line-width 4 :color ,bg-alt))
+     :foreground fg :background bg-alt)
     (tabbar-selected-modified :inherit 'tabbar-selected :foreground green)
 
     ;; undo-tree
