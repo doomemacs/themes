@@ -592,7 +592,7 @@
 
     ;; tabbar
     (tabbar-default             :foreground bg :background bg :height 1.0)
-    (tabbar-highlight           :foreground fg :background bg :inverse-video t)
+    (tabbar-highlight           :foreground fg :background selection :distant-foreground bg)
     (tabbar-button              :foreground fg :background bg)
     (tabbar-button-highlight    :inherit 'tabbar-button :inverse-video t)
     (tabbar-modified            :inherit 'tabbar-default :foreground red :bold bold)
