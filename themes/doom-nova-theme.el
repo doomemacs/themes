@@ -123,7 +123,12 @@ determine the exact padding."
    (helm-match     :foreground highlight)
 
    ;; company
-   (company-tooltip-selection  :background selection :foreground dark-grey))
+   (company-tooltip-selection  :background selection :foreground dark-grey)
+
+   ;; org-mode
+   (org-level-1
+    :foreground blue :background (doom-darken bg 0.025)
+    :bold bold :height 1.2))
 
   ;; --- variables --------------------------
   ;; ()
