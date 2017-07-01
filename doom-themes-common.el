@@ -692,7 +692,7 @@
     (ledger-font-posting-account-face :foreground base8)
     (ledger-font-payee-cleared-face :foreground violet :bold t :height 1.2)
     (ledger-font-payee-uncleared-face :foreground base5 :bold t :height 1.2)
-    (ledger-font-xact-highlight-face :background base5)
+    (ledger-font-xact-highlight-face :background base0)
 
     ;; makefile-*-mode
     (makefile-targets :foreground blue)
