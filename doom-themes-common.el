@@ -19,7 +19,7 @@
     (cursor               :background highlight)
     (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
-    (tooltip              :inherit 'doom-default :background bg :foreground fg)
+    (tooltip              :background bg :foreground fg)
     (secondary-selection  :background grey)
     (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :bold bold)
     (match                :foreground green      :background base0 :bold bold)
