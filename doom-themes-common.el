@@ -411,6 +411,9 @@
     (jabber-roster-user-online     :foreground green :bold bold)
     (jabber-roster-user-xa         :foreground cyan)
 
+    ;; line numbers (built-in)
+    (line-number-current-line (&inherit linum-highlight-face))
+
     ;; linum-relative
     (linum-relative-current-face (&inherit linum-highlight-face))
 
