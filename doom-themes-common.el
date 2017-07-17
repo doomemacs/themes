@@ -26,6 +26,9 @@
     (trailing-whitespace  :background red)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :bold 'inherit)
+    ;; Emacs 26.1 line numbers
+    (line-number :inherit 'default :foreground base5 :distant-foreground nil :bold nil)
+    (line-number-current-line      :foreground fg    :distant-foreground nil :bold nil)
 
     (error   :foreground error)
     (warning :foreground warning)
@@ -106,7 +109,7 @@
     (isearch :background highlight :foreground base0 :bold bold)
 
     ;; linum
-    (linum :inherit 'default :foreground base5 :bold nil :distant-foreground nil)
+    (linum (&inherit line-number))
 
     ;; term
     (term-color-black   :background base0   :foreground base0)
@@ -412,7 +415,7 @@
     (jabber-roster-user-xa         :foreground cyan)
 
     ;; linum-relative
-    (linum-relative-current-face (&inherit linum-highlight-face))
+    (linum-relative-current-face (&inherit line-number-current-line))
 
     ;; lui
     (lui-time-stamp-face :foreground violet)
@@ -443,13 +446,13 @@
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
     ;; nlinum
-    (nlinum-current-line (&inherit linum-highlight-face))
+    (nlinum-current-line (&inherit line-number-current-line))
 
     ;; nlinum-hl
-    (nlinum-hl-face (&inherit nlinum-current-line))
+    (nlinum-hl-face (&inherit line-number-current-line))
 
     ;; nlinum-relative
-    (nlinum-relative-current-face (&inherit nlinum-current-line))
+    (nlinum-relative-current-face (&inherit line-number-current-line))
 
     ;; lsp
     ;; TODO Add light versions
