@@ -28,10 +28,6 @@ determine the exact padding."
   :group 'doom-vibrant-theme
   :type '(or integer boolean))
 
-(defcustom doom-vibrant-linum-height 1.0
-  "The :height to render line numbers with."
-  :group 'doom-vibrant-theme
-  :type 'boolean)
 
 ;;
 (def-doom-theme doom-vibrant
@@ -123,13 +119,11 @@ determine the exact padding."
     :inherit 'default
     :foreground base4
     :distant-foreground nil
-    :bold nil
-    :height doom-vibrant-linum-height)
+    :bold nil)
    (line-number-current-line
     :foreground blue
     :distant-foreground base8
-    :bold bold
-    :height doom-vibrant-linum-height)
+    :bold bold)
 
    (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
    (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)
