@@ -46,6 +46,9 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     [screenshots]), see [solaire-mode].
   - To get line number highlighting for `nlinum`, see [nlinum-hl] (or [hlinum] for
     `linum`).
+  - [AnthonyDiGirolamo] added doom-one ([screenshot][airline-doom-one]) and
+    doom-molokai ([screenshot][airline-doom-molokai]) skins
+    to [airline-themes][airline-themes].
   - I'm working on making my modeline more accessible. In the meantime, check
     out [my mode-line configuration][mode-line] in my [emacs.d].
 
@@ -81,7 +84,12 @@ I welcome contributions of any kind, be they pull requests, bug reports or elisp
 pointers. Additional theme and plugin support requests are welcome too.
 
 
+[AnthonyDiGirolamo]: https://github.com/AnthonyDiGirolamo
 [Atom]: http://atom.io
+[Nova]: https://trevordmiller.com/projects/nova
+[airline-doom-molokai]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-molokai-theme.png
+[airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
+[airline-themes]: https://github.com/AnthonyDiGirolamo/airline-themes
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
@@ -91,7 +99,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
-[Nova]: https://trevordmiller.com/projects/nova
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [spacegrey]: http://kkga.github.io/spacegray/
