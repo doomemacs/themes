@@ -530,6 +530,9 @@
     ;; parenface
     (paren-face :foreground comments)
 
+    ;; perspective
+    (persp-selected-face :foreground blue :bold bold)
+
     ;; popup
     (popup-face :inherit 'tooltip)
     (popup-selection-face :background selection)
