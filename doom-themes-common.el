@@ -27,8 +27,8 @@
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :bold 'inherit)
     ;; Emacs 26.1 line numbers
-    (line-number :inherit 'default :foreground base5 :distant-foreground nil :bold nil)
-    (line-number-current-line      :foreground fg    :distant-foreground nil :bold nil)
+    (line-number :foreground base5 :distant-foreground base5 :bold nil)
+    (line-number-current-line :inherit 'hl-line :foreground fg :distant-foreground fg :bold nil)
 
     (error   :foreground error)
     (warning :foreground warning)
