@@ -227,7 +227,7 @@ pane and are highlighted incorrectly."
 
 (defun doom--neo-buffer--insert-root-entry (node)
   "Pretty-print pwd in neotree"
-  (let ((project-name (file-name-nondirectory (substring node 0 (1- (length node)))))
+  (let ((project-name (or (car (last (split-string node "/" t))) "-"))
         (faces '(neo-root-dir-face)))
     (when doom-neotree-enable-variable-pitch
       (push 'variable-pitch faces))
