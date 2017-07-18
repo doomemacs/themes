@@ -21,7 +21,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 ## Features
 
 - **Color themes:**
-  - [X] `doom-one`: inspired by [Atom]'s One Dark themes
+  - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
   - [X] `doom-vibrant`: a more vibrant version of `doom-one`
   - [X] `doom-molokai`: based on Textmate's monokai
   - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
@@ -75,12 +75,10 @@ A comprehensive configuration example:
 
 [The wiki contains details for customizing the neotree theme][wiki].
 
-## Contributing
+## Contribute
 
-I appreciate contributions of any kind. Bug fixes, additional themes, plugin
-support requests and code reviews are welcome and encouraged.
-
-[Don't hesitate to report bugs, request features/faces or just tell me my Elisp-fu sucks][issues]!
+I welcome contributions of any kind, be they pull requests, bug reports or elisp
+pointers. Additional theme and plugin support requests are welcome too.
 
 
 [Atom]: http://atom.io
