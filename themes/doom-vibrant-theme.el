@@ -119,15 +119,17 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (linum :inherit 'default
-          :foreground base4
-          :distant-foreground nil
-          :bold nil
-          :height doom-vibrant-linum-height)
-   (nlinum-hl-face :foreground blue
-                   :distant-foreground base8
-                   :bold bold
-                   :height doom-vibrant-linum-height)
+   (line-number
+    :inherit 'default
+    :foreground base4
+    :distant-foreground nil
+    :bold nil
+    :height doom-vibrant-linum-height)
+   (line-number-current-line
+    :foreground blue
+    :distant-foreground base8
+    :bold bold
+    :height doom-vibrant-linum-height)
 
    (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
    (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)

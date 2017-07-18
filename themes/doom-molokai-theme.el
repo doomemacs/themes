@@ -98,8 +98,8 @@ determine the exact padding."
    (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
 
-   (linum :foreground base5 :distant-foreground nil :bold nil)
-   (nlinum-hl-face :foreground base7 :distant-foreground nil :bold nil)
+   (line-number :foreground base5 :distant-foreground nil :bold nil)
+   (line-number-current-line :foreground base7 :distant-foreground nil :bold nil)
 
    (isearch :foreground base0 :background green)
 
