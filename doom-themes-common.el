@@ -573,10 +573,10 @@
     (sp-show-pair-mismatch-face (&inherit show-paren-mismatch))
 
     ;; solaire-mode
-    (solaire-default-face :inherit 'default :background bg-alt)
-    (solaire-linum-face :inherit 'linum :background bg-alt)
-    (solaire-hl-line-face :inherit 'hl-line :background base3)
-    (solaire-org-hide-face :foreground bg-alt)
+    (solaire-default-face      :inherit 'default :background bg-alt)
+    (solaire-line-number-face  :inherit (if (boundp 'display-line-numbers) 'line-number 'linum) :background bg-alt)
+    (solaire-hl-line-face      :inherit 'hl-line :background base3)
+    (solaire-org-hide-face     :foreground bg-alt)
 
     ;; spaceline
     (spaceline-highlight-face :foreground blue)
