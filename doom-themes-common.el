@@ -797,7 +797,7 @@
 
 (defconst doom-themes-common-vars
   '((ansi-color-names-vector
-     (vector (mapcar #'doom-color '(base0 red green yellow blue magenta cyan base8))))
+     (vconcat (mapcar #'doom-color '(base0 red green yellow blue magenta cyan base8))))
 
     (fci-rule-color (doom-color 'base5))
 
