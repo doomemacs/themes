@@ -92,6 +92,20 @@
     (elfeed-search-unread-count-face :foreground yellow)
     (elfeed-search-unread-title-face :foreground fg :bold bold)
 
+    ;; eshell
+    (eshell-prompt        :foreground base7)
+    (eshell-ls-archive    :foreground magenta)
+    (eshell-ls-backup     :foreground yellow)
+    (eshell-ls-clutter    :foreground red)
+    (eshell-ls-directory  :foreground blue)
+    (eshell-ls-executable :foreground green)
+    (eshell-ls-missing    :foreground red)
+    (eshell-ls-product    :foreground orange)
+    (eshell-ls-readonly   :foreground orange)
+    (eshell-ls-special    :foreground violet)
+    (eshell-ls-symlink    :foreground cyan)
+    (eshell-ls-unreadable :foreground base5)
+
     ;; flx-ido
     (flx-highlight-face :inherit 'bold :foreground yellow :underline nil)
 
