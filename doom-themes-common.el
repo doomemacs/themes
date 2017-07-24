@@ -112,6 +112,7 @@
     (linum (&inherit line-number))
 
     ;; term
+    (term               :background bg      :foreground fg)
     (term-color-black   :background base0   :foreground base0)
     (term-color-red     :background red     :foreground red)
     (term-color-green   :background green   :foreground green)
