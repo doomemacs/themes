@@ -140,6 +140,11 @@ determine the exact padding."
    ;; yasnippet
    (yas-field-highlight-face :background bg-alt)
 
+   ;; magit
+   (magit-blame-heading     :foreground orange :background base8)
+   (magit-diff-removed :foreground (doom-darken red 0.3) :background (doom-blend red base8 0.05))
+   (magit-diff-removed-highlight :foreground red :background (doom-blend red base8 0.1) :bold bold)
+
    (font-lock-comment-face
     :foreground comments
     :background (if doom-one-light-comment-bg (doom-darken bg-alt 0.095)))
