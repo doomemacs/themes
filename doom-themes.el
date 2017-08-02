@@ -168,6 +168,11 @@ between 0 and 1)."
        (provide-theme ',name))))
 
 ;;;###autoload
+(defun doom-themes-org-config ()
+  "Enable custom fontification and improves doom-themes integration with org-mode."
+  (require 'doom-themes-org))
+
+;;;###autoload
 (defun doom-themes-neotree-config ()
   "Install doom-themes' neotree configuration.
 
