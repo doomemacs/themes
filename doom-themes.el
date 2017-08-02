@@ -151,6 +151,13 @@ between 0 and 1)."
              prop face (if class (format "'s '%s' class" class) "")))
     (plist-get spec prop)))
 
+;;;###autoload
+(defmacro doom-theme-set-faces (theme &rest faces)
+  "Customize THEME (a symbol) with FACES."
+  `(custom-theme-set-faces
+    ,theme
+    ,@(mapcar #'doom-themes--build-face faces)))
+
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
   (declare (doc-string 2))
