@@ -74,6 +74,20 @@ A comprehensive configuration example:
 
 ;; Enable custom neotree theme
 (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+
+;; Corrects (and improves) org-mode's native fontification.
+;;
+;; 1. Re-set `org-todo' & `org-headline-done' faces to make them respect
+;;    underlying faces (i.e. don't override the :height or :background of
+;;    underlying faces).
+;; 2. Make statistic cookies respect underlying faces.
+;; 3. Fontify item bullets (make them stand out)
+;; 4. Fontify item checkboxes (and when they're marked done), like TODOs that are
+;;    marked done.
+;; 5. Fontify dividers/separators (5+ dashes)
+;; 6. Fontify #hashtags and @at-tags, for personal convenience; see
+;;    `doom-org-special-tags' to disable this.
+(doom-themes-org-config)
 ```
 
 [The wiki contains details for customizing the neotree theme][wiki].
