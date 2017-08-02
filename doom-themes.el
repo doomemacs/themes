@@ -152,7 +152,7 @@ between 0 and 1)."
     (plist-get spec prop)))
 
 ;;;###autoload
-(defmacro doom-theme-set-faces (theme &rest faces)
+(defmacro doom-themes-set-faces (theme &rest faces)
   "Customize THEME (a symbol) with FACES."
   `(custom-theme-set-faces
     ,theme
