@@ -557,10 +557,10 @@
     (popup-tip-face :inherit 'tooltip)
 
     ;; powerline
-    (powerline-active1   :inherit 'mode-line)
+    (powerline-active1   :inherit 'mode-line-emphasis :background highlight :foreground bg)
     (powerline-active2   :inherit 'mode-line)
-    (powerline-inactive1 :inherit 'mode-line-inactive)
-    (powerline-inactive2 :inherit 'mode-line-inactive)
+    (powerline-inactive1 :inherit 'mode-line-inactive :background base2)
+    (powerline-inactive2 :inherit 'mode-line-inactive :background base4)
 
     ;; rainbow-delimiters
     (rainbow-delimiters-depth-1-face :foreground blue)
