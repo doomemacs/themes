@@ -5,14 +5,6 @@
 
 # doom-themes
 
-> **Announcement:** v2.0 of this package was released with three large changes:
->
->   + `doom-buffer-mode` and `doom-brighten-minibuffer` have been moved to a new
->     plugin: [solaire-mode]
->   + `doom-nlinum` was removed; line highlighting is now supported in nlinum 1.7
->   + A rewrite of doom-themes' backend and themes means problems or breakages
->     may have slipped through. [Let me know][issues] if you find one!
-
 DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 [emacs.d], inspired by some of my favorite color themes.
 
@@ -41,14 +33,26 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
     This requires `all-the-icons`' fonts to be installed: `M-x
     all-the-icons-install-fonts`
+  - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
+    fontification.
+    -  Re-set `org-todo' & `org-headline-done' faces to make them respect
+       underlying faces (i.e. don't override the :height or :background of
+       underlying faces).
+    -  Make statistic cookies respect underlying faces.
+    -  Fontify item bullets (make them stand out)
+    -  Fontify item checkboxes (and when they're marked done), like TODOs that
+       are marked done.
+    -  Fontify dividers/separators (5+ dashes)
+    -  Fontify #hashtags and @at-tags, for personal convenience; see
+       `doom-org-special-tags` to disable this.
 - **Resources that may interest you:**
   - To get dimmed sidebars and brighter source buffers (like in the
     [screenshots]), see [solaire-mode].
-  - To get line number highlighting for `nlinum`, see [nlinum-hl] (or [hlinum] for
-    `linum`).
+  - To get line number highlighting for `nlinum`, set
+    `nlinum-highlight-current-line` to non-nil (or see [hlinum] for `linum`).
   - [AnthonyDiGirolamo] added doom-one ([screenshot][airline-doom-one]) and
-    doom-molokai ([screenshot][airline-doom-molokai]) skins
-    to [airline-themes][airline-themes].
+    doom-molokai ([screenshot][airline-doom-molokai]) skins to
+    [airline-themes][airline-themes].
   - I'm working on making my modeline more accessible. In the meantime, check
     out [my mode-line configuration][mode-line] in my [emacs.d].
 
@@ -76,17 +80,6 @@ A comprehensive configuration example:
 (doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
 
 ;; Corrects (and improves) org-mode's native fontification.
-;;
-;; 1. Re-set `org-todo' & `org-headline-done' faces to make them respect
-;;    underlying faces (i.e. don't override the :height or :background of
-;;    underlying faces).
-;; 2. Make statistic cookies respect underlying faces.
-;; 3. Fontify item bullets (make them stand out)
-;; 4. Fontify item checkboxes (and when they're marked done), like TODOs that are
-;;    marked done.
-;; 5. Fontify dividers/separators (5+ dashes)
-;; 6. Fontify #hashtags and @at-tags, for personal convenience; see
-;;    `doom-org-special-tags' to disable this.
 (doom-themes-org-config)
 ```
 
