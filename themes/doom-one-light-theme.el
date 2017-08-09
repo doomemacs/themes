@@ -112,9 +112,8 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (linum :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
+   (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
    (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil)
-
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -159,6 +158,7 @@ determine the exact padding."
    (org-level-3          :bold 'bold :foreground violet :height 1.1)
    (org-ellipsis         :underline nil :background bg :foreground red)
    )
+
   ;; --- extra variables ---------------------
   ;; ()
   )
