@@ -55,6 +55,7 @@
 ;;; Code:
 
 (require 'cl-lib)
+(require 'doom-themes-common)
 
 (defgroup doom-themes nil
   "Options for doom-themes."
@@ -161,7 +162,6 @@ between 0 and 1)."
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
   (declare (doc-string 2))
-  (require 'doom-themes-common)
   (let ((doom-themes--colors defs))
     `(let* ((bold   doom-themes-enable-bold)
             (italic doom-themes-enable-italic)
