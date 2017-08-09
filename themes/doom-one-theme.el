@@ -33,8 +33,8 @@ determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#21242b" nil       nil            ))
-   (bg-alt     '("#282c34" nil       nil            ))
+  ((bg         '("#282c34" nil       nil            ))
+   (bg-alt     '("#21242b" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -96,13 +96,13 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-darken blue 0.475)
-      `(,(car bg-alt) ,@(cdr base0))))
+      `(,(car bg) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken blue 0.45)
-      `(,(doom-darken (car bg) 0.125) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+      `(,(doom-darken (car bg-alt) 0.125) ,@(cdr base0))))
+   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
+   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------

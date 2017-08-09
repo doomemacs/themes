@@ -52,8 +52,8 @@
     (font-lock-regexp-grouping-construct   :inherit 'bold :foreground operators)
 
     ;; mode-line / header-line
-    (mode-line           :background bg-alt :foreground fg     :distant-foreground bg-alt)
-    (mode-line-inactive  :background bg     :foreground fg-alt :distant-foreground bg)
+    (mode-line           :background bg     :foreground fg     :distant-foreground bg)
+    (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :foreground fg :bold bold :distant-foreground bg)
@@ -592,9 +592,9 @@
 
     ;; solaire-mode
     (solaire-default-face      :inherit 'default :background bg-alt)
-    (solaire-line-number-face  :inherit (if (boundp 'display-line-numbers) 'line-number 'linum) :background bg-alt)
+    (solaire-line-number-face  :inherit (list (if (boundp 'display-line-numbers) 'line-number 'linum) 'solaire-default-face))
     (solaire-hl-line-face      :inherit 'hl-line :background base3)
-    (solaire-org-hide-face     :foreground bg-alt)
+    (solaire-org-hide-face     :foreground bg)
 
     ;; spaceline
     (spaceline-highlight-face :foreground blue)
