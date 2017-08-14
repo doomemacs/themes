@@ -105,7 +105,7 @@ determine the exact padding."
           `(,(car bg) ,@(cdr base0)))
       (if -modeline-darker
           (doom-darken base1 0.15)
-          base1)))
+          base0)))
    (modeline-bg-d
     (if doom-one-light-with-solaire-mode-enabled
         (if -modeline-darker
@@ -113,7 +113,7 @@ determine the exact padding."
           `(,(doom-darken (car bg-alt) 0.125) ,@(cdr base0)))
       (if -modeline-darker
           (doom-darken base2 0.15)
-        base2)))
+        base1)))
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-d `(,(car bg-alt) ,@(cdr base1))))
 
@@ -127,7 +127,7 @@ determine the exact padding."
 
    (line-number :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil :bold nil)
    (line-number-current-line :inherit 'hl-line :foreground base8 :distant-foreground nil :bold nil)
-   (hl-line :background (if doom-one-light-with-solaire-mode-enabled base2 base1))
+   (hl-line :background (if doom-one-light-with-solaire-mode-enabled base2 base0))
    (solaire-hl-line-face :inherit 'hl-line :background base2)
 
    (doom-modeline-bar :background (if -modeline-darker modeline-bg highlight))
