@@ -6,17 +6,22 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-one-light-brighter-modeline nil
+(defcustom doom-one-light-with-solaire-mode-enabled t
+  "Default t. If you do not use solaire-mode, set it to nil"
+  :group 'doom-one-light-theme
+  :type 'boolean)
+
+(defcustom doom-one-light-darker-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
   :group 'doom-one-light-theme
   :type 'boolean)
 
-(defcustom doom-one-light-brighter-comments nil
+(defcustom doom-one-light-darker-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-one-light-theme
   :type 'boolean)
 
-(defcustom doom-one-light-comment-bg doom-one-light-brighter-comments
+(defcustom doom-one-light-comment-bg doom-one-light-darker-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
   :group 'doom-one-light-theme
@@ -65,8 +70,8 @@ determine the exact padding."
    (vertical-bar   base2)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-one-light-brighter-comments dark-cyan base4))
-   (doc-comments   (doom-darken (if doom-one-light-brighter-comments dark-cyan base5) 0.25))
+   (comments       (if doom-one-light-darker-comments dark-cyan base4))
+   (doc-comments   (doom-darken (if doom-one-light-darker-comments dark-cyan base5) 0.25))
    (constants      violet)
    (functions      magenta)
    (keywords       red)
@@ -85,24 +90,32 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (-modeline-bright doom-one-light-brighter-modeline)
+   (-modeline-darker doom-one-light-darker-modeline)
    (-modeline-pad
     (when doom-one-light-padded-modeline
       (if (integerp doom-one-light-padded-modeline) doom-one-light-padded-modeline 4)))
 
    (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
+   (modeline-fg-alt (doom-blend violet base4 (if -modeline-darker 0.5 0.2)))
 
    (modeline-bg
-    (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(car bg) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.125) ,@(cdr base0))))
+    (if doom-one-light-with-solaire-mode-enabled
+        (if -modeline-darker
+            (doom-darken base4 0.475)
+          `(,(car bg) ,@(cdr base0)))
+      (if -modeline-darker
+          (doom-darken base1 0.15)
+          base1)))
+   (modeline-bg-d
+    (if doom-one-light-with-solaire-mode-enabled
+        (if -modeline-darker
+            (doom-darken base4 0.45)
+          `(,(doom-darken (car bg-alt) 0.125) ,@(cdr base0)))
+      (if -modeline-darker
+          (doom-darken base2 0.15)
+        base2)))
    (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg-inactive-d `(,(car bg-alt) ,@(cdr base1))))
 
   ;; --- extra faces ------------------------
   ((font-lock-comment-face
@@ -114,10 +127,10 @@ determine the exact padding."
 
    (line-number :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil :bold nil)
    (line-number-current-line :inherit 'hl-line :foreground base8 :distant-foreground nil :bold nil)
-   (hl-line :background base2)
+   (hl-line :background (if doom-one-light-with-solaire-mode-enabled base2 base1))
    (solaire-hl-line-face :inherit 'hl-line :background base2)
 
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-bar :background (if -modeline-darker modeline-bg highlight))
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -126,16 +139,16 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+    :foreground (if -modeline-darker base8 highlight))
 
    (solaire-mode-line-face
     :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+    :background modeline-bg-d
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-d)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+    :background modeline-bg-inactive-d
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-d)))
 
    ;; magit
    (magit-blame-heading     :foreground orange :background bg-alt)
