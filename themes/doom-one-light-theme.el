@@ -85,7 +85,7 @@ determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    base4)
+   (vc-modified    orange)
    (vc-added       green)
    (vc-deleted     red)
 
