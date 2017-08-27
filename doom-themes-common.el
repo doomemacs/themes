@@ -819,7 +819,6 @@
     (jdee-db-requested-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'green)))
     (jdee-db-active-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'highlight)))
 
-    (org-ellipsis "  ")
     (org-fontify-whole-heading-line t)
     (org-fontify-done-headline t)
     (org-fontify-quote-and-verse-blocks t)
