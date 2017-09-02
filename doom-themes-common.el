@@ -658,6 +658,7 @@
     (whitespace-space    :foreground base4)
     (whitespace-tab      :foreground base4 :background (unless indent-tabs-mode base3))
     (whitespace-newline  :foreground base4)
+    (whitespace-indentation :foreground red :background yellow)
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :bold bold)
 
