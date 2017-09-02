@@ -65,7 +65,7 @@ determine the exact padding."
    (vertical-bar   base2)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-one-light-brighter-comments dark-cyan base4))
+   (comments       (if doom-one-light-brighter-comments cyan base4))
    (doc-comments   (doom-darken comments 0.15))
    (constants      violet)
    (functions      magenta)
@@ -107,10 +107,11 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((font-lock-comment-face
     :foreground comments
-    :background (if doom-one-light-comment-bg (doom-darken bg-alt 0.095)))
+    :background (if doom-one-light-comment-bg base0))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
-    :foreground doc-comments)
+    :foreground doc-comments
+    :slant 'italic)
 
    (line-number :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil :bold nil)
    (line-number-current-line :inherit 'hl-line :foreground base8 :distant-foreground nil :bold nil)
