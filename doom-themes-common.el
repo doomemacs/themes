@@ -444,7 +444,7 @@
     (nav-flash-face :background selection :foreground base8 :bold bold)
 
     ;; neotree
-    (neo-root-dir-face   :foreground strings :background bg-alt :box `(:line-width 4 :color ,bg-alt))
+    (neo-root-dir-face   :foreground strings :background bg :box `(:line-width 4 :color ,bg))
     (neo-file-link-face  :foreground fg)
     (neo-dir-link-face   :foreground highlight)
     (neo-expand-btn-face :foreground highlight)
