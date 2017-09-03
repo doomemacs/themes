@@ -110,7 +110,7 @@
     (flx-highlight-face :inherit 'bold :foreground yellow :underline nil)
 
     ;; hl-line
-    (hl-line :background bg)
+    (hl-line :background bg-alt)
 
     ;; ido
     (ido-first-match :foreground orange)
