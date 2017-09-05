@@ -97,7 +97,7 @@ for FRAME (defaults to the current frame)."
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
   (when (and color1 color2)
-    (cond ((and (symbolp color1) (symbolp color2))
+    (cond ((and color1 color2 (symbolp color1) (symbolp color2))
            (doom-blend (doom-color color1) (doom-color color2) alpha))
 
           ((or (listp color1) (listp color2))
@@ -116,7 +116,7 @@ float between 0 and 1)"
 (defun doom-darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
 0 and 1)."
-  (cond ((symbolp color)
+  (cond ((and color (symbolp color))
          (doom-darken (doom-color color) alpha))
 
         ((listp color)
@@ -128,7 +128,7 @@ float between 0 and 1)"
 (defun doom-lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
 between 0 and 1)."
-  (cond ((symbolp color)
+  (cond ((and color (symbolp color))
          (doom-lighten (doom-color color) alpha))
 
         ((listp color)
