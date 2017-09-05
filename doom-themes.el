@@ -97,7 +97,10 @@ for FRAME (defaults to the current frame)."
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
   (when (and color1 color2)
-    (cond ((or (listp color1) (listp color2))
+    (cond ((and (symbolp color1) (symbolp color2))
+           (doom-blend (doom-color color1) (doom-color color2) alpha))
+
+          ((or (listp color1) (listp color2))
            (cl-loop for x in color1
                     when (if (listp color2) (pop color2) color2)
                     collect (doom-blend x it alpha)))
@@ -113,16 +116,26 @@ float between 0 and 1)"
 (defun doom-darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
 0 and 1)."
-  (if (listp color)
-      (cl-loop for c in color collect (doom-darken c alpha))
-    (doom-blend color "#000000" (- 1 alpha))))
+  (cond ((symbolp color)
+         (doom-darken (doom-color color) alpha))
+
+        ((listp color)
+         (cl-loop for c in color collect (doom-darken c alpha)))
+
+        (t
+         (doom-blend color "#000000" (- 1 alpha)))))
 
 (defun doom-lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
 between 0 and 1)."
-  (if (listp color)
-      (cl-loop for c in color collect (doom-lighten c alpha))
-    (doom-blend color "#FFFFFF" (- 1 alpha))))
+  (cond ((symbolp color)
+         (doom-lighten (doom-color color) alpha))
+
+        ((listp color)
+         (cl-loop for c in color collect (doom-lighten c alpha)))
+
+        (t
+         (doom-blend color "#FFFFFF" (- 1 alpha)))))
 
 ;;;###autoload
 (defun doom-color (name &optional type)
