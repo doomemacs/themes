@@ -55,7 +55,7 @@
                ("^ *\\(-----+\\)$" 1 'org-meta-line)
                ;; custom #hashtags & @at-tags for another level of organization
                ,(when doom-org-special-tags
-                  '("\\s-\\(\\([#@]\\)[^ \n.,]+\\)" 1 (doom-org--tag-face 2))))))))
+                  '("\\s-\\(\\([#@]\\)[^ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
 
 (defun doom-org-default-settings ()
   "Make the most of org-mode integration with doom-themes."
