@@ -128,7 +128,7 @@ type of icon to display for the file if `doom-neotree-file-icons' is set to
 (defun doom--neotree-no-fringes ()
   "Remove fringes in neotree. They get reset each time you select the neotree
 pane and are highlighted incorrectly."
-  (set-window-fringes neo-global--window 1 0))
+  (set-window-fringes neo-global--window 0 0))
 
 (defun doom--neotree-setup (&rest _)
   (setq line-spacing doom-neotree-line-spacing
