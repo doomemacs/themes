@@ -13,7 +13,7 @@
 (defsubst doom-org--tag-face (n)
   (let ((kwd (match-string n)))
     (or (and (equal kwd "#") 'org-tag)
-        (and (equal kwd "@") 'org-special-keyword))))
+        (and (equal kwd "@") 'org-formula))))
 
 (defun doom-org-custom-fontification ()
   "Correct (and improve) org-mode's font-lock keywords.
