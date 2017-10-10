@@ -386,6 +386,9 @@
     ;; hlinum
     (linum-highlight-face :foreground fg :distant-foreground nil :bold nil)
 
+    ;; hl-todo
+    (hl-todo :foreground red :bold bold)
+
     ;; hydra
     (hydra-face-red      :foreground red     :bold bold)
     (hydra-face-blue     :foreground blue    :bold bold)
