@@ -349,7 +349,7 @@
 
     ;; helm
     (helm-selection
-     (&all :inherit 'bold :background base2)
+     (&all :inherit 'bold :background selection)
      (&dark  :distant-foreground highlight)
      (&light :distant-foreground base0))
     (helm-match :foreground highlight :distant-foreground base8 :underline t)
