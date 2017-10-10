@@ -13,7 +13,7 @@
     (bold-italic :inherit '(bold italic))
 
     (default :background bg :foreground fg)
-    (fringe :inherit 'default :foreground base5)
+    (fringe :inherit 'default :foreground base4)
     (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2))
     (highlight            :background highlight  :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
