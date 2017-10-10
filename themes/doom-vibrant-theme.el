@@ -86,6 +86,8 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (hidden-alt `(,(car bg-alt) "black" "black"))
    (-modeline-pad
     (when doom-vibrant-padded-modeline
       (if (integerp doom-vibrant-padded-modeline) doom-vibrant-padded-modeline 4)))
@@ -153,7 +155,11 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-header-face :inherit 'bold :foreground red))
+   (markdown-header-face :inherit 'bold :foreground red)
+
+   ;; org-mode
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden-alt))
 
 
   ;; --- extra variables --------------------

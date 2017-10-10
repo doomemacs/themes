@@ -85,6 +85,7 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-one-brighter-modeline)
    (-modeline-pad
     (when doom-one-padded-modeline
@@ -147,7 +148,12 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05)))
+   (markdown-code-face :background (doom-lighten base3 0.05))
+
+   ;; org-mode
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden))
+
 
 
   ;; --- extra variables ---------------------

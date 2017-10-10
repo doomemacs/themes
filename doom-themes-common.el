@@ -596,7 +596,7 @@
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background base3)
-    (solaire-org-hide-face :foreground bg)
+    (solaire-org-hide-face :foreground bg-alt)
 
     ;; spaceline
     (spaceline-highlight-face :foreground blue)
@@ -752,6 +752,7 @@
     (org-level-1 :foreground blue :background base3 :bold bold :height 1.2)
     (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
     (org-level-3 :bold bold :foreground base8)
+    (org-hide :foreground bg)
     (org-level-4 :inherit 'org-level-3)
     (org-level-5 :inherit 'org-level-3)
     (org-level-6 :inherit 'org-level-3)
