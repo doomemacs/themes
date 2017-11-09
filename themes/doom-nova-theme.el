@@ -115,8 +115,8 @@ determine the exact padding."
    (solaire-hl-line-face :inherit 'hl-line :background current-line)
 
    ;; linum
-   (line-number :foreground grey :distant-foreground nil :bold nil)
-   (line-number-current-line :background current-line :foreground highlight :distant-foreground nil :bold nil)
+   (line-number :foreground grey :distant-foreground nil :bold nil :underline nil)
+   (line-number-current-line :background current-line :foreground highlight :distant-foreground nil :bold nil :underline nil)
 
    ;; helm
    (helm-selection :foreground dark-grey :background selection)

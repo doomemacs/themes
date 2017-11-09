@@ -26,9 +26,6 @@
     (trailing-whitespace  :background red)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :bold 'inherit)
-    ;; Emacs 26.1 line numbers
-    (line-number :inherit 'default :foreground base5 :distant-foreground base5 :bold nil)
-    (line-number-current-line :inherit 'hl-line :foreground fg :distant-foreground fg :bold nil)
 
     (error   :foreground error)
     (warning :foreground warning)
@@ -58,6 +55,16 @@
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :foreground fg :bold bold :distant-foreground bg)
     (header-line :inherit 'mode-line :distant-foreground bg)
+
+    ;; 1. Line number faces must explicitly disable its text style attributes
+    ;;    because nearby faces may "bleed" into the line numbers otherwise.
+    ;; 2. All other line number plugin faces should &inherit from these.
+    (line-number
+     :foreground base5 :distant-foreground base5
+     :bold nil :italic nil :underline nil :strike-through nil)
+    (line-number-current-line
+     :foreground fg :distant-foreground fg
+     :bold nil :italic nil :underline nil :strike-through nil)
 
 
     ;; --- built-in plugin faces --------------
