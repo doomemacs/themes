@@ -603,7 +603,7 @@
 
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
-    (solaire-hl-line-face  :inherit 'hl-line :background base3)
+    (solaire-hl-line-face  :inherit 'hl-line :background bg)
     (solaire-org-hide-face :foreground bg-alt)
 
     ;; spaceline
