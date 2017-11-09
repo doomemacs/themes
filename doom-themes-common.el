@@ -409,7 +409,7 @@
     (iedit-read-only-occurrence :inherit 'region)
 
     ;; indent-guide
-    (indent-guide-face :foreground (doom-lighten bg 0.1))
+    (indent-guide-face (&inherit highlight-indentation-face))
 
     ;; ivy
     (ivy-current-match :background dark-blue :distant-foreground base0 :bold bold)
