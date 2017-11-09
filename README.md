@@ -25,13 +25,14 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-molokai`: based on Textmate's monokai
   - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
   - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
+  - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
+    (thanks to [teesloane])
   - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
   - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
   - [ ] `doom-x`: reads your colors from ~/.Xresources
   - [ ] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey]
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  - [ ] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
 - **Included features:**
   - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
     rings (i.e. an error occurs).
@@ -135,6 +136,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [spacegrey]: http://kkga.github.io/spacegray/
+[teesloane]: https://github.com/teesloane
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
 [ztlevi]: https://github.com/ztlevi
