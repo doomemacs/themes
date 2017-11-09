@@ -778,7 +778,7 @@
     (org-block-end-line        :inherit 'org-block-begin-line)
     (org-block-background      :background base3)
     (org-block                 :background base3)
-    (org-archived              :foreground base3)
+    (org-archived              :foreground doc-comments)
     (org-code                  :foreground orange)
     (org-verbatim              :foreground green)
     (org-formula               :foreground cyan)
