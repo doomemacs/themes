@@ -140,7 +140,9 @@ between 0 and 1)."
 ;;;###autoload
 (defun doom-color (name &optional type)
   "Retrieve a specific color named NAME (a symbol) from the current theme."
-  (let ((colors (cdr-safe (assq name doom-themes--colors))))
+  (let ((colors (if (listp name)
+                    name
+                  (cdr-safe (assq name doom-themes--colors)))))
     (and colors
          (cond ((listp colors)
                 (let ((i (or (plist-get '(256 1 16 2 8 3) type) 0)))
