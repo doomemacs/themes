@@ -13,22 +13,19 @@
     (bold-italic :inherit '(bold italic))
 
     (default :background bg :foreground fg)
-    (fringe :inherit 'default :foreground base5)
+    (fringe :inherit 'default :foreground base4)
     (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2))
     (highlight            :background highlight  :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
     (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
-    (tooltip              :background bg :foreground fg)
+    (tooltip              :background bg-alt :foreground fg)
     (secondary-selection  :background grey)
     (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :bold bold)
     (match                :foreground green      :background base0 :bold bold)
     (trailing-whitespace  :background red)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :bold 'inherit)
-    ;; Emacs 26.1 line numbers
-    (line-number :inherit 'default :foreground base5 :distant-foreground base5 :bold nil)
-    (line-number-current-line :inherit 'hl-line :foreground fg :distant-foreground fg :bold nil)
 
     (error   :foreground error)
     (warning :foreground warning)
@@ -58,6 +55,16 @@
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :foreground fg :bold bold :distant-foreground bg)
     (header-line :inherit 'mode-line :distant-foreground bg)
+
+    ;; 1. Line number faces must explicitly disable its text style attributes
+    ;;    because nearby faces may "bleed" into the line numbers otherwise.
+    ;; 2. All other line number plugin faces should &inherit from these.
+    (line-number
+     :foreground base5 :distant-foreground base5
+     :bold nil :italic nil :underline nil :strike-through nil)
+    (line-number-current-line
+     :foreground fg :distant-foreground fg
+     :bold nil :italic nil :underline nil :strike-through nil)
 
 
     ;; --- built-in plugin faces --------------
@@ -126,7 +133,8 @@
     (linum (&inherit line-number))
 
     ;; term
-    (term               :background bg      :foreground fg)
+    (term               :inherit 'default)
+    (term-bold          :inherit 'bold)
     (term-color-black   :background base0   :foreground base0)
     (term-color-red     :background red     :foreground red)
     (term-color-green   :background green   :foreground green)
@@ -349,7 +357,7 @@
 
     ;; helm
     (helm-selection
-     (&all :inherit 'bold :background base2)
+     (&all :inherit 'bold :background selection)
      (&dark  :distant-foreground highlight)
      (&light :distant-foreground base0))
     (helm-match :foreground highlight :distant-foreground base8 :underline t)
@@ -386,6 +394,9 @@
     ;; hlinum
     (linum-highlight-face :foreground fg :distant-foreground nil :bold nil)
 
+    ;; hl-todo
+    (hl-todo :foreground red :bold bold)
+
     ;; hydra
     (hydra-face-red      :foreground red     :bold bold)
     (hydra-face-blue     :foreground blue    :bold bold)
@@ -398,7 +409,7 @@
     (iedit-read-only-occurrence :inherit 'region)
 
     ;; indent-guide
-    (indent-guide-face :foreground (doom-lighten bg 0.1))
+    (indent-guide-face (&inherit highlight-indentation-face))
 
     ;; ivy
     (ivy-current-match :background dark-blue :distant-foreground base0 :bold bold)
@@ -444,7 +455,7 @@
     (nav-flash-face :background selection :foreground base8 :bold bold)
 
     ;; neotree
-    (neo-root-dir-face   :foreground strings :background bg-alt :box `(:line-width 4 :color ,bg-alt))
+    (neo-root-dir-face   :foreground strings :background bg :box `(:line-width 4 :color ,bg))
     (neo-file-link-face  :foreground fg)
     (neo-dir-link-face   :foreground highlight)
     (neo-expand-btn-face :foreground highlight)
@@ -591,10 +602,9 @@
     (sp-show-pair-mismatch-face (&inherit show-paren-mismatch))
 
     ;; solaire-mode
-    (solaire-default-face      :inherit 'default :background bg-alt)
-    (solaire-line-number-face  :inherit (list (if (boundp 'display-line-numbers) 'line-number 'linum) 'solaire-default-face))
-    (solaire-hl-line-face      :inherit 'hl-line :background base3)
-    (solaire-org-hide-face     :foreground bg)
+    (solaire-default-face  :inherit 'default :background bg-alt)
+    (solaire-hl-line-face  :inherit 'hl-line :background bg)
+    (solaire-org-hide-face :foreground bg-alt)
 
     ;; spaceline
     (spaceline-highlight-face :foreground blue)
@@ -659,6 +669,7 @@
     (whitespace-space    :foreground base4)
     (whitespace-tab      :foreground base4 :background (unless indent-tabs-mode base3))
     (whitespace-newline  :foreground base4)
+    (whitespace-indentation :foreground red :background yellow)
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :bold bold)
 
@@ -749,6 +760,7 @@
     (org-level-1 :foreground blue :background base3 :bold bold :height 1.2)
     (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
     (org-level-3 :bold bold :foreground base8)
+    (org-hide :foreground bg)
     (org-level-4 :inherit 'org-level-3)
     (org-level-5 :inherit 'org-level-3)
     (org-level-6 :inherit 'org-level-3)
@@ -766,7 +778,7 @@
     (org-block-end-line        :inherit 'org-block-begin-line)
     (org-block-background      :background base3)
     (org-block                 :background base3)
-    (org-archived              :foreground base3)
+    (org-archived              :foreground doc-comments)
     (org-code                  :foreground orange)
     (org-verbatim              :foreground green)
     (org-formula               :foreground cyan)
@@ -820,7 +832,6 @@
     (jdee-db-requested-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'green)))
     (jdee-db-active-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'highlight)))
 
-    (org-ellipsis "  ")
     (org-fontify-whole-heading-line t)
     (org-fontify-done-headline t)
     (org-fontify-quote-and-verse-blocks t)

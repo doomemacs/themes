@@ -10,6 +10,16 @@
     (should (equal (doom-color 'black '9999) (doom-color 'black 't)))
     (should (equal (doom-color 'black) (doom-color 'black 't)))))
 
+(ert-deftest doom-themes-color-alias ()
+  (-with-colors! ((black "#000000")
+                  (red "#FF0000"))
+    (should (equal (doom-darken 'red 0) "#ff0000"))
+    (should (equal (doom-darken 'black 0) "#000000"))
+    (should (equal (doom-lighten 'red 0) "#ff0000"))
+    (should (equal (doom-lighten 'black 0) "#000000"))
+    (should (equal (doom-blend 'black 'red 0) "#ff0000"))
+    (should (equal (doom-blend 'black 'red 1.0) "#000000"))))
+
 (ert-deftest doom-themes-color-detect ()
   "TODO"
   (-with-colors! ((red "#FF0000" "#AA4444" "red"))

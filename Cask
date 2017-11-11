@@ -1,6 +1,6 @@
 (source melpa)
 
-(package "doom-themes" "1.2.9" "A pack of themes inspired by Atom ONE.")
+(package "doom-themes" "2.0.8" "A pack of themes inspired by Atom ONE.")
 
 (depends-on "all-the-icons")
 (development

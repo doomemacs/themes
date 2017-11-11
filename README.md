@@ -10,6 +10,13 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
 [See the screenshots.][screenshots]
 
+**Table of Contents**
+
+- [Features](#features)
+- [Install](#install)
+- [Common Issues](#common-issues)
+- [Contribute](#contribute)
+
 ## Features
 
 - **Color themes:**
@@ -18,12 +25,14 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-molokai`: based on Textmate's monokai
   - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
   - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
+  - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
+    (thanks to [teesloane])
+  - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
+  - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
   - [ ] `doom-x`: reads your colors from ~/.Xresources
-  - [ ] `doom-tomorrow-night` / `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
   - [ ] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey]
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  - [ ] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
 - **Included features:**
   - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
     rings (i.e. an error occurs).
@@ -85,6 +94,24 @@ A comprehensive configuration example:
 
 [The wiki contains details for customizing the neotree theme][wiki].
 
+## Common Issues
+
++ If you use `nlinum` or `linum` in org-mode, the larger headline sizes in some
+  themes [could bleed into the line numbers](https://github.com/hlissner/emacs-doom-themes/issues/86).
+
+  Fix this by setting :height explicitly for your line number plugins, after
+  you've loaded the theme. e.g.
+
+  ```emacs-lisp
+  (let ((height (face-attribute 'default :height)))
+    ;; for all linum/nlinum users
+    (set-face-attribute 'linum nil :height height)
+    ;; only for `linum-relative' users:
+    (set-face-attribute 'linum-relative-current-face nil :height height)
+    ;; only for `nlinum-relative' users:
+    (set-face-attribute 'nlinum-relative-current-face nil :height height))
+  ```
+
 ## Contribute
 
 I welcome contributions of any kind, be they pull requests, bug reports or elisp
@@ -109,6 +136,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [spacegrey]: http://kkga.github.io/spacegray/
+[teesloane]: https://github.com/teesloane
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
 [ztlevi]: https://github.com/ztlevi

@@ -65,8 +65,8 @@ determine the exact padding."
    (vertical-bar   base2)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-one-light-brighter-comments dark-cyan base4))
-   (doc-comments   (doom-darken (if doom-one-light-brighter-comments dark-cyan base5) 0.25))
+   (comments       (if doom-one-light-brighter-comments cyan base4))
+   (doc-comments   (doom-darken comments 0.15))
    (constants      violet)
    (functions      magenta)
    (keywords       red)
@@ -80,7 +80,7 @@ determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    base4)
+   (vc-modified    orange)
    (vc-added       green)
    (vc-deleted     red)
 
@@ -95,27 +95,34 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(car bg) ,@(cdr base0))))
+        (doom-darken base2 0.05)
+      base1))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.125) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+        (doom-darken base2 0.1)
+      base2))
+   (modeline-bg-inactive (doom-darken bg 0.1))
+   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
   ;; --- extra faces ------------------------
   ((font-lock-comment-face
     :foreground comments
-    :background (if doom-one-light-comment-bg (doom-darken bg-alt 0.095)))
+    :background (if doom-one-light-comment-bg base0))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
-    :foreground doc-comments)
+    :foreground doc-comments
+    :slant 'italic)
 
-   (line-number :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil :bold nil)
-   (line-number-current-line :inherit 'hl-line :foreground base8 :distant-foreground nil :bold nil)
-   (hl-line :background base1)
-   (solaire-hl-line-face :inherit 'hl-line :background base2)
+   ;; Line number faces must explicitly disable its text style attributes
+   ;; because nearby faces may "bleed" into the line numbers otherwise.
+   (line-number
+    :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil
+    :bold nil :italic nil :underline nil :strike-through nil)
+   (line-number-current-line
+    :inherit 'hl-line :foreground base8 :distant-foreground nil
+    :bold nil :italic nil :underline nil :strike-through nil)
+
+   (solaire-hl-line-face :inherit 'hl-line :background base0)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -151,7 +158,8 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-darken base3 0.05))
+   (markdown-code-face :background base3)
+   (mmm-default-submode-face :background base3)
 
    ;; org-mode
    (org-block            :background bg)

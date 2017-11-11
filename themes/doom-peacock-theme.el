@@ -1,41 +1,40 @@
 ;;; doom-one-theme.el --- inspired by Atom One Dark
 (require 'doom-themes)
 
-;;
-(defgroup doom-one-theme nil
+(defgroup doom-peacock-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-one-brighter-modeline nil
+(defcustom doom-peacock-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-one-theme
+  :group 'doom-peacock-theme
   :type 'boolean)
 
-(defcustom doom-one-brighter-comments nil
+(defcustom doom-peacock-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-one-theme
+  :group 'doom-peacock-theme
   :type 'boolean)
 
-(defcustom doom-one-comment-bg doom-one-brighter-comments
+(defcustom doom-peacock-comment-bg doom-peacock-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-one-theme
+  :group 'doom-peacock-theme
   :type 'boolean)
 
-(defcustom doom-one-padded-modeline nil
+(defcustom doom-peacock-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-one-theme
+  :group 'doom-peacock-theme
   :type '(or integer boolean))
 
 ;;
-(def-doom-theme doom-one
-  "A dark theme inspired by Atom One Dark"
+(def-doom-theme doom-peacock
+  "peacock theme!"
 
   ;; name        default   256       16
-  ((bg         '("#282c34" nil       nil            ))
-   (bg-alt     '("#21242b" nil       nil            ))
-   (base0      '("#1B2229" "black"   "black"        ))
+  ((bg         '("#2b2a27" nil       nil            ))
+   (bg-alt     '("#282725" nil       nil            )) ;; arbitrarily picked this colour to change hline
+   (base0      '("#2b2a27" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
    (base3      '("#23272e" "#262626" "brightblack"  ))
@@ -44,15 +43,16 @@ determine the exact padding."
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
    (base7      '("#9ca0a4" "#979797" "brightblack"  ))
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#ede0ce" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
 
-   (grey       base4)
-   (red        '("#ff6c6b" "#ff6655" "red"          ))
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
+   (grey         base4)
+   (white      '("#f8f8f0" "base4" "base4"          ))
+   (red        '("#ff5d38" "#ff6655" "red"          )) ;; peacock todo 16
+   (orange     '("#cb4b16" "#dd8844" "brightred"    ))
    (green      '("#98be65" "#99bb66" "green"        ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
+   (teal       '("#26a6a6" "#44b9b1" "brightgreen"  )) ;; peacock
+   (yellow     '("#bcd42a" "#ECBE7B" "yellow"       )) ;; peacock, todo 16
    (blue       '("#51afef" "#51afef" "brightblue"   ))
    (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
    (magenta    '("#c678dd" "#c678dd" "magenta"      ))
@@ -61,21 +61,22 @@ determine the exact padding."
    (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
 
    ;; face categories -- required for all themes
-   (highlight      blue)
-   (vertical-bar   base1)
-   (selection      dark-blue)
-   (builtin        magenta)
-   (comments       (if doom-one-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan base5) 0.25))
-   (constants      violet)
-   (functions      magenta)
-   (keywords       blue)
-   (methods        cyan)
-   (operators      blue)
-   (type           yellow)
-   (strings        green)
-   (variables      (doom-lighten magenta 0.4))
-   (numbers        orange)
+   (highlight      red)
+   (vertical-bar   bg-alt)
+   (selection      red)
+   (builtin        red)
+   (comments       (if doom-peacock-brighter-comments dark-cyan base5)) ;; TODO
+   (doc-comments   (doom-lighten (if doom-peacock-brighter-comments dark-cyan base5) 0.25)) ;; TODO
+   (constants      red)        ;; done
+   (functions      yellow)     ;; done
+   (keywords       teal)       ;; done
+   (methods        yellow)     ;; not sure how to test this.
+   (operators      red)        ;; not showing up on `=` etc.
+   (type           white)      ;;
+   (strings        yellow)
+   (variables      white)      ;; done
+   (numbers        red)        ;; done
+
    (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base0) 0.35)))
    (error          red)
    (warning        yellow)
@@ -84,26 +85,26 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
+
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-one-brighter-modeline)
+   (-modeline-bright doom-peacock-brighter-modeline)
    (-modeline-pad
-    (when doom-one-padded-modeline
-      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4)))
+    (when doom-peacock-padded-modeline
+      (if (integerp doom-peacock-padded-modeline) doom-peacock-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+        (doom-darken bg 0.475)
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken blue 0.45)
       `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
@@ -111,19 +112,13 @@ determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-one-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-peacock-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   ;; Line number faces must explicitly disable its text style attributes
-   ;; because nearby faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :foreground base4 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :foreground base7 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
+   (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
+   (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -154,16 +149,11 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
-
+   (markdown-code-face :background (doom-lighten base3 0.05)))
 
 
   ;; --- extra variables ---------------------
   ;; ()
   )
 
-;;; doom-one-theme.el ends here
+;;; doom-peacock-theme.el ends here

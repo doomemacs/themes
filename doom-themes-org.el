@@ -13,7 +13,7 @@
 (defsubst doom-org--tag-face (n)
   (let ((kwd (match-string n)))
     (or (and (equal kwd "#") 'org-tag)
-        (and (equal kwd "@") 'org-special-keyword))))
+        (and (equal kwd "@") 'org-formula))))
 
 (defun doom-org-custom-fontification ()
   "Correct (and improve) org-mode's font-lock keywords.
@@ -55,7 +55,7 @@
                ("^ *\\(-----+\\)$" 1 'org-meta-line)
                ;; custom #hashtags & @at-tags for another level of organization
                ,(when doom-org-special-tags
-                  '("\\s-\\(\\([#@]\\)[^ \n.,]+\\)" 1 (doom-org--tag-face 2))))))))
+                  '("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
 
 (defun doom-org-default-settings ()
   "Make the most of org-mode integration with doom-themes."

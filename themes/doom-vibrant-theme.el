@@ -86,6 +86,8 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (hidden-alt `(,(car bg-alt) "black" "black"))
    (-modeline-pad
     (when doom-vibrant-padded-modeline
       (if (integerp doom-vibrant-padded-modeline) doom-vibrant-padded-modeline 4)))
@@ -115,15 +117,14 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
+   ;; Line number faces must explicitly disable its text style attributes
+   ;; because nearby faces may "bleed" into the line numbers otherwise.
    (line-number
-    :inherit 'default
-    :foreground base4
-    :distant-foreground nil
-    :bold nil)
+    :inherit 'default :foreground base4 :distant-foreground nil
+    :bold nil :italic nil :underline nil :strike-through nil)
    (line-number-current-line
-    :foreground blue
-    :distant-foreground base8
-    :bold bold)
+    :inherit 'bold :foreground blue :distant-foreground base8
+    :italic nil :underline nil :strike-through nil)
 
    (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
    (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)
@@ -153,7 +154,11 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-header-face :inherit 'bold :foreground red))
+   (markdown-header-face :inherit 'bold :foreground red)
+
+   ;; org-mode
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden-alt))
 
 
   ;; --- extra variables --------------------

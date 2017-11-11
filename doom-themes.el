@@ -5,9 +5,9 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: August 09, 2017
-;; Version: 2.0.6
-;; Keywords: dark blue atom one theme neotree icons faces
+;; Modified: November 09, 2017
+;; Version: 2.0.8
+;; Keywords: dark light blue atom one theme neotree icons faces nova
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "24.4") (all-the-icons "1.0.0") (cl-lib "0.5"))
 ;;
@@ -19,12 +19,13 @@
 ;; [emacs.d], inspired by some of my favorite color themes including:
 ;;
 ;;   [X] `doom-one': inspired by Atom's One Dark themes
-;;   [-] `doom-one-light': light version of doom-one
 ;;   [X] `doom-vibrant': a more vibrant version of `doom-one`
 ;;   [X] `doom-molokai': based on Textmate's monokai
 ;;   [X] `doom-nova': adapted from Nova (thanks to bigardone)
+;;   [X] `doom-one-light': light version of doom-one
+;;   [X] `doom-tomorrow-night': by Chris Kempson
+;;   [ ] `doom-tomorrow-day`: by Chris Kempson
 ;;   [ ] `doom-x': reads your colors from ~/.Xresources
-;;   [-] `doom-tomorrow-night' / `doom-tomorrow-day': by Chris Kempson
 ;;   [ ] `doom-spacegrey': I'm sure you've heard of it
 ;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
 ;;   [ ] `doom-tron': based on Tron Legacy from daylerees' themes
@@ -96,7 +97,10 @@ for FRAME (defaults to the current frame)."
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
   (when (and color1 color2)
-    (cond ((or (listp color1) (listp color2))
+    (cond ((and color1 color2 (symbolp color1) (symbolp color2))
+           (doom-blend (doom-color color1) (doom-color color2) alpha))
+
+          ((or (listp color1) (listp color2))
            (cl-loop for x in color1
                     when (if (listp color2) (pop color2) color2)
                     collect (doom-blend x it alpha)))
@@ -112,21 +116,33 @@ float between 0 and 1)"
 (defun doom-darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
 0 and 1)."
-  (if (listp color)
-      (cl-loop for c in color collect (doom-darken c alpha))
-    (doom-blend color "#000000" (- 1 alpha))))
+  (cond ((and color (symbolp color))
+         (doom-darken (doom-color color) alpha))
+
+        ((listp color)
+         (cl-loop for c in color collect (doom-darken c alpha)))
+
+        (t
+         (doom-blend color "#000000" (- 1 alpha)))))
 
 (defun doom-lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
 between 0 and 1)."
-  (if (listp color)
-      (cl-loop for c in color collect (doom-lighten c alpha))
-    (doom-blend color "#FFFFFF" (- 1 alpha))))
+  (cond ((and color (symbolp color))
+         (doom-lighten (doom-color color) alpha))
+
+        ((listp color)
+         (cl-loop for c in color collect (doom-lighten c alpha)))
+
+        (t
+         (doom-blend color "#FFFFFF" (- 1 alpha)))))
 
 ;;;###autoload
 (defun doom-color (name &optional type)
   "Retrieve a specific color named NAME (a symbol) from the current theme."
-  (let ((colors (cdr-safe (assq name doom-themes--colors))))
+  (let ((colors (if (listp name)
+                    name
+                  (cdr-safe (assq name doom-themes--colors)))))
     (and colors
          (cond ((listp colors)
                 (let ((i (or (plist-get '(256 1 16 2 8 3) type) 0)))
