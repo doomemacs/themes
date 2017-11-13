@@ -158,11 +158,11 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background base3)
-   (mmm-default-submode-face :background base3)
+   (markdown-code-face :background base1)
+   (mmm-default-submode-face :background base1)
 
    ;; org-mode
-   (org-block            :background bg)
+   (org-block            :background base1)
    (org-block-begin-line :foreground fg :slant 'italic)
    (org-level-1          :background bg :foreground red :bold t :height 1.2)
    (org-level-3          :bold 'bold :foreground violet :height 1.1)
