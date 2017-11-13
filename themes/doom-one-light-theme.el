@@ -167,6 +167,15 @@ determine the exact padding."
    (org-level-1          :background bg :foreground red :bold t :height 1.2)
    (org-level-3          :bold 'bold :foreground violet :height 1.1)
    (org-ellipsis         :underline nil :background bg :foreground red)
+
+   ;; helm
+   (helm-candidate-number :background blue :foreground fg)
+
+   ;; web-mode
+   (web-mode-current-element-highlight-face :backgound blue :foreground fg)
+
+   ;; wgrep
+   (wgrep-face :background base1)
    )
 
   ;; --- extra variables ---------------------
