@@ -117,8 +117,8 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
-   (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil)
+   (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil :underline nil)
+   (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil :underline nil)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
