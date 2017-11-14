@@ -156,9 +156,9 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background base1)
+   (markdown-markup-face     :foreground base5)
+   (markdown-header-face     :inherit 'bold :foreground red)
+   (markdown-code-face       :background base1)
    (mmm-default-submode-face :background base1)
 
    ;; org-mode
@@ -169,10 +169,10 @@ determine the exact padding."
    (org-ellipsis         :underline nil :background bg :foreground red)
 
    ;; helm
-   (helm-candidate-number :background blue :foreground fg)
+   (helm-candidate-number :background blue :foreground bg)
 
    ;; web-mode
-   (web-mode-current-element-highlight-face :backgound blue :foreground fg)
+   (web-mode-current-element-highlight-face :background blue :foreground bg)
 
    ;; wgrep
    (wgrep-face :background base1)
