@@ -119,7 +119,8 @@ determine the exact padding."
 
    (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil)
    (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil)
-
+   (linum-relative-current-face :underline nil)
+   
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
    (mode-line
