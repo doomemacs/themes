@@ -177,6 +177,12 @@ determine the exact padding."
 
    ;; wgrep
    (wgrep-face :background base1)
+
+   ;; ediff
+   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
+   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
+   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
+   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
    )
 
   ;; --- extra variables ---------------------
