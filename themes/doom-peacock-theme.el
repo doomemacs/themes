@@ -1,4 +1,4 @@
-;;; doom-one-theme.el --- inspired by Atom One Dark
+;;; doom-peacock-theme.el
 (require 'doom-themes)
 
 (defgroup doom-peacock-theme nil
@@ -46,8 +46,8 @@ determine the exact padding."
    (fg         '("#ede0ce" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
 
-   (grey         base4)
-   (white      '("#f8f8f0" "base4" "base4"          ))
+   (grey       base4)
+   (white      '("#f8f8f0" "base4"   "base4"        ))
    (red        '("#ff5d38" "#ff6655" "red"          )) ;; peacock todo 16
    (orange     '("#cb4b16" "#dd8844" "brightred"    ))
    (green      '("#98be65" "#99bb66" "green"        ))

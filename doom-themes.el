@@ -24,7 +24,7 @@
 ;;   [X] `doom-nova': adapted from Nova (thanks to bigardone)
 ;;   [X] `doom-one-light': light version of doom-one
 ;;   [X] `doom-tomorrow-night': by Chris Kempson
-;;   [ ] `doom-tomorrow-day`: by Chris Kempson
+;;   [ ] `doom-tomorrow-day': by Chris Kempson
 ;;   [ ] `doom-x': reads your colors from ~/.Xresources
 ;;   [ ] `doom-spacegrey': I'm sure you've heard of it
 ;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
@@ -171,6 +171,7 @@ between 0 and 1)."
 ;;;###autoload
 (defmacro doom-themes-set-faces (theme &rest faces)
   "Customize THEME (a symbol) with FACES."
+  (declare (indent defun))
   `(custom-theme-set-faces
     ,theme
     ,@(mapcar #'doom-themes--build-face faces)))
