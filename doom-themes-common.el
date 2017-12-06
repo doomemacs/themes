@@ -567,12 +567,6 @@
     (popup          :inherit 'tooltip)
     (popup-tip-face :inherit 'tooltip)
 
-    ;; powerline
-    (powerline-active1   :inherit 'mode-line-emphasis :background highlight :foreground bg)
-    (powerline-active2   :inherit 'mode-line)
-    (powerline-inactive1 :inherit 'mode-line-inactive :background base2)
-    (powerline-inactive2 :inherit 'mode-line-inactive :background base4)
-
     ;; rainbow-delimiters
     (rainbow-delimiters-depth-1-face :foreground blue)
     (rainbow-delimiters-depth-2-face :foreground magenta)
@@ -605,9 +599,6 @@
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg)
     (solaire-org-hide-face :foreground bg-alt)
-
-    ;; spaceline
-    (spaceline-highlight-face :foreground blue)
 
     ;; stripe-buffer
     (stripe-highlight
