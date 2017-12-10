@@ -4,14 +4,13 @@
   "TODO"
   (-with-colors! ((blue "#0000FF" "#2222DD" "blue"))
     ;; literal test
-    (let ((face '(default '((t (:background "blue"))))))
-      (should (equal (-build-face face)
-                     '(list 'default '((t (:background "blue")))))))
-
+    (should
+     (equal (-build-face '(default '((t (:background "blue")))))
+                   '(list 'default '((t (:background "blue"))))))
     ;; plain
     (should
      (equal (-build-face '(default :background "blue"))
-            '(list 'default (list (list (quote t) (list :background "blue"))))))))
+                   '(list 'default (list (list (quote t) (list :background "blue"))))))))
 
 (ert-deftest doom-themes-build-nested-face ()
   "Test `doom-themes--build-face'; builds a face out of a simple sub-spec that
@@ -39,7 +38,6 @@ blank to prevent expansion of colors."
        (avy-lead-face
         `((((background dark))  (:background ,(car highlight) :foreground ,(car black) :distant-foreground ,(car white)))
           (((background light)) (:background ,(car highlight) :foreground ,(car white) :distant-foreground ,(car black))))))
-
       (should (equal (doom-themes-common-faces)
                      '((list 'default (list (list 't (list :background bg :foreground fg))))
                        (list 'fringe (list (list '((background dark))  (list :inherit 'default :foreground grey))
@@ -91,10 +89,10 @@ blank to prevent expansion of colors."
        (complex (&all   :inherit 'default)
                 (&dark  :foreground grey)
                 (&light :foreground light-grey))
-       (inherit-simple (&inherit simple))
-       (inherit-moderate (&inherit moderate))
-       (inherit-complex (&inherit complex))
-       (inherit-recursive (&inherit inherit-simple)))
+       ((inherit-simple &inherit simple))
+       ((inherit-moderate &inherit moderate))
+       ((inherit-complex &inherit complex))
+       ((inherit-recursive &inherit inherit-simple)))
       (let ((bg 'bg)
             (fg 'fg)
             (grey 'grey)
@@ -112,6 +110,30 @@ blank to prevent expansion of colors."
                          (cdr (assq 'complex faces))))
           (should (equal (cdr (assq 'inherit-recursive faces))
                          (cdr (assq 'simple faces)))))))))
+
+(ert-deftest doom-themes-build-overridden-face ()
+  "TODO"
+  (-with-colors! ()
+    (-with-faces!
+      ((simple :background "black")
+       (moderate :background bg :foreground fg)
+       ;; (complex (&all   :inherit 'default)
+       ;;          (&dark  :foreground grey)
+       ;;          (&light :foreground light-grey))
+       ((simple &override) :foreground "red")
+       ((moderate &override) :background "white" :foreground "red")
+       ;; ((complex &override))
+       )
+      (let ((bg 'bg)
+            (fg 'fg))
+        (let ((faces (eval `(list ,@(doom-themes-common-faces)))))
+          (should (equal (cdr (assq 'simple faces))
+                         `(((t (:background "black" :foreground "red"))))))
+          (should (equal (cdr (assq 'moderate faces))
+                         `(((t (:background "white" :foreground "red"))))))
+          ;; (should (equal (cdr (assq 'complex faces))
+          ;;                ))
+          )))))
 
 (ert-deftest doom-themes-face-ref ()
   "TODO"
