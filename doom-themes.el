@@ -154,7 +154,7 @@ between 0 and 1)."
 ;;;###autoload
 (defun doom-ref (face prop &optional class)
   "TODO"
-  (let ((spec (or (cdr (assq face doom-themes--common-faces))
+  (let ((spec (or (cdr (assq face doom-themes--faces))
                   (error "Couldn't find the '%s' face" face))))
     (when (memq (car spec) '(quote backquote \`))
       (user-error "Can't fetch the literal spec for '%s'" face))
