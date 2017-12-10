@@ -132,7 +132,7 @@
     (isearch :background highlight :foreground base0 :bold bold)
 
     ;; linum
-    (linum (&inherit line-number))
+    ((linum &inherit line-number))
 
     ;; term
     (term               :inherit 'default)
@@ -297,9 +297,9 @@
     (git-gutter+-deleted  :foreground vc-deleted :background nil)
 
     ;; git-gutter-fringe
-    (git-gutter-fr:modified :foreground vc-modified)
-    (git-gutter-fr:added    :foreground vc-added)
-    (git-gutter-fr:deleted  :foreground vc-deleted)
+    ((git-gutter-fr:modified &inherit git-gutter:modified))
+    ((git-gutter-fr:added    &inherit git-gutter:added))
+    ((git-gutter-fr:deleted  &inherit git-gutter:deleted))
 
     ;; gnus
     (gnus-group-mail-1           :bold bold :foreground fg)
@@ -411,7 +411,7 @@
     (iedit-read-only-occurrence :inherit 'region)
 
     ;; indent-guide
-    (indent-guide-face (&inherit highlight-indentation-face))
+    ((indent-guide-face &inherit highlight-indentation-face))
 
     ;; ivy
     (ivy-current-match :background dark-blue :distant-foreground base0 :bold bold)
@@ -443,7 +443,7 @@
     (jabber-roster-user-xa         :foreground cyan)
 
     ;; linum-relative
-    (linum-relative-current-face (&inherit line-number-current-line))
+    ((linum-relative-current-face &inherit line-number-current-line))
 
     ;; lui
     (lui-time-stamp-face :foreground violet)
@@ -474,13 +474,13 @@
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
 
     ;; nlinum
-    (nlinum-current-line (&inherit line-number-current-line))
+    ((nlinum-current-line &inherit line-number-current-line))
 
     ;; nlinum-hl
-    (nlinum-hl-face (&inherit line-number-current-line))
+    ((nlinum-hl-face &inherit line-number-current-line))
 
     ;; nlinum-relative
-    (nlinum-relative-current-face (&inherit line-number-current-line))
+    ((nlinum-relative-current-face &inherit line-number-current-line))
 
     ;; lsp
     ;; TODO Add light versions
@@ -551,9 +551,9 @@
     (magit-section-secondary-heading :foreground violet :bold bold)
 
     ;; mic-paren
-    (paren-face-match    (&inherit show-paren-match))
-    (paren-face-mismatch (&inherit show-paren-mismatch))
-    (paren-face-no-match (&inherit show-paren-mismatch))
+    (paren-face-match    :foreground red   :background base0 :bold bold)
+    (paren-face-mismatch :foreground base0 :background red   :bold bold)
+    (paren-face-no-match :inherit 'paren-face-mismatch)
 
     ;; parenface
     (paren-face :foreground comments)
@@ -587,15 +587,15 @@
     (reb-match-3 :foreground yellow  :inverse-video t)
 
     ;; show-paren
-    (show-paren-match    :foreground red   :background base0 :bold bold)
-    (show-paren-mismatch :foreground base0 :background red   :bold bold)
+    ((show-paren-match &inherit paren-face-match))
+    ((show-paren-mismatch &inherit paren-face-mismatch))
 
     ;; smartparens
     (sp-pair-overlay-face :background region)
 
     ;; smartparens
-    (sp-show-pair-match-face    (&inherit show-paren-match))
-    (sp-show-pair-mismatch-face (&inherit show-paren-mismatch))
+    ((sp-show-pair-match-face    &inherit show-paren-match))
+    ((sp-show-pair-mismatch-face &inherit show-paren-mismatch))
 
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
@@ -799,7 +799,7 @@
     (rpm-spec-section-face      :foreground magenta)
 
     ;; typescript-mode
-    (ts-object-property (&inherit js2-object-property))
+    ((ts-object-property &inherit js2-object-property))
 
     ;; sh-mode
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
