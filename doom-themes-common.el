@@ -937,10 +937,10 @@
     (when (listp face-name)
       (setq face-body
             (pcase (cadr face-name)
-              ('&override
+              (`&override
                (prog1 (doom-themes--get-face (car face-name) face-body t)
                  (setq doom-themes--faces (assq-delete-all face-name doom-themes--faces))))
-              ('&inherit
+              (`&inherit
                (doom-themes--get-face (car (cdr (cdr face-name))) face-body))
               (_
                (error "Malformed face spec for %s" (car face-name))))
