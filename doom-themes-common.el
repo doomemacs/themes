@@ -60,10 +60,12 @@
     ;;    because nearby faces may "bleed" into the line numbers otherwise.
     ;; 2. All other line number plugin faces should &inherit from these.
     (line-number
-     :foreground base5 :distant-foreground base5
+     :inherit 'default
+     :foreground base5 :distant-foreground nil
      :bold nil :italic nil :underline nil :strike-through nil)
     (line-number-current-line
-     :foreground fg :distant-foreground fg
+     :inherit 'hl-line
+     :foreground fg :distant-foreground nil
      :bold nil :italic nil :underline nil :strike-through nil)
 
 
