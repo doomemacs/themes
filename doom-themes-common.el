@@ -964,8 +964,8 @@
                       (t
                        `(list (list 't (list ,@real-attrs)))))))
 
-             ((memq (car-safe (cdr face)) '(quote backquote \`))
-              (cadr face))
+             ((memq (car-safe (car face-body)) '(quote backquote \`))
+              (car face-body))
 
              (t
               (let (all-attrs defs)
@@ -996,7 +996,7 @@
 Faces in EXTRA-FACES override the default faces."
   (setq doom-themes--faces nil)
   (mapc #'doom-themes--add-face (append doom-themes-common-faces extra-faces))
-  (mapcar #'doom-themes--build-face doom-themes--faces))
+  (reverse (mapcar #'doom-themes--build-face doom-themes--faces)))
 
 (defun doom-themes-common-variables (&optional extra-vars)
   "Return an alist of variable definitions for `custom-theme-set-variables'.
