@@ -941,7 +941,7 @@
                (prog1 (doom-themes--get-face (car face-name) face-body t)
                  (setq doom-themes--faces (assq-delete-all face-name doom-themes--faces))))
               ('&inherit
-               (doom-themes--get-face (caddr face-name) face-body))
+               (doom-themes--get-face (car (cdr (cdr face-name))) face-body))
               (_
                (error "Malformed face spec for %s" (car face-name))))
             face-name (car face-name)))
