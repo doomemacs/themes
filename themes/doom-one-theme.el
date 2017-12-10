@@ -109,21 +109,15 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground fg)
+
    (font-lock-comment-face
     :foreground comments
     :background (if doom-one-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
-
-   ;; Line number faces must explicitly disable its text style attributes
-   ;; because nearby faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :foreground base4 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :foreground base7 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -159,7 +153,6 @@ determine the exact padding."
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
-
 
 
   ;; --- extra variables ---------------------

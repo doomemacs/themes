@@ -117,14 +117,8 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   ;; Line number faces must explicitly disable its text style attributes
-   ;; because nearby faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :inherit 'default :foreground base4 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :inherit 'bold :foreground blue :distant-foreground base8
-    :italic nil :underline nil :strike-through nil)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground blue :bold bold)
 
    (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
    (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)

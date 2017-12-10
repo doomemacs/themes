@@ -86,7 +86,6 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
-
    ;; custom categories
    (-modeline-bright doom-peacock-brighter-modeline)
    (-modeline-pad
@@ -118,8 +117,8 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (line-number :inherit 'default :foreground base4 :distant-foreground nil :bold nil :underline nil)
-   (line-number-current-line :inherit 'hl-line :foreground base7 :distant-foreground nil :bold nil :underline nil)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground base7)
 
    ;; tooltip
    (tooltip              :background bg-alt :foreground fg)
@@ -137,7 +136,7 @@ determine the exact padding."
     (company-preview-common     :background base3 :foreground magenta)
     (company-preview-search     :inherit 'company-tooltip-search)
     (company-template-field     :inherit 'match)
-	
+
    ;; popup
    (popup-face :inherit 'tooltip)
    (popup-selection-face :inherit 'tooltip)
@@ -145,8 +144,8 @@ determine the exact padding."
    ;; pos-tip
    (popup          :inherit 'tooltip)
    (popup-tip-face :inherit 'tooltip)
-   
-   
+
+
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
    (mode-line

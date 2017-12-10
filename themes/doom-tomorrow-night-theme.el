@@ -81,14 +81,8 @@ determine the exact padding."
   ((doom-modeline-buffer-path       :foreground violet :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
-   ;; Line number faces must explicitly disable its text style attributes
-   ;; because nearby faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :foreground base4 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :inherit 'bold :background nil :foreground blue
-    :italic nil :underline nil :strike-through nil)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground blue :bold bold)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)

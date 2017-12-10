@@ -113,14 +113,8 @@ determine the exact padding."
     :foreground doc-comments
     :slant 'italic)
 
-   ;; Line number faces must explicitly disable its text style attributes
-   ;; because nearby faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :inherit 'default :foreground (doom-lighten base4 0.15) :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :inherit 'hl-line :foreground base8 :distant-foreground nil
-    :bold nil :italic nil :underline nil :strike-through nil)
+   ((line-number &override) :foreground (doom-lighten base4 0.15))
+   ((line-number-current-line &override) :foreground base8)
 
    (solaire-hl-line-face :inherit 'hl-line :background base0)
 

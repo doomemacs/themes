@@ -90,6 +90,9 @@ determine the exact padding."
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
    (doom-modeline-bar :inherit 'mode-line-highlight)
 
+   ((line-number &override) :foreground grey)
+   ((line-number-current-line &override) :foreground highlight)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
@@ -113,10 +116,6 @@ determine the exact padding."
     :background (doom-lighten modeline-bg 0.05) :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-hl-line-face :inherit 'hl-line :background current-line)
-
-   ;; linum
-   (line-number :foreground grey :distant-foreground nil :bold nil :underline nil)
-   (line-number-current-line :background current-line :foreground highlight :distant-foreground nil :bold nil :underline nil)
 
    ;; helm
    (helm-selection :foreground dark-grey :background selection)

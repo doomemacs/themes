@@ -98,14 +98,8 @@ determine the exact padding."
    (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
 
-   ;; Line number faces must explicitly disable its attributes, because nearby
-   ;; faces may "bleed" into the line numbers otherwise.
-   (line-number
-    :background nil :foreground base5 :distant-foreground nil
-    :bold nil :underline nil :strike-through nil)
-   (line-number-current-line
-    :background nil :foreground base7 :distant-foreground nil
-    :bold nil :underline nil :strike-through nil)
+   ((line-number &override) :foreground base5 :distant-foreground nil)
+   ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
 
    (isearch :foreground base0 :background green)
 
