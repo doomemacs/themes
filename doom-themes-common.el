@@ -945,6 +945,8 @@
               (_
                (error "Malformed face spec for %s" (car face-name))))
             face-name (car face-name)))
+    (when (assq face-name doom-themes--faces)
+      (setq doom-theme--faces (assq-delete-all face-name doom-themes--faces)))
     (push `(,face-name ,@face-body) doom-themes--faces)))
 
 (defun doom-themes--build-face (face)
