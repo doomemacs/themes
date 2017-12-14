@@ -777,7 +777,7 @@
     (org-formula               :foreground cyan)
     (org-list-dt               :foreground highlight)
     (org-footnote              :foreground orange)
-    (org-date                  :foreground violet)
+    (org-date                  :foreground yellow)
     (org-headline-done         :foreground base5)
     (org-todo                  :bold 'inherit :foreground highlight)
     (org-done                  :inherit 'org-headline-done :bold 'inherit)
