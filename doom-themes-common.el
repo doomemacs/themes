@@ -750,10 +750,9 @@
     (org-agenda-dimmed-todo-face :foreground comments)
 
     ;; org-mode
-    (org-level-1 :foreground blue :background base3 :bold bold :height 1.2)
-    (org-level-2 :inherit 'org-level-1 :foreground violet :height 1.0)
-    (org-level-3 :bold bold :foreground base8)
-    (org-hide :foreground bg)
+    (org-level-1 :foreground blue   :background base3 :bold bold :height 1.2)
+    (org-level-2 :foreground violet :background base3 :bold bold)
+    (org-level-3 :foreground base8  :bold bold)
     (org-level-4 :inherit 'org-level-3)
     (org-level-5 :inherit 'org-level-3)
     (org-level-6 :inherit 'org-level-3)
