@@ -154,10 +154,11 @@ determine the exact padding."
    (markdown-code-face :background (doom-darken bg 0.1))
 
    ;; org-mode
-   (org-block            :background (doom-darken bg-alt 0.05))
-   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.05))
-   (org-level-1          :background bg-alt :foreground fg    :bold t :height 1.0)
-   (org-level-3          :bold 'bold    :foreground green)
+   (org-block            :background (doom-darken bg-alt 0.04))
+   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
+   (org-level-1          :background bg-alt :foreground fg    :bold t :height 1.1)
+   (org-level-2          :background bg-alt :foreground blue  :bold t :height 1.0)
+   (org-level-3          :background bg-alt :foreground green     :bold t :height 1.0)
    (org-ellipsis         :underline nil :background bg     :foreground red)
    (org-quote            :background base1)
 
