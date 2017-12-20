@@ -1,4 +1,4 @@
-;;; doom-spacegrey-theme.el
+;;; doom-spacegrey-theme.el --- inspired by Atom One Dark
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
@@ -32,8 +32,8 @@ determine the exact padding."
   "A dark theme inspired by Atom spacegrey Dark"
 
   ;; name        default   256       16
-  ((bg         '("#343D46" nil       nil            ))
-   (bg-alt     '("#2F3841" nil       nil            ))
+  ((bg         '("#2F3841" nil       nil            ))
+   (bg-alt     '("#343D46" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -154,10 +154,10 @@ determine the exact padding."
    (markdown-code-face :background (doom-darken bg 0.1))
 
    ;; org-mode
-   (org-block            :background (doom-darken bg 0.15))
-   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.15))
-   (org-level-1          :background bg :foreground red    :bold t :height 1.2)
-   (org-level-3          :bold 'bold    :foreground green :height 1.1)
+   (org-block            :background (doom-darken bg-alt 0.05))
+   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.05))
+   (org-level-1          :background bg-alt :foreground fg    :bold t :height 1.0)
+   (org-level-3          :bold 'bold    :foreground green)
    (org-ellipsis         :underline nil :background bg     :foreground red)
    (org-quote            :background base1)
 
