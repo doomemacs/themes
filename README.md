@@ -28,9 +28,9 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
     (thanks to [teesloane])
   - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
+  - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
   - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
   - [ ] `doom-x`: reads your colors from ~/.Xresources
-  - [ ] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey]
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
