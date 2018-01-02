@@ -239,33 +239,5 @@ Includes an Atom-esque icon theme and highlighting based on filetype."
                  (or (and (file-directory-p dir) dir)
                      base))))
 
-
-;; DEPRECATED FUNCTIONS
-;;;###autoload
-(defun doom-brighten-minibuffer ()
-  "Does nothing. `doom-brighten-minibuffer' has been moved to the `solaire-mode'
-package as `solaire-mode-in-minibuffer'. This function is deprecated."
-  (message "doom-themes: doom-brighten-minibuffer has moved to the solaire-mode package"))
-
-;;;###autoload
-(define-minor-mode doom-buffer-mode
-  "Does nothing. `doom-buffer-mode' has been moved to the `solaire-mode'
-package. This function is deprecated."
-  :lighter "" ; should be obvious it's on
-  :init-value nil
-  (message "doom-themes: doom-buffer-mode has moved to the solaire-mode package"))
-
-;;;###autoload
-(defun doom-buffer-mode-maybe ()
-  "Does nothing. `doom-buffer-mode' has been moved to the `solaire-mode'
-package. This function is deprecated."
-  (doom-buffer-mode +1))
-
-;;;###autoload
-(defun doom-themes-nlinum-config ()
-  "Does nothing. This functionality has been moved to the `nlinum-hl' package.
-This function is deprecated."
-  (require 'doom-themes-nlinum))
-
 (provide 'doom-themes)
 ;;; doom-themes.el ends here
