@@ -563,11 +563,8 @@
 
     ;; popup
     (popup-face :inherit 'tooltip)
+    (popup-tip-face :inherit 'popup-face :foreground violet :background base0)
     (popup-selection-face :background selection)
-
-    ;; pos-tip
-    (popup          :inherit 'tooltip)
-    (popup-tip-face :inherit 'tooltip)
 
     ;; rainbow-delimiters
     (rainbow-delimiters-depth-1-face :foreground blue)
