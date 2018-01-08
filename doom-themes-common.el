@@ -31,7 +31,7 @@
     (warning :foreground warning)
     (success :foreground success)
 
-    (font-lock-builtin-face              :foreground builtin :slant 'italic :weight 'light)
+    (font-lock-builtin-face              :foreground builtin :slant 'italic)
     (font-lock-comment-face              :foreground comments)
     (font-lock-comment-delimiter-face    :inherit 'font-lock-comment-face)
     (font-lock-doc-face                  :inherit 'font-lock-comment-face :foreground doc-comments)
