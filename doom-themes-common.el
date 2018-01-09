@@ -151,7 +151,7 @@
     (window-divider-first-pixel :inherit 'window-divider)
     (window-divider-last-pixel  :inherit 'window-divider)
 
-    (twitter-divider :underline `(:color ,(doom-darken vertical-bar 0.2)))
+    (twitter-divider :underline `(:color ,(doom-blend vertical-bar bg 0.8)))
 
     ;; --- plugin faces -----------------------
     ;; avy
