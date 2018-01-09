@@ -804,7 +804,7 @@
     (org-level-5 :inherit 'org-level-3)
     (org-level-6 :inherit 'org-level-3)
     (org-level-7 :inherit 'org-level-3)
-    (org-level-9 :inherit 'org-level-3)
+    (org-level-8 :inherit 'org-level-3)
     (org-list-dt               :foreground highlight)
     (org-meta-line             :foreground doc-comments)
     (org-priority :foreground red)
