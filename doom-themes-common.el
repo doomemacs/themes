@@ -422,7 +422,8 @@
     (ivy-minibuffer-match-face-2 :inherit 'ivy-minibuffer-match-face-1 :foreground magenta)
     (ivy-minibuffer-match-face-3 :inherit 'ivy-minibuffer-match-face-1 :foreground green)
     (ivy-minibuffer-match-face-4 :inherit 'ivy-minibuffer-match-face-1 :foreground yellow)
-    (ivy-virtual :foreground fg)
+    (ivy-virtual :inherit 'italic :foreground doc-comments)
+    (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
 
     ;; jabber
     (jabber-activity-face          :foreground red   :bold bold)
