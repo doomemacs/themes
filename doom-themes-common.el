@@ -1000,6 +1000,14 @@
             face-name (car face-name)))
     (when (assq face-name doom-themes--faces)
       (setq doom-theme--faces (assq-delete-all face-name doom-themes--faces)))
+    ;; if `doom-themes-enable-*' are false, remove those properties from faces
+    (dolist (prop (append (unless doom-themes-enable-bold   '(:weight 'normal :bold nil))
+                          (unless doom-themes-enable-italic '(:slant 'normal :italic nil))))
+      (when (and (plist-member face-body prop)
+                 (not (eq (plist-get face-body prop) 'inherit)))
+        (plist-put face-body prop
+                   (if (memq prop '(:weight :slant))
+                       (quote 'normal)))))
     (push `(,face-name ,@face-body) doom-themes--faces)))
 
 (defun doom-themes--build-face (face)
