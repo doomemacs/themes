@@ -26,6 +26,7 @@
 ;;   [X] `doom-peacock': based on Peacock from daylerees' themes (thanks to teesloane)
 ;;   [X] `doom-tomorrow-night': by Chris Kempson
 ;;   [X] `doom-spacegrey': I'm sure you've heard of it (thanks to teesloane)
+;;   [X] `doom-solarized-light': light variant of Solarized (thanks to fuxialexander)
 ;;   [ ] `doom-tomorrow-day': by Chris Kempson
 ;;   [ ] `doom-x': reads your colors from ~/.Xresources
 ;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
