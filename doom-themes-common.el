@@ -790,6 +790,29 @@
     (outline-6         :inherit 'org-level-6)
     (outline-7         :inherit 'org-level-7)
     (outline-8         :inherit 'org-level-8)
+
+    ;; calfw
+    (cfw:face-title               :foreground blue                    :bold bold :height 2.0 :inherit 'variable-pitch)
+    (cfw:face-header              :foreground (doom-blend blue bg 0.8) :bold bold)
+    (cfw:face-sunday              :foreground (doom-blend red bg 0.8) :bold bold)
+    (cfw:face-saturday            :foreground (doom-blend red bg 0.8) :bold bold)
+    (cfw:face-holiday             :background bg-alt :foreground nil  :bold bold)
+    (cfw:face-grid                :foreground vertical-bar)
+    (cfw:face-periods             :foreground yellow)
+    (cfw:face-toolbar             :foreground nil :background nil)
+    (cfw:face-toolbar-button-off  :foreground base6                   :bold bold :inherit 'variable-pitch)
+    (cfw:face-toolbar-button-on   :foreground blue                    :bold bold :inherit 'variable-pitch)
+
+    (cfw:face-default-content     :foreground fg :underline nil)
+    (cfw:face-day-title           :foreground fg :bold bold)
+    (cfw:face-today-title         :foreground bg  :background blue    :bold bold)
+    (cfw:face-default-day                                             :bold bold)
+    (cfw:face-today               :foreground nil :background nil     :bold bold)
+    (cfw:face-annotation          :foreground violet)
+    (cfw:face-disable             :foreground grey)
+    (cfw:face-select              :background region)
+
+
     ;; org-agenda
     (org-agenda-done      :inherit 'org-done)
     (org-agenda-dimmed-todo-face :foreground comments)
@@ -833,14 +856,6 @@
     (org-level-6  :foreground (doom-darken violet 0.3) :bold bold :slant 'italic)
     (org-level-7  :foreground (doom-darken teal 0.3)   :bold bold :slant 'italic)
     (org-level-8  :foreground (doom-darken magenta 0.3):bold bold :slant 'italic)
-
-    (org-tag :foreground violet :bold nil)
-    (org-priority :foreground red)
-    (org-ellipsis :underline nil :background nil :foreground violet)
-    (org-hide :foreground bg)
-    (org-table :foreground violet)
-    (org-quote :inherit 'italic :background base3)
-    (org-document-info         :foreground builtin)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
