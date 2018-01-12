@@ -803,7 +803,7 @@
     (cfw:face-toolbar-button-off  :foreground base6                   :bold bold :inherit 'variable-pitch)
     (cfw:face-toolbar-button-on   :foreground blue                    :bold bold :inherit 'variable-pitch)
 
-    (cfw:face-default-content     :foreground fg :underline nil)
+    (cfw:face-default-content     :foreground fg)
     (cfw:face-day-title           :foreground fg :bold bold)
     (cfw:face-today-title         :foreground bg  :background blue    :bold bold)
     (cfw:face-default-day                                             :bold bold)
@@ -847,7 +847,7 @@
     (org-habit-alert-future-face   :bold bold :background (doom-blend yellow bg-alt 0.5) :foreground (doom-blend yellow bg-alt 0.5))
     (org-habit-overdue-face        :bold bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
     (org-habit-overdue-future-face :bold bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
-
+    (org-ellipsis :bold bold :background nil :foreground grey)
     (org-level-1  :foreground blue   :weight 'ultra-bold :height 1.3 :slant 'italic)
     (org-level-2  :foreground violet :weight 'extra-bold :height 1.2 :slant 'italic)
     (org-level-3  :foreground orange :bold bold :height 1.1 :slant 'italic)
