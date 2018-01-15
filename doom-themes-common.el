@@ -24,6 +24,7 @@
     (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :bold bold)
     (match                :foreground green      :background base0 :bold bold)
     (trailing-whitespace  :background red)
+    (nobreak-space        :inherit 'default :underline nil)
     (vertical-border      :background vertical-bar :foreground vertical-bar)
     (link                 :foreground highlight :underline t :bold 'inherit)
 
@@ -152,6 +153,7 @@
     (window-divider-last-pixel  :inherit 'window-divider)
 
     (twitter-divider :underline `(:color ,(doom-blend vertical-bar bg 0.8)))
+    (internal-border :foreground (doom-blend fg bg 0.5) :background (doom-blend fg bg 0.5))
 
     ;; --- plugin faces -----------------------
     ;; avy
@@ -415,14 +417,15 @@
     ((indent-guide-face &inherit highlight-indentation-face))
 
     ;; ivy
-    (ivy-current-match :background dark-blue :distant-foreground base0 :bold bold)
-    (ivy-minibuffer-match-face-1
-     :background base0
-     :foreground (doom-lighten grey 0.1)
-     :bold bold)
-    (ivy-minibuffer-match-face-2 :inherit 'ivy-minibuffer-match-face-1 :foreground magenta)
-    (ivy-minibuffer-match-face-3 :inherit 'ivy-minibuffer-match-face-1 :foreground green)
-    (ivy-minibuffer-match-face-4 :inherit 'ivy-minibuffer-match-face-1 :foreground yellow)
+    (ivy-current-match :background region :distant-foreground fg)
+    (ivy-minibuffer-match-face-1 :foreground (doom-blend fg bg 0.5) :bold bold)
+    (ivy-minibuffer-match-face-2 :foreground magenta :bold bold)
+    (ivy-minibuffer-match-face-3 :foreground green :bold bold)
+    (ivy-minibuffer-match-face-4 :foreground yellow :bold bold)
+    (ivy-minibuffer-match-highlight :foreground violet)
+    (ivy-highlight-face :foreground violet)
+    (ivy-confirm-face :foreground success)
+    (ivy-match-required-face :foreground error)
     (ivy-virtual :foreground fg)
 
     ;; jabber
@@ -488,6 +491,12 @@
     (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
     (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
     (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :bold bold)
+    (lsp-ui-peek-filename :inherit 'doom-modeline-buffer-file)
+    (lsp-ui-peek-header :foreground bg :background blue :bold bold)
+    (lsp-ui-peek-list :background (doom-blend fg bg 0.1))
+    (lsp-ui-peek-peek :background (doom-blend fg bg 0.1))
+    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background magenta)
+    (lsp-ui-peek-line-number :foreground success)
 
     ;; magit
     (magit-bisect-bad        :foreground red)
@@ -606,8 +615,8 @@
      (&dark  :background base3))
 
     ;; swiper
-    (swiper-line-face    :background blue    :foreground base0)
-    (swiper-match-face-1 :background base0   :foreground base5)
+    (swiper-line-face    :background blue :foreground bg)
+    (swiper-match-face-1 :bold bold)
     (swiper-match-face-2 :background magenta  :foreground base0 :bold bold)
     (swiper-match-face-3 :background green :foreground base0 :bold bold)
     (swiper-match-face-4 :background yellow   :foreground base0 :bold bold)
@@ -831,12 +840,12 @@
     (org-sexp-date            :foreground fg)
     (org-special-keyword      :foreground keywords)
 
-    (org-todo-keyword-todo :foreground (doom-blend blue bg 0.8)    :background (doom-blend blue bg 0.2)    :bold bold)
-    (org-todo-keyword-habt :foreground (doom-blend yellow bg 0.8)  :background (doom-blend yellow bg 0.2)  :bold bold)
-    (org-todo-keyword-done :foreground (doom-blend green bg 0.8)   :background (doom-blend green bg 0.2)   :bold bold)
-    (org-todo-keyword-wait :foreground (doom-blend red bg 0.8)     :background (doom-blend red bg 0.2)     :bold bold)
-    (org-todo-keyword-kill :foreground (doom-blend magenta bg 0.8) :background (doom-blend magenta bg 0.2) :bold bold)
-    (org-todo-keyword-outd :foreground (doom-blend fg bg 0.8)      :background (doom-blend fg bg 0.2)      :bold bold)
+    (org-todo-keyword-todo :font "SF Mono" :bold bold :foreground (doom-blend blue bg 0.8)    :background (doom-blend blue bg 0.2)    )
+    (org-todo-keyword-habt :font "SF Mono" :bold bold :foreground (doom-blend yellow bg 0.8)  :background (doom-blend yellow bg 0.2)  )
+    (org-todo-keyword-done :font "SF Mono" :bold bold :foreground (doom-blend green bg 0.8)   :background (doom-blend green bg 0.2)   )
+    (org-todo-keyword-wait :font "SF Mono" :bold bold :foreground (doom-blend red bg 0.8)     :background (doom-blend red bg 0.2)     )
+    (org-todo-keyword-kill :font "SF Mono" :bold bold :foreground (doom-blend magenta bg 0.8) :background (doom-blend magenta bg 0.2) )
+    (org-todo-keyword-outd :font "SF Mono" :bold bold :foreground (doom-blend fg bg 0.8)      :background (doom-blend fg bg 0.2)      )
 
     ;; org-mode
     (org-habit-clear-face          :bold bold :background bg-alt :foreground bg-alt)
@@ -848,14 +857,16 @@
     (org-habit-overdue-face        :bold bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
     (org-habit-overdue-future-face :bold bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
     (org-ellipsis :bold bold :background nil :foreground grey)
-    (org-level-1  :foreground blue   :weight 'ultra-bold :height 1.3 :slant 'italic)
-    (org-level-2  :foreground violet :weight 'extra-bold :height 1.2 :slant 'italic)
-    (org-level-3  :foreground orange :bold bold :height 1.1 :slant 'italic)
-    (org-level-4  :foreground red    :bold bold :slant 'italic)
-    (org-level-5  :foreground (doom-darken blue 0.3)   :bold bold :slant 'italic)
-    (org-level-6  :foreground (doom-darken violet 0.3) :bold bold :slant 'italic)
-    (org-level-7  :foreground (doom-darken teal 0.3)   :bold bold :slant 'italic)
-    (org-level-8  :foreground (doom-darken magenta 0.3):bold bold :slant 'italic)
+
+    (org-level-1  :font "SF Compact Display" :foreground blue                      :bold bold :height 1.4)
+    (org-level-2  :font "SF Compact Display" :foreground violet                    :bold bold :height 1.3)
+    (org-level-3  :font "SF Compact Display" :foreground orange                    :bold bold :height 1.2)
+    (org-level-4  :font "SF Compact Display" :foreground red                       :bold bold :height 1.1)
+    (org-level-5  :font "SF Compact Display" :foreground (doom-darken blue 0.3)               :height 1.1)
+    (org-level-6  :font "SF Compact Display" :foreground (doom-darken violet 0.3)             :height 1.1)
+    (org-level-7  :font "SF Compact Display" :foreground (doom-darken teal 0.3)               :height 1.1)
+    (org-level-8  :font "SF Compact Display" :foreground (doom-darken magenta 0.3)            :height 1.1)
+
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
@@ -873,7 +884,7 @@
     (org-headline-done         :foreground base5)
     (org-todo                  :bold 'inherit :foreground highlight)
     (org-done                  :inherit 'org-headline-done :bold 'inherit)
-    (org-special-keyword       :foreground magenta)
+    (org-special-keyword       :foreground grey)
     (org-checkbox :inherit 'org-todo)
     (org-checkbox-statistics-todo :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)

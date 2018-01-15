@@ -66,7 +66,7 @@ determine the exact padding."
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-one-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan base5) 0.25))
+   (doc-comments   (doom-blend dark-cyan fg 0.8))
    (constants      violet)
    (functions      magenta)
    (keywords       blue)

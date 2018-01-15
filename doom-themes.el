@@ -87,12 +87,14 @@
 
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized
+;;;###autoload
 (defun doom-name-to-rgb (color &optional frame)
   "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
 for FRAME (defaults to the current frame)."
   (cl-loop for x in (color-values color frame)
            collect (/ x (float (car (color-values "#ffffff"))))))
 
+;;;###autoload
 (defun doom-blend (color1 color2 alpha)
   "Blend two colors (hexidecimal strings) together by a coefficient ALPHA (a
 float between 0 and 1)"
@@ -113,6 +115,7 @@ float between 0 and 1)"
 
           (t color1))))
 
+;;;###autoload
 (defun doom-darken (color alpha)
   "Darken a COLOR (a hexidecimal string) by a coefficient ALPHA (a float between
 0 and 1)."
@@ -125,6 +128,7 @@ float between 0 and 1)"
         (t
          (doom-blend color "#000000" (- 1 alpha)))))
 
+;;;###autoload
 (defun doom-lighten (color alpha)
   "Brighten a COLOR (a hexidecimal string) by a coefficient ALPHA (a float
 between 0 and 1)."
