@@ -496,7 +496,7 @@
     (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
     (lsp-ui-peek-list :background (doom-darken bg 0.1))
     (lsp-ui-peek-peek :background (doom-darken bg 0.1))
-    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background magenta :foreground bg)
+    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
     (lsp-ui-peek-line-number :foreground success)
 
     ;; magit
