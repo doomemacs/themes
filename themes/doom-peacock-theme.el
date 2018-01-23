@@ -63,7 +63,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      red)
-   (vertical-bar   bg-alt)
+   (vertical-bar   (doom-lighten bg 0.1))
    (selection      coral-popup)
    (builtin        red)
    (comments       (if doom-peacock-brighter-comments dark-cyan base5)) ;; TODO

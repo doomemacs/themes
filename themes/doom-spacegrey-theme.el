@@ -61,7 +61,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      orange)
-   (vertical-bar   (doom-darken bg-alt 0.1))
+   (vertical-bar   (doom-lighten bg 0.1))
    (selection      base4)
    (builtin        orange)
    (comments       base5)
