@@ -416,6 +416,17 @@
     ;; indent-guide
     ((indent-guide-face &inherit highlight-indentation-face))
 
+    ;; tldr
+    (tldr-command-itself                            :foreground bg :background green :bold bold)
+    (tldr-title                                     :foreground yellow :bold t :height 1.4)
+    (tldr-description :family "SF Compact Display"  :foreground fg :bold bold)
+    (tldr-introduction :family "SF Compact Display" :foreground (doom-blend blue bg 0.8) :bold bold)
+    (tldr-code-block                                :foreground green :background region :bold bold)
+    (tldr-command-argument                          :foreground fg :background region )
+
+    ;; helpful
+    (helpful-heading   :family "SF Compact Display" :foreground yellow :bold t :height 1.4)
+
     ;; ivy
     (ivy-current-match :background region :distant-foreground fg)
     (ivy-minibuffer-match-face-1 :foreground (doom-blend fg bg 0.5) :bold bold)
@@ -617,10 +628,10 @@
 
     ;; swiper
     (swiper-line-face    :background blue :foreground bg)
-    (swiper-match-face-1 :bold bold)
-    (swiper-match-face-2 :background magenta  :foreground base0 :bold bold)
-    (swiper-match-face-3 :background green :foreground base0 :bold bold)
-    (swiper-match-face-4 :background yellow   :foreground base0 :bold bold)
+    (swiper-match-face-1 :inherit 'unspecified :bold bold)
+    (swiper-match-face-2 :inherit 'unspecified :background magenta  :foreground base0 :bold bold)
+    (swiper-match-face-3 :inherit 'unspecified :background green :foreground base0 :bold bold)
+    (swiper-match-face-4 :inherit 'unspecified :background yellow   :foreground base0 :bold bold)
 
     ;; tabbar
     (tabbar-default             :foreground bg :background bg :height 1.0)
@@ -643,7 +654,7 @@
     (undo-tree-visualizer-register-face :foreground yellow)
 
     ;; vimish-fold
-    (vimish-fold-overlay :inherit 'font-lock-comment-face :background base0)
+    (vimish-fold-overlay :foreground (doom-blend magenta bg 0.7) :box t :weight 'light)
     (vimish-fold-fringe  :foreground magenta)
 
     ;; volatile-highlights
@@ -867,6 +878,7 @@
     (org-level-7  :font "SF Compact Display" :foreground yellow :weight 'semi-bold :height 1.2)
     (org-level-8  :font "SF Compact Display" :foreground red    :weight 'semi-bold :height 1.2)
 
+    (org-tag                   :foreground blue :weight 'light)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
