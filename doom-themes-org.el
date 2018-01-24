@@ -61,15 +61,14 @@
                ,(when doom-org-special-tags
                   '("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
 
-(defun doom-org-default-settings ()
-  "Make the most of org-mode integration with doom-themes."
-  (setq-default org-hide-leading-stars t
-                org-hide-leading-stars-before-indent-mode t
-                org-fontify-done-headline t
-                org-fontify-quote-and-verse-blocks t
-                org-fontify-whole-heading-line t))
 
-(add-hook 'org-load-hook #'doom-org-default-settings)
+;; Bootstrap
+(setq org-hide-leading-stars t
+      org-hide-leading-stars-before-indent-mode t
+      org-fontify-done-headline t
+      org-fontify-quote-and-verse-blocks t
+      org-fontify-whole-heading-line t)
+
 (add-hook 'org-font-lock-set-keywords-hook #'doom-org-custom-fontification)
 
 (provide 'doom-themes-org)
