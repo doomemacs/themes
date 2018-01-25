@@ -384,10 +384,10 @@
     (helm-swoop-target-number-face     :foreground base5)
 
     ;; highlight-indentation-mode
-    (highlight-indentation-face                :inherit 'hl-line)
-    (highlight-indentation-current-column-face :background base1)
-    (highlight-indentation-guides-odd-face     :inherit 'highlight-indentation-face)
-    (highlight-indentation-guides-even-face    :inherit 'highlight-indentation-face)
+    ;; ((highlight-indentation-face                &background ,(doom-blend fg bg 0.1)))
+    ;; (highlight-indentation-current-column-face :background base1)
+    ;; (highlight-indentation-guides-odd-face   :inherit 'unspecified :background (doom-blend fg bg 0.1)  )
+    ;; (highlight-indentation-guides-even-face   :inherit 'unspecified :background (doom-blend fg bg 0.1) )
 
     ;; highlight-quoted-mode
     (highlight-quoted-symbol :foreground type)
@@ -414,7 +414,7 @@
     (iedit-read-only-occurrence :inherit 'region)
 
     ;; indent-guide
-    ((indent-guide-face &inherit highlight-indentation-face))
+    ;; (indent-guide-face :inherit 'unspecified :background (doom-blend fg bg 0.1))
 
     ;; tldr
     (tldr-command-itself                            :foreground bg :background green :bold bold)
