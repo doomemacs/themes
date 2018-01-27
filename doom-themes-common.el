@@ -428,7 +428,7 @@
     (helpful-heading   :family "SF Compact Display" :foreground yellow :bold t :height 1.4)
 
     ;; ivy
-    (ivy-current-match :background region :distant-foreground fg)
+    (ivy-current-match :inherit nil :font 'unspecified :background region :distant-foreground fg)
     (ivy-minibuffer-match-face-1 :foreground (doom-blend fg bg 0.5) :bold bold)
     (ivy-minibuffer-match-face-2 :foreground magenta :bold bold)
     (ivy-minibuffer-match-face-3 :foreground green :bold bold)
@@ -878,7 +878,7 @@
     (org-level-7  :font "SF Compact Display" :foreground yellow :weight 'semi-bold :height 1.2)
     (org-level-8  :font "SF Compact Display" :foreground red    :weight 'semi-bold :height 1.2)
 
-    (org-tag                   :foreground blue :weight 'light)
+    (org-tag                   :foreground green :weight 'light)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
