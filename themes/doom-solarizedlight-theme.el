@@ -33,17 +33,17 @@ determine the exact padding."
   "A dark theme inspired by solarized light"
 
   ;; name        default   256       16
-  ((bg         '("#FFF7E4" nil       nil            ))
-   (bg-alt     '("#FFF4DE" nil       nil            ))
-   (base0      '("#FFF4ED" "black"   "black"        ))
-   (base1      '("#F2E6DC" "#1e1e1e" "brightblack"  ))
-   (base2      '("#E5DDD5" "#2e2e2e" "brightblack"  ))
-   (base3      '("#D8CEC8" "#262626" "brightblack"  ))
-   (base4      '("#E8D8CA" "#3f3f3f" "brightblack"  ))
-   (base5      '("#CEC0B2" "#525252" "brightblack"  ))
-   (base6      '("#AEA79A" "#6b6b6b" "brightblack"  ))
-   (base7      '("#A29B8F" "#979797" "brightblack"  ))
-   (base8      '("#6D7878" "#dfdfdf" "white"        ))
+  ((bg         '("#FCF8ED" nil       nil            ))
+   (bg-alt     '("#FDF6E3" nil       nil            ))
+   (base0      '("#FFFBF0" "black"   "black"        ))
+   (base1      '("#FCF8ED" "#1e1e1e" "brightblack"  ))
+   (base2      '("#FCF7E8" "#2e2e2e" "brightblack"  ))
+   (base3      '("#F2E6CE" "#262626" "brightblack"  ))
+   (base4      '("#E1DBCD" "#3f3f3f" "brightblack"  ))
+   (base5      '("#D6D6D6" "#525252" "brightblack"  ))
+   (base6      '("#B0AFAF" "#6b6b6b" "brightblack"  ))
+   (base7      '("#788484" "#979797" "brightblack"  ))
+   (base8      '("#626C6C" "#dfdfdf" "white"        ))
    (fg         '("#7B8787" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#6B7A7C" "#2d2d2d" "white"        ))
 
@@ -62,7 +62,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   base1)
+   (vertical-bar   base3)
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-one-brighter-comments dark-cyan base5))
@@ -101,7 +101,7 @@ determine the exact padding."
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base0))))
+      `(,(doom-darken (car bg-alt) 0.025) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg-alt 0.02))
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
