@@ -277,6 +277,24 @@
     (evil-snipe-first-match-face :foreground highlight :background dark-blue :bold bold)
     (evil-snipe-matches-face     :foreground highlight :underline t :bold bold)
 
+    ;; evil-googles
+    (evil-goggles-default-face               :inherit nil :background region)
+    (evil-goggles-commentary-face            :inherit nil :background region)
+    (evil-goggles-shift-face                 :inherit nil :background (doom-blend blue   bg 0.5))
+    (evil-goggles-join-face                  :inherit nil :background (doom-blend green  bg 0.5))
+    (evil-goggles-delete-face                :inherit nil :background (doom-blend red    bg 0.5))
+    (evil-goggles-undo-redo-add-face         :inherit nil :background (doom-blend green  bg 0.5))
+    (evil-goggles-yank-face                  :inherit nil :background (doom-blend yellow bg 0.5))
+    (evil-goggles-surround-face              :inherit nil :background (doom-blend blue   bg 0.5))
+    (evil-goggles-fill-and-move-face         :inherit nil :background (doom-blend blue   bg 0.5))
+    (evil-goggles-indent-face                :inherit nil :background (doom-blend blue   bg 0.5))
+    (evil-goggles-set-marker-face            :inherit nil :background (doom-blend violet bg 0.5))
+    (evil-goggles-undo-redo-change-face      :inherit nil :background (doom-blend orange bg 0.5))
+    (evil-goggles-undo-redo-remove-face      :inherit nil :background (doom-blend red    bg 0.5))
+    (evil-goggles-paste-face                 :inherit nil :background (doom-blend green  bg 0.5))
+    (evil-goggles-replace-with-register-face :inherit nil :background (doom-blend orange bg 0.5))
+
+
     ;; flycheck
     (flycheck-error     :underline `(:style wave :color ,red))
     (flycheck-warning   :underline `(:style wave :color ,yellow))
@@ -428,11 +446,12 @@
     (helpful-heading   :family "SF Compact Display" :foreground yellow :bold t :height 1.4)
 
     ;; ivy
-    (ivy-current-match :inherit nil :font 'unspecified :background region :distant-foreground fg)
-    (ivy-minibuffer-match-face-1 :foreground (doom-blend fg bg 0.5) :bold bold)
-    (ivy-minibuffer-match-face-2 :foreground magenta :bold bold)
-    (ivy-minibuffer-match-face-3 :foreground green :bold bold)
-    (ivy-minibuffer-match-face-4 :foreground yellow :bold bold)
+    (ivy-current-match :background region :distant-foreground fg)
+    (ivy-minibuffer-match-face-1 :weight 'bold :foreground (doom-blend fg bg 0.5))
+    (ivy-minibuffer-match-face-2 :weight 'bold :foreground magenta)
+    (ivy-minibuffer-match-face-3 :weight 'bold :foreground green)
+    (ivy-minibuffer-match-face-4 :weight 'bold :foreground yellow)
+
     (ivy-minibuffer-match-highlight :foreground violet)
     (ivy-highlight-face :foreground violet)
     (ivy-confirm-face :foreground success)
@@ -878,7 +897,8 @@
     (org-level-7  :font "SF Compact Display" :foreground yellow :weight 'semi-bold :height 1.2)
     (org-level-8  :font "SF Compact Display" :foreground red    :weight 'semi-bold :height 1.2)
 
-    (org-tag                   :foreground green :weight 'light)
+    (org-ref-cite-face         :foreground yellow :weight 'light :underline t)
+    (org-tag                   :font "pragmatapro" :foreground green :weight 'light)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
