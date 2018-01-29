@@ -50,7 +50,7 @@ determine the exact padding."
 
    ;; face categories
    (highlight      cyan)
-   (vertical-bar   (doom-lighten bg-alt 0.1))
+   (vertical-bar   (doom-lighten bg 0.1))
    (selection      (doom-lighten highlight 0.6))
    (builtin        blue)
    (comments       grey)
