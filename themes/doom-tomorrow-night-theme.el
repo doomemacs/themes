@@ -44,7 +44,7 @@ determine the exact padding."
 
    ;; face categories
    (highlight      dark-blue)
-   (vertical-bar   (doom-lighten bg 0.1))
+   (vertical-bar   base0)
    (selection      (doom-lighten bg 0.1))
    (builtin        blue)
    (comments       grey)
