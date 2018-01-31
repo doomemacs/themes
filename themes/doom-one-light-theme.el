@@ -168,7 +168,7 @@ determine the exact padding."
    (helm-candidate-number :background blue :foreground bg)
 
    ;; web-mode
-   (web-mode-current-element-highlight-face :background blue :foreground bg)
+   (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
 
    ;; wgrep
    (wgrep-face :background base1)
