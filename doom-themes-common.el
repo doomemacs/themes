@@ -870,12 +870,12 @@
     (org-time-grid            :foreground comments)
     (org-sexp-date            :foreground fg)
 
-    (org-todo-keyword-todo :font "SF Mono" :bold bold :foreground (doom-blend blue bg 0.8)    :background (doom-blend blue bg 0.2))
-    (org-todo-keyword-habt :font "SF Mono" :bold bold :foreground (doom-blend yellow bg 0.8)  :background (doom-blend yellow bg 0.2))
-    (org-todo-keyword-done :font "SF Mono" :bold bold :foreground (doom-blend green bg 0.8)   :background (doom-blend green bg 0.2))
-    (org-todo-keyword-wait :font "SF Mono" :bold bold :foreground (doom-blend red bg 0.8)     :background (doom-blend red bg 0.2))
-    (org-todo-keyword-kill :font "SF Mono" :bold bold :foreground (doom-blend magenta bg 0.8) :background (doom-blend magenta bg 0.2))
-    (org-todo-keyword-outd :font "SF Mono" :bold bold :foreground (doom-blend fg bg 0.8)      :background (doom-blend fg bg 0.2))
+    (org-todo-keyword-todo :bold bold :foreground (doom-blend blue bg 0.8)    :background (doom-blend blue bg 0.2))
+    (org-todo-keyword-habt :bold bold :foreground (doom-blend yellow bg 0.8)  :background (doom-blend yellow bg 0.2))
+    (org-todo-keyword-done :bold bold :foreground (doom-blend green bg 0.8)   :background (doom-blend green bg 0.2))
+    (org-todo-keyword-wait :bold bold :foreground (doom-blend red bg 0.8)     :background (doom-blend red bg 0.2))
+    (org-todo-keyword-kill :bold bold :foreground (doom-blend magenta bg 0.8) :background (doom-blend magenta bg 0.2))
+    (org-todo-keyword-outd :bold bold :foreground (doom-blend fg bg 0.8)      :background (doom-blend fg bg 0.2))
 
     ;; org-mode
     (org-habit-clear-face          :bold bold :background bg-alt :foreground bg-alt)
@@ -898,7 +898,7 @@
     (org-level-8  :font "SF Compact Display" :foreground red    :weight 'semi-bold :height 1.2)
 
     (org-ref-cite-face         :foreground yellow :weight 'light :underline t)
-    (org-tag                   :font "pragmatapro" :foreground green :weight 'light)
+    (org-tag :foreground green :weight 'light)
     (org-document-title        :foreground builtin :bold bold)
     (org-default               :inherit 'variable-pitch)
     (org-meta-line             :foreground doc-comments)
