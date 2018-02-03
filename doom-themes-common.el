@@ -961,10 +961,6 @@
     (jdee-db-requested-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'green)))
     (jdee-db-active-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'highlight)))
 
-    (org-fontify-whole-heading-line t)
-    (org-fontify-done-headline t)
-    (org-fontify-quote-and-verse-blocks t)
-
     (vc-annotate-color-map
      `(list (cons 20  ,(doom-color 'green))
             (cons 40  ,(doom-blend (doom-color 'yellow) (doom-color 'green) (/ 1.0 3)))
@@ -1083,6 +1079,14 @@
             face-name (car face-name)))
     (when (assq face-name doom-themes--faces)
       (setq doom-theme--faces (assq-delete-all face-name doom-themes--faces)))
+    ;; if `doom-themes-enable-*' are false, remove those properties from faces
+    (dolist (prop (append (unless doom-themes-enable-bold   '(:weight 'normal :bold nil))
+                          (unless doom-themes-enable-italic '(:slant 'normal :italic nil))))
+      (when (and (plist-member face-body prop)
+                 (not (eq (plist-get face-body prop) 'inherit)))
+        (plist-put face-body prop
+                   (if (memq prop '(:weight :slant))
+                       (quote 'normal)))))
     (push `(,face-name ,@face-body) doom-themes--faces)))
 
 (defun doom-themes--build-face (face)
