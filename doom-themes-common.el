@@ -592,8 +592,8 @@
     (magit-section-secondary-heading :foreground violet :bold bold)
 
     ;; mic-paren
-    (paren-face-match    :foreground red   :background base0 :bold bold)
-    (paren-face-mismatch :foreground base0 :background red   :bold bold)
+    (paren-face-match    :foreground red   :bold bold)
+    (paren-face-mismatch :foreground fg    :background red   :bold bold)
     (paren-face-no-match :inherit 'paren-face-mismatch)
 
     ;; parenface
