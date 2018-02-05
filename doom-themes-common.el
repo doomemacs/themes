@@ -53,7 +53,7 @@
     (mode-line-inactive  :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
-    (mode-line-buffer-id :foreground fg :bold bold :distant-foreground bg)
+    (mode-line-buffer-id :bold bold)
     (header-line :inherit 'mode-line :distant-foreground bg)
 
     ;; 1. Line number faces must explicitly disable its text style attributes
