@@ -158,8 +158,9 @@ determine the exact padding."
    ;; org-mode
    (org-block            :background base1)
    (org-block-begin-line :foreground fg :slant 'italic)
-   (org-level-1          :background bg :foreground red    :bold t :height 1.2)
-   (org-level-3          :bold 'bold    :foreground violet :height 1.1)
+   (org-level-1          :foreground red    :weight 'ultra-bold :height 1.2)
+   (org-level-2          :foreground orange :weight 'extra-bold :height 1.1)
+   (org-level-3          :foreground violet :bold bold          :height 1.1)
    (org-ellipsis         :underline nil :background bg     :foreground red)
    (org-quote            :background base1)
 
@@ -167,7 +168,7 @@ determine the exact padding."
    (helm-candidate-number :background blue :foreground bg)
 
    ;; web-mode
-   (web-mode-current-element-highlight-face :background blue :foreground bg)
+   (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
 
    ;; wgrep
    (wgrep-face :background base1)
