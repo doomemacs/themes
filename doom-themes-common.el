@@ -610,7 +610,7 @@
     (magit-signature-expired :foreground orange)
     (magit-signature-good :inherit 'success)
     (magit-signature-revoked :foreground magenta)
-    (magit-signature-untrusted :foreground cyan)
+    (magit-signature-untrusted :foreground yellow)
     (magit-tag :foreground yellow)
     (magit-filename :foreground violet)
     (magit-section-secondary-heading :foreground violet :bold bold)
