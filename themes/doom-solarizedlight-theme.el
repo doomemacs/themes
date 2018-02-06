@@ -112,10 +112,10 @@ determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
 
-   (org-block :background (doom-blend blue bg 0.1))
-   (org-block-background :background (doom-blend blue bg 0.1))
-   (org-block-begin-line :background (doom-blend blue bg 0.2))
-   (org-block-end-line :background (doom-blend blue bg 0.2))
+   (org-block :background (doom-blend yellow bg 0.04))
+   (org-block-background :background (doom-blend yellow bg 0.04))
+   (org-block-begin-line :background (doom-blend yellow bg 0.08))
+   (org-block-end-line :background (doom-blend yellow bg 0.08))
    (font-lock-comment-face
     :foreground comments
     :background (if doom-one-comment-bg (doom-lighten bg 0.05)))
