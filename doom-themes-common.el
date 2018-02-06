@@ -294,6 +294,30 @@
     (evil-goggles-paste-face                 :inherit nil :background (doom-blend green  bg 0.5))
     (evil-goggles-replace-with-register-face :inherit nil :background (doom-blend orange bg 0.5))
 
+    ;; custom
+    (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
+    (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
+    (custom-button-pressed-unraised :foreground bg     :background violet :box '(:line-width 1 :style none))
+    (custom-button-pressed          :foreground bg     :background blue   :box '(:line-width 1 :style none))
+    (custom-button-mouse            :foreground bg     :background blue   :box '(:line-width 1 :style none))
+
+    (custom-variable-button   :foreground green :underline t)
+    (custom-saved             :foreground green :background (doom-blend green bg 0.2) :bold bold)
+    (custom-comment           :foreground fg :background region)
+    (custom-comment-tag       :foreground grey)
+    (custom-modified          :foreground blue :background (doom-blend blue bg 0.2))
+    (custom-variable-tag      :foreground magenta)
+    (custom-visibility        :foreground blue :underline nil)
+    (custom-group-subtitle    :foreground red)
+    (custom-group-tag         :foreground violet)
+    (custom-group-tag-1       :foreground blue)
+    (custom-set               :foreground yellow :background bg)
+    (custom-themed            :foreground yellow :background bg)
+    (custom-invalid           :foreground red :background (doom-blend red bg 0.2))
+    (custom-variable-obsolete :foreground grey :background bg)
+    (custom-state             :foreground green :background (doom-blend green bg 0.2))
+    (custom-changed           :foreground blue :background bg)
+
 
     ;; flycheck
     (flycheck-error     :underline `(:style wave :color ,red))
