@@ -75,6 +75,13 @@
     (dired-directory :foreground builtin)
     (dired-ignored   :foreground comments)
 
+    (dired-subtree-depth-1-face :background (doom-darken bg-alt 0.02))
+    (dired-subtree-depth-2-face :background (doom-darken bg-alt 0.04))
+    (dired-subtree-depth-3-face :background (doom-darken bg-alt 0.06))
+    (dired-subtree-depth-4-face :background (doom-darken bg-alt 0.08))
+    (dired-subtree-depth-5-face :background (doom-darken bg-alt 0.10))
+    (dired-subtree-depth-6-face :background (doom-darken bg-alt 0.12))
+
     ;; ediff
     (ediff-fine-diff-A    :background base3 :inherit 'bold)
     (ediff-fine-diff-B    :background base3 :inherit 'bold)
