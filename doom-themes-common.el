@@ -75,6 +75,14 @@
     (dired-directory :foreground builtin)
     (dired-ignored   :foreground comments)
 
+    (dired-flagged    :foreground red)
+    (dired-header     :foreground blue :bold bold)
+    (dired-mark       :foreground orange :bold bold)
+    (dired-marked     :foreground magenta :bold bold)
+    (dired-perm-write :foreground fg :underline t)
+    (dired-symlink    :foreground cyan :bold bold)
+    (dired-warning    :foreground warning)
+
     (dired-subtree-depth-1-face :background (doom-darken bg-alt 0.02))
     (dired-subtree-depth-2-face :background (doom-darken bg-alt 0.04))
     (dired-subtree-depth-3-face :background (doom-darken bg-alt 0.06))
