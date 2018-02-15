@@ -19,7 +19,7 @@
     (cursor               :background highlight)
     (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
-    (tooltip              :background bg-alt :foreground fg)
+    (tooltip              :background base3 :foreground fg)
     (secondary-selection  :background grey)
     (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :bold bold)
     (match                :foreground green      :background base0 :bold bold)
@@ -38,7 +38,7 @@
     (font-lock-doc-face                  :inherit 'font-lock-comment-face :foreground doc-comments)
     (font-lock-constant-face             :foreground constants)
     (font-lock-function-name-face        :foreground functions :weight 'semi-bold)
-    (font-lock-keyword-face              :foreground keywords :weight 'semi-bold)
+    (font-lock-keyword-face              :foreground keywords :weight 'semi-bold :slant 'italic)
     (font-lock-string-face               :foreground strings)
     (font-lock-type-face                 :foreground type :slant 'italic)
     (font-lock-variable-name-face        :foreground variables)
@@ -116,7 +116,10 @@
     (elfeed-search-filter-face   :foreground violet)
     (elfeed-search-unread-count-face :foreground yellow)
     (elfeed-search-unread-title-face :foreground fg :bold bold)
-
+    (message-header-subject :foreground base8)
+    (message-header-name :foreground green) ; FIXME move this
+    (message-header-to :foreground comments) ; FIXME move this
+    (message-header-other :foreground comments)
     ;; eshell
     (eshell-prompt        :foreground base7)
     (eshell-ls-archive    :foreground magenta)
@@ -214,9 +217,10 @@
     (bmkp-url                        :foreground blue :underline t)
     (bmkp-variable-list              :foreground green)
 
+
     ;; company
     (company-tooltip            :inherit 'tooltip)
-    (company-tooltip-common                           :foreground highlight)
+    (company-tooltip-common                           :bold bold)
     (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
     (company-tooltip-selection  :background selection)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
@@ -960,7 +964,6 @@
     (org-checkbox :inherit 'org-todo)
     (org-checkbox-statistics-todo :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
-    (message-header-name :foreground green) ; FIXME move this
 
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
