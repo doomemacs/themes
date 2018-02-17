@@ -260,6 +260,7 @@
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
 
     ;; evil
+    (evil-ex-info                   :foreground error :slant 'italic)
     (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :bold bold)
     (evil-ex-substitute-replacement :background base0 :foreground green :bold bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
