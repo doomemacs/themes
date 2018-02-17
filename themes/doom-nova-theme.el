@@ -23,7 +23,7 @@ determine the exact padding."
    (base0      '("#0d0f11" "#0d0f11" "black"      )) ; FIXME black
    (base1      '("#1e272c" "#1b1b1b"              ))
    (base2      '("#212122" "#1e1e1e"              )) ;
-   (base3      '("#292a2b" "#292929" "brightblack")) ;
+   (base3      '("#2f3f48" "#292929" "brightblack")) ;
    (base4      '("#3c4c55" "#3f3f3f" "brightblack")) ;
    (base5      '("#556873" "#525252" "brightblack"))
    (base6      '("#6A7D89" "#6b6b6b" "brightblack"))
@@ -51,7 +51,7 @@ determine the exact padding."
    ;; face categories
    (highlight      cyan)
    (vertical-bar   (doom-lighten bg 0.1))
-   (selection      (doom-lighten highlight 0.6))
+   (selection      highlight)
    (builtin        blue)
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.1))
@@ -59,8 +59,8 @@ determine the exact padding."
    (functions      blue)
    (keywords       violet)
    (methods        blue)
-   (operators      fg)
-   (type           yellow)
+   (operators      green)
+   (type           green)
    (strings        cyan)
    (variables      red)
    (numbers        highlight)
@@ -73,11 +73,11 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (current-line    (doom-lighten bg-alt 0.04))
-   (modeline-bg     bg-alt)
-   (modeline-bg-alt (doom-lighten bg 0.035))
+   (current-line    base5) ; (doom-lighten bg-alt 0.04)
    (modeline-fg     blue)
+   (modeline-bg     base5) ; bg-alt
    (modeline-fg-alt (doom-lighten bg-alt 0.4))
+   (modeline-bg-alt base4)
 
    (-modeline-pad
     (when doom-nova-padded-modeline
@@ -90,8 +90,10 @@ determine the exact padding."
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
    (doom-modeline-bar :inherit 'mode-line-highlight)
 
-   ((line-number &override) :foreground grey)
-   ((line-number-current-line &override) :foreground highlight)
+   (region :background base3 :foreground nil :distant-foreground nil :weight 'bold)
+
+   ((line-number &override) :foreground "#6c808d")
+   ((line-number-current-line &override) :foreground highlight :weight 'bold)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
@@ -102,6 +104,9 @@ determine the exact padding."
    (rainbow-delimiters-depth-6-face :foreground yellow)
    (rainbow-delimiters-depth-7-face :foreground teal)
 
+   (hl-line :background current-line)
+   (solaire-hl-line-face :inherit 'hl-line)
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -110,16 +115,16 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
    (solaire-mode-line-face
-    :background (doom-darken modeline-bg 0.1) :foreground modeline-fg
+    :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (solaire-mode-line-inactive-face
-    :background (doom-lighten modeline-bg 0.05) :foreground modeline-fg-alt
+    :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-   (solaire-hl-line-face :inherit 'hl-line :background current-line)
 
    ;; helm
-   (helm-selection :foreground dark-grey :background selection)
+   (helm-selection :background current-line :weight 'bold)
    (helm-match     :foreground highlight)
+   (helm-source-header :foreground base0 :background base6)
 
    ;; company
    (company-tooltip-selection  :background selection :foreground dark-grey)
