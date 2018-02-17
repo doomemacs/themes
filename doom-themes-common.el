@@ -38,7 +38,7 @@
     (font-lock-doc-face                  :inherit 'font-lock-comment-face :foreground doc-comments)
     (font-lock-constant-face             :foreground constants)
     (font-lock-function-name-face        :foreground functions :weight 'semi-bold)
-    (font-lock-keyword-face              :foreground keywords :weight 'semi-bold :slant 'italic)
+    (font-lock-keyword-face              :foreground keywords :weight 'semi-bold)
     (font-lock-string-face               :foreground strings)
     (font-lock-type-face                 :foreground type :slant 'italic)
     (font-lock-variable-name-face        :foreground variables)
