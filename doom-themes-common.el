@@ -196,6 +196,26 @@
     (bmkp-url :foreground blue :underline t)
     (bmkp-variable-list :foreground green)
 
+    ;; calfw
+    (cfw:face-title              :foreground blue                     :weight 'bold :height 2.0 :inherit 'variable-pitch)
+    (cfw:face-header             :foreground (doom-blend blue bg 0.8) :weight 'bold)
+    (cfw:face-sunday             :foreground (doom-blend red bg 0.8)  :weight 'bold)
+    (cfw:face-saturday           :foreground (doom-blend red bg 0.8)  :weight 'bold)
+    (cfw:face-holiday            :foreground nil :background bg-alt   :weight 'bold)
+    (cfw:face-grid               :foreground vertical-bar)
+    (cfw:face-periods            :foreground yellow)
+    (cfw:face-toolbar            :foreground nil :background nil)
+    (cfw:face-toolbar-button-off :foreground base6                    :weight 'bold             :inherit 'variable-pitch)
+    (cfw:face-toolbar-button-on  :foreground blue                     :weight 'bold             :inherit 'variable-pitch)
+    (cfw:face-default-content    :foreground fg)
+    (cfw:face-day-title          :foreground fg                       :weight 'bold)
+    (cfw:face-today-title        :foreground bg  :background blue     :weight 'bold)
+    (cfw:face-default-day                                             :weight 'bold)
+    (cfw:face-today              :foreground nil :background nil      :weight 'bold)
+    (cfw:face-annotation         :foreground violet)
+    (cfw:face-disable            :foreground grey)
+    (cfw:face-select             :background region)
+
     ;; company
     (company-tooltip            :inherit 'tooltip)
     (company-tooltip-common                           :foreground highlight)
