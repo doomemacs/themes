@@ -5,7 +5,7 @@
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: February 17, 2018
+;; Modified: March 01, 2018
 ;; Version: 2.1.1
 ;; Keywords: dark light blue atom one theme neotree icons faces nova
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
