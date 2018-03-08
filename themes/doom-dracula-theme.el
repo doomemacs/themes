@@ -177,7 +177,7 @@ determine the exact padding."
    (org-ellipsis :foreground comments)
    (org-footnote :foreground blue)
    (org-headline-base :foreground comments :strike-through t :bold nil)
-   (org-link :foreground cyan :underline t)
+   (org-link :foreground orange :underline t :weight 'bold)
    (org-priority :foreground cyan)
    (org-scheduled :foreground green)
    (org-scheduled-previously :foreground yellow)
