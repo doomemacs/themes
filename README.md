@@ -20,21 +20,24 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 ## Features
 
 - **Color themes:**
-  - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
-  - [X] `doom-vibrant`: a more vibrant version of `doom-one`
-  - [X] `doom-molokai`: based on Textmate's monokai
-  - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
-  - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
-  - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees]
-    (thanks to [teesloane])
-  - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
-  - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
-  - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks
-    to [fuxialexander])
-  - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
-  - [ ] `doom-x`: reads your colors from ~/.Xresources
-  - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
-  - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
+  - Flagship themes
+    - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
+    - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
+  - Additional themes
+    - [X] `doom-citylights` (thanks to [fuxialexander])
+    - [X] `doom-darcula` (thanks to [fuxialexander])
+    - [X] `doom-molokai`: based on Textmate's monokai
+    - [X] `doom-nord` (thanks to [fuxialexander])
+    - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+    - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
+    - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
+    - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
+    - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
+    - [X] `doom-vibrant`: a more vibrant version of `doom-one`
+    - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
+    - [ ] `doom-x`: reads your colors from ~/.Xresources
+    - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
+    - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
   - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
     rings (i.e. an error occurs).

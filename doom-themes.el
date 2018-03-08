@@ -18,19 +18,25 @@
 ;; DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 ;; [emacs.d], inspired by some of my favorite color themes including:
 ;;
-;;   [X] `doom-one': inspired by Atom's One Dark themes
-;;   [X] `doom-vibrant': a more vibrant version of `doom-one`
-;;   [X] `doom-molokai': based on Textmate's monokai
-;;   [X] `doom-nova': adapted from Nova (thanks to bigardone)
-;;   [X] `doom-one-light': light version of doom-one
-;;   [X] `doom-peacock': based on Peacock from daylerees' themes (thanks to teesloane)
-;;   [X] `doom-tomorrow-night': by Chris Kempson
-;;   [X] `doom-spacegrey': I'm sure you've heard of it (thanks to teesloane)
-;;   [X] `doom-solarized-light': light variant of Solarized (thanks to fuxialexander)
-;;   [ ] `doom-tomorrow-day': by Chris Kempson
-;;   [ ] `doom-x': reads your colors from ~/.Xresources
-;;   [ ] `doom-mono-dark' / `doom-mono-light': a minimalistic, monochromatic theme
-;;   [ ] `doom-tron': based on Tron Legacy from daylerees' themes
+;; Flagship themes
+;;   `doom-one'
+;;   `doom-one-light'
+;;
+;; Additional themes
+;;   [X] `doom-citylights' (added by fuxialexnder)
+;;   [X] `doom-darcula' (added by fuxialexnder)
+;;   [X] `doom-molokai'
+;;   [X] `doom-nord' (added by fuxialexnder)
+;;   [X] `doom-nova' (added by bigardone)
+;;   [X] `doom-peacock' (added by teesloane)
+;;   [X] `doom-solarized-light' (added by fuxialexnder)
+;;   [X] `doom-spacegrey' (added by teesloane)
+;;   [X] `doom-tomorrow-night'
+;;   [X] `doom-vibrant'
+;;   [ ] `doom-tomorrow-day'
+;;   [ ] `doom-x'
+;;   [ ] `doom-mono-dark' / `doom-mono-light'
+;;   [ ] `doom-tron'
 ;;
 ;; ## Install
 ;;
