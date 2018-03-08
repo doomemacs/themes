@@ -825,6 +825,11 @@
     (font-latex-string-face       :inherit 'font-lock-string-face)
     (font-latex-warning-face      :inherit 'font-lock-warning-face)
 
+    ;; elixir-mode
+    (elixir-atom-face (&light :foreground dark-blue)
+                      (&dark  :foreground cyan))
+    (elixir-attribute-face :foreground violet)
+
     ;; jdee-mode
     (jdee-font-lock-number-face :foreground numbers)
     (jdee-font-lock-operator-face :foreground operators)
