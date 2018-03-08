@@ -31,7 +31,7 @@ Can be an integer to determine the exact padding."
    (base6      '("#8a8787" "#949494" "silver"))
    (base7      '("#696769" "#6b6b6b" "silver"))
    (base8      '("#000000" "#000000" "black" ))
-   (fg         '("#3a3739" "#3a3a3a" "black"))
+   (fg         '("#4d4d4c" "#3a3a3a" "black"))
    (fg-alt     (doom-darken fg 0.6))
 
    (grey       '("#a5a4a5" "#999999" "silver"))
@@ -50,7 +50,7 @@ Can be an integer to determine the exact padding."
    ;; face categories
    (highlight      dark-blue)
    (vertical-bar   base0)
-   (selection      (doom-darken bg 0.1))
+   (selection      base3)
    (builtin        blue)
    (comments       grey)
    (doc-comments   (doom-darken grey 0.1))
