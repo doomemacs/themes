@@ -1,35 +1,35 @@
-;;; doom-darcula-theme.el --- inspired by Atom One Dark
+;;; doom-dracula-theme.el - based on https://draculatheme.com/
 (require 'doom-themes)
 
 ;;
-(defgroup doom-darcula-theme nil
+(defgroup doom-dracula-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-darcula-brighter-modeline nil
+(defcustom doom-dracula-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-darcula-theme
+  :group 'doom-dracula-theme
   :type 'boolean)
 
-(defcustom doom-darcula-brighter-comments nil
+(defcustom doom-dracula-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-darcula-theme
+  :group 'doom-dracula-theme
   :type 'boolean)
 
-(defcustom doom-darcula-comment-bg doom-darcula-brighter-comments
+(defcustom doom-dracula-comment-bg doom-dracula-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-darcula-theme
+  :group 'doom-dracula-theme
   :type 'boolean)
 
-(defcustom doom-darcula-padded-modeline nil
+(defcustom doom-dracula-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-darcula-theme
+  :group 'doom-dracula-theme
   :type '(or integer boolean))
 
 ;;
-(def-doom-theme doom-darcula
+(def-doom-theme doom-dracula
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
@@ -66,7 +66,7 @@ determine the exact padding."
    (selection      dark-blue)
    (builtin        orange)
    (comments       base5)
-   (doc-comments   (doom-lighten (if doom-darcula-brighter-comments dark-cyan base5) 0.25))
+   (doc-comments   (doom-lighten (if doom-dracula-brighter-comments dark-cyan base5) 0.25))
    (constants      cyan)
    (functions      green)
    (keywords       magenta)
@@ -85,11 +85,11 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-darcula-brighter-modeline)
+   (hidden     base1)
+   (-modeline-bright doom-dracula-brighter-modeline)
    (-modeline-pad
-    (when doom-darcula-padded-modeline
-      (if (integerp doom-darcula-padded-modeline) doom-darcula-padded-modeline 4)))
+    (when doom-dracula-padded-modeline
+      (if (integerp doom-dracula-padded-modeline) doom-dracula-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt base5)
@@ -114,7 +114,7 @@ determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-darcula-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-dracula-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -150,12 +150,47 @@ determine the exact padding."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
-
+   (org-hide :foreground base1 :background base1)
+   (solaire-org-hide-face :foreground base1 :background base1)
+   (org-level-1 :background base1 :foreground magenta :bold t :height 1.2)
+   (org-level-2 :background base1 :foreground violet)
+   (org-level-3 :background base1 :foreground green)
+   (org-level-4 :background base1 :foreground yellow)
+   (org-level-5 :background base1 :foreground cyan)
+   (org-level-6 :background base1 :foreground orange)
+   (org-level-7 :background base1 :foreground blue)
+   (org-todo :foreground orange :bold 'inherit :background base2)
+   (org-done :foreground green :strike-through nil :background base2 :bold t)
+   (org-headline-done :foreground base4 :strike-through nil)
+   (org-tag :foreground blue :bold t :background base1)
+   (org-agenda-date :foreground cyan)
+   (org-agenda-dimmed-todo-face :foreground comments)
+   (org-agenda-done :foreground base4)
+   (org-agenda-structure :foreground violet)
+   (org-block :foreground violet)
+   (org-code :foreground yellow)
+   (org-column :background base1)
+   (org-column-title :background base1 :bold t :underline t)
+   (org-date :foreground cyan)
+   (org-document-info :foreground blue)
+   (org-document-info-keyword :foreground comments)
+   (org-ellipsis :foreground comments)
+   (org-footnote :foreground blue)
+   (org-headline-base :foreground comments :strike-through t :bold nil)
+   (org-link :foreground cyan :underline t)
+   (org-priority :foreground cyan)
+   (org-scheduled :foreground green)
+   (org-scheduled-previously :foreground yellow)
+   (org-scheduled-today :foreground orange)
+   (org-sexp-date :foreground base4)
+   (org-special-keyword :foreground yellow)
+   (org-table :foreground violet)
+   (org-upcoming-deadline :foreground yellow)
+   (org-warning :foreground magenta)
+   )
 
   ;; --- extra variables ---------------------
   ;; ()
   )
 
-;;; doom-darcula-theme.el ends here
+;;; doom-dracula-theme.el ends here
