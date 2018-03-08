@@ -118,7 +118,7 @@ determine the exact padding."
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
-   (solaire-hl-line-face :background base3)
+   (solaire-hl-line-face :background base2)
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (mode-line
     :background modeline-bg :foreground modeline-fg
