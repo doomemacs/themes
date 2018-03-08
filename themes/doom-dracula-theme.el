@@ -175,7 +175,7 @@ determine the exact padding."
    (org-level-5 :inherit 'org-level-2 :foreground level5)
    (org-level-6 :inherit 'org-level-2 :foreground level6)
    (org-level-7 :inherit 'org-level-2 :foreground level7)
-   (org-todo :foreground orange :bold 'inherit :background base2)
+   (org-todo :foreground orange :bold 'inherit :background (doom-darken base1 0.02))
    (org-done :foreground green :strike-through nil :background base2 :bold t)
    (org-headline-done :foreground base4 :strike-through nil)
    (org-tag :foreground blue :bold t :background base1)
