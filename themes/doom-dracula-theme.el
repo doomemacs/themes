@@ -168,7 +168,7 @@ determine the exact padding."
    ;; org-mode
    (org-hide :foreground base1 :background base1)
    (solaire-org-hide-face :foreground base1 :background base1)
-   (org-level-1 :background base0 :foreground level1 :height 1.2 :weight 'bold)
+   (org-level-1 :background (doom-darken base1 0.125) :foreground level1 :height 1.2 :weight 'bold)
    (org-level-2 :foreground level2 :weight 'bold)
    (org-level-3 :inherit 'org-level-2 :foreground level3)
    (org-level-4 :inherit 'org-level-2 :foreground level4)
