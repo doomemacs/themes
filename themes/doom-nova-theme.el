@@ -134,6 +134,11 @@ determine the exact padding."
    (company-tooltip-search-selection :background highlight :foreground base1 :weight 'ultra-bold)
    (company-tooltip-mouse      :background base6 :foreground bg :distant-foreground fg)
 
+   ;; ediff
+   (ediff-fine-diff-A    :background base3 :weight 'bold)
+   (ediff-current-diff-A :inherit 'hl-line)
+   (ediff-even-diff-A    :background base3)
+
    ;; org-mode
    (org-level-1
     :foreground blue :background (doom-darken bg 0.025)

@@ -103,6 +103,9 @@ determine the exact padding."
 
    (isearch :foreground base0 :background green)
 
+   ;; ediff
+   (ediff-fine-diff-A :background (doom-blend magenta bg 0.3) :weight 'bold)
+
    ;; evil-mode
    (evil-search-highlight-persist-highlight-face :background violet)
 
