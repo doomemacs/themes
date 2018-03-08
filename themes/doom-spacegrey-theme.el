@@ -84,7 +84,7 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
+   (hidden     `(,(car bg-alt) "black" "black"))
    (-modeline-bright doom-spacegrey-brighter-modeline)
    (-modeline-pad
     (when doom-spacegrey-padded-modeline
