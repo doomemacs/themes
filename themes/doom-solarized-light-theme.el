@@ -155,6 +155,10 @@ determine the exact padding."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; org-mode
+   (org-block :background (doom-blend blue bg 0.1))
+   (org-block-background :background (doom-blend blue bg 0.1))
+   (org-block-begin-line :background (doom-blend blue bg 0.2))
+   (org-block-end-line :background (doom-blend blue bg 0.2))
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
 
