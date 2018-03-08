@@ -156,10 +156,17 @@ determine the exact padding."
    ;; org-mode
    (org-block            :background (doom-darken bg-alt 0.04))
    (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
-   (org-level-1          :background bg-alt :foreground fg    :bold t :height 1.1)
-   (org-level-2          :background bg-alt :foreground blue  :bold t :height 1.0)
-   (org-level-3          :background bg-alt :foreground green     :bold t :height 1.0)
-   (org-ellipsis         :underline nil :background bg     :foreground red)
+
+   (org-level-1 :foreground fg   :weight 'ultra-bold :inherit 'hl-line :height 1.2)
+   (org-level-2 :foreground (doom-blend fg blue 0.35) :weight 'bold)
+   (org-level-3 :foreground (doom-blend fg blue 0.7)  :weight 'bold)
+   (org-level-4 :foreground blue       :weight 'bold)
+   (org-level-5 :foreground (doom-blend magenta blue 0.2) :weight 'bold)
+   (org-level-6 :foreground (doom-blend magenta blue 0.4) :weight 'bold)
+   (org-level-7 :foreground (doom-blend magenta blue 0.6) :weight 'bold)
+   (org-level-8 :foreground fg :weight 'semi-bold)
+
+   (org-ellipsis         :underline nil :background bg    :foreground red)
    (org-quote            :background base1)
 
    ;; org-mode
