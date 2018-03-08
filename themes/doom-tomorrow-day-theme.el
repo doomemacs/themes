@@ -89,6 +89,14 @@ Can be an integer to determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
 
+   (ivy-current-match :background region :distant-foreground grey :weight 'ultra-bold)
+   (ivy-minibuffer-match-face-1
+    :foreground base5
+    :weight 'light)
+   (ivy-minibuffer-match-face-2 :inherit 'ivy-minibuffer-match-face-1 :foreground violet :weight 'ultra-bold)
+   (ivy-minibuffer-match-face-3 :inherit 'ivy-minibuffer-match-face-2 :foreground blue)
+   (ivy-minibuffer-match-face-4 :inherit 'ivy-minibuffer-match-face-2 :foreground red)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
