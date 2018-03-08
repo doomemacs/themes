@@ -1,20 +1,21 @@
 # Screenshots
 
-<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [Screenshots](#screenshots)
-    - [Flagship Themes](#flagship-themes)
-        - [doom-one](#doom-one)
-    - [Additional Themes](#additional-themes)
-        - [doom-citylights](#doom-citylights)
-        - [doom-darcula](#doom-darcula)
-        - [doom-molokai](#doom-molokai)
-        - [doom-nord](#doom-nord)
-        - [doom-solarized-light](#doom-solarized-light)
-        - [doom-spacegrey](#doom-spacegrey)
-
-<!-- markdown-toc end -->
+- [Flagship Themes](#flagship-themes)
+    - [doom-one](#doom-one)
+    - [doom-one-light (WIP)](#doom-one-light-wip)
+- [Additional Themes](#additional-themes)
+    - [doom-citylights](#doom-citylights)
+    - [doom-darcula](#doom-darcula)
+    - [doom-molokai](#doom-molokai)
+    - [doom-nord](#doom-nord)
+    - [doom-nova (WIP)](#doom-nova-wip)
+    - [doom-peacock](#doom-peacock)
+    - [doom-solarized-light](#doom-solarized-light)
+    - [doom-spacegrey](#doom-spacegrey)
+    - [doom-tomorrow-night (WIP)](#doom-tomorrow-night-wip)
+    - [doom-vibrant (WIP)](#doom-vibrant-wip)
 
 ## Flagship Themes
 
