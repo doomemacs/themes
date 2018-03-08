@@ -16,6 +16,12 @@
   :group 'doom-dracula-theme
   :type 'boolean)
 
+(defcustom doom-dracula-colorful-headers nil
+  "If non-nil, headers in org-mode will be more colorful; which is truer to the
+original Dracula Emacs theme."
+  :group 'doom-dracula-theme
+  :type 'boolean)
+
 (defcustom doom-dracula-comment-bg doom-dracula-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
@@ -85,6 +91,16 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (level1 magenta)
+   (level2 violet)
+   (level3 (if doom-dracula-colorful-headers green   (doom-lighten violet 0.35)))
+   (level4 (if doom-dracula-colorful-headers yellow  (doom-lighten magenta 0.35)))
+   (level5 (if doom-dracula-colorful-headers cyan    (doom-lighten violet 0.6)))
+   (level6 (if doom-dracula-colorful-headers orange  (doom-lighten magenta 0.6)))
+   (level7 (if doom-dracula-colorful-headers blue    (doom-lighten violet 0.85)))
+   (level8 (if doom-dracula-colorful-headers magenta (doom-lighten magenta 0.85)))
+   (level9 (if doom-dracula-colorful-headers violet  (doom-lighten violet 0.95)))
+
    (hidden     base1)
    (-modeline-bright doom-dracula-brighter-modeline)
    (-modeline-pad
@@ -152,13 +168,13 @@ determine the exact padding."
    ;; org-mode
    (org-hide :foreground base1 :background base1)
    (solaire-org-hide-face :foreground base1 :background base1)
-   (org-level-1 :background base1 :foreground magenta :bold t :height 1.2)
-   (org-level-2 :background base1 :foreground violet)
-   (org-level-3 :background base1 :foreground green)
-   (org-level-4 :background base1 :foreground yellow)
-   (org-level-5 :background base1 :foreground cyan)
-   (org-level-6 :background base1 :foreground orange)
-   (org-level-7 :background base1 :foreground blue)
+   (org-level-1 :background base0 :foreground level1 :height 1.2 :weight 'bold)
+   (org-level-2 :foreground level2 :weight 'bold)
+   (org-level-3 :inherit 'org-level-2 :foreground level3)
+   (org-level-4 :inherit 'org-level-2 :foreground level4)
+   (org-level-5 :inherit 'org-level-2 :foreground level5)
+   (org-level-6 :inherit 'org-level-2 :foreground level6)
+   (org-level-7 :inherit 'org-level-2 :foreground level7)
    (org-todo :foreground orange :bold 'inherit :background base2)
    (org-done :foreground green :strike-through nil :background base2 :bold t)
    (org-headline-done :foreground base4 :strike-through nil)
