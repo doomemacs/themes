@@ -369,21 +369,7 @@
     (evil-snipe-matches-face     :foreground highlight :underline t :weight 'bold)
 
     ;; evil-googles
-    (evil-goggles-default-face               :inherit nil :background region)
-    (evil-goggles-commentary-face            :inherit nil :background region)
-    (evil-goggles-shift-face                 :inherit nil :background (doom-blend blue   bg 0.5))
-    (evil-goggles-join-face                  :inherit nil :background (doom-blend green  bg 0.5))
-    (evil-goggles-delete-face                :inherit nil :background (doom-blend red    bg 0.5))
-    (evil-goggles-undo-redo-add-face         :inherit nil :background (doom-blend green  bg 0.5))
-    (evil-goggles-yank-face                  :inherit nil :background (doom-blend yellow bg 0.5))
-    (evil-goggles-surround-face              :inherit nil :background (doom-blend blue   bg 0.5))
-    (evil-goggles-fill-and-move-face         :inherit nil :background (doom-blend blue   bg 0.5))
-    (evil-goggles-indent-face                :inherit nil :background (doom-blend blue   bg 0.5))
-    (evil-goggles-set-marker-face            :inherit nil :background (doom-blend violet bg 0.5))
-    (evil-goggles-undo-redo-change-face      :inherit nil :background (doom-blend orange bg 0.5))
-    (evil-goggles-undo-redo-remove-face      :inherit nil :background (doom-blend red    bg 0.5))
-    (evil-goggles-paste-face                 :inherit nil :background (doom-blend green  bg 0.5))
-    (evil-goggles-replace-with-register-face :inherit nil :background (doom-blend orange bg 0.5))
+    (evil-goggles-default-face :inherit 'region)
 
     ;; flycheck
     (flycheck-error     :underline `(:style wave :color ,red))
