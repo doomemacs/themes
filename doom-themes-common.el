@@ -954,7 +954,7 @@
     (org-quote           :background base3 :slant 'italic)
     (org-special-keyword :foreground keywords)
     (org-table           :foreground violet)
-    (org-tag             :foreground violet :weight 'normal)
+    (org-tag             :foreground doc-comments :weight 'normal)
     (org-ref-cite-face   :foreground yellow :weight 'light :underline t)
     (org-todo            :foreground highlight :bold 'inherit)
     (org-verbatim        :foreground green)
