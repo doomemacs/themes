@@ -532,6 +532,9 @@
     (ivy-virtual :inherit 'italic :foreground doc-comments)
     (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
 
+    ;; ivy-posframe
+    (ivy-posframe :background (doom-darken bg-alt 0.1))
+
     ;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
