@@ -1,35 +1,35 @@
-;;; doom-citylights-theme.el --- inspired by Atom One Dark
+;;; doom-city-lights-theme.el --- inspired by Atom City Lights
 (require 'doom-themes)
 
 ;;
-(defgroup doom-citylights-theme nil
+(defgroup doom-city-lights-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-citylights-brighter-modeline nil
+(defcustom doom-city-lights-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-citylights-theme
+  :group 'doom-city-lights-theme
   :type 'boolean)
 
-(defcustom doom-citylights-brighter-comments nil
+(defcustom doom-city-lights-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-citylights-theme
+  :group 'doom-city-lights-theme
   :type 'boolean)
 
-(defcustom doom-citylights-comment-bg doom-citylights-brighter-comments
+(defcustom doom-city-lights-comment-bg doom-city-lights-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-citylights-theme
+  :group 'doom-city-lights-theme
   :type 'boolean)
 
-(defcustom doom-citylights-padded-modeline nil
+(defcustom doom-city-lights-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-citylights-theme
+  :group 'doom-city-lights-theme
   :type '(or integer boolean))
 
 ;;
-(def-doom-theme doom-citylights
+(def-doom-theme doom-city-lights
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
@@ -64,8 +64,8 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
-   (comments       (if doom-citylights-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-citylights-brighter-comments dark-cyan base5) 0.25))
+   (comments       (if doom-city-lights-brighter-comments dark-cyan base5))
+   (doc-comments   (doom-lighten (if doom-city-lights-brighter-comments dark-cyan base5) 0.25))
    (constants      red)
    (functions      teal)
    (keywords       blue)
@@ -85,10 +85,10 @@ determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-citylights-brighter-modeline)
+   (-modeline-bright doom-city-lights-brighter-modeline)
    (-modeline-pad
-    (when doom-citylights-padded-modeline
-      (if (integerp doom-citylights-padded-modeline) doom-citylights-padded-modeline 4)))
+    (when doom-city-lights-padded-modeline
+      (if (integerp doom-city-lights-padded-modeline) doom-city-lights-padded-modeline 4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt base5)
@@ -113,7 +113,7 @@ determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-citylights-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-city-lights-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -158,4 +158,4 @@ determine the exact padding."
   ;; ()
   )
 
-;;; doom-citylights-theme.el ends here
+;;; doom-city-lights-theme.el ends here
