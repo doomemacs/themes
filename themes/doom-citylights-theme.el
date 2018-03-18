@@ -33,19 +33,19 @@ determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#181E24" nil       nil            ))
-   (bg-alt     '("#1D252C" nil       nil            ))
-   (base0      '("#11171D" "black"   "black"        ))
-   (base1      '("#212930" "#1e1e1e" "brightblack"  ))
-   (base2      '("#333F4A" "#2e2e2e" "brightblack"  ))
-   (base3      '("#3A4855" "#262626" "brightblack"  ))
-   (base4      '("#41505E" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5F7487" "#525252" "brightblack"  ))
-   (base6      '("#718CA1" "#6b6b6b" "brightblack"  ))
-   (base7      '("#7997AD" "#979797" "brightblack"  ))
-   (base8      '("#CBD1E1" "#dfdfdf" "white"        ))
-   (fg         '("#B7C5D3" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#CBD1E1" "#2d2d2d" "white"        ))
+  ((bg         '("#1D252C" nil       nil            ))
+   (bg-alt     '("#181E24" nil       nil            ))
+   (base0      '("#10151C" "black"   "black"        ))
+   (base1      '("#171D22" "#1e1e1e" "brightblack"  ))
+   (base2      '("#20282F" "#2e2e2e" "brightblack"  ))
+   (base3      '("#28323B" "#262626" "brightblack"  ))
+   (base4      '("#384551" "#3f3f3f" "brightblack"  ))
+   (base5      '("#56697A" "#525252" "brightblack"  ))
+   (base6      '("#688094" "#6b6b6b" "brightblack"  ))
+   (base7      '("#7FA0B7" "#979797" "brightblack"  ))
+   (base8      '("#9CAABB" "#dfdfdf" "white"        ))
+   (fg-alt     '("#728CA0" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#A0B3C5" "#2d2d2d" "white"        ))
 
    (grey       base4)
    (red        '("#D95468" "#ff6655" "red"          ))
@@ -61,7 +61,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   (doom-darken base1 0.2))
+   (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
    (comments       (if doom-citylights-brighter-comments dark-cyan base5))
@@ -95,14 +95,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+        (doom-darken blue 0.65)
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+        (doom-darken blue 0.65)
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
