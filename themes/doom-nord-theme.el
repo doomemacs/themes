@@ -58,7 +58,7 @@ determine the exact padding."
    (magenta    '("#B58DAE" "#c678dd" "magenta"      ))
    (violet     '("#5D80AE" "#a9a1e1" "brightmagenta"))
    (cyan       '("#86C0D1" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#507681" "#2257A0" "blue"         ))
+   (dark-cyan  '("#507681" "#5699AF" "cyan"         ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
