@@ -178,6 +178,9 @@ determine the exact padding."
    (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
    (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
    (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
+
+   ;; tooltip
+   (tooltip :background base1 :foreground fg)
    )
 
   ;; --- extra variables ---------------------
