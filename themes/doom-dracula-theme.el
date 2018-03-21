@@ -39,8 +39,8 @@ determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#1E2029" nil       nil            ))
-   (bg-alt     '("#282a36" nil       nil            ))
+  ((bg         '("#282a36" nil       nil            ))
+   (bg-alt     '("#1E2029" nil       nil            ))
    (base0      '("#1E2029" "black"   "black"        ))
    (base1      '("#282a36" "#1e1e1e" "brightblack"  ))
    (base2      '("#373844" "#2e2e2e" "brightblack"  ))
@@ -50,8 +50,8 @@ determine the exact padding."
    (base6      '("#b6b6b2" "#6b6b6b" "brightblack"  ))
    (base7      '("#ccccc7" "#979797" "brightblack"  ))
    (base8      '("#f8f8f2" "#dfdfdf" "white"        ))
-   (fg         '("#e2e2dc" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#f8f8f2" "#2d2d2d" "white"        ))
+   (fg         '("#f8f8f2" "#2d2d2d" "white"        ))
+   (fg-alt     '("#e2e2dc" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
    (red        '("#ff5555" "#ff6655" "red"          ))
@@ -111,15 +111,16 @@ determine the exact padding."
    (modeline-fg-alt base5)
 
    (modeline-bg
+
     (if -modeline-bright
-        (doom-darken  0.475)
-      `(,(car bg-alt) ,@(cdr base0))))
+        (doom-darken  magenta 0.675)
+      `(,(car bg) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken magenta 0.45)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.075) ,@(cdr base1))))
+        (doom-darken magenta 0.6)
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l `(,(doom-darken (car bg) 0.075) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------

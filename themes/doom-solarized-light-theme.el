@@ -33,8 +33,8 @@ determine the exact padding."
   "A light theme inspired by Solarized light"
 
   ;; name        default   256       16
-  ((bg         '("#FCF8ED" nil       nil            ))
-   (bg-alt     '("#FDF6E3" nil       nil            ))
+  ((bg         '("#FDF6E3" nil       nil            ))
+   (bg-alt     '("#FFFBEA" nil       nil            ))
    (base0      '("#FFFBF0" "black"   "black"        ))
    (base1      '("#FCF8ED" "#1e1e1e" "brightblack"  ))
    (base2      '("#FCF7E8" "#2e2e2e" "brightblack"  ))
@@ -44,8 +44,8 @@ determine the exact padding."
    (base6      '("#B0AFAF" "#6b6b6b" "brightblack"  ))
    (base7      '("#788484" "#979797" "brightblack"  ))
    (base8      '("#626C6C" "#dfdfdf" "white"        ))
-   (fg         '("#7B8787" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#6B7A7C" "#2d2d2d" "white"        ))
+   (fg         '("#6B7A7C" "#2d2d2d" "white"        ))
+   (fg-alt     '("#7B8787" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))
@@ -96,14 +96,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.02) ,@(cdr base0))))
+        (doom-lighten bg 0.7)
+      `(,(doom-lighten (car bg) 0.25) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.025) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.02))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+        (doom-lighten bg 0.7)
+      `(,(doom-lighten (car bg) 0.25) ,@(cdr base0))))
+   (modeline-bg-inactive   (doom-lighten bg 0.02))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
@@ -158,6 +158,8 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
 
+   ;; posframe
+   (ivy-posframe :background (doom-lighten bg 0.3))
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
