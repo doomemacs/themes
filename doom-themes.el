@@ -23,7 +23,7 @@
 ;;   `doom-one-light'
 ;;
 ;; Additional themes
-;;   [X] `doom-citylights' (added by fuxialexnder)
+;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-darcula' (added by fuxialexnder)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-nord' (added by fuxialexnder)
