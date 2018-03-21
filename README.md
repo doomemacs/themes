@@ -23,6 +23,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - Flagship themes
     - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
+    - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
   - Additional themes
     - [X] `doom-city-lights` (thanks to [fuxialexander])
     - [X] `doom-darcula` (thanks to [fuxialexander])
@@ -33,7 +34,6 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
     - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
-    - [X] `doom-vibrant`: a more vibrant version of `doom-one`
     - [x] `doom-tomorrow-day`: by [Chris Kempson][tomorrow] (thanks to [emacswatcher])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]

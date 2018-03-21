@@ -21,6 +21,7 @@
 ;; Flagship themes
 ;;   `doom-one'
 ;;   `doom-one-light'
+;;   `doom-vibrant'
 ;;
 ;; Additional themes
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
@@ -32,7 +33,6 @@
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
 ;;   [X] `doom-spacegrey' (added by teesloane)
 ;;   [X] `doom-tomorrow-night'
-;;   [X] `doom-vibrant'
 ;;   [X] `doom-tomorrow-day'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
