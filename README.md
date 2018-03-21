@@ -24,7 +24,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
   - Additional themes
-    - [X] `doom-citylights` (thanks to [fuxialexander])
+    - [X] `doom-city-lights` (thanks to [fuxialexander])
     - [X] `doom-darcula` (thanks to [fuxialexander])
     - [X] `doom-molokai`: based on Textmate's monokai
     - [X] `doom-nord` (thanks to [fuxialexander])
