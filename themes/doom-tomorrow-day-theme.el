@@ -72,8 +72,8 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     `(,(doom-lighten (car bg-alt) 0.5) ,@(cdr base3)))
-   (modeline-bg-alt `(,(doom-darken (car bg) 0.1) ,@(cdr base1)))
+   (modeline-bg     `(,(doom-darken (car bg) 0.1) ,@(cdr base3)))
+   (modeline-bg-alt `(,(doom-darken (car bg) 0.14) ,@(cdr base1)))
    (modeline-fg     base8)
    (modeline-fg-alt comments)
    (-modeline-pad
@@ -111,11 +111,6 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background (doom-lighten modeline-bg-alt 0.4) :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
 
   ;; --- variables --------------------------
