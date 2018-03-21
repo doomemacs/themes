@@ -5,6 +5,7 @@
 - [Flagship Themes](#flagship-themes)
     - [doom-one](#doom-one)
     - [doom-one-light (WIP)](#doom-one-light-wip)
+    - [doom-vibrant (WIP)](#doom-vibrant-wip)
 - [Additional Themes](#additional-themes)
     - [doom-citylights](#doom-citylights)
     - [doom-darcula](#doom-darcula)
@@ -15,7 +16,6 @@
     - [doom-solarized-light](#doom-solarized-light)
     - [doom-spacegrey](#doom-spacegrey)
     - [doom-tomorrow-night (WIP)](#doom-tomorrow-night-wip)
-    - [doom-vibrant (WIP)](#doom-vibrant-wip)
 
 ## Flagship Themes
 
@@ -24,10 +24,12 @@
 
 ### doom-one-light (WIP)
 
+### doom-vibrant (WIP)
+
 ## Additional Themes
 
-### doom-citylights
-![doom-citylights screenshot](doom-citylights.png)
+### doom-city-lights
+![doom-city-lights screenshot](doom-citylights.png)
 
 ### doom-darcula
 ![doom-darcula screenshot](doom-darcula.png)
@@ -50,5 +52,3 @@
 ![doom-spacegrey screenshot](doom-spacegrey.png)
 
 ### doom-tomorrow-night (WIP)
-
-### doom-vibrant (WIP)
