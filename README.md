@@ -34,7 +34,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
     - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
     - [X] `doom-vibrant`: a more vibrant version of `doom-one`
-    - [ ] `doom-tomorrow-day`: by [Chris Kempson][tomorrow]
+    - [x] `doom-tomorrow-day`: by [Chris Kempson][tomorrow] (thanks to [emacswatcher])
     - [ ] `doom-x`: reads your colors from ~/.Xresources
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
@@ -133,6 +133,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
 [emacs.d]: https://github.com/hlissner/.emacs.d
+[emacswatcher]: https://github.com/emacswatcher
 [fuxialexander]: https://github.com/fuxialexander
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues

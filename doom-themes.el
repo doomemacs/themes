@@ -33,7 +33,7 @@
 ;;   [X] `doom-spacegrey' (added by teesloane)
 ;;   [X] `doom-tomorrow-night'
 ;;   [X] `doom-vibrant'
-;;   [ ] `doom-tomorrow-day'
+;;   [X] `doom-tomorrow-day'
 ;;   [ ] `doom-x'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
