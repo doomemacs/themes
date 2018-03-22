@@ -11,11 +11,6 @@
   :group 'doom-nord-theme
   :type 'boolean)
 
-(defcustom doom-nord-region-highlight nil
-  "Determines the selection highligh style."
-  :group 'doom-nord-theme
-  :type 'string)
-
 (defcustom doom-nord-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-nord-theme
@@ -186,6 +181,11 @@ determine the exact padding."
 
   ;; --- extra variables ---------------------
   ;; ()
+
+  (defcustom doom-nord-region-highlight nil
+    "Determines the selection highligh style."
+    :group 'doom-nord-theme
+    :type 'string)
   )
 
 ;;; doom-nord-theme.el ends here
