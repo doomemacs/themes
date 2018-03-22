@@ -123,8 +123,11 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground fg)
+   ((line-number &override) :foreground (doom-lighten 'base5 0.2))
+   ((line-number-current-line &override) :foreground base7)
+   ((paren-face-match &override) :background base3)
+   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
+   ((vimish-fold-fringe &override)  :foreground teal)
 
    (font-lock-comment-face
     :foreground comments
@@ -155,10 +158,11 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; Nord highligh
-   (region
+   ((region &override)
     :background nord-region-bg
     :foreground nord-region-fg
     :distant-foreground (doom-darken fg 0.2))
+
    ;; ediff
    (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
    (ediff-current-diff-A :background (doom-darken base0 0.25))
