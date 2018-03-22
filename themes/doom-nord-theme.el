@@ -125,7 +125,8 @@ determine the exact padding."
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :background base3)
+   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
 
