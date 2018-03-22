@@ -28,6 +28,11 @@ determine the exact padding."
   :group 'doom-nord-theme
   :type '(or integer boolean))
 
+(defcustom doom-nord-region-highlight nil
+    "Determines the selection highligh style."
+    :group 'doom-nord-theme
+    :type 'string)
+
 ;;
 (def-doom-theme doom-nord
   "A dark theme inspired by Atom One Dark"
@@ -182,10 +187,7 @@ determine the exact padding."
   ;; --- extra variables ---------------------
   ;; ()
 
-  (defcustom doom-nord-region-highlight nil
-    "Determines the selection highligh style."
-    :group 'doom-nord-theme
-    :type 'string)
+
   )
 
 ;;; doom-nord-theme.el ends here
