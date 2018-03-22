@@ -11,6 +11,11 @@
   :group 'doom-nord-theme
   :type 'boolean)
 
+(defcustom doom-nord-region-highlight nil
+  "Determines the selection highligh style."
+  :group 'doom-nord-theme
+  :type 'string)
+
 (defcustom doom-nord-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-nord-theme
@@ -33,17 +38,17 @@ determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#3B4253" nil       nil            ))
+  ((bg         '("#3B4252" nil       nil            ))
    (bg-alt     '("#2E3440" nil       nil            ))
-   (base0      '("#1A1D25" "black"   "black"        ))
-   (base1      '("#282C39" "#1e1e1e" "brightblack"  ))
-   (base2      '("#383F51" "#2e2e2e" "brightblack"  ))
-   (base3      '("#414A5D" "#262626" "brightblack"  ))
-   (base4      '("#495368" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5C6881" "#525252" "brightblack"  ))
-   (base6      '("#6B7996" "#6b6b6b" "brightblack"  ))
-   (base7      '("#7D8DAE" "#979797" "brightblack"  ))
-   (base8      '("#91A4CB" "#dfdfdf" "white"        ))
+   (base0      '("#191C25" "black"   "black"        ))
+   (base1      '("#242832" "#1e1e1e" "brightblack"  ))
+   (base2      '("#2C333F" "#2e2e2e" "brightblack"  ))
+   (base3      '("#373E4C" "#262626" "brightblack"  ))
+   (base4      '("#434C5E" "#3f3f3f" "brightblack"  ))
+   (base5      '("#4C566A" "#525252" "brightblack"  ))
+   (base6      '("#9099AB" "#6b6b6b" "brightblack"  ))
+   (base7      '("#D8DEE9" "#979797" "brightblack"  ))
+   (base8      '("#F0F4FC" "#dfdfdf" "white"        ))
    (fg         '("#ECEFF4" "#2d2d2d" "white"        ))
    (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
 
@@ -65,7 +70,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.2))
    (selection      dark-blue)
    (builtin        teal)
-   (comments       (if doom-nord-brighter-comments dark-cyan base5))
+   (comments       (if doom-nord-brighter-comments dark-cyan (doom-lighten base5 0.2)))
    (doc-comments   (doom-lighten (if doom-nord-brighter-comments dark-cyan base5) 0.25))
    (constants      magenta)
    (functions      teal)
@@ -76,7 +81,16 @@ determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.5))
    (numbers        magenta)
-   (region         base2)
+   (region         base4)
+   (nord-region-bg
+    (if (string= doom-nord-region-highlight "frost") teal
+      (if (string= doom-nord-region-highlight "snowstorm")
+          base7
+        base4)))
+   (nord-region-fg
+    (if (or
+         (string= doom-nord-region-highlight "frost")
+         (string= doom-nord-region-highlight "snowstorm")) bg-alt nil))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -92,15 +106,15 @@ determine the exact padding."
       (if (integerp doom-nord-padded-modeline) doom-nord-padded-modeline 4)))
 
    (modeline-fg     nil)
-   (modeline-fg-alt base5)
+   (modeline-fg-alt base6)
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.55)
+        (doom-blend bg base5 0.2)
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.55)
+        (doom-blend bg base5 0.2)
       `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
@@ -130,6 +144,7 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
+   (doom-modeline-project-root-dir :foreground base6)
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -139,6 +154,11 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   ;; Nord highligh
+   (region
+    :background nord-region-bg
+    :foreground nord-region-fg
+    :distant-foreground (doom-darken fg 0.2))
    ;; ediff
    (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
    (ediff-current-diff-A :background (doom-darken base0 0.25))
