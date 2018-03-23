@@ -82,15 +82,6 @@ determine the exact padding."
    (variables      (doom-lighten magenta 0.5))
    (numbers        magenta)
    (region         base4)
-   (nord-region-bg
-    (if (string= doom-nord-region-highlight "frost") teal
-      (if (string= doom-nord-region-highlight "snowstorm")
-          base7
-        base4)))
-   (nord-region-fg
-    (if (or
-         (string= doom-nord-region-highlight "frost")
-         (string= doom-nord-region-highlight "snowstorm")) bg-alt nil))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -160,8 +151,15 @@ determine the exact padding."
 
    ;; Nord highligh
    ((region &override)
-    :background nord-region-bg
-    :foreground nord-region-fg
+    :background (if (string= doom-nord-region-highlight "frost") teal
+      (if (string= doom-nord-region-highlight "snowstorm")
+          base7
+        base4))
+    :foreground (if (or
+                     (string= doom-nord-region-highlight "frost")
+                     (string= doom-nord-region-highlight "snowstorm"))
+                    bg-alt
+                  nil)
     :distant-foreground (doom-darken fg 0.2))
 
    ;; ediff
