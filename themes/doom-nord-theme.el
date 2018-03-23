@@ -1,4 +1,4 @@
-;;; doom-nord-theme.el --- inspired by Atom One Dark
+;;; doom-nord-theme.el --- inspired by Nord
 (require 'doom-themes)
 
 ;;
@@ -36,7 +36,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-nord
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by Nord."
 
   ;; name        default   256       16
   ((bg         '("#3B4252" nil       nil            ))
