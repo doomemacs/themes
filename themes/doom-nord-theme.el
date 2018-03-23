@@ -82,7 +82,7 @@ determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.5))
    (numbers        magenta)
-   (region         (pcase doom-nord-region-style
+   (region         (pcase doom-nord-region-highlight
                      (`frost teal)
                      (`snowstorm base7)
                      (_ base4)))
@@ -118,7 +118,7 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   (((region &override)
     :foreground
-    (when (memq doom-nord-region-style '(frost snowstorm))
+    (when (memq doom-nord-region-highlight '(frost snowstorm))
       bg-alt))
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
