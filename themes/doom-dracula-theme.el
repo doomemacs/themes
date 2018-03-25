@@ -180,7 +180,7 @@ determine the exact padding."
    (org-todo :foreground orange :bold 'inherit :background (doom-darken base1 0.02))
    (org-done :foreground green :strike-through nil :background base2 :bold t)
    (org-headline-done :foreground base4 :strike-through nil)
-   ((org-tag &override) :foreground blue)
+   ((org-tag &override) :foreground (doom-lighten orange 0.3))
    (org-agenda-date :foreground cyan)
    (org-agenda-dimmed-todo-face :foreground comments)
    (org-agenda-done :foreground base4)
