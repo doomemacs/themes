@@ -28,10 +28,11 @@ be displayed in slightly darker colors."
   :group 'doom-solarized-light-theme
   :type 'boolean)
 
-(defcustom doom-solarized-light-darker-doc-comments nil
-  "If non-nil, doc-comments will be displayed in slightly darker colors."
+(defcustom doom-solarized-light-padded-modeline nil
+  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
+determine the exact padding."
   :group 'doom-solarized-light-theme
-  :type 'boolean)
+  :type '(or integer boolean))
 
 ;;
 (def-doom-theme doom-solarized-light
