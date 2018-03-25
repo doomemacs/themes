@@ -22,6 +22,12 @@ legibility."
   :group 'doom-solarized-light-theme
   :type 'boolean)
 
+(defcustom doom-solarized-light-darker-comments nil
+  "If non-nil, and doom-solarized-light-brighter-comments is nil, comments will
+be displayed in slightly darker colors."
+  :group 'doom-solarized-light-theme
+  :type 'boolean)
+
 (defcustom doom-solarized-light-padded-modeline nil
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -65,7 +71,10 @@ determine the exact padding."
    (vertical-bar   base3)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-solarized-light-brighter-comments dark-cyan base5))
+   (comments       (cond
+                    (doom-solarized-light-brighter-comments dark-cyan)
+                    (doom-solarized-light-darker-comments base6)
+                    (t base5)))
    (doc-comments   (doom-blend dark-cyan fg 0.8))
    (constants      violet)
    (functions      magenta)
