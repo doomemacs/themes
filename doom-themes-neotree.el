@@ -231,14 +231,14 @@ pane and are highlighted incorrectly."
         (faces '(neo-root-dir-face)))
     (when doom-neotree-enable-variable-pitch
       (push 'variable-pitch faces))
-    (if (display-graphic-p)
-        (insert
-         (concat (propertize " " 'face `(:inherit (,@faces)))
-                 (all-the-icons-octicon "repo"
-                                        :height doom-neotree-project-size
-                                        :face 'neo-root-dir-face
-                                        :v-adjust -0.1)
-                 (propertize " " 'face 'neo-root-dir-face))))
+    (when (display-graphic-p)
+      (insert
+       (concat (propertize " " 'face `(:inherit (,@faces)))
+               (all-the-icons-octicon "repo"
+                                      :height doom-neotree-project-size
+                                      :face 'neo-root-dir-face
+                                      :v-adjust -0.1)
+               (propertize " " 'face 'neo-root-dir-face))))
     (insert (propertize (concat project-name "\n") 'face `(:inherit (,@faces))))))
 
 (defun doom--neo-buffer--insert-dir-entry (node depth expanded)
