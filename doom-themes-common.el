@@ -513,6 +513,15 @@
     (iedit-occurrence :foreground magenta :weight 'bold :inverse-video t)
     (iedit-read-only-occurrence :inherit 'region)
 
+    ;; imenu-list
+    ;; (imenu-list-entry-face)
+    (imenu-list-entry-face-0 :foreground highlight)
+    (imenu-list-entry-subalist-face-0 :inherit 'imenu-list-entry-face-0 :weight 'bold)
+    (imenu-list-entry-face-1 :foreground green)
+    (imenu-list-entry-subalist-face-1 :inherit 'imenu-list-entry-face-1 :weight 'bold)
+    (imenu-list-entry-face-2 :foreground yellow)
+    (imenu-list-entry-subalist-face-2 :inherit 'imenu-list-entry-face-2 :weight 'bold)
+
     ;; indent-guide
     ((indent-guide-face &inherit highlight-indentation-face))
 
