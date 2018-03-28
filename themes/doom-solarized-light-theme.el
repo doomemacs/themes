@@ -161,6 +161,8 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
 
+   ;; ivy-mode
+   (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
    (ivy-minibuffer-match-face-1
     :foreground comments
     :weight 'light)
