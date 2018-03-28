@@ -161,8 +161,16 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base3 0.05))
 
+   (ivy-minibuffer-match-face-1
+    :foreground comments
+    :weight 'light)
+   (ivy-minibuffer-match-face-2 :foreground magenta :background base3 :weight 'bold)
+   (ivy-minibuffer-match-face-3 :foreground green   :background base3 :weight 'bold)
+   (ivy-minibuffer-match-face-4 :foreground yellow  :background base3 :weight 'bold)
+   (ivy-minibuffer-match-highlight :foreground violet :weight 'bold)
+
    ;; posframe
-   (ivy-posframe :background (doom-lighten bg 0.3))
+   (ivy-posframe :background modeline-bg-l)
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
