@@ -19,8 +19,8 @@
   "Correct (and improve) org-mode's font-lock keywords.
 
   1. Re-set `org-todo' & `org-headline-done' faces, to make them respect
-     underlying faces.
-  2. Make statistic cookies respect underlying faces.
+     (inherit) underlying faces.
+  2. Make statistic cookies respect (inherit) underlying faces.
   3. Fontify item bullets (make them stand out)
   4. Fontify item checkboxes (and when they're marked done), like TODOs that are
      marked done.
