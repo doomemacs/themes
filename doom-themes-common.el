@@ -517,14 +517,20 @@
     ((indent-guide-face &inherit highlight-indentation-face))
 
     ;; ivy
-    (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'bold)
+    (ivy-current-match :background region :distant-foreground nil)
     (ivy-minibuffer-match-face-1
-     :background base0
-     :foreground (doom-lighten grey 0.1)
-     :weight 'bold)
-    (ivy-minibuffer-match-face-2 :inherit 'ivy-minibuffer-match-face-1 :foreground magenta)
-    (ivy-minibuffer-match-face-3 :inherit 'ivy-minibuffer-match-face-1 :foreground green)
-    (ivy-minibuffer-match-face-4 :inherit 'ivy-minibuffer-match-face-1 :foreground yellow)
+     :background nil
+     :foreground (doom-lighten grey 0.14)
+     :weight 'light)
+    (ivy-minibuffer-match-face-2
+     :inherit 'ivy-minibuffer-match-face-1
+     :foreground magenta :background base1 :weight 'semi-bold)
+    (ivy-minibuffer-match-face-3
+     :inherit 'ivy-minibuffer-match-face-2
+     :foreground green :weight 'semi-bold)
+    (ivy-minibuffer-match-face-4
+     :inherit 'ivy-minibuffer-match-face-2
+     :foreground yellow :weight 'semi-bold)
     (ivy-minibuffer-match-highlight :foreground violet)
     (ivy-highlight-face :foreground violet)
     (ivy-confirm-face :foreground success)
@@ -533,7 +539,7 @@
     (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
 
     ;; ivy-posframe
-    (ivy-posframe :background (doom-darken bg-alt 0.1))
+    (ivy-posframe :background (doom-darken bg-alt 0.2))
 
     ;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
