@@ -141,6 +141,9 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   ;; ivy-mode
+   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
