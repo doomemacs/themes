@@ -90,7 +90,8 @@ determine the exact padding."
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
    (doom-modeline-bar :inherit 'mode-line-highlight)
 
-   (region :background base3 :foreground nil :distant-foreground nil :weight 'bold)
+   (fringe :inherit 'default :foreground "#6c808d")
+   (region :background (doom-lighten current-line 0.1) :foreground nil :distant-foreground nil :weight 'bold)
 
    ((line-number &override) :foreground "#6c808d")
    ((line-number-current-line &override) :foreground highlight :weight 'bold)
@@ -126,6 +127,9 @@ determine the exact padding."
    (helm-match     :foreground highlight)
    (helm-source-header :foreground base0 :background base6)
 
+   ;; ivy
+   (ivy-current-match :background current-line :distant-foreground base0)
+
    ;; company
    (company-tooltip            :inherit 'tooltip :background (doom-lighten bg 0.075))
    (company-tooltip-selection  :background base5 :foreground base8 :weight 'bold)
@@ -138,6 +142,10 @@ determine the exact padding."
    (ediff-fine-diff-A    :background base3 :weight 'bold)
    (ediff-current-diff-A :inherit 'hl-line)
    (ediff-even-diff-A    :background base3)
+
+   ;; show-paren
+   ((paren-face-match &override)    :foreground red :background (doom-darken violet 0.4))
+   ((paren-face-mismatch &override) :foreground (doom-darken red 0.4) :background cyan)
 
    ;; org-mode
    (org-level-1
