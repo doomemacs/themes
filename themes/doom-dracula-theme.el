@@ -167,9 +167,6 @@ determine the exact padding."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; org-mode
-   (org-hide :foreground bg)
-   (solaire-org-hide-face :foreground bg-alt)
-
    (org-level-1 :background base1 :foreground level1 :height 1.2 :weight 'bold)
    (org-level-2 :foreground level2 :weight 'bold)
    (org-level-3 :inherit 'org-level-2 :foreground level3)
