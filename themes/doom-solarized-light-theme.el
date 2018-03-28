@@ -71,14 +71,14 @@ determine the exact padding."
    (doc-comments   teal)
    (constants      violet)
    (functions      magenta)
-   (keywords       blue)
+   (keywords       green)
    (methods        cyan)
    (operators      blue)
    (type           yellow)
-   (strings        green)
-   (variables      (doom-lighten magenta 0.4))
-   (numbers        orange)
-   (region         `(,(doom-darken (car bg-alt) 0.05) ,@(doom-darken (cdr base0) 0.05)))
+   (strings        cyan)
+   (variables      blue)
+   (numbers        violet)
+   (region         `(,(doom-darken (car bg-alt) 0.1) ,@(doom-darken (cdr base0) 0.1)))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -94,25 +94,27 @@ determine the exact padding."
       (if (integerp doom-solarized-light-padded-modeline) doom-solarized-light-padded-modeline 4)))
 
    (modeline-fg     nil)
-   (modeline-fg-alt base5)
+   (modeline-fg-alt base6)
 
    (modeline-bg
     (if -modeline-bright
         (doom-lighten bg 0.7)
-      `(,(doom-lighten (car bg) 0.25) ,@(cdr base0))))
+      (doom-lighten base3 0.2)))
    (modeline-bg-l
     (if -modeline-bright
         (doom-lighten bg 0.7)
-      `(,(doom-lighten (car bg) 0.25) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-lighten bg 0.02))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+      (doom-darken bg 0.05)))
+   (modeline-bg-inactive   (doom-darken bg 0.02))
+   (modeline-bg-inactive-l (doom-darken bg 0.025)))
 
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground fg)
+   (hl-line :background nil)
+
+   ((line-number &override) :foreground base6)
+   ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
 
    (org-block :background (doom-blend yellow bg 0.04))
    (org-block-background :background (doom-blend yellow bg 0.04))
@@ -125,8 +127,8 @@ determine the exact padding."
    ((font-lock-doc-face &override) :foreground doc-comments)
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
-   ((font-lock-function-name-face &override) :weight 'semi-bold)
-   ((font-lock-keyword-face &override) :weight 'semi-bold )
+   ((font-lock-function-name-face &override) :foreground type)
+
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
