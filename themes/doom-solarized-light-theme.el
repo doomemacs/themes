@@ -41,17 +41,17 @@ determine the exact padding."
    (base3      '("#F2E6CE" "#262626" "brightblack"  ))
    (base4      '("#E1DBCD" "#3f3f3f" "brightblack"  ))
    (base5      '("#D6D6D6" "#525252" "brightblack"  ))
-   (base6      '("#B0AFAF" "#6b6b6b" "brightblack"  ))
+   (base6      '("#96A7A9" "#6b6b6b" "brightblack"  ))
    (base7      '("#788484" "#979797" "brightblack"  ))
    (base8      '("#626C6C" "#dfdfdf" "white"        ))
-   (fg         '("#6B7A7C" "#2d2d2d" "white"        ))
+   (fg         '("#556b72" "#2d2d2d" "white"        ))
    (fg-alt     '("#7B8787" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))
    (orange     '("#cb4b16" "#dd8844" "brightred"    ))
    (green      '("#859900" "#99bb66" "green"        ))
-   (teal       '("#B4C342" "#44b9b1" "brightgreen"  ))
+   (teal       '("#35a69c" "#33aa99" "brightgreen"  ))
    (yellow     '("#b58900" "#ECBE7B" "yellow"       ))
    (blue       '("#268bd2" "#51afef" "brightblue"   ))
    (dark-blue  '("#E1E3E5" "#2257A0" "blue"         ))
@@ -65,8 +65,10 @@ determine the exact padding."
    (vertical-bar   base3)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-solarized-light-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-blend dark-cyan fg 0.8))
+   (comments       (if doom-solarized-light-brighter-comments
+                       (doom-lighten teal 0.25)
+                     base6))
+   (doc-comments   teal)
    (constants      violet)
    (functions      magenta)
    (keywords       blue)
@@ -117,11 +119,10 @@ determine the exact padding."
    (org-block-begin-line :background (doom-blend yellow bg 0.08))
    (org-block-end-line :background (doom-blend yellow bg 0.08))
    (font-lock-comment-face
+    :slant 'italic
     :foreground comments
-    :background (if doom-solarized-light-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
+    :background (if doom-solarized-light-comment-bg (doom-blend teal base0 0.07)))
+   ((font-lock-doc-face &override) :foreground doc-comments)
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :weight 'semi-bold)
