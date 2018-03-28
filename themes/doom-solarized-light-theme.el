@@ -62,7 +62,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   base3)
+   (vertical-bar   base4)
    (selection      dark-blue)
    (builtin        magenta)
    (comments       (if doom-solarized-light-brighter-comments
