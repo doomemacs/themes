@@ -173,7 +173,7 @@
     (message-header-other :foreground comments)
 
     ;; term
-    (term               :inherit 'default)
+    (term               :foreground fg)
     (term-bold          :weight 'bold)
     (term-color-black   :background base0   :foreground base0)
     (term-color-red     :background red     :foreground red)
