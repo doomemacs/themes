@@ -100,6 +100,10 @@ determine the exact padding."
     (when doom-nord-padded-modeline
       (if (integerp doom-nord-padded-modeline) doom-nord-padded-modeline 4)))
 
+   (region-fg
+    (when (memq doom-nord-region-highlight '(frost snowstorm))
+      bg-alt))
+
    (modeline-fg     nil)
    (modeline-fg-alt base6)
 
@@ -116,10 +120,7 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  (((region &override)
-    :foreground
-    (when (memq doom-nord-region-highlight '(frost snowstorm))
-      bg-alt))
+  (((region &override) :foreground region-fg)
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
