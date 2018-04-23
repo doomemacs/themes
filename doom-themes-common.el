@@ -71,6 +71,11 @@
 
 
     ;; --- built-in plugin faces --------------
+    ;; cperl
+    (cperl-array-face          :weight 'bold :inherit 'font-lock-variable-name-face)
+    (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
+    (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
+
     ;; custom
     (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
     (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
