@@ -191,6 +191,37 @@
 
 
     ;; --- plugin faces -----------------------
+    ;; all-the-icons
+    (all-the-icons-red      :foreground red)
+    (all-the-icons-lred     :foreground (doom-lighten red 0.3))
+    (all-the-icons-dred     :foreground (doom-darken red 0.3))
+    (all-the-icons-green    :foreground green)
+    (all-the-icons-lgreen   :foreground (doom-lighten green 0.3))
+    (all-the-icons-dgreen   :foreground (doom-darken green 0.3))
+    (all-the-icons-yellow   :foreground yellow)
+    (all-the-icons-lyellow  :foreground (doom-lighten yellow 0.3))
+    (all-the-icons-dyellow  :foreground (doom-darken yellow 0.3))
+    (all-the-icons-blue     :foreground blue)
+    (all-the-icons-blue-alt :foreground teal)
+    (all-the-icons-lblue    :foreground (doom-lighten blue 0.3))
+    (all-the-icons-dblue    :foreground dark-blue)
+    (all-the-icons-maroon   :foreground magenta)
+    (all-the-icons-lmaroon  :foreground (doom-lighten magenta 0.3))
+    (all-the-icons-dmaroon  :foreground (doom-darken magenta 0.3))
+    (all-the-icons-purple   :foreground violet)
+    (all-the-icons-lpurple  :foreground (doom-lighten violet 0.3))
+    (all-the-icons-dpurple  :foreground (doom-darken violet 0.3))
+    (all-the-icons-cyan     :foreground cyan)
+    (all-the-icons-cyan-alt :foreground cyan)
+    (all-the-icons-lcyan    :foreground (doom-lighten cyan 0.3))
+    (all-the-icons-dcyan    :foreground dark-cyan)
+    (all-the-icons-pink     :foreground (doom-lighten red 0.35))
+    (all-the-icons-lpink    :foreground (doom-lighten red 0.55))
+    (all-the-icons-dpink    :foreground red)
+    (all-the-icons-silver   :foreground grey)
+    (all-the-icons-lsilver  :foreground (doom-lighten grey 0.3))
+    (all-the-icons-dsilver  :foreground (doom-darken grey 0.3))
+
     ;; avy
     (avy-lead-face :background highlight :foreground base0 :distant-foreground base8)
     (avy-lead-face-0 :inherit 'avy-lead-face)
