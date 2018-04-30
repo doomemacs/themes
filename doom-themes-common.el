@@ -65,7 +65,7 @@
      :foreground base5 :distant-foreground nil
      :weight 'normal :italic nil :underline nil :strike-through nil)
     (line-number-current-line
-     :inherit 'hl-line
+     :inherit '(hl-line default)
      :foreground fg :distant-foreground nil
      :weight 'normal :italic nil :underline nil :strike-through nil)
 
