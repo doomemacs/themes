@@ -181,6 +181,10 @@ determine the exact padding."
 
    ;; tooltip
    (tooltip :background base1 :foreground fg)
+
+   ;; posframe
+   (ivy-posframe          :background base0)
+   (lsp-ui-doc-background :background base0)
    )
 
   ;; --- extra variables ---------------------
