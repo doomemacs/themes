@@ -29,6 +29,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-dracula` (thanks to [fuxialexander])
     - [X] `doom-molokai`: based on Textmate's monokai
     - [X] `doom-nord` (thanks to [fuxialexander])
+    - [X] `doom-nord-light` (thanks to [fuxialexander])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
