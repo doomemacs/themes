@@ -5,7 +5,7 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-tomorrow-night-padded-modeline nil
+(defcustom doom-tomorrow-night-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-tomorrow-night-theme

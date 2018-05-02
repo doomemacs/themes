@@ -22,7 +22,7 @@ legibility."
   :group 'doom-vibrant-theme
   :type 'boolean)
 
-(defcustom doom-vibrant-padded-modeline nil
+(defcustom doom-vibrant-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-vibrant-theme
