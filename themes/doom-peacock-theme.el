@@ -21,7 +21,7 @@ legibility."
   :group 'doom-peacock-theme
   :type 'boolean)
 
-(defcustom doom-peacock-padded-modeline nil
+(defcustom doom-peacock-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-peacock-theme

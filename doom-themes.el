@@ -83,6 +83,11 @@
   :group 'doom-themes
   :type 'boolean)
 
+(defcustom doom-themes-padded-modeline nil
+  "Default value for padded-modeline setting for themes that support it."
+  :group 'doom-themes
+  :type '(or integer boolean))
+
 (define-obsolete-variable-alias 'doom-enable-italic 'doom-themes-enable-italic "1.2.9")
 (define-obsolete-variable-alias 'doom-enable-bold   'doom-themes-enable-bold "1.2.9")
 
