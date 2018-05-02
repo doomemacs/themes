@@ -11,6 +11,7 @@
     - [doom-darcula](#doom-darcula)
     - [doom-molokai](#doom-molokai)
     - [doom-nord](#doom-nord)
+    - [doom-nord-light](#doom-nord-light)
     - [doom-nova (WIP)](#doom-nova-wip)
     - [doom-peacock](#doom-peacock)
     - [doom-solarized-light](#doom-solarized-light)
