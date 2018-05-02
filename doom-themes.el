@@ -199,8 +199,8 @@ between 0 and 1)."
             (italic doom-themes-enable-italic)
             ,@defs)
        (setq doom-themes--colors
-             (cl-loop for (var val) in ',defs
-                      collect (cons var (eval val))))
+             (list ,@(cl-loop for (var val) in defs
+                              collect `(cons ',var ,val))))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces ',name ,@(doom-themes-common-faces extra-faces))
        (custom-theme-set-variables ',name ,@(doom-themes-common-variables extra-vars))
