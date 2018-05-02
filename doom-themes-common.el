@@ -320,6 +320,9 @@
     ;; diff-mode
     (diff-added   :inherit 'hl-line :foreground green)
     (diff-changed :foreground violet)
+    (diff-context
+     (&dark  :foreground (doom-darken fg 0.12))
+     (&light :foreground (doom-lighten fg 0.12)))
     (diff-removed :foreground red :background base3)
     (diff-header  :foreground cyan :background nil)
     (diff-file-header :foreground blue :background nil)
