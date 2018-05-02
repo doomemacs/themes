@@ -40,6 +40,9 @@
 ### doom-nord
 ![doom-nord screenshot](doom-nord.png)
 
+### doom-nord-light
+![doom-nord-light screenshot](doom-nord-light.png)
+
 ### doom-nova (WIP)
 
 ### doom-peacock
