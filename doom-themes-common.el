@@ -871,6 +871,15 @@
                       (&dark  :foreground cyan))
     (elixir-attribute-face :foreground violet)
 
+    ;; enh-ruby-mode
+    (enh-ruby-op-face :foreground operators)
+    (enh-ruby-string-delimiter-face  :inherit 'font-lock-string-face)
+    (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
+    (enh-ruby-regexp-face :foreground constants)
+    (enh-ruby-regexp-delimiter-face  :inherit 'enh-ruby-regexp-face)
+    (erm-syn-errline  :underline `(:style wave :color ,error))
+    (erm-syn-warnline :underline `(:style wave :color ,warning))
+
     ;; jdee-mode
     (jdee-font-lock-number-face :foreground numbers)
     (jdee-font-lock-operator-face :foreground operators)
