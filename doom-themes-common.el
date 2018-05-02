@@ -292,9 +292,10 @@
 
     ;; company
     (company-tooltip            :inherit 'tooltip)
-    (company-tooltip-common                           :foreground highlight)
-    (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
-    (company-tooltip-selection  :background selection)
+    (company-tooltip-common                           :foreground highlight :distant-foreground base0 :weight 'bold)
+    (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg :weight 'bold)
+    (company-tooltip-search-selection :background (doom-darken selection 0.25))
+    (company-tooltip-selection  :background selection :weight 'bold)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
     (company-tooltip-annotation                       :foreground violet)
     (company-scrollbar-bg       :inherit 'tooltip)
