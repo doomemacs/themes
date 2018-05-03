@@ -767,6 +767,15 @@
     ((sp-show-pair-match-face    &inherit show-paren-match))
     ((sp-show-pair-mismatch-face &inherit show-paren-mismatch))
 
+    ;; smerge-tool
+    (smerge-lower :background (doom-blend green bg 0.2))
+    (smerge-upper :background (doom-blend red base3 0.2))
+    (smerge-base  :background (doom-blend blue bg 0.2))
+    (smerge-markers :background comments :foreground bg :distant-foreground fg :weight 'bold)
+    ;; Emacs <25 compatibility
+    ((smerge-mine  &inherit smerge-upper))
+    ((smerge-other &inherit smerge-lower))
+
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg)
