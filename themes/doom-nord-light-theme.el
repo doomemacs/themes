@@ -40,7 +40,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg '("#E5E9F0" nil nil))
-   (bg-alt '("#ECEFF4" nil nil))
+   (bg-alt '("#D8DEE9" nil nil))
    (base0 '("#F0F4FC" "black" "black"))
    (base1 '("#E3EAF5" "#1e1e1e" "brightblack"))
    (base2 '("#D8DEE9" "#2e2e2e" "brightblack"))
@@ -68,7 +68,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight (doom-blend blue bg 0.8))
-   (vertical-bar (doom-darken base2 0.1))
+   (vertical-bar (doom-darken bg 0.15))
    (selection (doom-blend blue bg 0.5))
    (builtin teal)
    (comments (if doom-nord-light-brighter-comments dark-cyan (doom-darken base5 0.2)))
