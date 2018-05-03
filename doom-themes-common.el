@@ -1022,7 +1022,7 @@
     (org-ref-cite-face   :foreground yellow :weight 'light :underline t)
     (org-todo            :foreground highlight :bold 'inherit)
     (org-verbatim        :foreground green)
-    (org-warning         :foreground warning :slant 'italic)
+    (org-warning         :foreground warning)
 
     ;; org-agenda
     (org-agenda-done :inherit 'org-done)

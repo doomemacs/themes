@@ -9,6 +9,12 @@
   :type 'boolean
   :group 'doom-org)
 
+;; TODO Remove this once released with org-mode
+(defface org-upcoming-distant-deadline '((t :inherit font-lock-comment-face))
+  "Face for items scheduled previously, not done, and have a distant deadline.
+See also `org-agenda-deadline-faces'."
+  :group 'doom-org)
+
 ;;
 (defsubst doom-org--tag-face (n)
   (let ((kwd (match-string n)))
@@ -67,7 +73,12 @@
       org-hide-leading-stars-before-indent-mode t
       org-fontify-done-headline t
       org-fontify-quote-and-verse-blocks t
-      org-fontify-whole-heading-line t)
+      org-fontify-whole-heading-line t
+      org-agenda-deadline-faces
+      '((1.001 . error)
+        (1.0 . org-warning)
+        (0.5 . org-upcoming-deadline)
+        (0.0 . org-upcoming-distant-deadline)))
 
 (add-hook 'org-font-lock-set-keywords-hook #'doom-org-custom-fontification)
 
