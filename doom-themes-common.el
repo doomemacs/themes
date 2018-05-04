@@ -229,10 +229,20 @@
     (all-the-icons-dsilver  :foreground (doom-darken grey 0.3))
 
     ;; avy
-    (avy-lead-face :background highlight :foreground base0 :distant-foreground base8)
-    (avy-lead-face-0 :inherit 'avy-lead-face)
-    (avy-lead-face-1 :inherit 'avy-lead-face)
-    (avy-lead-face-2 :inherit 'avy-lead-face)
+    (avy-background-face :foreground comments)
+    (avy-lead-face :background highlight :foreground bg :distant-foreground fg :weight 'bold)
+    (avy-lead-face-0
+     (&all   :inherit 'avy-lead-face)
+     (&dark  :background (doom-lighten highlight 0.3))
+     (&light :background (doom-darken highlight 0.3)))
+    (avy-lead-face-1
+     (&all   :inherit 'avy-lead-face)
+     (&dark  :background (doom-lighten highlight 0.6))
+     (&light :background (doom-darken highlight 0.6)))
+    (avy-lead-face-2
+     (&all   :inherit 'avy-lead-face)
+     (&dark  :background (doom-lighten highlight 0.9))
+     (&light :background (doom-darken highlight 0.9)))
 
     ;; bookmark+
     (bmkp-*-mark :foreground bg :background yellow)
