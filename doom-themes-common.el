@@ -1,6 +1,6 @@
 ;;; doom-themes-common.el -*- lexical-binding: t; -*-
 
-(defun doom-themes--common-faces ()
+(defun doom-themes-common-faces ()
   "TODO"
   '(;; --- custom faces -----------------------
     (doom-modeline-error
@@ -1097,7 +1097,7 @@
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)))
 
-(defun doom-themes--common-vars ()
+(defun doom-themes-common-vars ()
   "TODO"
   '((ansi-color-names-vector
      (vconcat (mapcar #'doom-color '(base0 red green yellow blue magenta cyan base8))))
@@ -1272,20 +1272,20 @@
                                         defs)))))))))))))
 
 ;;
-(defun doom-themes-common-faces (&optional extra-faces)
+(defun doom-themes-prepare-facelist (faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
 
 Faces in EXTRA-FACES override the default faces."
   (let (doom-themes--faces)
-    (mapc #'doom-themes--add-face (append (doom-themes--common-faces) extra-faces))
+    (mapc #'doom-themes--add-face faces)
     (reverse (mapcar #'doom-themes--build-face doom-themes--faces))))
 
-(defun doom-themes-common-variables (&optional extra-vars)
+(defun doom-themes-prepare-varlist (vars)
   "Return an alist of variable definitions for `custom-theme-set-variables'.
 
 Variables in EXTRA-VARS override the default ones."
   (let (doom-themes--vars)
-    (cl-loop for (var val) in (append (doom-themes--common-vars) extra-vars)
+    (cl-loop for (var val) in vars
              collect `(list ',var ,val))))
 
 (provide 'doom-themes-common)
