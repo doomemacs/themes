@@ -311,8 +311,8 @@
     (company-tooltip-annotation                       :foreground violet)
     (company-scrollbar-bg       :inherit 'tooltip)
     (company-scrollbar-fg       :background highlight)
-    (company-preview                                  :foreground highlight)
-    (company-preview-common     :background base3 :foreground magenta)
+    (company-preview                              :foreground comments)
+    (company-preview-common     :background base3 :foreground highlight)
     (company-preview-search     :inherit 'company-tooltip-search)
     (company-template-field     :inherit 'match)
 
