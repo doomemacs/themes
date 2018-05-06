@@ -41,9 +41,9 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 - **Included features:**
   - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
     rings (i.e. an error occurs).
-  - `(doom-themes-neotree-config)`: a customizable [neotree] theme that takes
-    after [Atom]'s file drawer, and is simpler than the built in icon theme in
-    neotree ([screenshot](/../screenshots/doom-one.png), [more details][wiki]).
+  - `(doom-themes-neotree-config)`: a [neotree] theme that takes after [Atom]'s
+    file drawer, and is simpler than the built in icon theme in neotree
+    ([screenshot](/../screenshots/doom-one.png), [more details][wiki]).
 
     This requires `all-the-icons`' fonts to be installed: `M-x
     all-the-icons-install-fonts`

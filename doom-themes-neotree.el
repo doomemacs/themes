@@ -1,7 +1,7 @@
 ;;; doom-themes-neotree.el -*- lexical-binding: t; -*-
 
 (unless doom-themes--inhibit-warning
-  (message "doom-themes: loading `doom-neotree' directly is obsolete, call `doom-themes-nlinum-config' instead"))
+  (message "doom-themes: loading `doom-themes-neotree' directly is obsolete, call `doom-themes-neotree-config' instead"))
 
 (defgroup doom-neotree nil
   "Options for doom's neotree theme"
@@ -58,13 +58,12 @@
   :group 'doom-neotree)
 
 (define-obsolete-variable-alias 'doom-neotree-enable-file-icons 'doom-neotree-file-icons)
-(defcustom doom-neotree-file-icons 'simple
-  "The style to use for the file icons. Can be nil (disabled), non-nil (for a
-diverse iconset), or 'simple, which is closest's to Atom's style as it only
-distinguishes text, source, pdfs, images and binary files."
+(defcustom doom-neotree-file-icons t
+  "If non-nil, a minimalistic neotree icon theme that takes after Atom will be
+used. It only distinguishes text, source, pdfs, images and binary files, rather
+than file type."
   :type '(choice
-          (const :tag "A diverse array of file icons based on file type" t)
-          (const :tag "Minimalistic file icons (like Atom's)" 'simple)
+          (const :tag "Minimalistic file icons (like Atom's)" t)
           (const :tag "Disable file icons" nil))
   :group 'doom-neotree)
 
@@ -162,29 +161,27 @@ pane and are highlighted incorrectly."
     (concat chevron "\t" icon)))
 
 (defun doom--neotree-file-icon-for (file-name &optional faces)
-  (cond ((eq doom-neotree-file-icons 'simple)
-         (if file-name
-             (propertize
-               (cond ((string-match-p (cdr (assq 'code doom--neotree-file-re)) file-name)
-                      (all-the-icons-octicon "file-code"))
-                     ((string-match-p (cdr (assq 'media doom--neotree-file-re)) file-name)
-                      (all-the-icons-octicon "file-media"))
-                     ((string-match-p (cdr (assq 'archive doom--neotree-file-re)) file-name)
-                      (all-the-icons-octicon "file-zip"))
-                     ((string= (or (file-name-extension file-name) "") "pdf")
-                      (all-the-icons-octicon "file-pdf"))
-                     ((file-symlink-p file-name)
-                      (all-the-icons-octicon "file-symlink-file"))
-                     ((file-executable-p file-name)
-                      (all-the-icons-octicon "file-binary"))
-                     (t
-                      (all-the-icons-octicon "file-text")))
-               'face `(:inherit (,@faces)
-                       :family ,(all-the-icons-octicon-family)
-                       :height 1.3)
-               'display '(raise 0))
-           (all-the-icons-fileicon "default")))
-        (t (all-the-icons-icon-for-file file-name))))
+  (if file-name
+      (propertize
+       (cond ((string-match-p (cdr (assq 'code doom--neotree-file-re)) file-name)
+              (all-the-icons-octicon "file-code"))
+             ((string-match-p (cdr (assq 'media doom--neotree-file-re)) file-name)
+              (all-the-icons-octicon "file-media"))
+             ((string-match-p (cdr (assq 'archive doom--neotree-file-re)) file-name)
+              (all-the-icons-octicon "file-zip"))
+             ((string= (or (file-name-extension file-name) "") "pdf")
+              (all-the-icons-octicon "file-pdf"))
+             ((file-symlink-p file-name)
+              (all-the-icons-octicon "file-symlink-file"))
+             ((file-executable-p file-name)
+              (all-the-icons-octicon "file-binary"))
+             (t
+              (all-the-icons-octicon "file-text")))
+       'face `(:inherit (,@faces)
+                        :family ,(all-the-icons-octicon-family)
+                        :height 1.3)
+       'display '(raise 0))
+    (all-the-icons-fileicon "default")))
 
 (defun doom--neo-insert-fold-symbol (type file-name &optional faces)
   "Custom hybrid unicode theme with leading whitespace."
