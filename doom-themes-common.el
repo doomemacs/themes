@@ -888,6 +888,7 @@
     (font-latex-script-char-face  :foreground dark-blue)
     (font-latex-string-face       :inherit 'font-lock-string-face)
     (font-latex-warning-face      :inherit 'font-lock-warning-face)
+    (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground base0 :slant 'italic)
 
     ;; elixir-mode
     (elixir-atom-face (&light :foreground dark-blue)
