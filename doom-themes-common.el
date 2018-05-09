@@ -428,7 +428,11 @@
     (flycheck-info      :underline `(:style wave :color ,green))
 
     ;; flycheck-posframe
-    (flycheck-posframe-face :inherit nil :fg red :bg bg-alt)
+    (flycheck-posframe-face :inherit 'default)
+    (flycheck-posframe-background-face :background bg-alt)
+    (flycheck-posframe-error-face   :inherit 'flycheck-posframe-face :foreground error)
+    (flycheck-posframe-info-face    :inherit 'flycheck-posframe-face :foreground fg)
+    (flycheck-posframe-warning-face :inherit 'flycheck-posframe-face :foreground warning)
 
     ;; flymake
     (flymake-warnline :background bg :underline `(:style wave :color ,orange))
