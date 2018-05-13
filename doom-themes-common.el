@@ -538,6 +538,11 @@
     ;; helpful
     (helpful-heading :weight 'bold :height 1.2)
 
+    ;; hideshow
+    (+doom-folded-face :inherit 'font-lock-comment-face
+                       :weight 'light
+                       :background (doom-darken bg 0.125))
+
     ;; highlight-indentation-mode
     (highlight-indentation-face                :inherit 'hl-line)
     (highlight-indentation-current-column-face :background base1)
