@@ -834,6 +834,11 @@
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
     (tldr-command-argument :foreground fg :background region )
 
+    ;; twittering-mode
+    (twitter-divider  ; custom face in Doom Emacs
+     (&light :underline '(:color (doom-lighten vertical-bar 0.2)))
+     (&dark  :underline '(:color (doom-darken vertical-bar 0.2))))
+
     ;; undo-tree
     (undo-tree-visualizer-default-face :foreground base5)
     (undo-tree-visualizer-current-face :foreground green :weight 'bold)
