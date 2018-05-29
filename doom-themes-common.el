@@ -316,6 +316,9 @@
     (company-preview-search     :inherit 'company-tooltip-search)
     (company-template-field     :inherit 'match)
 
+    ;; company-box
+    (company-box-candidate :foreground fg)
+
     ;; circe
     (circe-fool :foreground doc-comments)
     (circe-highlight-nick-face :weight 'bold :foreground constants)
