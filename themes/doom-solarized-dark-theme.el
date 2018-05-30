@@ -150,6 +150,9 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+    (company-tooltip-search-selection :background (doom-darken selection 0.35))
+    (company-tooltip-selection  :background (doom-darken selection 0.35) :weight 'bold)
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
@@ -162,7 +165,7 @@ determine the exact padding."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; ivy-mode
-   (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
+   (ivy-current-match :background (doom-darken blue 0.65) :distant-foreground fg)
    (ivy-minibuffer-match-face-1
     :foreground comments
     :weight 'light)
