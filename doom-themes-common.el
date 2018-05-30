@@ -444,6 +444,20 @@
     ;; flyspell
     (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
 
+    ;; git-commit
+    (git-commit-summary :foreground strings)
+    (git-commit-overlong-summary :inherit 'error :background base0 :slant 'italic :weight 'bold)
+    (git-commit-nonempty-second-line :inherit 'git-commit-overlong-summary)
+    (git-commit-note :foreground cyan :slant 'italic)
+    (git-commit-pseudo-header :foreground doc-comments :slant 'italic)
+    (git-commit-known-pseudo-header :foreground doc-comments :weight 'bold :slant 'italic)
+    (git-commit-comment-branch-local :foreground magenta)
+    (git-commit-comment-branch-remote :foreground green)
+    (git-commit-comment-detached :foreground orange)
+    (git-commit-comment-heading :foreground keywords)
+    (git-commit-comment-file :foreground violet)
+    (git-commit-comment-action)
+
     ;; git-gutter
     (git-gutter:modified :foreground vc-modified)
     (git-gutter:added    :foreground vc-added)
