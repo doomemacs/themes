@@ -37,7 +37,7 @@ determine the exact padding."
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#2F3237" "2F3237" "brightblack"  ))
+   (base3      '("#2F3237" "#2F3237" "brightblack"  ))
    (base4      '("#4f5b66" "#4f5b66" "brightblack"  ))
    (base5      '("#65737E" "#65737E" "brightblack"  ))
    (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
