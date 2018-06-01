@@ -28,11 +28,12 @@ determine the exact padding."
   :group 'doom-nord-theme
   :type '(or integer boolean))
 
-(defcustom doom-nord-region-highlight t
-  "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
+(eval-and-compile
+  (defcustom doom-nord-region-highlight t
+    "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
 (default)."
-  :group 'doom-nord-theme
-  :type 'symbol)
+    :group 'doom-nord-theme
+    :type 'symbol))
 
 ;;
 (def-doom-theme doom-nord
