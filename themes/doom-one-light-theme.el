@@ -183,8 +183,10 @@ determine the exact padding."
    (tooltip :background base1 :foreground fg)
 
    ;; posframe
-   (ivy-posframe          :background base0)
-   (lsp-ui-doc-background :background base0)
+   (ivy-posframe            :background base0)
+   (ivy-posframe-cursor     :background blue)
+   (lsp-ui-doc-background   :background base0)
+   (lsp-face-highlight-read :background (doom-blend red bg 0.2))
    )
 
   ;; --- extra variables ---------------------
