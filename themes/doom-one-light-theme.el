@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-one-light
-  "A dark theme inspired by Atom One"
+  "A light theme inspired by Atom One"
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil            ))
@@ -183,10 +183,13 @@ determine the exact padding."
    (tooltip :background base1 :foreground fg)
 
    ;; posframe
-   (ivy-posframe            :background base0)
-   (ivy-posframe-cursor     :background blue)
-   (lsp-ui-doc-background   :background base0)
-   (lsp-face-highlight-read :background (doom-blend red bg 0.2))
+   (ivy-posframe               :background base0)
+
+   ;; lsp
+   (lsp-ui-doc-background      :background base0)
+   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
+   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
+   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
    )
 
   ;; --- extra variables ---------------------
