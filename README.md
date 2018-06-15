@@ -8,7 +8,7 @@
     - [doom-vibrant (WIP)](#doom-vibrant-wip)
 - [Additional Themes](#additional-themes)
     - [doom-citylights](#doom-citylights)
-    - [doom-darcula](#doom-darcula)
+    - [doom-dracula](#doom-dracula)
     - [doom-molokai](#doom-molokai)
     - [doom-nord](#doom-nord)
     - [doom-nord-light](#doom-nord-light)
@@ -32,8 +32,8 @@
 ### doom-city-lights
 ![doom-city-lights screenshot](doom-citylights.png)
 
-### doom-darcula
-![doom-darcula screenshot](doom-darcula.png)
+### doom-dracula
+![doom-dracula screenshot](doom-dracula.png)
 
 ### doom-molokai
 ![doom-molokai screenshot](doom-molokai.png)
