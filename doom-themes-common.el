@@ -323,7 +323,7 @@
     (company-tooltip-search-selection :background (doom-darken selection 0.25))
     (company-tooltip-selection  :background selection :weight 'bold)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
-    (company-tooltip-annotation                       :foreground violet)
+    (company-tooltip-annotation                       :foreground violet :distant-foreground bg)
     (company-scrollbar-bg       :inherit 'tooltip)
     (company-scrollbar-fg       :background highlight)
     (company-preview                              :foreground comments)
