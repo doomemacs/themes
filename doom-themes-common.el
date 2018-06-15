@@ -182,10 +182,16 @@
     ((linum &inherit line-number))
 
     ;; message
-    (message-header-subject :foreground base8)
-    (message-header-name :foreground green)
-    (message-header-to :foreground comments)
-    (message-header-other :foreground comments)
+    (message-header-name       :foreground green)
+    (message-header-subject    :foreground highlight :weight 'bold)
+    (message-header-to         :foreground highlight :weight 'bold)
+    (message-header-cc         :inherit 'message-header-to :foreground (doom-darken highlight 0.15))
+    (message-header-other      :foreground violet)
+    (message-header-newsgroups :foreground yellow)
+    (message-header-xheader    :foreground doc-comments)
+    (message-separator         :foreground comments)
+    (message-mml               :foreground comments :slant 'italic)
+    (message-cited-text        :foreground magenta)
 
     ;; term
     (term               :foreground fg)
