@@ -438,8 +438,9 @@
     (flycheck-posframe-warning-face :inherit 'flycheck-posframe-face :foreground warning)
 
     ;; flymake
-    (flymake-warnline :background bg :underline `(:style wave :color ,orange))
-    (flymake-errline  :background bg :underline `(:style wave :color ,red))
+    (flymake-error   :underline `(:style wave :color ,red))
+    (flymake-note    :underline `(:style wave :color ,green))
+    (flymake-warning :underline `(:style wave :color ,orange))
 
     ;; flyspell
     (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
