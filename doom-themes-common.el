@@ -77,6 +77,15 @@
     (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
     (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
 
+    ;; compilation
+    (compilation-column-number  :inherit 'font-lock-comment-face)
+    (compilation-line-number    :foreground highlight)
+    (compilation-error   :inherit 'error   :weight 'bold)
+    (compilation-warning :inherit 'warning :slant 'italic)
+    (compilation-info    :inherit 'success)
+    (compilation-mode-line-exit :inherit 'compilation-info)
+    (compilation-mode-line-fail :inherit 'compilation-error)
+
     ;; custom
     (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
     (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
