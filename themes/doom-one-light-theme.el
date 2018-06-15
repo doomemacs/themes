@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-one-light
-  "A dark theme inspired by Atom One"
+  "A light theme inspired by Atom One"
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil            ))
