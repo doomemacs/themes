@@ -40,20 +40,20 @@ See also `org-agenda-deadline-faces'."
     (setq
      org-font-lock-extra-keywords
      (append (org-delete-all
-              `(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
-                 (0 (org-get-checkbox-statistics-face) t))
-                (,org-todo (2 (org-get-todo-face 2) t))
-                (,org-done (2 'org-headline-done t))
-                ,(when (memq 'date org-activate-links)
-                   '(org-activate-dates (0 'org-date t))))
+              (append `(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
+                         (0 (org-get-checkbox-statistics-face) t))
+                        (,org-todo (2 (org-get-todo-face 2) t))
+                        (,org-done (2 'org-headline-done t)))
+                      (when (memq 'date org-activate-links)
+                        '((org-activate-dates (0 'org-date t)))))
               org-font-lock-extra-keywords)
-             `(;; respsect underlying faces!
-               (,org-todo (2 (org-get-todo-face 2) prepend))
-               (,org-done (2 'org-headline-done prepend))
-               ,(when (memq 'date org-activate-links)
-                  '(org-activate-dates (0 'org-date prepend)))
-               ;; Make checkbox statistic cookies respect underlying faces
-               ("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
+             ;; respsect underlying faces!
+             `((,org-todo (2 (org-get-todo-face 2) prepend))
+               (,org-done (2 'org-headline-done prepend)))
+             (when (memq 'date org-activate-links)
+               '((org-activate-dates (0 'org-date prepend))))
+             ;; Make checkbox statistic cookies respect underlying faces
+             '(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
                 (0 (org-get-checkbox-statistics-face) prepend))
                ;; I like how org-mode fontifies checked TODOs and want this to extend to
                ;; checked checkbox items:
@@ -62,10 +62,10 @@ See also `org-agenda-deadline-faces'."
                ;; make plain list bullets stand out
                ("^ *\\([-+]\\|[0-9]+[).]\\) " 1 'org-list-dt append)
                ;; and separators/dividers
-               ("^ *\\(-----+\\)$" 1 'org-meta-line)
-               ;; custom #hashtags & @at-tags for another level of organization
-               ,(when doom-org-special-tags
-                  '("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
+               ("^ *\\(-----+\\)$" 1 'org-meta-line))
+             ;; custom #hashtags & @at-tags for another level of organization
+             (when doom-org-special-tags
+               '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
 
 
 ;; Bootstrap

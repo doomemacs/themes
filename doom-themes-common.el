@@ -77,6 +77,15 @@
     (cperl-hash-face           :weight 'bold :slant 'italic :inherit 'font-lock-variable-name-face)
     (cperl-nonoverridable-face :inherit 'font-lock-builtin-face)
 
+    ;; compilation
+    (compilation-column-number  :inherit 'font-lock-comment-face)
+    (compilation-line-number    :foreground highlight)
+    (compilation-error   :inherit 'error   :weight 'bold)
+    (compilation-warning :inherit 'warning :slant 'italic)
+    (compilation-info    :inherit 'success)
+    (compilation-mode-line-exit :inherit 'compilation-info)
+    (compilation-mode-line-fail :inherit 'compilation-error)
+
     ;; custom
     (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
     (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
@@ -173,10 +182,16 @@
     ((linum &inherit line-number))
 
     ;; message
-    (message-header-subject :foreground base8)
-    (message-header-name :foreground green)
-    (message-header-to :foreground comments)
-    (message-header-other :foreground comments)
+    (message-header-name       :foreground green)
+    (message-header-subject    :foreground highlight :weight 'bold)
+    (message-header-to         :foreground highlight :weight 'bold)
+    (message-header-cc         :inherit 'message-header-to :foreground (doom-darken highlight 0.15))
+    (message-header-other      :foreground violet)
+    (message-header-newsgroups :foreground yellow)
+    (message-header-xheader    :foreground doc-comments)
+    (message-separator         :foreground comments)
+    (message-mml               :foreground comments :slant 'italic)
+    (message-cited-text        :foreground magenta)
 
     ;; term
     (term               :foreground fg)
@@ -308,7 +323,7 @@
     (company-tooltip-search-selection :background (doom-darken selection 0.25))
     (company-tooltip-selection  :background selection :weight 'bold)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
-    (company-tooltip-annotation                       :foreground violet)
+    (company-tooltip-annotation                       :foreground violet :distant-foreground bg)
     (company-scrollbar-bg       :inherit 'tooltip)
     (company-scrollbar-fg       :background highlight)
     (company-preview                              :foreground comments)
@@ -406,6 +421,22 @@
     (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
 
+    ;; erc
+    (erc-default-face :inherit 'default)
+    (erc-action-face  :weight 'bold)
+    (erc-command-indicator-face :weight 'bold)
+    (erc-direct-msg-face :foreground magenta)
+    (erc-error-face :inherit 'error)
+    (erc-header-line :background (doom-darken bg-alt 0.15) :foreground highlight)
+    (erc-input-face :foreground green)
+    (erc-nick-default-face :foreground violet :weight 'bold)
+    (erc-nick-msg-face :foreground magenta)
+    (erc-nick-prefix-face :inherit 'erc-nick-default-face)
+    (erc-my-nick-face :foreground green :weight 'bold)
+    (erc-my-nick-prefix-face :inherit 'erc-nick-default-face :slant 'italic)
+    (erc-notice-face :foreground orange)
+    (erc-prompt-face :foreground cyan)
+
     ;; evil
     (evil-ex-info                   :foreground error :slant 'italic)
     (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
@@ -438,8 +469,9 @@
     (flycheck-posframe-warning-face :inherit 'flycheck-posframe-face :foreground warning)
 
     ;; flymake
-    (flymake-warnline :background bg :underline `(:style wave :color ,orange))
-    (flymake-errline  :background bg :underline `(:style wave :color ,red))
+    (flymake-error   :underline `(:style wave :color ,red))
+    (flymake-note    :underline `(:style wave :color ,green))
+    (flymake-warning :underline `(:style wave :color ,orange))
 
     ;; flyspell
     (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
@@ -919,7 +951,7 @@
     (font-latex-script-char-face  :foreground dark-blue)
     (font-latex-string-face       :inherit 'font-lock-string-face)
     (font-latex-warning-face      :inherit 'font-lock-warning-face)
-    (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground base0 :slant 'italic)
+    (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground violet :slant 'italic)
 
     ;; elixir-mode
     (elixir-atom-face (&light :foreground dark-blue)
