@@ -142,8 +142,4 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))))
 
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
-
-(push '(doom-opera . t) +doom-solaire-themes)
-
 ;;; doom-opera-theme.el ends here
