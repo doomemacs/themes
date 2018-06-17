@@ -138,6 +138,22 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   (powerline-active1
+    :inherit 'mode-line
+    :background modeline-bg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (powerline-active2
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (powerline-inactive1
+    :inherit 'mode-line-inactive
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (powerline-inactive2
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
    ;; magit
    (magit-blame-heading     :foreground orange :background bg-alt)
    (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-blend red bg 0.1))
