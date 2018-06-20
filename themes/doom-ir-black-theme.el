@@ -6,11 +6,6 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-ir-black-brighter-modeline nil
-  "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-ir-black-theme
-  :type 'boolean)
-
 (defcustom doom-ir-black-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-ir-black-theme
@@ -92,24 +87,17 @@ determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-ir-black-brighter-modeline)
    (-modeline-pad
     (when doom-ir-black-padded-modeline
       (if (integerp doom-ir-black-padded-modeline) doom-ir-black-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     white)
    (modeline-fg-alt base5)
 
-   (modeline-bg
-    (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg base4)
+   (modeline-bg-l base4)
+   (modeline-bg-inactive base3)
+   (modeline-bg-inactive-l base3))
 
 
   ;; --- extra faces ------------------------
@@ -117,8 +105,8 @@ determine the exact padding."
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
-   ((line-number &override) :foreground extra-1)
-   ((line-number-current-line &override) :foreground fg :background "#121212")
+   ((line-number &override) :foreground base5)
+   ((line-number-current-line &override) :foreground "#FFFF00" :weight 'bold)
 
    (font-lock-comment-face
     :foreground comments
@@ -127,16 +115,12 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
 
    (solaire-mode-line-face
     :inherit 'mode-line
