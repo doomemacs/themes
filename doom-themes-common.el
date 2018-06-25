@@ -149,7 +149,7 @@
     (elfeed-search-unread-title-face :foreground fg :weight 'bold)
 
     ;; eshell
-    (eshell-prompt        :foreground base7)
+    (eshell-prompt        :foreground highlight :weight 'bold)
     (eshell-ls-archive    :foreground magenta)
     (eshell-ls-backup     :foreground yellow)
     (eshell-ls-clutter    :foreground red)
