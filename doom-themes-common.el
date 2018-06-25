@@ -1149,7 +1149,9 @@
     (rpm-spec-section-face      :foreground magenta)
 
     ;; typescript-mode
-    ((ts-object-property &inherit js2-object-property))
+    (typescript-jsdoc-tag :foreground doc-comments)
+    (typescript-jsdoc-type :foreground (doom-darken doc-comments 0.15))
+    (typescript-jsdoc-value :foreground (doom-lighten doc-comments 0.15))
 
     ;; sh-mode
     (sh-heredoc :inherit 'font-lock-string-face :weight 'normal)
