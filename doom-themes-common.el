@@ -1085,6 +1085,7 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
+    (org-indent                   :foreground bg)
 
     (org-level-1 :foreground blue     :background base3 :weight 'ultra-bold :height 1.25)
     (org-level-2 :foreground magenta  :weight 'semi-bold)
