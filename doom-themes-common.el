@@ -422,6 +422,7 @@
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
 
     ;; erc
+    (erc-button :weight 'bold :underline t)
     (erc-default-face :inherit 'default)
     (erc-action-face  :weight 'bold)
     (erc-command-indicator-face :weight 'bold)
@@ -429,13 +430,15 @@
     (erc-error-face :inherit 'error)
     (erc-header-line :background (doom-darken bg-alt 0.15) :foreground highlight)
     (erc-input-face :foreground green)
-    (erc-nick-default-face :foreground violet :weight 'bold)
+    (erc-current-nick-face :foreground green :weight 'bold)
+    (erc-timestamp-face :foreground blue :weight 'bold)
+    (erc-nick-default-face :weight 'bold)
     (erc-nick-msg-face :foreground magenta)
     (erc-nick-prefix-face :inherit 'erc-nick-default-face)
     (erc-my-nick-face :foreground green :weight 'bold)
-    (erc-my-nick-prefix-face :inherit 'erc-nick-default-face :slant 'italic)
-    (erc-notice-face :foreground orange)
-    (erc-prompt-face :foreground cyan)
+    (erc-my-nick-prefix-face :inherit 'erc-my-nick-face)
+    (erc-notice-face :foreground comments)
+    (erc-prompt-face :foreground highlight :weight 'bold)
 
     ;; evil
     (evil-ex-info                   :foreground error :slant 'italic)
