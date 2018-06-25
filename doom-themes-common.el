@@ -988,7 +988,7 @@
     (js2-function-param  :foreground variables)
     (js2-function-call   :foreground functions)
     (js2-object-property :foreground violet)
-    (js2-jsdoc-tag       :foreground comments)
+    (js2-jsdoc-tag       :foreground doc-comments)
 
     ;; ledger-mode
     (ledger-font-posting-date-face :foreground blue)
