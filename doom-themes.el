@@ -206,9 +206,9 @@ between 0 and 1)."
                               collect `(cons ',var ,val))))
        (deftheme ,name ,docstring)
        (custom-theme-set-faces
-        ',name ,@(doom-themes-prepare-facelist (append (doom-themes-common-faces) extra-faces)))
+        ',name ,@(doom-themes-prepare-facelist extra-faces))
        (custom-theme-set-variables
-        ',name ,@(doom-themes-prepare-varlist (append (doom-themes-common-vars) extra-vars)))
+        ',name ,@(doom-themes-prepare-varlist extra-vars))
        (provide-theme ',name))))
 
 ;;;###autoload

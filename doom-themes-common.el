@@ -1,7 +1,6 @@
 ;;; doom-themes-common.el -*- lexical-binding: t; -*-
 
-(defun doom-themes-common-faces ()
-  "TODO"
+(defvar doom-themes-common-faces
   '(;; --- custom faces -----------------------
     (doom-modeline-error
      :background (doom-darken red 0.25)
@@ -1164,10 +1163,10 @@
     (web-mode-html-attr-name-face    :foreground type)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
-    (web-mode-html-tag-bracket-face  :foreground operators)))
+    (web-mode-html-tag-bracket-face  :foreground operators))
+  "TODO")
 
-(defun doom-themes-common-vars ()
-  "TODO"
+(defvar doom-themes-common-vars
   '((ansi-color-names-vector
      (vconcat (mapcar #'doom-color '(base0 red green yellow blue magenta cyan base8))))
 
@@ -1197,19 +1196,21 @@
             (cons 340 ,(doom-color 'base5))
             (cons 360 ,(doom-color 'base5))))
     (vc-annotate-very-old-color nil)
-    (vc-annotate-background (doom-color 'bg))))
+    (vc-annotate-background (doom-color 'bg)))
+  "TODO")
 
 
+;;
 ;; Library
+;;
+
 (defvar doom-themes--colors)
 (defvar doom--min-colors '(257 256 16))
 (defvar doom--quoted-p nil)
-
 (defvar doom-themes--faces nil)
-(defvar doom-themes--vars nil)
 
 (defun doom-themes--colors-p (item)
-  "TODO"
+  (declare (pure t) (side-effect-free t))
   (when item
     (cond ((listp item)
            (let ((car (car item)))
@@ -1232,8 +1233,52 @@
                 (not (equal (substring (symbol-name item) 0 1) "-"))
                 (assq item doom-themes--colors))))))
 
+(defun doom-themes--apply-faces (new-faces &optional default-faces)
+  (declare (pure t) (side-effect-free t))
+  (let ((default-faces (or default-faces doom-themes-common-faces))
+        (faces (make-hash-table :test #'eq :size (+ (length default-faces) (length new-faces))))
+        (directives (make-hash-table :test #'eq)))
+    (dolist (spec (append (mapcar #'copy-sequence default-faces) new-faces))
+      (if (listp (car spec))
+          (cl-destructuring-bind (face action &optional arg) (car spec)
+            (unless (assq face new-faces)
+              (puthash face (list action arg (cdr spec))
+                       directives)))
+        (puthash (car spec) (cdr spec) faces)))
+    (cl-loop for face being the hash-keys of directives
+             for (action target spec) = (gethash face directives)
+             unless (memq action '(&inherit &extend &override))
+             do (error "Invalid operation (%s) for '%s' face" action face)
+             if (eq (car spec) 'quote)
+             do (error "Can't extend literal face spec (for '%s')" face)
+             else if (memq (car spec) '(&all &light &dark))
+             do (error "Can't extend face with &all, &light or &dark specs (for '%s')" face)
+             else do
+             (puthash face
+                      (let ((old-spec (gethash (or target face) faces))
+                            (plist spec))
+                        ;; remove duplicates
+                        (while (keywordp (car plist))
+                          (setq old-spec (plist-put old-spec (car plist) (cadr plist))
+                                plist (cddr plist)))
+                        old-spec)
+                      faces))
+    (let (results)
+      (maphash (lambda (face plist)
+                 (when (keywordp (car plist))
+                   (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold nil))
+                                         (unless doom-themes-enable-italic '(:slant normal :italic nil))))
+                     (when (and (plist-member plist prop)
+                                (not (eq (plist-get plist prop) 'inherit)))
+                       (plist-put plist prop
+                                  (if (memq prop '(:weight :slant))
+                                      (quote normal))))))
+                 (push (cons face plist) results))
+               faces)
+      (nreverse results))))
+
 (defun doom-themes--colorize (item type)
-  "TODO"
+  (declare (pure t) (side-effect-free t))
   (when item
     (let ((doom--quoted-p doom--quoted-p))
       (cond ((listp item)
@@ -1242,8 +1287,7 @@
                    ((eq (car item) 'doom-ref)
                     (doom-themes--colorize
                      (apply #'doom-ref (cdr item)) type))
-                   (t
-                    (let* ((item (append item nil))
+                   ((let* ((item (append item nil))
                            (car (car item))
                            (doom--quoted-p
                             (cond ((memq car '(backquote \`)) t)
@@ -1261,55 +1305,14 @@
                   (assq item doom-themes--colors))
              `(doom-color ',item ',type))
 
-            (t item)))))
-
-(defun doom-themes--get-face (face &optional merge noerror)
-  "TODO"
-  (let ((face-body
-         (or (cdr (assq face doom-themes--faces))
-             (unless noerror
-               (error "Couldn't find the '%s' face" face))))
-        arg)
-    (while (setq arg (pop merge))
-      (if (keywordp arg)
-          (plist-put face-body arg (pop merge))
-        (push arg face-body)))
-    face-body))
-
-(defun doom-themes--add-face (face)
-  "TODO"
-  (let ((face-name (car face))
-        (face-body (cdr face)))
-    (when (listp face-name)
-      (setq face-body
-            (pcase (cadr face-name)
-              (`&override
-               (prog1 (doom-themes--get-face (car face-name) face-body t)
-                 (setq doom-themes--faces (assq-delete-all face-name doom-themes--faces))))
-              (`&inherit
-               (doom-themes--get-face (car (cdr (cdr face-name))) face-body))
-              (_
-               (error "Malformed face spec for %s" (car face-name))))
-            face-name (car face-name)))
-    (when (assq face-name doom-themes--faces)
-      (setq doom-theme--faces (assq-delete-all face-name doom-themes--faces)))
-    ;; if `doom-themes-enable-*' are false, remove those properties from faces
-    (dolist (prop (append (unless doom-themes-enable-bold   '(:weight 'normal :bold nil))
-                          (unless doom-themes-enable-italic '(:slant 'normal :italic nil))))
-      (when (and (plist-member face-body prop)
-                 (not (eq (plist-get face-body prop) 'inherit)))
-        (plist-put face-body prop
-                   (if (memq prop '(:weight :slant))
-                       (quote 'normal)))))
-    (push `(,face-name ,@face-body) doom-themes--faces)))
+            (item)))))
 
 (defun doom-themes--build-face (face)
-  "TODO"
-  (let ((face-name (car face))
-        (face-body (cdr face)))
-    `(list
-      ',face-name
-      ,(cond ((keywordp (car face-body))
+  (declare (pure t) (side-effect-free t))
+  `(list
+    ',(car face)
+    ,(let ((face-body (cdr face)))
+       (cond ((keywordp (car face-body))
               (let ((real-attrs face-body)
                     defs)
                 (if (doom-themes--colors-p real-attrs)
@@ -1336,26 +1339,29 @@
                                                  (list ,@(doom-themes--colorize real-attrs cl)))
                                           defs)))
 
-                                 (t
-                                  (push `(list '((background ,bg)) (list ,@real-attrs))
+                                 ((push `(list '((background ,bg)) (list ,@real-attrs))
                                         defs)))))))))))))
 
+
 ;;
-(defun doom-themes-prepare-facelist (faces)
+;; Public functions
+;;
+
+(defun doom-themes-prepare-facelist (custom-faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
 
 Faces in EXTRA-FACES override the default faces."
-  (let (doom-themes--faces)
-    (mapc #'doom-themes--add-face faces)
-    (reverse (mapcar #'doom-themes--build-face doom-themes--faces))))
+  (declare (pure t) (side-effect-free t))
+  (setq doom-themes--faces (doom-themes--apply-faces custom-faces))
+  (mapcar #'doom-themes--build-face doom-themes--faces))
 
 (defun doom-themes-prepare-varlist (vars)
   "Return an alist of variable definitions for `custom-theme-set-variables'.
 
 Variables in EXTRA-VARS override the default ones."
-  (let (doom-themes--vars)
-    (cl-loop for (var val) in vars
-             collect `(list ',var ,val))))
+  (declare (pure t) (side-effect-free t))
+  (cl-loop for (var val) in (append doom-themes-common-vars vars)
+           collect `(list ',var ,val)))
 
 (provide 'doom-themes-common)
 ;;; doom-themes-common.el ends here
