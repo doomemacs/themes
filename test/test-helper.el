@@ -28,9 +28,10 @@
 
 (defmacro -with-faces! (faces &rest body)
   (declare (indent defun))
-  `(let* ((doom-themes--faces ',faces)
-          (faces (list ,@(doom-themes-prepare-facelist faces))))
-     ,@body
-     faces))
+  (let ((doom-themes--faces (doom-themes--apply-faces nil faces)))
+    `(let* ((doom-themes--faces ',doom-themes--faces)
+            (faces (list ,@(mapcar #'doom-themes--build-face doom-themes--faces))))
+       ,@body
+       faces)))
 
 ;;; test-helper.el ends here
