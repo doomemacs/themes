@@ -1251,6 +1251,7 @@
              do (error "Invalid operation (%s) for '%s' face" action face)
              if (eq (car spec) 'quote)
              do (error "Can't extend literal face spec (for '%s')" face)
+             ;; TODO Add &all/&light/&dark extension support
              else if (memq (car spec) '(&all &light &dark))
              do (error "Can't extend face with &all, &light or &dark specs (for '%s')" face)
              else do
@@ -1266,6 +1267,7 @@
     (let (results)
       (maphash (lambda (face plist)
                  (when (keywordp (car plist))
+                   ;; TODO Clean up duplicates in &all/&light/&dark blocks
                    (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold nil))
                                          (unless doom-themes-enable-italic '(:slant normal :italic nil))))
                      (when (and (plist-member plist prop)
