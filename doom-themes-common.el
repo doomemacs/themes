@@ -1272,7 +1272,7 @@
                                 (not (eq (plist-get plist prop) 'inherit)))
                        (plist-put plist prop
                                   (if (memq prop '(:weight :slant))
-                                      (quote normal))))))
+                                      (quote 'normal))))))
                  (push (cons face plist) results))
                faces)
       (nreverse results))))
