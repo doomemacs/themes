@@ -805,6 +805,10 @@
     ;; perspective
     (persp-selected-face :foreground blue :weight 'bold)
 
+    ;; persp-mode
+    (persp-face-lighter-buffer-not-in-persp :foreground warning :slant 'italic)
+    (persp-face-lighter-nil-persp :foreground comments)
+
     ;; popup
     (popup-face :inherit 'tooltip)
     (popup-tip-face :inherit 'popup-face :foreground violet :background base0)
