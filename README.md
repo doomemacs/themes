@@ -49,6 +49,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
     This requires `all-the-icons`' fonts to be installed: `M-x
     all-the-icons-install-fonts`
+  - `(doom-themes-treemacs-config)`: a [treemacs] icon theme that takes after
+    [Atom]'s (WIP).
   - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
     fontification.
     -  Re-set `org-todo' & `org-headline-done' faces to make them respect
@@ -92,8 +94,10 @@ A comprehensive configuration example:
 ;; Enable flashing mode-line on errors
 (doom-themes-visual-bell-config)
 
-;; Enable custom neotree theme
-(doom-themes-neotree-config)  ; all-the-icons fonts must be installed!
+;; Enable custom neotree theme (all-the-icons must be installed!)
+(doom-themes-neotree-config)
+;; or for treemacs users
+(doom-themes-treemacs-config)
 
 ;; Corrects (and improves) org-mode's native fontification.
 (doom-themes-org-config)
@@ -148,5 +152,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [spacegrey]: http://kkga.github.io/spacegray/
 [teesloane]: https://github.com/teesloane
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
+[treemacs]: https://github.com/Alexander-Miller/treemacs
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
 [ztlevi]: https://github.com/ztlevi
