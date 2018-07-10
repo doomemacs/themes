@@ -225,6 +225,13 @@ Includes an Atom-esque icon theme and highlighting based on filetype."
     (require 'doom-themes-neotree)))
 
 ;;;###autoload
+(defun doom-themes-treemacs-config ()
+  "Install doom-themes' treemacs configuration.
+
+Includes an Atom-esque icon theme and highlighting based on filetype."
+  (require 'doom-themes-treemacs))
+
+;;;###autoload
 (defun doom-themes-visual-bell-config ()
   "Enable flashing the mode-line on error."
   (setq ring-bell-function #'doom-themes-visual-bell-fn
