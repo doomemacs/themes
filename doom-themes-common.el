@@ -885,6 +885,15 @@
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
     (tldr-command-argument :foreground fg :background region )
 
+    ;; treemacs
+    (treemacs-root-face :inherit 'font-lock-string-face :weight 'bold :height 1.2)
+    (treemacs-file-face :foreground fg)
+    (treemacs-directory-face :foreground fg)
+    (treemacs-git-modified-face :foreground violet)
+    (treemacs-git-added-face :foreground green)
+    (treemacs-git-conflict-face :foreground red)
+    (treemacs-git-untracked-face :inherit 'font-lock-doc-face)
+
     ;; twittering-mode
     (twitter-divider  ; custom face in Doom Emacs
      (&light :underline '(:color (doom-lighten vertical-bar 0.2)))
