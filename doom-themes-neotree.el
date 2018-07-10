@@ -338,7 +338,7 @@ pane and are highlighted incorrectly."
     (neo-buffer--newline-and-begin)))
 
 ;;
-(eval-after-load "neotree"
+(eval-after-load 'neotree
   (lambda ()
     (unless (require 'all-the-icons nil t)
       (error "all-the-icons isn't installed"))
