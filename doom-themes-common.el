@@ -893,6 +893,7 @@
     (treemacs-root-face :inherit 'font-lock-string-face :weight 'bold :height 1.2)
     (treemacs-file-face :foreground fg)
     (treemacs-directory-face :foreground fg)
+    (treemacs-tags-face :foreground highlight)
     (treemacs-git-modified-face :foreground violet)
     (treemacs-git-added-face :foreground green)
     (treemacs-git-conflict-face :foreground red)
