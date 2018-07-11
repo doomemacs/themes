@@ -40,7 +40,7 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
 
     ;; no fringes in treemacs window
     (add-hook 'treemacs-mode-hook #'doom--treemacs-no-fringes)
-    (advice-add #'treemacs-select-window :after #'+treemacs|no-fringes)
+    (advice-add #'treemacs-select-window :after #'doom--treemacs-no-fringes)
 
     ;; variable-pitch labels for files/folders
     (when doom-treemacs-enable-variable-pitch
