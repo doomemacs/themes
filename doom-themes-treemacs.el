@@ -16,9 +16,12 @@ variable-pitch face."
   :group 'doom-treemacs)
 
 (defun doom--treemacs-no-fringes ()
-  "Remove fringes in treemacs. They get reset each time you select the neotree
-pane and are highlighted incorrectly when used with `solaire-mode'."
-  (set-window-fringes nil 0 0))
+  "Remove fringes in treemacs and the truncation glyph. They get reset each time
+you select the neotree pane and are highlighted incorrectly when used with
+`solaire-mode'."
+  (when (display-graphic-p)
+    (set-window-fringes nil 0 0))
+  (set-display-table-slot standard-display-table 0 ?\ ))
 
 (defun doom--treemacs-setup (&rest _)
   (setq line-spacing doom-treemacs-line-spacing
