@@ -27,6 +27,22 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
 (defun doom--treemacs-hide-modeline ()
   (setq mode-line-format nil))
 
+(defun doom--treemacs-variable-pitch-labels (&rest _)
+  (when doom-treemacs-enable-variable-pitch
+    (dolist (face '(treemacs-root-face
+                    treemacs-git-unmodified-face
+                    treemacs-git-modified-face
+                    treemacs-git-renamed-face
+                    treemacs-git-ignored-face
+                    treemacs-git-untracked-face
+                    treemacs-git-added-face
+                    treemacs-git-conflict-face
+                    treemacs-directory-face
+                    treemacs-directory-collapsed-face
+                    treemacs-file-face))
+      (let ((faces (face-attribute face :inherit nil)))
+        (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces))))))))
+
 (eval-after-load 'treemacs
   (lambda ()
     (unless (require 'all-the-icons nil t)
@@ -43,20 +59,8 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
     (advice-add #'treemacs-select-window :after #'doom--treemacs-no-fringes)
 
     ;; variable-pitch labels for files/folders
-    (when doom-treemacs-enable-variable-pitch
-      (dolist (face '(treemacs-root-face
-                      treemacs-git-unmodified-face
-                      treemacs-git-modified-face
-                      treemacs-git-renamed-face
-                      treemacs-git-ignored-face
-                      treemacs-git-untracked-face
-                      treemacs-git-added-face
-                      treemacs-git-conflict-face
-                      treemacs-directory-face
-                      treemacs-directory-collapsed-face
-                      treemacs-file-face))
-        (let ((faces (face-attribute face :inherit nil)))
-          (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces)))))))
+    (doom--treemacs-variable-pitch-labels)
+    (advice-add #'load-theme :after #'doom--treemacs-variable-pitch-labels)
 
     ;; minimalistic atom-inspired icon theme
     (let ((all-the-icons-default-adjust 0))
