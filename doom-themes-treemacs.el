@@ -93,7 +93,7 @@ you select the neotree pane and are highlighted incorrectly when used with
             treemacs-icon-tag-node-closed-png
             (concat (all-the-icons-octicon "chevron-right" :height 0.9  :face 'font-lock-keyword-face)
                     "\t")
-            treemacs-icon-tag-leaf-png "")
+            treemacs-icon-tag-leaf-png "- ")
 
       ;; File type icons
       (setq treemacs-icons-hash (make-hash-table :size 200 :test #'equal)
