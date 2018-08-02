@@ -1072,14 +1072,14 @@
     (notmuch-wash-toggle-button :foreground fg)
 
     ;; outline
-    (outline-1 :inherit 'org-level-1)
-    (outline-2 :inherit 'org-level-2)
-    (outline-3 :inherit 'org-level-3)
-    (outline-4 :inherit 'org-level-4)
-    (outline-5 :inherit 'org-level-5)
-    (outline-6 :inherit 'org-level-6)
-    (outline-7 :inherit 'org-level-7)
-    (outline-8 :inherit 'org-level-8)
+    (outline-1 :foreground blue     :background base3  :weight 'ultra-bold :height 1.25)
+    (outline-2 :foreground magenta                     :weight 'semi-bold)
+    (outline-3 :foreground violet                      :weight 'semi-bold)
+    (outline-4 :foreground (doom-lighten blue 0.25)    :weight 'semi-bold)
+    (outline-5 :foreground (doom-lighten magenta 0.25) :weight 'semi-bold)
+    (outline-6 :foreground (doom-lighten blue 0.5)     :weight 'semi-bold)
+    (outline-7 :foreground (doom-lighten magenta 0.5)  :weight 'semi-bold)
+    (outline-8 :foreground (doom-lighten blue 0.8)     :weight 'semi-bold)
 
     ;; org-mode
     (org-archived                 :foreground doc-comments)
@@ -1102,14 +1102,15 @@
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
 
-    (org-level-1 :foreground blue     :background base3 :weight 'ultra-bold :height 1.25)
-    (org-level-2 :foreground magenta  :weight 'semi-bold)
-    (org-level-3 :foreground violet   :weight 'semi-bold)
-    (org-level-4 :foreground (doom-lighten blue 0.25)    :weight 'semi-bold)
-    (org-level-5 :foreground (doom-lighten magenta 0.25) :weight 'semi-bold)
-    (org-level-6 :foreground (doom-lighten blue 0.5)  :weight 'semi-bold)
-    (org-level-7 :foreground (doom-lighten magenta 0.5)    :weight 'semi-bold)
-    (org-level-8 :foreground (doom-lighten blue 0.8) :weight 'semi-bold)
+    ;; extends from outline-N
+    ;; (org-level-1)
+    ;; (org-level-2)
+    ;; (org-level-3)
+    ;; (org-level-4)
+    ;; (org-level-5)
+    ;; (org-level-6)
+    ;; (org-level-7)
+    ;; (org-level-8)
 
     (org-list-dt         :foreground highlight)
     (org-meta-line       :foreground doc-comments)
