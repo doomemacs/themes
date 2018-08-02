@@ -148,7 +148,20 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   (markdown-url-face    :foreground teal :weight 'normal)
+   (markdown-reference-face :foreground base6)
+   ((markdown-bold-face &override)   :foreground fg)
+   ((markdown-italic-face &override) :foreground fg-alt)
+
+   ;; outline (affects org-mode)
+   ((outline-1 &override) :foreground blue)
+   ((outline-2 &override) :foreground green)
+   ((outline-3 &override) :foreground teal)
+   ((outline-4 &override) :foreground (doom-darken blue 0.2))
+   ((outline-5 &override) :foreground (doom-darken green 0.2))
+   ((outline-6 &override) :foreground (doom-darken teal 0.2))
+   ((outline-7 &override) :foreground (doom-darken blue 0.4))
+   ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
    (org-hide :foreground hidden)
