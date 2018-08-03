@@ -48,7 +48,7 @@ determine the exact padding."
    (selection      (doom-lighten bg 0.1))
    (builtin        blue)
    (comments       grey)
-   (doc-comments   (doom-lighten grey 0.1))
+   (doc-comments   (doom-lighten grey 0.14))
    (constants      orange)
    (functions      blue)
    (keywords       violet)
