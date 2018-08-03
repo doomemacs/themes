@@ -102,7 +102,7 @@ determine the exact padding."
     (if -modeline-bright
         (doom-darken blue 0.45)
       `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
