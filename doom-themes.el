@@ -102,11 +102,12 @@
 ;; Color helper functions
 ;; Shamelessly *borrowed* from solarized
 ;;;###autoload
-(defun doom-name-to-rgb (color &optional frame)
+(defun doom-name-to-rgb (color)
   "Retrieves the hexidecimal string repesented the named COLOR (e.g. \"red\")
 for FRAME (defaults to the current frame)."
-  (cl-loop for x in (color-values color frame)
-           collect (/ x (float (car (color-values "#ffffff"))))))
+  (cl-loop with div = (float (car (tty-color-standard-values "#ffffff")))
+           for x in (tty-color-standard-values (downcase color))
+           collect (/ x div)))
 
 ;;;###autoload
 (defun doom-blend (color1 color2 alpha)
