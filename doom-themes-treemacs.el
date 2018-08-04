@@ -42,7 +42,9 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
                     treemacs-directory-collapsed-face
                     treemacs-file-face))
       (let ((faces (face-attribute face :inherit nil)))
-        (set-face-attribute face nil :inherit `(variable-pitch ,@(delq 'unspecified (doom-enlist faces))))))))
+        (set-face-attribute
+         face nil :inherit
+         `(variable-pitch ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
 
 (eval-after-load 'treemacs
   (lambda ()
