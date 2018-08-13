@@ -242,6 +242,10 @@
     (all-the-icons-lsilver  :foreground (doom-lighten grey 0.3))
     (all-the-icons-dsilver  :foreground (doom-darken grey 0.3))
 
+    ;; anzu
+    (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
+    (anzu-replace-to        :background base0 :foreground green :weight 'bold)
+
     ;; avy
     (avy-background-face :foreground comments)
     (avy-lead-face :background highlight :foreground bg :distant-foreground fg :weight 'bold)
