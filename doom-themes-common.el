@@ -1167,6 +1167,7 @@
     (rpm-spec-section-face      :foreground magenta)
 
     ;; rst-mode
+    (rst-block :inherit 'font-lock-constant-face)
     (rst-level-1 :inherit 'rst-adornment :weight 'bold)
     (rst-level-2 :inherit 'rst-adornment :weight 'bold)
     (rst-level-3 :inherit 'rst-adornment :weight 'bold)
