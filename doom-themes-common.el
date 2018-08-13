@@ -1072,14 +1072,14 @@
     (notmuch-wash-toggle-button :foreground fg)
 
     ;; outline
-    (outline-1 :foreground blue     :background base3  :weight 'ultra-bold :height 1.25)
-    (outline-2 :foreground magenta                     :weight 'semi-bold)
-    (outline-3 :foreground violet                      :weight 'semi-bold)
-    (outline-4 :foreground (doom-lighten blue 0.25)    :weight 'semi-bold)
-    (outline-5 :foreground (doom-lighten magenta 0.25) :weight 'semi-bold)
-    (outline-6 :foreground (doom-lighten blue 0.5)     :weight 'semi-bold)
-    (outline-7 :foreground (doom-lighten magenta 0.5)  :weight 'semi-bold)
-    (outline-8 :foreground (doom-lighten blue 0.8)     :weight 'semi-bold)
+    (outline-1 :foreground blue     :background base3  :weight 'bold :height 1.25)
+    (outline-2 :foreground magenta                     :weight 'bold)
+    (outline-3 :foreground violet                      :weight 'bold)
+    (outline-4 :foreground (doom-lighten blue 0.25)    :weight 'bold)
+    (outline-5 :foreground (doom-lighten magenta 0.25) :weight 'bold)
+    (outline-6 :foreground (doom-lighten blue 0.5)     :weight 'bold)
+    (outline-7 :foreground (doom-lighten magenta 0.5)  :weight 'bold)
+    (outline-8 :foreground (doom-lighten blue 0.8)     :weight 'bold)
 
     ;; org-mode
     (org-archived                 :foreground doc-comments)
