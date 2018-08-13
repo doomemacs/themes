@@ -1162,6 +1162,14 @@
     (rpm-spec-ghost-face        :foreground comments)
     (rpm-spec-section-face      :foreground magenta)
 
+    ;; rst-mode
+    (rst-level-1 :inherit 'rst-adornment :weight 'bold)
+    (rst-level-2 :inherit 'rst-adornment :weight 'bold)
+    (rst-level-3 :inherit 'rst-adornment :weight 'bold)
+    (rst-level-4 :inherit 'rst-adornment :weight 'bold)
+    (rst-level-5 :inherit 'rst-adornment :weight 'bold)
+    (rst-level-6 :inherit 'rst-adornment :weight 'bold)
+
     ;; typescript-mode
     (typescript-jsdoc-tag :foreground doc-comments)
     (typescript-jsdoc-type :foreground (doom-darken doc-comments 0.15))
