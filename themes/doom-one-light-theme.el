@@ -158,10 +158,10 @@ determine the exact padding."
    ;; org-mode
    (org-block            :background base1)
    (org-block-begin-line :foreground fg :slant 'italic)
-   (org-level-1          :foreground red    :weight 'ultra-bold :height 1.2)
-   (org-level-2          :foreground orange :weight 'extra-bold :height 1.1)
-   (org-level-3          :foreground violet :bold bold          :height 1.1)
-   (org-ellipsis         :underline nil :background bg     :foreground red)
+   (org-level-1          :foreground red    :bold bold :height 1.2)
+   (org-level-2          :foreground orange :blod bold :height 1.1)
+   (org-level-3          :foreground violet :bold bold :height 1.1)
+   (org-ellipsis         :foreground red :background bg :underline nil)
    (org-quote            :background base1)
 
    ;; helm
