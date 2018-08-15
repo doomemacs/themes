@@ -35,6 +35,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
+    - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
     - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
     - [x] `doom-tomorrow-day`: by [Chris Kempson][tomorrow] (thanks to [emacswatcher])
@@ -138,6 +139,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
+[defphil]: https://github.com/defphil
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
 [fuxialexander]: https://github.com/fuxialexander
@@ -149,6 +151,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
+[sourcerer]: https://github.com/xero/sourcerer.vim
 [spacegrey]: http://kkga.github.io/spacegray/
 [teesloane]: https://github.com/teesloane
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
