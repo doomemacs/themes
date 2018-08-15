@@ -1,4 +1,4 @@
-;; doom-blueberry-theme.el --- a more blueberry version of doom-one
+;; doom-sourcerer-theme.el --- a more sourcerer version of doom-one
 ;;; Commentary:
 (require 'doom-themes)
 ;;; Code:
