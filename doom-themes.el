@@ -34,6 +34,7 @@
 ;;   [X] `doom-nova' (added by bigardone)
 ;;   [X] `doom-peacock' (added by teesloane)
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
+;;   [X] `doom-sourcerer' (added by defphil)
 ;;   [X] `doom-spacegrey' (added by teesloane)
 ;;   [X] `doom-tomorrow-night'
 ;;   [X] `doom-tomorrow-day'
