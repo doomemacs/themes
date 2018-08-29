@@ -941,7 +941,7 @@
     ;; whitespace
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
-    (whitespace-tab      :foreground base4 :background (unless indent-tabs-mode base3))
+    (whitespace-tab      :foreground base4 :background (unless (default-value 'indent-tabs-mode) base3))
     (whitespace-newline  :foreground base4)
     (whitespace-indentation :foreground red :background yellow)
     (whitespace-trailing :inherit 'trailing-whitespace)
