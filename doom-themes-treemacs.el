@@ -15,6 +15,11 @@ variable-pitch face."
   :type 'symbol
   :group 'doom-treemacs)
 
+(defcustom doom-treemacs-use-generic-icons t
+  "Use the generic icons for items displayed in the treemacs buffer."
+  :type 'boolean
+  :group 'doom-treemacs)
+
 (defun doom--treemacs-no-fringes ()
   "Remove fringes in treemacs. They get reset each time you select the neotree
 pane and are highlighted incorrectly when used with `solaire-mode'."
@@ -66,52 +71,53 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
     (advice-add #'load-theme :after #'doom--treemacs-variable-pitch-labels)
 
     ;; minimalistic atom-inspired icon theme
-    (let ((all-the-icons-default-adjust 0))
-      (setq treemacs-icon-root-png
-            (concat " " (all-the-icons-octicon "repo" :v-adjust -0.1 :height 1.6
-                                               :face 'font-lock-string-face)
-                    " ")
+    (when doom-treemacs-use-generic-icons
+      (let ((all-the-icons-default-adjust 0))
+        (setq treemacs-icon-root-png
+              (concat " " (all-the-icons-octicon "repo" :v-adjust -0.1 :height 1.6
+                                                 :face 'font-lock-string-face)
+                      " ")
 
-            treemacs-icon-tag-open-png
-            (all-the-icons-octicon "chevron-down" :v-adjust 0.1)
-            treemacs-icon-tag-closed-png
-            (all-the-icons-octicon "chevron-right" :v-adjust 0.1)
+              treemacs-icon-tag-open-png
+              (all-the-icons-octicon "chevron-down" :v-adjust 0.1)
+              treemacs-icon-tag-closed-png
+              (all-the-icons-octicon "chevron-right" :v-adjust 0.1)
 
-            treemacs-indentation-string "  "
-            treemacs-indentation 1
+              treemacs-indentation-string "  "
+              treemacs-indentation 1
 
-            treemacs-icon-open-png
-            (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15)
-                    " ")
-            treemacs-icon-closed-png
-            (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15 :face 'font-lock-doc-face)
-                    " ")
+              treemacs-icon-open-png
+              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15)
+                      " ")
+              treemacs-icon-closed-png
+              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15 :face 'font-lock-doc-face)
+                      " ")
 
-            treemacs-icon-tag-node-open-png
-            (concat (all-the-icons-octicon "chevron-down"  :height 0.75 :face 'font-lock-keyword-face)
-                    "\t")
-            treemacs-icon-tag-node-closed-png
-            (concat (all-the-icons-octicon "chevron-right" :height 0.9  :face 'font-lock-keyword-face)
-                    "\t")
-            treemacs-icon-tag-leaf-png "- ")
+              treemacs-icon-tag-node-open-png
+              (concat (all-the-icons-octicon "chevron-down"  :height 0.75 :face 'font-lock-keyword-face)
+                      "\t")
+              treemacs-icon-tag-node-closed-png
+              (concat (all-the-icons-octicon "chevron-right" :height 0.9  :face 'font-lock-keyword-face)
+                      "\t")
+              treemacs-icon-tag-leaf-png "- ")
 
-      ;; File type icons
-      (setq treemacs-icons-hash (make-hash-table :size 200 :test #'equal)
-            treemacs-icon-fallback (concat (all-the-icons-octicon "file-code" :height 1.2 :v-adjust 0) " ")
-            treemacs-icon-text     treemacs-icon-fallback)
+        ;; File type icons
+        (setq treemacs-icons-hash (make-hash-table :size 200 :test #'equal)
+              treemacs-icon-fallback (concat (all-the-icons-octicon "file-code" :height 1.2 :v-adjust 0) " ")
+              treemacs-icon-text     treemacs-icon-fallback)
 
-      (treemacs-define-custom-icon (all-the-icons-octicon "file-media" :height 1.2)
-                                   "png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
-                                   "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
-                                   "wav" "mp3" "ogg" "midi")
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-media" :height 1.2)
+                                     "png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
+                                     "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
+                                     "wav" "mp3" "ogg" "midi")
 
-      (treemacs-define-custom-icon (all-the-icons-octicon "file-text" :height 1.2)
-                                   "md" "markdown" "rst" "log" "org" "txt"
-                                   "CONTRIBUTE" "LICENSE" "README" "CHANGELOG")
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-text" :height 1.2)
+                                     "md" "markdown" "rst" "log" "org" "txt"
+                                     "CONTRIBUTE" "LICENSE" "README" "CHANGELOG")
 
-      (treemacs-define-custom-icon (all-the-icons-octicon "file-code" :height 1.2)
-                                   "yaml" "yml" "json" "xml" "toml" "cson" "ini"
-                                   "tpl" "erb" "mustache" "twig" "ejs" "mk" "haml" "pug" "jade"))))
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-code" :height 1.2)
+                                     "yaml" "yml" "json" "xml" "toml" "cson" "ini"
+                                     "tpl" "erb" "mustache" "twig" "ejs" "mk" "haml" "pug" "jade")))))
 
 (provide 'doom-themes-treemacs)
 ;;; doom-themes-treemacs.el ends here
