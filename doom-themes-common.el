@@ -127,7 +127,7 @@
     (ediff-current-diff-A :background (doom-blend selection bg 0.3))
     (ediff-current-diff-B :inherit 'ediff-current-diff-A)
     (ediff-current-diff-C :inherit 'ediff-current-diff-A)
-    ((ediff-even-diff-A &inherit hl-line))
+    (ediff-even-diff-A    :inherit 'hl-line)
     (ediff-even-diff-B    :inherit 'ediff-even-diff-A)
     (ediff-even-diff-C    :inherit 'ediff-even-diff-A)
     (ediff-odd-diff-A     :inherit 'ediff-even-diff-A)
@@ -350,7 +350,7 @@
     (diff-hl-insert :foreground vc-added)
 
     ;; diff-mode
-    ((diff-added &inherit hl-line) :foreground green)
+    (diff-added   :inherit 'hl-line :foreground green)
     (diff-changed :foreground violet)
     (diff-context
      (&dark  :foreground (doom-darken fg 0.12))
@@ -599,7 +599,7 @@
                        :background (doom-darken bg 0.125))
 
     ;; highlight-indentation-mode
-    ((highlight-indentation-face &inherit hl-line))
+    (highlight-indentation-face                :inherit 'hl-line)
     (highlight-indentation-current-column-face :background base1)
     (highlight-indentation-guides-odd-face     :inherit 'highlight-indentation-face)
     (highlight-indentation-guides-even-face    :inherit 'highlight-indentation-face)
@@ -783,7 +783,7 @@
     (magit-refname :foreground comments)
     (magit-section-heading           :foreground blue :weight 'bold)
     (magit-section-heading-selection :foreground orange :weight 'bold)
-    ((magit-section-highlight &inherit hl-line))
+    (magit-section-highlight :inherit 'hl-line)
     (magit-sequence-drop :foreground red)
     (magit-sequence-head :foreground blue)
     (magit-sequence-part :foreground orange)
@@ -857,7 +857,7 @@
 
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
-    ((solaire-hl-line-face &inherit hl-line) :background bg)
+    (solaire-hl-line-face  :inherit 'hl-line :background bg)
     (solaire-org-hide-face :foreground bg-alt)
 
     ;; stripe-buffer
