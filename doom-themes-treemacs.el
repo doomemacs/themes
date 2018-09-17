@@ -51,6 +51,7 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
          face nil :inherit
          `(variable-pitch ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
 
+(defvar all-the-icons-default-adjust)
 (eval-after-load 'treemacs
   (lambda ()
     (unless (require 'all-the-icons nil t)
