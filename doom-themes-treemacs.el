@@ -57,9 +57,6 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
     (unless (require 'all-the-icons nil t)
       (error "all-the-icons isn't installed"))
 
-    ;; Silence plistp error with all-the-icons
-    (advice-add #'treemacs--pulse-png-advice :override #'ignore)
-
     (add-hook 'treemacs-mode-hook #'doom--treemacs-setup)
     (add-hook 'treemacs-mode-hook #'doom--treemacs-hide-modeline)
 
@@ -73,6 +70,9 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
 
     ;; minimalistic atom-inspired icon theme
     (when doom-treemacs-use-generic-icons
+      ;; Silence plistp error with all-the-icons
+      (advice-add #'treemacs--pulse-png-advice :override #'ignore)
+
       (let ((all-the-icons-default-adjust 0))
         (setq treemacs-icon-root-png
               (concat " " (all-the-icons-octicon "repo" :v-adjust -0.1 :height 1.6
@@ -88,10 +88,10 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
               treemacs-indentation 1
 
               treemacs-icon-open-png
-              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15)
+              (concat (all-the-icons-octicon "file-directory" :v-adjust 0)
                       " ")
               treemacs-icon-closed-png
-              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :height 1.15 :face 'font-lock-doc-face)
+              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :face 'font-lock-doc-face)
                       " ")
 
               treemacs-icon-tag-node-open-png
@@ -104,19 +104,19 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
 
         ;; File type icons
         (setq treemacs-icons-hash (make-hash-table :size 200 :test #'equal)
-              treemacs-icon-fallback (concat (all-the-icons-octicon "file-code" :height 1.2 :v-adjust 0) " ")
+              treemacs-icon-fallback (concat (all-the-icons-octicon "file-code" :v-adjust 0) " ")
               treemacs-icon-text     treemacs-icon-fallback)
 
-        (treemacs-define-custom-icon (all-the-icons-octicon "file-media" :height 1.2)
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-media")
                                      "png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
                                      "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
                                      "wav" "mp3" "ogg" "midi")
 
-        (treemacs-define-custom-icon (all-the-icons-octicon "file-text" :height 1.2)
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-text")
                                      "md" "markdown" "rst" "log" "org" "txt"
                                      "CONTRIBUTE" "LICENSE" "README" "CHANGELOG")
 
-        (treemacs-define-custom-icon (all-the-icons-octicon "file-code" :height 1.2)
+        (treemacs-define-custom-icon (all-the-icons-octicon "file-code")
                                      "yaml" "yml" "json" "xml" "toml" "cson" "ini"
                                      "tpl" "erb" "mustache" "twig" "ejs" "mk" "haml" "pug" "jade")))))
 
