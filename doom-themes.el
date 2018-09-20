@@ -189,12 +189,12 @@ between 0 and 1)."
     (plist-get spec prop)))
 
 ;;;###autoload
-(defmacro doom-themes-set-faces (theme &rest faces)
+(defun doom-themes-set-faces (theme &rest faces)
   "Customize THEME (a symbol) with FACES."
   (declare (indent defun))
-  `(custom-theme-set-faces
-    ,theme
-    ,@(mapcar #'doom-themes--build-face faces)))
+  (apply #'custom-theme-set-faces
+         (or theme 'user)
+         (mapcar #'doom-themes--build-face faces)))
 
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
