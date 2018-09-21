@@ -958,6 +958,32 @@
 
 
     ;; --- major-mode faces -------------------
+    ;; agda2-mode
+    (agda2-highlight-keyword-face                 :inherit 'font-lock-keyword-face)
+    (agda2-highlight-string-face                  :inherit 'font-lock-string-face)
+    (agda2-highlight-number-face                  :inherit 'font-lock-string-face)
+    (agda2-highlight-symbol-face                  :inherit 'font-lock-variable-name-face)
+    (agda2-highlight-primitive-type-face          :inherit 'font-lock-type-face)
+    (agda2-highlight-bound-variable-face          :inherit 'font-lock-variable-name-face)
+    (agda2-highlight-inductive-constructor-face   :inherit 'font-lock-type-face)
+    (agda2-highlight-coinductive-constructor-face :inherit 'font-lock-type-face)
+    (agda2-highlight-datatype-face                :inherit 'font-lock-type-face)
+    (agda2-highlight-field-face                   :inherit 'font-lock-type-face)
+    (agda2-highlight-function-face                :inherit 'font-lock-function-name-face)
+    (agda2-highlight-module-face                  :inherit 'font-lock-variable-name-face)
+    (agda2-highlight-postulate-face               :inherit 'font-lock-type-face)
+    (agda2-highlight-primitive-face               :inherit 'font-lock-type-face)
+    (agda2-highlight-macro-face                   :inherit 'font-lock-function-name-face)
+    (agda2-highlight-record-face                  :inherit 'font-lock-type-face)
+    (agda2-highlight-error-face                   :inherit 'font-lock-warning-face)
+    (agda2-highlight-dotted-face                  :inherit 'font-lock-variable-name-face)
+    (agda2-highlight-unsolved-meta-face           :inherit 'font-lock-warning-face)
+    (agda2-highlight-unsolved-constraint-face     :inherit 'font-lock-warning-face)
+    (agda2-highlight-termination-problem-face     :inherit 'font-lock-warning-face)
+    (agda2-highlight-positivity-problem-face      :inherit 'font-lock-warning-face)
+    (agda2-highlight-incomplete-pattern-face      :inherit 'font-lock-warning-face)
+    (agda2-highlight-typechecks-face              :inherit 'font-lock-warning-face)
+
     ;; auctex (latex-mode)
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
