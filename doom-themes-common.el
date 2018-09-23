@@ -1172,14 +1172,14 @@
     (org-sexp-date            :foreground fg)
 
     ;; org-habit
-    (org-habit-clear-face          :weight 'bold :background bg-alt :foreground bg-alt)
-    (org-habit-clear-future-face   :weight 'bold :background bg-alt :foreground bg-alt)
-    (org-habit-ready-face          :weight 'bold :background (doom-blend blue bg-alt 0.5)   :foreground (doom-blend blue bg-alt 0.5))
-    (org-habit-ready-future-face   :weight 'bold :background (doom-blend blue bg-alt 0.5)   :foreground (doom-blend blue bg-alt 0.5))
-    (org-habit-alert-face          :weight 'bold :background (doom-blend yellow bg-alt 0.5) :foreground (doom-blend yellow bg-alt 0.5))
-    (org-habit-alert-future-face   :weight 'bold :background (doom-blend yellow bg-alt 0.5) :foreground (doom-blend yellow bg-alt 0.5))
-    (org-habit-overdue-face        :weight 'bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
-    (org-habit-overdue-future-face :weight 'bold :background (doom-blend red bg-alt 0.5)    :foreground (doom-blend red bg-alt 0.5))
+    (org-habit-clear-face          :weight 'bold :background base4)
+    (org-habit-clear-future-face   :weight 'bold :background base3)
+    (org-habit-ready-face          :weight 'bold :background (doom-blend blue bg-alt 0.5))
+    (org-habit-ready-future-face   :weight 'bold :background (doom-blend blue bg-alt 0.3))
+    (org-habit-alert-face          :weight 'bold :background (doom-blend yellow bg-alt 0.5))
+    (org-habit-alert-future-face   :weight 'bold :background (doom-blend yellow bg-alt 0.3))
+    (org-habit-overdue-face        :weight 'bold :background (doom-blend red bg-alt 0.5))
+    (org-habit-overdue-future-face :weight 'bold :background (doom-blend red bg-alt 0.3))
 
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
