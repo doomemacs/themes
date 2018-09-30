@@ -175,7 +175,8 @@
     (ido-virtual     :foreground comments)
 
     ;; isearch
-    (isearch :background highlight :foreground base0 :weight 'bold)
+    (isearch :inherit 'lazy-highlight :weight 'bold)
+    (isearch-fail :background error :foreground base0 :weight 'bold)
 
     ;; linum
     ((linum &inherit line-number))
@@ -445,6 +446,7 @@
 
     ;; evil
     (evil-ex-info                   :foreground error :slant 'italic)
+    (evil-ex-search                 :background highlight :foreground base0 :weight 'bold)
     (evil-ex-substitute-matches     :background base0 :foreground red   :strike-through t :weight 'bold)
     (evil-ex-substitute-replacement :background base0 :foreground green :weight 'bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
