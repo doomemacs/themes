@@ -164,6 +164,17 @@
     ;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
 
+    ;; hi-lock
+    (hi-yellow   :background yellow)
+    (hi-pink     :background magenta)
+    (hi-red-b    :foreground red :weight 'bold)
+    (hi-green    :background green)
+    (hi-green-b  :foreground green :weight 'bold)
+    (hi-blue     :background blue)
+    (hi-blue-b   :foreground blue :weight 'bold)
+    ;; (hi-black-b  :weight 'bold)
+    ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
+
     ;; hl-line
     (hl-line :background bg-alt)
 
