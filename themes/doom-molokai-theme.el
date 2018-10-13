@@ -69,7 +69,7 @@ determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    base4)
+   (vc-modified    blue)
    (vc-added       (doom-darken green 0.15))
    (vc-deleted     red)
 
