@@ -9,6 +9,7 @@
 - [Additional Themes](#additional-themes)
     - [doom-citylights](#doom-citylights)
     - [doom-dracula](#doom-dracula)
+    - [doom-Iosvkem](#doom-Iosvkem)
     - [doom-molokai](#doom-molokai)
     - [doom-nord](#doom-nord)
     - [doom-nord-light](#doom-nord-light)
@@ -34,6 +35,9 @@
 
 ### doom-dracula
 ![doom-dracula screenshot](doom-dracula.png)
+
+### doom-Iosvkem
+![doom-Iosvkem screenshot](doom-Iosvkem.png)
 
 ### doom-molokai
 ![doom-molokai screenshot](doom-molokai.png)
