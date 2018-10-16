@@ -6,9 +6,20 @@
   "Options for doom-molokai."
   :group 'doom-themes)
 
+(defcustom doom-one-brighter-modeline nil
+  "If non-nil, more vivid colors will be used to style the mode-line."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-molokai-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-molokai-theme
+  :type 'boolean)
+
+(defcustom doom-one-comment-bg doom-one-brighter-comments
+  "If non-nil, comments will have a subtle, darker background. Enhancing their
+legibility."
+  :group 'doom-one-theme
   :type 'boolean)
 
 (defcustom doom-molokai-padded-modeline doom-themes-padded-modeline
@@ -24,7 +35,7 @@ determine the exact padding."
   ;; name        gui       256       16
   ((bg         '("#1c1e1f" nil       nil))
    (bg-alt     '("#222323" nil       nil))
-   (base0      '("#000000"))
+   (base0      '("#000000" "black"   "black"      ))
    (base1      '("#151617" "#101010" "brightblack"))
    (base2      '("#1d1f20" "#191919" "brightblack"))
    (base3      '("#2d2e2e" "#252525" "brightblack"))
@@ -52,7 +63,7 @@ determine the exact padding."
    ;; face categories
    (highlight      orange)
    (vertical-bar   (doom-lighten bg 0.1))
-   (selection      base0)
+   (selection      base5)
    (builtin        orange)
    (comments       (if doom-molokai-brighter-comments violet base5))
    (doc-comments   (if doom-molokai-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.25)))
@@ -69,23 +80,51 @@ determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    base4)
+   (vc-modified    cyan)
    (vc-added       (doom-darken green 0.15))
    (vc-deleted     red)
 
    ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (-modeline-bright doom-one-brighter-modeline)
    (-modeline-pad
     (when doom-molokai-padded-modeline
       (if (integerp doom-molokai-padded-modeline)
           doom-molokai-padded-modeline
         4)))
 
+   (modeline-fg     nil)
+   (modeline-fg-alt base5)
+
+   (modeline-bg
+    (if -modeline-bright
+        (doom-darken blue 0.475)
+      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-darken blue 0.45)
+      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
+   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
 
   ;; --- extra faces ------------------------
   ((lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    (cursor :background magenta)
+   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
+
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground fg)
+
+   (font-lock-comment-face
+    :foreground comments
+    :background (if doom-one-comment-bg (doom-lighten bg 0.05)))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
    (mode-line
     :background base3 :foreground base8
@@ -93,10 +132,23 @@ determine the exact padding."
    (mode-line-inactive
     :background (doom-darken base2 0.2) :foreground base4
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    (doom-modeline-bar :background green)
 
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
+   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ((line-number &override) :foreground base5 :distant-foreground nil)
    ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
@@ -142,12 +194,16 @@ determine the exact padding."
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground keywords)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
 
    ;; markdown-mode
    (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
    (markdown-list-face :foreground magenta)
    (markdown-pre-face  :foreground cyan)
    (markdown-link-face :inherit 'bold :foreground blue)
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
    (markdown-code-face :background (doom-lighten base2 0.045))
 
    ;; org-mode
@@ -162,6 +218,8 @@ determine the exact padding."
    (org-quote :inherit 'italic :foreground base7 :background org-quote)
    (org-todo :foreground yellow :bold 'inherit)
    (org-list-dt :foreground yellow))
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden))
 
 
   ;; --- extra variables --------------------
