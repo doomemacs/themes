@@ -510,12 +510,12 @@
     (git-commit-comment-action)
 
     ;; git-gutter
-    (git-gutter:modified :foreground vc-modified)
+    (git-gutter:modified :foreground cyan)
     (git-gutter:added    :foreground vc-added)
     (git-gutter:deleted  :foreground vc-deleted)
 
     ;; git-gutter+
-    (git-gutter+-modified :foreground vc-modified :background nil)
+    (git-gutter+-modified :foreground cyan :background nil)
     (git-gutter+-added    :foreground vc-added :background nil)
     (git-gutter+-deleted  :foreground vc-deleted :background nil)
 
