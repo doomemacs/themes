@@ -81,12 +81,6 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
-   ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground fg)
-
    (font-lock-comment-face
     :slant 'italic
     :foreground comments)
@@ -94,34 +88,18 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :slant 'italic
     :foreground doc-comments)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
-
-   ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (doom-modeline-buffer-path       :foreground violet :bold bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -133,20 +111,15 @@ determine the exact padding."
    (js2-function-param :foreground violet)
    (js2-jsdoc-tag :foreground magenta)
    (js2-jsdoc-type :foreground base8)
-   (js2-jsdoc-value :foreground cyan)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)))
-
+   (js2-jsdoc-value :foreground cyan))
 
   ;; --- extra variables ---------------------
   ;; ()
+  )
+
+
+(provide 'doom-palenight-theme)
+
 
 
 ;;; doom-palenight-theme.el ends here
