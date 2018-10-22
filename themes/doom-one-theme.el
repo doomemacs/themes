@@ -1,7 +1,6 @@
 ;;; doom-one-theme.el --- inspired by Atom One Dark
 (require 'doom-themes)
 
-;;
 (defgroup doom-one-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
