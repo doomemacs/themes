@@ -1,4 +1,4 @@
-;;; doom-palenight-theme.el --- description -*- lexical-binding: t; -*-
+;;; doom-palenight-theme.el -*- lexical-binding: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -20,35 +20,36 @@ determine the exact padding."
   ((bg         '("#292D3E" nil       nil))
    (bg-alt     '("#21242b" nil       nil))
    (base0      '("#202431" "black"   "black"))
-   (base1      '("#232635" "black"   "black"))
+   (base1      '("#232635" "#202020" "brightblack"))
    (base2      '("#292D3E" "#292D3E" "brightblack"))
    (base3      '("#32374D" "#2e2e2e" "brightblack"))
    (base4      '("#3C435E" "#262626" "brightblack"))
    (base4      '("#444267" "#3f3f3f" "brightblack"))
    (base5      '("#676E95" "#676E95" "brightblack"))
    (base6      '("#697098" "#6b6b6b" "brightblack"))
-   (base7      '("#6c739a" "#979797" "brightblack"))
-   (base8      '("#eeffff" "#DDDDDD" "white"))
-   (fg         '("#bfc7d5" "#bfbfbf" "brightwhite"))
-   (fg-alt     '("#d9f5dd" "#2d2d2d" "white"))
+   (base7      '("#6C739A" "#979797" "brightblack"))
+   (base8      '("#EEFFFF" "#DDDDDD" "white"))
+   (fg         '("#BFC7D5" "#BFBFBF" "brightwhite"))
+   (fg-alt     '("#D9F5DD" "#2D2D2D" "white"))
 
-   (grey        base4)
-   (red         '("#ff869a" "#ff6655" "red"))
-   (orange      '("#F78C6C" "#dd8844" "brightred"))
-   (green       '("#C3E88D" "#99bb66" "green"))
-   (teal        '("#ffcb6b" "#44b9b1" "brightgreen"))
+   (grey base4)
+
+   (red         '("#FF869A" "#FF6655" "red"))
+   (orange      '("#F78C6C" "#DD8844" "brightred"))
+   (green       '("#C3E88D" "#99BB66" "green"))
+   (teal        '("#FFCB6B" "#44B9B1" "brightgreen"))
    (yellow      '("#FFEB95" "#ECBE7B" "brightyellow"))
-   (dark-yellow '("#ffcb6b" "#ffd700" "yellow"))
-   (blue        '("#82AAFF" "#51afef" "brightblue"))
+   (blue        '("#82AAFF" "#51AFEF" "brightblue"))
    (dark-blue   '("#697098" "#727280" "blue"))
-   (magenta     '("#c792ea" "#c678dd" "brightmagenta"))
-   (violet      '("#7986E7" "#a9a1e1" "magenta"))
-   (cyan        '("#78ccf0" "#46D9FF" "brightcyan"))
+   (magenta     '("#C792EA" "#C678DD" "brightmagenta"))
+   (violet      '("#7986E7" "#A9A1E1" "magenta"))
+   (cyan        '("#78CCF0" "#46D9FF" "brightcyan"))
    (dark-cyan   '("#80CBC4" "#8FA1B3" "cyan"))
 
    ;; face categories -- required for all themes
    (highlight      yellow)
    (vertical-bar   (doom-darken base1 0.1))
+   (selection      highlight)
    (builtin        blue)
    (comments       base5)
    (doc-comments   (doom-lighten base5 0.25))
@@ -79,15 +80,10 @@ determine the exact padding."
     (when doom-palenight-padded-modeline
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-   (font-lock-comment-face
-    :slant 'italic
-    :foreground comments)
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :slant 'italic
-    :foreground doc-comments)
+  ;; --- faces ------------------------
+  ((doom-modeline-buffer-path       :foreground violet :weight 'bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -96,10 +92,15 @@ determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
+   (font-lock-comment-face
+    :slant 'italic
+    :foreground comments)
 
-   ;; Doom modeline
-   (doom-modeline-buffer-path       :foreground violet :bold bold)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :slant 'italic
+    :foreground doc-comments)
+
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -108,10 +109,10 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; js2-mode
+   (js2-jsdoc-tag      :foreground magenta)
    (js2-function-param :foreground violet)
-   (js2-jsdoc-tag :foreground magenta)
-   (js2-jsdoc-type :foreground base8)
-   (js2-jsdoc-value :foreground cyan))
+   (js2-jsdoc-type     :foreground base8)
+   (js2-jsdoc-value    :foreground cyan))
 
   ;; --- extra variables ---------------------
   ;; ()

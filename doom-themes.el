@@ -33,6 +33,7 @@
 ;;   [X] `doom-opera' (added by jwintz)
 ;;   [X] `doom-opera-light' (added by jwintz)
 ;;   [X] `doom-nova' (added by bigardone)
+;;   [X] `doom-palenight' (added by brettm12345)
 ;;   [X] `doom-peacock' (added by teesloane)
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
 ;;   [X] `doom-sourcerer' (added by defphil)
