@@ -23,14 +23,13 @@ determine the exact padding."
    (base1      '("#232635" "#202020" "brightblack"))
    (base2      '("#292D3E" "#292D3E" "brightblack"))
    (base3      '("#3a3f58" "#2e2e2e" "brightblack"))
-   (base4      '("#3C435E" "#262626" "brightblack"))
    (base4      '("#4E5579" "#3f3f3f" "brightblack"))
    (base5      '("#676E95" "#676E95" "brightblack"))
    (base6      '("#697098" "#6b6b6b" "brightblack"))
    (base7      '("#717CB4" "#979797" "brightblack"))
    (base8      '("#A6Accd" "#DDDDDD" "white"))
-   (fg         '("#BFC7D5" "#BFBFBF" "brightwhite"))
-   (fg-alt     '("#A6ACCD" "#2D2D2D" "white"))
+   (fg         '("#EEFFFF" "#BFBFBF" "brightwhite"))
+   (fg-alt     '("#BFC7D5" "#2D2D2D" "white"))
 
    (grey base4)
 
@@ -81,7 +80,7 @@ determine the exact padding."
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
   ;; --- faces ------------------------
-  ((doom-modeline-buffer-path       :foreground violet :weight 'bold)
+  ((doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
    (mode-line
@@ -91,6 +90,9 @@ determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
     :slant 'italic
