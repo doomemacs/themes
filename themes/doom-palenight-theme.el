@@ -47,7 +47,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      magenta)
-   (vertical-bar   (doom-darken base1 0.1))
+   (vertical-bar   "#282B3C")
    (selection      base7)
    (builtin        blue)
    (comments       base5)
@@ -61,9 +61,9 @@ determine the exact padding."
    (strings        green)
    (variables      yellow)
    (numbers        orange)
-   (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base0) 0.35)))
-   (error          "#ff5572")
-   (warning        yellow)
+   (region         "#3C435E")
+   (error          "#FF5572")
+   (warning        "#FFCA28")
    (success        green)
    (vc-modified    orange)
    (vc-added       green)
