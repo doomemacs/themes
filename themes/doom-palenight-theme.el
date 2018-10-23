@@ -95,7 +95,8 @@ determine the exact padding."
    ((line-number-current-line &override) :foreground fg)
 
    (font-lock-keyword-face
-    :slant 'italic)
+    :slant 'italic
+    :foreground keywords)
 
    (font-lock-comment-face
     :slant 'italic
@@ -123,7 +124,7 @@ determine the exact padding."
 
    ;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :slant 'italic)))
+   (rjsx-attr :foreground yellow :slant 'italic)))
 
   ;; --- extra variables ---------------------
   ;; ()
