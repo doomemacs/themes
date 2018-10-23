@@ -111,10 +111,12 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; js2-mode
-   (js2-jsdoc-tag      :foreground magenta)
-   (js2-function-param :foreground violet)
-   (js2-jsdoc-type     :foreground base8)
-   (js2-jsdoc-value    :foreground cyan))
+   (js2-jsdoc-tag              :foreground magenta)
+   (js2-object-property        :foreground yellow)
+   (js2-object-property-access :foreground cyan)
+   (js2-function-param         :foreground violet)
+   (js2-jsdoc-type             :foreground base8)
+   (js2-jsdoc-value            :foreground cyan))
 
   ;; --- extra variables ---------------------
   ;; ()
