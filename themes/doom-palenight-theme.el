@@ -94,6 +94,9 @@ determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
 
+   (font-lock-keyword-face
+    :slant 'italic)
+
    (font-lock-comment-face
     :slant 'italic
     :foreground comments)
@@ -116,14 +119,18 @@ determine the exact padding."
    (js2-object-property-access :foreground cyan)
    (js2-function-param         :foreground violet)
    (js2-jsdoc-type             :foreground base8)
-   (js2-jsdoc-value            :foreground cyan))
+   (js2-jsdoc-value            :foreground cyan)
+
+   ;; rjsx-mode
+   (rjsx-tag :foreground red)
+   (rjsx-attr :slant 'italic)))
 
   ;; --- extra variables ---------------------
   ;; ()
-  )
 
 
-(provide 'doom-palenight-theme)
+
+  (provide 'doom-palenight-theme)
 
 
 
