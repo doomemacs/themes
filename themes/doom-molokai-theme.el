@@ -22,9 +22,9 @@ determine the exact padding."
   "A dark, vibrant theme inspired by Textmate's monokai."
 
   ;; name        gui       256       16
-  ((bg         '("#1c1e1f" nil       nil))
-   (bg-alt     '("#222323" nil       nil))
-   (base0      '("#000000"))
+  ((bg         '("#1c1e1f" nil       nil          ))
+   (bg-alt     '("#222323" nil       nil          ))
+   (base0      '("#1B2229" "black"   "black"      ))
    (base1      '("#151617" "#101010" "brightblack"))
    (base2      '("#1d1f20" "#191919" "brightblack"))
    (base3      '("#2d2e2e" "#252525" "brightblack"))
@@ -52,7 +52,7 @@ determine the exact padding."
    ;; face categories
    (highlight      orange)
    (vertical-bar   (doom-lighten bg 0.1))
-   (selection      base0)
+   (selection      base5)
    (builtin        orange)
    (comments       (if doom-molokai-brighter-comments violet base5))
    (doc-comments   (if doom-molokai-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.25)))
