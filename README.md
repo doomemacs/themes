@@ -34,6 +34,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-opera` (thanks to [jwintz])
     - [X] `doom-opera-light` (thanks to [jwintz])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+    - [X] `doom-palenight` addapted from [Material Themes](https://github.com/equinusocio/vsc-material-theme) (thanks to [Brettm12345](https://github.com/Brettm12345))
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
     - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
