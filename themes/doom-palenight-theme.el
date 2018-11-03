@@ -19,10 +19,10 @@ determine the exact padding."
   ;; name        default   256       16
   ((bg         '("#292D3E" nil       nil))
    (bg-alt     '("#21242b" nil       nil))
-   (base0      '("#202431" "black"   "black"))
-   (base1      '("#232635" "#262626" "brightblack"))
-   (base2      '("#292D3E" "#303030" "brightblack"))
-   (base3      '("#3a3f58" "#3a3a3a" "brightblack"))
+   (base0      '("#1c1f2b" "black"   "black"))
+   (base1      '("#1e212e" "#262626" "brightblack"))
+   (base2      '("#242837" "#303030" "brightblack"))
+   (base3      '("#3C435E" "#3a3a3a" "brightblack"))
    (base4      '("#4E5579" "#444444" "brightblack"))
    (base5      '("#676E95" "#585858" "brightblack"))
    (base6      '("#697098" "#626262" "brightblack"))
@@ -48,7 +48,7 @@ determine the exact padding."
    ;; face categories -- required for all themes
    (highlight      magenta)
    (vertical-bar   "#282B3C")
-   (selection      base7)
+   (selection      base3)
    (builtin        blue)
    (comments       base5)
    (doc-comments   (doom-lighten base5 0.25))
@@ -121,6 +121,11 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
+   ;; dired
+   (dired-k-commited :foreground vc-modified)
+   (dired-k-modified :foreground vc-modified)
+   (dired-k-added    :foreground vc-added)
+
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
    (js2-object-property        :foreground yellow)
@@ -131,14 +136,14 @@ determine the exact padding."
 
    ;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :foreground yellow :slant 'italic)))
+   (rjsx-attr :foreground yellow :slant 'italic))
 
   ;; --- extra variables ---------------------
   ;; ()
 
 
 
-  (provide 'doom-palenight-theme)
+  (provide 'doom-palenight-theme))
 
 
 
