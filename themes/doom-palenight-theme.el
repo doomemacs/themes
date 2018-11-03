@@ -136,14 +136,9 @@ determine the exact padding."
 
    ;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :foreground yellow :slant 'italic))
+   (rjsx-attr :foreground yellow :slant 'italic)))
 
-  ;; --- extra variables ---------------------
-  ;; ()
-
-
-
-  (provide 'doom-palenight-theme))
+(provide 'doom-palenight-theme)
 
 
 
