@@ -91,6 +91,13 @@ determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
+   (solaire-mode-line-face
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (solaire-mode-line-inactive-face
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
 
