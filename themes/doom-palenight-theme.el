@@ -48,7 +48,7 @@ determine the exact padding."
    ;; face categories -- required for all themes
    (highlight      magenta)
    (vertical-bar   "#282B3C")
-   (selection      base3)
+   (selection      base4)
    (builtin        blue)
    (comments       base5)
    (doc-comments   (doom-lighten base5 0.25))
