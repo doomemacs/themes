@@ -499,7 +499,7 @@
     (git-commit-summary :foreground strings)
     (git-commit-overlong-summary :inherit 'error :background base0 :slant 'italic :weight 'bold)
     (git-commit-nonempty-second-line :inherit 'git-commit-overlong-summary)
-    (git-commit-note :foreground cyan :slant 'italic)
+    (git-commit-keyword :foreground cyan :slant 'italic)
     (git-commit-pseudo-header :foreground doc-comments :slant 'italic)
     (git-commit-known-pseudo-header :foreground doc-comments :weight 'bold :slant 'italic)
     (git-commit-comment-branch-local :foreground magenta)
