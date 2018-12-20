@@ -216,6 +216,17 @@
     (term-color-cyan    :background cyan    :foreground cyan)
     (term-color-white   :background base8   :foreground base8)
 
+    ;; vterm
+    (vterm               :foreground fg)
+    (vterm-color-black   :background base0   :foreground base0)
+    (vterm-color-red     :background red     :foreground red)
+    (vterm-color-green   :background green   :foreground green)
+    (vterm-color-yellow  :background yellow  :foreground yellow)
+    (vterm-color-blue    :background blue    :foreground blue)
+    (vterm-color-magenta :background magenta :foreground magenta)
+    (vterm-color-cyan    :background cyan    :foreground cyan)
+    (vterm-color-white   :background base8   :foreground base8)
+
     ;; window-divider
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)
