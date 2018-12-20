@@ -830,6 +830,10 @@
     ;; parenface
     (paren-face :foreground comments)
 
+    ;; parinfer
+    (parinfer-pretty-parens:dim-paren-face :foreground base5)
+    (parinfer-smart-tab:indicator-face :foreground base5)
+
     ;; perspective
     (persp-selected-face :foreground blue :weight 'bold)
 
