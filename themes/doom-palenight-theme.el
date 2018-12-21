@@ -80,7 +80,8 @@ Can be an integer to determine the exact padding."
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
   ;; --- faces ------------------------
-  ((doom-modeline-buffer-path       :foreground green :weight 'bold)
+  ((lazy-highlight :background base4 :foreground fg :distant-foreground fg :bold bold)
+   (doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
    (mode-line
@@ -122,7 +123,7 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-2-face :foreground orange)
    (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground cyan)
-   (rainbow-delimiters-depth-5-face :foreground red)
+   (rainbow-delimiters-depth-5-face :foreground violet)
    (rainbow-delimiters-depth-6-face :foreground yellow)
    (rainbow-delimiters-depth-7-face :foreground blue)
    (rainbow-delimiters-depth-8-face :foreground teal)
