@@ -1,4 +1,4 @@
-;;; doom-palenight-theme.el -*- lexical-binding: t; -*-
+;;; doom-palenight-theme.el --- inspired by Material-PaleNight
 (require 'doom-themes)
 
 ;;
@@ -7,8 +7,8 @@
   :group 'doom-themes)
 
 (defcustom doom-palenight-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-palenight-theme
   :type '(or integer boolean))
 
@@ -65,13 +65,13 @@ determine the exact padding."
    (error          "#FF5572")
    (warning        "#FFCA28")
    (success        green)
-   (vc-modified    orange)
+   (vc-modified    blue)
    (vc-added       green)
    (vc-deleted     red)
 
    ;; custom categories
    (modeline-bg     `(,(doom-darken (car bg-alt) 0.3) ,@(cdr base3)))
-   (modeline-bg-alt `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-alt `(,(car bg) ,@(cdr base0)))
    (modeline-fg     base8)
    (modeline-fg-alt comments)
 
@@ -98,22 +98,35 @@ determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   ((line-number &override) :foreground base4)
+   ((line-number &override) :foreground base4 :background base2)
    ((line-number-current-line &override) :foreground fg)
 
    (font-lock-keyword-face
     :slant 'italic
+    :weight 'medium
     :foreground keywords)
 
    (font-lock-comment-face
     :slant 'italic
+    :weight 'medium
     :foreground comments)
 
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :slant 'italic
+    :weight 'medium
     :foreground doc-comments)
 
+   ;; rainbow-delimiters
+   (rainbow-delimiters-depth-1-face :foreground magenta)
+   (rainbow-delimiters-depth-2-face :foreground orange)
+   (rainbow-delimiters-depth-3-face :foreground green)
+   (rainbow-delimiters-depth-4-face :foreground cyan)
+   (rainbow-delimiters-depth-5-face :foreground red)
+   (rainbow-delimiters-depth-6-face :foreground yellow)
+   (rainbow-delimiters-depth-7-face :foreground blue)
+   (rainbow-delimiters-depth-8-face :foreground teal)
+   (rainbow-delimiters-depth-9-face :foreground dark-cyan)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -122,9 +135,15 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; dired
-   (dired-k-commited :foreground vc-modified)
+   (dired-k-commited :foreground base4)
    (dired-k-modified :foreground vc-modified)
+   (dired-k-ignored :foreground cyan)
    (dired-k-added    :foreground vc-added)
+
+   ;; org-mode
+   (org-block                    :background base2)
+   (org-block-background         :background base2)
+   (org-block-begin-line         :foreground comments :background base2)
 
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
@@ -136,7 +155,7 @@ determine the exact padding."
 
    ;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :foreground yellow :slant 'italic)))
+   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
 
 (provide 'doom-palenight-theme)
 
