@@ -71,7 +71,7 @@ Can be an integer to determine the exact padding."
 
    ;; custom categories
    (modeline-bg     `(,(doom-darken (car bg-alt) 0.3) ,@(cdr base3)))
-   (modeline-bg-alt `(,(car bg) ,@(cdr base0)))
+   (modeline-bg-alt (doom-darken bg 0.01))
    (modeline-fg     base8)
    (modeline-fg-alt comments)
 
@@ -80,7 +80,7 @@ Can be an integer to determine the exact padding."
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
   ;; --- faces ------------------------
-  ((lazy-highlight :background base4 :foreground fg :distant-foreground fg :bold bold)
+  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg :bold bold)
    (doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
@@ -98,6 +98,8 @@ Can be an integer to determine the exact padding."
    (solaire-mode-line-inactive-face
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   (fringe :background base2)
 
    ((line-number &override) :foreground base4 :background base2)
    ((line-number-current-line &override) :foreground fg)
