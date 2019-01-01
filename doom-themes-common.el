@@ -1035,6 +1035,10 @@
     (font-latex-warning-face      :inherit 'font-lock-warning-face)
     (font-latex-verbatim-face     :inherit 'fixed-pitch :foreground violet :slant 'italic)
 
+    (TeX-error-description-error    :inherit 'error   :weight 'bold)
+    (TeX-error-description-warning  :inherit 'warning :weight 'bold)
+    (TeX-error-description-tex-said :inherit 'success :weight 'bold)
+
     ;; elixir-mode
     (elixir-atom-face (&light :foreground dark-blue)
                       (&dark  :foreground cyan))
