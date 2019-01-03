@@ -31,7 +31,7 @@ Can be an integer to determine the exact padding."
    (fg         '("#EEFFFF" "#e4e4e4" "brightwhite"))
    (fg-alt     '("#BFC7D5" "#bcbcbc" "white"))
 
-   (grey base4)
+   (grey base5)
 
    (red         '("#FF5370" "#ff0000" "red"))
    (orange      '("#F78C6C" "#ff5f00" "brightred"))
@@ -79,7 +79,7 @@ Can be an integer to determine the exact padding."
     (when doom-palenight-padded-modeline
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
-  ;; --- faces ------------------------
+  ;; --- base faces ------------------------
   (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg :bold bold)
    (doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
@@ -120,6 +120,33 @@ Can be an integer to determine the exact padding."
     :weight 'medium
     :foreground doc-comments)
 
+   ;; --- major-mode faces ------------------------
+   ;; org-mode
+   (org-block                    :background base2)
+   (org-block-background         :background base2)
+   (org-block-begin-line         :foreground comments :background base2)
+
+   ;; --- plugin faces -------------------
+   ;; css-mode / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+
+   ;; dired-k
+   (dired-k-commited :foreground base4)
+   (dired-k-modified :foreground vc-modified)
+   (dired-k-ignored :foreground cyan)
+   (dired-k-added    :foreground vc-added)
+
+
+   ;; js2-mode
+   (js2-jsdoc-tag              :foreground magenta)
+   (js2-object-property        :foreground yellow)
+   (js2-object-property-access :foreground cyan)
+   (js2-function-param         :foreground violet)
+   (js2-jsdoc-type             :foreground base8)
+   (js2-jsdoc-value            :foreground cyan)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
@@ -130,31 +157,6 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-7-face :foreground blue)
    (rainbow-delimiters-depth-8-face :foreground teal)
    (rainbow-delimiters-depth-9-face :foreground dark-cyan)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; dired
-   (dired-k-commited :foreground base4)
-   (dired-k-modified :foreground vc-modified)
-   (dired-k-ignored :foreground cyan)
-   (dired-k-added    :foreground vc-added)
-
-   ;; org-mode
-   (org-block                    :background base2)
-   (org-block-background         :background base2)
-   (org-block-begin-line         :foreground comments :background base2)
-
-   ;; js2-mode
-   (js2-jsdoc-tag              :foreground magenta)
-   (js2-object-property        :foreground yellow)
-   (js2-object-property-access :foreground cyan)
-   (js2-function-param         :foreground violet)
-   (js2-jsdoc-type             :foreground base8)
-   (js2-jsdoc-value            :foreground cyan)
 
    ;; rjsx-mode
    (rjsx-tag :foreground red)
