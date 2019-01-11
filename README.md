@@ -40,6 +40,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
     - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
     - [x] `doom-tomorrow-day`: by [Chris Kempson][tomorrow] (thanks to [emacswatcher])
+    - [x] `doom-plain`: based on [plain][plain] (thanks to [mateossh])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
@@ -147,10 +148,12 @@ pointers. Additional theme and plugin support requests are welcome too.
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
+[mateossh]: https://github.com/mateossh
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
+[plain]: https://github.com/gko/plain
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
