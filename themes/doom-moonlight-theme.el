@@ -17,11 +17,11 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         '("#1f2133" nil       nil))
-   (bg-alt     '("#1e2132" nil       nil))
+  ((bg         '("#212337" nil       nil))
+   (bg-alt     '("#2a2e48" nil       nil))
    (base0      '("#161a2a" "black"   "black"))
    (base1      '("#191a2a" "#262626" "brightblack"))
-   (base2      '("#212337" "#303030" "brightblack"))
+   (base2      '("#1f2133" "#303030" "brightblack"))
    (base3      '("#292e46" "#3a3a3a" "brightblack"))
    (base4      '("#2c314b" "#444444" "brightblack"))
    (base5      '("#383e5c" "#585858" "brightblack"))
