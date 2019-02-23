@@ -147,14 +147,14 @@ Can be an integer to determine the exact padding."
    (dired-k-commited :foreground base4)
    (dired-k-modified :foreground vc-modified)
    (dired-k-ignored :foreground cyan)
-   (dired-k-added    :foreground vc-added
+   (dired-k-added    :foreground vc-added)
 
 
    ;; markdown-mode
-    (markdown-header-face           :inherit 'bold :foreground blue)
-    (markdown-header-delimiter-face :inherit 'markdown-header-face)
-    (markdown-metadata-key-face     :foreground magenta :inherit 'italic)
-    (markdown-list-face             :foreground red))
+   (markdown-header-face           :inherit 'bold :foreground blue)
+   (markdown-header-delimiter-face :inherit 'markdown-header-face)
+   (markdown-metadata-key-face     :foreground magenta :inherit 'italic)
+   (markdown-list-face             :foreground red)
 
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)

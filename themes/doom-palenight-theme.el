@@ -33,21 +33,21 @@ Can be an integer to determine the exact padding."
 
    (grey base5)
 
-   (red         '("#FF5370" "#ff0000" "red"))
-   (orange      '("#F78C6C" "#ff5f00" "brightred"))
-   (green       '("#C3E88D" "#afff00" "green"))
-   (teal        '("#44B9B1" "#00d7af" "brightgreen"))
-   (yellow      '("#FFCB6B" "#ffd700" "brightyellow"))
+   (red         '("#ff5370" "#ff0000" "red"))
+   (orange      '("#f78c6c" "#ff5f00" "brightred"))
+   (green       '("#c3e88d" "#afff00" "green"))
+   (teal        '("#44b9b1" "#00d7af" "brightgreen"))
+   (yellow      '("#ffcb6b" "#ffd700" "brightyellow"))
    (blue        '("#82aaff" "#5fafff" "brightblue"))
    (dark-blue   '("#b2ccd6" "#d7ffff" "blue"))
    (magenta     '("#c792ea" "#d787d7" "brightmagenta"))
    (violet      '("#bb80b3" "#d787af" "magenta"))
-   (cyan        '("#78CCF0" "#5fd7ff" "brightcyan"))
-   (dark-cyan   '("#80CBC4" "#00d7af" "cyan"))
+   (cyan        '("#78ccf0" "#5fd7ff" "brightcyan"))
+   (dark-cyan   '("#80cbc4" "#00d7af" "cyan"))
 
    ;; face categories -- required for all themes
    (highlight      magenta)
-   (vertical-bar   "#282B3C")
+   (vertical-bar   "#282b3c")
    (selection      base4)
    (builtin        blue)
    (comments       base5)
@@ -61,9 +61,9 @@ Can be an integer to determine the exact padding."
    (strings        green)
    (variables      yellow)
    (numbers        orange)
-   (region         "#3C435E")
-   (error          "#FF5572")
-   (warning        "#FFCA28")
+   (region         "#3c435e")
+   (error          "#ff5572")
+   (warning        "#ffca28")
    (success        green)
    (vc-modified    blue)
    (vc-added       green)
@@ -121,6 +121,10 @@ Can be an integer to determine the exact padding."
     :foreground doc-comments)
 
    ;; --- major-mode faces ------------------------
+   ;; man-mode
+   (Man-overstrike :inherit 'bold :foreground magenta)
+   (Man-underline :inherit 'underline :foreground blue)
+
    ;; org-mode
    (org-block                    :background base2)
    (org-block-background         :background base2)
