@@ -505,6 +505,7 @@
 
     ;; flyspell
     (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
+    (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
 
     ;; git-commit
     (git-commit-summary :foreground strings)
