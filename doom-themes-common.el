@@ -441,6 +441,10 @@
     (diredfl-tagged-autofile-name   :foreground base5 :background bg-alt)
     (diredfl-write-priv             :foreground red :background bg-alt)
 
+    ;; doom-modeline
+    (doom-modeline-eldoc-bar :foreground green)
+    (doom-modeline-inactive-bar :background nil) ; transparent
+
     ;; elscreen
     (elscreen-tab-background-face     :background bg)
     (elscreen-tab-control-face        :background bg     :foreground bg)
