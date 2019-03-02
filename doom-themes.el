@@ -212,6 +212,8 @@ between 0 and 1)."
         ',name ,@(doom-themes-prepare-facelist extra-faces))
        (custom-theme-set-variables
         ',name ,@(doom-themes-prepare-varlist extra-vars))
+       (unless bold (set-face-bold 'bold nil))
+       (unless italic (set-face-italic 'italic nil))
        (provide-theme ',name))))
 
 ;;;###autoload
