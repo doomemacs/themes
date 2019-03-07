@@ -442,7 +442,7 @@
     (diredfl-write-priv             :foreground red :background bg-alt)
 
     ;; doom-modeline
-    (doom-modeline-eldoc-bar :foreground green)
+    (doom-modeline-eldoc-bar :background green)
     (doom-modeline-inactive-bar :background nil) ; transparent
 
     ;; elscreen
