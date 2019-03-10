@@ -116,8 +116,6 @@ determine the exact padding."
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
 
-   (solaire-hl-line-face :inherit 'hl-line :background base0)
-
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
    (mode-line
