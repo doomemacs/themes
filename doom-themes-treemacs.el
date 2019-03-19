@@ -91,7 +91,7 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
               (concat (all-the-icons-octicon "file-directory" :v-adjust 0)
                       " ")
               treemacs-icon-closed-png
-              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :face 'font-lock-doc-face)
+              (concat (all-the-icons-octicon "file-directory" :v-adjust 0 :face '(:inherit font-lock-doc-face :slant normal))
                       " ")
 
               treemacs-icon-tag-node-open-png
