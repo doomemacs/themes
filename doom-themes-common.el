@@ -832,6 +832,10 @@
     (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
     (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
+    ;; objed
+    (objed-mode-line :inherit 'warning :weight 'bold)
+    (objed-hl        :inherit 'region :background (doom-blend region bg 0.5))
+
     ;; parenface
     (paren-face :foreground comments)
 
@@ -1274,6 +1278,8 @@
     (jdee-db-spec-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'grey)))
     (jdee-db-requested-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'green)))
     (jdee-db-active-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'highlight)))
+
+    (objed-cursor-color (doom-color 'red))
 
     (vc-annotate-color-map
      `(list (cons 20  ,(doom-color 'green))
