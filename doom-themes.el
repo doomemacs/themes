@@ -44,7 +44,6 @@
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
 ;;
-;;
 ;; ## Install
 ;;
 ;;   `M-x package-install RET doom-themes`
