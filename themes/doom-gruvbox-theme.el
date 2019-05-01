@@ -11,11 +11,6 @@
   :group 'doom-gruvbox-theme
   :type 'boolean)
 
-(defcustom doom-gruvbox-warm nil
-  "If non-nil, neotree/modeline will be in warmer colors"
-  :group 'doom-gruvbox-theme
-  :type 'boolean)
-
 (defcustom doom-gruvbox-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -64,8 +59,8 @@ determine the exact padding."
    (vertical-bar   grey)
    (selection      accent)
    (builtin        orange)
-   (comments       (if doom-gruvbox-brighter-comments olive fg-light))
-   (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten olive 0.1) fg-light))
+   (comments       (if doom-gruvbox-brighter-comments magenta fg-light))
+   (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) fg-light))
    (constants      yellow)
    (functions      green)
    (keywords       red)
@@ -95,7 +90,7 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
 (
-   ;;;;;;;; Doom-modeline ;;;;;;;;
+   ;;;;;;;; Editor ;;;;;;;;
    (cursor :background "white")
    (hl-line :background bg-alt)
    ((line-number-current-line &override) :background grey :foreground "white" :bold t)
@@ -142,7 +137,7 @@ determine the exact padding."
    ;;;;;;;; Mini-buffers ;;;;;;;;
    (minibuffer-prompt :foreground green)
    (solaire-hl-line-face :background accent)
-  
+
    ;; ivy
    (ivy-current-match :background accent)
    (ivy-subdir :background nil :foreground cyan)
@@ -199,7 +194,7 @@ determine the exact padding."
 
    ;;;;;;;; Misc ;;;;;;;;
    (+workspace-tab-selected-face :background dark-green :foreground "white")
-  
+
    ;; Undo tree
    (undo-tree-visualizer-active-branch-face :foreground green)
    (undo-tree-visualizer-current-face :foreground yellow)
@@ -223,10 +218,11 @@ determine the exact padding."
    (css-proprietary-property :foreground keywords)
 
    ;; markdown-mode
-   (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
-   (markdown-list-face :foreground magenta)
-   (markdown-pre-face  :foreground cyan)
-   (markdown-link-face :inherit 'bold :foreground blue)
+   (markdown-blockquote-face :inherit 'italic :foreground cyan)
+   (markdown-list-face :foreground red)
+   (markdown-url-face :foreground red)
+   (markdown-pre-face  :foreground green)
+   (markdown-link-face :inherit 'bold :foreground cyan)
    (markdown-code-face :background (doom-lighten base2 0.045))
 
    ;; org-mode
