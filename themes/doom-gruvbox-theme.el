@@ -162,6 +162,11 @@ determine the exact padding."
    (dired-marked :foreground yellow)
    (dired-symlink :foreground green)
 
+   ;; term
+   (term-color-blue :background cyan :foreground cyan)
+   (term-color-cyan :background green :foreground green)
+   (term-color-green :background olive :foreground olive)
+
    ;;;;;;;; Brackets ;;;;;;;;
    ;; Rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground red)
