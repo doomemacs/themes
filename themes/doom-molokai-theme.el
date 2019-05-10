@@ -6,8 +6,19 @@
   "Options for doom-molokai."
   :group 'doom-themes)
 
+(defcustom doom-molokai-brighter-modeline nil
+  "If non-nil, more vivid colors will be used to style the mode-line."
+  :group 'doom-molokai-theme
+  :type 'boolean)
+
 (defcustom doom-molokai-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
+  :group 'doom-molokai-theme
+  :type 'boolean)
+
+(defcustom doom-molokai-comment-bg doom-molokai-brighter-comments
+  "If non-nil, comments will have a subtle, darker background. Enhancing their
+legibility."
   :group 'doom-molokai-theme
   :type 'boolean)
 
@@ -74,11 +85,19 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (-modeline-bright doom-molokai-brighter-modeline) ;; no effect for the moment
    (-modeline-pad
     (when doom-molokai-padded-modeline
-      (if (integerp doom-molokai-padded-modeline)
-          doom-molokai-padded-modeline
-        4)))
+      (if (integerp doom-molokai-padded-modeline) doom-molokai-padded-modeline 4)))
+
+   (modeline-fg nil)
+   (modeline-fg-alt base4)
+
+   (modeline-bg
+    (if -modeline-bright base3 base3))
+   (modeline-bg-inactive
+    (if -modeline-bright (doom-darken base2 0.2) (doom-darken base2 0.2)))
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
@@ -88,15 +107,18 @@ determine the exact padding."
    (cursor :background magenta)
 
    (mode-line
-    :background base3 :foreground base8
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))
    (mode-line-inactive
-    :background (doom-darken base2 0.2) :foreground base4
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
-   (doom-modeline-bar :background green)
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
 
-   (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
+   ;; Doom modeline
+   (doom-modeline-bar :background green)
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
+   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
+   (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
 
    ((line-number &override) :foreground base5 :distant-foreground nil)
    ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
