@@ -45,7 +45,8 @@ pane and are highlighted incorrectly when used with `solaire-mode'."
                     treemacs-git-conflict-face
                     treemacs-directory-face
                     treemacs-directory-collapsed-face
-                    treemacs-file-face))
+                    treemacs-file-face
+                    treemacs-tags-face))
       (let ((faces (face-attribute face :inherit nil)))
         (set-face-attribute
          face nil :inherit
