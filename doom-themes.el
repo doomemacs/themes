@@ -191,11 +191,26 @@ between 0 and 1)."
 
 ;;;###autoload
 (defun doom-themes-set-faces (theme &rest faces)
-  "Customize THEME (a symbol) with FACES."
+  "Customize THEME (a symbol) with FACES.
+
+If THEME is nil, it applies to all themes you load. FACES is a list of Doom
+theme face specs. These is a simplified spec. For example:
+
+  (doom-themes-set-faces 'user
+    '(default :background red :foreground blue)
+    '(doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+    '(doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+    '(doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+    '(doom-modeline-buffer-project-root :foreground green :weight 'bold))"
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)
-         (mapcar #'doom-themes--build-face faces)))
+         (eval
+          `(let* ((bold   ,doom-themes-enable-bold)
+                  (italic ,doom-themes-enable-italic)
+                  ,@(cl-loop for (var . val) in doom-themes--colors
+                             collect `(,var ',val)))
+             (list ,@(mapcar #'doom-themes--build-face faces))))))
 
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
