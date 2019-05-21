@@ -950,8 +950,8 @@
 
     ;; twittering-mode
     (twitter-divider  ; custom face in Doom Emacs
-     (&light :underline '(:color (doom-lighten vertical-bar 0.2)))
-     (&dark  :underline '(:color (doom-darken vertical-bar 0.2))))
+     (&light :underline `(:color ,(doom-lighten vertical-bar 0.2)))
+     (&dark  :underline `(:color ,(doom-darken vertical-bar 0.2))))
 
     ;; undo-tree
     (undo-tree-visualizer-default-face :foreground base5)
