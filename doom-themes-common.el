@@ -261,9 +261,9 @@
     (all-the-icons-pink     :foreground (doom-lighten red 0.35))
     (all-the-icons-lpink    :foreground (doom-lighten red 0.55))
     (all-the-icons-dpink    :foreground red)
-    (all-the-icons-silver   :foreground (doom-lighten grey 0.2))
-    (all-the-icons-lsilver  :foreground (doom-lighten grey 0.4))
-    (all-the-icons-dsilver  :foreground grey)
+    (all-the-icons-silver   :foreground (doom-lighten grey 0.45))
+    (all-the-icons-lsilver  :foreground (doom-lighten grey 0.7))
+    (all-the-icons-dsilver  :foreground (doom-lighten grey 0.1))
 
     ;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
