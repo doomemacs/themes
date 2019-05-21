@@ -150,7 +150,8 @@ determine the exact padding."
    ;; org-mode
    (org-level-1
     :foreground blue :background (doom-darken bg 0.025)
-    :bold bold :height 1.2))
+    :bold bold :height 1.2)
+   (org-headline-done :foreground base7))
 
   ;; --- variables --------------------------
   ;; ()
