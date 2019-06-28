@@ -906,6 +906,21 @@
     (solaire-hl-line-face  :inherit 'hl-line :background bg)
     (solaire-org-hide-face :foreground bg-alt)
 
+    ;; spaceline
+    (spaceline-highlight-face :background highlight)
+    (spaceline-modified :background vc-modified)
+    (spaceline-unmodified :background constants)
+    (spaceline-python-venv :foreground magenta :distant-foreground violet)
+    (spaceline-flycheck-error   :inherit 'error   :distant-background base0)
+    (spaceline-flycheck-warning :inherit 'warning :distant-background base0)
+    (spaceline-flycheck-info    :inherit 'success :distant-background base0)
+    (spaceline-evil-normal  :background blue)
+    (spaceline-evil-insert  :background green)
+    (spaceline-evil-emacs   :background cyan)
+    (spaceline-evil-replace :background orange)
+    (spaceline-evil-visual  :background grey)
+    (spaceline-evil-motion  :background magenta)
+
     ;; stripe-buffer
     (stripe-highlight
      (&light :background base5)
