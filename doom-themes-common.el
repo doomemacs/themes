@@ -848,7 +848,8 @@
     (persp-selected-face :foreground blue :weight 'bold)
 
     ;; persp-mode
-    (persp-face-lighter-buffer-not-in-persp :foreground warning :slant 'italic)
+    (persp-face-lighter-default :foreground highlight :weight 'bold)
+    (persp-face-lighter-buffer-not-in-persp :foreground doc-comments)
     (persp-face-lighter-nil-persp :foreground comments)
 
     ;; popup
