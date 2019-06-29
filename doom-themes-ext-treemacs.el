@@ -1,4 +1,4 @@
-;;; doom-themes-ext-treemacs.el --- description -*- lexical-binding: t; -*-
+;;; doom-themes-ext-treemacs.el --- description -*- lexical-binding: t; no-byte-compile: t -*-
 
 (defgroup doom-themes-treemacs nil
   "Options for doom's treemacs theme"
@@ -58,10 +58,6 @@ variable-pitch face."
 
 ;;
 ;;; Bootstrap
-
-(eval-when-compile
-  (require 'treemacs-themes nil t)  ; For `treemacs-create-theme'
-  (require 'treemacs-icons nil t))  ; For `treemacs-create-icon'
 
 (with-eval-after-load 'treemacs
   (unless (require 'all-the-icons nil t)
