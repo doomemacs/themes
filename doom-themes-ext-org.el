@@ -1,27 +1,27 @@
-;;; doom-themes-org.el --- improve org-mode support for doom-themes -*- lexical-binding: t; -*-
+;;; doom-themes-ext-org.el --- improve org-mode support for doom-themes -*- lexical-binding: t; -*-
 
-(defgroup doom-org nil
+(defgroup doom-themes-org nil
   "Options for doom's org customizations."
   :group 'doom-themes)
 
 (defcustom doom-org-special-tags t
   "If non-nil, highlight #hashtags and @attags especially."
   :type 'boolean
-  :group 'doom-org)
+  :group 'doom-themes-org)
 
 ;; TODO Remove this once released with org-mode
 (defface org-upcoming-distant-deadline '((t :inherit font-lock-comment-face))
   "Face for items scheduled previously, not done, and have a distant deadline.
 See also `org-agenda-deadline-faces'."
-  :group 'doom-org)
+  :group 'doom-themes-org)
 
 ;;
-(defsubst doom-org--tag-face (n)
+(defsubst doom-themes--org-tag-face (n)
   (let ((kwd (match-string n)))
     (or (and (equal kwd "#") 'org-tag)
         (and (equal kwd "@") 'org-formula))))
 
-(defun doom-org-custom-fontification ()
+(defun doom-themes-enable-org-fontification ()
   "Correct (and improve) org-mode's font-lock keywords.
 
   1. Re-set `org-todo' & `org-headline-done' faces, to make them respect
@@ -65,7 +65,7 @@ See also `org-agenda-deadline-faces'."
                ("^ *\\(-----+\\)$" 1 'org-meta-line))
              ;; custom #hashtags & @at-tags for another level of organization
              (when doom-org-special-tags
-               '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-org--tag-face 2) prepend)))))))
+               '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
 
 
 ;; Bootstrap
@@ -80,7 +80,11 @@ See also `org-agenda-deadline-faces'."
         (0.5 . org-upcoming-deadline)
         (0.0 . org-upcoming-distant-deadline)))
 
-(add-hook 'org-font-lock-set-keywords-hook #'doom-org-custom-fontification)
+(add-hook 'org-font-lock-set-keywords-hook #'doom-themes-enable-org-fontification)
+
+;;;###autoload
+(defun doom-themes-org-config ()
+  "Enable custom fontification & improves theme integration with org-mode.")
 
 (provide 'doom-themes-org)
 ;;; doom-themes-org.el ends here
