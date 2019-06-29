@@ -4,7 +4,7 @@
 (push (expand-file-name "../themes" (file-name-directory load-file-name)) load-path)
 
 (require 'doom-themes)
-(require 'doom-themes-common)
+(require 'doom-themes-base)
 
 (defalias '-color-p 'doom-themes--colors-p)
 ;; (defalias '-build-face 'doom-themes--build-face)
@@ -19,9 +19,9 @@
 
 (defmacro -with-colors! (colors &rest body)
   (declare (indent defun))
-  `(let ((doom-themes--colors ',colors))
+  `(let ((doom-themes--palette ',colors))
      (let* (,@colors)
-       (setq doom-themes--colors
+       (setq doom-themes--palette
              (list ,@(cl-loop for (var val) in colors
                               collect `(cons ',var ,val))))
        ,@body)))
