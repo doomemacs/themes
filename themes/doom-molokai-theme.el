@@ -113,6 +113,9 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
 
+   ;; Centaur tabs
+   (centaur-tabs-active-bar-face :background green)
+
    ;; Doom modeline
    (doom-modeline-bar :background green)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)

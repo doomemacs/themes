@@ -342,6 +342,16 @@
     (cfw:face-disable            :foreground grey)
     (cfw:face-select             :background region)
 
+    ;; centaur-tabs
+    (centaur-tabs-default    :background bg-alt :foreground bg-alt)
+    (centaur-tabs-selected   :background bg :foreground fg)
+    (centaur-tabs-unselected :background bg-alt :foreground fg-alt)
+    (centaur-tabs-selected-modified   :background bg :foreground teal)
+    (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
+    (centaur-tabs-active-bar-face :background (if -modeline-bright modeline-bg highlight))
+    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground (if -modeline-bright modeline-bg highlight))
+    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground (if -modeline-bright modeline-bg highlight))
+    
     ;; company
     (company-tooltip            :inherit 'tooltip)
     (company-tooltip-common                           :foreground highlight :distant-foreground base0 :weight 'bold)
