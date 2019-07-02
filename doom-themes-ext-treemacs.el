@@ -28,10 +28,13 @@ variable-pitch face."
   (when (display-graphic-p)
     (set-window-fringes nil 0 0)))
 
-(defun doom-themes-setup-treemacs (&rest _)
-  "Set up `line-spacing' and `tab-width'."
-  (setq line-spacing doom-themes-treemacs-line-spacing
-        tab-width 1))
+(defun doom-themes-setup-tab-width (&rest _)
+  "Set `tab-width' to 1, so tab characters don't ruin formatting."
+  (setq tab-width 1))
+
+(defun doom-themes-setup-line-spacing ()
+  "Set `line-spacing' in treemacs buffers."
+  (setq line-spacing doom-themes-treemacs-line-spacing))
 
 (defun doom-themes-hide-modeline ()
   (setq mode-line-format nil))
@@ -63,7 +66,11 @@ variable-pitch face."
   (unless (require 'all-the-icons nil t)
     (error "all-the-icons isn't installed"))
 
-  (add-hook 'treemacs-mode-hook #'doom-themes-setup-treemacs)
+  (add-hook 'treemacs-mode-hook #'doom-themes-setup-tab-width)
+  (add-hook 'treemacs-mode-hook #'doom-themes-setup-line-spacing)
+
+  ;; Fix #293: tabs messing up formatting in `treemacs-icons-dired-mode'
+  (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-setup-tab-width)
 
   ;; The modeline isn't useful in treemacs
   (add-hook 'treemacs-mode-hook #'doom-themes-hide-modeline)
