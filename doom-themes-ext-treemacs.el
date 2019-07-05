@@ -58,6 +58,12 @@ variable-pitch face."
          face nil :inherit
          `(variable-pitch ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
 
+(defun doom-themes-fix-treemacs-icons-dired-mode ()
+  "Set `tab-width' to 1 in dired-mode if `treemacs-icons-dired-mode' is active."
+  (if treemacs-icons-dired-mode
+      (add-hook 'dired-mode-hook #'doom-themes-setup-tab-width nil t)
+    (remove-hook 'dired-mode-hook #'doom-themes-setup-tab-width t)))
+
 
 ;;
 ;;; Bootstrap
@@ -70,7 +76,7 @@ variable-pitch face."
   (add-hook 'treemacs-mode-hook #'doom-themes-setup-line-spacing)
 
   ;; Fix #293: tabs messing up formatting in `treemacs-icons-dired-mode'
-  (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-setup-tab-width)
+  (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-fix-treemacs-icons-dired-mode)
 
   ;; The modeline isn't useful in treemacs
   (add-hook 'treemacs-mode-hook #'doom-themes-hide-modeline)
