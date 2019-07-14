@@ -27,7 +27,7 @@ determine the exact padding."
    (base7      '("#969896" "#979797" "brightblack"))
    (base8      '("#ffffff" "#ffffff" "white"      ))
    (fg         '("#c5c8c6" "#c5c5c5" "white"))
-   (fg-alt     (doom-darken fg 0.6))
+   (fg-alt     (doom-darken fg 0.4))
 
    (grey       '("#5a5b5a" "#5a5a5a" "brightblack"))
    (red        '("#cc6666" "#cc6666" "red"))
