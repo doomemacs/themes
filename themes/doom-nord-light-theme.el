@@ -36,7 +36,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-nord-light
-  "A dark theme inspired by Nord-Light."
+  "A light theme inspired by Nord-Light."
 
   ;; name        default   256       16
   ((bg '("#E5E9F0" nil nil))
