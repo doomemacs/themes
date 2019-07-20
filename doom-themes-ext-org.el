@@ -86,5 +86,5 @@ See also `org-agenda-deadline-faces'."
 (defun doom-themes-org-config ()
   "Enable custom fontification & improves theme integration with org-mode.")
 
-(provide 'doom-themes-org)
-;;; doom-themes-org.el ends here
+(provide 'doom-themes-ext-org)
+;;; doom-themes-ext-org.el ends here
