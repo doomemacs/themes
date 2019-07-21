@@ -140,6 +140,10 @@ determine the exact padding."
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
+
+
+  ;; --- extra variables ---------------------
+  ((solaire-mode-auto-swap-bg t)))
 
 ;;; doom-opera-theme.el ends here

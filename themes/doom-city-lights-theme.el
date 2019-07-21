@@ -171,7 +171,7 @@ determine the exact padding."
 
 
   ;; --- extra variables ---------------------
-  ;; ()
+  ((solaire-mode-auto-swap-bg t))
   )
 
 ;;; doom-city-lights-theme.el ends here
