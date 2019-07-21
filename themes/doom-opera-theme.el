@@ -144,6 +144,6 @@ determine the exact padding."
 
 
   ;; --- extra variables ---------------------
-  ((solaire-mode-auto-swap-bg t)))
+  ())
 
 ;;; doom-opera-theme.el ends here
