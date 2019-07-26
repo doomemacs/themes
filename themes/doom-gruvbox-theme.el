@@ -22,9 +22,9 @@ determine the exact padding."
   "Dark theme with pastel 'retro groove' colors."
 
   ;; name        gui       256       16
-  ((bg         '("#282828" nil       nil          ))
-   (bg-alt     (doom-lighten bg 0.05))
-   (accent     '("#504945" "#504945" "brown"          ))
+  ((bg         '("#282828" "#282828"  nil         ))
+   (bg-alt     '("#323232" "#323232"  nil         ))
+   (accent     '("#504945" "#504945" "brown"      ))
 
    (base0      '("#1B2229" "black"   "black"      ))
    (base1      '("#151617" "#101010" "brightblack"))
@@ -32,12 +32,11 @@ determine the exact padding."
    (base3      '("#2d2e2e" "#252525" "brightblack"))
    (base4      '("#4e4e4e" "#454545" "brightblack"))
    (base5      '("#555556" "#6b6b6b" "brightblack"))
-   (base6      '("#767679" "#7b7b7b" "brightblack"))
+   (base6      '("#7c6f64" "#7b7b7b" "brightblack"))
    (base7      '("#cfc0c5" "#c1c1c1" "brightblack"))
    (base8      '("#ffffff" "#ffffff" "brightwhite"))
    (fg         '("#ebdbb2" "#dfdfdf" "brightwhite"))
-   (fg-alt    '("#928374" "#dfdfdf" "brightwhite"))
-   (fg-light (doom-lighten fg-alt 0.25))
+   (fg-alt     '("#928374" "#dfdfdf" "brightwhite"))
 
    (grey       '("#555556" "#515154" "brightblack"))
    (red        '("#fb4934" "#e74c3c" "red"))
@@ -45,10 +44,10 @@ determine the exact padding."
    (violet     '("#d3869b" "#d3869b" "brightmagenta"))
    (orange     '("#fe8019" "#fd971f" "brightred"))
    (yellow     '("#fabd2f" "#fabd2f" "yellow"))
-   (dark-green      '("#689d6a" "#689d6a" "green"))
+   (dark-green '("#689d6a" "#689d6a" "green"))
    (green      '("#8ec07c" "#8ec07c" "green"))
    (teal       green)
-   (olive     '("#b8bb26" "#b8bb26" "green"))
+   (olive      '("#b8bb26" "#b8bb26" "green"))
    (blue       '("#268bd2" "#2686D6" "brightblue"))
    (dark-blue  '("#727280" "#727280" "blue"))
    (cyan       '("#83a598" "#83a598" "brightcyan"))
@@ -59,8 +58,8 @@ determine the exact padding."
    (vertical-bar   grey)
    (selection      accent)
    (builtin        orange)
-   (comments       (if doom-gruvbox-brighter-comments magenta fg-light))
-   (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) fg-light))
+   (comments       (if doom-gruvbox-brighter-comments magenta base6))
+   (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
    (constants      yellow)
    (functions      green)
    (keywords       red)
@@ -103,7 +102,7 @@ determine the exact padding."
 
    ;;;;;;;; Doom-modeline ;;;;;;;;
    (mode-line
-    :background accent :foreground fg-light
+    :background accent :foreground (doom-lighten fg-alt 0.25)
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
 
    (mode-line-inactive
@@ -148,13 +147,17 @@ determine the exact padding."
    (ivy-minibuffer-match-highlight :foreground olive)
    (counsel-key-binding :foreground green)
 
+   ;; ivy-posframe
+   (ivy-posframe :background bg-alt)
+   (ivy-posframe-border :background base1)
+
    ;; neotree
    (neo-root-dir-face   :foreground green )
    (doom-neotree-dir-face :foreground cyan)
    (neo-dir-link-face   :foreground cyan)
    (doom-neotree-file-face :foreground fg)
-   (doom-neotree-hidden-file-face :foreground fg-light)
-   (doom-neotree-media-file-face :foreground fg-light)
+   (doom-neotree-hidden-file-face :foreground (doom-lighten fg-alt 0.25))
+   (doom-neotree-media-file-face :foreground (doom-lighten fg-alt 0.25))
    (neo-expand-btn-face :foreground magenta)
 
    ;; dired
@@ -183,7 +186,7 @@ determine the exact padding."
    ;;;;;;;; which-key ;;;;;;;;
    (which-func :foreground green)
    (which-key-command-description-face :foreground fg)
-   (which-key-group-description-face :foreground fg-light)
+   (which-key-group-description-face :foreground (doom-lighten fg-alt 0.25))
    (which-key-local-map-description-face :foreground cyan)
 
    ;;;;;;;; Company ;;;;;;;;
