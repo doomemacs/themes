@@ -40,8 +40,8 @@ determine the exact padding."
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#3B4252" nil       nil            ))
-   (bg-alt     '("#2E3440" nil       nil            ))
+  ((bg         '("#2E3440" nil       nil            ))
+   (bg-alt     '("#272C36" nil       nil            ))
    (base0      '("#191C25" "black"   "black"        ))
    (base1      '("#242832" "#1e1e1e" "brightblack"  ))
    (base2      '("#2C333F" "#2e2e2e" "brightblack"  ))
@@ -111,7 +111,7 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-blend bg base5 0.2)
-      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      base1))
    (modeline-bg-l
     (if -modeline-bright
         (doom-blend bg base5 0.2)
