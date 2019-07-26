@@ -143,6 +143,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
+[ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
 [fuxialexander]: https://github.com/fuxialexander
@@ -150,6 +151,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
+[jwintz]: https://github.com/jwintz
 [JongW]: https://github.com/JongW
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
