@@ -67,7 +67,7 @@ determine the exact padding."
    (operators      cyan)
    (type           green)
    (strings        olive)
-   (variables      fg)
+   (variables      cyan)
    (numbers        violet)
    (region         accent)
    (error          red)
