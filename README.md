@@ -27,7 +27,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - Additional themes
     - [X] `doom-city-lights` (thanks to [fuxialexander])
     - [X] `doom-dracula` (thanks to [fuxialexander])
-    - [X] `doom-gruvbox` (thanks to [JongW])
+    - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
     - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
     - [X] `doom-molokai`: based on Textmate's monokai
     - [X] `doom-nord` (thanks to [fuxialexander])
@@ -146,10 +146,11 @@ pointers. Additional theme and plugin support requests are welcome too.
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
 [fuxialexander]: https://github.com/fuxialexander
+[gruvbox]: https://github.com/morhetz/gruvbox
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
-[gruvbox]: https://github.com/JongW
+[JongW]: https://github.com/JongW
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
