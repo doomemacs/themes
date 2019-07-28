@@ -26,6 +26,7 @@
 ;; Additional themes
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
+;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-molokai'

@@ -27,6 +27,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - Additional themes
     - [X] `doom-city-lights` (thanks to [fuxialexander])
     - [X] `doom-dracula` (thanks to [fuxialexander])
+    - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
     - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
     - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
     - [X] `doom-molokai`: based on Textmate's monokai
@@ -157,6 +158,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
+[sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
