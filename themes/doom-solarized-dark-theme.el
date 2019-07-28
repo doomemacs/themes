@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-solarized-dark
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by VS Code Solarized Dark"
 
   ;; name        default   256       16
   ((bg         '("#002b36" nil       nil            ))

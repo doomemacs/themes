@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-challenger-deep
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by Atom City Lights"
 
   ;; name        default   256       16
   ((bg         '("#1b182c" "#1c1c1c" nil            ))

@@ -1,4 +1,4 @@
-;;; doom-peacock-theme.el
+;;; doom-peacock-theme.el --- inspired y daylerees Peacock
 (require 'doom-themes)
 
 (defgroup doom-peacock-theme nil
@@ -29,7 +29,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-peacock
-  "peacock theme!"
+  "Peacock theme from daylerees themes "
 
   ;; name        default   256       16
   ((bg         '("#2b2a27" nil       nil            ))

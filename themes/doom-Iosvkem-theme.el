@@ -1,4 +1,4 @@
-;;; doom-Iosvkem-theme.el --- inspired by Atom One Dark
+;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem
 (require 'doom-themes)
 
 ;;
@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-Iosvkem
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by VIM Iosvkem"
 
   ;; name        default   256       16
   ((bg         '("#1b1d1e" "#1b1d1e" nil))

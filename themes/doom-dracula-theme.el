@@ -36,7 +36,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-dracula
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme based on Dracula theme"
 
   ;; name        default   256       16
   ((bg         '("#282a36" nil       nil            ))
