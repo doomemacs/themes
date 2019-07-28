@@ -20,7 +20,7 @@ variable-pitch face."
   :group 'doom-themes-treemacs)
 
 (defcustom doom-themes-treemacs-color-icons nil
-  "If non nil, display a lesss miimalistic Treemacs theme with colorful icons."
+  "If non nil, display a less minimalistic Treemacs theme with colorful icons."
   :type 'boolean
   :group 'doom-themes-treemacs)
 
