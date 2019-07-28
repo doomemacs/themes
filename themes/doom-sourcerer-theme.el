@@ -1,4 +1,4 @@
-;; doom-sourcerer-theme.el --- a more sourcerer version of doom-one
+;; doom-sourcerer-theme.el --- a more Sourcerer version of doom-one
 ;;; Commentary:
 (require 'doom-themes)
 ;;; Code:
@@ -32,7 +32,7 @@ Can be an integer to determine the exact padding."
 
 ;;
 (def-doom-theme doom-sourcerer
-  "A dark theme based off of xero's sourcerer vim colorscheme"
+  "A dark theme based off of xero's Sourcerer VIM colorscheme"
 
   ((bg         '("#202020"))
    (bg-alt     '("#222222"))

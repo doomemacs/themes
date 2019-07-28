@@ -1,4 +1,4 @@
-;; doom-gruvbox-theme.el --- inspired by morhetz gruvbox
+;; doom-gruvbox-theme.el --- inspired by morhetz Gruvbox
 (require 'doom-themes)
 
 ;;

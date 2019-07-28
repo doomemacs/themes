@@ -1,4 +1,4 @@
-;;; doom-challenger-deep-theme.el --- inspired by Atom City Lights
+;;; doom-challenger-deep-theme.el --- inspired by VIM Challenger Deep
 (require 'doom-themes)
 
 ;;
@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-challenger-deep
-  "A dark theme inspired by Atom City Lights"
+  "A dark theme inspired by VIM Challenger Deep"
 
   ;; name        default   256       16
   ((bg         '("#1b182c" "#1c1c1c" nil            ))

@@ -17,7 +17,7 @@ Can be an integer to determine the exact padding."
   :type '(or integer boolean))
 
 (def-doom-theme doom-tomorrow-day
-  "A theme based off of Chris Kempson's Tomorrow Dark."
+  "A light theme based off of Chris Kempson's Tomorrow Dark."
 
   ;; name        gui       256       16
   ((bg         '("#ffffff" "white"   "white" ))

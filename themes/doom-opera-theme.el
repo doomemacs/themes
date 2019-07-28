@@ -35,7 +35,7 @@ determine the exact padding."
   :type 'symbol)
 
 (def-doom-theme doom-opera
-  "A dark opera theme."
+  "A dark Opera theme."
 
   ;; name        default   256       16
   ((bg         '("#323334" nil       nil            ))

@@ -1,4 +1,4 @@
-;; doom-molokai-theme.el --- inspired by Textmate's monokai
+;; doom-molokai-theme.el --- inspired by Textmate's Monokai
 (require 'doom-themes)
 
 ;;
@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-molokai
-  "A dark, vibrant theme inspired by Textmate's monokai."
+  "A dark, vibrant theme inspired by Textmate's Monokai."
 
   ;; name        gui       256       16
   ((bg         '("#1c1e1f" nil       nil          ))
