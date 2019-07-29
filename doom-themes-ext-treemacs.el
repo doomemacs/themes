@@ -98,49 +98,70 @@ variable-pitch face."
   (treemacs-create-theme "doom"
     :config
     (let ((face-spec '(:inherit font-lock-doc-face :slant normal)))
+      (treemacs-create-icon
+       :icon (format " %s\t" (all-the-icons-octicon "repo" :v-adjust -0.1 :face face-spec))
+       :extensions (root))
+      (treemacs-create-icon
+       :icon (format "%s\t%s\t"
+		     (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
+		     (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
+       :extensions (dir-open))
+      (treemacs-create-icon
+       :icon (format "%s\t%s\t"
+		     (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
+		     (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
+       :extensions (dir-closed))
+      (treemacs-create-icon
+       :icon (format "  %s\t" (all-the-icons-octicon "file-media" :v-adjust 0 :face face-spec))
+       :extensions ("png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
+		    "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
+		    "wav" "mp3" "ogg" "midi"))
+      (treemacs-create-icon
+       :icon (format "  %s\t" (all-the-icons-octicon "file-binary" :v-adjust 0 :face face-spec))
+       :extensions ("exe" "dll" "obj" "so" "o" "out"))
+      (treemacs-create-icon
+       :icon (format "  %s\t" (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
+       :extensions ("zip" "7z" "tar" "gz" "rar" "tgz"))
+      (treemacs-create-icon
+       :icon (format "  %s\t" (all-the-icons-octicon "book" :v-adjust 0 :face face-spec))
+       :extensions ("lrf" "lrx" "cbr" "cbz" "cb7" "cbt" "cba" "chm" "djvu"
+		    "doc" "docx" "pdb" "pdb" "fb2" "xeb" "ceb" "inf" "azw"
+		    "azw3" "kf8" "kfx" "lit" "prc" "mobi" "exe" "or" "pkg"
+		    "opf" "txt" "pdb" "ps" "rtf" "pdg" "xml" "tr2" "tr3"
+		    "oxps" "xps"))
+      (treemacs-create-icon
+       :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
+       :extensions (fallback))
       (if doom-themes-treemacs-color-icons
 	  ;; if `doom-themes-treemacs-color-icons' is non-nil, display a more colorful Treemacs theme.
 	  (progn
-	    (treemacs-create-icon
-	     :icon (format " %s\t" (all-the-icons-octicon "repo" :v-adjust -0.1 :face face-spec))
-	     :extensions (root))
-	    (treemacs-create-icon
-	     :icon (format "%s\t%s\t"
-			   (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
-			   (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
-	     :extensions (dir-open))
-	    (treemacs-create-icon
-	     :icon (format "%s\t%s\t"
-			   (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
-			   (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
-	     :extensions (dir-closed))
 	    (treemacs-create-icon
 	     :icon (format "%s\t%s\t"
 			   (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
 			   (all-the-icons-faicon "cube"
 						 :v-adjust 0.1
-						 :face 'font-lock-keyword-face))
+						 :face 'font-lock-function-name-face))
 	     :extensions (tag-open))
 	    (treemacs-create-icon
 	     :icon (format "%s\t%s\t"
 			   (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
 			   (all-the-icons-faicon "cube"
 						 :v-adjust 0.1
-						 :face 'font-lock-keyword-face))
+						 :face 'font-lock-function-name-face))
 	     :extensions (tag-closed))
 	    (treemacs-create-icon
 	     :icon (format "%s " (all-the-icons-faicon "tag"
 						       :height 0.9
-						       :face 'font-lock-type-face))
+						       :face 'font-lock-variable-name-face))
 	     :extensions (tag-leaf))
 	    (treemacs-create-icon
-	     :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face face-spec))
+	     :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))
 	     :extensions (error))
 	    (treemacs-create-icon
-	     :icon (format "%s\t" (all-the-icons-octicon "stop" :v-adjust 0 :face face-spec))
+	     :icon (format "%s\t" (all-the-icons-octicon "stop" :v-adjust 0 :face 'all-the-icons-yellow))
 	     :extensions (warning))
 	    (treemacs-create-icon
-	     :icon (format "%s\t" (all-the-icons-octicon "info" :height 0.75 :v-adjust 0.1 :face face-spec))
+	     :icon (format "%s\t" (all-the-icons-octicon "info" :height 0.75 :v-adjust 0.1 :face 'all-the-icons-green))
 	     :extensions (info))
 	    ;; Icons for filetypes
 	    (treemacs-create-icon
@@ -303,43 +324,12 @@ variable-pitch face."
 	     :icon (format "  %s\t" (all-the-icons-fileicon "verilog" :face 'all-the-icons-red))
 	     :extensions ("v" "vh" "sv"))
 	    (treemacs-create-icon
-	     :icon (format "  %s\t" (all-the-icons-octicon "file-media" :v-adjust 0 :face face-spec))
-	     :extensions ("png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
-			  "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
-			  "wav" "mp3" "ogg" "midi"))
-	    (treemacs-create-icon
-	     :icon (format "  %s\t" (all-the-icons-octicon "book" :v-adjust 0 :face face-spec))
-	     :extensions ("lrf" "lrx" "cbr" "cbz" "cb7" "cbt" "cba" "chm" "djvu"
-			  "doc" "docx" "pdb" "pdb" "fb2" "xeb" "ceb" "inf" "azw"
-			  "azw3" "kf8" "kfx" "lit" "prc" "mobi" "exe" "or"
-			  "pkg" "opf" "txt" "pdb" "ps" "rtf" "pdg" "xml" "tr2"
-			  "tr3" "oxps" "xps"))
+	     :icon (format "  %s\t" (all-the-icons-icon-for-file "foo.log"))
+	     :extensions ("log"))
 	    (treemacs-create-icon
 	     :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
-	     :extensions ("txt" "CONTRIBUTE" "LICENSE" "README" "CHANGELOG"))
-	    (treemacs-create-icon
-	     :icon (format "  %s\t" (all-the-icons-octicon "file-binary" :v-adjust 0 :face face-spec))
-	     :extensions ("exe" "dll" "obj" "so" "o" "out"))
-	    (treemacs-create-icon
-	     :icon (format "  %s\t" (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
-	     :extensions ("zip" "7z" "tar" "gz" "rar" "tgz"))
-	    (treemacs-create-icon
-	     :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
-	     :extensions (fallback)))
+	     :extensions ("txt" "CONTRIBUTE" "LICENSE" "README" "CHANGELOG")))
 	;; else, display a minimalistic Atom-esque theme
-	(treemacs-create-icon
-	 :icon (format " %s\t" (all-the-icons-octicon "repo" :v-adjust -0.1 :face face-spec))
-	 :extensions (root))
-	(treemacs-create-icon
-	 :icon (format "%s\t%s\t"
-		       (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
-		       (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
-	 :extensions (dir-open))
-	(treemacs-create-icon
-	 :icon (format "%s\t%s\t"
-		       (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
-		       (all-the-icons-octicon "file-directory" :v-adjust 0 :face face-spec))
-	 :extensions (dir-closed))
 	(treemacs-create-icon
 	 :icon (format "%s\t%s\t"
 		       (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
@@ -362,11 +352,6 @@ variable-pitch face."
 	 :icon (format "%s\t" (all-the-icons-octicon "info" :height 0.75 :v-adjust 0.1 :face face-spec))
 	 :extensions (info))
 	(treemacs-create-icon
-	 :icon (format "  %s\t" (all-the-icons-octicon "file-media" :v-adjust 0 :face face-spec))
-	 :extensions ("png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
-		      "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
-		      "wav" "mp3" "ogg" "midi"))
-	(treemacs-create-icon
 	 :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
 	 :extensions ("yml" "yaml" "sh" "zsh" "fish" "c" "h" "cpp" "cxx" "hpp"
 		      "tpp" "cc" "hh" "hs" "lhs" "cabal" "py" "pyc" "rs" "el"
@@ -381,27 +366,14 @@ variable-pitch face."
 		      "gitconfig"))
 	(treemacs-create-icon
 	 :icon (format "  %s\t" (all-the-icons-octicon "book" :v-adjust 0 :face face-spec))
-	 :extensions ("lrf" "lrx" "cbr" "cbz" "cb7" "cbt" "cba" "chm" "djvu"
-		      "doc" "docx" "pdb" "pdb" "fb2" "xeb" "ceb" "inf" "azw"
-		      "azw3" "kf8" "kfx" "lit" "prc" "mobi" "exe" "or" "html"
-		      "pkg" "opf" "txt" "pdb" "ps" "rtf" "pdg" "xml" "tr2"
-		      "tr3" "oxps" "xps"))
+	 :extensions ("html"))
 	(treemacs-create-icon
 	 :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
 	 :extensions ("md" "markdown" "rst" "log" "org" "txt"
 		      "CONTRIBUTE" "LICENSE" "README" "CHANGELOG"))
 	(treemacs-create-icon
-	 :icon (format "  %s\t" (all-the-icons-octicon "file-binary" :v-adjust 0 :face face-spec))
-	 :extensions ("exe" "dll" "obj" "so" "o" "out"))
-	(treemacs-create-icon
 	 :icon (format "  %s\t" (all-the-icons-octicon "file-pdf" :v-adjust 0 :face face-spec))
-	 :extensions ("pdf"))
-	(treemacs-create-icon
-	 :icon (format "  %s\t" (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
-	 :extensions ("zip" "7z" "tar" "gz" "rar" "tgz"))
-	(treemacs-create-icon
-	 :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
-	 :extensions (fallback)))))
+	 :extensions ("pdf")))))
 
   (treemacs-load-theme "doom"))
 
