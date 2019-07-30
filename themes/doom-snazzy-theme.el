@@ -14,54 +14,37 @@
   "A dark theme inspired by Atom Snazzy Dark"
 
   ;; name        default   256       16
-  ((bg         '("#282a36" nil       nil)) ;; this is the background for the hl-line, modeline, and minibuffer
-   (bg-alt     '("#242631" nil       nil)) ;; this is the background for the line you arent currently on
-   (base0      '("#282a36" nil       nil))
-   (base1      '("#34353e" nil       nil))
-   (base2      '("#43454f" nil       nil))
-   (base3      '("#78787e" nil       nil))
-   (base4      '("#a5a5a9" nil       nil))
-   (base5      '("#e2e4e5" nil       nil))
-   (base6      '("#eff0eb" nil       nil))
-   (base7      '("#f1f1f0" nil       nil))
-   (base8      '("#ff5c57" nil       nil))
-   (base9      '("#ff9f43" nil       nil))
-   (base10     '("#f3f99d" nil       nil))
-   (base11     '("#5af78e" nil       nil))
-   (base12     '("#9aedfe" nil       nil))
-   (base13     '("#57c7ff" nil       nil))
-   (base14     '("#ff6ac1" nil       nil))
-   (base15     '("#b2643c" nil       nil))
-   (fg         '("#f9f9f9" nil       nil))
-   (fg-alt     '("#5B6268" nil       nil))
+  ((bg         '("#282a36" "#282a36" nil          )) ;; this is the background for the hl-line, modeline, and minibuffer
+   (bg-alt     '("#242631" "#242631" nil          )) ;; this is the background for the line you arent currently on
+   (base0      '("#282a36" "#282a36" "black"      ))
+   (base1      '("#34353e" "#34353e" "brightblack"))
+   (base2      '("#43454f" "#43454f" "brightblack"))
+   (base3      '("#78787e" "#78787e" "brightblack"))
+   (base4      '("#a5a5a9" "#a5a5a9" "brightblack"))
+   (base5      '("#e2e4e5" "#e2e4e5" "brightblack"))
+   (base6      '("#eff0eb" "#eff0eb" "brightblack"))
+   (base7      '("#f1f1f0" "#f1f1f0" "brightblack"))
+   (base8      '("#ff5c57" "#ff5c57" "white"      ))
+   (fg         '("#f9f9f9" "#f9f9f9" "white"      ))
+   (fg-alt     '("#d1d1d1" "#d1d1d1" "brightwhite"))
 
-   (ui0 '("#f9f9f9" nil nil))
-   (ui1 '("#f9f9ff" nil nil))
-   (ui2 '("#eff0eb" nil nil))
-   (ui3 '("#e2e4e5" nil nil))
-   (ui4 '("#a1a6a8" nil nil))
-   (ui5 '("#848688" nil nil))
-   (ui6 '("#5e6c70" nil nil))
-   (ui7 '("#536991" nil nil))
-   (ui8 '("#606580" nil nil))
-   (ui9 '("#3a3d4d" nil nil))
-   (internalborder '("#1c1e27" nil nil))
-   ;; 10 skipped for some reason
-   (ui11 '("#282a36" nil nil))
-   (ui12 '("#192224" nil nil))
+   (ui0 '("#848688" "#848688" "grey"))
+   (ui1 '("#606580" "#606580" "grey"))
+   (ui2 '("#3a3d4d" "#3a3d4d" "grey"))
+   (ui3 '("#1c1e27" "#1c1e27" "black"))
 
-   (grey       ui5)
-   (red        '("#ff5c57" nil nil))
-   (green      '("#5af78e" nil nil))
-   (yellow     '("#f3f99d" nil nil))
-   (blue       '("#57c7ff" nil nil))
-   (dark-blue  '("#459fcc" nil nil))
-   (magenta    '("#ff6ac1" nil nil))
-   (cyan       '("#9aedfe" nil nil))
-   (violet     '("#bd93f9" nil nil))
-   (orange     '("#ffb86c" nil nil))
-   (teal       '("#aad4d3" nil nil))
-   (dark-cyan  '("#82c9d7" nil nil))
+   (grey       ui0)
+   (red        '("#ff5c57" "#ff5c57" "red"          ))
+   (green      '("#5af78e" "#5af78e" "brightred"    ))
+   (yellow     '("#f3f99d" "#f3f99d" "green"        ))
+   (blue       '("#57c7ff" "#57c7ff" "brightgreen"  ))
+   (dark-blue  '("#459fcc" "#459fcc" "yellow"       ))
+   (magenta    '("#ff6ac1" "#ff6ac1" "brightblue"   ))
+   (cyan       '("#9aedfe" "#9aedfe" "blue"         ))
+   (violet     '("#bd93f9" "#bd93f9" "magenta"      ))
+   (orange     '("#ffb86c" "#ffb86c" "brightmagenta"))
+   (teal       '("#aad4d3" "#aad4d3" "brightcyan"   ))
+   (dark-cyan  '("#82c9d7" "#82c9d7" "cyan"         ))
 
    ;; face categories -- required for all themes
    (highlight      blue) ;; when searching with (/) ?
@@ -71,7 +54,7 @@
    (selection      dark-blue) ;; for like company autocomplete and stuff
    (builtin magenta) ;; saw this in company autocomplete if i moved my mouse
                      ;; over it
-   (comments       ui8) ;; comments
+   (comments       ui1) ;; comments
    (doc-comments (doom-lighten yellow 0.25)) ;; easy to test with elisp
                                              ;; documentation or git commit
                                              ;; first line thing
@@ -102,15 +85,15 @@
     :foreground base5)
    (doom-modeline-bar :background highlight)
    ;; line numbers
-   (line-number :foreground ui9)
+   (line-number :foreground ui2)
    (line-number-current-line :foreground fg)
    ;; rjsx stuff
    (rjsx-text :foreground fg)
 
-   (ivy-posframe-border :background internalborder)
+   (ivy-posframe-border :background ui3)
 
    ;; org
-   (org-level-1 :foreground blue :background ui9 :height 1.25 :weight 'bold)
+   (org-level-1 :foreground blue :background ui2 :height 1.25 :weight 'bold)
    (org-level-3 :foreground dark-blue))) ;; this is ff0000 from something above, dunno what
 
 ;;; doom-snazzy-theme.el ends here
