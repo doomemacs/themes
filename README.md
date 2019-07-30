@@ -35,9 +35,10 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-nord-light` (thanks to [fuxialexander])
     - [X] `doom-opera` (thanks to [jwintz])
     - [X] `doom-opera-light` (thanks to [jwintz])
-    - [X] `doom-outrun-electric`: a high contrast neon colored theme inspired in VS Code [Outrun Electric][outrun] (thanks to [ema2159])
+    - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code [Outrun Electric][outrun] (thanks to [ema2159])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
+    - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
     - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
     - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
@@ -142,6 +143,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
 [airline-themes]: https://github.com/AnthonyDiGirolamo/airline-themes
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
+[ar1a]: https://github.com/ar1a
 [bigardone]: https://github.com/bigardone
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
@@ -162,6 +164,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [outrun]: https://github.com/samrap/outrun-theme-vscode
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
+[snazzy]: https://github.com/sindresorhus/hyper-snazzy
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [sourcerer]: https://github.com/xero/sourcerer.vim
