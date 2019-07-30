@@ -35,6 +35,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-nord-light` (thanks to [fuxialexander])
     - [X] `doom-opera` (thanks to [jwintz])
     - [X] `doom-opera-light` (thanks to [jwintz])
+    - [X] `doom-outrun-electric`: a high contrast neon colored theme inspired in VS Code [Outrun Electric][outrun] (thanks to [ema2159])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
@@ -158,6 +159,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
+[outrun]: https://github.com/samrap/outrun-theme-vscode
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [solarized]: http://ethanschoonover.com/solarized

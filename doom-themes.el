@@ -34,6 +34,7 @@
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
 ;;   [X] `doom-opera' (added by jwintz)
 ;;   [X] `doom-opera-light' (added by jwintz)
+;;   [X] `doom-outrun' (added by ema2159)
 ;;   [X] `doom-nova' (added by bigardone)
 ;;   [X] `doom-peacock' (added by teesloane)
 ;;   [X] `doom-solarized-dark' (added by ema2159)
