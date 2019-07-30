@@ -20,17 +20,17 @@ determine the exact padding."
    (bg-alt     '("#44545d" "#445566" "black"))
 
    ;; FIXME Tweak these
-   (base0      '("#0d0f11" "#0d0f11" "black"      )) ; FIXME black
-   (base1      '("#1e272c" "#1b1b1b"              ))
-   (base2      '("#212122" "#1e1e1e"              )) ;
-   (base3      '("#2f3f48" "#292929" "brightblack")) ;
-   (base4      '("#3c4c55" "#3f3f3f" "brightblack")) ;
+   (base0      '("#0d0f11" "#0d0f11" "black"      ))
+   (base1      '("#1e272c" "#1b1b1b" "black"      ))
+   (base2      '("#212122" "#1e1e1e" "black"      ))
+   (base3      '("#2f3f48" "#292929" "brightblack"))
+   (base4      '("#3c4c55" "#3f3f3f" "brightblack"))
    (base5      '("#556873" "#525252" "brightblack"))
    (base6      '("#6A7D89" "#6b6b6b" "brightblack"))
    (base7      '("#899BA6" "#878797" "brightblack"))
-   (base8      '("#e6eef3" "#efefef" "brightwhite")) ; FIXME white
-   (fg         '("#c5c8c6" "#c5c6c6" "white"      )) ;; TODO set correct color
-   (fg-alt     (doom-darken fg 0.6)) ;; TODO set correct color
+   (base8      '("#e6eef3" "#efefef" "brightwhite"))
+   (fg         '("#c5d4dd" "#c5c6c6" "white"      ))
+   (fg-alt     '("#c5c8c6" "#c5c8c6" "white"      ))
 
    (light-grey "#E6EEF3")
    (grey       base7)
@@ -41,12 +41,12 @@ determine the exact padding."
    (yellow     "#DADA93")
    (green      "#A8CE93")
    (blue       "#83AFE5")
-   (dark-blue  (doom-darken blue 0.7))
-   (teal       blue)
-   (magenta    (doom-lighten "#b294bb" 0.3)) ; FIXME TODO set correct color
+   (dark-blue  "#759DCE")
+   (teal       "#95BEBC")
+   (magenta    "#D18EC2")
    (violet     "#9A93E1")
    (cyan       "#7FC1CA")
-   (dark-cyan  (doom-darken cyan 0.4))
+   (dark-cyan  "#659AA1")
 
    ;; face categories
    (highlight      cyan)
