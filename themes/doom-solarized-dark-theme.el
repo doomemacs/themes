@@ -65,7 +65,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
-   (comments       (if doom-solarized-dark-brighter-comments dark-cyan base5))
+   (comments       (if doom-solarized-dark-brighter-comments blue base5))
    (doc-comments   teal)
    (constants      violet)
    (functions      blue)
@@ -120,7 +120,14 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;; Centaur tabs
+   (centaur-tabs-active-bar-face :background blue)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
+					  :foreground blue)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
+					    :foreground blue)
+   ;; Doom modeline
+   (doom-modeline-bar :background blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg

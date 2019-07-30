@@ -1,9 +1,9 @@
-;;; doom-fairy-floss-theme.el --- inspired by sailorhg Fairy Floss  
+;;; doom-fairy-floss-theme.el --- inspired by sailorhg Fairy Floss
 (require 'doom-themes)
 
 ;;
 (defgroup doom-fairy-floss-theme nil
-  "Options for doom-themes"
+  "Options for doom-themes."
   :group 'doom-themes)
 
 (defcustom doom-fairy-floss-brighter-modeline nil
@@ -65,7 +65,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
-   (comments       (if doom-fairy-floss-brighter-comments dark-cyan orange))
+   (comments       (if doom-fairy-floss-brighter-comments cyan orange))
    (doc-comments   violet)
    (constants      violet)
    (functions      green)
@@ -121,7 +121,14 @@ determine the exact padding."
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
 
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;; Centaur tabs
+   (centaur-tabs-active-bar-face :background blue)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
+					  :foreground blue)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
+					    :foreground blue)
+   ;; Doom modeline
+   (doom-modeline-bar :background blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -130,7 +137,7 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+    :foreground (if -modeline-bright cyan highlight))
 
    (solaire-mode-line-face
     :inherit 'mode-line

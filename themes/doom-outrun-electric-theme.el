@@ -65,7 +65,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
    (builtin        blue)
-   (comments       (if doom-outrun-electric-brighter-comments dark-blue grey))
+   (comments       (if doom-outrun-electric-brighter-comments blue grey))
    (doc-comments   teal)
    (constants      violet)
    (functions      cyan)

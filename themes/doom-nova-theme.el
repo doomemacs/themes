@@ -19,7 +19,6 @@ determine the exact padding."
   ((bg         '("#3c4c55" nil       nil))
    (bg-alt     '("#44545d" "#445566" "black"))
 
-   ;; FIXME Tweak these
    (base0      '("#0d0f11" "#0d0f11" "black"      ))
    (base1      '("#1e272c" "#1b1b1b" "black"      ))
    (base2      '("#212122" "#1e1e1e" "black"      ))
