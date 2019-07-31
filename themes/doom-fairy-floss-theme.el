@@ -130,6 +130,9 @@ determine the exact padding."
    ;; Doom modeline
    (doom-modeline-bar :background blue)
 
+   ;; hl-line
+   (hl-line :background base2)
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
