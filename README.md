@@ -25,17 +25,18 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
     - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
   - Additional themes
-    - [X] `doom-city-lights` (thanks to [fuxialexander])
-    - [X] `doom-dracula` (thanks to [fuxialexander])
+    - [X] `doom-city-lights`: based on Atom's [City lights][city-lights](thanks to [fuxialexander])
+    - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
+    - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
     - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
     - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
     - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
     - [X] `doom-molokai`: based on Textmate's monokai
-    - [X] `doom-nord` (thanks to [fuxialexander])
-    - [X] `doom-nord-light` (thanks to [fuxialexander])
-    - [X] `doom-opera` (thanks to [jwintz])
-    - [X] `doom-opera-light` (thanks to [jwintz])
-    - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code [Outrun Electric][outrun] (thanks to [ema2159])
+    - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
+    - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
+    - [X] `doom-opera`: a dark theme created by (thanks to [jwintz])
+    - [X] `doom-opera-light`: a light theme created by (thanks to [jwintz])
+    - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
@@ -43,8 +44,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
     - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
-    - [X] `doom-tomorrow-night`: by [Chris Kempson][tomorrow]
-    - [x] `doom-tomorrow-day`: by [Chris Kempson][tomorrow] (thanks to [emacswatcher])
+    - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
+    - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
@@ -145,8 +146,11 @@ pointers. Additional theme and plugin support requests are welcome too.
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [ar1a]: https://github.com/ar1a
 [bigardone]: https://github.com/bigardone
+[challenger-deep]: https://github.com/challenger-deep-theme/vim
+[city-lights]: http://citylights.xyz/
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
+[dracula]: https://draculatheme.com/
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
@@ -161,6 +165,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
+[nord]: https://www.nordtheme.com/
 [outrun]: https://github.com/samrap/outrun-theme-vscode
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
