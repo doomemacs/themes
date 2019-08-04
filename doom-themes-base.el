@@ -1113,10 +1113,11 @@
     (jdee-font-lock-link-face :foreground blue :italic nil :underline t)
 
     ;; js2-mode
-    (js2-function-param  :foreground variables)
-    (js2-function-call   :foreground functions)
-    (js2-object-property :foreground violet)
-    (js2-jsdoc-tag       :foreground doc-comments)
+    (js2-function-param    :foreground variables)
+    (js2-function-call     :foreground functions)
+    (js2-object-property   :foreground violet)
+    (js2-jsdoc-tag         :foreground doc-comments)
+    (js2-external-variable :foreground operators)
 
     ;; ledger-mode
     (ledger-font-posting-date-face :foreground blue)
