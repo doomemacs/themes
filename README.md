@@ -25,7 +25,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
     - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
   - Additional themes
-    - [X] `doom-city-lights`: based on Atom's [City lights][city-lights](thanks to [fuxialexander])
+    - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
     - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
     - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
     - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
