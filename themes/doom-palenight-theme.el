@@ -52,7 +52,7 @@ Can be an integer to determine the exact padding."
    (builtin        blue)
    (comments       base5)
    (doc-comments   (doom-lighten base5 0.25))
-   (constants      yellow)
+   (constants      orange)
    (functions      blue)
    (keywords       cyan)
    (methods        blue)
