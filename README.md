@@ -38,6 +38,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-opera-light`: a light theme created by (thanks to [jwintz])
     - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+	- [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
     - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
@@ -146,6 +147,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [ar1a]: https://github.com/ar1a
 [bigardone]: https://github.com/bigardone
+[Brettm12345]: https://github.com/Brettm12345
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
 [city-lights]: http://citylights.xyz/
 [daylerees]: http://daylerees.github.io/
@@ -161,6 +163,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [jwintz]: https://github.com/jwintz
 [JongW]: https://github.com/JongW
+[Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
