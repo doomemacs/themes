@@ -101,7 +101,7 @@ A comprehensive configuration example:
 ;; Enable custom neotree theme (all-the-icons must be installed!)
 (doom-themes-neotree-config)
 ;; or for treemacs users
-(doom-themes-treemacs-color-icons t) ;; set to t for a more colorful less minimalistic Treemacs theme
+(setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
 (doom-themes-treemacs-config)
 
 ;; Corrects (and improves) org-mode's native fontification.
