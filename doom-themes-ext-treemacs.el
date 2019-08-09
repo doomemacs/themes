@@ -19,9 +19,10 @@ variable-pitch face."
   :type 'integer
   :group 'doom-themes-treemacs)
 
-(defcustom doom-themes-treemacs-color-icons nil
-  "If non nil, display a less minimalistic Treemacs theme with colorful icons."
-  :type 'boolean
+(defcustom doom-themes-treemacs-theme "doom-atom"
+  "Default treemacs theme."
+  :type '(radio (const :doc "A minimalistic atom-inspired icon theme" "doom-atom")
+                (const :doc "A colorful icon theme leveraging all-the-icons" "doom-colors"))
   :group 'doom-themes-treemacs)
 
 ;;
@@ -68,6 +69,36 @@ variable-pitch face."
       (add-hook 'dired-mode-hook #'doom-themes-setup-tab-width nil t)
     (remove-hook 'dired-mode-hook #'doom-themes-setup-tab-width t)))
 
+(defun doom-themes--get-treemacs-extensions (ext)
+  "Expand the extension pattern EXT into a list of extensions.
+
+This is used to generate extensions for `treemacs' from `all-the-icons-icon-alist'."
+  (let* ((e (s-replace-all
+             '((".\\?" . "") ("\\?" . "") ("\\." . "")
+               ("\\" . "") ("^" . "") ("$" . "")
+               ("'" . "") ("*." . "") ("*" . ""))
+             ext))
+         (exts (list e)))
+    ;; Handle "[]"
+    (when-let* ((s (s-split "\\[\\|\\]" e))
+                (f (car s))
+                (m (cadr s))
+                (l (caddr s))
+                (mcs (delete "" (s-split "" m))))
+      (setq exts nil)
+      (dolist (c mcs)
+        (push (s-concat f c l) exts)))
+    ;; Handle '?
+    (dolist (ext exts)
+      (when (s-match "?" ext)
+        (when-let ((s (s-split "?" ext)))
+          (setq exts nil)
+          (push (s-join "" s) exts)
+          (push (s-concat (if (> (length (car s)) 1)
+                              (substring (car s) 0 -1))
+                          (cadr s)) exts))))
+    exts))
+
 
 ;;
 ;;; Bootstrap
@@ -93,10 +124,10 @@ variable-pitch face."
   ;; variable-pitch labels for files/folders
   (doom-themes-enable-treemacs-variable-pitch-labels)
   (advice-add #'load-theme :after #'doom-themes-enable-treemacs-variable-pitch-labels)
-  
+
   ;; minimalistic atom-inspired icon theme
   (let ((face-spec '(:inherit font-lock-doc-face :slant normal)))
-    (treemacs-create-theme "doom"
+    (treemacs-create-theme "doom-atom"
       :config
       (progn
         (treemacs-create-icon
@@ -178,27 +209,21 @@ variable-pitch face."
          :extensions (fallback))))
 
     (treemacs-create-theme "doom-colors"
-      :extends "doom"
+      :extends "doom-atom"
       :config
       (progn
         (treemacs-create-icon
          :icon (format "%s\t%s\t"
                        (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
-                       (all-the-icons-faicon "cube"
-                                             :v-adjust 0.1
-                                             :face 'all-the-icons-purple))
+                       (all-the-icons-faicon "cube" :v-adjust 0.1 :face 'all-the-icons-purple))
          :extensions (tag-open))
         (treemacs-create-icon
          :icon (format "%s\t%s\t"
                        (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
-                       (all-the-icons-faicon "cube"
-                                             :v-adjust 0.1
-                                             :face 'all-the-icons-purple))
+                       (all-the-icons-faicon "cube" :v-adjust 0.1 :face 'all-the-icons-purple))
          :extensions (tag-closed))
         (treemacs-create-icon
-         :icon (format "%s " (all-the-icons-faicon "tag"
-                                                   :height 0.9
-                                                   :face 'all-the-icons-lblue))
+         :icon (format "%s " (all-the-icons-faicon "tag" :height 0.9 :face 'all-the-icons-lblue))
          :extensions (tag-leaf))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))
@@ -249,36 +274,8 @@ variable-pitch face."
          :icon (format "  %s\t" (all-the-icons-fileicon "verilog" :face 'all-the-icons-red))
          :extensions ("v" "vh" "sv"))
 
-        (defun get-extenstions (ext)
-          "Transfer EXT regexps to extension list."
-          (let* ((e (s-replace-all
-                     '((".\\?" . "") ("\\?" . "") ("\\." . "")
-                       ("\\" . "") ("^" . "") ("$" . "")
-                       ("'" . "") ("*." . "") ("*" . ""))
-                     ext))
-                 (exts (list e)))
-            ;; Handle "[]"
-            (when-let* ((s (s-split "\\[\\|\\]" e))
-                        (f (car s))
-                        (m (cadr s))
-                        (l (caddr s))
-                        (mcs (delete "" (s-split "" m))))
-              (setq exts nil)
-              (dolist (c mcs)
-                (push (s-concat f c l) exts)))
-            ;; Handle '?
-            (dolist (ext exts)
-              (when (s-match "?" ext)
-                (when-let ((s (s-split "?" ext)))
-                  (setq exts nil)
-                  (push (s-join "" s) exts)
-                  (push (s-concat (if (> (length (car s)) 1)
-                                      (substring (car s) 0 -1))
-                                  (cadr s)) exts))))
-            exts))
-
         (dolist (item all-the-icons-icon-alist)
-          (let* ((extensions (get-extenstions (car item)))
+          (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
                  (func (cadr item))
                  (args (append (list (caddr item)) '(:v-adjust -0.05) (cdddr item)))
                  (icon (apply func args)))
@@ -291,9 +288,7 @@ variable-pitch face."
                 (ht-set! gui-icons it gui-icon)
                 (ht-set! tui-icons it tui-icon))))))))
 
-  (if doom-themes-treemacs-color-icons
-      (treemacs-load-theme "doom-colors")
-    (treemacs-load-theme "doom")))
+  (treemacs-load-theme doom-themes-treemacs-theme))
 
 ;;;###autoload
 (defun doom-themes-treemacs-config ()
