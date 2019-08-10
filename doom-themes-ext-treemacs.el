@@ -273,6 +273,9 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-fileicon "verilog" :face 'all-the-icons-red))
          :extensions ("v" "vh" "sv"))
+        (treemacs-create-icon
+         :icon (format "  %s\t" (all-the-icons-alltheicon "git" :face 'all-the-icons-red))
+         :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
 
         (dolist (item all-the-icons-icon-alist)
           (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
