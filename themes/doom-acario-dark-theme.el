@@ -122,7 +122,7 @@ determine the exact padding."
    ((line-number-current-line &override) :foreground orange :bold bold)
 
    (font-lock-comment-face
-    :family (font-get doom-serif-font :family)
+    :inherit 'fixed-pitch-serif-face
     :slant 'italic
     :foreground comments
     :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
