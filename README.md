@@ -185,5 +185,5 @@ pointers. Additional theme and plugin support requests are welcome too.
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
-[Wilmersdorf]: https://https://github.com/ianpan870102/wilmersdorf-emacs-theme
+[Wilmersdorf]: https://github.com/ianpan870102/wilmersdorf-emacs-theme
 [ztlevi]: https://github.com/ztlevi
