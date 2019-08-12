@@ -32,12 +32,13 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
     - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
     - [X] `doom-molokai`: based on Textmate's monokai
+	- [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
     - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
     - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
+    - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-opera`: a dark theme created by (thanks to [jwintz])
     - [X] `doom-opera-light`: a light theme created by (thanks to [jwintz])
     - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
-    - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
 	- [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
     - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
@@ -45,8 +46,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
     - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
-    - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
     - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
+    - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
@@ -165,6 +166,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [jwintz]: https://github.com/jwintz
 [JongW]: https://github.com/JongW
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl

@@ -25,18 +25,20 @@
 ;;
 ;; Additional themes
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
+;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-molokai'
+;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
 ;;   [X] `doom-nova' (added by bigardone)
 ;;   [X] `doom-opera' (added by jwintz)
 ;;   [X] `doom-opera-light' (added by jwintz)
 ;;   [X] `doom-outrun' (added by ema2159)
-;;   [X] `doom-palenight' (added by brettm12345)
+;;   [X] `doom-palenight' (added by Brettm12345)
 ;;   [X] `doom-peacock' (added by teesloane)
 ;;   [X] `doom-solarized-dark' (added by ema2159)
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
