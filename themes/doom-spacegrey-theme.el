@@ -1,4 +1,4 @@
-;;; doom-spacegrey-theme.el --- inspired by Atom One Dark
+;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
@@ -29,11 +29,11 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-spacegrey
-  "A dark theme inspired by Atom spacegrey Dark"
+  "A dark theme inspired by Atom Spacegrey Dark"
 
   ;; name        default   256       16
-  ((bg         '("#2F3841" nil       nil            ))
-   (bg-alt     '("#343D46" nil       nil            ))
+  ((bg         '("#2b303b" nil       nil            ))
+   (bg-alt     '("#232830" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -73,7 +73,7 @@ determine the exact padding."
    (operators      fg)
    (type           yellow)
    (strings        green)
-   (variables      (doom-lighten magenta 0.4))
+   (variables      red)
    (numbers        orange)
    (region         selection)
    (error          red)
@@ -100,11 +100,11 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-darken base3 0.05)
-      base3))
+      base1))
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken base3 0.1)
-      base3))
+      base1))
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
@@ -173,7 +173,7 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
 
-   )
+   (tooltip              :background bg-alt :foreground fg))
 
   ;; --- extra variables ---------------------
   ;; ()
