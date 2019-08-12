@@ -48,6 +48,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
     - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
     - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
+    - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
@@ -184,4 +185,5 @@ pointers. Additional theme and plugin support requests are welcome too.
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
+[Wilmersdorf]: https://https://github.com/ianpan870102/wilmersdorf-emacs-theme
 [ztlevi]: https://github.com/ztlevi

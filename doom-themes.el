@@ -46,6 +46,7 @@
 ;;   [X] `doom-spacegrey' (added by teesloane)
 ;;   [X] `doom-tomorrow-night'
 ;;   [X] `doom-tomorrow-day'
+;;   [X] `doom-wilmersdorf'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
 ;;
