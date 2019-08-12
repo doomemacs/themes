@@ -1,5 +1,5 @@
 ;;; doom-acario-light-theme.el --- Acario light theme
-(require 'acario-doom-themes)
+(require 'doom-themes)
 
 (defgroup doom-acario-light-theme nil
   "Options for doom-themes"

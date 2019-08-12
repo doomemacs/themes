@@ -1,5 +1,5 @@
-;;; doom-acario-dark-theme.el --- inspired by Acario dark
-(require 'acario-doom-themes)
+;;; doom-acario-dark-theme.el --- Acario dark theme
+(require 'doom-themes)
 
 (defgroup doom-acario-dark-theme nil
   "Options for doom-themes"
