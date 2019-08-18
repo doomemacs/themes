@@ -284,6 +284,9 @@
     (all-the-icons-lsilver  :foreground (doom-lighten grey 0.7))
     (all-the-icons-dsilver  :foreground (doom-lighten grey 0.1))
 
+    ;; all-the-icons-dired
+    (all-the-icons-dired-dir-face    :foreground doc-comments)
+
     ;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
     (anzu-replace-to        :background base0 :foreground green :weight 'bold)
