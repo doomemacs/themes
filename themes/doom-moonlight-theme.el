@@ -180,10 +180,11 @@ Can be an integer to determine the exact padding."
 
    ;; rjsx-mode
    (rjsx-tag :foreground violet)
-   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
+   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
+
+   ;; tooltip
+   (tooltip              :background (doom-darken bg-alt 0.2) :foreground fg)))
 
 (provide 'doom-moonlight-theme)
-
-
 
 ;;; doom-moonlight-theme.el ends here
