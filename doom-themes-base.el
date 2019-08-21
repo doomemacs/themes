@@ -1141,8 +1141,8 @@
     (makefile-targets :foreground blue)
 
     ;; man-mode
-    (Man-overstrike :inherit 'bold :foreground orange)
-    (Man-underline :inherit 'underline :foreground green)
+    (Man-overstrike :inherit 'bold :foreground operators)
+    (Man-underline :inherit 'underline :foreground keywords)
 
     ;; markdown-mode
     (markdown-header-face           :inherit 'bold :foreground highlight)
