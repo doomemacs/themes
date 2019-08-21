@@ -175,9 +175,15 @@ determine the exact padding."
    (ivy-posframe :background modeline-bg-l)
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
 
+  ;; man-mode
+  (Man-overstrike :inherit 'bold :foreground orange)
+  (Man-underline :inherit 'underline :foreground green)
 
+  ;; woman
+  (woman-bold :inherit 'Man-overstrike)
+  (woman-italic :inherit 'Man-underline))
   ;; --- extra variables ---------------------
   ;; ()
   )

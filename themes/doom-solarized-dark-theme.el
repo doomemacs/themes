@@ -177,7 +177,15 @@ determine the exact padding."
    (org-block             :background base0)
    (org-block-begin-line  :foreground comments :background base0)
    (org-block-end-line    :inherit 'org-block-begin-line)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
+
+  ;; man-mode
+  (Man-overstrike :inherit 'bold :foreground orange)
+  (Man-underline :inherit 'underline :foreground green)
+
+  ;; woman
+  (woman-bold :inherit 'Man-overstrike)
+  (woman-italic :inherit 'Man-underline))
   ;; --- extra variables ---------------------
   ;; ()
   )
