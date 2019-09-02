@@ -14,7 +14,8 @@
     (run-with-timer 0.15 nil
                     (lambda (cookie buf)
                       (with-current-buffer buf
-                        (face-remap-remove-relative cookie)))
+                        (face-remap-remove-relative cookie)
+                        (force-mode-line-update)))
                     doom-themes--bell-cookie
                     (current-buffer))))
 
