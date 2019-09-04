@@ -84,7 +84,7 @@
 (defcustom doom-themes-padded-modeline nil
   "Default value for padded-modeline setting for themes that support it."
   :group 'doom-themes
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 ;;
 (defcustom doom-themes-enable-bold t

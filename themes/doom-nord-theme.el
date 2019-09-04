@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-nord-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (eval-and-compile
   (defcustom doom-nord-region-highlight t

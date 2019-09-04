@@ -14,7 +14,7 @@
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
   :group 'doom-tomorrow-day-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (def-doom-theme doom-tomorrow-day
   "A light theme based off of Chris Kempson's Tomorrow Dark."
