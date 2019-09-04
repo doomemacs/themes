@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-nord-light-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (defcustom doom-nord-light-region-highlight t
   "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
