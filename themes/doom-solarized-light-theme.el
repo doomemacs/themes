@@ -165,13 +165,15 @@ determine the exact padding."
 
    ;; ivy-mode
    (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
-   (ivy-minibuffer-match-face-1
-    :foreground comments
-    :weight 'light)
+   (ivy-minibuffer-match-face-1 :foreground blue :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-2 :foreground magenta :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-3 :foreground green   :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-4 :foreground yellow  :background base3 :weight 'bold)
    (ivy-minibuffer-match-highlight :foreground violet :weight 'bold)
+   (swiper-match-face-1 :inherit 'ivy-minibuffer-match-face-1)
+   (swiper-match-face-2 :inherit 'ivy-minibuffer-match-face-2)
+   (swiper-match-face-3 :inherit 'ivy-minibuffer-match-face-3)
+   (swiper-match-face-4 :inherit 'ivy-minibuffer-match-face-4)
 
    ;; posframe
    (ivy-posframe :background modeline-bg-l)
