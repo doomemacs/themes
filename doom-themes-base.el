@@ -632,6 +632,7 @@
     (helm-source-header          :background base2 :foreground base5)
     (helm-swoop-target-line-face :foreground highlight :inverse-video t)
     (helm-visible-mark           :inherit '(bold highlight))
+    (helm-moccur-buffer          :inherit 'link)
     (helm-ff-file                :foreground fg)
     (helm-ff-prefix              :foreground keywords)
     (helm-ff-dotted-directory    :foreground grey)
