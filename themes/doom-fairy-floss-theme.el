@@ -185,6 +185,9 @@ determine the exact padding."
    (org-block             :background base0)
    (org-block-begin-line  :foreground comments :background base0)
    (org-block-end-line    :inherit 'org-block-begin-line)
+   (org-scheduled         :foreground green)
+   (org-scheduled-previously :foreground yellow)
+   (org-scheduled-today   :foreground orange)
    (solaire-org-hide-face :foreground hidden))
   ;; --- extra variables ---------------------
   ;; ()
