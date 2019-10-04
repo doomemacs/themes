@@ -121,9 +121,6 @@ determine the exact padding."
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
-   (magit-diff-hunk-heading-highlight :foreground fg :background base4 :weight 'bold)
-   (magit-diff-hunk-heading :foreground fg-alt :background base3 :weight 'normal)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -147,6 +144,10 @@ determine the exact padding."
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
+
+   ;; magit-mode
+   (magit-diff-hunk-heading-highlight :foreground fg :background base4 :weight 'bold)
+   (magit-diff-hunk-heading :foreground fg-alt :background base3 :weight 'normal)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
