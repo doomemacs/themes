@@ -145,6 +145,10 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
+   ;; magit-mode
+   (magit-diff-hunk-heading-highlight :foreground fg :background base4 :weight 'bold)
+   (magit-diff-hunk-heading :foreground fg-alt :background base3 :weight 'normal)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
