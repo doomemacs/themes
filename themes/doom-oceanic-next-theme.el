@@ -63,14 +63,14 @@ determine the exact padding."
    (highlight      yellow)
    (vertical-bar   (doom-darken base1 0.5))
    (selection      base2)
-   (builtin        cyan)
+   (builtin        red)
    (comments       (if doom-oceanic-next-brighter-comments dark-cyan base3))
    (doc-comments   (doom-lighten (if doom-oceanic-next-brighter-comments dark-cyan base3) 0.25))
    (constants      orange)
    (functions      blue)
-   (keywords       red)
-   (methods        cyan)
-   (operators      blue)
+   (keywords       violet)
+   (methods        blue)
+   (operators      teal)
    (type           yellow)
    (strings        green)
    (variables      orange)
@@ -155,8 +155,8 @@ determine the exact padding."
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   (markdown-header-face :inherit 'bold :foreground blue)
+   (markdown-code-face :background (doom-lighten bg 0.05))
 
    ;; org-mode
    (org-hide :foreground hidden)
