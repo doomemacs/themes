@@ -243,7 +243,7 @@ determine the exact padding."
    (org-level-4 :inherit 'org-level-3)
    (org-level-5 :inherit 'org-level-3)
    (org-level-6 :inherit 'org-level-3)
-   (org-ellipsis :underline nil :background base2 :foreground orange)
+   (org-ellipsis :underline nil :background bg-alt :foreground orange)
    (org-tag :foreground yellow :bold nil)
    (org-quote :inherit 'italic :foreground base7 :background org-quote)
    (org-todo :foreground yellow :bold 'inherit)
