@@ -25,6 +25,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
     - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
   - Additional themes
+    - [X] `doom-acario-dark`: a dark theme created by (thanks to [gagbo])
+    - [X] `doom-acario-light`: a dark theme created by (thanks to [gagbo])
     - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
     - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
     - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
@@ -36,6 +38,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
     - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+    - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
     - [X] `doom-opera`: a dark theme created by (thanks to [jwintz])
     - [X] `doom-opera-light`: a light theme created by (thanks to [jwintz])
     - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
@@ -160,12 +163,14 @@ pointers. Additional theme and plugin support requests are welcome too.
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
 [fuxialexander]: https://github.com/fuxialexander
+[gagbo]: https://github.com/gagbo 
 [gruvbox]: https://github.com/morhetz/gruvbox
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
-[jwintz]: https://github.com/jwintz
+[juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
+[jwintz]: https://github.com/jwintz
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
@@ -173,6 +178,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
 [nord]: https://www.nordtheme.com/
+[Oceanic Next]: https://github.com/voronianski/oceanic-next-color-scheme
 [outrun]: https://github.com/samrap/outrun-theme-vscode
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots

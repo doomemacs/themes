@@ -24,6 +24,8 @@
 ;;   `doom-vibrant'
 ;;
 ;; Additional themes
+;;   [X] `doom-acario-dark' (added by gagbo)
+;;   [X] `doom-acario-light' (added by gagbo)
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
