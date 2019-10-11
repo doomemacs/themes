@@ -25,8 +25,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
     - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
   - Additional themes
-    - [X] `doom-acario-dark`: a dark theme created by (thanks to [gagbo])
-    - [X] `doom-acario-light`: a dark theme created by (thanks to [gagbo])
+    - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
+    - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
     - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
     - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
     - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
@@ -39,8 +39,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
     - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
     - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
-    - [X] `doom-opera`: a dark theme created by (thanks to [jwintz])
-    - [X] `doom-opera-light`: a light theme created by (thanks to [jwintz])
+    - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
+    - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
     - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
 	- [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
     - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
