@@ -35,6 +35,7 @@
 ;;   [X] `doom-nord' (added by fuxialexnder)
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
 ;;   [X] `doom-nova' (added by bigardone)
+;;   [X] `doom-oceanic-next' (added by juanwolf)
 ;;   [X] `doom-opera' (added by jwintz)
 ;;   [X] `doom-opera-light' (added by jwintz)
 ;;   [X] `doom-outrun' (added by ema2159)
