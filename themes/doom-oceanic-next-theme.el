@@ -33,7 +33,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#1B2B34" nil       nil            ))
-   (bg-alt     '("#343D46" nil       nil            ))
+   (bg-alt     '("#14232D" nil       nil            ))
    (base0      '("#1B2B34" "black"   "black"        ))
    (base1      '("#343D46" "#1e1e1e" "brightblack"  ))
    (base2      '("#4F5B66" "#2e2e2e" "brightblack"  ))
@@ -138,6 +138,7 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   (tooltip              :background bg-alt :foreground fg)
    ;; Doom modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
