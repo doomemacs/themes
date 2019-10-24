@@ -131,7 +131,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (all-the-icons-octicon "repo" :v-adjust -0.1 :face face-spec))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face face-spec))
          :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t%s\t"
@@ -213,18 +213,8 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
       :config
       (progn
         (treemacs-create-icon
-         :icon (format "%s\t%s\t"
-                       (all-the-icons-octicon "chevron-down" :height 0.75 :v-adjust 0.1 :face face-spec)
-                       (all-the-icons-faicon "cube" :v-adjust 0.1 :face 'all-the-icons-purple))
-         :extensions (tag-open))
-        (treemacs-create-icon
-         :icon (format "%s\t%s\t"
-                       (all-the-icons-octicon "chevron-right" :height 0.75 :v-adjust 0.1 :face face-spec)
-                       (all-the-icons-faicon "cube" :v-adjust 0.1 :face 'all-the-icons-purple))
-         :extensions (tag-closed))
-        (treemacs-create-icon
-         :icon (format "%s " (all-the-icons-faicon "tag" :height 0.9 :face 'all-the-icons-lblue))
-         :extensions (tag-leaf))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'font-lock-string-face))
+         :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))
          :extensions (error))
