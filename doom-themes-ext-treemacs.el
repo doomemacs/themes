@@ -131,7 +131,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.1 :v-adjust -0.1 :face face-spec))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face face-spec))
          :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t%s\t"
@@ -213,7 +213,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.1 :v-adjust -0.1 :face 'font-lock-string-face))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'font-lock-string-face))
          :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))
