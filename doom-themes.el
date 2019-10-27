@@ -285,7 +285,7 @@ float between 0 and 1)"
 
 If USE-ALT is set to t, blend with the 'fg-alt' color instead of the 'fg' color."
   (cond ((and color (symbolp color))
-         (doom-blend-fg color alpha))
+         (doom-blend-fg (doom-color color) alpha))
 
         ((listp color)
          (cl-loop for c in color collect (doom-blend-fg c alpha)))
@@ -300,7 +300,7 @@ If USE-ALT is set to t, blend with the 'fg-alt' color instead of the 'fg' color.
 
 If USE-ALT is set to t, blend with the 'bg-alt' color instead of the 'bg' color."
   (cond ((and color (symbolp color))
-         (doom-blend-bg color alpha))
+         (doom-blend-bg (doom-color color) alpha))
 
         ((listp color)
          (cl-loop for c in color collect (doom-blend-bg c alpha)))
