@@ -6,22 +6,6 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-laserwave-brighter-modeline nil
-  "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-laserwave-theme
-  :type 'boolean)
-
-(defcustom doom-laserwave-brighter-comments nil
-  "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-laserwave-theme
-  :type 'boolean)
-
-(defcustom doom-laserwave-comment-bg doom-laserwave-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-laserwave-theme
-  :type 'boolean)
-
 (defcustom doom-laserwave-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -33,50 +17,50 @@ determine the exact padding."
   "An clean 80's synthwave / outrun theme inspired by VS Code laserwave."
 
   ;; name        default   256       16
-  ((bg         '("#282c34" nil       nil            ))
-   (bg-alt     '("#21242b" nil       nil            ))
-   (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
+  ((bg         '("#27212E" nil       nil            ))
+   (bg-alt     '("#242029" nil       nil            ))
+   (base0      '("#222228" "black"   "black"        ))
+   (base1      '("#24262D" "#222222" "brightblack"  ))
+   (base2      '("#282b33" "#222233" "brightblack"  ))
+   (base3      '("#3E3549" "#333344" "brightblack"  ))
+   (base4      '("#4E415C" "#444455" "brightblack"  ))
+   (base5      '("#544863" "#554466" "brightblack"  ))
+   (base6      '("#716385" "#776688" "brightblack"  ))
+   (base7      '("#91889B" "#998899" "brightblack"  ))
+   (base8      '("#ECEFF4" "#EEEEFF" "white"        ))
+   (fg-alt     '("#EEEEEE" "#EEEEEE" "brightwhite"  ))
+   (fg         '("#FFFFFF" "#FFFFFF" "white"        ))
 
    (grey       base4)
-   (red        '("#ff6c6b" "#ff6655" "red"          ))
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
-   (green      '("#98be65" "#99bb66" "green"        ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
-   (blue       '("#51afef" "#51afef" "brightblue"   ))
-   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
-   (magenta    '("#c678dd" "#c678dd" "brightmagenta"))
-   (violet     '("#a9a1e1" "#a9a1e1" "magenta"      ))
-   (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+   (red        '("#964C7B" "#964477" "red"          ))
+   (orange     '("#FFB85B" "#FFBB55" "brightred"    ))
+   (green      '("#74DFC4" "#77DDCC" "green"        ))
+   (teal       '("#4D8079" "#448877" "brightgreen"  ))
+   (yellow     '("#FFE261" "#FFEE66" "yellow"       ))
+   (blue       '("#40B4C4" "#44BBCC" "brightblue"   ))
+   (dark-blue  '("#336A79" "#336677" "blue"         ))
+   (magenta    '("#EB64B9" "#EE66BB" "brightmagenta"))
+   (violet     '("#B381C5" "#BB88CC" "magenta"      ))
+   (cyan       '("#B4DCE7" "#BBDDEE" "brightcyan"   ))
+   (dark-cyan  '("#6D7E8A" "#667788" "cyan"         ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   (doom-darken base1 0.1))
+   (vertical-bar   (doom-darken base1 0.2))
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-laserwave-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-laserwave-brighter-comments dark-cyan base5) 0.25))
+   (comments       base7)
+   (doc-comments   (doom-lighten dark-cyan 0.25))
    (constants      violet)
    (functions      magenta)
    (keywords       blue)
    (methods        cyan)
    (operators      blue)
    (type           yellow)
-   (strings        green)
-   (variables      (doom-lighten magenta 0.4))
+   (strings        cyan)
+   (variables      fg)
    (numbers        orange)
-   (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
+   (region         `(,(doom-blend (car bg) (car magenta) 0.8) ,@(doom-lighten (cdr base1) 0.35)))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -86,7 +70,6 @@ determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-laserwave-brighter-modeline)
    (-modeline-pad
     (when doom-laserwave-padded-modeline
       (if (integerp doom-laserwave-padded-modeline) doom-laserwave-padded-modeline 4)))
@@ -95,31 +78,26 @@ determine the exact padding."
    (modeline-fg-alt base5)
 
    (modeline-bg
-    (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+    `(,(doom-darken (car bg) 0.3) ,@(cdr base0)))
    (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+    `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
-    :foreground comments
-    :background (if doom-laserwave-comment-bg (doom-lighten bg 0.05)))
+    :foreground comments)
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
+
+   (doom-modeline-bar :background highlight)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -128,25 +106,12 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+    :foreground highlight)
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
-   ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (doom-modeline-buffer-path :foreground fg :inherit 'mode-line-emphasis)
+   (doom-modeline-buffer-project-root :foreground fg :inherit 'mode-line-emphasis)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -155,16 +120,32 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   (markdown-metadata-key-face     :foreground cyan)
+   (markdown-list-face             :foreground cyan)
+   (markdown-url-face              :foreground cyan :weight 'normal)
+   (markdown-italic-face           :inherit 'italic :foreground cyan)
+
+   ;; outline (affects org-mode)
+   ((outline-1 &override) :foreground blue :background bg)
+   ((outline-2 &override) :foreground green)
+   ((outline-3 &override) :foreground teal)
+   ((outline-4 &override) :foreground (doom-darken blue 0.2))
+   ((outline-5 &override) :foreground (doom-darken green 0.2))
+   ((outline-6 &override) :foreground (doom-darken teal 0.2))
+   ((outline-7 &override) :foreground (doom-darken blue 0.4))
+   ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (org-block :background base2)
+   (org-block-begin-line :background base2 :foreground comments)
+   (solaire-org-hide-face :foreground hidden)
 
+   ;; --- extra variables ---------------------
+   (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
+   (ivy-current-match :background base7 :distant-foreground nil)
+   (tooltip           :background (doom-darken bg 0.2) :foreground fg))
 
-  ;; --- extra variables ---------------------
   ()
   )
 
