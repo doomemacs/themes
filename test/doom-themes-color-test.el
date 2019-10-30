@@ -1,4 +1,4 @@
-;;; doom-themes-color-test.el
+;;; doom-themes-color-test.el -*- lexical-binding: t; -*-
 
 (ert-deftest doom-themes-color ()
   "doom-colors picks the correct version of a color defined as a list."

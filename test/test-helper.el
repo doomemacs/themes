@@ -1,4 +1,4 @@
-;;; test-helper.el
+;;; test-helper.el -*- lexical-binding: t; -*-
 
 (push (expand-file-name "../" (file-name-directory load-file-name)) load-path)
 (push (expand-file-name "../themes" (file-name-directory load-file-name)) load-path)
