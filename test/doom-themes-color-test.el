@@ -1,7 +1,7 @@
 ;;; doom-themes-color-test.el
 
 (ert-deftest doom-themes-color ()
-  "TODO"
+  "doom-colors picks the correct version of a color defined as a list."
   (-with-colors! ((black '("#000000" "#222222" "black")))
     (should-not (doom-color 'red))
     (should (equal (doom-color 'black 't)   "#000000"))
@@ -11,6 +11,7 @@
     (should (equal (doom-color 'black) (doom-color 'black 't)))))
 
 (ert-deftest doom-themes-color-alias ()
+  "doom mixing colors functions work in extreme cases (alpha values)."
   (-with-colors! ((black "#000000")
                   (red "#FF0000"))
     (should (equal (doom-darken 'red 0) "#ff0000"))
@@ -21,7 +22,7 @@
     (should (equal (doom-blend 'black 'red 1.0) "#000000"))))
 
 (ert-deftest doom-themes-color-detect ()
-  "TODO"
+  "The -color-p function (see test-helper.el for the current internal function name) detects colors correctly."
   (-with-colors! ((red '("#FF0000" "#AA4444" "red")))
     (should-not (-color-p '(:background "red")))
     (should     (-color-p '(:foreground red)))
@@ -38,7 +39,7 @@
     (should-not (-color-p '(:box '(:color ,black))))))
 
 (ert-deftest doom-themes-color-plain-subst ()
-  "TODO"
+  "Doom color substitution in faces works correctly"
   (-with-colors! ((red '("#FF0000" "#AA4444" "red")))
     (-colorize! (:background red)
                 (:background (doom-color 'red '256))
@@ -71,14 +72,14 @@
       (should (equal plist '(:box `(:color ,red)))))))
 
 (ert-deftest doom-themes-color-no-subst ()
-  "TODO"
+  "Doom color substitution does not change stringp colors"
   (-with-colors! ((red '("#FF0000" "#AA4444" "red")))
     (-colorize! (:background "red")
                 (:background "red")
                 256)))
 
 (ert-deftest doom-themes-color-recurse-subst ()
-  "TODO"
+  "Doom color substitution change nested symbol"
   (-with-colors! ((red '("#FF0000" "#AA4444" "red")))
     (-colorize! (:foreground red :background "blue")
                 (:foreground (doom-color 'red 't) :background "blue")
@@ -88,7 +89,7 @@
                 t)))
 
 (ert-deftest doom-themes-color-multi-subst ()
-  "TODO"
+  "Doom color substitution change multiple symbols"
   (-with-colors! ((red   '("#FF0000" "#AA4444" "red"))
                   (blue  '("#0000FF" "#4444AA" "blue"))
                   (white '("#F9F9F9" "#FFFFFF" "white")))
@@ -106,7 +107,7 @@
                 t)))
 
 (ert-deftest doom-themes-color-quoting-subst ()
-  "TODO"
+  "Doom color substitution evaluates backquotes expressions correctly."
   (-with-colors! ((red '("#FF0000" "#AA4444" "red")))
     (-colorize! (:box `(:color red)) (:box `(:color red)) t)
 
