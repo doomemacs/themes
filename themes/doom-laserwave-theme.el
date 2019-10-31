@@ -18,7 +18,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#27212E" nil       nil            ))
-   (bg-alt     '("#242029" nil       nil            ))
+   (bg-alt     '("#1B1720" nil       nil            ))
    (base0      '("#222228" "black"   "black"        ))
    (base1      '("#24262D" "#222222" "brightblack"  ))
    (base2      '("#282b33" "#222233" "brightblack"  ))
@@ -78,7 +78,7 @@ determine the exact padding."
    (modeline-fg-alt base5)
 
    (modeline-bg
-    `(,(doom-darken (car bg) 0.3) ,@(cdr base0)))
+    `(,(car bg-alt) ,@(cdr base0)))
    (modeline-bg-l
     `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
    (modeline-bg-inactive   (doom-darken bg 0.1))
@@ -144,7 +144,7 @@ determine the exact padding."
    ;; --- extra variables ---------------------
    (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
    (ivy-current-match :background base7 :distant-foreground nil)
-   (tooltip           :background (doom-darken bg 0.2) :foreground fg))
+   (tooltip           :background bg-alt :foreground fg))
 
   ()
   )
