@@ -149,9 +149,9 @@ determine the exact padding."
    ;; --- extra variables ---------------------
    (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
    (ivy-current-match :background base7 :distant-foreground nil)
-   (tooltip           :background bg-alt :foreground fg))
+   (tooltip           :background bg-alt :foreground fg)
+   (company-box-background :foreground fg :background bg-alt))
 
-  ()
   )
 
 ;;; doom-laserwave-theme.el ends here
