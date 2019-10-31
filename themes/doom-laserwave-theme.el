@@ -120,10 +120,15 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-metadata-key-face     :foreground cyan)
-   (markdown-list-face             :foreground cyan)
-   (markdown-url-face              :foreground cyan :weight 'normal)
-   (markdown-italic-face           :inherit 'italic :foreground cyan)
+   (markdown-header-delimiter-face :foreground base7)
+   (markdown-metadata-key-face     :foreground base7)
+   (markdown-list-face             :foreground base7)
+   (markdown-link-face             :foreground cyan)
+   (markdown-url-face              :inherit 'link :foreground fg :weight 'normal)
+   (markdown-italic-face           :inherit 'italic :foreground magenta)
+   (markdown-bold-face             :inherit 'bold :foreground magenta)
+   (markdown-markup-face           :foreground base7)
+   (markdown-gfm-checkbox-face :foreground cyan)
 
    ;; outline (affects org-mode)
    ((outline-1 &override) :foreground blue :background bg)
