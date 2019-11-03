@@ -52,6 +52,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
     - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
     - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
+    - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
@@ -193,3 +194,5 @@ pointers. Additional theme and plugin support requests are welcome too.
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
 [Wilmersdorf]: https://github.com/ianpan870102/wilmersdorf-emacs-theme
 [ztlevi]: https://github.com/ztlevi
+[laserwave]: https://github.com/Jaredk3nt/laserwave
+[hyakt]: https://github.com/hyakt
