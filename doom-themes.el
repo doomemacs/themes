@@ -50,6 +50,7 @@
 ;;   [X] `doom-tomorrow-night'
 ;;   [X] `doom-tomorrow-day'
 ;;   [X] `doom-wilmersdorf'
+;;   [X] `doom-laserwave'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
 ;;
