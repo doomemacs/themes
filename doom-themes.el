@@ -282,31 +282,19 @@ float between 0 and 1)"
 (defun doom-blend-fg (color alpha &optional use-alt)
   "Blend a COLOR (a hexidecimal string) with the current theme's foreground by a coefficient ALPHA (a float between
 0 and 1).
-
 If USE-ALT is set to t, blend with the 'fg-alt' color instead of the 'fg' color."
-  (cond ((and color (symbolp color))
-         (doom-blend-fg (doom-color color) alpha))
-
-        ((listp color)
-         (cl-loop for c in color collect (doom-blend-fg c alpha)))
-
-        ((let ((color-fg (if use-alt (doom-color 'fg-alt) (doom-color 'fg))))
-           (doom-blend color color-fg (- 1 alpha))))))
+  (doom-blend color
+              (if use-alt (doom-color 'fg-alt) (doom-color 'fg))
+              (- 1 alpha)))
 
 ;;;###autoload
 (defun doom-blend-bg (color alpha &optional use-alt)
   "Blend a COLOR (a hexidecimal string) with the current theme's blackground by a coefficient ALPHA (a float between
 0 and 1).
-
 If USE-ALT is set to t, blend with the 'bg-alt' color instead of the 'bg' color."
-  (cond ((and color (symbolp color))
-         (doom-blend-bg (doom-color color) alpha))
-
-        ((listp color)
-         (cl-loop for c in color collect (doom-blend-bg c alpha)))
-
-        ((let ((color-bg (if use-alt (doom-color 'bg-alt) (doom-color 'bg))))
-           (doom-blend color color-bg (- 1 alpha))))))
+  (doom-blend color
+              (if use-alt (doom-color 'bg-alt) (doom-color 'bg))
+              (- 1 alpha)))
 
 ;;;###autoload
 (defun doom-darken (color alpha)
