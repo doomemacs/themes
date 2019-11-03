@@ -7,7 +7,6 @@
 (require 'doom-themes-base)
 
 (defalias '-color-p 'doom-themes--colors-p)
-(setq -palette 'doom-themes--colors)
 ;; (defalias '-build-face 'doom-themes--build-face)
 
 (defun -build-face (face)
@@ -20,9 +19,9 @@
 
 (defmacro -with-colors! (colors &rest body)
   (declare (indent defun))
-  `(let ((,-palette ',colors))
+  `(let ((doom-themes--colors ',colors))
      (let* (,@colors)
-       (setq ,-palette
+       (setq doom-themes--colors
              (list ,@(cl-loop for (var val) in colors
                               collect `(cons ',var ,val))))
        ,@body)))
