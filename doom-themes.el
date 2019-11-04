@@ -32,6 +32,7 @@
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
+;;   [X] `doom-laserwave' (added by hyakt)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
@@ -50,7 +51,6 @@
 ;;   [X] `doom-tomorrow-night'
 ;;   [X] `doom-tomorrow-day'
 ;;   [X] `doom-wilmersdorf'
-;;   [X] `doom-laserwave'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
 ;;
