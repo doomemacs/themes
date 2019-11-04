@@ -33,6 +33,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
     - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
     - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
+    - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
     - [X] `doom-molokai`: based on Textmate's monokai
 	- [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
     - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
@@ -52,7 +53,6 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
     - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
     - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
-    - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
     - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
     - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 - **Included features:**
