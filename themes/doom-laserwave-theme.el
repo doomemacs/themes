@@ -25,7 +25,7 @@ determine the exact padding."
    (base3      '("#3E3549" "#333344" "brightblack"  ))
    (base4      '("#4E415C" "#444455" "brightblack"  ))
    (base5      '("#544863" "#554466" "brightblack"  ))
-   (base6      '("#716385" "#776688" "brightblack"  ))
+   (base6      '("#ED60BA" "#EE66BB" "brightblack"  ))
    (base7      '("#91889B" "#998899" "brightblack"  ))
    (base8      '("#ECEFF4" "#EEEEFF" "white"        ))
    (fg-alt     '("#EEEEEE" "#EEEEEE" "brightwhite"  ))
@@ -74,11 +74,11 @@ determine the exact padding."
     (when doom-laserwave-padded-modeline
       (if (integerp doom-laserwave-padded-modeline) doom-laserwave-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     bg-alt)
    (modeline-fg-alt base5)
 
    (modeline-bg
-    `(,(car bg-alt) ,@(cdr base0)))
+    base6)
    (modeline-bg-l
     `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
    (modeline-bg-inactive   (doom-darken bg 0.1))
@@ -106,10 +106,16 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground highlight)
+    :foreground bg-alt)
 
    ;; Doom modeline
+   (doom-modeline-bar :background base6)
+   (doom-modeline-info :inherit 'mode-line-emphasis)
+   (doom-modeline-urgent :inherit 'mode-line-emphasis)
+   (doom-modeline-warning :inherit 'mode-line-emphasis)
+   (doom-modeline-debug :inherit 'mode-line-emphasis)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+   (doom-modeline-buffer-modified :inherit 'mode-line-buffer-id :foreground green :weight 'bold)
    (doom-modeline-buffer-path :foreground fg :inherit 'mode-line-emphasis)
    (doom-modeline-buffer-project-root :foreground fg :inherit 'mode-line-emphasis)
 
