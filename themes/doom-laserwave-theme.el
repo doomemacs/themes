@@ -86,7 +86,13 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  ;; Centaur tabs
+  ((centaur-tabs-active-bar-face :background magenta)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
+                                          :foreground magenta)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
+                                            :foreground magenta)
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
