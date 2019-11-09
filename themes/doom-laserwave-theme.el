@@ -120,10 +120,10 @@ determine the exact padding."
    (doom-modeline-urgent :inherit 'mode-line-emphasis)
    (doom-modeline-warning :inherit 'mode-line-emphasis)
    (doom-modeline-debug :inherit 'mode-line-emphasis)
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-modified :inherit 'mode-line-buffer-id :foreground green :weight 'bold)
-   (doom-modeline-buffer-path :foreground fg :inherit 'mode-line-emphasis)
-   (doom-modeline-buffer-project-root :foreground fg :inherit 'mode-line-emphasis)
+   (doom-modeline-buffer-file :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-buffer-modified :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis)
+   (doom-modeline-buffer-project-root :inherit 'mode-line-emphasis)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
