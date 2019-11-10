@@ -1306,6 +1306,19 @@
     (rst-level-5 :inherit 'rst-adornment :weight 'bold)
     (rst-level-6 :inherit 'rst-adornment :weight 'bold)
 
+    ;; telephone-line
+    (telephone-line-accent-active :foreground fg :background base4)
+    (telephone-line-accent-inactive :foreground fg :background base2)
+    (telephone-line-projectile :foreground green)
+    (telephone-line-evil :foreground fg :weight 'bold)
+    (telephone-line-evil-insert :background (doom-blend green bg 0.5) :weight 'bold)
+    (telephone-line-evil-normal :background (doom-blend red bg 0.5) :weight 'bold)
+    (telephone-line-evil-visual :background (doom-blend orange bg 0.5) :weight 'bold)
+    (telephone-line-evil-replace :background (doom-color bg-alt) :weight 'bold)
+    (telephone-line-evil-motion :background (doom-blend blue bg 0.5) :weight 'bold)
+    (telephone-line-evil-operator :background (doom-blend violet bg 0.5) :weight 'bold)
+    (telephone-line-evil-emacs :background (doom-blend magenta bg 0.5) :weight 'bold)
+
     ;; typescript-mode
     (typescript-jsdoc-tag :foreground doc-comments)
     (typescript-jsdoc-type :foreground (doom-darken doc-comments 0.15))
