@@ -214,7 +214,8 @@ determine the exact padding."
    (button :foreground green :underline t :bold t)
 
    ;; ediff
-   (ediff-fine-diff-A :background (doom-blend red bg 0.3) :weight 'bold)
+   (ediff-fine-diff-A    :background (doom-blend red bg 0.3) :weight 'bold)
+   (ediff-current-diff-A :background (doom-blend red bg 0.1))
 
    ;; flycheck
    (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
