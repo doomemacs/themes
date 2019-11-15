@@ -225,6 +225,25 @@ determine the exact padding."
    ;; helm
    (helm-swoop-target-line-face :foreground magenta :inverse-video t)
 
+    ;; magit
+   (magit-section-heading             :foreground yellow :weight 'bold)
+   (magit-section-heading-selection   :foreground dark-green)
+   (magit-filename                    :foreground fg)
+   (magit-branch-local                :foreground blue)
+   (magit-branch-current              :underline blue :inherit 'magit-branch-local)
+   (magit-branch-remote               :foreground green)
+   (magit-diff-hunk-heading           :background base3 :foreground fg-alt)
+   (magit-diff-hunk-heading-highlight :background accent :foreground fg)
+   (magit-diff-context                :foreground bg-alt :foreground fg-alt)
+   (magit-diff-context-highlight      :background bg-alt :foreground fg)
+   (magit-diff-added                  :foreground green)
+   (magit-diff-added-highlight        :foreground green :inherit 'magit-diff-context-highlight)
+   (magit-diff-removed                :foreground red)
+   (magit-diff-removed-highlight      :foreground red :inherit 'magit-diff-context-highlight)
+   (magit-hash                        :foreground cyan)
+   (magit-log-author                  :foreground red)
+   (magit-log-date                    :foreground dark-blue)
+ 
    ;;;;;;;; Major mode faces ;;;;;;;;
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground keywords)
