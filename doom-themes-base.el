@@ -470,7 +470,7 @@
 
     ;; doom-modeline
     (doom-modeline-eldoc-bar :background green)
-    (doom-modeline-inactive-bar :background nil) ; transparent
+    (doom-modeline-bar-inactive :background nil) ; transparent
 
     ;; elscreen
     (elscreen-tab-background-face     :background bg)
