@@ -12,72 +12,76 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
 **Table of Contents**
 
+- [Theme list](#theme-list)
 - [Features](#features)
 - [Install](#install)
+    - [Doom Emacs](#doom-emacs)
+    - [Manually](#manually)
 - [Common Issues](#common-issues)
 - [Contribute](#contribute)
 
+## Theme list
+
+- Flagship themes
+  - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
+  - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
+  - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
+- Additional themes
+  - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
+  - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
+  - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
+  - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
+  - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
+  - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
+  - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
+  - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
+  - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
+  - [X] `doom-molokai`: based on Textmate's monokai
+  - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
+
+  - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
+  - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
+  - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
+  - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
+  - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
+  - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
+  - [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
+  - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
+  - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
+  - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
+  - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
+  - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
+  - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
+  - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
+  - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
+  - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
+  - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
+  - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
+
 ## Features
 
-- **Color themes:**
-  - Flagship themes
-    - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
-    - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
-    - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
-  - Additional themes
-    - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
-    - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
-    - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
-    - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
-    - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
-    - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
-    - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
-    - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
-    - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
-    - [X] `doom-molokai`: based on Textmate's monokai
-	- [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
-    - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
-    - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
-    - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
-    - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
-    - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
-    - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
-    - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
-	- [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
-    - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
-    - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
-    - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
-    - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
-    - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
-    - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
-    - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
-    - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
-    - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
-    - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
-    - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-- **Included features:**
-  - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
-    rings (i.e. an error occurs).
-  - `(doom-themes-neotree-config)`: a [neotree] theme that takes after [Atom]'s
-    file drawer, and is simpler than the built in icon theme in neotree
-    ([screenshot](/../screenshots/doom-one.png), [more details][wiki]).
+- `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
+  rings (i.e. an error occurs).
+- `(doom-themes-neotree-config)`: a [neotree] theme that takes after [Atom]'s
+  file drawer, and is simpler than the built in icon theme in neotree
+  ([screenshot](/../screenshots/doom-one.png), [more details][wiki]).
 
-    This requires `all-the-icons`' fonts to be installed: `M-x
-    all-the-icons-install-fonts`
-  - `(doom-themes-treemacs-config)`: two [treemacs] icon themes, one that takes after
-    [Atom]'s, and a second more colorful implementation (WIP).
-  - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
-    fontification.
-    -  Re-set `org-todo' & `org-headline-done' faces to make them respect
-       underlying faces (i.e. don't override the :height or :background of
-       underlying faces).
-    -  Make statistic cookies respect underlying faces.
-    -  Fontify item bullets (make them stand out)
-    -  Fontify item checkboxes (and when they're marked done), like TODOs that
-       are marked done.
-    -  Fontify dividers/separators (5+ dashes)
-    -  Fontify #hashtags and @at-tags, for personal convenience; see
-       `doom-org-special-tags` to disable this.
+  This requires `all-the-icons`' fonts to be installed: `M-x
+  all-the-icons-install-fonts`
+- `(doom-themes-treemacs-config)`: two [treemacs] icon themes, one that takes after
+  [Atom]'s, and a second more colorful implementation (WIP).
+- `(doom-themes-org-config)`: corrects and improves some of org-mode's native
+  fontification.
+  -  Re-set `org-todo' & `org-headline-done' faces to make them respect
+     underlying faces (i.e. don't override the :height or :background of
+     underlying faces).
+  -  Make statistic cookies respect underlying faces.
+  -  Fontify item bullets (make them stand out)
+  -  Fontify item checkboxes (and when they're marked done), like TODOs that
+     are marked done.
+  -  Fontify dividers/separators (5+ dashes)
+  -  Fontify #hashtags and @at-tags, for personal convenience; see
+     `doom-org-special-tags` to disable this.
 - **Resources that may interest you:**
   - To get dimmed sidebars and brighter source buffers (like in the
     [screenshots]), see [solaire-mode].
