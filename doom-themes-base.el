@@ -1354,7 +1354,7 @@
 
     (objed-cursor-color (doom-color 'red))
 
-    (pdf-view-midnight-colors (cons (doom-color 'bg) (doom-color 'fg)))
+    (pdf-view-midnight-colors `(cons ,(doom-color 'bg) ,(doom-color 'fg)))
 
     (vc-annotate-color-map
      `(list (cons 20  ,(doom-color 'green))
