@@ -91,32 +91,51 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
 ## Install
 
-`M-x package-install RET doom-themes`
+### Doom Emacs
 
-A comprehensive configuration example:
+The built-in `:ui doom` module installs `doom-themes` for you, and loads
+`doom-one` by default. You can change the theme by changing the `doom-theme`
+variable from `~/.doom.d/config.el`:
+
+``` emacs-lisp
+(setq doom-theme 'doom-city-lights)
+```
+
+Or by loading it manually:
+
+``` emacs-lisp
+(load-theme 'doom-city-lights t)
+```
+
+### Manually
+
+`doom-themes` is available on MELPA.
+
+- [Straight](https://github.com/raxod502/straight.el) users can install it with
+  `M-x straight-use-package RET doom-themes`
+- And package.el users: `M-x package-install RET doom-themes`
+
+Here is a example configuration for `doom-theme`:
 
 ```emacs-lisp
-(require 'doom-themes)
+(use-package doom-themes
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-one t)
 
-;; Global settings (defaults)
-(setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-      doom-themes-enable-italic t) ; if nil, italics is universally disabled
-
-;; Load the theme (doom-one, doom-molokai, etc); keep in mind that each theme
-;; may have their own settings.
-(load-theme 'doom-one t)
-
-;; Enable flashing mode-line on errors
-(doom-themes-visual-bell-config)
-
-;; Enable custom neotree theme (all-the-icons must be installed!)
-(doom-themes-neotree-config)
-;; or for treemacs users
-(setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-(doom-themes-treemacs-config)
-
-;; Corrects (and improves) org-mode's native fontification.
-(doom-themes-org-config)
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+  (doom-themes-treemacs-config)
+  
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 ```
 
 [The wiki contains details for customizing the neotree theme][wiki].
