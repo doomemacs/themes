@@ -113,6 +113,11 @@ determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
 
+   (helm-selection :inherit 'bold
+                   :background selection
+                   :distant-foreground bg
+                   :extend t)
+
    (font-lock-comment-face
     :foreground comments
     :background (if doom-solarized-dark-comment-bg (doom-lighten bg 0.05)))
