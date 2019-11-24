@@ -1134,8 +1134,8 @@
     (ledger-font-posting-date-face :foreground blue)
     (ledger-font-posting-amount-face :foreground yellow)
     (ledger-font-posting-account-face :foreground base8)
-    (ledger-font-payee-cleared-face :foreground violet :weight 'bold :height 1.2)
-    (ledger-font-payee-uncleared-face :foreground base5 :weight 'bold :height 1.2)
+    (ledger-font-payee-cleared-face :foreground violet :weight 'bold)
+    (ledger-font-payee-uncleared-face :foreground base5 :weight 'bold)
     (ledger-font-xact-highlight-face :background base0)
 
     ;; makefile-*-mode
