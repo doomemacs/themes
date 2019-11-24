@@ -129,16 +129,16 @@ Can be an integer to determine the exact padding."
    (Man-underline :inherit 'underline :foreground blue)
 
    ;; org-mode
+   ((outline-1 &override) :foreground cyan)
+   ((outline-2 &override) :foreground green)
+   ((outline-3 &override) :foreground teal)
+   ((outline-4 &override) :foreground pink)
+   ((outline-5 &override) :foreground magenta)
+   ((outline-6 &override) :foreground red)
+   ((outline-7 &override) :foreground violet)
    (org-block                    :background base2)
    (org-block-background         :background base2)
    (org-block-begin-line         :foreground comments :background base2)
-   (org-level-1 :foreground cyan)
-   (org-level-2 :foreground green)
-   (org-level-3 :foreground teal)
-   (org-level-4 :foreground pink)
-   (org-level-5 :foreground magenta)
-   (org-level-6 :foreground red)
-   (org-level-7 :foreground violet)
 
    ;; --- plugin faces -------------------
    ;; css-mode / scss-mode

@@ -167,13 +167,14 @@ determine the exact padding."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; org-mode
-   (org-level-1 :background base1 :foreground level1 :height 1.2 :weight 'bold)
-   (org-level-2 :foreground level2 :weight 'bold)
-   (org-level-3 :inherit 'org-level-2 :foreground level3)
-   (org-level-4 :inherit 'org-level-2 :foreground level4)
-   (org-level-5 :inherit 'org-level-2 :foreground level5)
-   (org-level-6 :inherit 'org-level-2 :foreground level6)
-   (org-level-7 :inherit 'org-level-2 :foreground level7)
+   ((outline-1 &override) :foreground level1)
+   (outline-2 :inherit 'outline-1 :foreground level2)
+   (outline-3 :inherit 'outline-1 :foreground level3)
+   (outline-4 :inherit 'outline-1 :foreground level4)
+   (outline-5 :inherit 'outline-1 :foreground level5)
+   (outline-6 :inherit 'outline-1 :foreground level6)
+   (outline-7 :inherit 'outline-1 :foreground level7)
+
    (org-todo :foreground orange :bold 'inherit :background (doom-darken base1 0.02))
    (org-done :foreground green :strike-through nil :background base2 :bold t)
    (org-headline-done :foreground base4 :strike-through nil)

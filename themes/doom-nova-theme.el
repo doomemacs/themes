@@ -147,9 +147,6 @@ determine the exact padding."
    ((paren-face-mismatch &override) :foreground (doom-darken red 0.4) :background cyan)
 
    ;; org-mode
-   (org-level-1
-    :foreground blue :background (doom-darken bg 0.025)
-    :bold bold :height 1.2)
    (org-headline-done :foreground base7))
 
   ;; --- variables --------------------------

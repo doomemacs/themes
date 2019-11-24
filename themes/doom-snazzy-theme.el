@@ -98,7 +98,6 @@
    (ivy-posframe-border :background ui3)
 
    ;; org
-   (org-level-1 :foreground blue :background ui2 :height 1.25 :weight 'bold)
-   (org-level-3 :foreground dark-blue))) ;; this is ff0000 from something above, dunno what
+   ((outline-3 &override) :foreground dark-blue))) ; this is ff0000 from something above, dunno what
 
 ;;; doom-snazzy-theme.el ends here
