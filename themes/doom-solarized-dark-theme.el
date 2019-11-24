@@ -163,7 +163,7 @@ determine the exact padding."
    ((markdown-italic-face &override) :foreground fg-alt)
 
    ;; outline (affects org-mode)
-   ((outline-1 &override) :foreground blue :background nil)
+   ((outline-1 &override) :foreground blue)
    ((outline-2 &override) :foreground green)
    ((outline-3 &override) :foreground teal)
    ((outline-4 &override) :foreground (doom-darken blue 0.2))
@@ -173,10 +173,9 @@ determine the exact padding."
    ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
-   (org-hide              :foreground hidden)
-   (org-block             :background base0)
-   (org-block-begin-line  :foreground comments :background base0)
-   (org-block-end-line    :inherit 'org-block-begin-line)
+   ((org-block &override) :background base0)
+   ((org-block-begin-line &override) :foreground comments :background base0)
+   (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
   ;; --- extra variables ---------------------
   ;; ()

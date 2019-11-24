@@ -154,9 +154,9 @@ determine the exact padding."
    ((outline-1 &override) :foreground blue :background nil)
 
    ;; org-mode
+   ((org-block &override) :background base1)
+   ((org-block-begin-line &override) :background base1 :foreground comments)
    (org-hide :foreground hidden)
-   (org-block :background base1)
-   (org-block-begin-line :background base1 :foreground comments)
    (solaire-org-hide-face :foreground hidden)
 
    ;; tooltip

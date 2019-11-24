@@ -171,7 +171,7 @@ determine the exact padding."
    (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red base5 0.2) :weight 'bold)
 
    ;; outline (affects org-mode)
-   ((outline-1 &override) :foreground orange :background nil)
+   ((outline-1 &override) :foreground orange)
    ((outline-2 &override) :foreground green)
    ((outline-3 &override) :foreground teal)
    ((outline-4 &override) :foreground (doom-darken orange 0.2))
@@ -181,13 +181,12 @@ determine the exact padding."
    ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
-   (org-hide              :foreground hidden)
-   (org-block             :background base0)
-   (org-block-begin-line  :foreground comments :background base0)
-   (org-block-end-line    :inherit 'org-block-begin-line)
+   ((org-block &override) :background base0)
+   ((org-block-begin-line &override) :background base0)
    (org-scheduled         :foreground green)
    (org-scheduled-previously :foreground yellow)
    (org-scheduled-today   :foreground orange)
+   (org-hide              :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
   ;; --- extra variables ---------------------
   ;; ()

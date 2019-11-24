@@ -143,7 +143,7 @@ determine the exact padding."
    (markdown-gfm-checkbox-face :foreground cyan)
 
    ;; outline (affects org-mode)
-   ((outline-1 &override) :foreground blue :background bg)
+   ((outline-1 &override) :foreground blue)
    ((outline-2 &override) :foreground green)
    ((outline-3 &override) :foreground teal)
    ((outline-4 &override) :foreground (doom-darken blue 0.2))
@@ -153,9 +153,9 @@ determine the exact padding."
    ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
+   ((org-block &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-   (org-block :background base2)
-   (org-block-begin-line :background base2 :foreground comments)
    (solaire-org-hide-face :foreground hidden)
 
    ;; --- extra variables ---------------------

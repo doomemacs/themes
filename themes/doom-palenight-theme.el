@@ -107,9 +107,9 @@ Can be an integer to determine the exact padding."
    (Man-underline :inherit 'underline :foreground blue)
 
    ;; org-mode
-   (org-block                    :background base2)
-   (org-block-background         :background base2)
-   (org-block-begin-line         :foreground comments :background base2)
+   ((org-block &override) :background base2)
+   ((org-block-background &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
 
    ;; --- plugin faces -------------------
    ;; css-mode / scss-mode

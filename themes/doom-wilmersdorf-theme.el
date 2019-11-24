@@ -143,9 +143,9 @@ determine the exact padding."
    ((outline-8 &override) :foreground (doom-darken green 0.4))
 
    ;; org-mode
+   ((org-block &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-   (org-block :background base2)
-   (org-block-begin-line :background base2 :foreground comments)
    (solaire-org-hide-face :foreground hidden)
 
    ;; tooltip

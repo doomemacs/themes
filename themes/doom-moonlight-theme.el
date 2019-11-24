@@ -136,9 +136,9 @@ Can be an integer to determine the exact padding."
    ((outline-5 &override) :foreground magenta)
    ((outline-6 &override) :foreground red)
    ((outline-7 &override) :foreground violet)
-   (org-block                    :background base2)
-   (org-block-background         :background base2)
-   (org-block-begin-line         :foreground comments :background base2)
+   ((org-block &override) :background base2)
+   ((org-block-background &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
 
    ;; --- plugin faces -------------------
    ;; css-mode / scss-mode
