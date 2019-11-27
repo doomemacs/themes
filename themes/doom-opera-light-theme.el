@@ -124,7 +124,7 @@ determine the exact padding."
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
-   (ivy-current-match :background highlight)
+   (ivy-current-match :background base5)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
