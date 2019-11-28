@@ -150,7 +150,7 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face     :foreground base5)
    (markdown-header-face     :inherit 'bold :foreground red)
-   (markdown-code-face       :background base1)
+   ((markdown-code-face &override)       :background base1)
    (mmm-default-submode-face :background base1)
 
    ;; org-mode

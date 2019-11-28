@@ -175,7 +175,7 @@ determine the exact padding."
    (markdown-list-face :foreground magenta)
    (markdown-pre-face  :foreground cyan)
    (markdown-link-face :inherit 'bold :foreground blue)
-   (markdown-code-face :background (doom-lighten base2 0.045))
+   ((markdown-code-face &override) :background (doom-lighten base2 0.045))
 
    ;; org-mode
    ((outline-1 &override) :foreground magenta)

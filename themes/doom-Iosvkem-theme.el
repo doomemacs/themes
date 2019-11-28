@@ -150,7 +150,10 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   (markdown-markup-face :foreground red)
+   (markdown-header-face :inherit 'bold :foreground fg)
+   (markdown-header-delimiter-face :inherit 'bold :foreground red)
 
    ;; org-mode
    (org-hide :foreground hidden)
@@ -172,11 +175,6 @@ determine the exact padding."
     :slant 'normal)
 
    (org-link :foreground urlblue :underline t)
-
-   (markdown-markup-face :foreground red)
-   (markdown-header-face :inherit 'bold :foreground fg)
-   (markdown-header-delimiter-face :inherit 'bold :foreground red)
-   (markdown-code-face :background bg)
 
    ((outline-1 &override) :foreground blue)
    ((outline-2 &override) :foreground magenta)
