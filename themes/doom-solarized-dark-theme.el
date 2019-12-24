@@ -124,13 +124,19 @@ determine the exact padding."
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
+   (font-lock-keyword-face
+    :weight 'bold
+    :foreground keywords)
+   (font-lock-const-face
+    :weight 'bold
+    :foreground constants)
 
    ;; Centaur tabs
    (centaur-tabs-active-bar-face :background blue)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-					  :foreground blue)
+                                          :foreground blue)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-					    :foreground blue)
+                                            :foreground blue)
    ;; Doom modeline
    (doom-modeline-bar :background blue)
 
