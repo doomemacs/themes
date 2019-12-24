@@ -127,7 +127,7 @@ determine the exact padding."
    (font-lock-keyword-face
     :weight 'bold
     :foreground keywords)
-   (font-lock-const-face
+   (font-lock-constant-face
     :weight 'bold
     :foreground constants)
 
