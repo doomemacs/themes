@@ -131,6 +131,14 @@ determine the exact padding."
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :foreground type)
 
+   (font-lock-keyword-face
+    :weight 'bold
+    :foreground keywords)
+
+   (font-lock-const-face
+    :weight 'bold
+    :foreground constants)
+
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
