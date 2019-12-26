@@ -17,8 +17,8 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by Material Theme by equinusocio"
 
   ;; name        default   256       16
-  ((bg         '("#1C262B" nil       nil))
-   (bg-alt     '("#263238" nil       nil))
+  ((bg         '("#263238" nil       nil))
+   (bg-alt     '("#1C262B" nil       nil))
    (base0      '("#171F24" "black"   "black"))
    (base1      '("#1C262B" "#262626" "brightblack"))
    (base2      '("#222D32" "#303030" "brightblack"))
