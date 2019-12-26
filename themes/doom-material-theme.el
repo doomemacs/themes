@@ -123,6 +123,8 @@ Can be an integer to determine the exact padding."
    (dired-k-ignored :foreground cyan)
    (dired-k-added    :foreground vc-added)
 
+   ;; ivy
+   (ivy-current-match :background base5)
 
    ;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
