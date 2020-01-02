@@ -12,13 +12,30 @@ determine the exact padding."
   :group 'doom-manegarm-theme
   :type '(choice integer boolean))
 
+(defcustom doom-manegarm-muted-modeline nil
+  "If non-nil, the modeline will be in a more muted tone.
+Otherwise it's in a dark green color similar to visual mode
+selections."
+  :group 'doom-manegarm-theme
+  :type 'boolean)
+
+(defcustom doom-manegarm-darker-background nil
+  "If non-nil, the background color will be a bit darker.
+This also affects solaire-mode, where the background colors of
+real file buffers will now be brighter instead."
+  :group 'doom-manegarm-theme
+  :type 'boolean)
+
 ;;
 (def-doom-theme doom-manegarm
   "A dark theme with autumn-inspired colors"
 
   ;; name        default   256       16
-  ((bg         '("#1c1408" nil       nil            ))
-   (bg-alt     '("#1c1308" nil       nil            ))
+  (
+   (-bg        '("#1c1408" nil       nil            ))
+   (-bg-alt    '("#181107" nil       nil            ))
+   (bg         (if doom-manegarm-darker-background -bg-alt -bg))
+   (bg-alt     (if doom-manegarm-darker-background -bg -bg-alt))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1c1f24" "brightblack"  ))
    (base2      '("#202328" "#202328" "brightblack"  ))
@@ -77,8 +94,10 @@ determine the exact padding."
    (modeline-fg     green)
    (modeline-fg-alt vertical-bar)
 
-   (modeline-bg `(,(car (doom-darken green 0.80)) ,@(cdr base0)))
-   (modeline-bg-l `(,(car (doom-darken green 0.80)) ,@(cdr base0)))
+   (modeline-bg
+    `(,(car (if doom-manegarm-muted-modeline (doom-darken teal 0.75) (doom-darken green 0.8)))
+      ,@(cdr base0)))
+   (modeline-bg-l modeline-bg)
    (modeline-bg-inactive   `(,(doom-darken (car bg) 0.2) ,@(cdr base0)))
    (modeline-bg-inactive-l `(,(doom-darken (car bg) 0.2) ,@(cdr base0))))
 
@@ -91,8 +110,10 @@ determine the exact padding."
    ((line-number-current-line &override) :foreground orange)
 
    (font-lock-comment-face
+    :inherit 'fixed-pitch-serif-face
+    :slant 'italic
     :foreground comments
-    :background bg)
+    :background nil)
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
