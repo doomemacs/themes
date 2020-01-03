@@ -1,4 +1,4 @@
-;; doom-vibrant-theme.el --- a more vibrant version of doom-one
+;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

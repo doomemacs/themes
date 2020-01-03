@@ -1,4 +1,4 @@
-;;; doom-palenight-theme.el --- inspired by Material-PaleNight
+;;; doom-palenight-theme.el --- inspired by Material-PaleNight -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

@@ -1,4 +1,4 @@
-;;; doom-tomorrow-day-theme.el -- port of tomorrow theme
+;;; doom-tomorrow-day-theme.el -- port of tomorrow theme -*- no-byte-compile: t; -*-
 ;;; Commentary:
 ;; This file is part of emacs-doom-themes, which provides license
 ;; information.

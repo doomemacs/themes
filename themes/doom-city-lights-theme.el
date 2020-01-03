@@ -1,4 +1,4 @@
-;;; doom-city-lights-theme.el --- inspired by Atom City Lights
+;;; doom-city-lights-theme.el --- inspired by Atom City Lights -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

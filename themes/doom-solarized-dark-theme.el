@@ -1,4 +1,4 @@
-;;; doom-solarized-dark-theme.el --- inspired by VS Code Solarized Dark
+;;; doom-solarized-dark-theme.el --- inspired by VS Code Solarized Dark -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

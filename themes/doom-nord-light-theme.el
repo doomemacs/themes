@@ -1,4 +1,4 @@
-;;; doom-nord-light-theme.el --- inspired by Nord
+;;; doom-nord-light-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

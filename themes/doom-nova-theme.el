@@ -1,4 +1,4 @@
-;;; doom-nova-theme.el --- inspired by Trevord Miller's Nova
+;;; doom-nova-theme.el --- inspired by Trevord Miller's Nova -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-nova-theme nil

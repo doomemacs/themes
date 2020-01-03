@@ -1,4 +1,4 @@
-;;; doom-laserwave-theme.el --- inspired by VS Code laserwave
+;;; doom-laserwave-theme.el --- inspired by VS Code laserwave -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

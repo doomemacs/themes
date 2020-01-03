@@ -1,4 +1,4 @@
-;; doom-sourcerer-theme.el --- a more Sourcerer version of doom-one
+;; doom-sourcerer-theme.el --- a more Sourcerer version of doom-one -*- no-byte-compile: t; -*-
 ;;; Commentary:
 (require 'doom-themes)
 ;;; Code:

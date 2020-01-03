@@ -1,4 +1,4 @@
-;;; doom-acario-dark-theme.el --- Acario dark theme
+;;; doom-acario-dark-theme.el --- Acario dark theme -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-acario-dark-theme nil

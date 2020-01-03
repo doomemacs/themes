@@ -1,4 +1,4 @@
-;;; doom-fairy-floss-theme.el --- inspired by sailorhg Fairy Floss
+;;; doom-fairy-floss-theme.el --- inspired by sailorhg Fairy Floss -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

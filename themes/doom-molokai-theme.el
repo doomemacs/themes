@@ -1,4 +1,4 @@
-;; doom-molokai-theme.el --- inspired by Textmate's Monokai
+;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

@@ -1,4 +1,4 @@
-;;; doom-peacock-theme.el --- inspired by daylerees Peacock
+;;; doom-peacock-theme.el --- inspired by daylerees Peacock -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-peacock-theme nil

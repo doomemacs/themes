@@ -1,4 +1,4 @@
-;;; doom-material-theme.el --- inspired by Material Theme by equinusocio
+;;; doom-material-theme.el --- inspired by Material Theme by equinusocio -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

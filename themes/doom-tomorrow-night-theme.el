@@ -1,4 +1,4 @@
-;;; doom-tomorrow-night-theme.el
+;;; doom-tomorrow-night-theme.el -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-tomorrow-night-theme nil

@@ -1,4 +1,4 @@
-;;; doom-one-light-theme.el --- inspired by Atom One Light
+;;; doom-one-light-theme.el --- inspired by Atom One Light -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

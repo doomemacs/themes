@@ -1,4 +1,4 @@
-;;; doom-opera-light-theme.el --- Opera-Light theme
+;;; doom-opera-light-theme.el --- Opera-Light theme -*- no-byte-compile: t; -*-
 
 (require 'doom-themes)
 

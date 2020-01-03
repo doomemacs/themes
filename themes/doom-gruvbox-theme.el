@@ -1,4 +1,4 @@
-;; doom-gruvbox-theme.el --- inspired by morhetz Gruvbox
+;; doom-gruvbox-theme.el --- inspired by morhetz Gruvbox -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;; Compiler pacifier
