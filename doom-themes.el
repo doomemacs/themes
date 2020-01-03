@@ -1,6 +1,6 @@
 ;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2018 Henrik Lissner
+;; Copyright (C) 2016-2020 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
