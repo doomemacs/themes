@@ -131,7 +131,7 @@
     (dired-flagged    :foreground red)
     (dired-header     :foreground blue :weight 'bold)
     (dired-mark       :foreground orange :weight 'bold)
-    (dired-marked     :foreground magenta :weight 'bold)
+    (dired-marked     :foreground magenta :weight 'bold :inverse-video t)
     (dired-perm-write :foreground fg :underline t)
     (dired-symlink    :foreground cyan :weight 'bold)
     (dired-warning    :foreground warning)
