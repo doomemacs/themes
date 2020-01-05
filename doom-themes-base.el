@@ -6,6 +6,7 @@
      :background (doom-darken red 0.25)
      :foreground base0
      :distant-foreground base0)
+    (doom-visual-bell :background error)
 
     ;; --- base faces -------------------------
     (bold        :weight 'bold :foreground (unless bold base8))

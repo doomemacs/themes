@@ -2,7 +2,7 @@
 
 (require 'face-remap)
 
-(defface doom-visual-bell '((t (:inherit error :inverse-video t)))
+(defface doom-visual-bell '((t (:inherit error)))
   "Face to use for the mode-line when `doom-themes-visual-bell-config' is used."
   :group 'doom-themes)
 
