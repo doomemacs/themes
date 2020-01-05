@@ -1283,6 +1283,10 @@
     (org-habit-overdue-face        :weight 'bold :background (doom-blend red bg-alt 0.5))
     (org-habit-overdue-future-face :weight 'bold :background (doom-blend red bg-alt 0.3))
 
+    ;; org-pomodoro
+    (org-pomodoro-mode-line :foreground red)
+    (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
+
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
 
