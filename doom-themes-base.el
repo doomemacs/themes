@@ -1253,7 +1253,7 @@
     (org-table           :foreground violet)
     (org-tag             :foreground doc-comments :weight 'normal)
     (org-ref-cite-face   :foreground yellow :weight 'light :underline t)
-    (org-latex-and-related :foreground magenta)
+    (org-latex-and-related :foreground base8 :weight 'bold)
     (org-todo            :foreground green :bold 'inherit)
     (org-verbatim        :foreground green)
     (org-warning         :foreground warning)
