@@ -239,6 +239,11 @@ determine the exact padding."
    (ivy-posframe :background base1 :foreground fg)
    (internal-border :background base7)
 
+;;;;; lsp-mode and lsp-ui-mode
+   (lsp-ui-peek-highlight :foreground yellow)
+   (lsp-ui-sideline-symbol-info :foreground (doom-blend bg comments 0.15)
+                                :background bg-alt)
+
 ;;;; --- major-mode faces -------------------
 ;;;;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
