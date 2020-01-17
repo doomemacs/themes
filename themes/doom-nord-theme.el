@@ -55,17 +55,17 @@ determine the exact padding."
    (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
-   (red        '("#C16069" "#ff6655" "red"          ))
-   (orange     '("#D2876D" "#dd8844" "brightred"    ))
-   (green      '("#A2BF8A" "#99bb66" "green"        ))
-   (teal       '("#8EBCBB" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECCC87" "#ECBE7B" "yellow"       ))
-   (blue       '("#80A0C2" "#51afef" "brightblue"   ))
-   (dark-blue  '("#5C748E" "#2257A0" "blue"         ))
-   (magenta    '("#B58DAE" "#c678dd" "magenta"      ))
-   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta"))
-   (cyan       '("#86C0D1" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#507681" "#5699AF" "cyan"         ))
+   (red        '("#BF616A" "#ff6655" "red"          )) ;; Nord11
+   (orange     '("#D08770" "#dd8844" "brightred"    )) ;; Nord12
+   (green      '("#A3BE8C" "#99bb66" "green"        )) ;; Nord14
+   (teal       '("#8FBCBB" "#44b9b1" "brightgreen"  )) ;; Nord7
+   (yellow     '("#EBCB8B" "#ECBE7B" "yellow"       )) ;; Nord13
+   (blue       '("#81A1C1" "#51afef" "brightblue"   )) ;; Nord9
+   (dark-blue  '("#5E81AC" "#2257A0" "blue"         )) ;; Nord10
+   (magenta    '("#B48EAD" "#c678dd" "magenta"      )) ;; Nord15
+   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta")) ;; ??
+   (cyan       '("#88C0D0" "#46D9FF" "brightcyan"   )) ;; Nord8
+   (dark-cyan  '("#507681" "#5699AF" "cyan"         )) ;; ??
 
    ;; face categories -- required for all themes
    (highlight      blue)
@@ -79,7 +79,7 @@ determine the exact padding."
    (keywords       blue)
    (methods        teal)
    (operators      blue)
-   (type           yellow)
+   (type           teal)
    (strings        green)
    (variables      (doom-lighten magenta 0.5))
    (numbers        magenta)
