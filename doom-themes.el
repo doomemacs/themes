@@ -28,6 +28,7 @@
 ;;   [X] `doom-acario-light' (added by gagbo)
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
+;;   [X] `doom-dark+' (added by ema2159)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
