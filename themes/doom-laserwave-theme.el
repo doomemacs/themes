@@ -162,8 +162,9 @@ determine the exact padding."
    (solaire-org-hide-face :foreground hidden)
 
    ;; org-pomodoro
-   (org-pomodoro-mode-line) ; unreadable otherwise
-   (org-pomodoro-mode-line-overtime :inherit 'org-pomodoro-mode-line :weight 'bold)
+   (org-pomodoro-mode-line :inherit 'mode-line-emphasis :weight 'bold) ; unreadable otherwise
+   (org-pomodoro-mode-line-overtime :inherit 'org-pomodoro-mode-line)
+   (org-pomodoro-mode-line-break :inherit 'org-pomodoro-mode-line)
 
    ;; --- extra variables ---------------------
    (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
