@@ -124,6 +124,9 @@ determine the exact padding."
    (doom-modeline-buffer-modified :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis)
    (doom-modeline-buffer-project-root :inherit 'mode-line-emphasis)
+   (doom-modeline-evil-visual-state :foreground yellow)
+   (doom-modeline-evil-replace-state :foreground orange)
+   (doom-modeline-evil-operator-state :foreground teal)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
