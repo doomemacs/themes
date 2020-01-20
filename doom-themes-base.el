@@ -699,7 +699,7 @@
     ((indent-guide-face &inherit highlight-indentation-face))
 
     ;; ivy
-    (ivy-current-match :background region :distant-foreground nil)
+    (ivy-current-match :background region :distant-foreground nil :extend t)
     (ivy-minibuffer-match-face-1
      :background nil
      :foreground (doom-lighten grey 0.14)
