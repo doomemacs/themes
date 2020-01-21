@@ -12,6 +12,12 @@ Can be an integer to determine the exact padding."
   :group 'doom-dark+-theme
   :type '(choice integer boolean))
 
+(defcustom doom-dark+-blue-modeline nil
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
+  :group 'doom-dark+-theme
+  :type '(choice integer boolean))
+
 ;;
 (def-doom-theme doom-dark+
   "A dark theme inspired by dark+ Theme by equinusocio"
@@ -42,7 +48,8 @@ Can be an integer to determine the exact padding."
    (blue         '("#339CDB" "#3399DD" "brightblue"))
    (dark-blue    '("#124F7B" "#114477" "blue"))
    (magenta      '("#C586C0" "#CC88CC" "brightmagenta"))
-   (violet       '("#BB80B3" "#D787AF" "magenta"))
+   (violet       '("#BB80B3" "#BB88BB" "magenta"))
+   (dark-violet  '("#68217A" "#662277" "magenta"))
    (cyan         '("#85DDFF" "#5FD7FF" "brightcyan"))
    (dark-cyan    '("#207FA1" "#2277AA" "cyan"))
 
@@ -71,7 +78,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     base6)
+   (modeline-bg     (if doom-dark+-blue-modeline base6 dark-violet))
    (modeline-bg-alt (doom-darken bg 0.01))
    (modeline-fg     base8)
    (modeline-fg-alt blue)
@@ -131,7 +138,7 @@ Can be an integer to determine the exact padding."
    (dashboard-heading :foreground green :weight 'bold)
    
    ;; doom-modeline
-   (doom-modeline-bar :background base6)
+   (doom-modeline-bar :background (if doom-dark+-blue-modeline base6 dark-violet))
    (doom-modeline-info :inherit 'mode-line-emphasis)
    (doom-modeline-urgent :inherit 'mode-line-emphasis)
    (doom-modeline-warning :inherit 'mode-line-emphasis)
