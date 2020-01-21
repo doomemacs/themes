@@ -158,6 +158,7 @@ determine the exact padding."
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :background base1 :foreground comments)
    (org-hide :foreground hidden)
+   (org-link :foreground orange :underline t :weight 'bold)
    (solaire-org-hide-face :foreground hidden)
 
    ;; tooltip
