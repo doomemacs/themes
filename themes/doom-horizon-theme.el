@@ -84,7 +84,7 @@
     (strings        yellow)
     (variables      red)
     (numbers        orange)
-    (region         bg)
+    (region         hor-highlight)
     (error          red)
     (warning        dark-cyan)
     (success        green)
@@ -217,11 +217,14 @@
     (evil-ex-lazy-highlight  :background hor-highlight :foreground fg)
 
     ;; ivy
-    (ivy-current-match       :background base1 :distant-foreground nil)
+    (ivy-current-match       :background hor-highlight :distant-foreground nil)
     (ivy-posframe-cursor     :background red :foreground base0)
 
     ;; company
-    (company-box-background  :background base0 :foreground fg)
-    (company-tooltip-common  :foreground yellow)))
+    (company-box-background    :background base0 :foreground fg)
+    (company-tooltip-common    :foreground yellow)
+    (company-tooltip-selection :background hor-highlight :foreground fg)
+    ))
+
 
 ;;; doom-horizon-theme.el ends here
