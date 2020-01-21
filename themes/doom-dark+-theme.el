@@ -13,8 +13,7 @@ Can be an integer to determine the exact padding."
   :type '(choice integer boolean))
 
 (defcustom doom-dark+-blue-modeline nil
-  "If non-nil, adds a 4px padding to the mode-line.
-Can be an integer to determine the exact padding."
+  "If non-nil, mode-line's color will be blue instead of the default purple."
   :group 'doom-dark+-theme
   :type '(choice integer boolean))
 
