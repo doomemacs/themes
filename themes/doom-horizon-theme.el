@@ -219,6 +219,7 @@
     ;; ivy
     (ivy-current-match       :background hor-highlight :distant-foreground nil)
     (ivy-posframe-cursor     :background red :foreground base0)
+    (ivy-minibuffer-match-face-2 :foreground yellow :weight 'bold)
 
     ;; company
     (company-box-background    :background base0 :foreground fg)
