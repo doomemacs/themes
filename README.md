@@ -18,6 +18,7 @@
     - [doom-solarized-light](#doom-solarized-light)
     - [doom-spacegrey](#doom-spacegrey)
     - [doom-tomorrow-night (WIP)](#doom-tomorrow-night-wip)
+    - [doom-horizon](#doom-horizon)
 
 ## Flagship Themes
 
@@ -66,3 +67,6 @@
 ![doom-spacegrey screenshot](doom-spacegrey.png)
 
 ### doom-tomorrow-night (WIP)
+
+### doom-horizon
+![doom-horizon screenshot](doom-horizon.png)
