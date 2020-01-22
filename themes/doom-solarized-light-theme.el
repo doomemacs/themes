@@ -188,7 +188,7 @@ determine the exact padding."
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
-   
+
    ;; helm
    (helm-selection :foreground base0 :weight 'bold :background blue)
 
