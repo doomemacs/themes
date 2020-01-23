@@ -1350,6 +1350,8 @@
 (defvar doom-themes-base-vars
   '((ansi-color-names-vector
      (vconcat (mapcar #'doom-color '(bg red green yellow blue magenta cyan fg))))
+    (rustic-ansi-faces
+     (vconcat (mapcar #'doom-color '(bg red green yellow blue magenta cyan fg))))
 
     (fci-rule-color (doom-color 'base5))
 
