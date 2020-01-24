@@ -208,6 +208,8 @@ Can be an integer to determine the exact padding."
 
    ;; treemacs
    (treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-file-face :foreground fg)
    (treemacs-directory-face :foreground fg)
    (treemacs-git-modified-face :foreground blue)
 
