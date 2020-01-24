@@ -186,6 +186,9 @@ Can be an integer to determine the exact padding."
    (js2-jsdoc-type             :foreground base8)
    (js2-jsdoc-value            :foreground cyan)
 
+   ;; lsp-mode
+   (lsp-lens-face              :foreground base7 :height 0.8)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
