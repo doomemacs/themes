@@ -37,6 +37,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
   - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
   - [X] `doom-laserwave`: an clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
+  - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
   - [X] `doom-molokai`: based on Textmate's monokai
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
   - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])

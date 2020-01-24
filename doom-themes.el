@@ -34,6 +34,7 @@
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-laserwave' (added by hyakt)
+;;   [X] `doom-manegarm' (added by kenranunderscore)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
