@@ -198,6 +198,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
 [jwintz]: https://github.com/jwintz
+[kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
