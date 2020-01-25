@@ -194,6 +194,7 @@
     (org-agenda-done :foreground cyan)
     (solaire-org-hide-face :foreground hidden)
     (solaire-header-line-face :background base2 :foreground fg)
+    (header-line :background base2 :foreground fg)
 
     ;; tooltip
     (tooltip              :background base0 :foreground fg)
