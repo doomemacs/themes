@@ -34,7 +34,12 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-dark+` ported from VS Code's [Dark+][dark+] theme (thanks to [ema2159])
   - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
+<<<<<<< Updated upstream
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
+=======
+  - [X] `doom-gruvbox`: adapted from Mohretz's [Gruvbox][gruvbox] (thanks to [JongW])
+  - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
+>>>>>>> Stashed changes
   - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
@@ -192,12 +197,14 @@ pointers. Additional theme and plugin support requests are welcome too.
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo 
 [gruvbox]: https://github.com/morhetz/gruvbox
+[horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
 [jwintz]: https://github.com/jwintz
+[karetsu]: https://github.com/kenranunderscore
 [kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
