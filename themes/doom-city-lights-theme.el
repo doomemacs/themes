@@ -171,8 +171,11 @@ determine the exact padding."
    ((org-block &override) :background base2)
    ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
 
+   ;; tooltip and company
+   (tooltip              :background bg-alt :foreground fg)
+   (company-tooltip-selection     :background base3))
 
   ;; --- extra variables ---------------------
   ()

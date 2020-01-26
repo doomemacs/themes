@@ -26,6 +26,18 @@ variable-pitch face."
   :group 'doom-themes-treemacs)
 
 ;;
+;;; Faces
+(defface doom-themes-treemacs-root-face
+  '((t (:inherit font-lock-string-face)))
+  "Face used for the root icon in doom themes' treemacs theme."
+  :group 'doom-themes-treemacs)
+
+(defface doom-themes-treemacs-file-face
+  '((t (:inherit font-lock-doc-face :slant normal)))
+  "Face used for the directory and file icons in doom themes' treemacs theme."
+  :group 'doom-themes-treemacs)
+
+;;
 ;;; Library
 
 (defun doom-themes-hide-fringes ()
@@ -126,12 +138,12 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
   (advice-add #'load-theme :after #'doom-themes-enable-treemacs-variable-pitch-labels)
 
   ;; minimalistic atom-inspired icon theme
-  (let ((face-spec '(:inherit font-lock-doc-face :slant normal)))
+  (let ((face-spec 'doom-themes-treemacs-file-face))
     (treemacs-create-theme "doom-atom"
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'treemacs-root-face))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'doom-themes-treemacs-root-face))
          :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t%s\t"
@@ -213,7 +225,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'treemacs-root-face))
+         :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'doom-themes-treemacs-root-face))
          :extensions (root))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))

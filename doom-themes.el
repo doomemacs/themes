@@ -32,8 +32,10 @@
 ;;   [X] `doom-dracula' (added by fuxialexnder)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
+;;   [X] `doom-horizon' (added by karetsu)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-laserwave' (added by hyakt)
+;;   [X] `doom-manegarm' (added by kenranunderscore)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)

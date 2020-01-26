@@ -187,7 +187,23 @@ determine the exact padding."
    (ivy-posframe :background modeline-bg-l)
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
+
+   ;; helm
+   (helm-selection :foreground base0 :weight 'bold :background blue)
+
+   ;; company
+   (company-tooltip-selection :background blue
+                              :foreground base3)
+
+   ;; widget
+   (widget-field :foreground fg :background base3)
+   (widget-single-line-field :foreground fg :background base3)
+
+   ;; latex
+   (font-latex-sedate-face :foreground base6)
+
+   )
 
 
   ;; --- extra variables ---------------------

@@ -12,6 +12,11 @@ Can be an integer to determine the exact padding."
   :group 'doom-dark+-theme
   :type '(choice integer boolean))
 
+(defcustom doom-dark+-blue-modeline nil
+  "If non-nil, mode-line's color will be blue instead of the default purple."
+  :group 'doom-dark+-theme
+  :type '(choice integer boolean))
+
 ;;
 (def-doom-theme doom-dark+
   "A dark theme inspired by dark+ Theme by equinusocio"
@@ -35,13 +40,15 @@ Can be an integer to determine the exact padding."
    (red          '("#D16969" "#DD6666" "red"))
    (orange       '("#DB8E73" "#DD8877" "brightred"))
    (green        '("#579C4C" "#559944" "green"))
+   (light-green  '("#B5CEA8" "#BBCCAA" "green"))
    (teal         '("#35CDAF" "#33CCAA" "brightgreen"))
    (yellow       '("#D7BA7D" "#DDBB77" "brightyellow"))
    (light-yellow '("#D9DAA2" "#DDDDAA" "brightyellow"))
    (blue         '("#339CDB" "#3399DD" "brightblue"))
    (dark-blue    '("#124F7B" "#114477" "blue"))
    (magenta      '("#C586C0" "#CC88CC" "brightmagenta"))
-   (violet       '("#BB80B3" "#D787AF" "magenta"))
+   (violet       '("#BB80B3" "#BB88BB" "magenta"))
+   (dark-violet  '("#68217A" "#662277" "magenta"))
    (cyan         '("#85DDFF" "#5FD7FF" "brightcyan"))
    (dark-cyan    '("#207FA1" "#2277AA" "cyan"))
 
@@ -52,7 +59,7 @@ Can be an integer to determine the exact padding."
    (builtin        magenta)
    (comments       green)
    (doc-comments   base7)
-   (constants      red)
+   (constants      blue)
    (functions      light-yellow)
    (keywords       blue)
    (methods        light-yellow)
@@ -60,7 +67,7 @@ Can be an integer to determine the exact padding."
    (type           teal)
    (strings        orange)
    (variables      cyan)
-   (numbers        orange)
+   (numbers        light-green)
    (region         (doom-darken base6 0.5))
    (error          red)
    (warning        yellow)
@@ -70,7 +77,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     base6)
+   (modeline-bg     (if doom-dark+-blue-modeline base6 dark-violet))
    (modeline-bg-alt (doom-darken bg 0.01))
    (modeline-fg     base8)
    (modeline-fg-alt blue)
@@ -130,14 +137,19 @@ Can be an integer to determine the exact padding."
    (dashboard-heading :foreground green :weight 'bold)
    
    ;; doom-modeline
-   (doom-modeline-bar :background base6)
+   (doom-modeline-bar :background (if doom-dark+-blue-modeline base6 dark-violet))
    (doom-modeline-info :inherit 'mode-line-emphasis)
    (doom-modeline-urgent :inherit 'mode-line-emphasis)
    (doom-modeline-warning :inherit 'mode-line-emphasis)
    (doom-modeline-debug :inherit 'mode-line-emphasis)
+   (doom-modeline-buffer-minor-mode :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-project-dir :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-project-parent-dir :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-persp-name :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-file :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-modified :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis)
+   (doom-modeline-lsp-success :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :inherit 'mode-line-emphasis)
    (doom-modeline-evil-insert-state :foreground cyan)
    (doom-modeline-evil-visual-state :foreground yellow)
@@ -174,6 +186,9 @@ Can be an integer to determine the exact padding."
    (js2-jsdoc-type             :foreground base8)
    (js2-jsdoc-value            :foreground cyan)
 
+   ;; lsp-mode
+   (lsp-lens-face              :foreground base7 :height 0.8)
+
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
@@ -196,6 +211,8 @@ Can be an integer to determine the exact padding."
 
    ;; treemacs
    (treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-file-face :foreground fg)
    (treemacs-directory-face :foreground fg)
    (treemacs-git-modified-face :foreground blue)
 

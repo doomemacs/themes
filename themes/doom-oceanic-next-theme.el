@@ -146,7 +146,7 @@ determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :background base2 :distant-foreground base0 :weight 'bold)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode

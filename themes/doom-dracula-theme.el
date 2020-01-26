@@ -204,6 +204,10 @@ determine the exact padding."
    (org-table :foreground violet)
    (org-upcoming-deadline :foreground yellow)
    (org-warning :foreground magenta)
+
+   ;; tooltip and company
+   (tooltip              :background bg-alt :foreground fg)
+   (company-tooltip-selection     :background base3)
    )
 
   ;; --- extra variables ---------------------
