@@ -121,7 +121,7 @@
 
   ;; --- extra faces ------------------------
   (((region &override) :foreground region-fg)
-
+   (default :background base1 :foreground fg)
    ((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground blue)
    ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
@@ -148,7 +148,7 @@
 
    ;; modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-highlight :foreground (doom-lighten bg 0.3))
+   (doom-modeline-highlight :foreground (doom-lighten base2 0.3))
    (doom-modeline-project-dir :foreground teal :inherit 'bold )
    (doom-modeline-buffer-path :foreground red)
    (doom-modeline-buffer-file :foreground fg)
@@ -156,7 +156,7 @@
    (doom-modeline-buffer-modified :foreground violet)
    (doom-modeline-panel :background base0)
    (doom-modeline-urgent :foreground modeline-fg)
-   (doom-modeline-info :foreground cyan)
+   (doom-modeline-info :inherit 'bold :foreground cyan :background base2)
 
    (solaire-mode-line-face
     :inherit 'mode-line
@@ -183,16 +183,16 @@
    (css-selector             :foreground red)
 
    ;; markdown-mode
-   (markdown-markup-face           :foreground cyan)
-   (markdown-link-face             :foreground orange)
-   (markdown-link-title-face       :foreground yellow)
+   (markdown-markup-face           :foreground red)
+   (markdown-link-face             :foreground teal)
+   (markdown-link-title-face       :foreground alt-blue)
    (markdown-header-face           :foreground red :inherit 'bold)
    (markdown-header-delimiter-face :foreground red :inherit 'bold)
-   (markdown-language-keyword-face :foreground orange)
-   (markdown-markup-face           :foreground fg)
-   (markdown-bold-face             :foreground violet)
-   (markdown-table-face            :foreground fg :background base1)
-   ((markdown-code-face &override) :foreground orange :background base1)
+   (markdown-language-keyword-face :foreground pink :inherit 'italic)
+   (markdown-markup-face           :foreground blue)
+   (markdown-bold-face             :foreground blue)
+   (markdown-table-face            :foreground fg :background bg)
+   ((markdown-code-face &override) :foreground teal :background base1)
 
    ;; outline (affects org-mode)
    ((outline-1 &override) :foreground blue :background nil)
@@ -220,14 +220,15 @@
    (org-list-dt :foreground light-grey)
 
    ;; tooltip
-   (tooltip              :background base0 :foreground fg)
+   (tooltip              :background base1 :foreground fg)
 
    ;; haskell
    (haskell-type-face :inherit 'bold :foreground violet)
-   (haskell-constructor-face :foreground alt-blue)
-   (haskell-keyword-face :inherit 'bold-italic :foreground blue)
+   (haskell-constructor-face :inherit 'bold :foreground alt-blue)
+   (haskell-keyword-face :inherit 'italic :foreground blue)
    (haskell-operator-face :foreground light-pink)
    (haskell-literate-comment-face :foreground doc-comments)
+   (haskell-definition-face :inherit 'bold :foreground functions)
 
    ;; magit
    (magit-section-heading :foreground red)
