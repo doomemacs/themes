@@ -19,7 +19,6 @@
     - [doom-spacegrey](#doom-spacegrey)
     - [doom-tomorrow-night (WIP)](#doom-tomorrow-night-wip)
     - [doom-horizon](#doom-horizon)
-    - [doom-ephemeral](#doom-ephemeral)
 
 ## Flagship Themes
 
@@ -71,6 +70,3 @@
 
 ### doom-horizon
 ![doom-horizon screenshot](doom-horizon.png)
-
-### doom-ephemeral
-![doom-ephemeral screenshot](doom-ephemeral.png)
