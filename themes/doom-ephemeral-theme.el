@@ -42,13 +42,13 @@
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#323f4e" nil       nil            ))
+  ((bg         '("#242d39" nil       nil            ))
    (bg-alt     '("#28323e" nil       nil            ))
    (base0      '("#181e26" "black"   "black"        ))
    (base1      '("#1e262d" "#1e262f" "brightblack"  ))
    (base2      '("#242d39" "#242d39" "brightblack"  ))
    (base3      '("#2a3542" "#2a3542" "brightblack"  ))
-   (base4      '("#303c4c" "#303c4c" "brightblack"  ))
+   (base4      '("#323f4e" "#323f4e" "brightblack"  ))
    (base5      '("#364455" "#364455" "brightblack"  ))
    (base6      '("#505d6f" "#505d6f" "brightblack"  ))
    (base7      '("#77818f" "#77818f" "brightblack"  ))
@@ -121,7 +121,6 @@
 
   ;; --- extra faces ------------------------
   (((region &override) :foreground region-fg)
-   (default :background base1 :foreground fg)
    ((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground blue)
    ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
@@ -173,6 +172,11 @@
 
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+   ;; centaur tabs
+   (centaur-tabs-selected :background bg-alt :foreground fg)
+   (centaur-tabs-unselected :background base2 :foreground fg)
+
 
    ;; --- major-mode faces -------------------
    ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
