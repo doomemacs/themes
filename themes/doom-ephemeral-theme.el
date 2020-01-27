@@ -39,7 +39,7 @@
 
 ;;
 (def-doom-theme doom-ephemeral
-  "A dark theme inspired by Nord."
+  "A dark theme inspired by EmpressNoodle's awesomewm config."
 
   ;; name        default   256       16
   ((bg         '("#323f4e" nil       nil            ))
