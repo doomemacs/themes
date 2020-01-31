@@ -42,7 +42,7 @@
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#242d39" nil       nil            ))
+  ((bg         '("#323f4e" nil       nil            ))
    (bg-alt     '("#28323e" nil       nil            ))
    (base0      '("#181e26" "black"   "black"        ))
    (base1      '("#1e262d" "#1e262f" "brightblack"  ))
