@@ -86,7 +86,7 @@ determine the exact padding."
    (region         (pcase doom-nord-region-highlight
                      (`frost teal)
                      (`snowstorm base7)
-                     (_ base4)))
+                     (_ base2)))
    (error          red)
    (warning        yellow)
    (success        green)
