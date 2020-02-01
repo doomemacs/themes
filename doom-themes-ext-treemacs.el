@@ -183,19 +183,20 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                       "wav" "mp3" "ogg" "midi"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
-         :extensions ("yml" "yaml" "sh" "zsh" "fish" "c" "h" "cpp" "cxx" "hpp"
-                      "tpp" "cc" "hh" "hs" "lhs" "cabal" "py" "pyc" "rs" "el"
-                      "elc" "clj" "cljs" "cljc" "ts" "tsx" "vue" "css" "html"
-                      "htm" "dart" "java" "kt" "scala" "sbt" "go" "js" "jsx"
-                      "hy" "json" "jl" "ex" "exs" "eex" "ml" "mli" "pp" "dockerfile"
-                      "vagrantfile" "j2" "jinja2" "tex" "racket" "rkt" "rktl" "rktd"
-                      "scrbl" "scribble" "plt" "makefile" "elm" "xml" "xsl" "rb"
-                      "scss" "lua" "lisp" "scm" "sql" "toml" "nim" "pl" "pm" "perl"
-                      "vimrc" "tridactylrc" "vimperatorrc" "ideavimrc" "vrapperrc"
-                      "cask" "r" "re" "rei" "bashrc" "zshrc" "inputrc" "editorconfig"
-                      "gitconfig" "csv" "cabal" "kt" "kts" "nim" "nims" "pm6" "sql"
-                      "styles" "lua" "adoc" "asciidoc" "pp" "j2" "jinja2" "dockerfile"
-                      "vagrantfile" "v" "vh" "sv"))
+         :extensions ("adoc" "asciidoc" "bashrc" "c" "cabal" "cabal" "cask" "cc"
+                      "clj" "cljc" "cljs" "cpp" "css" "csv" "cxx" "dart"
+                      "dockerfile" "dockerfile" "editorconfig" "eex" "el" "elc"
+                      "elm" "ex" "exs" "fish" "gitconfig" "gitignore" "go" "h"
+                      "hh" "hpp" "hs" "htm" "html" "hy" "ideavimrc" "inputrc"
+                      "j2" "j2" "java" "jinja2" "jinja2" "jl" "js" "json" "jsx"
+                      "kt" "kt" "kts" "lhs" "lisp" "lua" "lua" "makefile" "ml"
+                      "mli" "nim" "nim" "nims" "nix" "perl" "pl" "plt" "pm"
+                      "pm6" "pp" "pp" "py" "pyc" "r" "racket" "rb" "re" "rei"
+                      "rkt" "rktd" "rktl" "rs" "sbt" "scala" "scm" "scrbl"
+                      "scribble" "scss" "sh" "sql" "sql" "styles" "sv" "tex"
+                      "toml" "tpp" "tridactylrc" "ts" "tsx" "v" "vagrantfile"
+                      "vagrantfile" "vh" "vimperatorrc" "vimrc" "vrapperrc"
+                      "vue" "xml" "xsl" "yaml" "yml" "zsh" "zshrc"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "book" :v-adjust 0 :face face-spec))
          :extensions ("lrf" "lrx" "cbr" "cbz" "cb7" "cbt" "cba" "chm" "djvu"
