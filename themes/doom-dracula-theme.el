@@ -208,6 +208,10 @@ determine the exact padding."
    ;; tooltip and company
    (tooltip              :background bg-alt :foreground fg)
    (company-tooltip-selection     :background base3)
+
+   ;; rjsx-mode
+   (rjsx-tag :foreground magenta)
+   (rjsx-attr :foreground green :slant 'italic :weight 'medium)
    )
 
   ;; --- extra variables ---------------------
