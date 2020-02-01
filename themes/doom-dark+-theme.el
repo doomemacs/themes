@@ -22,9 +22,9 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by dark+ Theme by equinusocio"
 
   ;; name        default   256       16
-  ((bg         '("#1e1e1e" nil       nil))
-   (bg-alt     '("#252526" nil       nil))
-   (base0      '("#171F24" "black"   "black"))
+  ((bg         '("#1e1e1e" "#1e1e1e" nil))
+   (bg-alt     '("#252526" "#222222"  nil))
+   (base0      '("#171F24" "#111122"   "black"))
    (base1      '("#1C1C1C" "#1C1C1C" "brightblack"))
    (base2      '("#121212" "#626262" "brightblack"))
    (base3      '("#313131" "#3a3a3a" "brightblack"))
