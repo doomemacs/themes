@@ -77,9 +77,9 @@ variable-pitch face."
 
 (defun doom-themes-fix-treemacs-icons-dired-mode ()
   "Set `tab-width' to 1 in dired-mode if `treemacs-icons-dired-mode' is active."
-  (if treemacs-icons-dired-mode
-      (add-hook 'dired-mode-hook #'doom-themes-setup-tab-width nil t)
-    (remove-hook 'dired-mode-hook #'doom-themes-setup-tab-width t)))
+  (funcall (if treemacs-icons-dired-mode #'add-hook #'remove-hook)
+           'dired-mode-hook
+           #'doom-themes-setup-tab-width))
 
 (defun doom-themes--get-treemacs-extensions (ext)
   "Expand the extension pattern EXT into a list of extensions.
