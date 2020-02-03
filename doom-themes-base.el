@@ -391,9 +391,9 @@
     (circe-my-message-face :weight 'bold)
 
     ;; diff-hl
-    (diff-hl-change :foreground vc-modified)
-    (diff-hl-delete :foreground vc-deleted)
-    (diff-hl-insert :foreground vc-added)
+    (diff-hl-change :foreground vc-modified :background vc-modified)
+    (diff-hl-delete :foreground vc-deleted :background vc-deleted)
+    (diff-hl-insert :foreground vc-added :background vc-added)
 
     ;; diff-mode
     (diff-added   :inherit 'hl-line :foreground green)
