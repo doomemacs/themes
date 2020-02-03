@@ -185,7 +185,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
          :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
          :extensions ("adoc" "asciidoc" "bashrc" "c" "cabal" "cabal" "cask" "cc"
                       "clj" "cljc" "cljs" "cpp" "css" "csv" "cxx" "dart"
-                      "dockerfile" "dockerfile" "editorconfig" "eex" "el" "elc"
+                      "dockerfile" "dockerfile" "editorconfig" "eex" "el"
                       "elm" "ex" "exs" "fish" "gitconfig" "gitignore" "go" "h"
                       "hh" "hpp" "hs" "htm" "html" "hy" "ideavimrc" "inputrc"
                       "j2" "j2" "java" "jinja2" "jinja2" "jl" "js" "json" "jsx"
@@ -210,7 +210,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                       "CONTRIBUTE" "LICENSE" "README" "CHANGELOG"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-binary" :v-adjust 0 :face face-spec))
-         :extensions ("exe" "dll" "obj" "so" "o" "out"))
+         :extensions ("exe" "dll" "obj" "so" "o" "out" "elc"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-pdf" :v-adjust 0 :face face-spec))
          :extensions ("pdf"))
@@ -229,22 +229,22 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
          :icon (format " %s\t" (all-the-icons-octicon "repo" :height 1.2 :v-adjust -0.1 :face 'doom-themes-treemacs-root-face))
          :extensions (root))
         (treemacs-create-icon
-         :icon (format "%s\t" (all-the-icons-octicon "flame" :v-adjust 0 :face 'all-the-icons-red))
+         :icon (format "%s\t" (all-the-icons-octicon "flame" :height 0.8 :v-adjust 0 :face 'all-the-icons-red))
          :extensions (error))
         (treemacs-create-icon
-         :icon (format "%s\t" (all-the-icons-octicon "stop" :v-adjust 0 :face 'all-the-icons-yellow))
+         :icon (format "%s\t" (all-the-icons-octicon "stop" :height 0.8 :v-adjust 0 :face 'all-the-icons-yellow))
          :extensions (warning))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "info" :height 0.75 :v-adjust 0.1 :face 'all-the-icons-green))
          :extensions (info))
         (treemacs-create-icon
-         :icon (format "  %s\t" (all-the-icons-alltheicon "git" :face 'all-the-icons-red))
+         :icon (format "  %s\t" (all-the-icons-alltheicon "git" :height 0.85 :v-adjust 0.0 :face 'all-the-icons-red))
          :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
 
         (dolist (item all-the-icons-icon-alist)
           (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
                  (func (cadr item))
-                 (args (append (list (caddr item)) '(:v-adjust -0.05) (cdddr item)))
+                 (args (append (list (caddr item)) '(:v-adjust -0.05 :height 0.85) (cdddr item)))
                  (icon (apply func args)))
             (let* ((icon-pair (cons (format "  %s\t" icon) " "))
                    (gui-icons (treemacs-theme->gui-icons treemacs--current-theme))
@@ -253,7 +253,11 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                    (tui-icon  (cdr icon-pair)))
               (--each extensions
                 (ht-set! gui-icons it gui-icon)
-                (ht-set! tui-icons it tui-icon))))))))
+                (ht-set! tui-icons it tui-icon)))))
+
+        (treemacs-create-icon
+         :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
+         :extensions ("elc")))))
 
   (treemacs-load-theme doom-themes-treemacs-theme))
 
