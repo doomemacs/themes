@@ -107,7 +107,8 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  (((secondary-selection &override) :background base0)
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
