@@ -38,6 +38,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
   - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
+  - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
   - [X] `doom-molokai`: based on Textmate's monokai
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
@@ -218,6 +219,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [sourcerer]: https://github.com/xero/sourcerer.vim
 [spacegrey]: http://kkga.github.io/spacegray/
+[tam5]: https://github.com/tam5
 [teesloane]: https://github.com/teesloane
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs

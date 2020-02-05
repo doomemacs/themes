@@ -35,6 +35,7 @@
 ;;   [X] `doom-horizon' (added by karetsu)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-laserwave' (added by hyakt)
+;;   [X] `doom-material' (added by tam5)
 ;;   [X] `doom-manegarm' (added by kenranunderscore)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-moonlight' (added by Brettm12345)
