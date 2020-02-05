@@ -18,6 +18,7 @@
     - [doom-horizon](#doom-horizon)
     - [doom-Iosvkem](#doom-Iosvkem)
     - [doom-laserwave](#doom-laserwave)
+    - [doom-material](#doom-material)
     - [doom-manegarm](#doom-manegarm)
     - [doom-molokai](#doom-molokai)
     - [doom-moonlight](#doom-moonlight)
@@ -82,6 +83,9 @@
 
 ## doom-laserwave
 ![doom-laserwave screenshot](doom-laserwave.png)
+
+## doom-material
+![doom-material screenshot](doom-material.png)
 
 ## doom-manegarm
 ![doom-manegarm screenshot](doom-manegarm.png)
