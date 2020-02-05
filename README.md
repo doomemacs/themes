@@ -27,7 +27,7 @@
     - [doom-oceanic-next](#doom-oceanic-next)
     - [doom-opera](#doom-opera)
     - [doom-opera-light](#doom-opera-light)
-    - [doom-outrun](#doom-outrun)
+    - [doom-outrun-electric](#doom-outrun-electric)
     - [doom-palenight](#doom-palenight)
     - [doom-peacock](#doom-peacock)
     - [doom-solarized-dark](#doom-solarized-dark)
@@ -110,8 +110,8 @@
 ## doom-opera-light
 ![doom-opera-light screenshot](doom-opera-light.png)
 
-## doom-outrun
-![doom-outrun screenshot](doom-outrun.png)
+## doom-outrun-electric
+![doom-outrun-electric screenshot](doom-outrun-electric.png)
 
 ## doom-palenight
 ![doom-palenight screenshot](doom-palenight.png)
