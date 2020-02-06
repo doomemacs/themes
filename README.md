@@ -31,6 +31,7 @@
     - [doom-outrun-electric](#doom-outrun-electric)
     - [doom-palenight](#doom-palenight)
     - [doom-peacock](#doom-peacock)
+    - [doom-snazzy](#doom-snazzy)
     - [doom-solarized-dark](#doom-solarized-dark)
     - [doom-solarized-light](#doom-solarized-light)
     - [doom-sourcerer](#doom-sourcerer)
@@ -122,6 +123,9 @@
 
 ## doom-peacock
 ![doom-peacock screenshot](doom-peacock.png)
+
+## doom-snazzy
+![doom-snazzy screenshot](doom-snazzy.png)
 
 ## doom-solarized-dark
 ![doom-solarized-dark screenshot](doom-solarized-dark.png)
