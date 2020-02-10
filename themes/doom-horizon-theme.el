@@ -36,11 +36,11 @@
   "A port of the port of the Visual Studio Code theme Horizon"
 
   ;; name        default   256       16
-  ( (bg         '("#232530" "#232530" nil            ))
-    (bg-alt     '("#1c1e26" "#1c1e26" nil            ))
+  ( (bg         '("#1c1e26" "#232530" nil            ))
+    (bg-alt     '("#232530" "#1c1e26" nil            ))
     (base0      '("#16161c" "#16161c" "black"        ))
     (base1      '("#1a1c23" "#1a1c23" "brightblack"  ))
-    (base2      '("#1c1e26" "#1c1e26" "brightblack"  ))
+    (base2      '("#1d1f27" "#1c1e26" "brightblack"  ))
     (base3      '("#232530" "#232530" "brightblack"  ))
     (base4      '("#6a6a6a" "#6a6a6a" "brightblack"  ))
     (base5      '("#f9cec3" "#f9cec3" "brightblack"  ))
@@ -69,13 +69,13 @@
     (hor-highlight-bright (doom-lighten base3 0.2))
 
     ;; face categories -- required for all themes
-    (highlight      orange)
+    (highlight      red)
     (vertical-bar   base0)
     (selection      violet)
     (builtin        violet)
     (comments       hor-highlight-bright)
     (doc-comments   yellow)
-    (constants      teal)
+    (constants      orange)
     (functions      teal)
     (keywords       violet)
     (methods        magenta)
@@ -193,7 +193,7 @@
     (org-link :inherit 'underline :foreground yellow)
     (org-agenda-done :foreground cyan)
     (solaire-org-hide-face :foreground hidden)
-    (solaire-header-line-face :background base2 :foreground fg)
+    (solaire-header-line-face :background bg-alt :foreground fg)
     (header-line :background base2 :foreground fg)
 
     ;; tooltip
@@ -221,12 +221,27 @@
     ;; ivy
     (ivy-current-match       :background hor-highlight :distant-foreground nil)
     (ivy-posframe-cursor     :background red :foreground base0)
-    (ivy-minibuffer-match-face-2 :foreground yellow :weight 'bold)
+    (ivy-minibuffer-match-face-2 :foreground red :weight 'bold)
 
     ;; company
     (company-box-background    :background base0 :foreground fg)
-    (company-tooltip-common    :foreground yellow)
+    (company-tooltip-common    :foreground red :weight 'bold)
     (company-tooltip-selection :background hor-highlight :foreground fg)
+    
+   ;; treemacs
+   (treemacs-root-face :foreground fg :weight 'bold :height 1.2)
+   (doom-themes-treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-file-face :foreground fg)
+   (treemacs-directory-face :foreground fg)
+   (treemacs-git-modified-face :foreground green)
+
+   ;; js2-mode
+   (js2-object-property        :foreground fg)
+   
+   ;; rjsx-mode
+   (rjsx-tag :foreground red)
+   (rjsx-tag-bracket-face :foreground red)
+   (rjsx-attr :foreground cyan :slant 'italic :weight 'medium)
     ))
 
 
