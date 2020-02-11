@@ -264,7 +264,7 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
 
-   ;; treemacs
+;;;;; treemacs
    (treemacs-root-face :foreground strings :weight 'bold :height 1.2)
    (doom-themes-treemacs-file-face :foreground comments)
    )
