@@ -33,9 +33,10 @@ determine the exact padding."
   "A dark theme inspired by Acario"
 
 ;;;; Colors
+;;;; 12141F
   ;; name        default   256         16
-  ((bg         '("#12141F" "color-234" "black"        ))
-   (bg-alt     '("#0D0E16" "color-233" nil            ))
+  ((bg         '("#0D0E16" "color-233" "black"        ))
+   (bg-alt     '("#06060A" "color-232" nil            ))
    (base0      '("#0F1019" "color-234" "black"        ))
    (base1      '("#121212" "color-233" "brightblack"  ))
    (base2      '("#1E1E33" "color-236"  "brightblack"  ))
