@@ -1284,6 +1284,11 @@
     (org-habit-overdue-face        :weight 'bold :background (doom-blend red bg-alt 0.5))
     (org-habit-overdue-future-face :weight 'bold :background (doom-blend red bg-alt 0.3))
 
+    ;; org-journal
+    (org-journal-highlight :foreground highlight)
+    (org-journal-calendar-entry-face :foreground magenta :slant 'italic)
+    (org-journal-calendar-scheduled-face :foreground red :slant 'italic)
+
     ;; org-pomodoro
     (org-pomodoro-mode-line :foreground red)
     (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
