@@ -34,8 +34,8 @@ determine the exact padding."
 
 ;;;; Colors
   ;; name        default   256         16
-  ((bg         '("#0D0E16" "color-233" "black"        ))
-   (bg-alt     '("#12141F" "color-234" nil            ))
+  ((bg         '("#12141F" "color-234" "black"        ))
+   (bg-alt     '("#0D0E16" "color-233" nil            ))
    (base0      '("#0F1019" "color-234" "black"        ))
    (base1      '("#121212" "color-233" "brightblack"  ))
    (base2      '("#1E1E33" "color-236"  "brightblack"  ))
@@ -91,7 +91,7 @@ determine the exact padding."
    (vc-deleted     red)
 
 ;;;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
+   (hidden bg)
    (-modeline-bright doom-acario-dark-brighter-modeline)
    (-modeline-pad
     (when doom-acario-dark-padded-modeline
