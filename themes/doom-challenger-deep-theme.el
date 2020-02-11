@@ -163,7 +163,12 @@ determine the exact padding."
    (solaire-org-hide-face :foreground hidden)
 
    ;; tooltip
-   (tooltip              :background base0 :foreground fg))
+   (tooltip              :background base0 :foreground fg)
+
+   ;; org-journal
+   (org-journal-calendar-entry-face :foreground orange))
+
+
 
   ;; --- extra variables ---------------------
   ;; ()
