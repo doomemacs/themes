@@ -34,15 +34,15 @@ determine the exact padding."
 
 ;;;; Colors
   ;; name        default   256         16
-  ((bg         '("#0D0E16" "color-232" "black"        ))
+  ((bg         '("#0D0E16" "color-233" "black"        ))
    (bg-alt     '("#12141F" "color-234" nil            ))
    (base0      '("#0F1019" "color-234" "black"        ))
    (base1      '("#121212" "color-233" "brightblack"  ))
-   (base2      '("#1E1E33" "color-17"  "brightblack"  ))
-   (base3      '("#464A56" "color-237" "brightblack"  ))
-   (base4      '("#585C6C" "color-240" "brightblack"  ))
+   (base2      '("#1E1E33" "color-236"  "brightblack"  ))
+   (base3      '("#464A56" "color-240" "brightblack"  ))
+   (base4      '("#585C6C" "color-60" "brightblack"  ))
    (base5      '("#767676" "color-243" "brightblack"  ))
-   (base6      '("#959EA5" "color-246" "white"        ))
+   (base6      '("#959EA5" "color-109" "white"        ))
    (base7      '("#B2B2B2" "color-249" "white"        ))
    (base8      '("#D0D0D0" "color-252" "brightwhite"  ))
    (fg         '("#CEDBE5" "color-152" "brightwhite"  ))
@@ -57,13 +57,13 @@ determine the exact padding."
    (magenta    '("#8041D8" "color-98"  "magenta"      ))
    (cyan       '("#36D8BD" "color-79"  "cyan"         ))
 
-   (orange     '("#D85F00" "#D85F00"   "brightred"    ))
+   (orange     '("#D85F00" "color-166"   "brightred"    ))
    (teal       '("#2D9574" "color-29"  "brightcyan"   ))
    (violet     '("#AB11D8" "color-128" "brightmagenta"))
 
    (bg-blue    '("#0C213E" "color-17"  "brightblack"  ))
    (dark-blue  bg-blue)
-   (bg-cyan    '("#092D27" "#092D27"   "brightblack"  ))
+   (bg-cyan    '("#092D27" "color-23"   "brightblack"  ))
    (dark-cyan  bg-cyan)
 
 ;;;; face categories -- required for all themes

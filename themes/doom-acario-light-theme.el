@@ -34,36 +34,36 @@ determine the exact padding."
 
 ;;;; Colors
   ;; name        default   256         16
-  ((bg         '("#EAF1FB" "color-255" "black"        ))
-   (bg-alt     '("#EFFAFF" "color-253" nil            ))
+  ((bg         '("#EAF1FB" "color-189" "black"        ))
+   (bg-alt     '("#EFFAFF" "color-195" nil            ))
    (base0      '("#DDDDDD" "color-253" "black"        ))
    (base1      '("#D0D0D0" "color-252" "brightblack"  ))
    (base2      '("#C0CCD0" "color-152" "brightblack"  ))
-   (base3      '("#9EA6B0" "color-249" "brightblack"  ))
-   (base4      '("#585C6C" "color-246" "brightblack"  ))
-   (base5      '("#4E4E4E" "color-243" "brightblack"  ))
-   (base6      '("#3A3A3A" "color-240" "white"        ))
-   (base7      '("#303030" "color-237" "white"        ))
-   (base8      '("#1E1E33" "color-234" "brightwhite"  ))
-   (fg         '("#0F1019" "color-233" "brightwhite"  ))
-   (fg-alt     '("#0D0E16" "color-232" "brightwhite"  ))
+   (base3      '("#9EA6B0" "color-103" "brightblack"  ))
+   (base4      '("#585C6C" "color-60" "brightblack"  ))
+   (base5      '("#4E4E4E" "color-239" "brightblack"  ))
+   (base6      '("#3A3A3A" "color-237" "white"        ))
+   (base7      '("#303030" "color-236" "white"        ))
+   (base8      '("#1E1E33" "color-236" "brightwhite"  ))
+   (fg         '("#0F1019" "color-234" "brightwhite"  ))
+   (fg-alt     '("#0D0E16" "color-233" "brightwhite"  ))
 
    (grey       base5)
 
    (red        '("#D70000" "color-160" "red"          ))
    (green      '("#005F00" "color-22"  "green"        ))
    (yellow     '("#AF8700" "color-136" "yellow"       ))
-   (blue       '("#1F55A0" "color-20"  "blue"         ))
+   (blue       '("#1F55A0" "color-25"  "blue"         ))
    (magenta    '("#AF005F" "color-125" "magenta"      ))
-   (cyan       '("#007687" "color-24"  "cyan"         ))
+   (cyan       '("#007687" "color-30"  "cyan"         ))
 
    (orange     '("#D75F00" "color-166" "brightred"    ))
    (teal       '("#00876C" "color-29"  "brightgreen"  ))
    (violet     '("#8700AF" "color-91"  "brightmagenta"))
 
-   (bg-blue    '("#B9D1F1" "#B9D1F1"   "blue"         ))
+   (bg-blue    '("#B9D1F1" "color-153"   "blue"         ))
    (dark-blue  bg-blue)
-   (bg-cyan    '("#D5FAFF" "#D5FAFF"   "cyan"         ))
+   (bg-cyan    '("#D5FAFF" "color-195"   "cyan"         ))
    (dark-cyan  bg-cyan)
 
 ;;;; face categories -- required for all themes
