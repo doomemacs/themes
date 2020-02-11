@@ -103,7 +103,7 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-dark
-        (doom-blend blue bg 0.35)
+        (doom-blend blue bg-alt 0.35)
       `(,(car base2) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-dark
@@ -242,7 +242,7 @@ determine the exact padding."
 
 ;;;;; lsp-mode and lsp-ui-mode
    (lsp-ui-peek-highlight :foreground yellow)
-   (lsp-ui-sideline-symbol-info :foreground (doom-blend bg comments 0.15)
+   (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
                                 :background bg-alt)
 
 ;;;; --- major-mode faces -------------------
