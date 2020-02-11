@@ -58,7 +58,7 @@ determine the exact padding."
    (cyan       '("#007687" "color-30"  "cyan"         ))
 
    (orange     '("#D75F00" "color-166" "brightred"    ))
-   (teal       '("#00876C" "color-29"  "brightgreen"  ))
+   (teal       '("#009B7C" "color-36"  "brightgreen"  ))
    (violet     '("#8700AF" "color-91"  "brightmagenta"))
 
    (bg-blue    '("#DEEAF8" "color-189"   "blue"         ))
