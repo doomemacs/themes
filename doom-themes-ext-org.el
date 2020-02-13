@@ -60,7 +60,7 @@ See also `org-agenda-deadline-faces'."
                ("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)"
                 1 'org-headline-done prepend)
                ;; make plain list bullets stand out
-               ("^ *\\([-+]\\|[0-9]+[).]\\) " 1 'org-list-dt append)
+               ("^ *\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)[ \t]" 1 'org-list-dt append)
                ;; and separators/dividers
                ("^ *\\(-----+\\)$" 1 'org-meta-line))
              ;; custom #hashtags & @at-tags for another level of organization
