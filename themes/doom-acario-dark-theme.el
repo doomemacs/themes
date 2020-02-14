@@ -36,12 +36,12 @@ determine the exact padding."
 ;;;; 12141F
   ;; name        default   256         16
   ((bg         '("#0D0E16" "color-233" "black"        ))
-   (bg-alt     '("#06060A" "color-232" nil            ))
+   (bg-alt     '("#06060A" "color-232" "brightblack"  ))
    (base0      '("#0F1019" "color-234" "black"        ))
    (base1      '("#121212" "color-233" "brightblack"  ))
-   (base2      '("#1E1E33" "color-236"  "brightblack"  ))
+   (base2      '("#1E1E33" "color-236"  "brightblack" ))
    (base3      '("#464A56" "color-240" "brightblack"  ))
-   (base4      '("#585C6C" "color-60" "brightblack"  ))
+   (base4      '("#585C6C" "color-60" "brightblack"   ))
    (base5      '("#767676" "color-243" "brightblack"  ))
    (base6      '("#959EA5" "color-109" "white"        ))
    (base7      '("#B2B2B2" "color-249" "white"        ))
