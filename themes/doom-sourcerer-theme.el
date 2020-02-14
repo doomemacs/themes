@@ -34,8 +34,8 @@ Can be an integer to determine the exact padding."
 (def-doom-theme doom-sourcerer
   "A dark theme based off of xero's Sourcerer VIM colorscheme"
 
-  ((bg         '("#202020"))
-   (bg-alt     '("#222222"))
+  ((bg         '("#222222"))
+   (bg-alt     '("#171717"))
    (base0      '("#1d2127"))
    (base1      '("#1d2127"))
    (base2      '("#272727"))
@@ -44,40 +44,40 @@ Can be an integer to determine the exact padding."
    (base5      '("#62686E"))
    (base6      '("#757B80"))
    (base7      '("#9ca0a4"))
-   (base8      '("#fdfdd5"))
+   (base8      '("#faf4c6"))
    (fg         '("#c2c2b0"))
    (fg-alt     '("#5D656B"))
 
-   (grey       base4)
+   (grey       '("#686858"))
    (red        '("#aa4450"))
-   (orange     '("#dd8844"))
-   (green      '("#858253"))
-   (green-br   '("#99bb66"))
-   (teal       '("#5b8583" "#44b9b1" ))
-   (yellow     '("#d0770f"           ))
-   (blue       '("#86aed5"           ))
+   (orange     '("#ff9800"))
+   (green      '("#87875f"))
+   (green-br   '("#719611"))
+   (teal       '("#578F8F" "#44b9b1" ))
+   (yellow     '("#cc8800"           ))
+   (blue       '("#87AFD7"           ))
    (dark-blue  '("#6688aa"           ))
-   (magenta    '("#8686ae"           ))
-   (violet     '("#8686ae"           ))
-   (cyan       '("#5b8583"           ))
-   (dark-cyan  '("#9aaccb"           ))
+   (magenta    '("#8787AF"           ))
+   (violet     '("#8181a6"           ))
+   (cyan       '("#87ceeb"           ))
+   (dark-cyan  '("#528b8b"           ))
    ;; face categories
-   (highlight      orange)
+   (highlight      cyan)
    (vertical-bar   base0)
    (selection      base5)
    (builtin        blue)
-   (comments       (if doom-sourcerer-brighter-comments dark-cyan "#5c5d56"))
-   (doc-comments   (if doom-sourcerer-brighter-comments (doom-lighten dark-cyan 0.15) (doom-darken "#5c5d56" 0.1)))
+   (comments       (if doom-sourcerer-brighter-comments dark-cyan grey))
+   (doc-comments   (if doom-sourcerer-brighter-comments (doom-lighten dark-cyan 0.15) (doom-darken grey 0.1)))
    (constants      teal)
    (functions      base8)
    (keywords       blue)
    (methods        magenta)
-   (operators      teal)
+   (operators      green-br)
    (type           violet)
    (strings        green)
    (variables      base8)
-   (numbers        orange)
-   (region         base2)
+   (numbers        yellow)
+   (region         base3)
    (error          red)
    (warning        orange)
    (success        green)
@@ -146,6 +146,10 @@ Can be an integer to determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
+   ;; tooltip and company
+   (tooltip              :background bg-alt :foreground fg)
+   (company-tooltip-selection     :background base3)
+
    ;; markdown-mode
    (markdown-header-face :inherit 'bold :foreground red)
       ;; rainbow-delimiters
@@ -158,7 +162,13 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-7-face :foreground orange)
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden-alt))
+   (solaire-org-hide-face :foreground hidden-alt)
+
+   ;; rjsx-mode
+   (rjsx-tag :foreground blue)
+   (rjsx-tag-bracket-face :foreground base8)
+   (rjsx-attr :foreground magenta :slant 'italic :weight 'medium)
+   )
 
 
   ;; --- extra variables --------------------
