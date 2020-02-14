@@ -101,7 +101,7 @@
         (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
 
     (modeline-fg     (doom-lighten bg 0.2))
-    (modeline-fg-alt (doom-lighten bg 0.05))
+    (modeline-fg-alt (doom-darken fg 0.2))
 
     (modeline-bg
       (if -modeline-bright
@@ -111,8 +111,8 @@
       (if -modeline-bright
           base4
         `(,(car base1), (cdr fg))))
-    (modeline-bg-inactive   bg-alt)
-    (modeline-bg-inactive-l `(,(car bg-alt), (cdr fg))))
+    (modeline-bg-inactive   base1)
+    (modeline-bg-inactive-l base1))
 
 
   ;; --- extra faces ------------------------
@@ -236,7 +236,7 @@
    (treemacs-git-modified-face :foreground green)
 
    ;; js2-mode
-   (js2-object-property        :foreground fg)
+   (js2-object-property        :foreground red)
    
    ;; rjsx-mode
    (rjsx-tag :foreground red)
