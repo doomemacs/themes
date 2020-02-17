@@ -34,36 +34,36 @@ determine the exact padding."
 
 ;;;; Colors
   ;; name        default   256         16
-  ((bg         '("#EAF1FB" "color-255" "black"        ))
-   (bg-alt     '("#EFFAFF" "color-253" nil            ))
-   (base0      '("#DDDDDD" "color-253" "black"        ))
-   (base1      '("#D0D0D0" "color-252" "brightblack"  ))
+  ((bg         '("#F5F5F9" "color-255" "black"        ))
+   (bg-alt     '("#E9E9F2" "color-254" "brightblack"  ))
+   (base0      '("#D0D0E3" "color-188" "black"        ))
+   (base1      '("#D0D0E3" "color-188" "brightblack"  ))
    (base2      '("#C0CCD0" "color-152" "brightblack"  ))
-   (base3      '("#9EA6B0" "color-249" "brightblack"  ))
-   (base4      '("#585C6C" "color-246" "brightblack"  ))
-   (base5      '("#4E4E4E" "color-243" "brightblack"  ))
-   (base6      '("#3A3A3A" "color-240" "white"        ))
-   (base7      '("#303030" "color-237" "white"        ))
-   (base8      '("#1E1E33" "color-234" "brightwhite"  ))
-   (fg         '("#0F1019" "color-233" "brightwhite"  ))
-   (fg-alt     '("#0D0E16" "color-232" "brightwhite"  ))
+   (base3      '("#9EA6B0" "color-103" "brightblack"  ))
+   (base4      '("#585C6C" "color-60"  "brightblack"  ))
+   (base5      '("#4E4E4E" "color-239" "brightblack"  ))
+   (base6      '("#3A3A3A" "color-237" "white"        ))
+   (base7      '("#303030" "color-236" "white"        ))
+   (base8      '("#1E1E33" "color-236" "brightwhite"  ))
+   (fg         '("#0F1019" "color-234" "brightwhite"  ))
+   (fg-alt     '("#0D0E16" "color-233" "brightwhite"  ))
 
    (grey       base5)
 
    (red        '("#D70000" "color-160" "red"          ))
    (green      '("#005F00" "color-22"  "green"        ))
    (yellow     '("#AF8700" "color-136" "yellow"       ))
-   (blue       '("#1F55A0" "color-20"  "blue"         ))
+   (blue       '("#1F55A0" "color-25"  "blue"         ))
    (magenta    '("#AF005F" "color-125" "magenta"      ))
-   (cyan       '("#007687" "color-24"  "cyan"         ))
+   (cyan       '("#007687" "color-30"  "cyan"         ))
 
    (orange     '("#D75F00" "color-166" "brightred"    ))
-   (teal       '("#00876C" "color-29"  "brightgreen"  ))
+   (teal       '("#009B7C" "color-36"  "brightgreen"  ))
    (violet     '("#8700AF" "color-91"  "brightmagenta"))
 
-   (bg-blue    '("#B9D1F1" "#B9D1F1"   "blue"         ))
+   (bg-blue    '("#DEEAF8" "color-189"   "blue"         ))
    (dark-blue  bg-blue)
-   (bg-cyan    '("#D5FAFF" "#D5FAFF"   "cyan"         ))
+   (bg-cyan    '("#D5FAFF" "color-195"   "cyan"         ))
    (dark-cyan  bg-cyan)
 
 ;;;; face categories -- required for all themes
@@ -71,8 +71,8 @@ determine the exact padding."
    (vertical-bar   base0)
    (selection      bg-blue)
    (builtin        blue)
-   (comments       (if doom-acario-light-brighter-comments bg-cyan grey))
-   (doc-comments   (doom-darken (if doom-acario-light-brighter-comments bg-cyan green) 0.25))
+   (comments       (if doom-acario-light-brighter-comments cyan grey))
+   (doc-comments   (doom-darken (if doom-acario-light-brighter-comments cyan green) 0.25))
    (constants      magenta)
    (functions      yellow)
    (keywords       red)
@@ -91,7 +91,7 @@ determine the exact padding."
    (vc-deleted     red)
 
 ;;;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
+   (hidden bg)
    (-modeline-dark doom-acario-light-brighter-modeline)
    (-modeline-bright -modeline-dark)
    (-modeline-pad
@@ -103,7 +103,7 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-dark
-        (doom-blend blue bg 0.35)
+        (doom-blend blue bg-alt 0.35)
       `(,(car base2) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-dark
@@ -159,9 +159,9 @@ determine the exact padding."
    (magit-reflog-remote :foreground yellow)
    (magit-reflog-reset :foreground red)
    (magit-branch :foreground magenta :weight 'bold)
-   (magit-branch-current :background bg :foreground blue :weight 'bold :box t)
-   (magit-branch-local :background bg :foreground blue :weight 'bold)
-   (magit-branch-remote :background bg :foreground orange :weight 'bold)
+   (magit-branch-current :foreground blue :weight 'bold :box t)
+   (magit-branch-local :foreground blue :weight 'bold)
+   (magit-branch-remote :foreground orange :weight 'bold)
    (magit-diff-file-header :foreground yellow)
    (magit-diff-file-heading :foreground blue :weight 'light)
    (magit-diff-file-heading-highlight :foreground blue :weight 'bold)
@@ -242,7 +242,7 @@ determine the exact padding."
 
 ;;;;; lsp-mode and lsp-ui-mode
    (lsp-ui-peek-highlight :foreground yellow)
-   (lsp-ui-sideline-symbol-info :foreground (doom-blend bg comments 0.15)
+   (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
                                 :background bg-alt)
 
 ;;;; --- major-mode faces -------------------
@@ -264,7 +264,7 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
 
-   ;; treemacs
+;;;;; treemacs
    (treemacs-root-face :foreground strings :weight 'bold :height 1.2)
    (doom-themes-treemacs-file-face :foreground comments)
    )
