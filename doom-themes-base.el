@@ -630,7 +630,9 @@
      (&dark  :distant-foreground highlight)
      (&light :distant-foreground base0))
     (helm-match :inherit 'bold :foreground highlight :distant-foreground base8)
-    (helm-source-header          :background base2 :foreground keywords :weight 'bold)
+    (helm-source-header          :background base1
+                                 :foreground (doom-blend constants bg 0.7)
+                                 :inverse-video t :weight 'bold)
     (helm-swoop-target-line-face :foreground highlight :inverse-video t)
     (helm-visible-mark           :inherit '(bold highlight))
     (helm-moccur-buffer          :inherit 'link)
