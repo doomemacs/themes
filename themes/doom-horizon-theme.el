@@ -100,8 +100,8 @@
       (when doom-horizon-padded-modeline
         (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
 
-    (modeline-fg     (doom-lighten bg 0.2))
-    (modeline-fg-alt (doom-darken fg 0.2))
+    (modeline-fg     (doom-darken fg 0.2))
+    (modeline-fg-alt (doom-lighten bg 0.2))
 
     (modeline-bg
       (if -modeline-bright
