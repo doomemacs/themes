@@ -112,6 +112,7 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   (
+   ((lazy-highlight &override) :foreground base1 :weight 'bold)
    ((line-number &override) :foreground fg-alt)
    ((line-number-current-line &override) :foreground fg)
 
