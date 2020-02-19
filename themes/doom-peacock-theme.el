@@ -175,7 +175,12 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05)))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+
+   ;; rjsx-mode
+   (rjsx-tag :foreground teal)
+   (rjsx-attr :foreground red)
+   )
 
 
   ;; --- extra variables ---------------------
