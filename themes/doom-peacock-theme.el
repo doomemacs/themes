@@ -33,7 +33,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#2b2a27" nil       nil            ))
-   (bg-alt     '("#282725" nil       nil            )) ;; arbitrarily picked this colour to change hline
+   (bg-alt     '("#1F1E1D" nil       nil            ))
    (base0      '("#2b2a27" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
