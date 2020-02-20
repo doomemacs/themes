@@ -157,9 +157,9 @@ determine the exact padding."
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
+   (css-proprietary-property :foreground violet)
+   (css-property             :foreground violet)
+   (css-selector             :foreground green)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
@@ -226,6 +226,8 @@ determine the exact padding."
    (web-mode-block-control-face :foreground orange)
    (web-mode-block-delimiter-face :foreground orange)
    (web-mode-builtin-face :foreground orange)
+   (web-mode-css-property-name-face :foreground violet)
+   (web-mode-css-selector-face :foreground green)
    (web-mode-html-attr-name-face :foreground violet)
    (web-mode-html-attr-value-face :foreground green)
    (web-mode-html-tag-bracket-face :inherit 'font-lock-comment-face)
