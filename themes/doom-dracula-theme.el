@@ -212,6 +212,28 @@ determine the exact padding."
    ;; rjsx-mode
    (rjsx-tag :foreground magenta)
    (rjsx-attr :foreground green :slant 'italic :weight 'medium)
+
+   ;; js2-mode
+   (js2-external-variable :foreground violet)
+   (js2-function-param :foreground cyan)
+   (js2-jsdoc-html-tag-delimiter :foreground yellow)
+   (js2-jsdoc-html-tag-name :foreground dark-blue)
+   (js2-jsdoc-value :foreground yellow)
+   (js2-private-function-call :foreground cyan)
+   (js2-private-member :foreground base7)
+
+   ;; web-mode
+   (web-mode-block-control-face :foreground orange)
+   (web-mode-block-delimiter-face :foreground orange)
+   (web-mode-builtin-face :foreground orange)
+   (web-mode-html-attr-name-face :foreground violet)
+   (web-mode-html-attr-value-face :foreground green)
+   (web-mode-html-tag-bracket-face :inherit 'font-lock-comment-face)
+   (web-mode-html-tag-face :foreground magenta :weight 'bold)
+   (web-mode-keyword-face :foreground magenta)
+   (web-mode-preprocessor-face :foreground orange)
+   (web-mode-string-face :foreground yellow)
+   (web-mode-type-face :foreground violet)
    )
 
   ;; --- extra variables ---------------------
