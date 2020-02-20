@@ -234,6 +234,10 @@ determine the exact padding."
    (web-mode-preprocessor-face :foreground orange)
    (web-mode-string-face :foreground yellow)
    (web-mode-type-face :foreground violet)
+
+   ;; highlight-quoted-mode
+   (highlight-quoted-symbol :foreground cyan)
+   (highlight-quoted-quote  :foreground magenta)
    )
 
   ;; --- extra variables ---------------------
