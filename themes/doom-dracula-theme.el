@@ -78,7 +78,7 @@ determine the exact padding."
    (keywords       magenta)
    (methods        teal)
    (operators      violet)
-   (type           blue)
+   (type           violet)
    (strings        yellow)
    (variables      base8)
    (numbers        red)
