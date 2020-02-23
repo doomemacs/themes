@@ -152,7 +152,7 @@ Can be an integer to determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; nix-mode
-   (nix-attribute-face :foreground magenta)
+   (nix-attribute-face :foreground blue)
    (nix-builtin-face :foreground dark-teal)
 
    ;; man-mode
@@ -239,6 +239,9 @@ Can be an integer to determine the exact padding."
    ;; company
    (company-tooltip :inherit 'tooltip)
    (company-tooltip-common :foreground highlight)
+
+   ;; company-box
+   (company-box-annotation :foreground base7)
 
    ;; doom-dashboard
    (doom-dashboard-menu-desc :foreground dark-cyan)
