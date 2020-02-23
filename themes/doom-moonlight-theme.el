@@ -95,6 +95,7 @@ Can be an integer to determine the exact padding."
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
+   (doom-modeline-buffer-file       :foreground base7)
    (doom-modeline-icon-inactive     :foreground indigo)
    (doom-modeline-evil-normal-state :foreground dark-cyan)
    (doom-modeline-evil-insert-state :foreground blue)
@@ -239,9 +240,13 @@ Can be an integer to determine the exact padding."
    (company-tooltip :inherit 'tooltip)
    (company-tooltip-common :foreground highlight)
 
+   ;; doom-dashboard
+   (doom-dashboard-menu-desc :foreground dark-cyan)
+   (doom-dashboard-menu-tile :foreground dark-teal)
+  
    ;; diredfl
-   (diredfl-date-time   :foreground blue)
-   (diredfl-file-name   :foreground base7)
+   (diredfl-date-time    :foreground blue)
+   (diredfl-file-name    :foreground base7)
    (diredfl-file-suffix  :foreground base6)
    (diredfl-symlink      :foreground dark-cyan)
 
