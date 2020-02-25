@@ -244,7 +244,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
         (dolist (item all-the-icons-icon-alist)
           (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
                  (func (cadr item))
-                 (args (append (list (cadr (cdr item))) '(:v-adjust -0.05 :height 0.85) (cdddr item)))
+                 (args (append (list (cadr (cdr item))) '(:v-adjust -0.05 :height 0.85) (cdr (cddr item))))
                  (icon (apply func args)))
             (let* ((icon-pair (cons (format "  %s\t" icon) " "))
                    (gui-icons (treemacs-theme->gui-icons treemacs--current-theme))
