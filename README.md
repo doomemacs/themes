@@ -59,6 +59,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
   - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
+  - [ ] `doom-xcode`: based off of Apple's Xcode Dark theme (thanks to [kadenbarlow])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 
@@ -201,6 +202,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
 [jwintz]: https://github.com/jwintz
+[kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/kenranunderscore
 [kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
