@@ -33,6 +33,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
   - [X] `doom-dark+` ported from VS Code's [Dark+][dark+] theme (thanks to [ema2159])
   - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
+  - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
   - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
@@ -188,6 +189,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
 [dracula]: https://draculatheme.com/
+[elenapan's dotfiles]: https://github.com/elenapan/dotfiles
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher

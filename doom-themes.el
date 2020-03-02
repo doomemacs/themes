@@ -30,6 +30,7 @@
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dark+' (added by ema2159)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
+;;   [X] `doom-ephemeral' (added by karetsu)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-horizon' (added by karetsu)
