@@ -173,11 +173,6 @@
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   ;; centaur tabs
-   (centaur-tabs-selected :background bg-alt :foreground fg)
-   (centaur-tabs-unselected :background base2 :foreground fg)
-
-
    ;; --- major-mode faces -------------------
    ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
 
@@ -211,7 +206,6 @@
    (org-todo :foreground red)
    (org-headline-done :foreground red)
    (solaire-org-hide-face :foreground hidden)
-   (solaire-header-line-face :background base2 :foreground fg)
    (header-line :background base2 :foreground fg)
    (org-level-1 :foreground alt-blue)
    (org-level-2 :foreground violet)
