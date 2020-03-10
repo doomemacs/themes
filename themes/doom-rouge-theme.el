@@ -35,28 +35,28 @@ determine the exact padding."
   ;; name        default   256       16
   ((bg         '("#172030" nil       nil            )) ;; modified
    (bg-alt     '("#172030" nil       nil            ))
-   (base0      '("#191C25" "black"   "black"        ))
-   (base1      '("#242832" "#1e1e1e" "brightblack"  ))
-   (base2      '("#2C333F" "#2e2e2e" "brightblack"  ))
-   (base3      '("#373E4C" "#262626" "brightblack"  ))
-   (base4      '("#434C5E" "#3f3f3f" "brightblack"  ))
-   (base5      '("#64727d" "#64727d" "brightblack"  ))
-   (base6      '("#9099AB" "#6b6b6b" "brightblack"  ))
-   (base7      '("#D8DEE9" "#979797" "brightblack"  ))
+   (base0      '("#070A0E" "black"   "black"        ))
+   (base1      '("#0E131D" "#1e1e1e" "brightblack"  ))
+   (base2      '("#151D2B" "#2e2e2e" "brightblack"  ))
+   (base3      '("#172030" "#262626" "brightblack"  ))
+   (base4      '("#5D636E" "#3f3f3f" "brightblack"  ))
+   (base5      '("#A2A6AC" "#64727d" "brightblack"  ))
+   (base6      '("#E8E9EA" "#6b6b6b" "brightblack"  ))
+   (base7      '("#E8E9EB" "#979797" "brightblack"  ))
    (base8      '("#F0F4FC" "#dfdfdf" "white"        ))
-   (fg         '("#bbb" "#bbb" "white"        ))
+   (fg         '("#bbb"    "#bbb"    "white"        ))
    (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
    (red        '("#c6797e" "#c6797e" "red"          ))
-   (light-red  '("#C6878F" "#C6878F" "red"          ))
+   (light-red  '("#AD6A6E" "#C6878F" "red"          ))
    (orange     '("#eabe9a" "#eabe9a" "brightred"    ))
-   (green      '("#ADB9A4" "#ADB9A4" "green"        ))
+   (green      '("#969E92" "#ADB9A4" "green"        ))
    (teal       '("#8FBCBB" "#44b9b1" "brightgreen"  ))
    (yellow     '("#EBCB8B" "#ECBE7B" "yellow"       ))
-   (blue       '("#81A1C1" "#51afef" "brightblue"   ))
+   (blue       '("#1E6378" "#51afef" "brightblue"   ))
    (dark-blue  '("#91d1bd" "#91d1bd" "blue"         ))
-   (magenta     '("#b18bb1" "#b18bb1" "magenta"      ))
+   (magenta    '("#4C4E78" "#b18bb1" "magenta"      ))
    (salmon     '("#F9B5AC" "#F9B5AC" "orange"       ))
    (violet     '("#5D80AE" "#a9a1e1" "brightmagenta"))
    (cyan       '("#88C0D0" "#46D9FF" "brightcyan"   ))
@@ -106,7 +106,7 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((lazy-highlight :background base4)
-   (cursor :background red)
+   (cursor :background green)
 
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
@@ -169,12 +169,11 @@ determine the exact padding."
    ;; centuar-tabs
    (centaur-tabs-selected :background tabs-bg)
    (centaur-tabs-selected-modified :background tabs-bg)
-   (centaur-tabs-unselected-modified :background base0)
+   (centaur-tabs-unselected-modified :background bg)
    (centaur-tabs-active-bar-face :background tabs-bar-bg)
 
    ;; neotree
    (neo-root-dir-face :foreground red))
-
   ;; --- extra variables ---------------------
   ()
   )
