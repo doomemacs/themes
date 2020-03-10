@@ -203,7 +203,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
 [jwintz]: https://github.com/jwintz
-[karetsu]: https://github.com/kenranunderscore
+[karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
