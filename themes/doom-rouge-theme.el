@@ -40,44 +40,44 @@ determine the exact padding."
    (base2      '("#151D2B" "#2e2e2e" "brightblack"  ))
    (base3      '("#172030" "#262626" "brightblack"  ))
    (base4      '("#5D636E" "#3f3f3f" "brightblack"  ))
-   (base5      '("#A2A6AC" "#64727d" "brightblack"  ))
-   (base6      '("#E8E9EA" "#6b6b6b" "brightblack"  ))
+   (base5      '("#64727d" "#64727d" "brightblack"  ))
+   (base6      '("#B16E75" "#6b6b6b" "brightblack"  ))
    (base7      '("#E8E9EB" "#979797" "brightblack"  ))
    (base8      '("#F0F4FC" "#dfdfdf" "white"        ))
-   (fg         '("#bbb"    "#bbb"    "white"        ))
+   (fg         '("#BBBBBB"    "#bbb"    "white"        ))
    (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
 
-   (grey       base4)
+   (grey       base5)
    (red        '("#c6797e" "#c6797e" "red"          ))
-   (light-red  '("#AD6A6E" "#C6878F" "red"          ))
+   (light-red  '("#DB6E8F" "#DB6E8F" "red"          ))
    (orange     '("#eabe9a" "#eabe9a" "brightred"    ))
-   (green      '("#969E92" "#ADB9A4" "green"        ))
-   (teal       '("#8FBCBB" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#EBCB8B" "#ECBE7B" "yellow"       ))
-   (blue       '("#1E6378" "#51afef" "brightblue"   ))
-   (dark-blue  '("#91d1bd" "#91d1bd" "blue"         ))
-   (magenta    '("#4C4E78" "#b18bb1" "magenta"      ))
+   (green      '("#A3B09A" "#A3B9A4" "green"        ))
+   (teal       '("#7ea9a9" "#7ea9a9" "brightgreen"  ))
+   (yellow     '("#F7E3AF" "#F7E3AF" "yellow"       ))
+   (blue       '("#6e94b9" "#6e94b9" "brightblue"   ))
+   (dark-blue  '("#1E6378" "#1E6378" "blue"         ))
+   (magenta    '("#b18bb1" "#b18bb1" "magenta"      ))
    (salmon     '("#F9B5AC" "#F9B5AC" "orange"       ))
-   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta"))
-   (cyan       '("#88C0D0" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#507681" "#5699AF" "cyan"         ))
+   (violet     '("#5D80AE" "#5D80AE" "brightmagenta"))
+   (cyan       '("#88C0D0" "#88C0D0" "brightcyan"   ))
+   (dark-cyan  '("#507681" "#507681" "cyan"         ))
 
    ;; face categories -- required for all themes
-   (highlight      red)
+   (highlight      base6)
    (vertical-bar   (doom-darken base1 0.2))
    (selection      base4)
-   (builtin        red)
-   (comments       (if doom-rouge-brighter-comments dark-cyan (doom-lighten base5 0.2)))
-   (doc-comments   (doom-lighten (if doom-rouge-brighter-comments dark-cyan base5) 0.25))
-   (constants      orange)
+   (builtin        light-red)
+   (comments       grey)
+   (doc-comments   green)
+   (constants      red)
    (functions      salmon)
    (keywords       magenta)
-   (methods        red)
-   (operators      green)
-   (type           red)
+   (methods        salmon)
+   (operators      magenta)
+   (type           magenta)
    (strings        green)
-   (variables      light-red)
-   (numbers        magenta)
+   (variables      red)
+   (numbers        orange)
    (region         base4)
    (error          red)
    (warning        yellow)
@@ -115,16 +115,14 @@ determine the exact padding."
    ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
+   
+   ;; font-lock
+   (font-lock-keyword-face :slant 'italic :foreground keywords)
+   (font-lock-comment-face :foreground comments :slant 'italic)
+   (font-lock-doc-face :foreground doc-comments :slant 'italic)
+   (font-lock-preprocessor-face :foreground magenta :slant 'italic)
 
-   (font-lock-comment-face
-    :foreground comments
-    :background (if doom-rouge-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
-   (doom-modeline-bar :background highlight)
-
+   ;; mode-line
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -134,7 +132,6 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground highlight)
 
-   (doom-modeline-project-root-dir :foreground base6)
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -143,6 +140,9 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
+   ;; doom-modeline
+   (doom-modeline-project-root-dir :foreground base6)
 
    ;; ediff
    (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
@@ -179,3 +179,4 @@ determine the exact padding."
   )
 
 ;;; doom-rouge-theme.el ends here
+
