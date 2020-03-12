@@ -11,7 +11,7 @@
   :group 'doom-rouge-theme
   :type 'boolean)
 
-(defcustom doom-rouge-brighter-tabs nil
+(defcustom doom-rouge-brighter-tabs t
   "If non-nil, tabs will a more vivid background color."
   :group 'doom-rouge-theme
   :type 'boolean)
@@ -72,7 +72,7 @@ determine the exact padding."
    (constants      red)
    (functions      salmon)
    (keywords       magenta)
-   (methods        salmon)
+   (methods        light-red)
    (operators      magenta)
    (type           magenta)
    (strings        green)
@@ -92,7 +92,8 @@ determine the exact padding."
     (when doom-rouge-padded-modeline
       (if (integerp doom-rouge-padded-modeline) doom-rouge-padded-modeline 4)))
 
-   (tabs-bg (if doom-rouge-brighter-tabs red bg))
+   (tabs-bg (if doom-rouge-brighter-tabs base6 bg))
+   (tabs-fg (if doom-rouge-brighter-tabs base8 fg))
    (tabs-bar-bg (if doom-rouge-brighter-tabs bg red))
 
    (modeline-fg     nil)
@@ -167,9 +168,9 @@ determine the exact padding."
    (solaire-org-hide-face :foreground hidden)
 
    ;; centuar-tabs
-   (centaur-tabs-selected :background tabs-bg)
-   (centaur-tabs-selected-modified :background tabs-bg)
-   (centaur-tabs-unselected-modified :background bg)
+   (centaur-tabs-selected :foreground tabs-fg :background tabs-bg)
+   (centaur-tabs-selected-modified :foreground tabs-fg :background tabs-bg)
+   (centaur-tabs-unselected-modified :foreground tabs-fg :background bg)
    (centaur-tabs-active-bar-face :background tabs-bar-bg)
 
    ;; neotree
@@ -179,4 +180,3 @@ determine the exact padding."
   )
 
 ;;; doom-rouge-theme.el ends here
-
