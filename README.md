@@ -41,7 +41,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
   - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
-  - [X] `doom-molokai`: based on Textmate's monokai
+  - [X] `doom-monokai`: based on [Monokai]'s classic variant
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
   - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
@@ -208,6 +208,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
+[Monokai]: https://monokai.pro/
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
