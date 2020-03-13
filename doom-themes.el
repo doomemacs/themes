@@ -40,6 +40,7 @@
 ;;   [X] `doom-manegarm' (added by kenranunderscore)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-monokai-classic' (added by ema2159)
+;;   [X] `doom-monokai-pro' (added by kadenbarlow)
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
