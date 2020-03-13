@@ -42,8 +42,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
   - [X] `doom-molokai`: a theme based on Texmate's Monokai
-  - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
-  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
+  - [X] `doom-monokai-classic`: port of [Monokai]'s classic variant (thanks to [ema2159])
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
   - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
@@ -205,7 +204,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
 [jwintz]: https://github.com/jwintz
-[kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
