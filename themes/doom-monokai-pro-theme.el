@@ -1,4 +1,4 @@
-;; doom-monokai-pro-theme.el --- based off of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-pro-theme.el --- Port of Monokai Pro -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-monokai-pro-theme nil
@@ -12,55 +12,52 @@ Can be an integer to determine the exact padding."
   :type '(choice integer boolean))
 
 (def-doom-theme doom-monokai-pro
-  "A theme based off of Monokai Pro"
+  "A port of VS Code's Monokai Pro"
 
   ;; name        gui       256       16
-  ((bg         '("#222222" nil       nil          ))
-   (bg-alt     '("#2b2b2b" nil       nil          ))
-   (base0      '("#0d0d0d" "black"   "black"      ))
-   (base1      '("#1b1b1b" "#1b1b1b"              ))
-   (base2      '("#212122" "#1e1e1e"              ))
-   (base3      '("#292b2b" "#292929" "brightblack"))
-   (base4      '("#3f4040" "#3f3f3f" "brightblack"))
-   (base5      '("#5c5e5e" "#525252" "brightblack"))
-   (base6      '("#757878" "#6b6b6b" "brightblack"))
-   (base7      '("#969896" "#979797" "brightblack"))
-   (base8      '("#ffffff" "#ffffff" "white"      ))
-   (fg         '("#b2bbc2" "#b2bbc2" "white"))
-   (fg-alt     (doom-darken fg 0.4))
+  ((bg         '("#2B292E" nil       nil          ))
+   (bg-alt     '("#221F22" nil       nil          ))
+   (base0      '("#0D0D0D" "black"   "black"      ))
+   (base1      '("#1B1B1B" "#1B1B1B"              ))
+   (base2      '("#212122" "#212122"              ))
+   (base3      '("#2B2B2B" "#2B2B2B" "brightblack"))
+   (base4      '("#3F4040" "#3F4040" "brightblack"))
+   (base5      '("#5C5E5E" "#5C5E5E" "brightblack"))
+   (base6      '("#757878" "#757878" "brightblack"))
+   (base7      '("#969896" "#969896" "brightblack"))
+   (base8      '("#FCFCFA" "#FCFCFA" "white"      ))
+   (fg         '("#939293" "#939293" "white"))
+   (fg-alt     '("#A3A2A3" "#A3A2A3" "white"))
 
-   (red        '("#cc6666" "#cc6666" "red"))
-   (blue       '("#81a2be" "#88aabb" "blue"))
-   (grey       '("#7a8590" "#7a8590" "brightblack"))
-   (violet     '("#a8a0ec" "#a8a0ec" "violet"))
-   (light-blue '("#90dbe6" "#90dbe6" "lightblue"))
-   (green      '("#b4d982" "#b4d982" "green"))
-   (yellow     '("#fad778" "#fad778" "yellow"))
-   (orange     '("#ef9c73" "#ef9c73" "orange"))
-   (pink       '("#ed6c88" "#ed6c88" "pink"))
-
-   (dark-blue  '("#81a2be" "#88aabb" "blue"))
-   (teal       '("#81a2be" "#88aabb" "blue"))
-   (cyan       '("#81a2be" "#88aabb" "blue"))
-   (dark-cyan  '("#81a2be" "#88aabb" "blue"))
-   (magenta    '("#a8a0ec" "#a8a0ec" "violet"))
+   (grey       '("#727072" "#727072" "brightblack"))
+   (red        '("#CC6666" "#CC6666" "red"))
+   (orange     '("#FC9867" "#FC9867" "orange"))
+   (green      '("#A9DC76" "#A9DC76" "green"))
+   (teal       green)
+   (yellow     '("#FFD866" "#FFD866" "yellow"))
+   (blue       '("#78DCE8" "#78DCE8" "blue"))
+   (dark-blue  '("#81A2BE" "#81A2BE" "blue"))
+   (magenta    '("#FF6188" "#FF6188" "violet"))
+   (violet     '("#AB9DF2" "#AB9DF2" "violet"))
+   (cyan       blue)
+   (dark-cyan  dark-blue)
 
    ;; face categories
-   (highlight      blue)
-   (vertical-bar   `("#161616" ,@base0))
+   (highlight      base8)
+   (vertical-bar   (doom-lighten bg 0.1))
    (selection      `(,(car (doom-lighten bg 0.1)) ,@(cdr base4)))
-   (builtin        light-blue)
+   (builtin        blue)
    (comments       grey)
-   (doc-comments   (doom-lighten grey 0.14))
+   (doc-comments   yellow)
    (constants      violet)
    (functions      green)
-   (keywords       pink)
+   (keywords       magenta)
    (methods        green)
-   (operators      pink)
-   (type           light-blue)
+   (operators      magenta)
+   (type           blue)
    (strings        yellow)
-   (variables      orange)
-   (numbers        yellow)
+   (variables      base8)
+   (numbers        violet)
    (region         selection)
    (error          red)
    (warning        yellow)
@@ -70,7 +67,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     `(,(doom-darken (car bg-alt) 0.3) ,@(cdr base3)))
+   (modeline-bg     bg-alt)
    (modeline-bg-alt `(,(car bg) ,@(cdr base1)))
    (modeline-fg     fg)
    (modeline-fg-alt comments)
@@ -81,7 +78,17 @@ Can be an integer to determine the exact padding."
         4))))
 
   ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground blue :bold bold)
+  (
+   ;; Centaur tabs
+   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected :foreground yellow)
+   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected :foreground yellow)
+   (centaur-tabs-active-bar-face :background yellow)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground base8)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground base8)
+
+   ;; Doom modeline
+   (doom-modeline-bar :background yellow)
+   (doom-modeline-buffer-path       :foreground blue :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
    ((line-number &override) :foreground base4)
