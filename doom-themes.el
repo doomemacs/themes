@@ -30,6 +30,7 @@
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dark+' (added by ema2159)
 ;;   [X] `doom-dracula' (added by fuxialexnder)
+;;   [X] `doom-ephemeral' (added by karetsu)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-horizon' (added by karetsu)
@@ -38,6 +39,7 @@
 ;;   [X] `doom-material' (added by tam5)
 ;;   [X] `doom-manegarm' (added by kenranunderscore)
 ;;   [X] `doom-molokai'
+;;   [X] `doom-monokai-classic' (added by ema2159)
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
