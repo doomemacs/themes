@@ -105,9 +105,24 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
 
+   ;; Font lock
+   (font-lock-comment-face
+    :foreground comments
+    :slant 'italic)
+   (font-lock-doc-face
+    :foreground doc-comments
+    :slant 'italic)
+   (font-lock-type-face
+    :foreground type
+    :slant 'italic)
+   
    ;; Centaur tabs
-   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected :foreground yellow)
-   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected :foreground yellow)
+   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
+				   :background bg
+				   :foreground yellow)
+   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected
+				     :background bg-alt
+				     :foreground yellow)
    (centaur-tabs-active-bar-face :background yellow)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)
