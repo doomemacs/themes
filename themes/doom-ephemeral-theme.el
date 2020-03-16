@@ -127,6 +127,7 @@
    ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
+   (shadow               :foreground base6)
 
    (font-lock-comment-face :inherit 'bold :foreground comments :background (if doom-ephemeral-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face :inherit 'font-lock-comment-face :foreground doc-comments)
