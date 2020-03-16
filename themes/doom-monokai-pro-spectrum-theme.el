@@ -306,6 +306,19 @@ determine the exact padding."
    (lsp-ui-peek-selection                       :foreground bg :background yellow)
    (lsp-ui-peek-list                            :background base3)
    (lsp-ui-peek-peek                            :inherit 'lsp-ui-peek-list)
+
+   ;;; web-mode
+   ;;; html
+   (web-mode-html-tag-face                      :foreground red)
+   (web-mode-html-tag-bracket-face              :foreground base7)
+   (web-mode-html-attr-name-face                :foreground cyan :italic italic)
+   (web-mode-html-attr-equal-face               :inherit 'web-mode-html-tag-bracket-face)
+
+   ;;; css
+   ;;; Apparently web-mode has no face for values of css properties.
+   (web-mode-css-selector-face                  :foreground green)
+   (web-mode-css-property-name-face             :foreground base7)
+
    )
   ;; --- extra variables --------------------
   ;; ()
