@@ -1,30 +1,30 @@
-;; doom-monokai-pro-spectrum-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
+;; doom-monokai-spectrum-theme.el --- Spectrum filter of Monokai Pro -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
-(defgroup doom-monokai-pro-spectrum-theme nil
+(defgroup doom-monokai-spectrum-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
 
-(defcustom doom-monokai-pro-spectrum-brighter-comments nil
+(defcustom doom-monokai-spectrum-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-monokai-pro-spectrum-theme
+  :group 'doom-monokai-spectrum-theme
   :type 'boolean)
 
-(defcustom doom-monokai-pro-spectrum-comment-bg doom-monokai-pro-spectrum-brighter-comments
+(defcustom doom-monokai-spectrum-comment-bg doom-monokai-spectrum-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-monokai-pro-spectrum-theme
+  :group 'doom-monokai-spectrum-theme
   :type 'boolean)
 
-(defcustom doom-monokai-pro-spectrum-padded-modeline doom-themes-padded-modeline
+(defcustom doom-monokai-spectrum-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-monokai-pro-spectrum-theme
+  :group 'doom-monokai-spectrum-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-monokai-pro-spectrum
+(def-doom-theme doom-monokai-spectrum
   "A dark, vibrant theme inspired by Textmate's Monokai."
 
   ;; name        gui       256       16
@@ -60,8 +60,8 @@ determine the exact padding."
    (vertical-bar   (doom-lighten bg 0.1))
    (selection      base2)
    (builtin        violet)
-   (comments       (if doom-monokai-pro-spectrum-brighter-comments violet base6))
-   (doc-comments   (if doom-monokai-pro-spectrum-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
+   (comments       (if doom-monokai-spectrum-brighter-comments violet base6))
+   (doc-comments   (if doom-monokai-spectrum-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
    (constants      violet)
    (functions      green)
    (keywords       magenta)
@@ -82,8 +82,8 @@ determine the exact padding."
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
    (-modeline-pad
-    (when doom-monokai-pro-spectrum-padded-modeline
-      (if (integerp doom-monokai-pro-spectrum-padded-modeline) doom-monokai-pro-spectrum-padded-modeline 4)))
+    (when doom-monokai-spectrum-padded-modeline
+      (if (integerp doom-monokai-spectrum-padded-modeline) doom-monokai-spectrum-padded-modeline 4)))
 
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
@@ -324,4 +324,4 @@ determine the exact padding."
   ;; ()
   )
 
-;;; doom-monokai-pro-spectrum-theme.el ends here
+;;; doom-monokai-spectrum-theme.el ends here
