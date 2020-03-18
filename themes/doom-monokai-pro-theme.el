@@ -15,19 +15,19 @@ Can be an integer to determine the exact padding."
   "A port of VS Code's Monokai Pro"
 
   ;; name        gui       256       16
-  ((bg         '("#2B292E" nil       nil          ))
+  ((bg         '("#2D2A2E" nil       nil          ))
    (bg-alt     '("#221F22" nil       nil          ))
-   (base0      '("#0D0D0D" "black"   "black"      ))
+   (base0      '("#19181A" "black"   "black"      ))
    (base1      '("#1B1B1B" "#1B1B1B"              ))
    (base2      '("#212122" "#212122"              ))
    (base3      '("#2B2B2B" "#2B2B2B" "brightblack"))
-   (base4      '("#3F4040" "#3F4040" "brightblack"))
-   (base5      '("#5C5E5E" "#5C5E5E" "brightblack"))
-   (base6      '("#757878" "#757878" "brightblack"))
-   (base7      '("#969896" "#969896" "brightblack"))
+   (base4      '("#383539" "#3F4040" "brightblack"))
+   (base5      '("#4C4A4D" "#5C5E5E" "brightblack"))
+   (base6      '("#727072" "#757878" "brightblack"))
+   (base7      '("#c1c0c0" "#969896" "brightblack"))
    (base8      '("#FCFCFA" "#FCFCFA" "white"      ))
-   (fg         '("#939293" "#939293" "white"))
-   (fg-alt     '("#A3A2A3" "#A3A2A3" "white"))
+   (fg         '("#FCFCFA" "#939293" "white"))
+   (fg-alt     '("#939293" "#A3A2A3" "white"))
 
    (grey       '("#727072" "#727072" "brightblack"))
    (red        '("#CC6666" "#CC6666" "red"))
@@ -45,7 +45,7 @@ Can be an integer to determine the exact padding."
    ;; face categories
    (highlight      base8)
    (vertical-bar   (doom-lighten bg 0.1))
-   (selection      `(,(car (doom-lighten bg 0.1)) ,@(cdr base4)))
+   (selection      base4)
    (builtin        blue)
    (comments       grey)
    (doc-comments   yellow)
@@ -69,7 +69,7 @@ Can be an integer to determine the exact padding."
    ;; custom categories
    (modeline-bg     bg-alt)
    (modeline-bg-alt `(,(car bg) ,@(cdr base1)))
-   (modeline-fg     fg)
+   (modeline-fg     fg-alt)
    (modeline-fg-alt comments)
    (-modeline-pad
     (when doom-monokai-pro-padded-modeline
@@ -80,6 +80,8 @@ Can be an integer to determine the exact padding."
   ;; --- faces ------------------------------
   (
    ;; Centaur tabs
+   (centaur-tabs-selected :foreground yellow)
+   (centaur-tabs-unselected :foreground fg-alt)
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected :foreground yellow)
    (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected :foreground yellow)
    (centaur-tabs-active-bar-face :background yellow)
@@ -108,7 +110,10 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   ;; treemacs
+   (treemacs-file-face :foreground fg-alt))
 
   ;; --- variables --------------------------
   ;; ()
