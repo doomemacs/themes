@@ -188,6 +188,7 @@ determine the exact padding."
    ;; (git-gutter-fr:added                          :inherit git-gutter:added)
    ;; (git-gutter-fr:deleted                        :inherit git-gutter:deleted)
    ;; (git-gutter-fr:modfied                        :interit git-gutter:modified)
+
    ;; helm
    (helm-swoop-target-line-face                  :foreground red :inverse-video t)
 
@@ -306,6 +307,8 @@ determine the exact padding."
    (lsp-ui-peek-selection                       :foreground bg :background yellow)
    (lsp-ui-peek-list                            :background base3)
    (lsp-ui-peek-peek                            :inherit 'lsp-ui-peek-list)
+   (lsp-ui-peek-highlight                       :inherit 'isearch)
+   (lsp-ui-peek-filename                        :foreground base8 :bold bold)
 
    ;;; web-mode
    ;;; html
