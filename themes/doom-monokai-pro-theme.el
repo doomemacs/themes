@@ -82,8 +82,8 @@ Can be an integer to determine the exact padding."
    ;; Centaur tabs
    (centaur-tabs-selected :foreground yellow)
    (centaur-tabs-unselected :foreground fg-alt)
-   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected :foreground yellow)
-   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected :foreground yellow)
+   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected)
+   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected)
    (centaur-tabs-active-bar-face :background yellow)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground base8)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground base8)
@@ -111,9 +111,12 @@ Can be an integer to determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
+   
    ;; treemacs
-   (treemacs-file-face :foreground fg-alt))
+   (treemacs-file-face :foreground fg-alt)
+
+   ;; tooltip
+   (tooltip :background base2 :foreground fg-alt))
 
   ;; --- variables --------------------------
   ;; ()
