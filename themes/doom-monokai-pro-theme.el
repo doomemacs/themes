@@ -79,6 +79,23 @@ Can be an integer to determine the exact padding."
 
   ;; --- faces ------------------------------
   (
+   ;; I-search
+   (match                                        :foreground fg :background base3)
+   (isearch                                      :inherit 'match :box `(:line-width 2 :color ,yellow))
+   (lazy-highlight                               :inherit 'match)
+   (isearch-fail                                 :foreground red)
+
+   ;; swiper
+   (swiper-background-match-face-1               :inherit 'match :bold bold)
+   (swiper-background-match-face-2               :inherit 'match)
+   (swiper-background-match-face-3               :inherit 'match :foreground green)
+   (swiper-background-match-face-4               :inherit 'match :bold bold :foreground green)
+   (swiper-match-face-1                          :inherit 'isearch :bold bold)
+   (swiper-match-face-2                          :inherit 'isearch)
+   (swiper-match-face-3                          :inherit 'isearch :foreground green)
+   (swiper-match-face-4                          :inherit 'isearch :bold bold :foreground green)
+   (swiper-line-face                             :inherit 'hl-line)
+
    ;; Centaur tabs
    (centaur-tabs-selected :foreground yellow)
    (centaur-tabs-unselected :foreground fg-alt)
