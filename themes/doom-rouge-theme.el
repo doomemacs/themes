@@ -109,6 +109,10 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((lazy-highlight :background base4)
 
+   ;; ivy
+   (ivy-current-match :background base3)
+   (ivy-minibuffer-match-face-2 :foreground highlight :weight 'extra-bold)
+   
    ;; ivy-posframe
    (ivy-posframe :background bg-alt)
    (ivy-posframe-border :background highlight)
@@ -125,7 +129,9 @@ determine the exact padding."
    (font-lock-comment-face :foreground comments :slant 'italic)
    (font-lock-doc-face :foreground doc-comments :slant 'italic)
    (font-lock-preprocessor-face :foreground magenta :slant 'italic)
-
+   ;; vertical border
+   (vertical-border :foreground base6)
+   
    ;; mode-line
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -166,6 +172,11 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
 
+   ;; magit
+   (magit-diff-hunk-heading           :foreground bg                    :background (doom-blend highlight bg 0.3) :extend t)
+   (magit-diff-hunk-heading-highlight :foreground bg                    :background highlight :weight 'bold :extend t)
+   (magit-section-heading :foreground highlight)
+   
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
