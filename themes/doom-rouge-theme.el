@@ -38,14 +38,14 @@ determine the exact padding."
    (base0      '("#070A0E" "black"   "black"        ))
    (base1      '("#0E131D" "#1e1e1e" "brightblack"  ))
    (base2      '("#151D2B" "#2e2e2e" "brightblack"  ))
-   (base3      '("#172030" "#262626" "brightblack"  ))
+   (base3      '("#1F2A3F" "#262626" "brightblack"  ))
    (base4      '("#5D636E" "#3f3f3f" "brightblack"  ))
    (base5      '("#64727d" "#64727d" "brightblack"  ))
    (base6      '("#B16E75" "#6b6b6b" "brightblack"  ))
    (base7      '("#E8E9EB" "#979797" "brightblack"  ))
    (base8      '("#F0F4FC" "#dfdfdf" "white"        ))
-   (fg         '("#BBBBBB"    "#bbb"    "white"        ))
-   (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#FAFFF6"    "#bbb"    "white"        ))
+   (fg-alt     '("#A7ACB9" "#bfbfbf" "brightwhite"  ))
 
    (grey       base5)
    (red        '("#c6797e" "#c6797e" "red"          ))
@@ -74,7 +74,7 @@ determine the exact padding."
    (keywords       magenta)
    (methods        light-red)
    (operators      magenta)
-   (type           magenta)
+   (type           red)
    (strings        green)
    (variables      red)
    (numbers        orange)
@@ -95,6 +95,7 @@ determine the exact padding."
    (tabs-bg (if doom-rouge-brighter-tabs base6 bg))
    (tabs-fg (if doom-rouge-brighter-tabs base8 fg))
    (tabs-bar-bg (if doom-rouge-brighter-tabs bg red))
+   (tabs-marker (if doom-rouge-brighter-tabs base8 highlight))
 
    (modeline-fg     nil)
    (modeline-fg-alt base6)
@@ -107,8 +108,10 @@ determine the exact padding."
 
   ;; --- extra faces ------------------------
   ((lazy-highlight :background base4)
-   (cursor :background green)
 
+   ;; ivy-posframe
+   (ivy-posframe :background bg-alt)
+   (ivy-posframe-border :background highlight)
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
@@ -172,9 +175,14 @@ determine the exact padding."
    (centaur-tabs-selected-modified :foreground tabs-fg :background tabs-bg)
    (centaur-tabs-unselected-modified :foreground tabs-fg :background bg)
    (centaur-tabs-active-bar-face :background tabs-bar-bg)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground tabs-marker)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground tabs-marker)
 
    ;; neotree
-   (neo-root-dir-face :foreground red))
+   (neo-root-dir-face :foreground red)
+
+   ;; tooltip 
+   (tooltip :background base3 :foreground fg-alt))
   ;; --- extra variables ---------------------
   ()
   )
