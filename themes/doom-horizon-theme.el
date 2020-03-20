@@ -116,7 +116,7 @@
 
 
   ;; --- extra faces ------------------------
-  ( (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
 
     ;; ((line-number &override) :foreground (doom-lighten bg 0.05))
@@ -170,6 +170,11 @@
     (css-proprietary-property :foreground violet)
     (css-property             :foreground fg)
     (css-selector             :foreground red)
+
+    ;; mic-paren
+    (paren-face-match    :foreground green   :background base0 :weight 'ultra-bold)
+    (paren-face-mismatch :foreground yellow :background base0   :weight 'ultra-bold)
+    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
     ;; markdown-mode
     (markdown-markup-face           :foreground cyan)
