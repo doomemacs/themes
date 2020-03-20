@@ -51,6 +51,7 @@
 ;;   [X] `doom-outrun' (added by ema2159)
 ;;   [X] `doom-palenight' (added by Brettm12345)
 ;;   [X] `doom-peacock' (added by teesloane)
+;;   [X] `doom-rouge' (added by JordanFaust)
 ;;   [X] `doom-snazzy' (added by ar1a)
 ;;   [X] `doom-solarized-dark' (added by ema2159)
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
