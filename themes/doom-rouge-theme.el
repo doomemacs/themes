@@ -150,6 +150,7 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   (solaire-hl-line-face :background base3)
 
    ;; doom-modeline
    (doom-modeline-project-root-dir :foreground base6)
@@ -191,6 +192,12 @@ determine the exact padding."
 
    ;; neotree
    (neo-root-dir-face :foreground red)
+
+   ;; treemacs
+   (treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-file-face :foreground highlight)
+   (treemacs-directory-face :foreground highlight)
 
    ;; tooltip 
    (tooltip :background base3 :foreground fg-alt))
