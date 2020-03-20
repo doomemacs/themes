@@ -1,4 +1,4 @@
-;;; doom-rouge-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
+;;; doom-rouge-theme.el --- ported from Rouge Theme -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-rouge
-  "A dark theme inspired by Nord."
+  "A dark theme ported from VS Code's Rouge."
 
   ;; name        default   256       16
   ((bg         '("#172030" nil       nil            )) ;; modified
