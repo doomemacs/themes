@@ -52,7 +52,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
   - [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
   - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
-  - [X] `doom-rouge`: based on [VSCode rouge theme][rouge theme]  (thanks to [JordanFaust])
+  - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
   - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
   - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
   - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
