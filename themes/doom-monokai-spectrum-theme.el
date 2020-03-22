@@ -310,6 +310,16 @@ determine the exact padding."
    (lsp-ui-peek-highlight                       :inherit 'isearch)
    (lsp-ui-peek-filename                        :foreground base8 :bold bold)
 
+   ;; org-mode
+   (org-level-1                                 :foreground yellow :bold bold)
+   (org-level-2                                 :foreground blue :bold bold)
+   (org-level-3                                 :foreground green :bold bold)
+   (org-level-4                                 :foreground fg :bold bold)
+   (org-level-5                                 :inherit 'org-level 4)
+   (org-level-6                                 :inherit 'org-level 4)
+   (org-level-7                                 :inherit 'org-level 4)
+   (org-level-8                                 :inherit 'org-level 4)
+
    ;;; web-mode
    ;;; html
    (web-mode-html-tag-face                      :foreground red)
