@@ -225,8 +225,14 @@ determine the exact padding."
    ((markdown-code-face &override)               :background (doom-lighten base2 0.045))
 
    ;; org-mode
-   ((outline-1 &override)                        :foreground red)
-   ((outline-2 &override)                        :foreground orange)
+   ((outline-1 &override)                        :foreground yellow)
+   ((outline-2 &override)                        :foreground blue)
+   ((outline-3 &override)                        :foreground green)
+   ((outline-4 &override)                        :foreground fg)
+   ((outline-5 &override)                        :inherit 'outline-4)
+   ((outline-6 &override)                        :inherit 'outline-4)
+   ((outline-7 &override)                        :inherit 'outline-4)
+   ((outline-8 &override)                        :inherit 'outline-4)
    (org-ellipsis                                 :foreground orange)
    (org-tag                                      :foreground yellow :bold nil)
    ((org-quote &override)                        :inherit 'italic :foreground base7 :background org-quote)
@@ -309,16 +315,6 @@ determine the exact padding."
    (lsp-ui-peek-peek                            :inherit 'lsp-ui-peek-list)
    (lsp-ui-peek-highlight                       :inherit 'isearch)
    (lsp-ui-peek-filename                        :foreground base8 :bold bold)
-
-   ;; org-mode
-   (org-level-1                                 :foreground yellow :bold bold)
-   (org-level-2                                 :foreground blue :bold bold)
-   (org-level-3                                 :foreground green :bold bold)
-   (org-level-4                                 :foreground fg :bold bold)
-   (org-level-5                                 :inherit 'org-level 4)
-   (org-level-6                                 :inherit 'org-level 4)
-   (org-level-7                                 :inherit 'org-level 4)
-   (org-level-8                                 :inherit 'org-level 4)
 
    ;;; web-mode
    ;;; html
