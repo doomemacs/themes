@@ -148,7 +148,6 @@
     (doom-modeline-project-dir :foreground red :inherit 'bold )
     (doom-modeline-buffer-path :foreground red)
     (doom-modeline-buffer-file :foreground fg)
-    (doom-modeline-buffer-major-mode :foreground modeline-fg)
     (doom-modeline-buffer-modified :foreground violet)
     (doom-modeline-panel :background base1)
     (doom-modeline-urgent :foreground modeline-fg)
@@ -217,7 +216,7 @@
     ;; --- extra variables ---------------------
     ;; basics
     (link :foreground yellow :inherit 'underline)
-    (fringe :background bg-alt)
+    (fringe :background bg)
 
     ;; evil
     (evil-ex-search          :background hor-highlight-selected :foreground fg)
