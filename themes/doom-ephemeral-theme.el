@@ -153,7 +153,7 @@
    (doom-modeline-buffer-modified :foreground violet)
    (doom-modeline-panel :background base0)
    (doom-modeline-urgent :foreground modeline-fg)
-   (doom-modeline-info :inherit 'bold :foreground cyan :background base2)
+   (doom-modeline-info :inherit 'bold :foreground cyan)
 
    (solaire-mode-line-face
     :inherit 'mode-line
