@@ -79,7 +79,7 @@
 
    ;; face categories -- required for all themes
    (highlight      alt-blue)
-   (vertical-bar   base1)
+   (vertical-bar   bg-alt)
    (selection      blue)
    (builtin        yellow)
    (comments       light-grey)
@@ -147,10 +147,10 @@
    ;; modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-highlight :foreground (doom-lighten base2 0.3))
-   (doom-modeline-project-dir :foreground teal :inherit 'bold )
+   (doom-modeline-project-dir :foreground teal :inherit 'bold)
    (doom-modeline-buffer-path :foreground red)
    (doom-modeline-buffer-file :foreground fg)
-   (doom-modeline-buffer-major-mode :foreground teal)
+   (doom-modeline-buffer-major-mode :foreground teal :weight 'bold)
    (doom-modeline-buffer-modified :foreground violet)
    (doom-modeline-panel :background base0)
    (doom-modeline-urgent :foreground modeline-fg)

@@ -54,7 +54,7 @@ Can be an integer to determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      base6)
-   (vertical-bar   base2)
+   (vertical-bar   bg-alt)
    (selection      base4)
    (builtin        magenta)
    (comments       green)
@@ -111,7 +111,7 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   (fringe :background base2)
+   (fringe :background bg-alt)
 
    ;; --- major-mode faces ------------------------
    ;; all-the-icons
