@@ -11,6 +11,11 @@
   :group 'doom-acario-light-theme
   :type 'boolean)
 
+(defcustom doom-acario-light-force-serif-comments t
+  "If non-nil, comments faces will inherit `fixed-pitch-serif' font."
+  :group 'doom-acario-light-theme
+  :type 'boolean)
+
 (defcustom doom-acario-light-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-acario-light-theme
@@ -126,7 +131,7 @@ determine the exact padding."
 
 ;;;;; comments and doc
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif
+    :inherit (if doom-acario-light-force-serif-comments 'fixed-pitch-serif 'default)
     :slant 'italic
     :foreground comments
     :background (if doom-acario-light-comment-bg (doom-darken bg 0.05)))
