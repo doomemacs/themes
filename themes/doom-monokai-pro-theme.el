@@ -85,6 +85,9 @@ Can be an integer to determine the exact padding."
    (lazy-highlight                               :inherit 'match)
    (isearch-fail                                 :foreground red)
 
+   ;; deadgrep
+   (deadgrep-match-face                          :inherit 'match :box `(:line-width 2 :color ,yellow))
+
    ;; swiper
    (swiper-background-match-face-1               :inherit 'match :bold bold)
    (swiper-background-match-face-2               :inherit 'match)
