@@ -198,6 +198,15 @@ determine the exact padding."
    (magit-tag             :foreground yellow)
    (magit-filename        :foreground teal)
 
+   ;; rainbow delimiters
+   (rainbow-delimiters-depth-1-face :foreground red)
+   (rainbow-delimiters-depth-2-face :foreground green)
+   (rainbow-delimiters-depth-3-face :foreground teal)
+   (rainbow-delimiters-depth-4-face :foreground green)
+   (rainbow-delimiters-depth-5-face :foreground blue)
+   (rainbow-delimiters-depth-6-face :foreground green-alt)
+   (rainbow-delimiters-depth-7-face :foreground cyan)
+
    ;; Dired
    (diredfl-date-time :foreground teal)
    (diredfl-number    :foreground green)
@@ -249,7 +258,11 @@ determine the exact padding."
    (lsp-face-highlight-read    :background (doom-darken dark-blue 0.3))
 
    ;; js
-   (js2-object-property :foregroun fg))
+   (js2-object-property :foreground fg)
+   (js2-object-property-access :foreground green)
+
+
+   )
 
   ;; --- extra variables ---------------------
   ()
