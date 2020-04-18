@@ -65,7 +65,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-
+  - [ ] `doom-henna`: base on vscode-henna
+  
 ## Features
 
 - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
