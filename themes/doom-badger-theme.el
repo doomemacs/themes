@@ -85,7 +85,7 @@ determine the exact padding."
    (strings        green)
    (variables      magenta)
    (numbers        fg)
-   (region         "black") ;;`(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
+   (region         `(,(doom-lighten (car bg-alt) 0.1) ,@(doom-lighten (cdr base0) 0.1)))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -157,6 +157,13 @@ determine the exact padding."
    ;; ivy-mode
    (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
 
+   ;; treemacs
+   (treemacs-directory-face    :foreground base6)
+   (treemacs-git-modified-face :foreground yellow)
+   (treemacs-file-face         :foreground base8)
+   (treemacs-root-face         :foreground blue :weight 'bold)
+   (doom-themes-treemacs-file-face :foreground blue)
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
@@ -215,6 +222,16 @@ determine the exact padding."
    (org-footnote :foreground link :underline t)
    (org-code :foreground olive)
    (org-verbatim :inherit 'org-code)
+
+   ;; web-mode
+   (web-mode-html-attr-equal-face  :foreground fg)
+   (web-mode-html-attr-name-face   :foreground base8)
+   (web-mode-html-tag-face         :foreground blue)
+   (web-mode-html-tag-bracket-face :foreground sand)
+   (web-mode-keyword-face          :foreground blue)
+   (web-mode-block-control-face    :foreground orange)
+   (web-mode-block-delimiter-face  :foreground sand)
+   (web-mode-variable-name-face    :foreground (doom-lighten constants 0.3))
    )
   ;; --- extra variables ---------------------
   ()
