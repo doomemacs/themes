@@ -1255,7 +1255,6 @@
     (org-special-keyword :foreground doc-comments)
     (org-table           :foreground violet)
     (org-tag             :foreground doc-comments :weight 'normal)
-    (org-ref-cite-face   :foreground yellow :weight 'light :underline t)
     (org-latex-and-related :foreground base8 :weight 'bold)
     (org-todo            :foreground green :bold 'inherit)
     (org-verbatim        :foreground green)
@@ -1297,11 +1296,11 @@
     (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
 
     ;; org-ref
-    (org-ref-acronym-face :foreground violet)
-    (org-ref-cite-face :inherit 'link :foreground green)
-    (org-ref-glossary-face :foreground magenta)
-    (org-ref-label-face :foreground blue)
-    (org-ref-ref-face :inherit 'link :foreground red)
+    (org-ref-acronym-face    :foreground violet)
+    (org-ref-cite-face       :foreground yellow :weight 'light :underline t)
+    (org-ref-glossary-face   :foreground magenta)
+    (org-ref-label-face      :foreground blue)
+    (org-ref-ref-face        :inherit 'link :foreground red)
 
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
