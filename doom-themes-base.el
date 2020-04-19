@@ -1296,6 +1296,13 @@
     (org-pomodoro-mode-line :foreground red)
     (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
 
+    ;; org-ref
+    (org-ref-acronym-face :foreground violet)
+    (org-ref-cite-face :inherit 'link :foreground green)
+    (org-ref-glossary-face :foreground magenta)
+    (org-ref-label-face :foreground blue)
+    (org-ref-ref-face :inherit 'link :foreground red)
+
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
 
