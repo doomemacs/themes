@@ -194,9 +194,12 @@ determine the exact padding."
    (treemacs-root-face         :foreground red :weight 'bold)
 
    ;; magit
-   (magit-section-heading :foreground red :weight 'bold)
-   (magit-tag             :foreground yellow)
-   (magit-filename        :foreground teal)
+   (magit-section-heading    :foreground red :weight 'bold)
+   (magit-tag                :foreground (doom-lighten green-alt 0.5))
+   (magit-filename           :foreground teal)
+   (magit-diff-hunk-heading  :background (doom-darken teal 0.5))
+   (magit-diff-hunk-heading-highlight :background (doom-darken teal 0.2))
+   (magit-branch-current     :foreground green-alt)
 
    ;; rainbow delimiters
    (rainbow-delimiters-depth-1-face :foreground red)
@@ -247,7 +250,7 @@ determine the exact padding."
    (web-mode-keyword-face          :foreground teal)
    (web-mode-block-control-face    :foreground red)
    (web-mode-block-delimiter-face  :foreground teal)
-   (web-mode-variable-name-face    :foreground green)
+   (web-mode-variable-name-face    :foreground (doom-lighten green 0.5))
 
    ;; typescript
    (typescript-access-modifier-face :foreground green-alt)
