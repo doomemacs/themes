@@ -28,25 +28,13 @@ determine the exact padding."
   :group 'doom-gruvbox-light-theme
   :type '(choice integer boolean))
 
-(defcustom doom-gruvbox-light-variant "soft"
-  "If non-nil, choice of hard, medium or soft can be use to change the
-variant. Defaults to soft."
-  :group 'doom-gruvbox-light-theme
-  :type  'string)
-
 ;;
 (def-doom-theme doom-gruvbox-light
   "gruvbox light theme"
 
   ;; name        default   256       16
-  ((bg
-    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))
-          ((equal doom-gruvbox-light-variant "medium") '("#fbf1c7" "#ffffd7" nil))
-          (t '("#f2e5bc" "#ffffd7" nil))))
-   (bg-alt
-    (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil))
-          ((equal doom-gruvbox-light-variant "medium")  '("#f2e5bc" "#ffffd7" nil))
-          (t '("#ebdbb2" "#ffffaf" nil))))
+  ((bg         '("#f2e5bc" "#ffffd7" nil))
+   (bg-alt     '("#ebdbb2" "#ffffaf" nil))
    (base0      '("#f0f0f0" "#f0f0f0" "white"        ))
    (base1      '("#ebdbb2" "#e7e7e7" "brightblack"  ))
    (base2      '("#d5c4a1" "#dfdfdf" "brightblack"  ))
@@ -58,6 +46,7 @@ variant. Defaults to soft."
    (base8      '("#1d2021" "black"   "black"        ))
    (fg         '("#383a42" "#424242" "black"        ))
    (fg-alt     '("#000000" "#c7c7c7" "brightblack"  ))
+
 
    (grey       '("#928374" "#8a8a8a"))
    (red        '("#9d0006" "#e45649" "red"          ))
@@ -138,6 +127,9 @@ variant. Defaults to soft."
     :foreground doc-comments
     :slant 'italic)
 
+   (link      :foreground faded-blue :underline t)
+
+   ;; Line number
    ((line-number &override) :foreground base4 :background base1)
    ((line-number-current-line &override) :foreground orange :background (doom-lighten bg 0.1))
    (linum     :foreground base4 :background base2)
@@ -165,6 +157,13 @@ variant. Defaults to soft."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
+   ;; Doom dashboard
+   (doom-dashboard-banner      :foreground (doom-darken base4 0.3))
+   (doom-dashboard-menu-title  :foreground green)
+   (doom-dashboard-menu-desc   :foreground green)
+   (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
+   (doom-dashboard-loaded      :foreground yellow)
 
    ;; swiper
    (swiper-line-face    :background base3 :foreground base0)
