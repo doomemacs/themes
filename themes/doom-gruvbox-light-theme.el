@@ -28,13 +28,25 @@ determine the exact padding."
   :group 'doom-gruvbox-light-theme
   :type '(choice integer boolean))
 
+(defcustom doom-gruvbox-light-variant nil
+  "If non-nil, choice of hard or medium can be use to change the
+variant. Defaults to soft."
+  :group 'doom-gruvbox-light-theme
+  :type  'string)
+
 ;;
 (def-doom-theme doom-gruvbox-light
   "gruvbox light theme"
 
   ;; name        default   256       16
-  ((bg         '("#f2e5bc" "#ffffd7" nil               ))
-   (bg-alt     '("#ebdbb2" "#ffffaf" nil               ))
+  ((bg
+    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))
+          ((equal doom-gruvbox-light-variant "medium") '("#fbf1c7" "#ffffd7" nil))
+          (t '("#f2e5bc" "#ffffd7" nil))))
+   (bg-alt
+    (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil))
+          ((equal doom-gruvbox-light-variant "medium")  '("#f2e5bc" "#ffffd7" nil))
+          (t '("#ebdbb2" "#ffffaf" nil))))
    (base0      '("#f0f0f0" "#f0f0f0" "white"           ))
    (base1      '("#ebdbb2" "#ffffaf" "brightblack"     ))
    (base2      '("#d5c4a1" "#d7d6af" "brightblack"     ))
