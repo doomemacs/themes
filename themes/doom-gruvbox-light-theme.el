@@ -40,53 +40,60 @@ variant. Defaults to soft."
 
   ;; name        default   256       16
   ((bg
-    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))
-          ((equal doom-gruvbox-light-variant "medium") '("#fbf1c7" "#ffffd7" nil))
-          (t '("#f2e5bc" "#ffffd7" nil))))
+    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))    ;; gruvbox-dark0_hard
+          ((equal doom-gruvbox-light-variant "medium") '("#fbf1c7" "#ffffd7" nil))  ;; gruvbox-dark0
+          (t '("#f2e5bc" "#ffffd7" nil))))                                          ;; gruvbox-dark0_soft
    (bg-alt
-    (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil))
-          ((equal doom-gruvbox-light-variant "medium")  '("#f2e5bc" "#ffffd7" nil))
-          (t '("#ebdbb2" "#ffffaf" nil))))
-   (base0      '("#f0f0f0" "#f0f0f0" "white"           ))
-   (base1      '("#ebdbb2" "#ffffaf" "brightblack"     ))
-   (base2      '("#d5c4a1" "#d7d6af" "brightblack"     ))
-   (base3      '("#bdae93" "#afaf87" "brightblack"     ))
-   (base4      '("#a89984" "#afafaf" "brightblack"     ))
-   (base5      '("#504945" "#4e4e4e" "brightblack"     ))
-   (base6      '("#3c3836" "#3a3a3a" "brightblack"     ))
-   (base7      '("#282828" "#262626" "brightblack"     ))
-   (base8      '("#1d2021" "#1c1c1c"  "black"          ))
-   (fg         '("#282828" "#262626" "black"           ))
-   (fg-alt     '("#1c1c1c" "#1c1c1c" "brightblack"     ))
+    (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil)) ;; gruvbox-dark0
+          ((equal doom-gruvbox-light-variant "medium")  '("#f2e5bc" "#ffffd7" nil)) ;; gruvbox-dark0_soft
+          (t '("#ebdbb2" "#ffffaf" nil))))                                          ;; gruvbox-dark1
+   (base0      '("#f0f0f0" "#f0f0f0" "white"           )) ;;
+   (base1      '("#ebdbb2" "#ffffaf" "brightblack"     )) ;; gruvbox-dark1
+   (base2      '("#d5c4a1" "#d7d6af" "brightblack"     )) ;; gruvbox-dark2
+   (base3      '("#bdae93" "#afaf87" "brightblack"     )) ;; gruvbox-dark3
+   (base4      '("#a89984" "#afafaf" "brightblack"     )) ;; gruvbox-dark4
+   (base5      '("#504945" "#4e4e4e" "brightblack"     )) ;; gruvbox-light2
+   (base6      '("#3c3836" "#3a3a3a" "brightblack"     )) ;; gruvbox-light1
+   (base7      '("#282828" "#262626" "brightblack"     )) ;; gruvbox-light0
+   (base8      '("#1d2021" "#1c1c1c"  "black"          )) ;; gruvbox-light0_hard
+   (fg         '("#282828" "#262626" "black"           )) ;; gruvbox-light0
+   (fg-alt     '("#1c1c1c" "#1c1c1c" "brightblack"     )) ;;
 
 
-   (grey       '("#928374" "#8a8a8a" "grey"            ))
-   (red        '("#9d0006" "#870000" "red"             ))
-   (orange     '("#af3a03" "#af5f00" "brightred"       ))
-   (green      '("#79740e" "#878700" "green"           ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"     ))
-   (yellow     '("#b57614" "#af8700" "yellow"          ))
-   (blue       '("#076678" "#005f87" "brightblue"      ))
-   (dark-blue  '("#2b3c44" "#000087" "blue"            ))
-   (magenta    '("#b16286" "#d75f87" "magenta"         ))
-   (violet     '("#8f3f71" "#875f87" "brightmagenta"   ))
-   (cyan       '("#427b58" "#5f8787" "brightcyan"      ))
-   (dark-cyan  '("#36473a" "#005f5f" "cyan"            ))
+   (grey       '("#928374" "#8a8a8a" "grey"            )) ;; gruvbox-gray
+   (red        '("#9d0006" "#870000" "red"             )) ;; gruvbox-bright_red
+   (orange     '("#af3a03" "#af5f00" "brightred"       )) ;; gruvbox-bright_orange
+   (green      '("#79740e" "#878700" "green"           )) ;; gruvbox-bright_green
+   (teal       '("#4db5bd" "#44b9b1" "brightgreen"     )) ;; gruvbox-
+   (yellow     '("#b57614" "#af8700" "yellow"          )) ;; gruvbox-bright_yellow
+   (blue       '("#076678" "#005f87" "brightblue"      )) ;; gruvbox-bright_blue
+   (dark-blue  '("#2b3c44" "#000087" "blue"            )) ;; gruvbox-dark_blue
+   (magenta    '("#b16286" "#d75f87" "magenta"         )) ;; gruvbox-faded_purple
+   (violet     '("#8f3f71" "#875f87" "brightmagenta"   )) ;; gruvbox-bright_purple
+   (cyan       '("#427b58" "#5f8787" "brightcyan"      )) ;; gruvbox-bright_aqua
+   (dark-cyan  '("#36473a" "#005f5f" "cyan"            )) ;; gruvbox-dark_aqua
 
    ;; Extra
-   (faded-orange '("#d65d0e" "#ff8700" "brightorange"  ))
-   (faded-yellow '("#d79921" "#ffaf00" "yellow"        ))
-   (faded-blue   '("#458588" "#87afaf" "blue"          ))
-   (faded-cyan   '("#689d6a" "#87af87" "brightcyan"    ))
-   (faded-red    '("#cc241d" "#d75f5f" "red"           ))
-   (faded-green  '("#98971a" "#afaf00" "green"         ))
-   (light3       '("#665c54" "#626262" "grey"          ))
-   (light4       '("#7c6f64" "#767676" "grey"          ))
-   (lightblue4   '("#66999D" "#5fafaf" "brightblue"    ))
-   (turquoise4   '("#61ACBB" "#5fafaf" "brightblue"    ))
+   (delimiter-3       '("#8ec07c" "#87af87"                 ))
+   (light3            '("#665c54" "#626262" "grey"          ))
+   (light4            '("#7c6f64" "#767676" "grey"          ))
+   (faded-red         '("#cc241d" "#d75f5f" "red"           ))
+   (faded-green       '("#98971a" "#afaf00" "green"         ))
+   (faded-yellow      '("#d79921" "#ffaf00" "yellow"        ))
+   (faded-blue        '("#458588" "#87afaf" "blue"          ))
+   (faded-orange      '("#d65d0e" "#ff8700" "brightorange"  ))
+   (faded-aqua        '("#689d6a" "#87af87" "brightcyan"    ))
+   (dark-red          '("#421E1E" "#5f0000"                 ))
+   (dark-blue         '("#2B3C44" "#000087"                 ))
+   (dark-aqua         '("#36473A" "#005f5f"                 ))
+   (sienna            '("#dd6f48" "d7875f"                  ))
+   (lightblue4        '("#66999D" "#5fafaf" "brightblue"    ))
+   (burlywood4        '("#BBAA97" "#aafaf87"                ))
+   (aquamarine4       '("#83af98" "#87af87"                 ))
+   (turquoise4        '("#61ACBB" "#5fafaf" "brightblue"    ))
 
    ;; face categories -- required for all themes
-   (highlight      "black")
+   (highlight      fg)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      base3)
    (builtin        orange)
@@ -139,7 +146,7 @@ variant. Defaults to soft."
     :foreground doc-comments
     :slant 'italic)
 
-   (link      :foreground faded-blue :underline t)
+   (cursor    :foreground fg)
 
    ;; Line number
    ((line-number &override) :foreground base4 :background base1)
@@ -150,7 +157,9 @@ variant. Defaults to soft."
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
-   (lazy-highlight       :background base2  :foreground base8 :distant-foreground base0 :weight 'bold)
+   (lazy-highlight    :background base2  :foreground base8 :distant-foreground base0 :weight 'bold)
+   (isearch           :foreground "black" :background orange)
+   (isearch-fail      :foreground fg :background red)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -170,23 +179,139 @@ variant. Defaults to soft."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
-   ;; Doom dashboard
+   ;; company-mode
+   (company-scrollbar-bg                      :background base1)
+   (company-scrollbar-fg                      :background bg-alt)
+   (company-tooltip                           :background bg-alt)
+   (company-tooltip-annotation                :foreground green)
+   (company-tooltip-annotation-selection      :inherit 'company-tooltip-annotation)
+   (company-tooltip-selection                 :foreground violet :background base2)
+   (company-tooltip-common                    :foreground blue :underline t)
+   (company-tooltip-common-selection          :foreground blue :underline t)
+   (company-preview-common                    :foreground base7)
+   (company-preview                           :background lightblue4)
+   (company-preview-search                    :background turquoise4)
+   (company-template-field                    :foreground "black" :background yellow)
+   (company-echo-common                       :foreground faded-red)
+
+   ;; diredp
+   (diredp-file-name :foreground base5)
+   (diredp-file-suffix :foreground light4)
+   (diredp-compressed-file-suffix :foreground faded-blue)
+   (diredp-dir-name :foreground faded-blue)
+   (diredp-symlink :foreground orange)
+   (diredp-date-time :foreground light3)
+   (diredp-number :foreground faded-blue)
+   (diredp-no-priv :foreground base4)
+   (diredp-other-priv :foreground base2)
+   (diredp-rare-priv :foreground base4)
+   (diredp-ignored-file-name :foreground base5)
+
+   (diredp-dir-priv :foreground faded-blue :background dark-blue)
+   ((diredp-dir-exec-priv &inherit diredp-dir-priv))
+   (diredp-link-priv :foreground faded-aqua)
+
+   ;; diredfl
+   (diredfl-autofile-name :foreground base5)
+   (diredfl-compressed-file-name :foreground base5)
+   (diredfl-compressed-file-suffix :foreground faded-blue)
+   (diredfl-dir-priv :foreground blue :backgtround dark-blue)
+   (diredfl-exec-priv :foreground blue :backgrond dark-blue)
+   (diredfl-file-name :foreground base5)
+   (diredfl-file-suffix :foreground light4)
+   (diredfl-link-priv :foreground magenta)
+   (diredfl-no-priv :foreground base5)
+   (diredfl-number :foreground yellow)
+   (diredfl-other-priv :foreground violet)
+   (diredfl-rare-priv :foreground base5)
+
+   ;; doom dashboard
    (doom-dashboard-banner      :foreground (doom-darken base4 0.3))
    (doom-dashboard-menu-title  :foreground green)
    (doom-dashboard-menu-desc   :foreground green)
    (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
    (doom-dashboard-loaded      :foreground yellow)
 
-   ;; swiper
-   (swiper-line-face    :background base3 :foreground base0)
-   (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
-   (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
-   (swiper-match-face-3 :inherit 'unspecified :background violet :foreground base1 :weight 'bold)
-   (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base2 :weight 'bold)
-   (swiper-background-match-face-1 :inherit 'unspecified :background base2)
-   (swiper-background-match-face-2 :inherit 'unspecified :background base3)
-   (swiper-background-match-face-3 :inherit 'unspecified :background base4)
-   (swiper-background-match-face-4 :inherit 'unspecified :background base5)
+   ;; diffs
+   (diff-changed                   :background nil :foreground base6)
+   (diff-removed                   :background nil :foreground red)
+   (diff-indicator-changed         :inherit 'diff-changed)
+   (diff-indicator-added           :inherit 'diff-added)
+   (diff-indicator-removed         :inherit 'diff-removed)
+
+   ;; ediff
+   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
+   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
+   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
+   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
+
+   ;; flycheck
+   (flycheck-info :underline `(:style wave :color ,blue))
+
+   ;; git-gutter
+   (git-gutter:modified :foreground faded-blue :background blue)
+   (git-gutter:added    :foreground faded-green :background green)
+   (git-gutter:deleted  :foreground faded-red :backgrond red)
+
+   ;; git-gutter+
+   (git-gutter+-modified :foreground faded-blue :background blue)
+   (git-gutter+-added    :foreground faded-green :background green)
+   (git-gutter+-deleted  :foreground faded-red :backgrond red)
+
+   ;; helm
+   (helm-candidate-number       :background blue :foreground bg)
+   (helm-M-x-key                :foreground orange)
+   (helm-action                 :foreground base8 :underline t)
+   (helm-bookmark-addressbook   :foreground red)
+   (helm-bookmark-directory     :foreground violet)
+   (helm-bookmark-file          :foreground faded-blue)
+   (helm-bookmark-gnus          :foreground magenta)
+   (helm-bookmark-info          :foreground turquoise4)
+   (helm-bookmark-man           :foreground sienna)
+   (helm-bookmark-w3m           :foreground yellow)
+   (helm-buffer-directory       :foreground "white" :background blue)
+   (helm-buffer-not-saved       :foreground red)
+   (helm-buffer-process         :foreground burlywood4)
+   (helm-buffer-saved-out       :foreground red)
+   (helm-buffer-size            :foreground violet)
+   (helm-candidate-number       :foreground green)
+   (helm-ff-directory           :foreground violet)
+   (helm-ff-executable          :foreground turquoise4)
+   (helm-ff-file                :foreground sienna)
+   (helm-ff-invalid-symlink     :foreground "white" :background red)
+   (helm-ff-prefix              :foreground "black" :background yellow)
+   (helm-ff-symlink             :foreground orange)
+   (helm-grep-cmd-line          :foreground green)
+   (helm-grep-file              :foreground magenta)
+   (helm-grep-finish            :foreground turquoise4)
+   (helm-grep-lineno            :foreground orange)
+   (helm-grep-match             :foreground yellow)
+   (helm-grep-running           :foreground red)
+   (helm-header                 :foreground aquamarine4)
+   (helm-helper                 :foreground aquamarine4)
+   (helm-history-deleted        :foreground "black" :background red)
+   (helm-history-remote         :foreground faded-red)
+   (helm-lisp-completion-info   :foreground faded-orange)
+   (helm-lisp-show-completion   :foreground red)
+   (helm-locate-finish          :foreground "white" :background aquamarine4)
+   (helm-match                  :foreground orange)
+   (helm-moccur-buffer          :foreground cyan :underline t)
+   (helm-prefarg                :foreground turquoise4)
+   (helm-selection              :foreground "white" :background base2)
+   (helm-selection-line         :foreground "white" :background base2)
+   (helm-separator              :foreground faded-red)
+   (helm-source-header          :foreground base5)
+   (helm-visible-mark           :foreground "black" :background light3)
+
+   ;; ivy
+   (ivy-current-match               :foreground base8 :weight 'bold :underline t)
+   (ivy-minibuffer-match-face-1     :foreground orange)
+   (ivy-minibuffer-match-face-2     :foreground yellow)
+   (ivy-minibuffer-match-face-3     :foreground faded-orange)
+   (ivy-minibuffer-match-face-4     :foreground faded-yellow)
+
+   ;; posframe
+   (ivy-posframe               :background base0)
 
    ;; magit
    (magit-bisect-bad                      :foreground faded-red)
@@ -244,37 +369,109 @@ variant. Defaults to soft."
    (magit-signature-untrusted             :foreground blue)
    (magit-tag                             :foreground yellow)
 
-   ;; ivy
-   (ivy-current-match               :foreground base8 :weight 'bold :underline t)
-   (ivy-minibuffer-match-face-1     :foreground orange)
-   (ivy-minibuffer-match-face-2     :foreground yellow)
-   (ivy-minibuffer-match-face-3     :foreground faded-orange)
-   (ivy-minibuffer-match-face-4     :foreground faded-yellow)
+   ;; message-mode
+   (message-header-cc :inherit 'font-lock-variable-name-face)
+   (message-header-subject :foreground orange :weight 'bold)
+   (message-header-other :inherit 'font-lock-variable-name-face)
+   (message-header-name :inherit 'font-lock-keyword-face)
+   (message-cited-text :inherit 'font-lock-comment-face)
+   (message-mml :foregrond faded-green :weight 'bold)
 
-   ;; markdown-model
-   (markdown-header-face-1          :foreground blue)
-   (markdown-header-face-2          :foreground yellow)
-   (markdown-header-face-3          :foreground violet)
-   (markdown-header-face-4          :foreground red)
-   (markdown-header-face-5          :foreground green)
-   (markdown-header-face-6          :foreground dark-cyan)
+   ;; popup
+   (popup-face :foreground base6  :background base1)
+   (popup-menu-selection-face :foreground fg :background faded-green)
+   (popup-menu-mouse-face :foreground fg :background faded-green)
+   (popup-tip-face :foreground base5 :background base2)
+
+   ;; rainbow-delimiters
+   (rainbow-delimiters-depth-3-face :foreground delimiter-3)
+   (rainbow-delimiters-depth-4-face :foreground faded-orange)
+   (rainbow-delimiters-depth-7-face :foreground delimiter-3)
+   (rainbox-delimiters-depth-8-face :foreground faded-orange)
+   (rainbow-delimiters-depth-11-face :foreground delimiter-3)
+   (rainbox-delimiters-depth-12-face :foreground faded-orange)
+   (rainbow-delimiters-unmatched-face: :foreground fg :background 'nil)
    
+   ;; swiper
+   (swiper-line-face    :background base3 :foreground base0)
+   (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
+   (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
+   (swiper-match-face-3 :inherit 'unspecified :background violet :foreground base1 :weight 'bold)
+   (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base2 :weight 'bold)
+   (swiper-background-match-face-1 :inherit 'unspecified :background base2)
+   (swiper-background-match-face-2 :inherit 'unspecified :background base3)
+   (swiper-background-match-face-3 :inherit 'unspecified :background base4)
+   (swiper-background-match-face-4 :inherit 'unspecified :background base5)
+
+   ;; whitespace
+   (whitespace-trailing :foreground red :background base1)
+   (whitespace-line :foreground red :background base1)
+   (whitespace-indentation :foreground base4 :background bg)
+   (whitespace-empty :foreground 'nil :background 'nil)
+
    ;; major-mode faces -------------------
+
+    ;; anzu
+   (anzu-mode-line         :foreground yellow :weight 'bold)
+   (anzu-match-1           :background green)
+   (anzu-match-2           :background faded-yellow)
+   (anzu-match-3           :background aquamarine4)
+   (anzu-replace-to        :foreground yellow)
+   (anzu-replace-highlight :inherit 'isearch)
+
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
+
+   ;; elfeed
+   (elfeed-search-title-face :foreground grey)
+   (elfeed-search-date-face :inherit 'font-lock-builtin-face :underline t)
+   (elfeed-search-tag-face :inherit 'font-lock-keyword-face)
+   (elfeed-search-unread-count-face :inherit 'font-lock-comment-face)
+   (elfeed-search-filter-face :inherit 'font-lock-string-face)
+
+   ;; js2
+   (js2-warning                    :underline `(:style wave :color ,yellow))
+   (js2-error                      :underline `(:style wave :color ,red))
+   (js2-external-variable          :underline `(:style wave :color ,cyan))
+   (js2-jsdoc-tag                  :background nil :foreground grey  )
+   (js2-jsdoc-type                 :background nil :foreground light4)
+   (js2-jsdoc-value                :background nil :foreground light3)
+   (js2-function-param             :background nil :foreground cyan)
+   (js2-function-call              :background nil :foreground blue)
+   (js2-instance-member            :background nil :foreground orange)
+   (js2-private-member             :background nil :foreground yellow)
+   (js2-private-function-call      :background nil :foreground faded-aqua)
+   (js2-jsdoc-html-tag-name        :background nil :foreground light4)
+   (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
+
+   ;; lsp
+   (lsp-ui-doc-background      :background base2)
+   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
+   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
+   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
 
    ;; markdown-mode
    (markdown-markup-face     :foreground base5)
    (markdown-header-face     :inherit 'bold :foreground red)
    ((markdown-code-face &override)       :background base1)
    (mmm-default-submode-face :background base1)
+   (markdown-header-face-1          :foreground blue)
+   (markdown-header-face-2          :foreground yellow)
+   (markdown-header-face-3          :foreground violet)
+   (markdown-header-face-4          :foreground red)
+   (markdown-header-face-5          :foreground green)
+   (markdown-header-face-6          :foreground dark-cyan)
+
+   ;; mu4e
+   (mu4e-highlight-face :foreground green)
+   (mu4e-unread-face :foreground blue :weight 'bold)
+   (mu4e-header-key-face :foreground green :weight 'bold)
 
    ;; org-mode
    ((outline-1 &override) :foreground red)
    ((outline-2 &override) :foreground orange)
-
    (org-level-1                 :foreground blue)
    (org-level-2                 :foreground yellow)
    (org-level-3                 :foreground violet)
@@ -287,7 +484,7 @@ variant. Defaults to soft."
    ;; (org-column   :background )
    (org-warning                 :foreground red :weight 'bold :bold t)
    (org-archived                :foreground base7 :weight 'bold)
-   (org-link                    :foreground faded-cyan :underline t)
+   (org-link                    :foreground faded-aqua :underline t)
    (org-footnote                :foreground cyan :underline t)
    (org-ellipsis                :foreground light4)
    (org-date                    :foreground blue :underline t)
@@ -314,87 +511,26 @@ variant. Defaults to soft."
    (org-time-grid               :foreground faded-orange)
    (org-latex-and-related       :foreground blue)
 
-   ;; company-mode
-   (company-scrollbar-bg                      :background base1)
-   (company-scrollbar-fg                      :background bg-alt)
-   (company-tooltip                           :background bg-alt)
-   (company-tooltip-annotation                :foreground green)
-   (company-tooltip-annotation-selection      :inherit 'company-tooltip-annotation)
-   (company-tooltip-selection                 :foreground violet :background base2)
-   (company-tooltip-common                    :foreground blue :underline t)
-   (company-tooltip-common-selection          :foreground blue :underline t)
-   (company-preview-common                    :foreground base7)
-   (company-preview                           :background lightblue4)
-   (company-preview-search                    :background turquoise4)
-   (company-template-field                    :foreground "black" :background yellow)
-   (company-echo-common                       :foreground faded-red)
+   (org-habit-clear-face          :background faded-blue)
+   (org-habit-clear-future-face   :background blue)
+   (org-habit-ready-face          :background faded-green)
+   (org-habit-ready-future-face   :background green)
+   (org-habit-alert-face          :background faded-yellow)
+   (org-habit-alert-future-face   :background yellow)
+   (org-habit-overdue-face        :background faded-red)
+   (org-habit-overdue-future-face :background red)
 
-   ;; helm
-   (helm-candidate-number :background blue :foreground bg)
+   ;; tooltip
+   (tooltip :background base1 :foreground base6)
 
-   ;; mu4e
-   (mu4e-highlight-face :foreground green)
-   (mu4e-unread-face :foreground blue :weight 'bold)
-   (mu4e-header-key-face :foreground green :weight 'bold)
-   
    ;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
 
    ;; wgrep
    (wgrep-face :background base1)
 
-   ;; ediff
-   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
-   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
-   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
-   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
 
-   ;; tooltip
-   (tooltip :background base1 :foreground base6)
 
-   ;; posframe
-   (ivy-posframe               :background base0)
-
-   ;; lsp
-   (lsp-ui-doc-background      :background base2)
-   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
-
-   ;; js2
-   (js2-warning                    :underline `(:style wave :color ,yellow))
-   (js2-error                      :underline `(:style wave :color ,red))
-   (js2-external-variable          :underline `(:style wave :color ,cyan))
-   (js2-jsdoc-tag                  :background nil :foreground grey  )
-   (js2-jsdoc-type                 :background nil :foreground light4)
-   (js2-jsdoc-value                :background nil :foreground light3)
-   (js2-function-param             :background nil :foreground cyan)
-   (js2-function-call              :background nil :foreground blue)
-   (js2-instance-member            :background nil :foreground orange)
-   (js2-private-member             :background nil :foreground yellow)
-   (js2-private-function-call      :background nil :foreground faded-cyan)
-   (js2-jsdoc-html-tag-name        :background nil :foreground light4)
-   (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
-
-   ;; whitespace-mode
-   (whitespace-space               :background bg :foreground base4)
-   (whitespace-hspace              :background bg :foreground base4)
-   (whitespace-tab                 :background bg :foreground base4)
-   (whitespace-newline             :background bg :foreground base4)
-   (whitespace-trailing            :background base1 :foreground red)
-   (whitespace-line                :background base1 :foreground red)
-   (whitespace-space-before-tab    :background bg :foreground base4)
-   (whitespace-indentation         :background bg :foreground base4)
-   (whitespace-empty               :background nil :foreground nil)
-   (whitespace-space-after-tab     :background bg :foreground base4)
-
-   ;; Diffs
-   (diff-changed                   :background nil :foreground base6)
-   (diff-added                     :background nil :foreground green)
-   (diff-removed                   :background nil :foreground red)
-   (diff-indicator-changed         :inherit 'diff-changed)
-   (diff-indicator-added           :inherit 'diff-added)
-   (diff-indicator-removed         :inherit 'diff-removed)
    )
 
   ;; --- extra variables ---------------------
