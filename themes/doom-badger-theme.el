@@ -33,57 +33,59 @@ determine the exact padding."
   "A dark theme inspired by original badger theme"
 
   ;; name        default   256       16
-  ((bg         '("#171717" nil       nil            ))
-   (bg-alt     '("#1c1c1c" nil       nil            ))
-   (base0      '("#1D1D1D" "black"   "black"        ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#433F4f" "#3f3f3f" "brightblack"  ))
-   (base5      '("#635770" "#525252" "brightblack"  ))
-   (base6      '("#656868" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#F6F3E8" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#FBF9F3" "#2d2d2d" "white"        ))
+  ((bg         '("#171717" nil       nil            )) ;; badger-bg
+   (bg-alt     '("#2f2f2f" nil       nil            )) ;; badger-bg+1
+   (base0      '("#1D1D1D" "black"   "black"        )) ;; badger-hl
+   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  )) ;;
+   (base2      '("#202328" "#2e2e2e" "brightblack"  )) ;;
+   (base3      '("#23272e" "#262626" "brightblack"  )) ;;
+   (base4      '("#433F4f" "#3f3f3f" "brightblack"  )) ;;
+   (base5      '("#635770" "#525252" "brightblack"  )) ;;
+   (base6      '("#656868" "#6b6b6b" "brightblack"  )) ;; badger-charcoal
+   (base7      '("#9ca0a4" "#979797" "brightblack"  )) ;;
+   (base8      '("#DFDFDF" "#dfdfdf" "white"        )) ;;
+   (fg         '("#F6F3E8" "#bfbfbf" "brightwhite"  )) ;; badger-fg
+   (fg-alt     '("#FBF9F3" "#2d2d2d" "white"        )) ;; badger-fg+1
 
    (grey       base4)
-   (red        '("#E2434C" "#ff6655" "red"          ))
-   (orange     '("#EA9847" "#dd8844" "brightred"    ))
-   (green      '("#86B187" "#99bb66" "green"        ))
-   (teal       '("#65A399" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#E0D063" "#ECBE7B" "yellow"       ))
-   (blue       '("#8AC6F2" "#51afef" "brightblue"   ))
-   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
-   (magenta    '("#E18Cbb" "#c678dd" "brightmagenta"))
-   (violet     '("#BF93C3" "#a9a1e1" "magenta"      ))
-   (cyan       '("cyan"    "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+   (red        '("#E2434C" "#ff6655" "red"          )) ;; badger-red
+   (orange     '("#EA9847" "#dd8844" "brightred"    )) ;; badger-orange
+   (green      '("#86B187" "#99bb66" "green"        )) ;; badger-green
+   (teal       '("#65A399" "#44b9b1" "brightgreen"  )) ;; badger-teal
+   (yellow     '("#E0D063" "#ECBE7B" "yellow"       )) ;; badger-yellow
+   (blue       '("#8AC6F2" "#51afef" "brightblue"   )) ;; badger-blue
+   (dark-blue  '("#2257A0" "#2257A0" "blue"         )) ;;
+   (magenta    '("#E18Cbb" "#c678dd" "brightmagenta")) ;; badger-pink
+   (violet     '("#BF93C3" "#a9a1e1" "magenta"      )) ;; badger-violet
+   (cyan       '("cyan"    "#46D9FF" "brightcyan"   )) ;; badger-succ
+   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         )) ;;
 
    ;; Custom
-   (olive      '("#9AA68E"))
-   (lime       '("#84C452"))
-   (link       '("#8ACDAA"))
-   (dull-red   '("#A55662"))
-   (brown      '("#AC8952"))
-   (sand       '("#C7B299"))
-   (salmon     '("#F28B86"))
+   (olive          '("#9AA68E")) ;; badger-olice
+   (lime           '("#84C452")) ;; badger-lime
+   (link           '("#8ACDAA")) ;; badger-link
+   (dull-red       '("#A55662")) ;; badger-dull-red
+   (brown          '("#AC8952")) ;; badger-brown
+   (sand           '("#C7B299")) ;; badger-sand
+   (salmon         '("#F28B86")) ;; badger-salmon
+   (dark-violet    '("#635770")) ;; badger-dark-violet
+   ;; (darker-violet  '("#433F4F")) ;; badger-darker-violet
 
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   (doom-darken base4 0.1))
    (selection      dark-blue)
    (builtin        salmon)
-   (comments       (if doom-badger-brighter-comments dark-cyan base6))
-   (doc-comments   (doom-lighten (if doom-badger-brighter-comments dark-cyan base6) 0.25))
-   (constants      base5)
+   (comments       (if doom-badger-brighter-comments base7 base6))
+   (doc-comments   (doom-lighten (if doom-badger-brighter-comments base7 base6) 0.25))
+   (constants      dark-violet)
    (functions      orange)
    (keywords       blue)
    (methods        cyan)
    (operators      sand)
    (type           sand)
    (strings        green)
-   (variables      magenta)
+   (variables      violet)
    (numbers        fg)
    (region         `(,(doom-lighten (car bg-alt) 0.1) ,@(doom-lighten (cdr base0) 0.1)))
    (error          red)
@@ -120,8 +122,9 @@ determine the exact padding."
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
-   ((line-number &override) :foreground base4)
+   ((line-number &override) :foreground base6)
    ((line-number-current-line &override) :foreground fg)
+   (linum :foreground base6 :background base6)
 
    (font-lock-comment-face
     :foreground comments
@@ -148,6 +151,10 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   ;; centaur tabs
+   (centaur-tabs-selected-modified   :background bg :foreground yellow)
+   (centaur-tabs-unselected-modified :background bg-alt :foreground yellow)
+
    ;; Doom modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
@@ -156,6 +163,11 @@ determine the exact padding."
 
    ;; ivy-mode
    (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+
+   (popup-tip-face :background sand :foreground "black")
+   (popup-scroll-bar-foreground-face :background dark-violet)
+   (popup-scroll-bar-background-face :background olive)
+   (popup-isearch-match :background yellow :foreground "black")
 
    ;; treemacs
    (treemacs-directory-face    :foreground base6)
@@ -205,12 +217,6 @@ determine the exact padding."
    (org-date :foreground link :underline t)
    (org-agenda-date-today  :foreground salmon :weight 'light :slant 'italic)
    (org-agenda-structure  :inherit font-lock-comment-face)
-   ;; `(org-scheduled ((t (:foreground ,zenburn-green+4))))x
-   ;; `(org-scheduled-previously ((t (:foreground ,zenburn-red-4))))
-   ;; `(org-scheduled-today ((t (:foreground ,zenburn-blue+1))))
-   ;; `(org-sexp-date ((t (:foreground ,zenburn-blue+1 :underline t))))
-   ;; `(org-time-grid ((t (:foreground ,zenburn-orange))))
-   ;; `(org-upcoming-deadline ((t (:inherit font-lock-keyword-face))))
 
    (org-special-keyword :foreground olive :weight 'normal)
    (org-table :foreground olive)
