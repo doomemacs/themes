@@ -765,7 +765,11 @@ determine the exact padding."
 
    ;; which-func-mode
    (which-func :foreground green+4)
-
+   ;; which-key
+   (which-key-key-face                   :foreground yellow-2)
+   (which-key-group-description-face     :foreground green-3)
+   (which-key-command-description-face   :foreground green+1)
+   (which-key-local-map-description-face :foreground blue)
    )
 
   ;; --- extra variables ---------------------
