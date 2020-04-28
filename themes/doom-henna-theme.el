@@ -186,6 +186,9 @@ determine the exact padding."
    (which-key-command-description-face   :foreground teal)
    (which-key-local-map-description-face :foreground green)
 
+   ;; highlight-numbers
+   (highlight-numbers-number :foreground blue)
+
    ;; ivy-mode
    (ivy-minibuffer-match-highlight  :foreground red)
    (ivy-highlight-face              :foreground red)
@@ -281,10 +284,12 @@ determine the exact padding."
    (lsp-face-highlight-read    :background (doom-darken dark-blue 0.3))
 
    ;; js
-   (js2-object-property        :foreground fg)
-   (js2-object-property-access :foreground green)
-
-
+   (js2-object-property          :foreground fg)
+   (js2-object-property-access   :foreground green)
+   (js2-jsdoc-value              :foreground red)
+   (js2-jsdoc-tag                :foreground teal)
+   (js2-jsdoc-html-tag-delimiter :foreground base8)
+   (js2-jsdoc-html-tag-name      :foreground base8)
    )
 
   ;; --- extra variables ---------------------
