@@ -157,22 +157,22 @@ determine the exact padding."
    (hl-todo :foreground red :weight 'bold)
 
    ;; iedit
-   (iedit-occurrence :foreground blue :weight 'bold :inverse-video t)
-   (iedit-read-only-occurrence :inherit 'region)
+   (iedit-occurrence            :foreground blue :weight 'bold :inverse-video t)
+   (iedit-read-only-occurrence  :inherit 'region)
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-bar                 :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-buffer-file         :inherit 'mode-line-buffer-id :weight 'bold)
+   (doom-modeline-buffer-path         :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; centaur
-   (centaur-tabs-selected :background base3 :foreground fg)
-   (centaur-tabs-unselected :background base2 :foreground grey)
-   (centaur-tabs-selected-modified :background bg :foreground orange)
-   (centaur-tabs-unselected-modified :background base1 :foreground magenta)
-   (centaur-tabs-active-bar-face :background green)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected-modified :foreground green)
+   (centaur-tabs-selected                   :background base3 :foreground fg)
+   (centaur-tabs-unselected                 :background base2 :foreground grey)
+   (centaur-tabs-selected-modified          :background bg :foreground orange)
+   (centaur-tabs-unselected-modified        :background base1 :foreground magenta)
+   (centaur-tabs-active-bar-face            :background green)
+   (centaur-tabs-modified-marker-selected   :inherit 'centaur-tabs-selected-modified :foreground green)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected-modified :foreground green)
 
    ;; Doom dashboard
@@ -187,8 +187,8 @@ determine the exact padding."
    (which-key-local-map-description-face :foreground green)
 
    ;; ivy-mode
-   (ivy-minibuffer-match-highlight :foreground red)
-   (ivy-highlight-face :foreground red)
+   (ivy-minibuffer-match-highlight  :foreground red)
+   (ivy-highlight-face              :foreground red)
    (ivy-minibuffer-match-face-2
      :inherit 'ivy-minibuffer-match-face-1
      :foreground red :background base1 :weight 'semi-bold)
@@ -198,26 +198,28 @@ determine the exact padding."
    (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
 
    ;; treemacs
-   (treemacs-directory-face    :foreground base8)
-   (treemacs-git-modified-face :foreground orange)
-   (treemacs-file-face         :foreground base8)
-   (treemacs-root-face         :foreground red :weight 'bold)
+   (treemacs-directory-face     :foreground base8)
+   (treemacs-git-modified-face  :foreground yellow)
+   (treemacs-git-added-face     :foreground green)
+   (treemacs-git-untracked-face :foreground green-alt)
+   (treemacs-file-face          :foreground fg)
+   (treemacs-root-face          :foreground red :weight 'bold)
 
    ;; magit
-   (magit-blame-headling     :foreground magenta :background base3)
-   (magit-cherry-equvalent   :foreground red)
-   (magit-log-author         :foreground magenta)
-   (magit-section-heading    :foreground red :weight 'bold)
-   (magit-tag                :foreground (doom-lighten orange 0.5))
-   (magit-filename           :foreground teal)
-   (magit-diff-hunk-heading  :background (doom-darken teal 0.5))
+   (magit-blame-headling              :foreground magenta :background base3)
+   (magit-cherry-equvalent            :foreground red)
+   (magit-log-author                  :foreground magenta)
+   (magit-section-heading             :foreground red :weight 'bold)
+   (magit-tag                         :foreground (doom-lighten orange 0.5))
+   (magit-filename                    :foreground teal)
+   (magit-diff-hunk-heading           :background (doom-darken teal 0.5))
    (magit-diff-hunk-heading-highlight :background (doom-darken teal 0.2))
-   (magit-branch-current     :foreground orange)
+   (magit-branch-current              :foreground orange)
 
    ;; popup
-   (popup-tip-face :background base8 :foreground fg)
+   (popup-tip-face        :background base8 :foreground fg)
    (popup-menu-mouse-face :background base8 :foreground fg)
-   (popup-summary-face :background base7 :foreground fg)
+   (popup-summary-face    :background base7 :foreground fg)
 
    ;; rainbow delimiters
    (rainbow-delimiters-depth-1-face :foreground red)
@@ -229,9 +231,9 @@ determine the exact padding."
    (rainbow-delimiters-depth-7-face :foreground cyan)
 
    ;; Dired
-   (diredfl-date-time :foreground teal)
-   (diredfl-number    :foreground green)
-   (diredfl-dir-heading :foreground teal :weight 'bold)
+   (diredfl-date-time    :foreground teal)
+   (diredfl-number       :foreground green)
+   (diredfl-dir-heading  :foreground teal :weight 'bold)
    
    ;; --- major-mode faces -------------------
 
@@ -279,7 +281,7 @@ determine the exact padding."
    (lsp-face-highlight-read    :background (doom-darken dark-blue 0.3))
 
    ;; js
-   (js2-object-property :foreground fg)
+   (js2-object-property        :foreground fg)
    (js2-object-property-access :foreground green)
 
 
