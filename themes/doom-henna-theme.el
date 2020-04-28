@@ -35,42 +35,43 @@ determine the exact padding."
   ;; name        default   256       16
   ((bg         '("#21272e" nil       nil            ))
    (bg-alt     '("#21242b" nil       nil            ))
-   (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#181A1F" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#606F73" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
+   (base0      '("#10151a" "black"   "black"        ))
+   (base1      '("#181A1F" "#2e2e2e" "brightblack"  ))
+   (base2      '("#1B1F23" "#262626" "brightblack"  ))
+   (base3      '("#262D35" "#3f3f3f" "brightblack"  ))
+   (base4      '("#282C34" "#525252" "brightblack"  ))
+   (base5      '("#2c313a" "#6b6b6b" "brightblack"  ))
+   (base6      '("#3B4048" "#979797" "brightblack"  ))
+   (base7      '("#495162" "#dfdfdf" "white"        ))
+   (base8      '("#606F73" "#1e1e1e" "brightblack"  ))
    (fg         '("#f8f8f8" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#737c8c" "#979797" "white"        ))
-   (grey       base4)
+   (fg-alt     '("#6B717D" "#979797" "white"        ))
+   (grey       '("#737c8c"))
    (red        '("#e74c3c" "#ff6655" "red"          ))
    (green      '("#53df83" "#99bb66" "green"        ))
-   (teal       '("#1abc9c" "#44b9b1" "brightgreen"))
+   (teal       '("#1abc9c" "#44b9b1" "brightgreen"  ))
    (blue       '("#56b5c2" "#51afef" "brightblue"   ))
    (cyan       '("#56b6c2" "#46D9FF" "brightcyan"   ))
 
-   ;; Not used
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
+   ;; Not used, so remap to other (henna) colors
+   (orange     '("#9cd230" "#dd8844" "brightred"    ))
    (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
-   (magenta    '("#c678dd" "#c678dd" "brightmagenta"))
-   (violet     '("#a9a1e1" "#a9a1e1" "magenta"      ))
-   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
+   (magenta    '("#30c965"))
+   (violet     fg-alt)
+   (dark-blue  '("#5699AF" "#2257A0" "blue"         ))
    (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
 
    ;; custom
    (green-alt  '("#9cd230"                          ))
+   (green-dark '("#30c965"                          ))
 
    ;; face categories -- required for all themes
    (highlight      teal)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      cyan)
    (builtin        teal)
-   (comments       base4) ;;(if doom-henna-brighter-comments dark-cyan base5))
-   (doc-comments   green);; (doom-lighten (if doom-henna-brighter-comments dark-cyan base5) 0.25))
+   (comments       base8) ;;(if doom-henna-brighter-comments dark-cyan base5))
+   (doc-comments   base8) ;; (doom-lighten (if doom-henna-brighter-comments dark-cyan base5) 0.25))
    (constants      teal)
    (functions      red)
    (keywords       teal)
@@ -85,7 +86,7 @@ determine the exact padding."
    (warning        yellow)
    (success        green)
    (vc-modified    blue)
-   (vc-added       green-alt)
+   (vc-added       orange)
    (vc-deleted     (doom-darken red 0.2))
 
    ;; custom categories
@@ -118,7 +119,7 @@ determine the exact padding."
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
-   ((line-number &override) :foreground base5)
+   ((line-number &override) :foreground base7)
    ((line-number-current-line &override) :foreground fg)
 
    (hl-line :background "black")
@@ -165,10 +166,19 @@ determine the exact padding."
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
+   ;; centaur
+   (centaur-tabs-selected :background base3 :foreground fg)
+   (centaur-tabs-unselected :background base2 :foreground grey)
+   (centaur-tabs-selected-modified :background bg :foreground orange)
+   (centaur-tabs-unselected-modified :background base1 :foreground magenta)
+   (centaur-tabs-active-bar-face :background green)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected-modified :foreground green)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected-modified :foreground green)
+
    ;; Doom dashboard
    (doom-dashboard-banner      :foreground red)
-   (doom-dashboard-footer-icon :foreground green-alt)
-   (doom-dashboard-loaded      :foreground green-alt)
+   (doom-dashboard-footer-icon :foreground orange)
+   (doom-dashboard-loaded      :foreground orange)
 
    ;; which-key
    (which-key-key-face                   :foreground red)
@@ -189,17 +199,25 @@ determine the exact padding."
 
    ;; treemacs
    (treemacs-directory-face    :foreground base8)
-   (treemacs-git-modified-face :foreground yellow)
+   (treemacs-git-modified-face :foreground orange)
    (treemacs-file-face         :foreground base8)
    (treemacs-root-face         :foreground red :weight 'bold)
 
    ;; magit
+   (magit-blame-headling     :foreground magenta :background base3)
+   (magit-cherry-equvalent   :foreground red)
+   (magit-log-author         :foreground magenta)
    (magit-section-heading    :foreground red :weight 'bold)
-   (magit-tag                :foreground (doom-lighten green-alt 0.5))
+   (magit-tag                :foreground (doom-lighten orange 0.5))
    (magit-filename           :foreground teal)
    (magit-diff-hunk-heading  :background (doom-darken teal 0.5))
    (magit-diff-hunk-heading-highlight :background (doom-darken teal 0.2))
-   (magit-branch-current     :foreground green-alt)
+   (magit-branch-current     :foreground orange)
+
+   ;; popup
+   (popup-tip-face :background base8 :foreground fg)
+   (popup-menu-mouse-face :background base8 :foreground fg)
+   (popup-summary-face :background base7 :foreground fg)
 
    ;; rainbow delimiters
    (rainbow-delimiters-depth-1-face :foreground red)
@@ -207,7 +225,7 @@ determine the exact padding."
    (rainbow-delimiters-depth-3-face :foreground teal)
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground blue)
-   (rainbow-delimiters-depth-6-face :foreground green-alt)
+   (rainbow-delimiters-depth-6-face :foreground orange)
    (rainbow-delimiters-depth-7-face :foreground cyan)
 
    ;; Dired
@@ -245,7 +263,7 @@ determine the exact padding."
 
    ;; web-mode
    (web-mode-html-attr-equal-face  :foreground teal)
-   (web-mode-html-tag-face         :foreground green-alt)
+   (web-mode-html-tag-face         :foreground orange)
    (web-mode-html-tag-bracket-face :foreground teal)
    (web-mode-keyword-face          :foreground teal)
    (web-mode-block-control-face    :foreground red)
@@ -253,8 +271,8 @@ determine the exact padding."
    (web-mode-variable-name-face    :foreground (doom-lighten green 0.5))
 
    ;; typescript
-   (typescript-access-modifier-face :foreground green-alt)
-   (typescript-this-face            :foreground green-alt)
+   (typescript-access-modifier-face :foreground orange)
+   (typescript-this-face            :foreground orange)
 
    ;; LSP
    (lsp-face-highlight-textual :background "black")
