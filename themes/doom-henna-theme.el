@@ -58,7 +58,7 @@ determine the exact padding."
    (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
    (magenta    '("#30c965"))
    (violet     fg-alt)
-   (dark-blue  '("#5699AF" "#2257A0" "blue"         ))
+   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
    (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
 
    ;; custom
