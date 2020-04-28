@@ -246,10 +246,21 @@ determine the exact padding."
    (css-selector             :foreground red)
 
    ;; markdown-mode
-   (markdown-markup-face           :foreground base5)
+   (markdown-markup-face           :foreground grey)
    (markdown-header-face           :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-   (markdown-bold-face             :foreground blue :weight 'bold)
+   (markdown-bold-face             :foreground green :weight 'bold)
+   (markdown-url-face              :foreground fg :underline t)
+   (markdown-link-face             :foreground green)
+   (markdown-list-face             :foregroung fg)
+   (markdown-header-face-1         :foreground fg)
+   (markdown-header-face-2         :foreground fg)
+   (markdown-header-face-3         :foreground fg)
+   (markdown-header-face-4         :foreground fg)
+   (markdown-header-face-5         :foreground fg)
+   (markdown-header-face-6         :foreground fg)
+   (markdown-header-delimiter-face :foreground fg)
+   (markdown-inline-code-face      :foreground teal)
 
    ;; org-mode
    (org-hide              :foreground hidden)
