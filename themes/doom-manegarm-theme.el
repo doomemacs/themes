@@ -110,7 +110,7 @@ real file buffers will now be brighter instead."
    ((line-number-current-line &override) :foreground orange)
 
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif-face
+    :inherit 'fixed-pitch-serif
     :slant 'italic
     :foreground comments
     :background nil)
