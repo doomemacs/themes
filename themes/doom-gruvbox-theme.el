@@ -252,7 +252,7 @@ determine the exact padding."
    ((markdown-code-face &override) :background (doom-lighten base2 0.045))
 
    ;; mu4e-view
-   (mu4e-header-key-face :foreground red)
+   (mu4e-header-key-face :foreground red :weight 'bold)
 
    ;; org-mode
    ((outline-1 &override) :foreground yellow)
