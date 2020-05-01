@@ -154,6 +154,9 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
+   ;; LaTeX-mode
+   (font-latex-math-face :foreground green)
+
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
