@@ -91,7 +91,7 @@ determine the exact padding."
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
   ;; --- extra faces ------------------------
-(
+  (
    ;;;;;;;; Editor ;;;;;;;;
    (cursor :background "white")
    (hl-line :background bg-alt)
@@ -232,10 +232,16 @@ determine the exact padding."
    (magit-diff-hunk-heading-highlight :background accent :foreground fg)
    (magit-diff-context                :foreground bg-alt :foreground fg-alt)
 
- 
+
    ;;;;;;;; Major mode faces ;;;;;;;;
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground keywords)
+
+   ;; elisp-mode
+   (highlight-quoted-symbol :foreground dark-cyan)
+
+   ;; LaTeX-mode
+   (font-latex-math-face :foreground dark-cyan)
 
    ;; markdown-mode
    (markdown-blockquote-face :inherit 'italic :foreground cyan)
@@ -244,6 +250,9 @@ determine the exact padding."
    (markdown-pre-face  :foreground green)
    (markdown-link-face :inherit 'bold :foreground cyan)
    ((markdown-code-face &override) :background (doom-lighten base2 0.045))
+
+   ;; mu4e-view
+   (mu4e-header-key-face :foreground red)
 
    ;; org-mode
    ((outline-1 &override) :foreground yellow)
