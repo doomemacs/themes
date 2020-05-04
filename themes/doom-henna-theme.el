@@ -86,7 +86,7 @@ determine the exact padding."
    (warning        yellow)
    (success        green)
    (vc-modified    blue)
-   (vc-added       orange)
+   (vc-added       green-alt)
    (vc-deleted     (doom-darken red 0.2))
 
    ;; custom categories
@@ -169,7 +169,7 @@ determine the exact padding."
    ;; centaur
    (centaur-tabs-selected                   :background base3 :foreground fg)
    (centaur-tabs-unselected                 :background base2 :foreground grey)
-   (centaur-tabs-selected-modified          :background bg :foreground orange)
+   (centaur-tabs-selected-modified          :background bg :foreground green-alt)
    (centaur-tabs-unselected-modified        :background base1 :foreground magenta)
    (centaur-tabs-active-bar-face            :background green)
    (centaur-tabs-modified-marker-selected   :inherit 'centaur-tabs-selected-modified :foreground green)
@@ -177,8 +177,8 @@ determine the exact padding."
 
    ;; Doom dashboard
    (doom-dashboard-banner      :foreground red)
-   (doom-dashboard-footer-icon :foreground orange)
-   (doom-dashboard-loaded      :foreground orange)
+   (doom-dashboard-footer-icon :foreground green-alt)
+   (doom-dashboard-loaded      :foreground green-alt)
 
    ;; which-key
    (which-key-key-face                   :foreground red)
@@ -213,11 +213,11 @@ determine the exact padding."
    (magit-cherry-equvalent            :foreground red)
    (magit-log-author                  :foreground magenta)
    (magit-section-heading             :foreground red :weight 'bold)
-   (magit-tag                         :foreground (doom-lighten orange 0.5))
+   (magit-tag                         :foreground (doom-lighten green-alt 0.5))
    (magit-filename                    :foreground teal)
    (magit-diff-hunk-heading           :background (doom-darken teal 0.5))
    (magit-diff-hunk-heading-highlight :background (doom-darken teal 0.2))
-   (magit-branch-current              :foreground orange)
+   (magit-branch-current              :foreground green-alt)
 
    ;; popup
    (popup-tip-face        :background base8 :foreground fg)
@@ -230,7 +230,7 @@ determine the exact padding."
    (rainbow-delimiters-depth-3-face :foreground teal)
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground blue)
-   (rainbow-delimiters-depth-6-face :foreground orange)
+   (rainbow-delimiters-depth-6-face :foreground green-alt)
    (rainbow-delimiters-depth-7-face :foreground cyan)
 
    ;; Dired
@@ -280,7 +280,7 @@ determine the exact padding."
 
    ;; web-mode
    (web-mode-html-attr-equal-face  :foreground teal)
-   (web-mode-html-tag-face         :foreground orange)
+   (web-mode-html-tag-face         :foreground green-alt)
    (web-mode-html-tag-bracket-face :foreground teal)
    (web-mode-keyword-face          :foreground teal)
    (web-mode-block-control-face    :foreground red)
@@ -288,8 +288,8 @@ determine the exact padding."
    (web-mode-variable-name-face    :foreground (doom-lighten green 0.5))
 
    ;; typescript
-   (typescript-access-modifier-face :foreground orange)
-   (typescript-this-face            :foreground orange)
+   (typescript-access-modifier-face :foreground green-alt)
+   (typescript-this-face            :foreground green-alt)
 
    ;; LSP
    (lsp-face-highlight-textual :background "black")
