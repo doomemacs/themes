@@ -36,6 +36,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
+  - [X] `doom-henna`: base on vscode-henna [Henna][henna] (thanks to [jsoa])
   - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
   - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
@@ -65,7 +66,6 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  - [ ] `doom-henna`: base on vscode-henna
   
 ## Features
 
@@ -200,6 +200,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo 
 [gruvbox]: https://github.com/morhetz/gruvbox
+[henna]: https://github.com/httpsterio/vscode-henna
 [horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
