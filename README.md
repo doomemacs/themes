@@ -207,6 +207,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
 [JongW]: https://github.com/JongW
+[jsoa]: https://github.com/jsoa
 [jwintz]: https://github.com/jwintz
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
