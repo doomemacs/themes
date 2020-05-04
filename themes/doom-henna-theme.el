@@ -34,7 +34,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#21272e" nil       nil            ))
-   (bg-alt     '("#21242b" nil       nil            ))
+   (bg-alt     '("#1B1F23" nil       nil            ))
    (base0      '("#10151a" "black"   "black"        ))
    (base1      '("#181A1F" "#2e2e2e" "brightblack"  ))
    (base2      '("#1B1F23" "#262626" "brightblack"  ))
@@ -44,7 +44,7 @@ determine the exact padding."
    (base6      '("#3B4048" "#979797" "brightblack"  ))
    (base7      '("#495162" "#dfdfdf" "white"        ))
    (base8      '("#606F73" "#1e1e1e" "brightblack"  ))
-   (fg         '("#f8f8f8" "#bfbfbf" "brightwhite"  ))
+   (fg         '("#f8f8f0" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#6B717D" "#979797" "white"        ))
    (grey       '("#737c8c"))
    (red        '("#e74c3c" "#ff6655" "red"          ))
@@ -54,12 +54,12 @@ determine the exact padding."
    (cyan       '("#56b6c2" "#46D9FF" "brightcyan"   ))
 
    ;; Not used, so remap to other (henna) colors
-   (orange     '("#9cd230" "#dd8844" "brightred"    ))
+   (orange     red)
    (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
-   (magenta    '("#30c965"))
-   (violet     fg-alt)
+   (magenta    '("#FFB8D1" "#FFB8D1" "magenta"      ))
+   (violet     '("#C5A3FF" "#C5A3FF" "brightmagenta"))
    (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
-   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+   (dark-cyan  '("#2e4a54" "#204052" "cyan"         ))
 
    ;; custom
    (green-alt  '("#9cd230"                          ))
@@ -70,8 +70,8 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.1))
    (selection      cyan)
    (builtin        teal)
-   (comments       base8) ;;(if doom-henna-brighter-comments dark-cyan base5))
-   (doc-comments   base8) ;; (doom-lighten (if doom-henna-brighter-comments dark-cyan base5) 0.25))
+   (comments       base8)
+   (doc-comments   base8)
    (constants      teal)
    (functions      red)
    (keywords       teal)
@@ -81,7 +81,7 @@ determine the exact padding."
    (strings        green)
    (variables      fg)
    (numbers        teal)
-   (region         (doom-darken dark-cyan 0.5)) ;;`(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
+   (region         dark-cyan)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -266,6 +266,7 @@ determine the exact padding."
    (org-hide              :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
    (org-code              :foreground blue)
+   (org-table             :foreground fg-alt)
 
    ;; outline
    (outline-1 :foreground red                         :weight 'bold :extend t)
