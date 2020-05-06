@@ -170,7 +170,7 @@ determine the exact padding."
    ((org-quote &override) :background base1)
 
    ;; org-mode
-   (org-hide :foreground hidden)
+   (org-hide :foreground bg)
    (solaire-org-hide-face :foreground hidden)
 
    (tooltip              :background bg-alt :foreground fg))
