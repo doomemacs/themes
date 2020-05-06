@@ -93,7 +93,7 @@ variant. Defaults to soft."
    (turquoise4        '("#61ACBB" "#5fafaf" "brightblue"    ))
 
    ;; face categories -- required for all themes
-   (highlight      fg)
+   (highlight      base4)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      base3)
    (builtin        orange)
@@ -304,7 +304,6 @@ variant. Defaults to soft."
    (helm-visible-mark           :foreground "black" :background light3)
 
    ;; ivy
-   (ivy-current-match               :foreground base8 :weight 'bold :underline t)
    (ivy-minibuffer-match-face-1     :foreground orange)
    (ivy-minibuffer-match-face-2     :foreground yellow)
    (ivy-minibuffer-match-face-3     :foreground faded-orange)
@@ -448,7 +447,7 @@ variant. Defaults to soft."
 
    ;; lsp
    (lsp-ui-doc-background      :background base2)
-   (lsp-face-highlight-read    :background base4)
+   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
    (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
 
