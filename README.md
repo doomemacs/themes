@@ -103,6 +103,9 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - I'm working on making my modeline more accessible. In the meantime, check
     out [my mode-line configuration][mode-line] in my [emacs.d].
 
+## Themes customization
+There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable. 
+
 ## Install
 
 ### Doom Emacs
