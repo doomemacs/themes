@@ -107,7 +107,7 @@ variant. Defaults to soft."
    (type           violet)
    (strings        green)
    (variables      blue)
-   (numbers        orange)
+   (numbers        violet)
    (region         `(,(doom-darken (car bg-alt) 0.1) ,@(doom-darken (cdr base0) 0.3)))
    (error          red)
    (warning        orange)
@@ -311,7 +311,7 @@ variant. Defaults to soft."
    (ivy-minibuffer-match-face-4     :foreground faded-yellow)
 
    ;; posframe
-   (ivy-posframe               :background base0)
+   (ivy-posframe               :background bg-alt)
 
    ;; magit
    (magit-bisect-bad                      :foreground faded-red)
@@ -448,7 +448,7 @@ variant. Defaults to soft."
 
    ;; lsp
    (lsp-ui-doc-background      :background base2)
-   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
+   (lsp-face-highlight-read    :background base4)
    (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
 
