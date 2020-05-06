@@ -36,6 +36,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
+  - [X] `doom-gruvbox-light`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks for [jsoa])
   - [X] `doom-henna`: base on vscode-henna [Henna][henna] (thanks to [jsoa])
   - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
   - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
