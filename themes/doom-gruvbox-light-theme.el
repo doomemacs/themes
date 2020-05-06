@@ -30,7 +30,7 @@ determine the exact padding."
 
 (defcustom doom-gruvbox-light-variant nil
   "If non-nil, choice of hard or medium can be use to change the
-variant. Defaults to soft."
+variant. Defaults to medium."
   :group 'doom-gruvbox-light-theme
   :type  'string)
 
@@ -41,12 +41,12 @@ variant. Defaults to soft."
   ;; name        default   256       16
   ((bg
     (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))    ;; gruvbox-dark0_hard
-          ((equal doom-gruvbox-light-variant "medium") '("#fbf1c7" "#ffffd7" nil))  ;; gruvbox-dark0
-          (t '("#f2e5bc" "#ffffd7" nil))))                                          ;; gruvbox-dark0_soft
+          ((equal doom-gruvbox-light-variant "soft") '("#f2e5bc" "#ffffd7" nil))  ;; gruvbox-dark0
+          (t '("#fbf1c7" "#ffffd7" nil))))                                          ;; gruvbox-dark0_soft
    (bg-alt
     (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil)) ;; gruvbox-dark0
-          ((equal doom-gruvbox-light-variant "medium")  '("#f2e5bc" "#ffffd7" nil)) ;; gruvbox-dark0_soft
-          (t '("#ebdbb2" "#ffffaf" nil))))                                          ;; gruvbox-dark1
+          ((equal doom-gruvbox-light-variant "soft")  '("#ebdbb2" "#ffffaf" nil)) ;; gruvbox-dark0_soft
+          (t '("#f2e5bc" "#ffffd7" nil))))                                          ;; gruvbox-dark1
    (base0      '("#f0f0f0" "#f0f0f0" "white"           )) ;;
    (base1      '("#ebdbb2" "#ffffaf" "brightblack"     )) ;; gruvbox-dark1
    (base2      '("#d5c4a1" "#d7d6af" "brightblack"     )) ;; gruvbox-dark2
