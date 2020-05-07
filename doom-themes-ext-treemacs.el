@@ -25,6 +25,11 @@ variable-pitch face."
                 (const :doc "A colorful icon theme leveraging all-the-icons" "doom-colors"))
   :group 'doom-themes-treemacs)
 
+(defcustom doom-themes-treemacs-bitmap-indicator-width 3
+  "Default treemacs bitmap indicators width"
+  :type 'integer
+  :group 'doom-themes-treemacs)
+
 ;;
 ;;; Faces
 (defface doom-themes-treemacs-root-face
@@ -40,14 +45,22 @@ variable-pitch face."
 ;;
 ;;; Library
 
-(defun doom-themes-hide-fringes ()
-  "Remove fringes in currnent window."
+(defun doom-themes-hide-fringes-maybe ()
+  "Remove fringes in current window if `treemacs-fringe-indicator-mode' is nil"
   (when (display-graphic-p)
-    (set-window-fringes nil 0 0)))
+    (if treemacs-fringe-indicator-mode
+        (set-window-fringes nil doom-themes-treemacs-bitmap-indicator-width 0)
+      (set-window-fringes nil 0 0))))
 
 (defun doom-themes-setup-tab-width (&rest _)
   "Set `tab-width' to 1, so tab characters don't ruin formatting."
   (setq tab-width 1))
+
+(defun doom-themes-define-treemacs-fringe-indicator-bitmap ()
+  "Defines `treemacs--fringe-indicator-bitmap'"
+  (if (fboundp 'define-fringe-bitmap)
+      (define-fringe-bitmap 'treemacs--fringe-indicator-bitmap
+        (make-vector 26 #b111) nil doom-themes-treemacs-bitmap-indicator-width)))
 
 (defun doom-themes-setup-line-spacing ()
   "Set `line-spacing' in treemacs buffers."
@@ -121,6 +134,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
 
   (add-hook 'treemacs-mode-hook #'doom-themes-setup-tab-width)
   (add-hook 'treemacs-mode-hook #'doom-themes-setup-line-spacing)
+  (add-hook 'treemacs-mode-hook #'doom-themes-define-treemacs-fringe-indicator-bitmap)
 
   ;; Fix #293: tabs messing up formatting in `treemacs-icons-dired-mode'
   (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-fix-treemacs-icons-dired-mode)
@@ -130,8 +144,8 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
 
   ;; Disable fringes (and reset them everytime treemacs is selected because it
   ;; may change due to outside factors)
-  (add-hook 'treemacs-mode-hook #'doom-themes-hide-fringes)
-  (advice-add #'treemacs-select-window :after #'doom-themes-hide-fringes)
+  (add-hook 'treemacs-mode-hook #'doom-themes-hide-fringes-maybe)
+  (advice-add #'treemacs-select-window :after #'doom-themes-hide-fringes-maybe)
 
   ;; variable-pitch labels for files/folders
   (doom-themes-enable-treemacs-variable-pitch-labels)
