@@ -203,6 +203,10 @@ determine the exact padding."
    ;; latex
    (font-latex-sedate-face :foreground base6)
 
+   ;; notmuch
+   (notmuch-message-summary-face :foreground teal)
+   (notmuch-wash-cited-text :foreground base6)
+
    )
 
 
