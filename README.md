@@ -4,8 +4,8 @@
 
 - [Flagship Themes](#flagship-themes)
     - [doom-one](#doom-one)
-    - [doom-one-light (WIP)](#doom-one-light-wip)
-    - [doom-vibrant (WIP)](#doom-vibrant-wip)
+    - [doom-one-light (WIP)](#doom-one-light)
+    - [doom-vibrant (WIP)](#doom-vibrant)
 - [Additional Themes](#additional-themes)
     - [doom-acario-dark](#doom-acario-dark)
     - [doom-acario-light](#doom-acario-light)
