@@ -114,6 +114,10 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground bg-alt)
 
+   (solaire-mode-line-face
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+
    ;; Doom modeline
    (doom-modeline-bar :background base6)
    (doom-modeline-info :inherit 'mode-line-emphasis)
