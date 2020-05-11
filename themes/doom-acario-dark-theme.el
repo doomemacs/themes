@@ -112,7 +112,8 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
 
 ;;;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
+  (((all-the-icons-dblue &override) :foreground teal)
+   (elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
