@@ -16,6 +16,11 @@
   :group 'doom-solarized-dark-theme
   :type 'boolean)
 
+(defcustom doom-solarized-dark-brighter-text nil
+  "If non-nil, default text will be brighter."
+  :group 'doom-solarized-dark-theme
+  :type 'boolean)
+
 (defcustom doom-solarized-dark-comment-bg doom-solarized-dark-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
@@ -33,19 +38,21 @@ determine the exact padding."
   "A dark theme inspired by VS Code Solarized Dark"
 
   ;; name        default   256       16
-  ((bg         '("#002b36" nil       nil            ))
-   (bg-alt     '("#00212B" nil       nil           ))
-   (base0      '("#073642" "black"   "black"       ))
-   (base1      '("#03282F" "#1e1e1e" "brightblack" ))
-   (base2      '("#00212C" "#2e2e2e" "brightblack" ))
-   (base3      '("#13383C" "#262626" "brightblack" ))
-   (base4      '("#56697A" "#3f3f3f" "brightblack" ))
-   (base5      '("#405A61" "#525252" "brightblack" ))
-   (base6      '("#96A7A9" "#6b6b6b" "brightblack" ))
-   (base7      '("#788484" "#979797" "brightblack" ))
-   (base8      '("#626C6C" "#dfdfdf" "white"       ))
-   (fg-alt     '("#657b83" "#2d2d2d" "white"       ))
-   (fg         '("#839496" "#bfbfbf" "brightwhite" ))
+  ((bg         '("#002b36" "#002b36"       nil     ))
+   (bg-alt     '("#00212B" "#00212B"       nil     ))
+   (base0      '("#073642" "#073642"   "black"     ))
+   (base1      '("#03282F" "#03282F" "brightblack" ))
+   (base2      '("#00212C" "#00212C" "brightblack" ))
+   (base3      '("#13383C" "#13383C" "brightblack" ))
+   (base4      '("#56697A" "#56697A" "brightblack" ))
+   (base5      '("#405A61" "#405A61" "brightblack" ))
+   (base6      '("#96A7A9" "#96A7A9" "brightblack" ))
+   (base7      '("#788484" "#788484" "brightblack" ))
+   (base8      '("#626C6C" "#626C6C" "white"       ))
+   (fg-alt     '("#657b83" "#657b83" "white"       ))
+   (fg         (if doom-solarized-dark-brighter-text
+		   '("#BBBBBB" "#BBBBBB" "brightwhite")
+		   '("#839496" "#839496" "brightwhite")))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))
