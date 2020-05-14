@@ -97,8 +97,8 @@ Can be an integer to determine the exact padding."
    (swiper-line-face                             :inherit 'hl-line)
 
    ;; Centaur tabs
-   (centaur-tabs-selected :foreground yellow)
-   (centaur-tabs-unselected :foreground fg-alt)
+   (centaur-tabs-selected :foreground yellow :background bg)
+   (centaur-tabs-unselected :foreground fg-alt :background bg-alt)
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected)
    (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected)
    (centaur-tabs-active-bar-face :background yellow)
