@@ -669,6 +669,16 @@
     ;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
 
+    ;; highlight-symbol
+    (highlight-symbol-face
+     (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
+    
+    ;; highlight-thing
+    (highlight-thing
+     (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
+
     ;; hlinum
     (linum-highlight-face :foreground fg :distant-foreground nil :weight 'normal)
 

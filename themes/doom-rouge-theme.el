@@ -109,6 +109,12 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((lazy-highlight :background base4)
 
+   ;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+
    ;; ivy
    (ivy-current-match :background base3)
    (ivy-minibuffer-match-face-2 :foreground highlight :weight 'extra-bold)

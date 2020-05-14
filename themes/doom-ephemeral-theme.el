@@ -172,6 +172,12 @@
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
+   ;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+
    ;; --- major-mode faces -------------------
    ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
 
