@@ -872,6 +872,10 @@
     (magit-filename :foreground violet)
     (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
 
+    ;; minimap
+    (minimap-current-line-face :background selection)
+    (minimap-active-region-background :background vertical-bar)
+    
     ;; mic-paren
     (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
     (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
