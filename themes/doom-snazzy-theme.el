@@ -98,6 +98,9 @@
    (ivy-posframe-border :background ui3)
 
    ;; org
+   ((org-block &override) :background bg-alt)
+   ((org-block-begin-line &override) :background bg-alt)
+   ((org-block-end-line &override) :background bg-alt)
    ((outline-3 &override) :foreground dark-blue))) ; this is ff0000 from something above, dunno what
 
 ;;; doom-snazzy-theme.el ends here
