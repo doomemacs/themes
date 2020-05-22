@@ -160,6 +160,9 @@ determine the exact padding."
    ((markdown-code-face &override) :background (doom-lighten bg 0.05))
 
    ;; org-mode
+   ((org-block &override) :background bg-alt)
+   ((org-block-begin-line &override) :background bg-alt)
+   ((org-block-end-line &override) :background bg-alt)
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
 
