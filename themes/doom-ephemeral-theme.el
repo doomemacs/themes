@@ -204,7 +204,7 @@
    ;; org-mode
    ((org-block &override) :background base2)
    ((org-block-begin-line &override) :inherit 'bold :background base2 :foreground light-grey)
-   (org-hide :foreground hidden :background bg-alt)
+   (org-hide :foreground hidden)
    (org-link :inherit 'underline :foreground pink)
    (org-document-info-keyword :foreground comments)
    (org-agenda-done :foreground teal)
