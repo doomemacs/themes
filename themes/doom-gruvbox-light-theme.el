@@ -29,8 +29,8 @@ determine the exact padding."
   :type '(choice integer boolean))
 
 (defcustom doom-gruvbox-light-variant nil
-  "If non-nil, choice of hard or medium can be use to change the
-variant. Defaults to medium."
+  "A choice of \"hard\" or \"soft\" can be used to change the
+background contrast. All other values default to \"medium\"."
   :group 'doom-gruvbox-light-theme
   :type  'string)
 
@@ -40,13 +40,13 @@ variant. Defaults to medium."
 
   ;; name        default   256       16
   ((bg
-    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))    ;; gruvbox-dark0_hard
-          ((equal doom-gruvbox-light-variant "soft") '("#f2e5bc" "#ffffd7" nil))  ;; gruvbox-dark0
-          (t '("#fbf1c7" "#ffffd7" nil))))                                          ;; gruvbox-dark0_soft
+    (cond ((equal doom-gruvbox-light-variant "hard") '("#f9f5d7" "#ffffd7" nil))   ; bg0_h
+          ((equal doom-gruvbox-light-variant "soft") '("#f2e5bc" "#ffffd7" nil))   ; bg0_s
+          (t                                         '("#fbf1c7" "#ffffd7" nil)))) ; bg0
    (bg-alt
-    (cond ((equal doom-gruvbox-light-variant "hard")    '("#fbf1c7" "#ffffd7" nil)) ;; gruvbox-dark0
-          ((equal doom-gruvbox-light-variant "soft")  '("#ebdbb2" "#ffffaf" nil)) ;; gruvbox-dark0_soft
-          (t '("#f2e5bc" "#ffffd7" nil))))                                          ;; gruvbox-dark1
+    (cond ((equal doom-gruvbox-light-variant "hard") '("#fbf1c7" "#ffffd7" nil))
+          ((equal doom-gruvbox-light-variant "soft") '("#ebdbb2" "#ffffaf" nil))
+          (t                                         '("#f2e5bc" "#ffffd7" nil))))
    (base0      '("#f0f0f0" "#f0f0f0" "white"           )) ;;
    (base1      '("#ebdbb2" "#ffffaf" "brightblack"     )) ;; gruvbox-dark1
    (base2      '("#d5c4a1" "#d7d6af" "brightblack"     )) ;; gruvbox-dark2
@@ -390,7 +390,7 @@ variant. Defaults to medium."
    (rainbow-delimiters-depth-11-face :foreground delimiter-3)
    (rainbox-delimiters-depth-12-face :foreground faded-orange)
    (rainbow-delimiters-unmatched-face: :foreground fg :background 'nil)
-   
+
    ;; swiper
    (swiper-line-face    :background base3 :foreground base0)
    (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
