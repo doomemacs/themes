@@ -122,8 +122,6 @@ determine the exact padding."
    ((line-number &override) :foreground base7)
    ((line-number-current-line &override) :foreground fg)
 
-   (hl-line :background "black")
-
    (font-lock-operator-face
     :foreground operators)
 
