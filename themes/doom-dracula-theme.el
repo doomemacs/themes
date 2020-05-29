@@ -81,7 +81,7 @@ determine the exact padding."
    (type           violet)
    (strings        yellow)
    (variables      base8)
-   (numbers        red)
+   (numbers        violet)
    (region         base3)
    (error          red)
    (warning        yellow)
@@ -126,7 +126,7 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   ((line-number &override) :foreground base4)
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
@@ -228,9 +228,9 @@ determine the exact padding."
    (web-mode-builtin-face :foreground orange)
    (web-mode-css-property-name-face :foreground violet)
    (web-mode-css-selector-face :foreground green)
-   (web-mode-html-attr-name-face :foreground violet)
-   (web-mode-html-attr-value-face :foreground green)
-   (web-mode-html-tag-bracket-face :inherit 'font-lock-comment-face)
+   (web-mode-html-attr-name-face :foreground green)
+   (web-mode-html-attr-value-face :foreground yellow)
+   (web-mode-html-tag-bracket-face :inherit 'default)
    (web-mode-html-tag-face :foreground magenta :weight 'bold)
    (web-mode-keyword-face :foreground magenta)
    (web-mode-preprocessor-face :foreground orange)
