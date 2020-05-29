@@ -265,6 +265,12 @@ background contrast. All other values default to \"medium\"."
    ;; elisp-mode
    (highlight-quoted-symbol :foreground dark-cyan)
 
+   ;; highlight-symbol
+   (highlight-symbol-face :background (doom-lighten base3 0.03) :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background (doom-lighten base3 0.03) :distant-foreground fg-alt)
+
    ;; LaTeX-mode
    (font-latex-math-face :foreground dark-cyan)
 
