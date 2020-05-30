@@ -225,8 +225,8 @@ background contrast. All other values default to \"medium\"."
    (button :foreground cyan :underline t :bold t)
 
    ;; ediff
-   (ediff-fine-diff-A    :background (doom-blend red bg 0.3) :weight 'bold)
-   (ediff-current-diff-A :background (doom-blend red bg 0.1))
+   (ediff-fine-diff-A    :background (doom-blend red bg 0.4) :weight 'bold)
+   (ediff-current-diff-A :background (doom-blend red bg 0.2))
 
    ;; flycheck
    (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
