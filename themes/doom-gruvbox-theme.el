@@ -68,20 +68,6 @@ background contrast. All other values default to \"medium\"."
    (cyan       '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
    (dark-cyan  '("#689d6a" "#689d6a" "cyan"))          ; aqua
 
-   ;; Extra
-   (aqua      '("#8ec07c" "#8ec07c" "brightcyan"))  ; bright-aqua
-   (dark-aqua '("#689d6a" "#689d6a" "cyan"))        ; aqua
-   (bg0       '("#282828" "#282828" "brightblack")) ; bg0
-   (bg1       '("#3c3836" "#383838" "brightblack")) ; bg1
-   (bg2       '("#504945" "#494949" "brightblack")) ; bg2
-   (bg3       '("#665c54" "#5c5c5c" "brightblack")) ; bg3
-   (bg4       '("#7c6f64" "#6f6f6f" "brightblack")) ; bg4
-   (fg0       '("#fbf1c7" "#fbfbfb" "brightwhite")) ; fg0
-   (fg1       '("#ebdbb2" "#dfdfdf" "brightwhite")) ; fg/fg1
-   (fg2       '("#d5c4a1" "#cccccc" "brightblack")) ; fg2
-   (fg3       '("#bdae93" "#bdbdbd" "brightblack")) ; fg3
-   (fg4       '("#a89984" "#999999" "brightblack")) ; fg4
-
    ;; face categories
    (highlight      yellow)
    (vertical-bar   grey)
@@ -90,9 +76,9 @@ background contrast. All other values default to \"medium\"."
    (comments       (if doom-gruvbox-brighter-comments magenta grey))
    (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
    (constants      violet)
-   (functions      aqua)
+   (functions      cyan)
    (keywords       red)
-   (methods        aqua)
+   (methods        cyan)
    (operators      cyan)
    (type           yellow)
    (strings        green)
@@ -121,7 +107,7 @@ background contrast. All other values default to \"medium\"."
    ;;;;;;;; Editor ;;;;;;;;
    (cursor :background "white")
    (hl-line :background bg-alt)
-   ((line-number &override) :foreground bg4)
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :background bg-alt2 :foreground fg :bold t)
 
    ;; Vimish-fold
@@ -156,14 +142,14 @@ background contrast. All other values default to \"medium\"."
    (isearch :foreground base0 :background orange)
    (evil-search-highlight-persist-highlight-face :background yellow)
    (lazy-highlight :background yellow :foreground base0 :distant-foreground base0 :bold bold)
-   (evil-ex-substitute-replacement :foreground aqua :inherit 'evil-ex-substitute-matches)
+   (evil-ex-substitute-replacement :foreground cyan :inherit 'evil-ex-substitute-matches)
 
    ;; evil-snipe
    (evil-snipe-first-match-face :foreground "white" :background yellow)
    (evil-snipe-matches-face     :foreground yellow :bold t :underline t)
 
    ;;;;;;;; Mini-buffers ;;;;;;;;
-   (minibuffer-prompt :foreground aqua)
+   (minibuffer-prompt :foreground cyan)
    (solaire-hl-line-face :background bg-alt2)
 
    ;; ivy
@@ -173,8 +159,8 @@ background contrast. All other values default to \"medium\"."
    (ivy-grep-line-number :background nil :foreground cyan)
    (ivy-minibuffer-match-face-1 :background nil :foreground yellow)
    (ivy-minibuffer-match-face-2 :background nil :foreground yellow)
-   (ivy-minibuffer-match-highlight :foreground aqua)
-   (counsel-key-binding :foreground aqua)
+   (ivy-minibuffer-match-highlight :foreground cyan)
+   (counsel-key-binding :foreground cyan)
 
    ;; swiper
    (swiper-line-face :background bg-alt2)
@@ -184,7 +170,7 @@ background contrast. All other values default to \"medium\"."
    (ivy-posframe-border :background base1)
 
    ;; neotree
-   (neo-root-dir-face   :foreground aqua)
+   (neo-root-dir-face   :foreground cyan)
    (doom-neotree-dir-face :foreground cyan)
    (neo-dir-link-face   :foreground cyan)
    (doom-neotree-file-face :foreground fg)
@@ -195,36 +181,36 @@ background contrast. All other values default to \"medium\"."
    ;; dired
    (dired-directory :foreground cyan)
    (dired-marked :foreground yellow)
-   (dired-symlink :foreground aqua)
-   (dired-header :foreground aqua)
+   (dired-symlink :foreground cyan)
+   (dired-header :foreground cyan)
 
    ;;;;;;;; Brackets ;;;;;;;;
    ;; Rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground red)
    (rainbow-delimiters-depth-2-face :foreground yellow)
-   (rainbow-delimiters-depth-3-face :foreground aqua)
+   (rainbow-delimiters-depth-3-face :foreground cyan)
    (rainbow-delimiters-depth-4-face :foreground red)
    (rainbow-delimiters-depth-5-face :foreground yellow)
-   (rainbow-delimiters-depth-6-face :foreground aqua)
+   (rainbow-delimiters-depth-6-face :foreground cyan)
    (rainbow-delimiters-depth-7-face :foreground red)
    ;; Bracket pairing
-   ((show-paren-match &override) :foreground nil :background bg4 :bold t)
+   ((show-paren-match &override) :foreground nil :background base5 :bold t)
    ((show-paren-mismatch &override) :foreground nil :background "red")
 
    ;;;;;;;; which-key ;;;;;;;;
-   (which-func :foreground aqua)
+   (which-func :foreground cyan)
    (which-key-command-description-face :foreground fg)
    (which-key-group-description-face :foreground (doom-lighten fg-alt 0.25))
    (which-key-local-map-description-face :foreground cyan)
 
    ;;;;;;;; Company ;;;;;;;;
-   (company-preview-common :foreground aqua)
-   (company-tooltip-common :foreground aqua)
-   (company-tooltip-common-selection :foreground aqua)
+   (company-preview-common :foreground cyan)
+   (company-tooltip-common :foreground cyan)
+   (company-tooltip-common-selection :foreground cyan)
    (company-tooltip-annotation :foreground cyan)
    (company-tooltip-annotation-selection :foreground cyan)
    (company-scrollbar-bg :background bg-alt)
-   (company-scrollbar-fg :background aqua)
+   (company-scrollbar-fg :background cyan)
    (company-tooltip-selection :background bg-alt2)
    (company-tooltip-mouse :background bg-alt2 :foreground nil)
 
@@ -232,11 +218,11 @@ background contrast. All other values default to \"medium\"."
    (+workspace-tab-selected-face :background dark-green :foreground "white")
 
    ;; Undo tree
-   (undo-tree-visualizer-active-branch-face :foreground aqua)
+   (undo-tree-visualizer-active-branch-face :foreground cyan)
    (undo-tree-visualizer-current-face :foreground yellow)
 
    ;; General UI
-   (button :foreground aqua :underline t :bold t)
+   (button :foreground cyan :underline t :bold t)
 
    ;; ediff
    (ediff-fine-diff-A    :background (doom-blend red bg 0.3) :weight 'bold)
@@ -245,7 +231,7 @@ background contrast. All other values default to \"medium\"."
    ;; flycheck
    (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
    (flycheck-warning :underline `(:style wave :color ,yellow) :background base3)
-   (flycheck-info    :underline `(:style wave :color ,aqua)  :background base3)
+   (flycheck-info    :underline `(:style wave :color ,cyan)  :background base3)
 
    ;; helm
    (helm-swoop-target-line-face :foreground magenta :inverse-video t)
@@ -278,7 +264,7 @@ background contrast. All other values default to \"medium\"."
    (markdown-blockquote-face :inherit 'italic :foreground cyan)
    (markdown-list-face :foreground red)
    (markdown-url-face :foreground red)
-   (markdown-pre-face  :foreground aqua)
+   (markdown-pre-face  :foreground cyan)
    (markdown-link-face :inherit 'bold :foreground cyan)
    ((markdown-code-face &override) :background (doom-lighten base2 0.045))
 
@@ -288,7 +274,7 @@ background contrast. All other values default to \"medium\"."
    ;; org-mode
    ((outline-1 &override) :foreground yellow)
    ((outline-2 &override) :foreground cyan)
-   ((outline-3 &override) :foreground aqua)
+   ((outline-3 &override) :foreground cyan)
    (org-ellipsis :underline nil :foreground orange)
    (org-tag :foreground yellow :bold nil)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
@@ -297,8 +283,8 @@ background contrast. All other values default to \"medium\"."
 
    ;; web-mode
    (web-mode-html-tag-bracket-face :foreground blue)
-   (web-mode-html-tag-face         :foreground aqua)
-   (web-mode-html-attr-name-face   :foreground aqua))
+   (web-mode-html-tag-face         :foreground cyan)
+   (web-mode-html-attr-name-face   :foreground cyan))
   ;; --- extra variables --------------------
   ;; ()
   )
