@@ -99,6 +99,9 @@ determine the exact padding."
    (lazy-highlight                               :inherit 'match)
    (isearch-fail                                 :foreground red)
 
+   ;; deadgrep
+   (deadgrep-match-face                          :inherit 'match :box `(:line-width 2 :color ,yellow))
+
    ;; mode-line
    (mode-line                                    :background base3 :foreground fg
                                                  :box (if -modeline-pad `(:line-width ,-modeline-pad :color red)))
