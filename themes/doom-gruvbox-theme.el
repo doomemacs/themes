@@ -284,7 +284,9 @@ background contrast. All other values default to \"medium\"."
    ;; web-mode
    (web-mode-html-tag-bracket-face :foreground blue)
    (web-mode-html-tag-face         :foreground cyan)
-   (web-mode-html-attr-name-face   :foreground cyan))
+   (web-mode-html-attr-name-face   :foreground cyan)
+   (web-mode-json-key-face         :foreground green)
+   (web-mode-json-context-face     :foreground cyan))
   ;; --- extra variables --------------------
   ;; ()
   )
