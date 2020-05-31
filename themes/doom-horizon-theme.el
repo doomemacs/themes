@@ -231,7 +231,7 @@
     (company-box-background    :background base0 :foreground fg)
     (company-tooltip-common    :foreground red :weight 'bold)
     (company-tooltip-selection :background hor-highlight :foreground fg)
-    
+
    ;; treemacs
    (treemacs-root-face :foreground fg :weight 'bold :height 1.2)
    (doom-themes-treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
@@ -241,11 +241,16 @@
 
    ;; js2-mode
    (js2-object-property        :foreground red)
-   
+
    ;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-tag-bracket-face :foreground red)
    (rjsx-attr :foreground cyan :slant 'italic :weight 'medium)
+
+   ;; web-mode
+   (web-mode-html-tag-bracket-face :foreground red)
+   (web-mode-html-tag-face         :foreground red)
+   (web-mode-html-attr-name-face   :foreground orange)
     ))
 
 
