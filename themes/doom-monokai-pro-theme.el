@@ -102,8 +102,8 @@ Can be an integer to determine the exact padding."
    ;; Centaur tabs
    (centaur-tabs-selected :foreground yellow :background bg)
    (centaur-tabs-unselected :foreground fg-alt :background bg-alt)
-   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected)
-   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected)
+   (centaur-tabs-selected-modified :foreground yellow :background bg)
+   (centaur-tabs-unselected-modified :foreground fg-alt :background bg-alt)
    (centaur-tabs-active-bar-face :background yellow)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground base8)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground base8)
