@@ -1,4 +1,4 @@
-;;; doom-manegarm-theme.el
+;;; doom-manegarm-theme.el -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
