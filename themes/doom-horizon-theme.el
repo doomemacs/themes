@@ -73,7 +73,7 @@
     (vertical-bar   base0)
     (selection      violet)
     (builtin        violet)
-    (comments       hor-highlight-bright)
+    (comments       (if doom-horizon-brighter-comments magenta hor-highlight-bright))
     (doc-comments   yellow)
     (constants      orange)
     (functions      teal)
@@ -126,7 +126,7 @@
     (font-lock-comment-face
       :inherit 'italic
       :foreground comments
-      :background (if doom-horizon-comment-bg (doom-lighten bg 0.05)))
+      :background (if doom-horizon-comment-bg (doom-lighten bg 0.03)))
     (font-lock-doc-face
       :inherit 'font-lock-comment-face
       :foreground doc-comments)
