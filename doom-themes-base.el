@@ -519,9 +519,12 @@
     (evil-goggles-default-face :inherit 'region)
 
     ;; flycheck
-    (flycheck-error     :underline `(:style wave :color ,red))
-    (flycheck-warning   :underline `(:style wave :color ,yellow))
-    (flycheck-info      :underline `(:style wave :color ,green))
+    (flycheck-error          :underline `(:style wave :color ,red))
+    (flycheck-warning        :underline `(:style wave :color ,yellow))
+    (flycheck-info           :underline `(:style wave :color ,green))
+    (flycheck-fringe-error   :inherit 'fringe :foreground error)
+    (flycheck-fringe-warning :inherit 'fringe :foreground warning)
+    (flycheck-fringe-info    :inherit 'fringe :foreground success)
 
     ;; flycheck-posframe
     (flycheck-posframe-face :inherit 'default)
@@ -554,14 +557,14 @@
     (git-commit-comment-action)
 
     ;; git-gutter
-    (git-gutter:modified :foreground cyan)
-    (git-gutter:added    :foreground vc-added)
-    (git-gutter:deleted  :foreground vc-deleted)
+    (git-gutter:modified :inherit 'fringe :foreground cyan)
+    (git-gutter:added    :inherit 'fringe :foreground vc-added)
+    (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
 
     ;; git-gutter+
-    (git-gutter+-modified :foreground cyan :background nil)
-    (git-gutter+-added    :foreground vc-added :background nil)
-    (git-gutter+-deleted  :foreground vc-deleted :background nil)
+    (git-gutter+-modified :inherit 'fringe :foreground cyan :background nil)
+    (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
+    (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
 
     ;; git-gutter-fringe
     ((git-gutter-fr:modified &inherit git-gutter:modified))
