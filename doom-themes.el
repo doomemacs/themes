@@ -64,6 +64,7 @@
 ;;   [X] `doom-wilmersdorf'
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
+;;   [ ] `doom-miramare'
 ;;
 ;; ## Install
 ;;

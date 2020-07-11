@@ -67,7 +67,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  
+  - [ ] `doom-miramare`: a gruvbox variant [Miramare's][miramare] (thanks to [franbach])
+
 ## Features
 
 - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
@@ -244,3 +245,5 @@ pointers. Additional theme and plugin support requests are welcome too.
 [hyakt]: https://github.com/hyakt
 [rouge theme]: https://github.com/josefaidt/rouge-theme 
 [JordanFaust]: https://github.com/JordanFaust
+[miramare]: https://github.com/franbach/miramare
+[franbach]: https://github.com/franbach
