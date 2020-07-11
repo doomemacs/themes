@@ -21,7 +21,7 @@ determine the exact padding."
   :type '(choice integer boolean))
 
 (def-doom-theme doom-miramare
-  "Dark theme with comfortable and pleasant colors."
+  "A gruvbox variant with comfortable and pleasant colors."
 
   ;; name        gui       256       16
   ((bg         '("#2a2426" "#2a2426" nil          )) ; bg1
