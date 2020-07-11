@@ -67,7 +67,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  - [ ] `doom-miramare`: a gruvbox variant [Miramare's][miramare] (thanks to [franbach])
+  - [ ] `doom-miramare`: adapted from [Miramare][miramare], a variant of gruvbox theme (thanks to [franbach])
 
 ## Features
 
