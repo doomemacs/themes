@@ -59,9 +59,10 @@
 ;;   [X] `doom-solarized-light' (added by fuxialexnder)
 ;;   [X] `doom-sourcerer' (added by defphil)
 ;;   [X] `doom-spacegrey' (added by teesloane)
-;;   [X] `doom-tomorrow-night'
-;;   [X] `doom-tomorrow-day'
-;;   [X] `doom-wilmersdorf'
+;;   [X] `doom-tomorrow-night' (added by emacswatcher)
+;;   [X] `doom-tomorrow-day' (added by emacswatcher)
+;;   [X] `doom-wilmersdorf' (added by ianpan870102)
+;;   [X] `doom-zenburn' (added by jsoa)
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
 ;;
