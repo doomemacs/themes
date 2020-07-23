@@ -676,7 +676,7 @@
     (highlight-symbol-face
      (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
      (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
-    
+
     ;; highlight-thing
     (highlight-thing
      (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
@@ -878,7 +878,7 @@
     ;; minimap
     (minimap-current-line-face :background selection)
     (minimap-active-region-background :background vertical-bar)
-    
+
     ;; mic-paren
     (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
     (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
@@ -1376,6 +1376,8 @@
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)
+    (web-mode-json-key-face          :foreground strings)
+    (web-mode-json-context-face      :foreground strings)
 
     ;; woman
     (woman-bold :inherit 'Man-overstrike)
