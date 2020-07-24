@@ -164,7 +164,7 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-darken 'bg 0.075))
 
    ;; org-mode
    ((outline-1 &override) :foreground level1)
