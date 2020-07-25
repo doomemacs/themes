@@ -176,7 +176,7 @@ Can be an integer to determine the exact padding."
    (font-lock-keyword-face :foreground yellow :weight 'bold)
 
    ;; compilation
-   (compilation-error-face :inherit compilation-error-face :underline t)
+   (compilation-error-face :inherit error :underline t)
    (compilation-info :foreground blue)
    (compilation-line-number :foreground yellow)
    (compilation-warning-face :foreground yellow)
@@ -374,7 +374,18 @@ Can be an integer to determine the exact padding."
    (web-mode-css-at-rule-face :foreground orange )
    (web-mode-function-name-face :foreground blue)
    (web-mode-html-attr-value-face :inherit 'font-lock-string-face)
-   (web-mode-whitespaces-face :background red))
+   (web-mode-whitespaces-face :background red)
+
+   ;; company
+   (company-tooltip-selection  :background base6)
+   (company-scrollbar-fg       :background base7)
+   (company-tooltip-annotation :foreground green :distant-foreground green)
+
+   ;; highlight-symbol
+   (highlight-symbol-face :background base6)
+
+   ;; highlight-thing
+   (highlight-thing :background base6))
 
   ;; --- extra variables ---------------------
   ()
