@@ -55,7 +55,7 @@ determine the exact padding."
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   (doom-darken base2 0.1))
-   (selection      grey)
+   (selection      base3)
    (builtin        fg)
    (comments       green)
    (doc-comments   (doom-darken comments 0.15))
