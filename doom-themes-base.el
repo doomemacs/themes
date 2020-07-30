@@ -58,6 +58,12 @@
     (mode-line-buffer-id :weight 'bold)
     (header-line         :background bg     :foreground fg     :distant-foreground bg)
 
+    ;; tab-line/tab-bar (Emacs 27+)
+    (tab-line :background bg-alt :foreground bg-alt)
+    ((tab-bar &inherit tab-line))
+    (tab-bar-tab :background bg :foreground fg)
+    (tab-bar-tab-inactive :background bg-alt :foreground fg-alt)
+
     ;; 1. Line number faces must explicitly disable its text style attributes
     ;;    because nearby faces may "bleed" into the line numbers otherwise.
     ;; 2. All other line number plugin faces should &inherit from these.
@@ -73,9 +79,9 @@
 
     ;; --- built-in plugin faces --------------
     ;; centaur-tabs
-    (centaur-tabs-default    :background bg-alt :foreground bg-alt)
-    (centaur-tabs-selected   :background bg :foreground fg)
-    (centaur-tabs-unselected :background bg-alt :foreground fg-alt)
+    ((centaur-tabs-default &inherit tab-bar))
+    ((centaur-tabs-selected &inherit tab-bar-tab))
+    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
     (centaur-tabs-selected-modified   :background bg :foreground teal)
     (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
     (centaur-tabs-active-bar-face
