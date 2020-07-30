@@ -9,6 +9,8 @@
 - [Additional Themes](#additional-themes)
     - [doom-acario-dark](#doom-acario-dark)
     - [doom-acario-light](#doom-acario-light)
+    - [doom-ayu-mirage](#doom-ayu-dashboard)
+    - [doom-ayu-light](#doom-ayu-mirage-dashboard)
     - [doom-city-lights](#doom-city-lights)
     - [doom-challenger-deep](#doom-challenger-deep)
     - [doom-dark+](#doom-dark+)
@@ -57,6 +59,12 @@
 
 ## doom-acario-light
 ![doom-acario-light screenshot](doom-acario-light.png)
+
+## doom-ayu-light
+![doom-ayu-light screenshot](doom-ayu-light-final.png)
+
+## doom-ayu-mirage
+![doom-ayu-mirage screenshot](doom-ayu-mirage-final.png)
 
 ## doom-city-lights
 ![doom-city-lights screenshot](doom-city-lights.png)
