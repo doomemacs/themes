@@ -1332,6 +1332,10 @@
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
 
+    ;; rjsx-mode
+    (rjsx-tag :foreground type)
+    (rjsx-attr :foreground strings)
+
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
     (rpm-spec-var-face          :foreground violet)
