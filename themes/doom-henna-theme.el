@@ -282,7 +282,6 @@ determine the exact padding."
    (web-mode-html-tag-bracket-face :foreground teal)
    (web-mode-keyword-face          :foreground teal)
    (web-mode-block-control-face    :foreground red)
-   (web-mode-block-delimiter-face  :foreground teal)
    (web-mode-variable-name-face    :foreground (doom-lighten green 0.5))
 
    ;; typescript

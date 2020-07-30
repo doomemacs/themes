@@ -223,19 +223,12 @@ determine the exact padding."
    (js2-private-member :foreground base7)
 
    ;; web-mode
-   (web-mode-block-control-face :foreground orange)
-   (web-mode-block-delimiter-face :foreground orange)
    (web-mode-builtin-face :foreground orange)
-   (web-mode-css-property-name-face :foreground violet)
    (web-mode-css-selector-face :foreground green)
    (web-mode-html-attr-name-face :foreground green)
-   (web-mode-html-attr-value-face :foreground yellow)
    (web-mode-html-tag-bracket-face :inherit 'default)
    (web-mode-html-tag-face :foreground magenta :weight 'bold)
-   (web-mode-keyword-face :foreground magenta)
    (web-mode-preprocessor-face :foreground orange)
-   (web-mode-string-face :foreground yellow)
-   (web-mode-type-face :foreground violet)
 
    ;; highlight-quoted-mode
    (highlight-quoted-symbol :foreground cyan)

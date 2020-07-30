@@ -1379,15 +1379,22 @@
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
 
     ;; web-mode
+    (web-mode-block-control-face     :foreground builtin)
+    (web-mode-block-delimiter-face   :foreground builtin)
+    (web-mode-css-property-name-face :foreground type)
     (web-mode-doctype-face           :foreground comments)
     (web-mode-html-tag-face          :foreground methods)
     (web-mode-html-tag-bracket-face  :foreground methods)
     (web-mode-html-attr-name-face    :foreground type)
+    (web-mode-html-attr-value-face   :foreground strings)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)
     (web-mode-json-key-face          :foreground strings)
     (web-mode-json-context-face      :foreground strings)
+    (web-mode-keyword-face           :foreground keywords)
+    (web-mode-string-face            :foreground strings)
+    (web-mode-type-face              :foreground type)
 
     ;; woman
     (woman-bold :inherit 'Man-overstrike)
