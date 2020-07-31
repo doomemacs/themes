@@ -964,7 +964,6 @@
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-org-hide-face :foreground bg-alt)
     (solaire-mode-line-face          :background bg     :foreground fg     :distant-foreground bg)
     (solaire-mode-line-inactive-face :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
 
@@ -1263,6 +1262,7 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
+    ((solaire-org-hide-face &inherit org-hide))
 
     ;; extends from outline-N
     ;; (org-level-1)

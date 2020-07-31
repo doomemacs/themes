@@ -168,7 +168,6 @@ determine the exact padding."
    ((org-block &override) :background base2)
    ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
 
    ;; org-pomodoro
    (org-pomodoro-mode-line :inherit 'mode-line-emphasis :weight 'bold) ; unreadable otherwise
