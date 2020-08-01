@@ -116,10 +116,10 @@ determine the exact padding."
    ((line-number &override) :foreground base6)
    ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
 
-   (org-block :background (doom-blend yellow bg 0.04))
+   (org-block :background (doom-blend yellow bg 0.04) :extend t)
    (org-block-background :background (doom-blend yellow bg 0.04))
-   (org-block-begin-line :background (doom-blend yellow bg 0.08))
-   (org-block-end-line :background (doom-blend yellow bg 0.08))
+   (org-block-begin-line :background (doom-blend yellow bg 0.08) :extend t)
+   (org-block-end-line :background (doom-blend yellow bg 0.08) :extend t)
    (lsp-ui-sideline-code-action :foreground blue)
 
    (font-lock-comment-face
