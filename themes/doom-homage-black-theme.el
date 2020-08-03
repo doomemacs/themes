@@ -183,9 +183,9 @@ determine the exact padding."
    (org-upcoming-distant-deadline :foreground fg)
 
    ;; Scheduled things
-   (org-scheduled            :foreground base8)
-   (org-scheduled-today      :foreground base8)
-   (org-scheduled-previously :foreground fg)
+   (org-scheduled            :foreground fg)
+   (org-scheduled-today      :foreground fg)
+   (org-scheduled-previously :foreground base8)
 
    ;; Indent guides character face
    (highlight-indent-guides-character-face :foreground base3)
