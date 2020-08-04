@@ -58,6 +58,12 @@
     (mode-line-buffer-id :weight 'bold)
     (header-line         :background bg     :foreground fg     :distant-foreground bg)
 
+    ;; tab-line/tab-bar (Emacs 27+)
+    (tab-line :background bg-alt :foreground bg-alt)
+    ((tab-bar &inherit tab-line))
+    (tab-bar-tab :background bg :foreground fg)
+    (tab-bar-tab-inactive :background bg-alt :foreground fg-alt)
+
     ;; 1. Line number faces must explicitly disable its text style attributes
     ;;    because nearby faces may "bleed" into the line numbers otherwise.
     ;; 2. All other line number plugin faces should &inherit from these.
@@ -73,9 +79,9 @@
 
     ;; --- built-in plugin faces --------------
     ;; centaur-tabs
-    (centaur-tabs-default    :background bg-alt :foreground bg-alt)
-    (centaur-tabs-selected   :background bg :foreground fg)
-    (centaur-tabs-unselected :background bg-alt :foreground fg-alt)
+    ((centaur-tabs-default &inherit tab-bar))
+    ((centaur-tabs-selected &inherit tab-bar-tab))
+    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
     (centaur-tabs-selected-modified   :background bg :foreground teal)
     (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
     (centaur-tabs-active-bar-face
@@ -676,7 +682,7 @@
     (highlight-symbol-face
      (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
      (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
-    
+
     ;; highlight-thing
     (highlight-thing
      (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
@@ -878,7 +884,7 @@
     ;; minimap
     (minimap-current-line-face :background selection)
     (minimap-active-region-background :background vertical-bar)
-    
+
     ;; mic-paren
     (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
     (paren-face-mismatch :foreground base0 :background red   :weight 'ultra-bold)
@@ -958,7 +964,6 @@
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-org-hide-face :foreground bg-alt)
     (solaire-mode-line-face          :background bg     :foreground fg     :distant-foreground bg)
     (solaire-mode-line-inactive-face :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
 
@@ -1257,6 +1262,7 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
+    ((solaire-org-hide-face &inherit org-hide))
 
     ;; extends from outline-N
     ;; (org-level-1)
@@ -1326,6 +1332,10 @@
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
 
+    ;; rjsx-mode
+    (rjsx-tag :foreground type)
+    (rjsx-attr :foreground strings)
+
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
     (rpm-spec-var-face          :foreground violet)
@@ -1369,13 +1379,22 @@
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
 
     ;; web-mode
+    (web-mode-block-control-face     :foreground builtin)
+    (web-mode-block-delimiter-face   :foreground builtin)
+    (web-mode-css-property-name-face :foreground type)
     (web-mode-doctype-face           :foreground comments)
     (web-mode-html-tag-face          :foreground methods)
     (web-mode-html-tag-bracket-face  :foreground methods)
     (web-mode-html-attr-name-face    :foreground type)
+    (web-mode-html-attr-value-face   :foreground strings)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)
+    (web-mode-json-key-face          :foreground strings)
+    (web-mode-json-context-face      :foreground strings)
+    (web-mode-keyword-face           :foreground keywords)
+    (web-mode-string-face            :foreground strings)
+    (web-mode-type-face              :foreground type)
 
     ;; woman
     (woman-bold :inherit 'Man-overstrike)

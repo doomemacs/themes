@@ -65,6 +65,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
   - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
+  - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
   - [ ] `doom-miramare`: adapted from [Miramare][miramare], a variant of gruvbox theme (thanks to [franbach])
@@ -245,5 +246,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [hyakt]: https://github.com/hyakt
 [rouge theme]: https://github.com/josefaidt/rouge-theme 
 [JordanFaust]: https://github.com/JordanFaust
+[Zenburn]: https://github.com/bbatsov/zenburn-emacs
 [miramare]: https://github.com/franbach/miramare
 [franbach]: https://github.com/franbach

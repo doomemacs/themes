@@ -210,7 +210,6 @@
    (org-agenda-done :foreground teal)
    (org-todo :foreground red)
    (org-headline-done :foreground red)
-   (solaire-org-hide-face :foreground hidden)
    (header-line :background base2 :foreground fg)
    (org-level-1 :foreground alt-blue)
    (org-level-2 :foreground violet)
