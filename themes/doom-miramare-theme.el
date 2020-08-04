@@ -118,7 +118,6 @@ determine the exact padding."
    ;; Misc
    (doom-modeline-error :background bg)
    (doom-modeline-buffer-major-mode :foreground green :bold t)
-   (doom-modeline-warning :foreground red :bold t)
    (doom-modeline-info :bold t :foreground cyan)
    (doom-modeline-bar :background dark-green)
    (doom-modeline-panel :background dark-green :foreground fg)
