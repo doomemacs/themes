@@ -47,7 +47,7 @@ determine the exact padding."
    (orange     '("#e39b7b" "#e39b7b" "orange"))        ; bright-orange
    (yellow     '("#d9bb80" "#d9bb80" "yellow"))        ; bright-yellow
    (teal       '("#87af87" "#87af87" "green"))         ; bright-aqua
-   (green      '("#b3d2a8" "#b3d2a8" "green"))         ; bright-green
+   (green      '("#87af87" "#87af87" "green"))         ; bright-green
    (dark-green '("#678f67" "#678f67" "green"))         ; green
    (blue       '("#89beba" "#89beba" "brightblue"))    ; bright-blue
    (dark-blue  '("#458588" "#458588" "blue"))          ; blue
@@ -118,6 +118,7 @@ determine the exact padding."
    ;; Misc
    (doom-modeline-error :background bg)
    (doom-modeline-buffer-major-mode :foreground green :bold t)
+   (doom-modeline-warning :foreground red :bold t)
    (doom-modeline-info :bold t :foreground cyan)
    (doom-modeline-bar :background dark-green)
    (doom-modeline-panel :background dark-green :foreground fg)
@@ -269,9 +270,14 @@ determine the exact padding."
    ;; web-mode
    (web-mode-html-tag-bracket-face :foreground blue)
    (web-mode-html-tag-face         :foreground cyan)
-   (web-mode-html-attr-name-face   :foreground cyan)
+   (web-mode-html-attr-name-face   :foreground violet)
    (web-mode-json-key-face         :foreground green)
-   (web-mode-json-context-face     :foreground cyan))
+   (web-mode-json-context-face     :foreground cyan)
+
+   ;; react jsx
+   (rjsx-tag :foreground orange)
+   (rjsx-text :foreground fg)
+   (rjsx-attr :foreground violet))
   ;; --- extra variables --------------------
   ;; ()
   )
