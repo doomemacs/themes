@@ -91,6 +91,11 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   (
    ;;;;;;;; Editor ;;;;;;;;
+
+   ;; Syntax
+   (font-lock-variable-name-face :foreground cyan :italic t)
+
+   ;; Basic
    (cursor :background "white")
    (hl-line :background bg-alt)
    ((line-number &override) :foreground base5)
