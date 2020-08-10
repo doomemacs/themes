@@ -165,6 +165,8 @@ determine the exact padding."
    ((outline-7 &override) :foreground fg :inherit 'bold)
    ((outline-8 &override) :foreground fg :inherit 'bold)
 
+   ((org-todo &override)  :foreground red   :bold 'inherit)
+   ((org-done &override)  :foreground green :bold 'inherit)
    ((org-tag &override)   :foreground fg :background yellow-alt
     :box '(:line-width -1 :color "#333333" :style 'released-button))
    ((org-date &override)  :foreground fg :background base1
