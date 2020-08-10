@@ -34,7 +34,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#1c1d20" "#1c1d20"       nil))
-   (bg-alt     '("#313339" "#313339"       nil))
+   (bg-alt     '("#151619" "#151619" nil))
    (base0      '("#1B2229" "black"   "black"))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"))
    (base2      '("#202328" "#2e2e2e" "brightblack"))
@@ -65,7 +65,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base4 0.2))
    (selection      red)
    (builtin        yellow)
-   (comments       base4)
+   (comments       base5)
    (doc-comments   (doom-lighten blue 0.25))
    (constants      orange)
    (functions      yellow)
@@ -146,9 +146,6 @@ determine the exact padding."
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
-   ;; ivy-mode
-   (ivy-current-match :background bg-alt :distant-foreground bg :weight 'normal)
-
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
@@ -184,7 +181,7 @@ determine the exact padding."
    (web-mode-html-tag-face         :foreground fg :slant 'italic)
 
    ;; ivy
-   (ivy-current-match       :background nil :foreground green)
+   (ivy-current-match       :background base3 :foreground orange)
    (ivy-posframe-cursor     :background red :foreground base0)
 
    ;; markdown-mode
@@ -201,17 +198,18 @@ determine the exact padding."
    ;; org
    (org-level-1                      :foreground blue)
    (org-level-2                      :foreground orange)
-   (org-level-3                      :foreground yellow)
-   (org-level-4                      :foreground teal)
-   (org-level-5                      :foreground magenta)
-   (org-level-6                      :foreground blue)
-   (org-level-7                      :foreground orange)
-   (org-level-8                      :foreground yellow)
+   (org-level-3                      :foreground teal)
+   (org-level-4                      :foreground magenta)
+   (org-level-5                      :foreground blue)
+   (org-level-6                      :foreground orange)
+   (org-level-7                      :foreground teal)
+   (org-level-8                      :foreground magenta)
    (org-link                         :foreground blue :underline t)
    (org-document-title               :foreground orange)
    (org-document-info-keyword        :foreground comments)
    (org-meta-line                    :foreground base6)
-   (org-block                        :background (doom-darken bg 0.2) :extend t)
+   (org-tag             :foreground base6 :weight 'normal)
+   (org-block                        :background (doom-darken bg 0.2 ) :extend t)
 
    (rainbow-delimiters-depth-1-face  :foreground red)
    (rainbow-delimiters-depth-2-face  :foreground orange)
