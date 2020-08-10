@@ -141,17 +141,16 @@ determine the exact padding."
 
     (default :background bg :foreground fg)
 
-    (font-lock-builtin-face              :inherit '(italic default) :extend t)
-    (font-lock-comment-face
-      :foreground comments
-      :background  bg)
+    (font-lock-builtin-face              :foreground fg
+                                         :inherit 'italic :extend t)
+    (font-lock-comment-face              :foreground comments)
     (font-lock-comment-delimiter-face    :inherit font-lock-comment-face)
     (font-lock-doc-face
       :inherit 'font-lock-comment-face
       :foreground doc-comments
       :slant 'italic)
     (font-lock-type-face                 :inherit 'default)
-    (font-lock-variable-name-face        :inherit 'default)
+    (font-lock-variable-name-face        :foreground fg)
     (font-lock-warning-face              :background fw-red-blend
                                          :foreground fw-red-text)
     (font-lock-negation-char-face        :inherit 'default)
@@ -161,8 +160,7 @@ determine the exact padding."
     (font-lock-regexp-grouping-construct :inherit 'default)
     (font-lock-constant-face             :background fw-teal-blend
                                          :foreground fw-teal-text)
-    (font-lock-function-name-face        :background bg
-                                         :foreground fg
+    (font-lock-function-name-face        :foreground fg
                                          :weight 'semi-bold)
     (font-lock-keyword-face              :background fw-purple-blend
                                          :foreground fw-purple-text)
