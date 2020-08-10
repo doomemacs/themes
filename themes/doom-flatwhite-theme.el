@@ -573,6 +573,10 @@ determine the exact padding."
    ((org-block-begin-line &override) :foreground fg :slant 'italic)
    (org-ellipsis :underline nil :background bg     :foreground red)
    ((org-quote &override) :background base1)
+   ((org-block-begin-line &override)
+    :background fw-orange-blend
+    :foreground fw-orange-text
+    :extend t)
 
    ;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue
