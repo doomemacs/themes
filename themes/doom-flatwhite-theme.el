@@ -567,11 +567,15 @@ determine the exact padding."
    ;; org-mode
    ((outline-1 &override) :foreground red)
    ((outline-2 &override) :foreground orange)
-   ((org-block &override) :background base1)
    ((org-block-begin-line &override) :foreground fg :slant 'italic)
    (org-ellipsis :underline nil :background bg     :foreground red)
    ((org-quote &override) :background base1)
    ((org-block-begin-line &override)
+    :background fw-orange-blend
+    :foreground fw-orange-text
+    :weight 'semi-bold
+    :extend t)
+   ((org-block &override)
     :background fw-orange-blend
     :foreground fw-orange-text
     :extend t)
