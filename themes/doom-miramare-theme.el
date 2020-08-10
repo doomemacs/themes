@@ -274,13 +274,13 @@ determine the exact padding."
 
    ;; web-mode
    (web-mode-html-tag-bracket-face :foreground blue)
-   (web-mode-html-tag-face         :foreground cyan)
+   (web-mode-html-tag-face         :foreground cyan :weight 'semi-bold)
    (web-mode-html-attr-name-face   :foreground violet)
    (web-mode-json-key-face         :foreground green)
    (web-mode-json-context-face     :foreground cyan)
 
    ;; react jsx
-   (rjsx-tag :foreground orange)
+   (rjsx-tag :foreground cyan :weight 'semi-bold)
    (rjsx-text :foreground fg)
    (rjsx-attr :foreground violet))
   ;; --- extra variables --------------------
