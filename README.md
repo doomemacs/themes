@@ -51,6 +51,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
   - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
+  - [X] `doom-old-hope`: based on [An Old Hope] theme (thanks to [teesloane])
   - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
   - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
   - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
@@ -182,6 +183,7 @@ I welcome contributions of any kind, be they pull requests, bug reports or elisp
 pointers. Additional theme and plugin support requests are welcome too.
 
 
+[An Old Hope]: https://github.com/mohkale/an-old-hope-theme
 [AnthonyDiGirolamo]: https://github.com/AnthonyDiGirolamo
 [Atom]: http://atom.io
 [Nova]: https://trevordmiller.com/projects/nova
