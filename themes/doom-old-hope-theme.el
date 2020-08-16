@@ -69,7 +69,7 @@ determine the exact padding."
    (doc-comments   (doom-lighten blue 0.25))
    (constants      orange)
    (functions      yellow)
-   (keywords       green)
+   (keywords       red)
    (methods        yellow)
    (operators      green)
    (type           orange)
