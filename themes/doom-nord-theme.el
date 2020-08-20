@@ -40,7 +40,7 @@ determine the exact padding."
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#2E3440" nil       nil            ))
+  ((bg         '("#3B4252" nil       nil            ))
    (bg-alt     '("#272C36" nil       nil            ))
    (base0      '("#191C25" "black"   "black"        ))
    (base1      '("#242832" "#1e1e1e" "brightblack"  ))
