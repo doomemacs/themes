@@ -19,6 +19,11 @@ determine the exact padding."
   :group 'doom-homage-black-theme
   :type '(choice integer boolean))
 
+(defcustom doom-homage-black-large-org-headlines nil
+  "If non-nil, make first three org headline faces to be large."
+  :group 'doom-homage-white-theme
+  :type 'boolean)
+
 ;;
 (def-doom-theme doom-homage-black
   "A light theme inspired by Atom One"
@@ -155,9 +160,12 @@ determine the exact padding."
    (mmm-default-submode-face :background base1)
 
    ;; org-mode
-   ((outline-1 &override) :foreground base8 :inherit 'bold)
-   ((outline-2 &override) :foreground base8 :inherit 'bold)
-   ((outline-3 &override) :foreground base8 :inherit 'bold)
+   ((outline-1 &override) :foreground fg :inherit 'bold
+    :height (if doom-homage-black-large-org-headlines 1.8 1.0))
+   ((outline-2 &override) :foreground fg :inherit 'bold
+    :height (if doom-homage-black-large-org-headlines 1.4 1.0))
+   ((outline-3 &override) :foreground fg :inherit 'bold
+    :height (if doom-homage-black-large-org-headlines 1.2 1.0))
    ((outline-4 &override) :foreground base8 :inherit 'bold)
    ((outline-5 &override) :foreground base8 :inherit 'bold)
    ((outline-6 &override) :foreground base8 :inherit 'bold)
