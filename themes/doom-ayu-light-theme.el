@@ -29,46 +29,6 @@ determine the exact padding."
   :type '(choice integer boolean))
 
 
-;; mirage colours:
-;;  [path]      [colour] [light]                   [mirage]           [dark]
-;; common:
-;;   accent:    orange   ff9940                     ffcc66            e6b450
-;;   bg:        black    fafafa                     1f2430            0a0e14
-;;   fg:        grey     575f66                     cbccc6            b3b1ad
-;;   ui:        grey     ba9199                     707abc            4d5566
-;; syntax:
-;;   tag:       cyan     55b4d4                     5ccfe6            39bae6
-;;   func:      yellow   f2ae49                     ffd580            ffb454
-;;   entity:    blue     399ee6                     73d0ff            59c2ff
-;;   string:    green    86b300                     bae67e            c2d94c
-;;   regexp:    teal     4cbf99                     95e6cb            95e6cb
-;;   markup:    red      f07171                     f28779            f07178
-;;   keyword:   orange?  fa8d3e                     ffa759            ff8f40
-;;   special:   yellow?  e6ba7e                     ffe6b3            e6b673
-;;   comment:   grey     abb0b6                     5c6773            626a73
-;;   constant:  magenta  a37acc                     d4bfff            ffee99
-;;   operator:  orange?  ed9366                     f29e74            f29668
-;;   error:     red      f51818                     ff3333            ff3333
-;; ui:
-;;   line:               ui.alpha(0.1)              bg.darken(0.15)   bg.darken(0.2)
-;;   panel:
-;;     bg:               bg.brighten(0.1)           bg.brighten(0.1)  bg.brighten(0.05)
-;;     shadow:           fg.darken(0.5).alpha(0.25) bg.darken(0.3)    bg.darken(0.2)
-;;     border:           bg.darken(0.2)             bg.darken(0.4)    bg.darken(0.8)
-;;   gutter:
-;;     normal:           ui.alpha(0.4)              ui.alpha(0.4)     ui.alpha(0.6)
-;;     active:           ui.alpha(0.8)              ui.alpha(0.8)     ui.alpha(0.9)
-;;   selection:
-;;     bg:               2ea8e6.fade(0.7)           7399e6.fade(0.87) modified.fade(0.87)
-;;     inactive:         000000.fade(0.87)          96b0e6.fade(0.93) modified.fade(0.94)
-;;     border:           000000.fade(0.82)          96b0e6.fade(0.93) modified.fade(0.8)
-;;   guide:
-;;     active:           ui.alpha(0.35)             ui.alpha(0.7)     ui.alpha(0.4)
-;;     normal:           ui.alpha(0.18)             ui.alpha(0.3)     ui.alpha(0.7)
-;;   vcs:
-;;     added:            99bf4d                     a6cc70            91b362
-;;     modified:         709ecc                     77a8d9            6994bf
-;;     removed:          f27983                     f27983            d96c75
 
 
 ;;
