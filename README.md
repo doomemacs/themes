@@ -43,6 +43,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
   - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
+  - [X] `doom-miramare`: a port of [Franbach's][franbach] [Miramare][miramare], a variant of gruvbox theme (thanks to [sagittaros])
   - [X] `doom-molokai`: a theme based on Texmate's Monokai
   - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
   - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
@@ -69,7 +70,6 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  - [ ] `doom-miramare`: adapted from [Miramare][miramare], a variant of gruvbox theme (thanks to [franbach])
 
 ## Features
 
@@ -205,6 +205,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
+[franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo 
 [gruvbox]: https://github.com/morhetz/gruvbox
@@ -221,6 +222,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [Monokai]: https://monokai.pro/
@@ -230,6 +232,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [nord]: https://www.nordtheme.com/
 [Oceanic Next]: https://github.com/voronianski/oceanic-next-color-scheme
 [outrun]: https://github.com/samrap/outrun-theme-vscode
+[sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
@@ -249,5 +252,3 @@ pointers. Additional theme and plugin support requests are welcome too.
 [rouge theme]: https://github.com/josefaidt/rouge-theme 
 [JordanFaust]: https://github.com/JordanFaust
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
-[miramare]: https://github.com/franbach/miramare
-[franbach]: https://github.com/franbach
