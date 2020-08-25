@@ -40,6 +40,7 @@
 ;;   [X] `doom-laserwave' (added by hyakt)
 ;;   [X] `doom-material' (added by tam5)
 ;;   [X] `doom-manegarm' (added by kenranunderscore)
+;;   [X] `doom-miramare' (added by sagittaros)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-monokai-classic' (added by ema2159)
 ;;   [X] `doom-monokai-pro' (added by kadenbarlow)
@@ -65,7 +66,6 @@
 ;;   [X] `doom-zenburn' (added by jsoa)
 ;;   [ ] `doom-mono-dark' / `doom-mono-light'
 ;;   [ ] `doom-tron'
-;;   [ ] `doom-miramare'
 ;;
 ;; ## Install
 ;;
