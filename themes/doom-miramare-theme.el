@@ -148,8 +148,8 @@ determine the exact padding."
    (ivy-subdir :background nil :foreground cyan)
    (ivy-action :background nil :foreground cyan)
    (ivy-grep-line-number :background nil :foreground cyan)
-   (ivy-minibuffer-match-face-1 :background nil :foreground yellow)
-   (ivy-minibuffer-match-face-2 :background nil :foreground red)
+   (ivy-minibuffer-match-face-1 :background nil :foreground yellow :bold t)
+   (ivy-minibuffer-match-face-2 :background nil :foreground red :bold t)
    (ivy-minibuffer-match-highlight :foreground cyan)
    (counsel-key-binding :foreground cyan)
 
