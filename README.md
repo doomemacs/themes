@@ -57,6 +57,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
   - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
   - [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
+  - [x] `doom-plain`: based on [plain][plain] (thanks to [mateossh])
   - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
   - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
   - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
@@ -221,6 +222,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
+[mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
@@ -232,6 +234,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [nord]: https://www.nordtheme.com/
 [Oceanic Next]: https://github.com/voronianski/oceanic-next-color-scheme
 [outrun]: https://github.com/samrap/outrun-theme-vscode
+[plain]: https://github.com/gko/plain
 [sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
