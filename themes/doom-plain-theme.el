@@ -22,7 +22,7 @@ determine the exact padding."
 
   ;; name        default   256       16
   ((bg         '("#ffffff" nil       nil ))
-   (bg-alt     (doom-darken bg 0.15))
+   (bg-alt     '("#f3f3f3" nil       nil ))
    (base0      '("#969896" nil nil ))
    (base1      '("#f1f3f5" nil nil ))
    (base2      '("#444444" nil nil ))
