@@ -1,4 +1,4 @@
-;;; doom-tomorrow-day-theme.el -- port of tomorrow theme
+;;; doom-tomorrow-day-theme.el -- port of tomorrow theme -*- no-byte-compile: t; -*-
 ;;; Commentary:
 ;; This file is part of emacs-doom-themes, which provides license
 ;; information.
@@ -14,10 +14,10 @@
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
   :group 'doom-tomorrow-day-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (def-doom-theme doom-tomorrow-day
-  "A theme based off of Chris Kempson's Tomorrow Dark."
+  "A light theme based off of Chris Kempson's Tomorrow Dark."
 
   ;; name        gui       256       16
   ((bg         '("#ffffff" "white"   "white" ))
@@ -111,7 +111,14 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   ;; org
+   (org-block-begin-line         :foreground base7 :background base3 :extend t)
+
+   ;; treemacs
+   (treemacs-git-untracked-face :foreground yellow)
+   )
 
   ;; --- variables --------------------------
   ;; ()

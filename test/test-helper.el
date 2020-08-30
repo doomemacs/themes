@@ -1,10 +1,10 @@
-;;; test-helper.el
+;;; test-helper.el -*- lexical-binding: t; -*-
 
 (push (expand-file-name "../" (file-name-directory load-file-name)) load-path)
 (push (expand-file-name "../themes" (file-name-directory load-file-name)) load-path)
 
 (require 'doom-themes)
-(require 'doom-themes-common)
+(require 'doom-themes-base)
 
 (defalias '-color-p 'doom-themes--colors-p)
 ;; (defalias '-build-face 'doom-themes--build-face)

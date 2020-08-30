@@ -1,4 +1,4 @@
-;;; doom-spacegrey-theme.el --- inspired by Atom One Dark
+;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
@@ -25,15 +25,15 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-spacegrey-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 ;;
 (def-doom-theme doom-spacegrey
-  "A dark theme inspired by Atom spacegrey Dark"
+  "A dark theme inspired by Atom Spacegrey Dark"
 
   ;; name        default   256       16
-  ((bg         '("#2F3841" nil       nil            ))
-   (bg-alt     '("#343D46" nil       nil            ))
+  ((bg         '("#2b303b" nil       nil            ))
+   (bg-alt     '("#232830" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -64,7 +64,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken bg 0.25))
    (selection      base4)
    (builtin        orange)
-   (comments       base5)
+   (comments       (if doom-spacegrey-brighter-comments dark-cyan base5))
    (doc-comments   (doom-lighten (if doom-spacegrey-brighter-comments dark-cyan base5) 0.25))
    (constants      orange)
    (functions      blue)
@@ -73,7 +73,7 @@ determine the exact padding."
    (operators      fg)
    (type           yellow)
    (strings        green)
-   (variables      (doom-lighten magenta 0.4))
+   (variables      red)
    (numbers        orange)
    (region         selection)
    (error          red)
@@ -100,11 +100,11 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-darken base3 0.05)
-      base3))
+      base1))
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken base3 0.1)
-      base3))
+      base1))
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
@@ -151,29 +151,29 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-darken bg 0.1))
+   ((markdown-code-face &override) :background (doom-darken bg 0.1))
 
    ;; org-mode
    (org-block            :background (doom-darken bg-alt 0.04))
    (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
 
-   (org-level-1 :foreground fg   :weight 'ultra-bold :inherit 'hl-line :height 1.2)
-   (org-level-2 :foreground (doom-blend fg blue 0.35) :weight 'bold)
-   (org-level-3 :foreground (doom-blend fg blue 0.7)  :weight 'bold)
-   (org-level-4 :foreground blue       :weight 'bold)
-   (org-level-5 :foreground (doom-blend magenta blue 0.2) :weight 'bold)
-   (org-level-6 :foreground (doom-blend magenta blue 0.4) :weight 'bold)
-   (org-level-7 :foreground (doom-blend magenta blue 0.6) :weight 'bold)
-   (org-level-8 :foreground fg :weight 'semi-bold)
+   ((outline-1 &override) :foreground fg :weight 'ultra-bold)
+   ((outline-2 &override) :foreground (doom-blend fg blue 0.35))
+   ((outline-3 &override) :foreground (doom-blend fg blue 0.7))
+   ((outline-4 &override) :foreground blue)
+   ((outline-5 &override) :foreground (doom-blend magenta blue 0.2))
+   ((outline-6 &override) :foreground (doom-blend magenta blue 0.4))
+   ((outline-7 &override) :foreground (doom-blend magenta blue 0.6))
+   ((outline-8 &override) :foreground fg)
 
    (org-ellipsis         :underline nil :background bg    :foreground red)
-   (org-quote            :background base1)
+   ((org-quote &override) :background base1)
 
    ;; org-mode
-   (org-hide :foreground hidden)
+   (org-hide :foreground bg)
    (solaire-org-hide-face :foreground hidden)
 
-   )
+   (tooltip              :background bg-alt :foreground fg))
 
   ;; --- extra variables ---------------------
   ;; ()

@@ -1,4 +1,4 @@
-;;; doom-solarized-light-theme.el --- inspired by Atom One Dark
+;;; doom-solarized-light-theme.el --- inspired by Atom One Dark -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-solarized-light-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 ;;
 (def-doom-theme doom-solarized-light
@@ -54,11 +54,11 @@ determine the exact padding."
    (teal       '("#35a69c" "#33aa99" "brightgreen"  ))
    (yellow     '("#b58900" "#ECBE7B" "yellow"       ))
    (blue       '("#268bd2" "#51afef" "brightblue"   ))
-   (dark-blue  '("#E1E3E5" "#2257A0" "blue"         ))
+   (dark-blue  '("#3F88AD" "#2257A0" "blue"         ))
    (magenta    '("#d33682" "#c678dd" "magenta"      ))
    (violet     '("#6c71c4" "#a9a1e1" "brightmagenta"))
    (cyan       '("#2aa198" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#D7DDD7" "#5699AF" "cyan"         ))
+   (dark-cyan  '("#204052" "#5699AF" "cyan"         ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
@@ -111,15 +111,17 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   (hl-line :background nil)
+   (hl-line :background base3)
 
    ((line-number &override) :foreground base6)
    ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
 
-   (org-block :background (doom-blend yellow bg 0.04))
+   (org-block :background (doom-blend yellow bg 0.04) :extend t)
    (org-block-background :background (doom-blend yellow bg 0.04))
-   (org-block-begin-line :background (doom-blend yellow bg 0.08))
-   (org-block-end-line :background (doom-blend yellow bg 0.08))
+   (org-block-begin-line :background (doom-blend yellow bg 0.08) :extend t)
+   (org-block-end-line :background (doom-blend yellow bg 0.08) :extend t)
+   (lsp-ui-sideline-code-action :foreground blue)
+
    (font-lock-comment-face
     :slant 'italic
     :foreground comments
@@ -128,6 +130,14 @@ determine the exact padding."
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :foreground type)
+
+   (font-lock-keyword-face
+    :weight 'bold
+    :foreground keywords)
+
+   (font-lock-constant-face
+    :weight 'bold
+    :foreground constants)
 
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
@@ -159,23 +169,45 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
 
    ;; ivy-mode
    (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
-   (ivy-minibuffer-match-face-1
-    :foreground comments
-    :weight 'light)
+   (ivy-minibuffer-match-face-1 :foreground blue :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-2 :foreground magenta :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-3 :foreground green   :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-4 :foreground yellow  :background base3 :weight 'bold)
    (ivy-minibuffer-match-highlight :foreground violet :weight 'bold)
+   (swiper-match-face-1 :inherit 'ivy-minibuffer-match-face-1)
+   (swiper-match-face-2 :inherit 'ivy-minibuffer-match-face-2)
+   (swiper-match-face-3 :inherit 'ivy-minibuffer-match-face-3)
+   (swiper-match-face-4 :inherit 'ivy-minibuffer-match-face-4)
 
    ;; posframe
    (ivy-posframe :background modeline-bg-l)
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
+
+   ;; helm
+   (helm-selection :foreground base0 :weight 'bold :background blue)
+
+   ;; company
+   (company-tooltip-selection :background blue
+                              :foreground base3)
+
+   ;; widget
+   (widget-field :foreground fg :background base3)
+   (widget-single-line-field :foreground fg :background base3)
+
+   ;; latex
+   (font-latex-sedate-face :foreground base6)
+
+   ;; notmuch
+   (notmuch-message-summary-face :foreground teal)
+   (notmuch-wash-cited-text :foreground base6)
+
+   )
 
 
   ;; --- extra variables ---------------------

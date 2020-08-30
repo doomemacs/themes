@@ -1,4 +1,4 @@
-;;; doom-nord-light-theme.el --- inspired by Nord
+;;; doom-nord-light-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-nord-light-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (defcustom doom-nord-light-region-highlight t
   "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
@@ -36,22 +36,22 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-nord-light
-  "A dark theme inspired by Nord-Light."
+  "A light theme inspired by Nord-Light."
 
   ;; name        default   256       16
-  ((bg '("#E5E9F0" nil nil))
-   (bg-alt '("#D8DEE9" nil nil))
-   (base0 '("#F0F4FC" "black" "black"))
-   (base1 '("#E3EAF5" "#1e1e1e" "brightblack"))
-   (base2 '("#D8DEE9" "#2e2e2e" "brightblack"))
-   (base3 '("#C2D0E7" "#262626" "brightblack"))
-   (base4 '("#B8C5DB" "#3f3f3f" "brightblack"))
-   (base5 '("#AEBACF" "#525252" "brightblack"))
-   (base6 '("#A1ACC0" "#6b6b6b" "brightblack"))
-   (base7 '("#60728C" "#979797" "brightblack"))
-   (base8 '("#485163" "#dfdfdf" "white"))
-   (fg '("#3B4252" "#2d2d2d" "white"))
-   (fg-alt '("#2E3440" "#bfbfbf" "brightwhite"))
+  ((bg         '("#E5E9F0" nil       nil))
+   (bg-alt     '("#D8DEE9" nil       nil))
+   (base0      '("#F0F4FC" "black"   "black"))
+   (base1      '("#E3EAF5" "#1e1e1e" "brightblack"))
+   (base2      '("#D8DEE9" "#2e2e2e" "brightblack"))
+   (base3      '("#C2D0E7" "#262626" "brightblack"))
+   (base4      '("#B8C5DB" "#3f3f3f" "brightblack"))
+   (base5      '("#AEBACF" "#525252" "brightblack"))
+   (base6      '("#A1ACC0" "#6b6b6b" "brightblack"))
+   (base7      '("#60728C" "#979797" "brightblack"))
+   (base8      '("#485163" "#dfdfdf" "white"))
+   (fg         '("#3B4252" "#2d2d2d" "white"))
+   (fg-alt     '("#2E3440" "#bfbfbf" "brightwhite"))
 
    (grey base4)
    (red       '("#99324B" "#ff6655" "red"))
@@ -174,7 +174,7 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
 
    (nav-flash-face :background region :foreground base8 :weight 'bold)
    ;; org-mode
@@ -183,7 +183,7 @@ determine the exact padding."
 
 
   ;; --- extra variables ---------------------
-  ;; ()
+  ()
   )
 
 ;;; doom-nord-light-theme.el ends here

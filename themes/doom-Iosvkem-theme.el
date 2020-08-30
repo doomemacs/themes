@@ -1,4 +1,4 @@
-;;; doom-Iosvkem-theme.el --- inspired by Atom One Dark
+;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,16 +26,16 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-Iosvkem-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 ;;
 (def-doom-theme doom-Iosvkem
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by VIM Iosvkem"
 
   ;; name        default   256       16
   ((bg         '("#1b1d1e" "#1b1d1e" nil))
    (bg-alt     '("#262829" "#262829" nil))
-   (base0      '("#1b1d1e" "1b1d1e"   "black"))
+   (base0      '("#1b1d1e" "#1b1d1e" "black"))
    (base1      '("#202020" "#202020" "brightblack"))
    (base2      '("#303030" "#303030" "brightblack"))
    (base3      '("#303030" "#303030" "brightblack"))
@@ -150,11 +150,13 @@ determine the exact padding."
    (css-selector             :foreground blue)
 
    ;; markdown-mode
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   (markdown-markup-face :foreground red)
+   (markdown-header-face :inherit 'bold :foreground fg)
+   (markdown-header-delimiter-face :inherit 'bold :foreground red)
 
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
 
    ;; Iosvkem
    (font-lock-comment-face
@@ -173,19 +175,12 @@ determine the exact padding."
 
    (org-link :foreground urlblue :underline t)
 
-   (markdown-markup-face :foreground red)
-   (markdown-header-face :inherit 'bold :foreground fg)
-   (markdown-header-delimiter-face :inherit 'bold :foreground red)
-   (markdown-code-face :background bg)
-
-   ((outline-1 &override) :foreground blue :background bg  :weight 'bold :height 1.25)
-   ((outline-2 &override) :foreground magenta :weight 'bold)
-   ((outline-3 &override) :foreground dark-cyan  :weight 'bold)
-   ((outline-4 &override) :foreground (doom-lighten blue 0.2) :weight 'bold)
-   ((outline-5 &override) :foreground (doom-lighten magenta 0.2) :weight 'bold)
-   ((outline-6 &override) :foreground (doom-lighten dark-cyan 0.2) :weight 'bold)
-   ((outline-7 &override) :foreground (doom-lighten blue 0.4) :weight 'bold)
-   ((outline-8 &override) :foreground (doom-lighten magenta 0.4) :weight 'bold)
+   ((outline-1 &override) :foreground blue)
+   ((outline-2 &override) :foreground magenta)
+   ((outline-3 &override) :foreground dark-cyan)
+   ((outline-6 &override) :foreground (doom-lighten dark-cyan 0.2))
+   ((outline-7 &override) :foreground (doom-lighten blue 0.4))
+   ((outline-8 &override) :foreground (doom-lighten magenta 0.4))
    ((org-block &override) :background bg-alt)
    ((org-quote &override) :background bg-alt)
    ((org-block-begin-line &override) :foreground comments :background bg)

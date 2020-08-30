@@ -1,82 +1,81 @@
-;;; doom-one-theme.el --- inspired by Atom One Dark -*- no-byte-compile: t; -*-
+;;; doom-oceanic-next-theme.el --- inspired by Oceanic Next -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
-;;
-(defgroup doom-one-theme nil
+(defgroup doom-oceanic-next-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-one-brighter-modeline nil
-  "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-one-theme
-  :type 'boolean)
+(defcustom doom-oceanic-next-brighter-modeline nil
+ "If non-nil, more vivid colors will be used to style the mode-line."
+ :group 'doom-oceanic-next-theme
+ :type 'boolean)
 
-(defcustom doom-one-brighter-comments nil
+(defcustom doom-oceanic-next-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-one-theme
+  :group 'doom-oceanic-next-theme
   :type 'boolean)
 
-(defcustom doom-one-comment-bg doom-one-brighter-comments
+(defcustom doom-oceanic-next-comment-bg doom-oceanic-next-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-one-theme
+  :group 'doom-oceanic-next-theme
   :type 'boolean)
 
-(defcustom doom-one-padded-modeline doom-themes-padded-modeline
+(defcustom doom-oceanic-next-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-one-theme
+  :group 'doom-oceanic-next-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-one
-  "A dark theme inspired by Atom One Dark"
+(def-doom-theme doom-oceanic-next
+  "A dark theme inspired by Oceanic Next "
 
   ;; name        default   256       16
-  ((bg         '("#282c34" nil       nil            ))
-   (bg-alt     '("#21242b" nil       nil            ))
-   (base0      '("#1B2229" "black"   "black"        ))
-   (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
-   (base2      '("#202328" "#2e2e2e" "brightblack"  ))
-   (base3      '("#23272e" "#262626" "brightblack"  ))
-   (base4      '("#3f444a" "#3f3f3f" "brightblack"  ))
-   (base5      '("#5B6268" "#525252" "brightblack"  ))
-   (base6      '("#73797e" "#6b6b6b" "brightblack"  ))
-   (base7      '("#9ca0a4" "#979797" "brightblack"  ))
-   (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
-   (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
-   (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
+  ((bg         '("#1B2B34" nil       nil            ))
+   (bg-alt     '("#14232D" nil       nil            ))
+   (base0      '("#1B2B34" "black"   "black"        ))
+   (base1      '("#343D46" "#1e1e1e" "brightblack"  ))
+   (base2      '("#4F5B66" "#2e2e2e" "brightblack"  ))
+   (base3      '("#65737E" "#262626" "brightblack"  ))
+   (base4      '("#A7ADBA" "#3f3f3f" "brightblack"  ))
+   (base5      '("#C0C5CE" "#525252" "brightblack"  ))
+   (base6      '("#CDD3DE" "#6b6b6b" "brightblack"  ))
+   (base7      '("#D8DEE9" "#979797" "white"        ))
+   (base8      base7)
+   (fg-alt     base6)
+   (fg         base8)
 
    (grey       base4)
-   (red        '("#ff6c6b" "#ff6655" "red"          ))
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
-   (green      '("#98be65" "#99bb66" "green"        ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECBE7B" "#ECBE7B" "yellow"       ))
-   (blue       '("#51afef" "#51afef" "brightblue"   ))
-   (dark-blue  '("#2257A0" "#2257A0" "blue"         ))
-   (magenta    '("#c678dd" "#c678dd" "brightmagenta"))
-   (violet     '("#a9a1e1" "#a9a1e1" "magenta"      ))
-   (cyan       '("#46D9FF" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#5699AF" "#5699AF" "cyan"         ))
+   (red        '("#EC5f67" "#EC5f67" "red"          ))
+   (orange     '("#F99157" "#F99157" "brightred"    ))
+   (green      '("#99C794" "#99bb66" "green"        ))
+   (teal       '("#5FB3B3" "#44b9b1" "brightgreen"  ))
+   (yellow     '("#FAC863" "#ECBE7B" "yellow"       ))
+   (blue       '("#6699CC" "#51afef" "brightblue"   ))
+   (dark-blue  blue)
+   (magenta    '("#E27E8D" "#c678dd" "magenta"      ))
+   (violet     '("#C594C5" "#a9a1e1" "brightmagenta"))
+   (cyan       teal)
+   (dark-cyan  cyan)
 
    ;; face categories -- required for all themes
-   (highlight      blue)
-   (vertical-bar   (doom-darken base1 0.1))
-   (selection      dark-blue)
-   (builtin        magenta)
-   (comments       (if doom-one-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-one-brighter-comments dark-cyan base5) 0.25))
-   (constants      violet)
-   (functions      magenta)
-   (keywords       blue)
-   (methods        cyan)
-   (operators      blue)
+   (highlight      yellow)
+   (vertical-bar   (doom-darken base1 0.5))
+   (selection      base2)
+   (builtin        red)
+   (comments       (if doom-oceanic-next-brighter-comments dark-cyan base3))
+   (doc-comments   (doom-lighten (if doom-oceanic-next-brighter-comments dark-cyan base3) 0.25))
+   (constants      orange)
+   (functions      blue)
+   (keywords       violet)
+   (methods        blue)
+   (operators      teal)
    (type           yellow)
    (strings        green)
-   (variables      (doom-lighten magenta 0.4))
+   (variables      orange)
    (numbers        orange)
-   (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
+   (region         base2)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -86,12 +85,12 @@ determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-one-brighter-modeline)
+   (-modeline-bright doom-oceanic-next-brighter-modeline)
    (-modeline-pad
-    (when doom-one-padded-modeline
-      (if (integerp doom-one-padded-modeline) doom-one-padded-modeline 4)))
+    (when doom-oceanic-next-padded-modeline
+      (if (integerp doom-oceanic-next-padded-modeline) doom-oceanic-next-padded-modeline 4)))
 
-   (modeline-fg     fg)
+   (modeline-fg     nil)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -116,7 +115,7 @@ determine the exact padding."
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-one-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-oceanic-next-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
@@ -139,6 +138,7 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
+   (tooltip              :background bg-alt :foreground fg)
    ;; Doom modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
@@ -146,7 +146,7 @@ determine the exact padding."
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :background base2 :distant-foreground base0 :weight 'bold)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -154,15 +154,15 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
-   ;; LaTeX-mode
-   (font-latex-math-face :foreground green)
-
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   (markdown-header-face :inherit 'bold :foreground blue)
+   ((markdown-code-face &override) :background (doom-lighten bg 0.05))
 
    ;; org-mode
+   ((org-block &override) :background bg-alt)
+   ((org-block-begin-line &override) :background bg-alt)
+   ((org-block-end-line &override) :background bg-alt)
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden))
 
@@ -171,4 +171,4 @@ determine the exact padding."
   ()
   )
 
-;;; doom-one-theme.el ends here
+;;; doom-oceanic-next-theme.el ends here

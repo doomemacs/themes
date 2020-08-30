@@ -1,4 +1,4 @@
-;;; doom-one-light-theme.el --- inspired by Atom One Light
+;;; doom-one-light-theme.el --- inspired by Atom One Light -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-one-light-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 ;;
 (def-doom-theme doom-one-light
@@ -105,7 +105,8 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
   ;; --- extra faces ------------------------
-  ((font-lock-comment-face
+  ((centaur-tabs-unselected :background bg-alt :foreground base4)
+   (font-lock-comment-face
     :foreground comments
     :background (if doom-one-light-comment-bg base0))
    (font-lock-doc-face
@@ -115,8 +116,6 @@ determine the exact padding."
 
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
-
-   (solaire-hl-line-face :inherit 'hl-line :background base0)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -152,17 +151,16 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face     :foreground base5)
    (markdown-header-face     :inherit 'bold :foreground red)
-   (markdown-code-face       :background base1)
+   ((markdown-code-face &override)       :background base1)
    (mmm-default-submode-face :background base1)
 
    ;; org-mode
-   (org-block            :background base1)
-   (org-block-begin-line :foreground fg :slant 'italic)
-   (org-level-1          :foreground red    :weight 'bold :height 1.2)
-   (org-level-2          :foreground orange :weight 'bold :height 1.1)
-   (org-level-3          :foreground violet :bold bold          :height 1.1)
-   (org-ellipsis         :underline nil :background bg     :foreground red)
-   (org-quote            :background base1)
+   ((outline-1 &override) :foreground red)
+   ((outline-2 &override) :foreground orange)
+   ((org-block &override) :background base1)
+   ((org-block-begin-line &override) :foreground fg :slant 'italic)
+   (org-ellipsis :underline nil :background bg     :foreground red)
+   ((org-quote &override) :background base1)
 
    ;; helm
    (helm-candidate-number :background blue :foreground bg)
@@ -193,7 +191,7 @@ determine the exact padding."
    )
 
   ;; --- extra variables ---------------------
-  ;; ()
+  ()
   )
 
 ;;; doom-one-light-theme.el ends here

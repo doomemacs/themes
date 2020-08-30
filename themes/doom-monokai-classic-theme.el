@@ -1,80 +1,75 @@
-;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
+;; doom-monokai-classic-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
-(defgroup doom-molokai-theme nil
+(defgroup doom-monokai-classic-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
 
-(defcustom doom-molokai-brighter-modeline nil
-  "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-molokai-theme
-  :type 'boolean)
-
-(defcustom doom-molokai-brighter-comments nil
+(defcustom doom-monokai-classic-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-molokai-theme
+  :group 'doom-monokai-classic-theme
   :type 'boolean)
 
-(defcustom doom-molokai-comment-bg doom-molokai-brighter-comments
+(defcustom doom-monokai-classic-comment-bg doom-monokai-classic-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
-  :group 'doom-molokai-theme
+  :group 'doom-monokai-classic-theme
   :type 'boolean)
 
-(defcustom doom-molokai-padded-modeline doom-themes-padded-modeline
+(defcustom doom-monokai-classic-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-molokai-theme
+  :group 'doom-monokai-classic-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-molokai
+(def-doom-theme doom-monokai-classic
   "A dark, vibrant theme inspired by Textmate's Monokai."
 
   ;; name        gui       256       16
-  ((bg         '("#1c1e1f" nil       nil          ))
-   (bg-alt     '("#222323" nil       nil          ))
+  ((bg         '("#272822" nil       nil          ))
+   (bg-alt     '("#1D1E19" nil       nil          ))
    (base0      '("#1B2229" "black"   "black"      ))
-   (base1      '("#151617" "#101010" "brightblack"))
-   (base2      '("#1d1f20" "#191919" "brightblack"))
-   (base3      '("#2d2e2e" "#252525" "brightblack"))
-   (base4      '("#4e4e4e" "#454545" "brightblack"))
-   (base5      '("#555556" "#6b6b6b" "brightblack"))
-   (base6      '("#767679" "#7b7b7b" "brightblack"))
-   (base7      '("#cfc0c5" "#c1c1c1" "brightblack"))
-   (base8      '("#ffffff" "#ffffff" "brightwhite"))
-   (fg         '("#d6d6d4" "#dfdfdf" "brightwhite"))
-   (fg-alt     '("#556172" "#4d4d4d" "white"))
+   (base1      '("#161613" "#101010" "brightblack"))
+   (base2      '("#1D1F20" "#191919" "brightblack"))
+   (base3      '("#2D2E2E" "#252525" "brightblack"))
+   (base4      '("#4E4E4E" "#454545" "brightblack"))
+   (base5      '("#555556" "#6B6B6B" "brightblack"))
+   (base6      '("#767679" "#7B7B7B" "brightblack"))
+   (base7      '("#CFC0C5" "#C1C1C1" "brightblack"))
+   (base8      '("#FFFFFF" "#FFFFFF" "brightwhite"))
+   (fg         '("#F8F8F2" "#DFDFDF" "brightwhite"))
+   (fg-alt     '("#556172" "#4D4D4D" "white"))
 
-   (grey       '("#525254" "#515154" "brightblack"))
-   (red        '("#e74c3c" "#e74c3c" "red"))
-   (orange     '("#fd971f" "#fd971f" "brightred"))
-   (green      '("#b6e63e" "#b6e63e" "green"))
+   (grey       '("#525254" "#525254" "brightblack"))
+   (red        '("#E74C3C" "#E74C3C" "red"))
+   (orange     '("#FD971F" "#FD971F" "brightred"))
+   (green      '("#A6E22E" "#A6E22E" "green"))
    (teal       green)
-   (yellow     '("#e2c770" "#e2c770" "yellow"))
-   (blue       '("#268bd2" "#2686D6" "brightblue"))
+   (yellow     '("#E6DB74" "#E6DB74" "yellow"))
+   (blue       '("#268bd2" "#268bd2" "brightblue"))
    (dark-blue  '("#727280" "#727280" "blue"))
-   (magenta    '("#fb2874" "#fb2874" "magenta"))
-   (violet     '("#9c91e4" "#9c91e4" "brightmagenta"))
-   (cyan       '("#66d9ef" "#66d9ef" "brightcyan"))
-   (dark-cyan  '("#8fa1b3" "#8FA1B3" "cyan"))
+   (magenta    '("#F92660" "#F92660" "magenta"))
+   (violet     '("#9C91E4" "#9C91E4" "brightmagenta"))
+   (cyan       '("#66D9EF" "#66D9EF" "brightcyan"))
+   (dark-cyan  '("#8FA1B3" "#8FA1B3" "cyan"))
 
    ;; face categories
    (highlight      orange)
    (vertical-bar   (doom-lighten bg 0.1))
    (selection      base5)
    (builtin        orange)
-   (comments       (if doom-molokai-brighter-comments violet base5))
-   (doc-comments   (if doom-molokai-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.25)))
-   (constants      orange)
+   (comments       (if doom-monokai-classic-brighter-comments violet base5))
+   (doc-comments   (if doom-monokai-classic-brighter-comments (doom-lighten violet 0.1) (doom-lighten base5 0.25)))
+   (constants      violet)
    (functions      green)
    (keywords       magenta)
-   (methods        cyan)
-   (operators      violet)
+   (methods        green)
+   (operators      magenta)
    (type           cyan)
    (strings        yellow)
-   (variables      orange)
+   (variables      fg)
    (numbers        violet)
    (region         base4)
    (error          red)
@@ -86,18 +81,15 @@ determine the exact padding."
 
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
-   (-modeline-bright doom-molokai-brighter-modeline) ;; no effect for the moment
    (-modeline-pad
-    (when doom-molokai-padded-modeline
-      (if (integerp doom-molokai-padded-modeline) doom-molokai-padded-modeline 4)))
+    (when doom-monokai-classic-padded-modeline
+      (if (integerp doom-monokai-classic-padded-modeline) doom-monokai-classic-padded-modeline 4)))
 
    (modeline-fg nil)
    (modeline-fg-alt base4)
 
-   (modeline-bg
-    (if -modeline-bright base3 base3))
-   (modeline-bg-inactive
-    (if -modeline-bright (doom-darken base2 0.2) (doom-darken base2 0.2)))
+   (modeline-bg base1)
+   (modeline-bg-inactive (doom-darken base2 0.2))
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
@@ -113,13 +105,30 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
 
+   ;; Font lock
+   (font-lock-comment-face
+    :foreground comments
+    :slant 'italic)
+   (font-lock-doc-face
+    :foreground doc-comments
+    :slant 'italic)
+   (font-lock-type-face
+    :foreground type
+    :slant 'italic)
+   
    ;; Centaur tabs
-   (centaur-tabs-active-bar-face :background green)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground green)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground green)
+   (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
+				   :background bg
+				   :foreground yellow)
+   (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected
+				     :background bg-alt
+				     :foreground yellow)
+   (centaur-tabs-active-bar-face :background yellow)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)
 
    ;; Doom modeline
-   (doom-modeline-bar :background green)
+   (doom-modeline-bar :background yellow)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
@@ -191,4 +200,4 @@ determine the exact padding."
   ;; ()
   )
 
-;;; doom-molokai-theme.el ends here
+;;; doom-monokai-classic-theme.el ends here

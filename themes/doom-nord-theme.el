@@ -1,4 +1,4 @@
-;;; doom-nord-theme.el --- inspired by Nord
+;;; doom-nord-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-nord-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (eval-and-compile
   (defcustom doom-nord-region-highlight t
@@ -40,8 +40,8 @@ determine the exact padding."
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#3B4252" nil       nil            ))
-   (bg-alt     '("#2E3440" nil       nil            ))
+  ((bg         '("#2E3440" nil       nil            ))
+   (bg-alt     '("#272C36" nil       nil            ))
    (base0      '("#191C25" "black"   "black"        ))
    (base1      '("#242832" "#1e1e1e" "brightblack"  ))
    (base2      '("#2C333F" "#2e2e2e" "brightblack"  ))
@@ -55,33 +55,33 @@ determine the exact padding."
    (fg-alt     '("#E5E9F0" "#bfbfbf" "brightwhite"  ))
 
    (grey       base4)
-   (red        '("#C16069" "#ff6655" "red"          ))
-   (orange     '("#D2876D" "#dd8844" "brightred"    ))
-   (green      '("#A2BF8A" "#99bb66" "green"        ))
-   (teal       '("#8EBCBB" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#ECCC87" "#ECBE7B" "yellow"       ))
-   (blue       '("#80A0C2" "#51afef" "brightblue"   ))
-   (dark-blue  '("#5C748E" "#2257A0" "blue"         ))
-   (magenta    '("#B58DAE" "#c678dd" "magenta"      ))
-   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta"))
-   (cyan       '("#86C0D1" "#46D9FF" "brightcyan"   ))
-   (dark-cyan  '("#507681" "#5699AF" "cyan"         ))
+   (red        '("#BF616A" "#ff6655" "red"          )) ;; Nord11
+   (orange     '("#D08770" "#dd8844" "brightred"    )) ;; Nord12
+   (green      '("#A3BE8C" "#99bb66" "green"        )) ;; Nord14
+   (teal       '("#8FBCBB" "#44b9b1" "brightgreen"  )) ;; Nord7
+   (yellow     '("#EBCB8B" "#ECBE7B" "yellow"       )) ;; Nord13
+   (blue       '("#81A1C1" "#51afef" "brightblue"   )) ;; Nord9
+   (dark-blue  '("#5E81AC" "#2257A0" "blue"         )) ;; Nord10
+   (magenta    '("#B48EAD" "#c678dd" "magenta"      )) ;; Nord15
+   (violet     '("#5D80AE" "#a9a1e1" "brightmagenta")) ;; ??
+   (cyan       '("#88C0D0" "#46D9FF" "brightcyan"   )) ;; Nord8
+   (dark-cyan  '("#507681" "#5699AF" "cyan"         )) ;; ??
 
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.2))
    (selection      dark-blue)
-   (builtin        teal)
+   (builtin        blue)
    (comments       (if doom-nord-brighter-comments dark-cyan (doom-lighten base5 0.2)))
    (doc-comments   (doom-lighten (if doom-nord-brighter-comments dark-cyan base5) 0.25))
-   (constants      magenta)
+   (constants      blue)
    (functions      teal)
    (keywords       blue)
    (methods        teal)
    (operators      blue)
-   (type           yellow)
+   (type           teal)
    (strings        green)
-   (variables      (doom-lighten magenta 0.5))
+   (variables      base7)
    (numbers        magenta)
    (region         (pcase doom-nord-region-highlight
                      (`frost teal)
@@ -111,7 +111,7 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-blend bg base5 0.2)
-      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      base1))
    (modeline-bg-l
     (if -modeline-bright
         (doom-blend bg base5 0.2)
@@ -174,7 +174,7 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   (markdown-code-face :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
 
    ;; org-mode
    (org-hide :foreground hidden)
@@ -182,9 +182,7 @@ determine the exact padding."
 
 
   ;; --- extra variables ---------------------
-  ;; ()
-
-
+  ()
   )
 
 ;;; doom-nord-theme.el ends here

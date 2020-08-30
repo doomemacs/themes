@@ -1,4 +1,4 @@
-;;; doom-opera-theme.el --- Opera theme
+;;; doom-opera-theme.el --- Opera theme -*- no-byte-compile: t; -*-
 
 (require 'doom-themes)
 
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-opera-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 (defcustom doom-opera-region-highlight t
   "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
@@ -35,7 +35,7 @@ determine the exact padding."
   :type 'symbol)
 
 (def-doom-theme doom-opera
-  "A dark opera theme."
+  "A dark Opera theme."
 
   ;; name        default   256       16
   ((bg         '("#323334" nil       nil            ))
@@ -140,6 +140,10 @@ determine the exact padding."
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
+
+
+  ;; --- extra variables ---------------------
+  ())
 
 ;;; doom-opera-theme.el ends here

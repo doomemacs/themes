@@ -1,4 +1,4 @@
-;; doom-vibrant-theme.el --- a more vibrant version of doom-one
+;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -26,7 +26,7 @@ legibility."
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
   :group 'doom-vibrant-theme
-  :type '(or integer boolean))
+  :type '(choice integer boolean))
 
 
 ;;
@@ -108,7 +108,9 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  (((all-the-icons-dblue &override) :foreground dark-cyan)
+   (centaur-tabs-unselected :background bg-alt :foreground base6)
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
    (font-lock-comment-face
     :foreground comments
@@ -140,6 +142,8 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+
+   (whitespace-empty :background base2)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
