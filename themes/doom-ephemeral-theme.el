@@ -256,6 +256,9 @@
    (company-box-background      :background base0  :foreground fg )
    (company-tooltip-common      :foreground violet                )
    (company-tooltip-selection   :background base0  :foreground red)
+
+   ;; lsp
+   (lsp-headerline-breadcrumb-symbols-face :foreground functions :weight 'bold)
   ))
 
 ;;; doom-ephemeral-theme.el ends here
