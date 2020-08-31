@@ -66,7 +66,7 @@ determine the exact padding."
    (green-dark '("#30c965"                          ))
 
    ;; face categories -- required for all themes
-   (highlight      teal)
+   (highlight      red)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      cyan)
    (builtin        teal)
@@ -196,7 +196,7 @@ determine the exact padding."
    (ivy-minibuffer-match-face-4
      :inherit 'ivy-minibuffer-match-face-2
      :foreground red :weight 'semi-bold)
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :background red :distant-foreground base0 :weight 'normal)
 
    ;; treemacs
    (treemacs-directory-face     :foreground base8)
