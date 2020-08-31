@@ -818,6 +818,8 @@
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
     (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
                                  :background bg-alt :extend t)
+    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+
 
     ;; magit
     (magit-bisect-bad        :foreground red)
