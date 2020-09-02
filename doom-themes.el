@@ -32,6 +32,7 @@
 ;;   [X] `doom-dracula' (added by fuxialexnder)
 ;;   [X] `doom-ephemeral' (added by karetsu)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
+;;   [X] `doom-flatwhite' (added by ShaneKilkelly)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-gruxbox-light' (added by jsoa)
 ;;   [X] `doom-henna' (added by jsoa)

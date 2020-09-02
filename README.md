@@ -35,6 +35,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
   - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
+  - [X] `doom-flatwhite`: a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
   - [X] `doom-gruvbox-light`: adapted from Morhetz's [Gruvbox][gruvbox] light variant (thanks for [jsoa])
   - [X] `doom-henna`: based on VS Code's [Henna][henna] (thanks to [jsoa])
@@ -206,6 +207,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
+[flatwhite]: https://github.com/biletskyy/flatwhite-syntax
 [franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo 
@@ -238,6 +240,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
+[ShaneKilkelly]: https://github.com/ShaneKilkelly
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
