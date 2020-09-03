@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-ayu-light
-  "A dark theme inspired by Ayu Mirage"
+  "A light theme inspired by Ayu Light"
 
 
   ;; name        default   256       16
