@@ -269,6 +269,7 @@ determine the exact padding."
     (web-mode-html-attr-name-face    :background bg
                                      :foreground fg
                                      :inherit 'italic)
+    (web-mode-html-attr-value-face   :inherit 'font-lock-string-face)
     (web-mode-html-entity-face       :background fw-orange-blend
                                      :foreground fw-orange-text
                                      :inherit 'italic)
@@ -278,6 +279,10 @@ determine the exact padding."
                                      :foreground fg-alt)
     (web-mode-symbol-face            :foreground fw-blue-text
                                      :background fw-blue-blend)
+    (web-mode-string-face            :inherit 'font-lock-string-face)
+
+
+   
 
    ;; rjsx-mode
    (rjsx-tag  :background fw-purple-blend
