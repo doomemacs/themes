@@ -43,7 +43,7 @@ determine the exact padding."
    (fg         '("#bbc2cf" "#bfbfbf" "brightwhite"  ))
    (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
 
-   (grey       base8)
+   (grey       base5)
    (red        '("#ff6c6b" "#ff6655" "red"          ))
    (orange     '("#b4916d" "#b4916d" "brightred"    ))
    (green      '("#98be65" "#99bb66" "green"        ))
@@ -109,10 +109,13 @@ determine the exact padding."
     :foreground doc-comments
     :slant 'italic)
 
-   ((secondary-selection &override) :background grey :foreground bg :extend t)
-
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
+
+   ;; Change swiper colours, background and foreground are too close
+   ((swiper-match-face-1 &override) :background fg        :foreground bg)
+   ((swiper-line-face    &override) :background dark-blue :foreground fg)
+   ((ivy-minibuffer-match-face-1 &override) :foreground (doom-lighten grey 0.70))
 
    ;; Apply bold value for different things
    (font-lock-builtin-face       :inherit 'bold :foreground base8)
