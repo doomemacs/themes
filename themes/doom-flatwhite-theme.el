@@ -11,6 +11,11 @@
   :group 'doom-flatwhite-theme
   :type 'boolean)
 
+(defcustom doom-flatwhite-no-highlight-variables nil
+  "If non-nil, removes highlight on variable names"
+  :group 'doom-flatwhite-theme
+  :type 'boolean)
+
 (defcustom doom-fw-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
@@ -118,6 +123,7 @@ determine the exact padding."
 
    ;; custom categories
    (-modeline-bright doom-flatwhite-brighter-modeline)
+   (-no-highlight-variables doom-flatwhite-no-highlight-variables)
    (-modeline-pad
     (when doom-fw-padded-modeline
       (if (integerp doom-fw-padded-modeline) doom-fw-padded-modeline 4)))
@@ -150,7 +156,10 @@ determine the exact padding."
       :foreground doc-comments
       :slant 'italic)
     (font-lock-type-face                 :inherit 'default)
-    (font-lock-variable-name-face        :foreground fg)
+
+    (font-lock-variable-name-face
+     :foreground (if -no-highlight-variables fg fw-blue-text)
+     :background (if -no-highlight-variables bg fw-blue-blend ))
     (font-lock-warning-face              :background fw-red-blend
                                          :foreground fw-red-text)
     (font-lock-negation-char-face        :inherit 'default)
