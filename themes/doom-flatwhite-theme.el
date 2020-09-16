@@ -453,14 +453,14 @@ determine the exact padding."
     (js2-external-variable :foreground fg)
 
     ;; racket
-    (racket-keyword-argument-face :foreground fw-blue-text
-                                  :background fw-blue-blend)
+    (racket-keyword-argument-face :foreground fw-orange-text
+                                  :background fw-orange-blend)
     (racket-selfeval-face :foreground fw-teal-text
                           :background fw-teal-blend)
 
     ;; clojure
-    (clojure-keyword-face :foreground fw-blue-text
-                          :background fw-blue-blend)
+    (clojure-keyword-face :foreground fw-orange-text
+                          :background fw-orange-blend)
 
     ;; fill column
     (hl-fill-column-face :foreground fg
