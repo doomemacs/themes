@@ -224,6 +224,11 @@ determine the exact padding."
    (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
    (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
+
+   ;; mu4e
+   (mu4e-highlight-face         :background bg :inherit 'bold)
+   (mu4e-header-highlight-face :foreground dark-blue :inherit 'bold)
+   (mu4e-unread-face :foreground blue)
    )
 
   ;; --- extra variables ---------------------
