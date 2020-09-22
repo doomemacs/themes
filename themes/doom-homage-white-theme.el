@@ -180,7 +180,7 @@ determine the exact padding."
    ((org-drawer          &override)  :foreground grey)
    ;; org-mode: Make ellipsis as bleak as possible and reset any underline and boxing
    ;; properties
-   (org-ellipsis :underline nil :box nil :foreground fg)
+   (org-ellipsis :underline nil :box nil :foreground fg :background bg)
    ;; org-mode: Make blocks have a slightly different background
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :foreground fg :slant 'italic)
