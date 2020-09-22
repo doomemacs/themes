@@ -19,11 +19,6 @@ determine the exact padding."
   :group 'doom-homage-white-theme
   :type '(choice integer boolean))
 
-(defcustom doom-homage-white-large-org-headlines nil
-  "If non-nil, make first three org headline faces to be large."
-  :group 'doom-homage-white-theme
-  :type 'boolean)
-
 ;;
 (def-doom-theme doom-homage-white
   "A light theme inspired by Atom One"
@@ -163,43 +158,42 @@ determine the exact padding."
    ((markdown-code-face &override)       :background base1)
    (mmm-default-submode-face :background base1)
 
-   ;; org-mode
-   ((outline-1 &override) :foreground fg :inherit 'bold
-    :height (if doom-homage-white-large-org-headlines 1.8 1.0))
-   ((outline-2 &override) :foreground fg :inherit 'bold
-    :height (if doom-homage-white-large-org-headlines 1.4 1.0))
-   ((outline-3 &override) :foreground fg :inherit 'bold
-    :height (if doom-homage-white-large-org-headlines 1.2 1.0))
-   ((outline-4 &override) :foreground fg :inherit 'bold)
-   ((outline-5 &override) :foreground fg :inherit 'bold)
-   ((outline-6 &override) :foreground fg :inherit 'bold)
-   ((outline-7 &override) :foreground fg :inherit 'bold)
-   ((outline-8 &override) :foreground fg :inherit 'bold)
-
-   ((org-todo &override)  :foreground red   :bold 'inherit)
-   ((org-done &override)  :foreground green :bold 'inherit)
-   ((org-tag &override)   :foreground fg :background yellow-alt
-    :box '(:line-width -1 :color "#333333" :style 'released-button))
+   ;; org-mode: make outline just the same colour as normal text
+   ((outline-1 &override) :foreground fg)
+   ((outline-2 &override) :foreground fg)
+   ((outline-3 &override) :foreground fg)
+   ((outline-4 &override) :foreground fg)
+   ((outline-5 &override) :foreground fg)
+   ((outline-6 &override) :foreground fg)
+   ((outline-7 &override) :foreground fg)
+   ((outline-8 &override) :foreground fg)
+   ;; org-mode: make unfinished cookie and todo keywords to be very bright to
+   ;; grab attention
+   ((org-todo &override) :foreground red)
+   ;; org-mode: make tags and dates to have pretty box around them
+   ((org-tag &override)   :foreground fg :background base1
+    :box `(:line-width -1 :color ,base5 :style 'released-button))
    ((org-date &override)  :foreground fg :background base1
-    :box '(:line-width -1 :color "#333333" :style 'released-button))
-   ((org-special-keyword &override)  :foreground base5)
-   ((org-drawer          &override)  :foreground base5)
-
-   ((org-document-title &override) :height 2.0)
+    :box `(:line-width -1 :color ,base5  :style 'released-button))
+   ;; org-mode: Make drawers and special keywords (like scheduled) to be very bleak
+   ((org-special-keyword &override)  :foreground grey)
+   ((org-drawer          &override)  :foreground grey)
+   ;; org-mode: Make ellipsis as bleak as possible and reset any underline and boxing
+   ;; properties
+   (org-ellipsis :underline nil :box nil :foreground fg)
+   ;; org-mode: Make blocks have a slightly different background
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :foreground fg :slant 'italic)
-   (org-ellipsis :underline nil :box nil :background bg-alt :foreground fg :inherit 'bold)
    ((org-quote &override) :background base1)
    ((org-table &override) :foreground fg)
 
-   ;; Deadlines
-   ((org-upcoming-deadline &override)         :foreground fg)
-   ((org-upcoming-distant-deadline &override) :foreground base5)
-
-   ;; Scheduled things
-   ((org-scheduled &override)            :foreground fg)
-   ((org-scheduled-today &override)      :foreground fg)
-   ((org-scheduled-previously &override) :foreground base5)
+   ;; org-agendamode: make "unimportant" things like distant deadlines and
+   ;; things scheduled for today to be bleak.
+   (org-upcoming-deadline         :foreground base8)
+   (org-upcoming-distant-deadline :foreground fg)
+   (org-scheduled                 :foreground fg)
+   (org-scheduled-today           :foreground fg)
+   (org-scheduled-previously      :foreground base8)
 
    ;; Indent guides character face
    (highlight-indent-guides-character-face :foreground base2)
