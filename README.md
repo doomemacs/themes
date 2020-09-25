@@ -140,7 +140,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-wilmersdorf                  | [link](https://github.com/ianpan870102/wilmersdorf-emacs-theme)                        | port of Ian Pan's Wilmersdorf (ported by [@ema2159](https://github.com/ema2159))                                                  |
 | doom-xcode                        | Xcode.app                                                                              | based off of Apple's Xcode Dark Theme (ported by [@kadenbarlow](https://github.com/kadenbarlow))                                  |
 | doom-zenburn                      | [link](https://github.com/bbatsov/zenburn-emacs)                                       | port of the popular Zenburn theme (ported by [@jsoa](https://github.com/jsoa))                                                    |
-
+| doom-pine                         | doom-gruvbox                                                                           | a green theme with gruvbox-adjacent foreground colors ([@rhargrave](https://github.com/RomanHargrave))                            |
 
 ## Extensions
 [Check out the wiki for details on customizing our neotree/treemacs/etc
