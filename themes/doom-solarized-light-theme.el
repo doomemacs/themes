@@ -33,8 +33,8 @@ determine the exact padding."
   "A light theme inspired by Solarized light"
 
   ;; name        default   256       16
-  ((bg         '("#FDF6E3" nil       nil            ))
-   (bg-alt     '("#FFFBEA" nil       nil            ))
+  ((bg         '("#FDF6E3" "#FDF6E3" nil            ))
+   (bg-alt     '("#FFFBEA" "#FFFBEA" nil            ))
    (base0      '("#FFFBF0" "#FFFBF0" "white"        ))
    (base1      '("#FCF8ED" "#FCF8ED" "brightblack"  ))
    (base2      '("#FCF7E8" "#FCF7E8" "brightblack"  ))
