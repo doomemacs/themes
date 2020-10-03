@@ -47,7 +47,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-miramare`: a port of [Franbach's][franbach] [Miramare][miramare], a variant of gruvbox theme (thanks to [sagittaros])
   - [X] `doom-molokai`: a theme based on Texmate's Monokai
   - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
-  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
+  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow])
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
   - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
@@ -109,7 +109,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
     out [my mode-line configuration][mode-line] in my [emacs.d].
 
 ## Themes customization
-There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable. 
+There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable.
 
 ## Install
 
@@ -149,13 +149,13 @@ Here is a example configuration for `doom-theme`:
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
-  
+
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
   (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
   (doom-themes-treemacs-config)
-  
+
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 ```
@@ -179,6 +179,10 @@ Here is a example configuration for `doom-theme`:
     ;; only for `nlinum-relative' users:
     (set-face-attribute 'nlinum-relative-current-face nil :height height))
   ```
+
++ If you're running emacs without compiled X-window support (or simply running `emacs -nw`), you might have a different experience of these themes. This is likely because many of them require more than the 256 colors usually available on a shell. In order to enjoy these themes as they're intended, please ensure that your shell can display 24bit color depth. Check your shell capabilities with: `echo $TERM`.
+
+  In case you need to setup your shell for a higher color depth, please follow a tutorial on how to enable 24bit color depth, for example [this one](http://www.skybert.net/emacs/colourful-tty-emacs)).
 
 ## Contribute
 
@@ -210,7 +214,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [flatwhite]: https://github.com/biletskyy/flatwhite-syntax
 [franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
-[gagbo]: https://github.com/gagbo 
+[gagbo]: https://github.com/gagbo
 [gruvbox]: https://github.com/morhetz/gruvbox
 [henna]: https://github.com/httpsterio/vscode-henna
 [horizon]: https://github.com/jolaleye/horizon-theme-vscode
@@ -255,6 +259,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ztlevi]: https://github.com/ztlevi
 [laserwave]: https://github.com/Jaredk3nt/laserwave
 [hyakt]: https://github.com/hyakt
-[rouge theme]: https://github.com/josefaidt/rouge-theme 
+[rouge theme]: https://github.com/josefaidt/rouge-theme
 [JordanFaust]: https://github.com/JordanFaust
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
