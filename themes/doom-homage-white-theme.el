@@ -108,6 +108,9 @@ determine the exact padding."
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
 
+   ;; Override secondary selection
+   ((secondary-selection &override) :background base0)
+
    ;; Change swiper colours, background and foreground are too close
    ((swiper-match-face-1 &override) :foreground bg :background fg)
    ((swiper-line-face    &override) :background (doom-lighten blue 0.70) :foreground fg)
