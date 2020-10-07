@@ -72,6 +72,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
+  - [ ] `doom-homage-white` / `doom-homage-black` : a minimalistic, colorless theme, inspired by [eziam][eziam], [tao][tao] and [jbeans][jbeans] themes.
 
 ## Features
 
@@ -258,3 +259,6 @@ pointers. Additional theme and plugin support requests are welcome too.
 [rouge theme]: https://github.com/josefaidt/rouge-theme 
 [JordanFaust]: https://github.com/JordanFaust
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
+[eziam]: https://github.com/thblt/eziam-theme-emacs
+[jbeans]: https://github.com/synic/jbeans-emacs
+[tao]: https://github.com/11111000000/tao-theme-emacs
