@@ -114,6 +114,10 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground bg-alt)
 
+   (solaire-mode-line-face
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+
    ;; Doom modeline
    (doom-modeline-bar :background base6)
    (doom-modeline-info :inherit 'mode-line-emphasis)
@@ -164,7 +168,6 @@ determine the exact padding."
    ((org-block &override) :background base2)
    ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
 
    ;; org-pomodoro
    (org-pomodoro-mode-line :inherit 'mode-line-emphasis :weight 'bold) ; unreadable otherwise

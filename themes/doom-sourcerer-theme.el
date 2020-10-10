@@ -84,7 +84,7 @@ Can be an integer to determine the exact padding."
    (vc-modified    yellow)
    (vc-added       green)
    (vc-deleted     red)
-   
+
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
    (hidden-alt `(,(car bg-alt) "black" "black"))
@@ -94,7 +94,7 @@ Can be an integer to determine the exact padding."
 
    (modeline-fg     "#bbc2cf")
    (modeline-fg-alt (doom-blend blue grey (if doom-sourcerer-brighter-modeline 0.4 0.08)))
-   
+
    (modeline-bg
     (if doom-sourcerer-brighter-modeline
         `("#383f58" ,@(cdr base1))
@@ -105,7 +105,7 @@ Can be an integer to determine the exact padding."
       `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
    (modeline-bg-inactive   (doom-darken bg 0.20))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
-  
+
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    (cursor :background blue)
@@ -118,7 +118,7 @@ Can be an integer to determine the exact padding."
    (mode-line-buffer-id :foreground green-br :bold bold)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
-   
+
    (doom-modeline-bar :background (if doom-sourcerer-brighter-modeline modeline-bg highlight))
    (doom-modeline-buffer-path :foreground (if doom-sourcerer-brighter-modeline base8 blue) :bold bold)
 
@@ -152,7 +152,7 @@ Can be an integer to determine the exact padding."
 
    ;; markdown-mode
    (markdown-header-face :inherit 'bold :foreground red)
-      ;; rainbow-delimiters
+   ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground dark-cyan)
    (rainbow-delimiters-depth-2-face :foreground teal)
    (rainbow-delimiters-depth-3-face :foreground dark-blue)
@@ -161,6 +161,9 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-6-face :foreground green)
    (rainbow-delimiters-depth-7-face :foreground orange)
    ;; org-mode
+   ((org-block &override) :background bg-alt)
+   ((org-block-begin-line &override) :background bg-alt)
+   ((org-block-end-line &override) :background bg-alt)
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden-alt)
 

@@ -73,7 +73,7 @@
     (vertical-bar   base0)
     (selection      violet)
     (builtin        violet)
-    (comments       hor-highlight-bright)
+    (comments       (if doom-horizon-brighter-comments magenta hor-highlight-bright))
     (doc-comments   yellow)
     (constants      orange)
     (functions      teal)
@@ -116,7 +116,7 @@
 
 
   ;; --- extra faces ------------------------
-  ( (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
 
     ;; ((line-number &override) :foreground (doom-lighten bg 0.05))
@@ -126,7 +126,7 @@
     (font-lock-comment-face
       :inherit 'italic
       :foreground comments
-      :background (if doom-horizon-comment-bg (doom-lighten bg 0.05)))
+      :background (if doom-horizon-comment-bg (doom-lighten bg 0.03)))
     (font-lock-doc-face
       :inherit 'font-lock-comment-face
       :foreground doc-comments)
@@ -148,11 +148,10 @@
     (doom-modeline-project-dir :foreground red :inherit 'bold )
     (doom-modeline-buffer-path :foreground red)
     (doom-modeline-buffer-file :foreground fg)
-    (doom-modeline-buffer-major-mode :foreground modeline-fg)
     (doom-modeline-buffer-modified :foreground violet)
     (doom-modeline-panel :background base1)
     (doom-modeline-urgent :foreground modeline-fg)
-    (doom-modeline-info :background base1 :foreground cyan)
+    (doom-modeline-info :foreground cyan)
 
     (solaire-mode-line-face
       :inherit 'mode-line
@@ -170,6 +169,11 @@
     (css-proprietary-property :foreground violet)
     (css-property             :foreground fg)
     (css-selector             :foreground red)
+
+    ;; mic-paren
+    (paren-face-match    :foreground green   :background base0 :weight 'ultra-bold)
+    (paren-face-mismatch :foreground yellow :background base0   :weight 'ultra-bold)
+    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
     ;; markdown-mode
     (markdown-markup-face           :foreground cyan)
@@ -192,7 +196,6 @@
     (org-hide :foreground hidden)
     (org-link :inherit 'underline :foreground yellow)
     (org-agenda-done :foreground cyan)
-    (solaire-org-hide-face :foreground hidden)
     (solaire-header-line-face :background bg-alt :foreground fg)
     (header-line :background base2 :foreground fg)
 
@@ -212,7 +215,7 @@
     ;; --- extra variables ---------------------
     ;; basics
     (link :foreground yellow :inherit 'underline)
-    (fringe :background bg-alt)
+    (fringe :background bg)
 
     ;; evil
     (evil-ex-search          :background hor-highlight-selected :foreground fg)
@@ -227,7 +230,7 @@
     (company-box-background    :background base0 :foreground fg)
     (company-tooltip-common    :foreground red :weight 'bold)
     (company-tooltip-selection :background hor-highlight :foreground fg)
-    
+
    ;; treemacs
    (treemacs-root-face :foreground fg :weight 'bold :height 1.2)
    (doom-themes-treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
@@ -237,11 +240,16 @@
 
    ;; js2-mode
    (js2-object-property        :foreground red)
-   
+
    ;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-tag-bracket-face :foreground red)
    (rjsx-attr :foreground cyan :slant 'italic :weight 'medium)
+
+   ;; web-mode
+   (web-mode-html-tag-bracket-face :foreground red)
+   (web-mode-html-tag-face         :foreground red)
+   (web-mode-html-attr-name-face   :foreground orange)
     ))
 
 

@@ -111,7 +111,14 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   ;; org
+   (org-block-begin-line         :foreground base7 :background base3 :extend t)
+
+   ;; treemacs
+   (treemacs-git-untracked-face :foreground yellow)
+   )
 
   ;; --- variables --------------------------
   ;; ()

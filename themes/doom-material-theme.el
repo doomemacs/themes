@@ -84,6 +84,12 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-path       :foreground green :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
+   ;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

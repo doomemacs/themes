@@ -133,6 +133,12 @@ determine the exact padding."
    ;; Doom modeline
    (doom-modeline-bar :background blue)
 
+   ;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+
    ;; hl-line
    (hl-line :background base2)
 
@@ -189,8 +195,8 @@ determine the exact padding."
    (org-scheduled         :foreground green)
    (org-scheduled-previously :foreground yellow)
    (org-scheduled-today   :foreground orange)
-   (org-hide              :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide              :foreground hidden))
+
   ;; --- extra variables ---------------------
   ;; ()
   )

@@ -80,8 +80,8 @@ determine the exact padding."
    (operators      violet)
    (type           violet)
    (strings        yellow)
-   (variables      base8)
-   (numbers        red)
+   (variables      (doom-lighten 'magenta 0.6))
+   (numbers        violet)
    (region         base3)
    (error          red)
    (warning        yellow)
@@ -126,7 +126,7 @@ determine the exact padding."
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
-   ((line-number &override) :foreground base4)
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
 
    (font-lock-comment-face
@@ -164,7 +164,7 @@ determine the exact padding."
    ;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-darken 'bg 0.075))
 
    ;; org-mode
    ((outline-1 &override) :foreground level1)
@@ -223,19 +223,35 @@ determine the exact padding."
    (js2-private-member :foreground base7)
 
    ;; web-mode
-   (web-mode-block-control-face :foreground orange)
-   (web-mode-block-delimiter-face :foreground orange)
    (web-mode-builtin-face :foreground orange)
-   (web-mode-css-property-name-face :foreground violet)
    (web-mode-css-selector-face :foreground green)
-   (web-mode-html-attr-name-face :foreground violet)
-   (web-mode-html-attr-value-face :foreground green)
-   (web-mode-html-tag-bracket-face :inherit 'font-lock-comment-face)
+   (web-mode-html-attr-name-face :foreground green)
+   (web-mode-html-tag-bracket-face :inherit 'default)
    (web-mode-html-tag-face :foreground magenta :weight 'bold)
-   (web-mode-keyword-face :foreground magenta)
    (web-mode-preprocessor-face :foreground orange)
-   (web-mode-string-face :foreground yellow)
-   (web-mode-type-face :foreground violet)
+
+   ;; helm
+   (helm-bookmark-w3m :foreground violet)
+   (helm-buffer-not-saved :foreground violet)
+   (helm-buffer-process :foreground orange)
+   (helm-buffer-saved-out :foreground fg)
+   (helm-buffer-size :foreground fg)
+   (helm-candidate-number :foreground bg :background fg)
+   (helm-ff-directory :foreground green :weight 'bold)
+   (helm-ff-executable :foreground dark-blue :inherit 'italic)
+   (helm-ff-invalid-symlink :foreground magenta :weight 'bold)
+   (helm-ff-prefix :foreground bg :background magenta)
+   (helm-ff-symlink :foreground magenta :weight 'bold)
+   (helm-grep-finish :foreground base2)
+   (helm-grep-running :foreground green)
+   (helm-header :foreground base2 :underline nil :box nil)
+   (helm-moccur-buffer :foreground green)
+   (helm-separator :foreground violet)
+   (helm-source-go-package-godoc-description :foreground yellow)
+   ((helm-source-header &override) :foreground magenta)
+   (helm-time-zone-current :foreground orange)
+   (helm-time-zone-home :foreground violet)
+   (helm-visible-mark :foreground bg :background base3)
 
    ;; highlight-quoted-mode
    (highlight-quoted-symbol :foreground cyan)

@@ -1,4 +1,4 @@
-;;; doom-manegarm-theme.el
+;;; doom-manegarm-theme.el -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -110,7 +110,7 @@ real file buffers will now be brighter instead."
    ((line-number-current-line &override) :foreground orange)
 
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif-face
+    :inherit 'fixed-pitch-serif
     :slant 'italic
     :foreground comments
     :background nil)
@@ -240,8 +240,7 @@ real file buffers will now be brighter instead."
    (org-level-5 :foreground red :bold t)
    (org-level-6 :foreground yellow :bold t)
    (org-hide :foreground hidden)
-   (org-todo :foreground strings :bold 'inherit)
-   (solaire-org-hide-face :foreground hidden))
+   (org-todo :foreground strings :bold 'inherit))
 
   ;; --- extra variables ---------------------
   ()

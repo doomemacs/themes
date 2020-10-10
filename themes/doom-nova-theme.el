@@ -142,6 +142,12 @@ determine the exact padding."
    (ediff-current-diff-A :inherit 'hl-line)
    (ediff-even-diff-A    :background base3)
 
+   ;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
+
    ;; show-paren
    ((paren-face-match &override)    :foreground red :background (doom-darken violet 0.4))
    ((paren-face-mismatch &override) :foreground (doom-darken red 0.4) :background cyan)

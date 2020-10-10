@@ -56,7 +56,13 @@
     (mode-line-emphasis  :foreground highlight :distant-foreground bg)
     (mode-line-highlight :inherit 'highlight :distant-foreground bg)
     (mode-line-buffer-id :weight 'bold)
-    (header-line :inherit 'mode-line :distant-foreground bg)
+    (header-line         :background bg     :foreground fg     :distant-foreground bg)
+
+    ;; tab-line/tab-bar (Emacs 27+)
+    (tab-line :background bg-alt :foreground bg-alt)
+    ((tab-bar &inherit tab-line))
+    (tab-bar-tab :background bg :foreground fg)
+    (tab-bar-tab-inactive :background bg-alt :foreground fg-alt)
 
     ;; 1. Line number faces must explicitly disable its text style attributes
     ;;    because nearby faces may "bleed" into the line numbers otherwise.
@@ -73,9 +79,9 @@
 
     ;; --- built-in plugin faces --------------
     ;; centaur-tabs
-    (centaur-tabs-default    :background bg-alt :foreground bg-alt)
-    (centaur-tabs-selected   :background bg :foreground fg)
-    (centaur-tabs-unselected :background bg-alt :foreground fg-alt)
+    ((centaur-tabs-default &inherit tab-bar))
+    ((centaur-tabs-selected &inherit tab-bar-tab))
+    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
     (centaur-tabs-selected-modified   :background bg :foreground teal)
     (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
     (centaur-tabs-active-bar-face
@@ -519,9 +525,12 @@
     (evil-goggles-default-face :inherit 'region)
 
     ;; flycheck
-    (flycheck-error     :underline `(:style wave :color ,red))
-    (flycheck-warning   :underline `(:style wave :color ,yellow))
-    (flycheck-info      :underline `(:style wave :color ,green))
+    (flycheck-error          :underline `(:style wave :color ,red))
+    (flycheck-warning        :underline `(:style wave :color ,yellow))
+    (flycheck-info           :underline `(:style wave :color ,green))
+    (flycheck-fringe-error   :inherit 'fringe :foreground error)
+    (flycheck-fringe-warning :inherit 'fringe :foreground warning)
+    (flycheck-fringe-info    :inherit 'fringe :foreground success)
 
     ;; flycheck-posframe
     (flycheck-posframe-face :inherit 'default)
@@ -554,14 +563,14 @@
     (git-commit-comment-action)
 
     ;; git-gutter
-    (git-gutter:modified :foreground cyan)
-    (git-gutter:added    :foreground vc-added)
-    (git-gutter:deleted  :foreground vc-deleted)
+    (git-gutter:modified :inherit 'fringe :foreground cyan)
+    (git-gutter:added    :inherit 'fringe :foreground vc-added)
+    (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
 
     ;; git-gutter+
-    (git-gutter+-modified :foreground cyan :background nil)
-    (git-gutter+-added    :foreground vc-added :background nil)
-    (git-gutter+-deleted  :foreground vc-deleted :background nil)
+    (git-gutter+-modified :inherit 'fringe :foreground cyan :background nil)
+    (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
+    (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
 
     ;; git-gutter-fringe
     ((git-gutter-fr:modified &inherit git-gutter:modified))
@@ -668,6 +677,16 @@
 
     ;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
+
+    ;; highlight-symbol
+    (highlight-symbol-face
+     (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
+
+    ;; highlight-thing
+    (highlight-thing
+     (&dark  :background (doom-lighten region 0.1) :distant-foreground fg-alt)
+     (&light :background (doom-darken region 0.1) :distant-foreground fg-alt))
 
     ;; hlinum
     (linum-highlight-face :foreground fg :distant-foreground nil :weight 'normal)
@@ -795,6 +814,12 @@
     (lsp-ui-peek-peek :background (doom-darken bg 0.1))
     (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
     (lsp-ui-peek-line-number :foreground success)
+    (lsp-ui-sideline-code-action :foreground (doom-blend highlight bg 0.85))
+    (lsp-ui-sideline-current-symbol :inherit 'highlight)
+    (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
+                                 :background bg-alt :extend t)
+    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+
 
     ;; magit
     (magit-bisect-bad        :foreground red)
@@ -857,6 +882,10 @@
     (magit-tag :foreground yellow)
     (magit-filename :foreground violet)
     (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
+
+    ;; minimap
+    (minimap-current-line-face :background selection)
+    (minimap-active-region-background :background vertical-bar)
 
     ;; mic-paren
     (paren-face-match    :foreground red   :background base0 :weight 'ultra-bold)
@@ -937,7 +966,8 @@
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-org-hide-face :foreground bg-alt)
+    (solaire-mode-line-face          :background bg     :foreground fg     :distant-foreground bg)
+    (solaire-mode-line-inactive-face :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
 
     ;; spaceline
     (spaceline-highlight-face :background highlight)
@@ -1035,9 +1065,13 @@
     ;; whitespace
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
-    (whitespace-tab      :foreground base4 :background (unless (default-value 'indent-tabs-mode) base3))
     (whitespace-newline  :foreground base4)
-    (whitespace-indentation :foreground red :background yellow)
+    (whitespace-tab
+     :foreground base4
+     :background (unless (default-value 'indent-tabs-mode) base3))
+    (whitespace-indentation
+     :foreground base4
+     :background (if (default-value 'indent-tabs-mode) base3))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
 
@@ -1234,6 +1268,7 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
+    ((solaire-org-hide-face &inherit org-hide))
 
     ;; extends from outline-N
     ;; (org-level-1)
@@ -1253,7 +1288,6 @@
     (org-special-keyword :foreground doc-comments)
     (org-table           :foreground violet)
     (org-tag             :foreground doc-comments :weight 'normal)
-    (org-ref-cite-face   :foreground yellow :weight 'light :underline t)
     (org-latex-and-related :foreground base8 :weight 'bold)
     (org-todo            :foreground green :bold 'inherit)
     (org-verbatim        :foreground green)
@@ -1294,8 +1328,19 @@
     (org-pomodoro-mode-line :foreground red)
     (org-pomodoro-mode-line-overtime :foreground warning :weight 'bold)
 
+    ;; org-ref
+    (org-ref-acronym-face    :foreground violet)
+    (org-ref-cite-face       :foreground yellow :weight 'light :underline t)
+    (org-ref-glossary-face   :foreground magenta)
+    (org-ref-label-face      :foreground blue)
+    (org-ref-ref-face        :inherit 'link :foreground red)
+
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
+
+    ;; rjsx-mode
+    (rjsx-tag :foreground type)
+    (rjsx-attr :foreground strings)
 
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
@@ -1340,13 +1385,22 @@
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
 
     ;; web-mode
+    (web-mode-block-control-face     :foreground builtin)
+    (web-mode-block-delimiter-face   :foreground builtin)
+    (web-mode-css-property-name-face :foreground type)
     (web-mode-doctype-face           :foreground comments)
     (web-mode-html-tag-face          :foreground methods)
     (web-mode-html-tag-bracket-face  :foreground methods)
     (web-mode-html-attr-name-face    :foreground type)
+    (web-mode-html-attr-value-face   :foreground strings)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)
+    (web-mode-json-key-face          :foreground strings)
+    (web-mode-json-context-face      :foreground strings)
+    (web-mode-keyword-face           :foreground keywords)
+    (web-mode-string-face            :foreground strings)
+    (web-mode-type-face              :foreground type)
 
     ;; woman
     (woman-bold :inherit 'Man-overstrike)

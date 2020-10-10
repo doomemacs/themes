@@ -112,7 +112,8 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
 
 ;;;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
+  (((all-the-icons-dblue &override) :foreground teal)
+   (elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
@@ -125,7 +126,7 @@ determine the exact padding."
 
 ;;;;; comments and doc
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif-face
+    :inherit 'fixed-pitch-serif
     :slant 'italic
     :foreground comments
     :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
@@ -260,8 +261,7 @@ determine the exact padding."
    ((org-block-begin-line &override) :background bg :foreground comments :slant 'italic)
    ((org-quote &override) :background base1)
 
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide :foreground hidden))
 
 
   ;;;; --- extra variables ---------------------
@@ -269,4 +269,3 @@ determine the exact padding."
   )
 
 ;;; doom-acario-dark-theme.el ends here
-
