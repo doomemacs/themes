@@ -174,7 +174,7 @@ determine the exact padding."
    ;; grab attention
    ((org-todo &override) :foreground red)
    ;; org-mode: make tags and dates to have pretty box around them
-   ((org-tag &override)   :foreground fg :background base1
+   ((org-tag &override)   :foreground fg :background yellow-alt
     :box `(:line-width -1 :color ,base5 :style 'released-button))
    ((org-date &override)  :foreground fg :background base1
     :box `(:line-width -1 :color ,base5  :style 'released-button))
