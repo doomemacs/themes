@@ -1333,7 +1333,7 @@
     (org-ref-cite-face       :foreground yellow :weight 'light :underline t)
     (org-ref-glossary-face   :foreground magenta)
     (org-ref-label-face      :foreground blue)
-    (org-ref-ref-face        :inherit 'link :foreground red)
+    (org-ref-ref-face        :inherit 'link :foreground teal)
 
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
