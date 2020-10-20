@@ -146,14 +146,14 @@ background contrast. All other values default to \"medium\"."
     :foreground doc-comments
     :slant 'italic)
 
-   (cursor    :foreground fg)
+   (cursor :background base4)
 
    ;; Line number
-   ((line-number &override) :foreground base4 :background base1)
-   ((line-number-current-line &override) :foreground orange :background (doom-lighten bg 0.1))
-   (linum     :foreground base4 :background base2)
-   (linum-highlight-face :foreground orange :background base2)
-   (linum-relative-current-face :foreground orange :background base2)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground orange)
+   (linum :foreground base4)
+   (linum-highlight-face :foreground orange)
+   (linum-relative-current-face :foreground orange)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
