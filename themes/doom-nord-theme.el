@@ -119,11 +119,9 @@ determine the exact padding."
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
-
   ;; --- extra faces ------------------------
   (((region &override) :foreground region-fg)
-
-   ((line-number &override) :foreground (doom-lighten 'base5 0.2))
+   ((line-number &override) :background modeline-bg)
    ((line-number-current-line &override) :foreground base7)
    ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
    ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
@@ -138,6 +136,24 @@ determine the exact padding."
     :foreground doc-comments)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+
+   (fringe :foreground teal :background modeline-bg)
+   (tab-line
+	:background modeline-bg :foreground blue
+    :box (progn `(:line-width 4 :color ,modeline-bg)))
+   (tab-line-tab
+	:inherit 'tab-line
+	:box (progn `(:line-width 1)))
+
+   (tab-line-tab-current
+	:inherit 'tab-line-tab
+	:foreground fg-alt
+	:background blue)
+
+   (tab-line-tab-inactive
+	:inherit 'tab-line-tab
+	:foreground bg-alt
+	:background dark-blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
