@@ -123,8 +123,8 @@ determine the exact padding."
   (((region &override) :foreground region-fg)
    ((line-number &override) :background modeline-bg)
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ((paren-face-match &override) :foreground bg :background teal :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base7 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
 
