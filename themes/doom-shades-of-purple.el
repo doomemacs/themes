@@ -117,8 +117,8 @@ Can be an integer to determine the exact padding."
    (modeline-fg-alt comments)
 
    (-modeline-pad
-    (when doom-moonlight-padded-modeline
-      (if (integerp doom-moonlight-padded-modeline) doom-moonlight-padded-modeline 4))))
+    (when doom-shades-of-purple-padded-modeline
+      (if (integerp doom-shades-of-purple-padded-modeline) doom-shades-of-purple-padded-modeline 4))))
 
   ;; --- base faces ------------------------
   (((lazy-highlight &override) :background purple :foreground fg :distant-foreground fg)
