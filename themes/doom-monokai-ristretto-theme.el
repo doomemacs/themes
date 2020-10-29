@@ -1,7 +1,7 @@
 ;; doom-monokai-ristretto-theme.el --- Ristretto filter of Monokai Pro -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
-;;
+;;; Code:
 (defgroup doom-monokai-ristretto-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
@@ -12,14 +12,14 @@
   :type 'boolean)
 
 (defcustom doom-monokai-ristretto-comment-bg doom-monokai-ristretto-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
+  "If non-nil, comments will have a subtle, darker background.
+Enhancing their legibility."
   :group 'doom-monokai-ristretto-theme
   :type 'boolean)
 
 (defcustom doom-monokai-ristretto-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-monokai-ristretto-theme
   :type '(choice integer boolean))
 
@@ -318,6 +318,16 @@ determine the exact padding."
    (lsp-ui-peek-peek                            :inherit 'lsp-ui-peek-list)
    (lsp-ui-peek-highlight                       :inherit 'isearch)
    (lsp-ui-peek-filename                        :foreground base8 :bold bold)
+
+   ;; treemacs
+   (treemacs-git-added-face                     :foreground green)
+   (treemacs-git-conflict-face                  :foreground red)
+   (treemacs-git-ignored-face                   :foreground base6)
+   (treemacs-git-modified-face                  :foreground violet)
+   (treemacs-git-renamed-face                   :foreground orange)
+   (treemacs-git-untracked-face                 :inherit 'treemacs-git-renamed-face)
+   (treemacs-on-failure-pulse-face              :foreground base0 :background red)
+   (treemacs-on-success-pulse-face              :foreground base0 :background green)
 
    ;;; web-mode
    ;;; html
