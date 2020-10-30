@@ -253,7 +253,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :extensions (info))
                              (treemacs-create-icon
                               :icon (format "  %s\t" (all-the-icons-alltheicon "git" :height 0.85 :v-adjust 0.0 :face 'all-the-icons-red))
-                              :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
+                              :extensions ("gitignore" "git" "gitconfig" "gitmodules" "gitattributes"))
 
                              (dolist (item all-the-icons-icon-alist)
                                (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
@@ -282,6 +282,9 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-octicon "repo" :height 1.0 :v-adjust -0.1 :face 'all-the-icons-blue))
                               :extensions (root))
+                             (treemacs-create-icon
+                              :icon (format "%s " (all-the-icons-octicon "lock" :height 1.0 :v-adjust -0.1 :face 'all-the-icons-red))
+                              :extensions ("lock"))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (boolean-data))
