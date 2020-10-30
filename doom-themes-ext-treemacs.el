@@ -283,10 +283,10 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-octicon "repo" :height 1.0 :v-adjust -0.1 :face 'all-the-icons-blue))
                               :extensions (root))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (boolean-data))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "settings_input_component" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-material "settings_input_component" :height 0.95 :v-adjust -0.15 :face 'warning))
                               :extensions (class))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-material "palette" :height 0.95 :v-adjust -0.15))
@@ -298,16 +298,16 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-faicon "file-text-o" :height 0.95 :v-adjust -0.05))
                               :extensions (document))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "storage" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-material "storage" :height 0.95 :v-adjust -0.15 :face 'warning))
                               :extensions (enumerator))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "format_align_right" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-material "format_align_right" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-blue))
                               :extensions (enumitem))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-faicon "bolt" :height 0.95 :v-adjust -0.05 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-faicon "bolt" :height 0.95 :v-adjust -0.05 :face 'warning))
                               :extensions (event))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (field))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "search" :height 0.95 :v-adjust -0.05))
@@ -316,16 +316,16 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-material "filter_center_focus" :height 0.95 :v-adjust -0.15))
                               :extensions (intellisense-keyword))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "share" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-material "share" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-blue))
                               :extensions (interface))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (localvariable))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "cube" :height 0.95 :v-adjust -0.05 :face 'all-the-icons-purple))
                               :extensions (method))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "view_module" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-material "view_module" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-blue))
                               :extensions (namespace))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-material "format_list_numbered" :height 0.95 :v-adjust -0.15))
@@ -334,7 +334,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-material "control_point" :height 0.95 :v-adjust -0.2))
                               :extensions (operator))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-faicon "wrench" :height 0.8 :v-adjust -0.05))
+                              :icon (format "%s " (all-the-icons-faicon "wrench" :height 0.8 :v-adjust -0.05 :face 'all-the-icons-yellow))
                               :extensions (property))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-material "format_align_center" :height 0.95 :v-adjust -0.15))
@@ -343,7 +343,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-faicon "text-width" :height 0.9 :v-adjust -0.05))
                               :extensions (string))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "settings_input_component" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-material "settings_input_component" :height 0.9 :v-adjust -0.15 :face 'warning))
                               :extensions (structure))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-material "format_align_center" :height 0.95 :v-adjust -0.15))
@@ -382,10 +382,10 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'font-lock-doc-face))
                               :extensions (folder))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'warning))
                               :extensions (folder-type-component-opened))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'warning))
                               :extensions (folder-type-component))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'all-the-icons-green))
@@ -394,10 +394,10 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-green))
                               :extensions (folder-type-library))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'all-the-icons-pink))
+                              :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'all-the-icons-red))
                               :extensions (folder-type-maven-opened))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-pink))
+                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-red))
                               :extensions (folder-type-maven))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "folder-open" :height 0.9 :v-adjust -0.05 :face 'font-lock-type-face))
@@ -412,7 +412,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-faicon "list" :height 0.9 :v-adjust -0.05 :face 'font-lock-doc-face))
                               :extensions (icon-flat))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-material "share" :height 0.95 :v-adjust -0.2 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-material "share" :height 0.95 :v-adjust -0.2 :face 'all-the-icons-blue))
                               :extensions (icon-hierarchical))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "link" :height 0.9 :v-adjust -0.05 :face 'font-lock-doc-face))
@@ -424,16 +424,16 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :icon (format "%s " (all-the-icons-faicon "chain-broken" :height 0.9 :v-adjust -0.05 :face 'font-lock-doc-face))
                               :extensions (icon-unlink))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-alltheicon "java" :height 1.0 :v-adjust 0.0 :face 'all-the-icons-orange))
+                              :icon (format "%s " (all-the-icons-alltheicon "java" :height 1.0 :v-adjust 0.0 :face 'warning))
                               :extensions (jar))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "book" :height 0.95 :v-adjust -0.05 :face 'all-the-icons-green))
                               :extensions (library))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-faicon "folder-open" :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-faicon "folder-open" :face 'all-the-icons-blue))
                               :extensions (packagefolder-open))
                              (treemacs-create-icon
-                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-lblue))
+                              :icon (format "%s " (all-the-icons-octicon "file-directory" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (packagefolder))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-faicon "archive" :height 0.9 :v-adjust -0.05 :face 'font-lock-doc-face))
