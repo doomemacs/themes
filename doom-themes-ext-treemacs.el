@@ -284,7 +284,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                               :extensions (root))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-fileicon "composer" :height 0.9 :face 'all-the-icons-yellow))
-                              :extensions ("composer"))
+                              :extensions ("lock"))
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue))
                               :extensions (boolean-data))
