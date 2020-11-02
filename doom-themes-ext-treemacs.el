@@ -276,6 +276,13 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
     (treemacs-create-theme "doom-colors-extended"
                            :extends "doom-colors"
                            :config
+                           (let ((icons (treemacs-theme->gui-icons theme)))
+                             (maphash
+                              (lambda (ext icon)
+                                (puthash ext (concat (substring icon 0 1)
+                                                     (propertize " " 'display '(space . (:width 0.5))))
+                                         icons))
+                              icons))
                            (progn
                              (treemacs-create-icon
                               :icon (format "%s " (all-the-icons-octicon "repo" :height 1.0 :v-adjust -0.1 :face 'all-the-icons-blue))
