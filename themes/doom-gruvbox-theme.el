@@ -141,7 +141,7 @@ background contrast. All other values default to \"medium\"."
    (isearch :foreground base0 :background orange)
    (evil-search-highlight-persist-highlight-face :background yellow)
    (lazy-highlight :background yellow :foreground base0 :distant-foreground base0 :bold bold)
-   (evil-ex-substitute-replacement :foreground cyan :inherit 'evil-ex-substitute-matches)
+   (evil-ex-substitute-replacement :foreground cyan :strike-through nil :inherit 'evil-ex-substitute-matches)
 
    ;; evil-snipe
    (evil-snipe-first-match-face :foreground "white" :background yellow)
