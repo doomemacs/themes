@@ -67,18 +67,6 @@ See also `org-agenda-deadline-faces'."
              (when doom-org-special-tags
                '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
 
-
-;; Bootstrap
-(setq org-hide-leading-stars t
-      org-fontify-done-headline t
-      org-fontify-quote-and-verse-blocks t
-      org-fontify-whole-heading-line t
-      org-agenda-deadline-faces
-      '((1.001 . error)
-        (1.0 . org-warning)
-        (0.5 . org-upcoming-deadline)
-        (0.0 . org-upcoming-distant-deadline)))
-
 (add-hook 'org-font-lock-set-keywords-hook #'doom-themes-enable-org-fontification)
 
 ;;;###autoload
