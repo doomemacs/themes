@@ -42,14 +42,16 @@ See also `org-agenda-deadline-faces'."
      (append (org-delete-all
               (append `(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
                          (0 (org-get-checkbox-statistics-face) t))
-                        (,org-todo (2 (org-get-todo-face 2) t))
-                        (,org-done (2 'org-headline-done t)))
+                        (,org-todo (2 (org-get-todo-face 2) t)))
+                      (when org-fontify-done-headline
+                        `((,org-done (2 'org-headline-done t))))
                       (when (memq 'date org-activate-links)
                         '((org-activate-dates (0 'org-date t)))))
               org-font-lock-extra-keywords)
              ;; respsect underlying faces!
-             `((,org-todo (2 (org-get-todo-face 2) prepend))
-               (,org-done (2 'org-headline-done prepend)))
+             `((,org-todo (2 (org-get-todo-face 2) prepend)))
+             (when org-fontify-done-headline
+               `((,org-done (2 'org-headline-done prepend))))
              (when (memq 'date org-activate-links)
                '((org-activate-dates (0 'org-date prepend))))
              ;; Make checkbox statistic cookies respect underlying faces
