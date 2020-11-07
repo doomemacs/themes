@@ -55,14 +55,15 @@ See also `org-agenda-deadline-faces'."
              ;; Make checkbox statistic cookies respect underlying faces
              '(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
                 (0 (org-get-checkbox-statistics-face) prepend))
-               ;; I like how org-mode fontifies checked TODOs and want this to extend to
-               ;; checked checkbox items:
-               ("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)"
-                1 'org-headline-done prepend)
                ;; make plain list bullets stand out
                ("^ *\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)[ \t]" 1 'org-list-dt append)
                ;; and separators/dividers
                ("^ *\\(-----+\\)$" 1 'org-meta-line))
+             ;; I like how org-mode fontifies checked TODOs and want this to
+             ;; extend to checked checkbox items:
+             (when org-fontify-done-headline
+               '(("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)"
+                  1 'org-headline-done prepend)))
              ;; custom #hashtags & @at-tags for another level of organization
              (when doom-org-special-tags
                '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
