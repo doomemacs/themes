@@ -30,7 +30,7 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-ayu-light
-  "A dark theme inspired by Ayu Light"
+  "A light theme inspired by Ayu Light"
 
   ;; name        default   256       16
   (
@@ -124,7 +124,7 @@ determine the exact padding."
    (-modeline-bright doom-ayu-light-brighter-modeline)
    (-modeline-pad
     (when doom-ayu-light-padded-modeline
-      (if (integerp doom-ayu-light-padded-modeline) doom-ayu-mirage-padded-modeline 4)))
+      (if (integerp doom-ayu-light-padded-modeline) doom-ayu-light-padded-modeline 4)))
 
    (modeline-fg     common-ui)
    (modeline-fg-alt base5)
@@ -222,14 +222,7 @@ determine the exact padding."
    (company-scrollbar-bg :background common-bg)
    (company-scrollbar-fg :background syntax-comment)
 
-   (hl-line :background ui-line)
    (highlight-numbers-number :foreground syntax-func :weight 'normal)
-
-   ;; treemacs
-   (treemacs-file-face :foreground fg-alt)
-   (treemacs-directory-collapsed-face :foreground fg)
-   (treemacs-directory-face :foreground fg-alt)
-   (treemacs-git-modified-face :foreground vcs-modified)
 
    ;; diff-mode
    (diff-removed :foreground vcs-removed)
