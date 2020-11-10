@@ -224,7 +224,7 @@ determine the exact padding."
 
    ;; diff-mode
    (diff-removed :foreground vcs-removed)
+   )
   )
-)
 
 ;;; doom-ayu-mirage-theme.el ends here
