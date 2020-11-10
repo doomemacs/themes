@@ -80,8 +80,8 @@ determine the exact padding."
    (base6      ui-guide-normal)
    (base7      ui-panel-shadow)
    (base8      ui-panel-border)
-   (fg         common-ui)
-   (fg-alt     common-fg)
+   (fg         common-fg)
+   (fg-alt     common-ui)
    (grey       syntax-comment)
    (red        syntax-markup)
    (orange     syntax-keyword)
@@ -209,6 +209,10 @@ determine the exact padding."
    (rjsx-tag-bracket-face :foreground (doom-darken cyan 0.5))
    (rjsx-attr :foreground syntax-func)
 
+   (web-mode-html-tag-face :foreground cyan)
+   (web-mode-html-tag-bracket-face :foreground (doom-darken cyan 0.5))
+   (web-mode-html-attr-name-face :foreground syntax-func)
+
    (company-tooltip :foreground common-fg :background common-bg)
    (company-tooltip-annotation :foreground common-fg)
    (company-tooltip-selection :background ui-line)
@@ -216,8 +220,10 @@ determine the exact padding."
    (company-scrollbar-bg :background common-bg)
    (company-scrollbar-fg :background syntax-comment)
 
-   (hl-line :background ui-line)
    (highlight-numbers-number :foreground syntax-func :weight 'normal)
+
+   ;; diff-mode
+   (diff-removed :foreground vcs-removed)
   )
 )
 

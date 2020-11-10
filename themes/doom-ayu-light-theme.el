@@ -30,18 +30,16 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-ayu-light
-  "A light theme inspired by Ayu Light"
-
+  "A dark theme inspired by Ayu Light"
 
   ;; name        default   256       16
   (
-
    ;; common
    (common-accent   '("#ff9940" "orange"  "orange" ))
    (common-bg       '("#fafafa" "black"   "black"  ))
    (common-fg       '("#575f66" "grey"    "grey"   ))
    (common-ui       '("#ba9199" "grey"    "grey"   ))
-   (test '("#7399e6" "grey" "grey"))
+   (test            '("#2ea8e6" "grey"    "grey"   ))
    ;; syntax
    (syntax-tag      '("#55b4d4" "cyan"    "blue"   ))
    (syntax-func     '("#f2ae49" "yellow"  "yellow" ))
@@ -50,23 +48,22 @@ determine the exact padding."
    (syntax-regexp   '("#4cbf99" "teal"    "green"  ))
    (syntax-markup   '("#f07171" "red"     "red"    ))
    (syntax-keyword  '("#fa8d3e" "orange"  "orange" ))
-   (syntax-special  '("#ffe6b3" "yellow"  "yellow" ))
+   (syntax-special  '("#e6ba7e" "yellow"  "yellow" ))
    (syntax-comment  '("#abb0b6" "grey"    "grey"   ))
    (syntax-constant '("#a37acc" "magenta" "purple" ))
    (syntax-operator '("#ed9366" "orange"  "orange" ))
    (syntax-error    '("#f51818" "red"     "red"    ))
    ;; ui
-   (ui-line               (doom-lighten common-bg 0.1))
-   ;; (ui-panel-bg           '((doom-lighten common-bg 0.35) nil nil            ))
-   (ui-panel-shadow       (doom-darken common-fg 0.25))
-   (ui-panel-border       (doom-darken common-bg 0.2))
-   (ui-gutter-normal      (doom-lighten common-ui 0.4)) ;; alpha replacement
-   (ui-gutter-active      (doom-lighten common-ui 0.8)) ;; alpha replacement
-   (ui-selection-bg       '("#d1e4f4" "cyan" "blue")) ;; fade replacement
-   (ui-selection-inactive (doom-lighten '("#000000" nil nil) 0.87)) ;; fade replacement
-   (ui-selection-border   (doom-lighten '("#000000" nil nil) 0.82)) ;; fade replacement
-   (ui-guide-active       (doom-lighten common-ui 0.35)) ;; alpha replacement
-   (ui-guide-normal       (doom-lighten common-ui 0.18)) ;; alpha replacement
+   (ui-line               (doom-darken common-bg 0.07))
+   (ui-panel-shadow       (doom-lighten common-bg 0.35))
+   (ui-panel-border       (doom-lighten common-bg 0.45))
+   (ui-gutter-normal      (doom-lighten common-ui 0.45))
+   (ui-gutter-active      common-ui)
+   (ui-selection-bg       (doom-blend common-bg test 0.7))
+   (ui-selection-inactive (doom-lighten test 0.93))
+   (ui-selection-border   (doom-lighten test 0.93))
+   (ui-guide-active       (doom-lighten common-ui 0.75))
+   (ui-guide-normal       (doom-lighten common-ui 0.35))
    ;; vcs
    (vcs-added    '("#99bf4d" "green" "green" ))
    (vcs-modified '("#709ecc" "blue"  "blue"  ))
@@ -85,7 +82,6 @@ determine the exact padding."
    (base8      ui-panel-border)
    (fg         common-fg)
    (fg-alt     common-ui)
-
    (grey       syntax-comment)
    (red        syntax-markup)
    (orange     syntax-keyword)
@@ -93,11 +89,11 @@ determine the exact padding."
    (teal       syntax-regexp)
    (yellow     syntax-func)
    (blue       syntax-entity)
-   (dark-blue  (doom-lighten syntax-entity 1))
+   (dark-blue  (doom-darken syntax-entity 1))
    (magenta    syntax-constant)
-   (violet     (doom-darken syntax-constant 1))
+   (violet     (doom-lighten syntax-constant 1))
    (cyan       syntax-tag)
-   (dark-cyan  (doom-lighten syntax-tag 1))
+   (dark-cyan  (doom-darken syntax-tag 1))
 
    ;; face categories -- required for all themes
    (highlight      common-accent)
@@ -115,7 +111,7 @@ determine the exact padding."
    (strings        syntax-string)
    (variables      common-fg)
    (numbers        syntax-func)
-   (region         `(,(car base2) ,(car base1)))
+   (region         ui-selection-bg)
    (error          syntax-error)
    (warning        yellow)
    (success        green)
@@ -128,22 +124,21 @@ determine the exact padding."
    (-modeline-bright doom-ayu-light-brighter-modeline)
    (-modeline-pad
     (when doom-ayu-light-padded-modeline
-      (if (integerp doom-ayu-light-padded-modeline) doom-ayu-light-padded-modeline 4)))
+      (if (integerp doom-ayu-light-padded-modeline) doom-ayu-mirage-padded-modeline 4)))
 
-   (modeline-fg     fg)
+   (modeline-fg     common-ui)
    (modeline-fg-alt base5)
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+        (doom-lighten blue 0.475)
+      `(,(doom-lighten (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
-
+        (doom-lighten blue 0.45)
+      `(,(doom-lighten (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-lighten (car bg) 0.1) ,@(cdr bg)))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
@@ -164,7 +159,7 @@ determine the exact padding."
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :background modeline-bg-inactive :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
@@ -179,13 +174,17 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :weight 'normal)
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'normal)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
+   (doom-modeline-buffer-project-root :foreground green :weight 'normal)
 
    ;; ivy-mode
-   (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
+   (ivy-current-match :background ui-line)
+   (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-4 :foreground common-accent :weight 'bold)
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
@@ -204,14 +203,37 @@ determine the exact padding."
    ;; org-mode
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
+   (org-headline-done :foreground syntax-comment)
+
+   (js2-object-property :foreground common-fg)
 
    (rjsx-tag :foreground cyan)
    (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))
    (rjsx-attr :foreground syntax-func)
-   (js2-function-param :foreground syntax-constant)
+
+   (web-mode-html-tag-face :foreground cyan)
+   (web-mode-html-tag-bracket-face :foreground (doom-lighten cyan 0.5))
+   (web-mode-html-attr-name-face :foreground syntax-func)
+
+   (company-tooltip :foreground common-fg :background common-bg)
+   (company-tooltip-annotation :foreground common-fg)
+   (company-tooltip-selection :background ui-line)
+   (company-tooltip-search :foreground common-accent :weight 'bold)
+   (company-scrollbar-bg :background common-bg)
+   (company-scrollbar-fg :background syntax-comment)
+
+   (hl-line :background ui-line)
+   (highlight-numbers-number :foreground syntax-func :weight 'normal)
+
+   ;; treemacs
+   (treemacs-file-face :foreground fg-alt)
+   (treemacs-directory-collapsed-face :foreground fg)
+   (treemacs-directory-face :foreground fg-alt)
+   (treemacs-git-modified-face :foreground vcs-modified)
+
+   ;; diff-mode
+   (diff-removed :foreground vcs-removed)
   )
-  ;; --- extra variables ---------------------
-  ()
 )
 
 ;;; doom-ayu-light-theme.el ends here
