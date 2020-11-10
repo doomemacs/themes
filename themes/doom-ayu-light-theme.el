@@ -226,7 +226,7 @@ determine the exact padding."
 
    ;; diff-mode
    (diff-removed :foreground vcs-removed)
+   )
   )
-)
 
 ;;; doom-ayu-light-theme.el ends here
