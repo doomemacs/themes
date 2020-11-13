@@ -101,6 +101,14 @@ determine the exact padding."
    (hl-line
     :background base8)
 
+   (org-block-begin-line
+    :foreground base2
+    :background base3)
+
+   (org-block-end-line
+    :foreground base2
+    :background base3)
+   
    (org-level-1
     :weight 'bold
     :foreground fg
