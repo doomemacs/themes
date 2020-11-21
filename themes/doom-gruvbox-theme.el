@@ -273,7 +273,7 @@ background contrast. All other values default to \"medium\"."
    ;; org-mode
    ((outline-1 &override) :foreground yellow)
    ((outline-2 &override) :foreground cyan)
-   ((outline-3 &override) :foreground cyan)
+   ((outline-3 &override) :foreground magenta)
    (org-ellipsis :underline nil :foreground orange)
    (org-tag :foreground yellow :bold nil)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
