@@ -202,6 +202,9 @@
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
 
+    ;; hl-fill-column-face
+    (hl-fill-column-face :inherit '(hl-line shadow))
+
     ;; hl-line
     (hl-line :background bg-alt :extend t)
 
