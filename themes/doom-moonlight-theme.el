@@ -273,6 +273,7 @@ Can be an integer to determine the exact padding."
    (markdown-url-face              :inherit 'underline :foreground orange)
    (markdown-gfm-checkbox-face     :foreground blue)
    (markdown-blockquote-face       :inherit 'italic :foreground fg)
+   (mmm-default-submode-face       :background base1)
 
    ;; nav-flash
    (nav-flash-face :background region)
