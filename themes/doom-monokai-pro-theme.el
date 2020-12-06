@@ -73,7 +73,7 @@ Can be an integer to determine the exact padding."
    (modeline-fg-alt comments)
    (-modeline-pad
     (when doom-monokai-pro-padded-modeline
-      (if (integerp doom-monokai-pror-padded-modeline)
+      (if (integerp doom-monokai-pro-padded-modeline)
           doom-monokai-pro-padded-modeline
         4))))
 
