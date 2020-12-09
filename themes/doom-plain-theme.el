@@ -108,11 +108,44 @@ determine the exact padding."
    (org-block-end-line
     :foreground base2
     :background base3)
-   
+
    (org-level-1
-    :weight 'bold
-    :foreground fg
+    :slant 'italic
+    :foreground fg-alt
     :background nil)
+
+   (org-level-2
+    :slant 'italic
+    :foreground base2
+    :background nil)
+
+   (org-level-3
+    :slant 'italic
+    :foreground base2
+    :background nil)
+
+   (org-level-3
+    :slant 'italic
+    :foreground base2
+    :background nil)
+
+
+   ;; Font lock
+   (font-lock-comment-face
+    :foreground comments
+    :slant 'italic)
+   (font-lock-type-face
+    :foreground type
+    :slant 'italic)
+   (font-lock-function-name-face
+    :foreground functions
+    :slant 'italic)
+   (font-lock-doc-face
+    :foreground doc-comments
+    :slant 'italic)
+   (font-lock-constant-face
+    :foreground constants
+    :slant 'italic)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
