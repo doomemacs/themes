@@ -641,6 +641,11 @@
     (gnus-signature              :foreground yellow)
     (gnus-x-face                 :background base5 :foreground fg)
 
+    ;; goggles
+    (goggles-changed :inherit 'region)
+    (goggles-removed :background (doom-blend red bg-alt 0.25) :extend t)
+    (goggles-added   :background (doom-blend green bg-alt 0.25))
+
     ;; helm
     (helm-selection
      (&all :inherit 'bold :background selection :extend t)
