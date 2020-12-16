@@ -240,8 +240,7 @@ real file buffers will now be brighter instead."
    (org-level-5 :foreground red :bold t)
    (org-level-6 :foreground yellow :bold t)
    (org-hide :foreground hidden)
-   (org-todo :foreground strings :bold 'inherit)
-   (solaire-org-hide-face :foreground hidden))
+   (org-todo :foreground strings :bold 'inherit))
 
   ;; --- extra variables ---------------------
   ()

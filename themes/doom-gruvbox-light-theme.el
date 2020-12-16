@@ -146,14 +146,14 @@ background contrast. All other values default to \"medium\"."
     :foreground doc-comments
     :slant 'italic)
 
-   (cursor    :foreground fg)
+   (cursor :background base4)
 
    ;; Line number
-   ((line-number &override) :foreground base4 :background base1)
-   ((line-number-current-line &override) :foreground orange :background (doom-lighten bg 0.1))
-   (linum     :foreground base4 :background base2)
-   (linum-highlight-face :foreground orange :background base2)
-   (linum-relative-current-face :foreground orange :background base2)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground orange)
+   (linum :foreground base4)
+   (linum-highlight-face :foreground orange)
+   (linum-relative-current-face :foreground orange)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
@@ -494,9 +494,9 @@ background contrast. All other values default to \"medium\"."
    (org-agenda-done             :foreground cyan)
    (org-headline-done           :foreground cyan)
    (org-table                   :foreground blue)
-   (org-block                   :background bg)
-   (org-block-begin-line        :foreground base3)
-   (org-block-end-line          :foreground base3)
+   (org-block                   :background base1 :extend t)
+   (org-block-begin-line        :background base2 :extend t)
+   (org-block-end-line          :background base2 :extend t)
    (org-formula                 :foreground yellow)
    (org-document-title          :foreground faded-blue)
    (org-document-info           :foreground faded-blue)
