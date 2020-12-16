@@ -1,80 +1,66 @@
-;; doom-gruvbox-theme.el --- inspired by morhetz Gruvbox -*- no-byte-compile: t; -*-
+;; doom-miramare-theme.el --- inspired by Franbach miramare -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;; Compiler pacifier
 (defvar modeline-bg)
 
 ;;
-(defgroup doom-gruvbox-theme nil
-  "Options for doom-gruvbox."
+(defgroup doom-miramare-theme nil
+  "Options for doom-miramare."
   :group 'doom-themes)
 
-(defcustom doom-gruvbox-brighter-comments nil
+(defcustom doom-miramare-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-gruvbox-theme
+  :group 'doom-miramare-theme
   :type 'boolean)
 
-(defcustom doom-gruvbox-padded-modeline doom-themes-padded-modeline
+(defcustom doom-miramare-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-gruvbox-theme
+  :group 'doom-miramare-theme
   :type '(choice integer boolean))
 
-(defcustom doom-gruvbox-dark-variant nil
-  "A choice of \"hard\" or \"soft\" can be used to change the
-background contrast. All other values default to \"medium\"."
-  :group 'doom-gruvbox-theme
-  :type  'string)
-
-;;
-(def-doom-theme doom-gruvbox
-  "Dark theme with pastel 'retro groove' colors."
+(def-doom-theme doom-miramare
+  "A gruvbox variant with comfortable and pleasant colors."
 
   ;; name        gui       256       16
-  ((bg
-    (cond ((equal doom-gruvbox-dark-variant "hard") '("#1d2021" "#1e1e1e" nil))   ; bg0_h
-          ((equal doom-gruvbox-dark-variant "soft") '("#32302f" "#323232" nil))   ; bg0_s
-          (t                                        '("#282828" "#282828" nil)))) ; bg0
-   (bg-alt
-    (cond ((equal doom-gruvbox-dark-variant "hard") '("#282828" "#282828" nil))
-          ((equal doom-gruvbox-dark-variant "soft") '("#403d3d" "#404040" nil))
-          (t                                        '("#32302f" "#323232" nil))))
+  ((bg         '("#2a2426" "#2a2426" nil          )) ; bg1
+   (bg-alt     '("#242021" "#242021" nil          )) ; bg1
    (bg-alt2    '("#504945" "#504945" "brown"      )) ; bg2 (for region, selection etc.)
 
    (base0      '("#0d1011" "black"   "black"      )) ; (self-defined)
    (base1      '("#1d2021" "#1d1d1d" "brightblack")) ; bg0_h
    (base2      '("#282828" "#282828" "brightblack")) ; bg0
    (base3      '("#3c3836" "#383838" "brightblack")) ; bg1
-   (base4      '("#665c54" "#5c5c5c" "brightblack")) ; bg3
+   (base4      '("#5b5b5b" "#5c5c5c" "brightblack")) ; bg3
    (base5      '("#7c6f64" "#6f6f6f" "brightblack")) ; bg4
    (base6      '("#928374" "#909090" "brightblack")) ; gray
    (base7      '("#d5c4a1" "#cccccc" "brightblack")) ; fg2
    (base8      '("#fbf1c7" "#fbfbfb" "brightwhite")) ; fg0
-   (fg         '("#ebdbb2" "#dfdfdf" "brightwhite")) ; fg/fg1
-   (fg-alt     '("#d5c4a1" "#cccccc" "brightwhite")) ; fg2
+   (fg         '("#e6d6ac" "#e6d6ac" "brightwhite")) ; fg/fg1
+   (fg-alt     '("#d8caac" "#d8caac" "brightwhite")) ; fg2
 
-   ;; Standardized official colours from gruvbox
-   (grey       '("#928374" "#909090" "brightblack"))   ; gray
-   (red        '("#fb4934" "#e74c3c" "red"))           ; bright-red
-   (magenta    '("#cc241d" "#cc241d" "magenta"))       ; red
-   (violet     '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
-   (orange     '("#fe8019" "#fd971f" "orange"))        ; bright-orange
-   (yellow     '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow
-   (teal       '("#8ec07c" "#8ec07c" "green"))         ; bright-aqua
-   (green      '("#b8bb26" "#b8bb26" "green"))         ; bright-green
-   (dark-green '("#98971a" "#98971a" "green"))         ; green
-   (blue       '("#83a598" "#83a598" "brightblue"))    ; bright-blue
+   (grey       '("#5b5b5b" "#5b5b5b" "brightblack"))   ; gray
+   (red        '("#e68183" "#e68183" "red"))           ; bright-red
+   (magenta    '("#e68183" "#e68183" "magenta"))       ; red
+   (violet     '("#d3a0bc" "#d3a0bc" "brightmagenta")) ; bright-purple
+   (orange     '("#e39b7b" "#e39b7b" "orange"))        ; bright-orange
+   (yellow     '("#d9bb80" "#d9bb80" "yellow"))        ; bright-yellow
+   (teal       '("#87af87" "#87af87" "green"))         ; bright-aqua
+   (green      '("#87af87" "#87af87" "green"))         ; bright-green
+   (dark-green '("#678f67" "#678f67" "green"))         ; green
+   (blue       '("#89beba" "#89beba" "brightblue"))    ; bright-blue
    (dark-blue  '("#458588" "#458588" "blue"))          ; blue
-   (cyan       '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
-   (dark-cyan  '("#689d6a" "#689d6a" "cyan"))          ; aqua
+   (cyan       '("#87c095" "#87c095" "brightcyan"))    ; bright-aqua
+   (dark-cyan  '("#67a075" "#67a075" "cyan"))          ; aqua
 
    ;; face categories
    (highlight      yellow)
    (vertical-bar   grey)
    (selection      bg-alt2)
    (builtin        orange)
-   (comments       (if doom-gruvbox-brighter-comments magenta grey))
-   (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
+   (comments       (if doom-miramare-brighter-comments magenta grey))
+   (doc-comments   (if doom-miramare-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
    (constants      violet)
    (functions      cyan)
    (keywords       red)
@@ -95,9 +81,9 @@ background contrast. All other values default to \"medium\"."
 
    ;; custom categories
    (-modeline-pad
-    (when doom-gruvbox-padded-modeline
-      (if (integerp doom-gruvbox-padded-modeline)
-          doom-gruvbox-padded-modeline
+    (when doom-miramare-padded-modeline
+      (if (integerp doom-miramare-padded-modeline)
+          doom-miramare-padded-modeline
         4)))
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
@@ -105,6 +91,11 @@ background contrast. All other values default to \"medium\"."
   ;; --- extra faces ------------------------
   (
    ;;;;;;;; Editor ;;;;;;;;
+
+   ;; Syntax
+   (font-lock-variable-name-face :foreground cyan :italic t)
+
+   ;; Basic
    (cursor :background "white")
    (hl-line :background bg-alt)
    ((line-number &override) :foreground base5)
@@ -132,6 +123,7 @@ background contrast. All other values default to \"medium\"."
    ;; Misc
    (doom-modeline-error :background bg)
    (doom-modeline-buffer-major-mode :foreground green :bold t)
+   (doom-modeline-warning :foreground red :bold t)
    (doom-modeline-info :bold t :foreground cyan)
    (doom-modeline-bar :background dark-green)
    (doom-modeline-panel :background dark-green :foreground fg)
@@ -141,7 +133,7 @@ background contrast. All other values default to \"medium\"."
    (isearch :foreground base0 :background orange)
    (evil-search-highlight-persist-highlight-face :background yellow)
    (lazy-highlight :background yellow :foreground base0 :distant-foreground base0 :bold bold)
-   (evil-ex-substitute-replacement :foreground cyan :strike-through nil :inherit 'evil-ex-substitute-matches)
+   (evil-ex-substitute-replacement :foreground cyan :inherit 'evil-ex-substitute-matches)
 
    ;; evil-snipe
    (evil-snipe-first-match-face :foreground "white" :background yellow)
@@ -156,8 +148,8 @@ background contrast. All other values default to \"medium\"."
    (ivy-subdir :background nil :foreground cyan)
    (ivy-action :background nil :foreground cyan)
    (ivy-grep-line-number :background nil :foreground cyan)
-   (ivy-minibuffer-match-face-1 :background nil :foreground yellow)
-   (ivy-minibuffer-match-face-2 :background nil :foreground yellow)
+   (ivy-minibuffer-match-face-1 :background nil :foreground yellow :bold t)
+   (ivy-minibuffer-match-face-2 :background nil :foreground red :bold t)
    (ivy-minibuffer-match-highlight :foreground cyan)
    (counsel-key-binding :foreground cyan)
 
@@ -273,7 +265,7 @@ background contrast. All other values default to \"medium\"."
    ;; org-mode
    ((outline-1 &override) :foreground yellow)
    ((outline-2 &override) :foreground cyan)
-   ((outline-3 &override) :foreground magenta)
+   ((outline-3 &override) :foreground cyan)
    (org-ellipsis :underline nil :foreground orange)
    (org-tag :foreground yellow :bold nil)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
@@ -282,11 +274,16 @@ background contrast. All other values default to \"medium\"."
 
    ;; web-mode
    (web-mode-html-tag-bracket-face :foreground blue)
-   (web-mode-html-tag-face         :foreground cyan)
-   (web-mode-html-attr-name-face   :foreground cyan)
+   (web-mode-html-tag-face         :foreground cyan :weight 'semi-bold)
+   (web-mode-html-attr-name-face   :foreground violet)
    (web-mode-json-key-face         :foreground green)
-   (web-mode-json-context-face     :foreground cyan))
+   (web-mode-json-context-face     :foreground cyan)
+
+   ;; react jsx
+   (rjsx-tag :foreground cyan :weight 'semi-bold)
+   (rjsx-text :foreground fg)
+   (rjsx-attr :foreground violet))
   ;; --- extra variables --------------------
   ;; ()
   )
-;;; doom-gruvbox-theme.el ends here
+;;; doom-miramare-theme.el ends here

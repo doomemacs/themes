@@ -261,8 +261,7 @@ determine the exact padding."
    ((org-block-begin-line &override) :background bg :foreground comments :slant 'italic)
    ((org-quote &override) :background base1)
 
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide :foreground hidden))
 
 
   ;;;; --- extra variables ---------------------

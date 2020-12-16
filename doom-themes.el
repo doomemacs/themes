@@ -32,6 +32,7 @@
 ;;   [X] `doom-dracula' (added by fuxialexnder)
 ;;   [X] `doom-ephemeral' (added by karetsu)
 ;;   [X] `doom-fairy-floss' (added by ema2159)
+;;   [X] `doom-flatwhite' (added by ShaneKilkelly)
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-gruxbox-light' (added by jsoa)
 ;;   [X] `doom-henna' (added by jsoa)
@@ -40,6 +41,7 @@
 ;;   [X] `doom-laserwave' (added by hyakt)
 ;;   [X] `doom-material' (added by tam5)
 ;;   [X] `doom-manegarm' (added by kenranunderscore)
+;;   [X] `doom-miramare' (added by sagittaros)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-monokai-classic' (added by ema2159)
 ;;   [X] `doom-monokai-pro' (added by kadenbarlow)
@@ -48,6 +50,7 @@
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
 ;;   [X] `doom-nova' (added by bigardone)
 ;;   [X] `doom-oceanic-next' (added by juanwolf)
+;;   [X] `doom-old-hope' (added by teesloane)
 ;;   [X] `doom-opera' (added by jwintz)
 ;;   [X] `doom-opera-light' (added by jwintz)
 ;;   [X] `doom-outrun' (added by ema2159)

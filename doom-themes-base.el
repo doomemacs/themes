@@ -58,6 +58,17 @@
     (mode-line-buffer-id :weight 'bold)
     (header-line         :background bg     :foreground fg     :distant-foreground bg)
 
+    ;; tab-line/tab-bar (Emacs 27+)
+    (tab-line :background bg-alt :foreground bg-alt)
+    (tab-line-tab :background bg :foreground fg)
+    (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
+    (tab-line-tab-current :background bg :foreground fg)
+    (tab-line-highlight :inherit 'tab-line-tab)
+    (tab-line-close-highlight :foreground highlight)
+    ((tab-bar &inherit tab-line))
+    ((tab-bar-tab &inherit tab-line-tab))
+    ((tab-bar-tab-inactive &inherit tab-line-tab-inactive))
+
     ;; 1. Line number faces must explicitly disable its text style attributes
     ;;    because nearby faces may "bleed" into the line numbers otherwise.
     ;; 2. All other line number plugin faces should &inherit from these.
@@ -73,9 +84,9 @@
 
     ;; --- built-in plugin faces --------------
     ;; centaur-tabs
-    (centaur-tabs-default    :background bg-alt :foreground bg-alt)
-    (centaur-tabs-selected   :background bg :foreground fg)
-    (centaur-tabs-unselected :background bg-alt :foreground fg-alt)
+    ((centaur-tabs-default &inherit tab-bar))
+    ((centaur-tabs-selected &inherit tab-bar-tab))
+    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
     (centaur-tabs-selected-modified   :background bg :foreground teal)
     (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
     (centaur-tabs-active-bar-face
@@ -190,6 +201,9 @@
     (hi-blue-b   :foreground blue :weight 'bold)
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
+
+    ;; hl-fill-column-face
+    (hl-fill-column-face :inherit '(hl-line shadow))
 
     ;; hl-line
     (hl-line :background bg-alt :extend t)
@@ -627,6 +641,11 @@
     (gnus-signature              :foreground yellow)
     (gnus-x-face                 :background base5 :foreground fg)
 
+    ;; goggles
+    (goggles-changed :inherit 'region)
+    (goggles-removed :background (doom-blend red bg-alt 0.25) :extend t)
+    (goggles-added   :background (doom-blend green bg-alt 0.25))
+
     ;; helm
     (helm-selection
      (&all :inherit 'bold :background selection :extend t)
@@ -812,6 +831,8 @@
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
     (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
                                  :background bg-alt :extend t)
+    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+
 
     ;; magit
     (magit-bisect-bad        :foreground red)
@@ -958,7 +979,6 @@
     ;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-org-hide-face :foreground bg-alt)
     (solaire-mode-line-face          :background bg     :foreground fg     :distant-foreground bg)
     (solaire-mode-line-inactive-face :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
 
@@ -1058,9 +1078,13 @@
     ;; whitespace
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
-    (whitespace-tab      :foreground base4 :background (unless (default-value 'indent-tabs-mode) base3))
     (whitespace-newline  :foreground base4)
-    (whitespace-indentation :foreground red :background yellow)
+    (whitespace-tab
+     :foreground base4
+     :background (unless (default-value 'indent-tabs-mode) base3))
+    (whitespace-indentation
+     :foreground base4
+     :background (if (default-value 'indent-tabs-mode) base3))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
 
@@ -1257,6 +1281,7 @@
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
+    ((solaire-org-hide-face &inherit org-hide))
 
     ;; extends from outline-N
     ;; (org-level-1)
@@ -1321,10 +1346,14 @@
     (org-ref-cite-face       :foreground yellow :weight 'light :underline t)
     (org-ref-glossary-face   :foreground magenta)
     (org-ref-label-face      :foreground blue)
-    (org-ref-ref-face        :inherit 'link :foreground red)
+    (org-ref-ref-face        :inherit 'link :foreground teal)
 
     ;; pkgbuild-mode
     (pkgbuild-error-face :underline `(:style wave :color ,red))
+
+    ;; rjsx-mode
+    (rjsx-tag :foreground type)
+    (rjsx-attr :foreground strings)
 
     ;; rpm-spec-mode
     (rpm-spec-macro-face        :foreground yellow)
@@ -1369,15 +1398,22 @@
     (sh-quoted-exec :inherit 'font-lock-preprocessor-face)
 
     ;; web-mode
+    (web-mode-block-control-face     :foreground builtin)
+    (web-mode-block-delimiter-face   :foreground builtin)
+    (web-mode-css-property-name-face :foreground type)
     (web-mode-doctype-face           :foreground comments)
     (web-mode-html-tag-face          :foreground methods)
     (web-mode-html-tag-bracket-face  :foreground methods)
     (web-mode-html-attr-name-face    :foreground type)
+    (web-mode-html-attr-value-face   :foreground strings)
     (web-mode-html-entity-face       :foreground cyan :inherit 'italic)
     (web-mode-block-control-face     :foreground orange)
     (web-mode-html-tag-bracket-face  :foreground operators)
     (web-mode-json-key-face          :foreground strings)
     (web-mode-json-context-face      :foreground strings)
+    (web-mode-keyword-face           :foreground keywords)
+    (web-mode-string-face            :foreground strings)
+    (web-mode-type-face              :foreground type)
 
     ;; woman
     (woman-bold :inherit 'Man-overstrike)
