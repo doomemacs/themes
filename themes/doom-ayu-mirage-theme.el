@@ -1,4 +1,4 @@
-;;; doom-ayu-mirage-theme.el --- inspired by Atom One Dark -*- no-byte-compile: t; -*-
+;;; doom-ayu-mirage-theme.el -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
@@ -70,7 +70,7 @@ determine the exact padding."
    (vcs-removed  '("#f27983" "red"   "red"   ))
 
    (bg         common-bg)
-   (bg-alt     common-bg)
+   (bg-alt     ui-line)
    (base0      ui-gutter-normal)
    (base1      ui-gutter-active)
    (base2      ui-selection-bg)
@@ -82,7 +82,8 @@ determine the exact padding."
    (base8      ui-panel-border)
    (fg         common-fg)
    (fg-alt     common-ui)
-   (grey       syntax-comment)
+
+   (grey       ui-line)
    (red        syntax-markup)
    (orange     syntax-keyword)
    (green      syntax-string)
@@ -98,8 +99,8 @@ determine the exact padding."
    ;; face categories -- required for all themes
    (highlight      common-accent)
    (vertical-bar   ui-panel-border)
-   (selection      ui-selection-inactive)
-   (builtin        syntax-func)
+   (selection      nil)
+   (builtin        nil)
    (comments       (if doom-ayu-mirage-brighter-comments syntax-comment syntax-comment))
    (doc-comments   (if doom-ayu-mirage-brighter-comments syntax-comment syntax-comment))
    (constants      syntax-constant)
@@ -126,8 +127,8 @@ determine the exact padding."
     (when doom-ayu-mirage-padded-modeline
       (if (integerp doom-ayu-mirage-padded-modeline) doom-ayu-mirage-padded-modeline 4)))
 
-   (modeline-fg     common-ui)
-   (modeline-fg-alt base5)
+   (modeline-fg     common-fg)
+   (modeline-fg-alt common-accent)
 
    (modeline-bg
     (if -modeline-bright
@@ -147,6 +148,7 @@ determine the exact padding."
 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
+   ((paren-face-match &override) :foreground fg :background ui-selection-bg :weight 'ultra-bold)
 
    (font-lock-comment-face
     :foreground comments
@@ -174,13 +176,13 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :weight 'normal)
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg modeline-bg) :weight 'normal)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'normal)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
    (doom-modeline-buffer-project-root :foreground green :weight 'normal)
 
    ;; ivy-mode
-   (ivy-current-match :background ui-line)
+   (ivy-current-match :background common-bg)
    (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
    (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
    (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
@@ -205,22 +207,23 @@ determine the exact padding."
    (solaire-org-hide-face :foreground hidden)
    (org-headline-done :foreground syntax-comment)
 
+   ;; rjsx-mode
    (rjsx-tag :foreground cyan)
    (rjsx-tag-bracket-face :foreground (doom-darken cyan 0.5))
    (rjsx-attr :foreground syntax-func)
 
+   ;; web-mode
    (web-mode-html-tag-face :foreground cyan)
    (web-mode-html-tag-bracket-face :foreground (doom-darken cyan 0.5))
    (web-mode-html-attr-name-face :foreground syntax-func)
 
+   ;; company-mode
    (company-tooltip :foreground common-fg :background common-bg)
    (company-tooltip-annotation :foreground common-fg)
    (company-tooltip-selection :background ui-line)
    (company-tooltip-search :foreground common-accent :weight 'bold)
    (company-scrollbar-bg :background common-bg)
    (company-scrollbar-fg :background syntax-comment)
-
-   (highlight-numbers-number :foreground syntax-func :weight 'normal)
 
    ;; diff-mode
    (diff-removed :foreground vcs-removed)
