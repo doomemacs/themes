@@ -196,7 +196,6 @@
     (org-hide :foreground hidden)
     (org-link :inherit 'underline :foreground yellow)
     (org-agenda-done :foreground cyan)
-    (solaire-org-hide-face :foreground hidden)
     (solaire-header-line-face :background bg-alt :foreground fg)
     (header-line :background base2 :foreground fg)
 

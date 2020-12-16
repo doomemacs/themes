@@ -35,6 +35,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
   - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
   - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
+  - [X] `doom-flatwhite`: a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])
   - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
   - [X] `doom-gruvbox-light`: adapted from Morhetz's [Gruvbox][gruvbox] light variant (thanks for [jsoa])
   - [X] `doom-henna`: based on VS Code's [Henna][henna] (thanks to [jsoa])
@@ -43,6 +44,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
   - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
   - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
+  - [X] `doom-miramare`: a port of [Franbach's][franbach] [Miramare][miramare], a variant of gruvbox theme (thanks to [sagittaros])
   - [X] `doom-molokai`: a theme based on Texmate's Monokai
   - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
   - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
@@ -51,10 +53,12 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
   - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
+  - [X] `doom-old-hope`: based on [An Old Hope] theme (thanks to [teesloane])
   - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
   - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
   - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
   - [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
+  - [x] `doom-plain`: based on [plain][plain] (thanks to [mateossh])
   - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
   - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
   - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
@@ -68,7 +72,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
-  
+
 ## Features
 
 - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
@@ -182,6 +186,7 @@ I welcome contributions of any kind, be they pull requests, bug reports or elisp
 pointers. Additional theme and plugin support requests are welcome too.
 
 
+[An Old Hope]: https://github.com/mohkale/an-old-hope-theme
 [AnthonyDiGirolamo]: https://github.com/AnthonyDiGirolamo
 [Atom]: http://atom.io
 [Nova]: https://trevordmiller.com/projects/nova
@@ -202,6 +207,8 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
 [emacswatcher]: https://github.com/emacswatcher
+[flatwhite]: https://github.com/biletskyy/flatwhite-syntax
+[franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo 
 [gruvbox]: https://github.com/morhetz/gruvbox
@@ -217,7 +224,9 @@ pointers. Additional theme and plugin support requests are welcome too.
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
+[mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [Monokai]: https://monokai.pro/
@@ -227,8 +236,11 @@ pointers. Additional theme and plugin support requests are welcome too.
 [nord]: https://www.nordtheme.com/
 [Oceanic Next]: https://github.com/voronianski/oceanic-next-color-scheme
 [outrun]: https://github.com/samrap/outrun-theme-vscode
+[plain]: https://github.com/gko/plain
+[sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
+[ShaneKilkelly]: https://github.com/ShaneKilkelly
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode

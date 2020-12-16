@@ -157,7 +157,6 @@ determine the exact padding."
 
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
 
    ;; Iosvkem
    (font-lock-comment-face

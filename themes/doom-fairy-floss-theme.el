@@ -195,8 +195,8 @@ determine the exact padding."
    (org-scheduled         :foreground green)
    (org-scheduled-previously :foreground yellow)
    (org-scheduled-today   :foreground orange)
-   (org-hide              :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (org-hide              :foreground hidden))
+
   ;; --- extra variables ---------------------
   ;; ()
   )
