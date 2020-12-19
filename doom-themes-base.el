@@ -958,6 +958,18 @@
     ((show-paren-match &inherit paren-face-match))
     ((show-paren-mismatch &inherit paren-face-mismatch))
 
+    ;; smart-mode-line
+    (sml/charging          :foreground green)
+    (sml/discharging       :foreground yellow :weight 'bold)
+    (sml/filename          :foreground violet :weight 'bold)
+    (sml/git               :foreground blue)
+    (sml/modified          :foreground cyan)
+    (sml/outside-modified  :foreground cyan)
+    (sml/process           :weight 'bold)
+    (sml/read-only         :foreground cyan)
+    (sml/sudo              :foreground orange :weight 'bold)
+    (sml/vc-edited         :foreground green)
+
     ;; smartparens
     (sp-pair-overlay-face :background region)
 
