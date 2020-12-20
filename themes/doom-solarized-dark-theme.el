@@ -81,7 +81,7 @@ determine the exact padding."
    (operators      orange)
    (type           yellow)
    (strings        cyan)
-   (variables      blue)
+   (variables      violet)
    (numbers        magenta)
    (region         base0)
    (error          red)
