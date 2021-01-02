@@ -21,6 +21,11 @@
   :group 'doom-solarized-dark-theme
   :type 'boolean)
 
+(defcustom doom-solarized-dark-make-constants-blue nil
+  "If not-nil, makes constants blue instead of magenta"
+  :group 'doom-solarized-dark-theme
+  :type 'boolean)
+
 (defcustom doom-solarized-dark-comment-bg doom-solarized-dark-brighter-comments
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
@@ -74,7 +79,7 @@ determine the exact padding."
    (builtin        blue)
    (comments       (if doom-solarized-dark-brighter-comments blue base5))
    (doc-comments   teal)
-   (constants      magenta)
+   (constants      (if doom-solarized-dark-make-constants-blue blue magenta))
    (functions      blue)
    (keywords       green)
    (methods        cyan)
