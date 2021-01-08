@@ -28,7 +28,7 @@
   :type 'symbol
   :group 'doom-themes-neotree)
 
-(define-obsolete-variable-alias 'doom-themes-neotree-enable-file-icons 'doom-themes-neotree-file-icons)
+(define-obsolete-variable-alias 'doom-themes-neotree-enable-file-icons 'doom-themes-neotree-file-icons "2019-06-29")
 (defcustom doom-themes-neotree-file-icons 'simple
   "The style to use for the file icons. Can be nil (disabled), non-nil (for a
 diverse iconset), or 'simple, which is closest's to Atom's style as it only
