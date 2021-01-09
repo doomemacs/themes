@@ -104,6 +104,9 @@ determine the exact padding."
     :foreground doc-comments
     :slant 'italic)
 
+   ;; Override hl-line colour as bg-alt is too dark
+   ((hl-line &override) :background (doom-darken highlight 0.30))
+
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
 
