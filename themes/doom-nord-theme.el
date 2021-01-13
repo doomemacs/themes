@@ -103,7 +103,7 @@ determine the exact padding."
 
    (region-fg
     (when (memq doom-nord-region-highlight '(frost snowstorm))
-      bg-alt))
+      base0))
 
    (modeline-fg     nil)
    (modeline-fg-alt base6)
@@ -164,6 +164,16 @@ determine the exact padding."
 
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+   ;; highlight-symbol
+   (highlight-symbol-face :background (doom-lighten base4 0.1) :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background (doom-lighten base4 0.1) :distant-foreground fg-alt)
+
+   ;; ivy
+   ((ivy-current-match &override) :foreground region-fg :weight 'semi-bold)
+
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
