@@ -304,9 +304,9 @@ Can be an integer to determine the exact padding."
    (helm-grep-lineno :foreground fg-1 :background bg)
    (helm-grep-match :foreground 'nil :background 'nil :inherit 'helm-match)
    (helm-grep-running :foreground red :background bg)
-   (helm-match :foreground orange :background base1 :weight bold)
+   (helm-match :foreground orange :background base1 :weight 'bold)
    (helm-swoop-target-line-face :foreground fg :background base6)
-   (helm-swoop-target-word-face :foreground yellow :background base6 :weight bold)
+   (helm-swoop-target-word-face :foreground yellow :background base6 :weight 'bold)
 
    ;; js2-mode
    (js2-jsdoc-tag :foreground green-2)
