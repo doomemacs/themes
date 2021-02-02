@@ -130,7 +130,6 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
-   (header-line :inherit 'mode-line :background "#23214b")
 
    (solaire-mode-line-face
     :inherit 'mode-line
