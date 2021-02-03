@@ -165,6 +165,9 @@ determine the exact padding."
    ;; helm
    (helm-candidate-number :background blue :foreground bg)
 
+   ;; selectrum
+   (selectrum-current-candidate :background base1)
+
    ;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
 
