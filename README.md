@@ -75,8 +75,9 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 
 ### Themes in testing
 A list of themes which are usable, yet may need some minor adjustments.
-  - [X] `doom-homage-white`: a minimalistic, colorless theme, inspired by [eziam][eziam], [tao][tao] and [jbeans][jbeans] themes.
-  - [X] `doom-homage-black`: dark variant of doom-homage white.
+  - [X] `doom-homage-white`: a minimalistic, colorless theme, inspired by [eziam][eziam], [tao][tao] and [jbeans][jbeans] themes. (thanks to [mskorzhinskiy])
+  - [X] `doom-homage-black`: dark variant of doom-homage white. (thanks to [mskorzhinskiy])
+  - [x] `doom-plain-dark`: based on [plain][plain] (thanks to [das-s])
 
 ## Features
 
@@ -205,6 +206,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
 [city-lights]: http://citylights.xyz/
 [dark+]: https://github.com/microsoft/vscode/blob/master/extensions/theme-defaults/themes/dark_plus.json
+[das-s]: https://github.com/das-s
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
 [dracula]: https://draculatheme.com/
@@ -235,6 +237,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [Monokai]: https://monokai.pro/
+[mskorzhinskiy]: https://github.com/mskorzhinskiy
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
