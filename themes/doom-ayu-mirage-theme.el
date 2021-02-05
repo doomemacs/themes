@@ -90,11 +90,11 @@ determine the exact padding."
    (teal       syntax-regexp)
    (yellow     syntax-func)
    (blue       syntax-entity)
-   (dark-blue  (doom-darken syntax-entity 1))
+   (dark-blue  (doom-darken syntax-entity 0.2))
    (magenta    syntax-constant)
-   (violet     (doom-lighten syntax-constant 1))
+   (violet     (doom-lighten syntax-constant 0.2))
    (cyan       syntax-tag)
-   (dark-cyan  (doom-darken syntax-tag 1))
+   (dark-cyan  (doom-darken syntax-tag 0.2))
 
    ;; face categories -- required for all themes
    (highlight      common-accent)
