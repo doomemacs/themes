@@ -29,6 +29,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
 - Additional themes
   - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
   - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
+  - [X] `doom-ayu-dark`: Light variant from [Ayu] themes (thanks to [LoveSponge])
+  - [X] `doom-ayu-light`: Dark variant from [Ayu] themes(thanks to [LoveSponge])
   - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
   - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
   - [X] `doom-dark+` ported from VS Code's [Dark+][dark+] theme (thanks to [ema2159])
@@ -195,6 +197,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [An Old Hope]: https://github.com/mohkale/an-old-hope-theme
 [AnthonyDiGirolamo]: https://github.com/AnthonyDiGirolamo
 [Atom]: http://atom.io
+[Ayu]: https://github.com/ayu-theme/ayu-colors
 [Nova]: https://trevordmiller.com/projects/nova
 [airline-doom-molokai]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-molokai-theme.png
 [airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
@@ -231,6 +234,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
+[LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
 [miramare]: https://github.com/franbach/miramare

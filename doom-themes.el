@@ -26,6 +26,8 @@
 ;; Additional themes
 ;;   [X] `doom-acario-dark' (added by gagbo)
 ;;   [X] `doom-acario-light' (added by gagbo)
+;;   [X] `doom-ayu-dark': (added by LoveSponge)
+;;   [X] `doom-ayu-light': (added by LoveSponge)
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dark+' (added by ema2159)
