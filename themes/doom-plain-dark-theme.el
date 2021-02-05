@@ -149,6 +149,9 @@ determine the exact padding."
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
+   ;; LSP
+   (lsp-headerline-breadcrumb-symbols-face :foreground keywords :weight 'bold)
+
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
