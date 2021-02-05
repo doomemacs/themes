@@ -139,7 +139,6 @@
       :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
     (mode-line-emphasis
       :foreground (if -modeline-bright base8 highlight))
-    (header-line :inherit 'mode-line :background fg-alt)
     (mode-line-highlight :background base1 :foreground fg)
 
     ;; modeline
@@ -196,8 +195,6 @@
     (org-hide :foreground hidden)
     (org-link :inherit 'underline :foreground yellow)
     (org-agenda-done :foreground cyan)
-    (solaire-header-line-face :background bg-alt :foreground fg)
-    (header-line :background base2 :foreground fg)
 
     ;; tooltip
     (tooltip              :background base0 :foreground fg)
