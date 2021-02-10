@@ -268,6 +268,13 @@
 
 
     ;; --- plugin faces -----------------------
+    ;; alert
+    (alert-high-face         :inherit bold :foreground warning)
+    (alert-low-face          :foreground grey)
+    (alert-moderate-face     :inherit bold :foreground fg-alt)
+    (alert-trivial-face      :foreground doc-comments)
+    (alert-urgent-face       :inherit bold :foreground error)
+
     ;; all-the-icons
     (all-the-icons-blue       :foreground blue)
     (all-the-icons-blue-alt   :foreground teal)
