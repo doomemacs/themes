@@ -9,11 +9,6 @@
   :type 'boolean
   :group 'doom-themes-org)
 
-;; TODO Remove this once released with org-mode
-(defface org-upcoming-distant-deadline '((t :inherit font-lock-comment-face))
-  "Face for items scheduled previously, not done, and have a distant deadline.
-See also `org-agenda-deadline-faces'."
-  :group 'doom-themes-org)
 
 ;;
 (defsubst doom-themes--org-tag-face (n)
