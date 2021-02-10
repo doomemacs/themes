@@ -1,20 +1,68 @@
-;;; doom-themes-ext-org.el --- improve org-mode support for doom-themes -*- lexical-binding: t; -*-
+;;; doom-themes-ext-org.el --- fix fontification issues in org-mode -*- lexical-binding: t; -*-
+;;
+;; Copyright (C) 2021 Henrik Lissner
+;;
+;; Author: Henrik Lissner <http://github/hlissner>
+;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Created: August 3, 2017
+;; Homepage: https://github.com/hlissner/doom-themes-ext-org
+;;
+;; This file is not part of GNU Emacs.
+;;
+;;; Commentary:
+;;
+;; Fixes a few fontification issues in org-mode and adds special fontification
+;; for @-tags and #hashtags. Simply load this file to use it.
+;;
+;;   (with-eval-after-load 'org-mode
+;;     (require 'doom-themes-ext-org))
+;;
+;; Or call `doom-themes-enable-org-config', which does nothing but load this
+;; package (because it's autoloaded).
+;;
+;;   (with-eval-after-load 'org-mode
+;;     (doom-themes-enable-org-config))
+;;
+;;; Code:
 
 (defgroup doom-themes-org nil
   "Options for doom's org customizations."
   :group 'doom-themes)
 
-(defcustom doom-org-special-tags t
-  "If non-nil, highlight #hashtags and @attags especially."
+(define-obsolete-variable-alias
+  'doom-org-special-tags 'doom-themes-org-fontify-special-tags
+  "2021-02-10")
+(defcustom doom-themes-org-fontify-special-tags t
+  "If non-nil, fontify #hashtags and @attags.
+Uses `doom-themes-org-at-tag' and `doom-themes-org-hash-tag' faces."
   :type 'boolean
   :group 'doom-themes-org)
 
+(defface doom-themes-org-at-tag '((t :inherit org-formula))
+  "Face used to fontify @-tags in org-mode."
+  :group 'doom-themes-org)
+
+(defface doom-themes-org-hash-tag '((t :inherit org-tag))
+  "Face used to fontify #hashtags in org-mode."
+  :group 'doom-themes-org)
+
+
+(defvar org-done-keywords)
+(defvar org-font-lock-extra-keywords)
+(defvar org-heading-keyword-regexp-format)
+(defvar org-todo-regexp)
+(defvar org-fontify-done-headline)
+(defvar org-activate-links)
+(declare-function org-delete-all "ext:org" (elts list))
 
 ;;
-(defsubst doom-themes--org-tag-face (n)
-  (let ((kwd (match-string n)))
-    (or (and (equal kwd "#") 'org-tag)
-        (and (equal kwd "@") 'org-formula))))
+(defun doom-themes--org-tag-face (n)
+  "Return the face to use for the currently matched tag.
+N is the match index."
+  (declare (pure t) (side-effect-free t))
+  (pcase (match-string n)
+    ("#" 'doom-themes-org-hash-tag)
+    ("@" 'doom-themes-org-at-tag)))
 
 (defun doom-themes-enable-org-fontification ()
   "Correct (and improve) org-mode's font-lock keywords.
@@ -62,14 +110,14 @@
                '(("^[ \t]*\\(?:[-+*]\\|[0-9]+[).]\\)[ \t]+\\(\\(?:\\[@\\(?:start:\\)?[0-9]+\\][ \t]*\\)?\\[\\(?:X\\|\\([0-9]+\\)/\\2\\)\\][^\n]*\n\\)"
                   1 'org-headline-done prepend)))
              ;; custom #hashtags & @at-tags for another level of organization
-             (when doom-org-special-tags
+             (when doom-themes-org-fontify-special-tags
                '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
 
 (add-hook 'org-font-lock-set-keywords-hook #'doom-themes-enable-org-fontification)
 
 ;;;###autoload
 (defun doom-themes-org-config ()
-  "Enable custom fontification & improves theme integration with org-mode.")
+  "Load `doom-themes-ext-org'.")
 
 (provide 'doom-themes-ext-org)
 ;;; doom-themes-ext-org.el ends here
