@@ -170,6 +170,11 @@
     (all-the-icons-yellow     :foreground yellow)
     ;;;; all-the-icons-dired
     (all-the-icons-dired-dir-face    :foreground doc-comments)
+    ;;;; annotate
+    (annotate-annotation           :background (doom-blend highlight bg 0.1) :foreground doc-comments)
+    (annotate-annotation-secondary :background (doom-blend green bg 0.1)     :foreground doc-comments)
+    (annotate-highlight            :background (doom-blend highlight bg 0.1) :underline highlight)
+    (annotate-highlight-secondary  :background (doom-blend green bg 0.1)     :underline green)
     ;;;; anzu
     (anzu-replace-highlight :background base0 :foreground red   :weight 'bold :strike-through t)
     (anzu-replace-to        :background base0 :foreground green :weight 'bold)
