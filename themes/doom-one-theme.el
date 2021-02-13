@@ -166,8 +166,12 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (solaire-org-hide-face :foreground hidden)
 
-  ;; lsp-mode
-  (lsp-headerline-breadcrumb-separator-face :foreground green))
+   ;; lsp-mode
+   (lsp-headerline-breadcrumb-separator-face :foreground green)
+
+   ;; rjsx
+   (rjsx-tag :foreground red)
+   (rjsx-attr :foreground orange))
 
   ;; --- extra variables ---------------------
   ()
