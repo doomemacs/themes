@@ -259,6 +259,9 @@
 
    ;; lsp
    (lsp-headerline-breadcrumb-symbols-face :foreground functions :weight 'bold)
+
+   ;; rjsx
+   (rjsx-tag :foreground magenta)
   ))
 
 ;;; doom-ephemeral-theme.el ends here
