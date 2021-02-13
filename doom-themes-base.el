@@ -1082,7 +1082,7 @@
     (reb-match-3 :foreground yellow  :inverse-video t)
     ;;;; rjsx-mode <modes:rjsx-mode>
     (rjsx-tag :foreground type)
-    (rjsx-attr :foreground strings)
+    (rjsx-attr :foreground functions)
     ;;;; rpm-spec-mode <modes:rpm-spec-mode>
     (rpm-spec-macro-face        :foreground yellow)
     (rpm-spec-var-face          :foreground violet)
