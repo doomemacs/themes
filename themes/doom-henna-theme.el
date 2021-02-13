@@ -298,6 +298,9 @@ determine the exact padding."
    (js2-jsdoc-tag                :foreground teal)
    (js2-jsdoc-html-tag-delimiter :foreground base8)
    (js2-jsdoc-html-tag-name      :foreground base8)
+   
+   ;; rjsx
+   (rjsx-attr :foreground blue)
    )
 
   ;; --- extra variables ---------------------
