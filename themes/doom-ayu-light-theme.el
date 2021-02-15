@@ -186,6 +186,11 @@ determine the exact padding."
    (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
    (ivy-minibuffer-match-face-4 :foreground common-accent :weight 'bold)
 
+   ;;;; helm
+   (helm-ff-dotted-directory :inherit 'syntax-comment)
+   (helm-ff-executable :inhert 'helm-ff-socket :weight 'bold)
+   (helm-selection :inherit 'normal :background "#399ee6")
+
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
