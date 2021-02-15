@@ -870,6 +870,15 @@
     ;;;; minimap
     (minimap-current-line-face :background selection)
     (minimap-active-region-background :background vertical-bar)
+    ;;;; mmm-mode
+    (mmm-init-submode-face :background (doom-blend red bg 0.1))
+    (mmm-cleanup-submode-face :background (doom-blend yellow bg 0.1))
+    (mmm-declaration-submode-face :background (doom-blend cyan bg 0.1))
+    (mmm-comment-submode-face :background (doom-blend blue bg 0.1))
+    (mmm-output-submode-face :background (doom-blend violet bg 0.1))
+    (mmm-special-submode-face :background (doom-blend green bg 0.1))
+    (mmm-code-submode-face :background bg-alt)
+    (mmm-default-submode-face :background nil) ; make transparent
     ;;;; multiple cursors
     (mc/cursor-face :inherit 'cursor)
     ;;;; nav-flash
