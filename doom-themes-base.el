@@ -715,6 +715,17 @@
     ;;;; ivy-posframe
     (ivy-posframe :background (doom-darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
+
+    ;;;; selectrum
+    (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+    (selectrum-primary-highlight
+     :background nil
+     :foreground (doom-lighten grey 0.14)
+     :weight 'light)
+    (selectrum-secondary-highlight
+     :inherit 'selectrum-primary-highlight
+     :foreground magenta :background base1 :weight 'semi-bold)
+
     ;;;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
