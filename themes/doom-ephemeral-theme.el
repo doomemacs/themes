@@ -262,6 +262,9 @@
 
    ;; rjsx
    (rjsx-tag :foreground magenta)
-  ))
+
+   ;; notmuch
+   (notmuch-wash-cited-text :foreground base6)
+   ))
 
 ;;; doom-ephemeral-theme.el ends here

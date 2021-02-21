@@ -101,13 +101,18 @@ determine the exact padding."
    (hl-line
     :background base8)
 
+   ;; Org
    (org-block-begin-line
-    :foreground base2
-    :background base3)
+    :foreground base5
+    :extend t)
 
    (org-block-end-line
-    :foreground base2
-    :background base3)
+    :foreground base5
+    :extend t)
+
+   (org-block
+    :background bg-alt
+    :extend t)
 
    (org-level-1
     :slant 'italic
@@ -124,11 +129,9 @@ determine the exact padding."
     :foreground base2
     :background nil)
 
-   (org-level-3
-    :slant 'italic
-    :foreground base2
-    :background nil)
-
+   ;; Ivy
+   (ivy-posframe
+    :background bg-alt)
 
    ;; Font lock
    (font-lock-comment-face
