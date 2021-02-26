@@ -197,45 +197,69 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
          :extensions (info))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-media" :v-adjust 0 :face face-spec))
-         :extensions ("png" "jpg" "jpeg" "gif" "ico" "tif" "tiff" "svg" "bmp"
-                      "psd" "ai" "eps" "indd" "mov" "avi" "mp4" "webm" "mkv"
-                      "wav" "mp3" "ogg" "midi"))
+         :extensions ("ai" "aiff" "avi" "bmp" "eps" "flac" "gif" "ico" "indd"
+                      "jpeg" "jpg" "midi" "mkv" "mov" "mp3" "mp4" "ogg" "png"
+                      "psd" "svg" "tif" "tiff" "wav" "webm" "webp"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
-         :extensions ("adoc" "asciidoc" "bashrc" "c" "cabal" "cabal" "cask" "cc"
-                      "clj" "cljc" "cljs" "cpp" "css" "csv" "cxx" "dart"
-                      "dockerfile" "dockerfile" "editorconfig" "eex" "el" "elm"
-                      "ex" "exs" "fish" "gitconfig" "gitignore" "go" "h" "hh"
-                      "hpp" "hs" "htm" "html" "hy" "ideavimrc" "inputrc" "j2"
-                      "j2" "java" "jinja2" "jinja2" "jl" "js" "json" "jsx" "kt"
-                      "kt" "kts" "lhs" "lisp" "lua" "lua" "makefile" "ml" "mli"
-                      "nim" "nim" "nims" "nix" "perl" "php" "pl" "plt" "pm"
-                      "pm6" "pp" "pp" "py" "pyc" "r" "racket" "rb" "re" "rei"
-                      "rkt" "rktd" "rktl" "rs" "sbt" "scala" "scm" "scrbl"
-                      "scribble" "scss" "sh" "sql" "sql" "styles" "sv" "tex"
-                      "toml" "tpp" "tridactylrc" "ts" "tsx" "v" "vagrantfile"
-                      "vagrantfile" "vh" "vimperatorrc" "vimrc" "vrapperrc"
-                      "vue" "xml" "xsl" "yaml" "yml" "zsh" "zshrc"))
+         :extensions ("accdb" "accdt" "actionscript" "adoc" "adoc" "ansible"
+                      "antlr" "applescript" "asciidoc" "asm" "c" "cask" "cc"
+                      "cc" "clj" "cljc" "cljs" "cmake" "coffee" "cpp" "css"
+                      "cxx" "cython" "d" "dart" "diet" "diff" "dml"
+                      "docker-compose.yml" "dockerfile" "dscript" "edn" "eex"
+                      "el" "elm" "ex" "exs" "fennel" "fish" "fortran"
+                      "fortran-modern" "fortranfreeform" "fsharp" "gdscript"
+                      "go" "gradle" "graphql" "h" "hh" "hpp" "hs" "htm" "html"
+                      "hy" "iced" "inc" "ino" "j2" "j2" "java" "jinja" "jinja2"
+                      "jl" "js" "jsx" "kt" "kts" "ledger" "less" "lhs" "lisp"
+                      "lua" "makefile" "matlab" "merlin" "mips" "ml" "mli"
+                      "moonscript" "nim" "nims" "nix" "objectpascal" "ocaml"
+                      "pascal" "patch" "pde" "perl" "pgsql" "php" "php4" "php5"
+                      "phps" "pl" "plt" "pm" "pm6" "pony" "pp" "pp" "pro"
+                      "prolog" "ps1" "purs" "py" "pyc" "r" "racket" "rb" "rd"
+                      "rdx" "re" "rei" "rkt" "rktd" "rktl" "rs" "rsx" "sass"
+                      "sbt" "scala" "scm" "scpt" "scrbl" "scribble" "scss" "sh"
+                      "sql" "styles" "sv" "tex" "tpp" "ts" "tsx" "v"
+                      "vagrantfile" "vh" "vhd" "vhdl" "vhms" "vim" "vue" "xsl"
+                      "zsh" "zshrc"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "book" :v-adjust 0 :face face-spec))
-         :extensions ("lrf" "lrx" "cbr" "cbz" "cb7" "cbt" "cba" "chm" "djvu"
-                      "doc" "docx" "pdb" "pdb" "fb2" "xeb" "ceb" "inf" "azw"
-                      "azw3" "kf8" "kfx" "lit" "prc" "mobi" "exe" "or" "html"
-                      "pkg" "opf" "txt" "pdb" "ps" "rtf" "pdg" "xml" "tr2"
-                      "tr3" "oxps" "xps"))
+         :extensions ("azw" "azw3" "cb7" "cba" "cbr" "cbt" "cbz" "ceb" "chm"
+                      "djvu" "doc" "docx" "exe" "fb2" "inf" "kf8" "kfx" "lit"
+                      "lrf" "lrx" "mobi" "opf" "or" "oxps" "pdb" "pdb" "pdb"
+                      "pdg" "pkg" "prc" "ps" "rtf" "tr2" "tr3" "txt" "xeb" "xps"
+                      "pot" "potx" "potm" "pps" "ppsx" "ppsm" "ppt" "pptx"
+                      "pptm" "pa" "ppa" "ppam" "sldm" "sldx" ))
+        (treemacs-create-icon
+         :icon (format "  %s\t" (all-the-icons-faicon "cogs" :height 0.85 :v-adjust 0 :face face-spec))
+         :extensions ("Vagrantfile" "babel.config.js" "babelignore" "babelrc"
+                      "babelrc.js" "babelrc.json" "bashrc" "bazel" "bazelrc"
+                      "bower.json" "bowerrc" "cabal" "cfg" "conf" "config"
+                      "cson" "csv" "editorconfig" "envrc" "eslintignore"
+                      "eslintrc" "feature" "gemfile" "git" "gitattributes"
+                      "gitconfig" "gitignore" "gitmodules" "ideavimrc" "iml"
+                      "ini" "inputrc" "json" "ledgerrc" "lock" "nginx"
+                      "npm-shrinkwrap.json" "npmignore" "npmrc"
+                      "package-lock.json" "package.json" "phpunit" "pkg" "plist"
+                      "properties" "terminalrc" "toml" "tridactylrc"
+                      "vimperatorrc" "vimrc" "vrapperrc" "xdefaults" "xml"
+                      "xresources" "yaml" "yarn-integrity" "yarnclean"
+                      "yarnignore" "yarnrc" "yml"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
-         :extensions ("md" "markdown" "rst" "log" "org" "txt"
-                      "CONTRIBUTE" "LICENSE" "README" "CHANGELOG"))
+         :extensions ("md" "markdown" "rst" "org" "log" "txt" "contribute"
+                      "license" "readme" "changelog"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-binary" :v-adjust 0 :face face-spec))
-         :extensions ("exe" "dll" "obj" "so" "o" "out" "elc"))
+         :extensions ("exe" "dll" "obj" "so" "o" "out" "elc" "cmake-cache" "csr"
+                      "eslintcache" "crt" "cer" "der" "pfx" "p12" "p7b" "p7r"
+                      "DS_STORE" "key" "pem" "src" "crl" "sst" "stl" "ipynb"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-pdf" :v-adjust 0 :face face-spec))
          :extensions ("pdf"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-zip" :v-adjust 0 :face face-spec))
-         :extensions ("zip" "7z" "tar" "gz" "rar" "tgz"))
+         :extensions ("zip" "xz" "7z" "tar" "gz" "rar" "tgz" "jar"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-text" :v-adjust 0 :face face-spec))
          :extensions (fallback))))
@@ -261,7 +285,7 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
          :extensions (info))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-alltheicon "git" :height 0.85 :v-adjust 0.0 :face 'all-the-icons-red))
-         :extensions ("gitignore" "git" "gitconfig" "gitmodules"))
+         :extensions ("gitignore" "git" "gitattributes" "gitconfig" "gitmodules"))
         (treemacs-create-icon
          :icon (format "%s\t" (all-the-icons-octicon "book" :height 1.0 :v-adjust 0.0 :face 'all-the-icons-blue))
          :extensions (license))
@@ -280,6 +304,12 @@ This is used to generate extensions for `treemacs' from `all-the-icons-icon-alis
                 (ht-set! gui-icons it gui-icon)
                 (ht-set! tui-icons it tui-icon)))))
 
+        ;; File extensions for whom the above did not work (likely because their
+        ;; regexp is too complicated to be reversed with
+        ;; `doom-themes--get-treemacs-extensions' -- which is too naive)
+        (treemacs-create-icon
+         :icon (format "  %s\t" (all-the-icons-fileicon "R" :v-adjust 0 :face 'all-the-icons-dblue))
+         :extensions ("r"))
         (treemacs-create-icon
          :icon (format "  %s\t" (all-the-icons-octicon "file-code" :v-adjust 0 :face face-spec))
          :extensions ("elc")))))
