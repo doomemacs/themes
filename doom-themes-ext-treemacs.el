@@ -98,30 +98,32 @@ variable-pitch face."
   "Expand the extension pattern EXT into a list of extensions.
 
 This is used to generate extensions for `treemacs' from `all-the-icons-icon-alist'."
-  (let* ((e (s-replace-all
-             '((".\\?" . "") ("\\?" . "") ("\\." . "")
-               ("\\" . "") ("^" . "") ("$" . "")
-               ("'" . "") ("*." . "") ("*" . ""))
-             ext))
+  (let* ((subs '((".\\?" . "") ("\\?" . "") ("\\." . "")
+                 ("\\" . "") ("^" . "") ("$" . "")
+                 ("'" . "") ("*." . "") ("*" . "")))
+         (e (replace-regexp-in-string
+             (regexp-opt (mapcar 'car subs))
+             (lambda (it) (cdr (assoc-string it subs)))
+             ext t t))
          (exts (list e)))
     ;; Handle "[]"
-    (when-let* ((s (s-split "\\[\\|\\]" e))
+    (when-let* ((s (split-string e "\\[\\|\\]"))
                 (f (car s))
                 (m (cadr s))
                 (l (cadr (cdr s)))
-                (mcs (delete "" (s-split "" m))))
+                (mcs (delete "" (split-string m ""))))
       (setq exts nil)
       (dolist (c mcs)
-        (push (s-concat f c l) exts)))
+        (push (concat f c l) exts)))
     ;; Handle '?
     (dolist (ext exts)
-      (when (s-match "?" ext)
-        (when-let ((s (s-split "?" ext)))
+      (when (string-match-p "?" ext)
+        (when-let ((s (split-string ext "?")))
           (setq exts nil)
-          (push (s-join "" s) exts)
-          (push (s-concat (if (> (length (car s)) 1)
-                              (substring (car s) 0 -1))
-                          (cadr s)) exts))))
+          (push (string-join s "") exts)
+          (push (concat (if (> (length (car s)) 1)
+                            (substring (car s) 0 -1))
+                        (cadr s)) exts))))
     exts))
 
 
