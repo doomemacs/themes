@@ -104,12 +104,10 @@ determine the exact padding."
    ;; Org
    (org-block-begin-line
     :foreground base5
-    :background bg-alt
     :extend t)
 
    (org-block-end-line
     :foreground base5
-    :background bg-alt
     :extend t)
 
    (org-block
