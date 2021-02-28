@@ -36,8 +36,8 @@
   "A port of the port of the Visual Studio Code theme Horizon"
 
   ;; name        default   256       16
-  ( (bg         '("#1c1e26" "#232530" nil            ))
-    (bg-alt     '("#232530" "#1c1e26" nil            ))
+  ( (bg         '("#1c1e26" nil       nil            ))
+    (bg-alt     '("#232530" nil       nil            ))
     (base0      '("#16161c" "#16161c" "black"        ))
     (base1      '("#1a1c23" "#1a1c23" "brightblack"  ))
     (base2      '("#1d1f27" "#1c1e26" "brightblack"  ))
@@ -106,11 +106,11 @@
     (modeline-bg
       (if -modeline-bright
           base4
-        `(,(car base1), (cdr fg-alt))))
+        `(,(car base1) ,(cadr fg-alt))))
     (modeline-bg-l
       (if -modeline-bright
           base4
-        `(,(car base1), (cdr fg))))
+        `(,(car base1) ,(cadr fg))))
     (modeline-bg-inactive   base1)
     (modeline-bg-inactive-l base1))
 
