@@ -106,11 +106,11 @@
     (modeline-bg
       (if -modeline-bright
           base4
-        `(,(car base1) ,(cadr fg-alt))))
+        `(,(car base1) "black")))
     (modeline-bg-l
       (if -modeline-bright
           base4
-        `(,(car base1) ,(cadr fg))))
+        `(,(car base1) "black")))
     (modeline-bg-inactive   base1)
     (modeline-bg-inactive-l base1))
 
