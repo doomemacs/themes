@@ -755,6 +755,9 @@
     (js2-object-property   :foreground violet)
     (js2-jsdoc-tag         :foreground doc-comments)
     (js2-external-variable :foreground operators)
+    ;;;; keycast
+    (keycast-command :inherit 'mode-line-emphasis)
+    (keycast-key     :inherit '(bold mode-line-highlight))
     ;;;; ledger-mode <modes:ledger-mode>
     (ledger-font-posting-date-face    :foreground blue)
     (ledger-font-posting-amount-face  :foreground yellow)
