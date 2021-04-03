@@ -80,7 +80,7 @@ determine the exact padding."
    (operators      violet)
    (type           violet)
    (strings        yellow)
-   (variables      (doom-lighten 'magenta 0.6))
+   (variables      (doom-lighten magenta 0.6))
    (numbers        violet)
    (region         base3)
    (error          red)
