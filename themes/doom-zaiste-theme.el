@@ -1,180 +1,228 @@
-;;; doom-zaiste-theme.el --- The theme used in Doomcasts
+;;; doom-zaiste-theme.el --- Zaiste theme -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
-(defgroup doom-zaiste-theme nil
-  :group 'doom-themes)
-
+;;
 (def-doom-theme doom-zaiste
-  "A light theme inspired by Doom One & Bluloco"
+  "A light theme inspired by Bluloco, Ayu, Doom One Light"
 
   ;; name        default   256       16
-  ((bg         '("#f0f0f0" nil       nil            ))
-   (bg-alt     '("#fafafa" nil       nil            ))
-   (base0      '("#efefef" "#efefef" "white"        ))
-   (base1      '("#e7e7e7" "#e7e7e7" "brightblack"  ))
-   (base2      '("#dfdfdf" "#dfdfdf" "brightblack"  ))
-   (base3      '("#c6c7c7" "#c6c7c7" "brightblack"  ))
-   (base4      '("#8c8c84" "#9ca0a4" "brightblack"  ))
-   (base5      '("#484a42" "#424242" "brightblack"  ))
-   (base6      '("#434343" "#2e2e2e" "brightblack"  ))
-   (base7      '("#2c2f34" "#1e1e1e" "brightblack"  ))
-   (base8      '("#1b2229" "black"   "black"        ))
-   (fg         '("#383a42" "#424242" "black"        ))
-   (fg-alt     '("#c6c7c7" "#c7c7c7" "brightblack"  ))
+  (
+   ;; common
+   (common-accent   '("#0098dd" "blue"  "blue" ))
+   (common-bg       '("#fafafa" "black"   "black"  ))
+   (common-fg       '("#575f66" "grey"    "grey"   ))
+   (common-ui       '("#383a42" "grey"    "grey"   ))
+   (brand           '("#2ea8e6" "grey"    "grey"   ))
 
-   (grey       '("#a0a1a7" "#a0a1a7" "brightblack"  ))
-   (red        '("#e45649" "#e45649" "red"          ))
-   (orange     '("#da8548" "#dd8844" "brightred"    ))
-   (green      '("#50a14f" "#50a14f" "green"        ))
-   (teal       '("#4db5bd" "#44b9b1" "brightgreen"  ))
-   (yellow     '("#bda800" "#c5a332" "yellow"       ))
-   (baby-blue  '("#d2ecff" "#d2ecff" "brightblue"   ))
-   (blue       '("#0098dd" "#0098dd" "brightblue"   ))
-   (dark-blue  '("#275fe4" "#275fe4" "blue"         ))
-   (magenta    '("#a626a4" "#a626a4" "magenta"      ))
-   (violet     '("#823ff1" "#823ff1" "brightmagenta"))
-   (cyan       '("#0184bc" "#0184bc" "brightcyan"   ))
-   (dark-cyan  '("#005478" "#005478" "cyan"         ))
+   (lightviolet     '("#a37acc" "magenta" "magenta" ))
 
-   (highlight      blue)
-   (vertical-bar   base2)
-   (selection      dark-blue)
-   (builtin        magenta)
-   (comments       base4)
-   (doc-comments   (doom-lighten comments 0.15))
-   (constants      violet)
-   (functions      green)
-   (keywords       blue)
-   (methods        cyan)
-   (operators      blue)
-   (type           red)
-   (strings        yellow)
-   (variables      magenta)
-   (numbers        magenta)
-   (region         baby-blue)
-   (error          red)
+   ;; syntax
+   (syntax-tag      '("#55b4d4" "cyan"    "cyan"   ))
+   (syntax-func     '("#C838C6" "yellow"  "yellow" ))
+   (syntax-entity   '("#399ee6" "blue"    "blue"   ))
+   (syntax-string   '("#86b300" "green"   "green"  ))
+   (syntax-regexp   '("#4cbf99" "teal"    "teal"  ))
+   (syntax-markup   '("#f07171" "red"     "red"    ))
+   (syntax-keyword  '("#0098dd" "brightblue"    "brightblue" ))
+   (syntax-special  '("#d52753" "yellow"  "yellow" ))
+   (syntax-comment  '("#abb0b6" "grey"    "grey"   ))
+   (syntax-constant '("#a37acc" "magenta" "magenta" ))
+   (syntax-operator '("#7a82da" "purple"  "purple" ))
+   (syntax-error    '("#f51818" "red"     "red"    ))
+   ;; ui
+   (ui-line               (doom-darken common-bg 0.07))
+   (ui-panel-shadow       (doom-lighten common-bg 0.35))
+   (ui-panel-border       (doom-lighten common-bg 0.45))
+   (ui-gutter-normal      (doom-lighten common-ui 0.45))
+   (ui-gutter-active      common-ui)
+   (ui-selection-bg       (doom-blend common-bg brand 0.7))
+   (ui-selection-inactive (doom-lighten brand 0.8))
+   (ui-selection-border   (doom-lighten common-fg 0.8))
+   (ui-guide-active       (doom-lighten common-ui 0.75))
+   (ui-guide-normal       (doom-lighten common-ui 0.35))
+   ;; vcs
+   (vcs-added    '("#99bf4d" "green" "green" ))
+   (vcs-modified '("#709ecc" "blue"  "blue"  ))
+   (vcs-removed  '("#f27983" "red"   "red"   ))
+
+   (bg         common-bg)
+   (bg-alt     common-bg)
+   (base0      ui-gutter-normal)
+   (base1      ui-gutter-active)
+   (base2      ui-selection-bg)
+   (base3      ui-selection-inactive)
+   (base4      ui-selection-border)
+   (base5      ui-guide-active)
+   (base6      ui-guide-normal)
+   (base7      ui-panel-shadow)
+   (base8      ui-panel-border)
+   (fg         common-fg)
+   (fg-alt     common-ui)
+   (grey       syntax-comment)
+   (red        syntax-markup)
+   (orange     syntax-keyword)
+   (green      syntax-string)
+   (teal       syntax-regexp)
+   (yellow     syntax-func)
+   (blue       syntax-entity)
+   (dark-blue  (doom-darken syntax-entity 0.2))
+   (magenta    syntax-constant)
+   (violet     (doom-lighten syntax-constant 0.2))
+   (cyan       syntax-tag)
+   (dark-cyan  (doom-darken syntax-tag 0.2))
+
+   ;; face categories -- required for all themes
+   (highlight      common-accent)
+   (vertical-bar   ui-panel-border)
+   (selection      ui-selection-inactive)
+   (builtin        syntax-func)
+   (comments       syntax-comment )
+   (doc-comments   syntax-comment)
+   (constants      syntax-constant)
+   (functions      syntax-func)
+   (keywords       syntax-keyword)
+   (methods        syntax-func)
+   (operators      syntax-operator)
+   (type           syntax-special)
+   (strings        syntax-string)
+   (variables      common-fg)
+   (numbers        syntax-func)
+   (region         ui-selection-bg)
+   (error          syntax-error)
    (warning        yellow)
    (success        green)
-   (vc-modified    orange)
-   (vc-added       green)
-   (vc-deleted     red)
+   (vc-modified    vcs-modified)
+   (vc-added       vcs-added)
+   (vc-deleted     vcs-removed)
 
-   (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet base4 0.2))
+   ;; custom categories
+   (hidden     (car bg))
+   (-modeline-bright nil)
+   (-modeline-pad 4)
 
-   (modeline-bg base1)
-   (modeline-bg-l base2)
-   (modeline-bg-inactive (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
+   (modeline-fg     common-ui)
+   (modeline-fg-alt base5)
 
-  ((font-lock-comment-face
-    :foreground comments
-    :weight 'bold)
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments
-    :weight 'regular)
+   (modeline-bg
+    (if -modeline-bright
+        (doom-lighten blue 0.475)
+      `(,(doom-lighten (car bg) 0.15) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-lighten blue 0.45)
+      `(,(doom-lighten (car bg-alt) 0.1) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-lighten (car bg) 0.1) ,@(cdr bg)))
+   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+
+  ;; --- extra faces ------------------------
+  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
    ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground base8)
+   ((line-number-current-line &override) :foreground fg)
 
-   (doom-modeline-bar :background highlight)
-   (doom-modeline-project-dir :foreground violet :weight 'bold)
-   (doom-modeline-buffer-file :weight 'regular)
+   (font-lock-comment-face
+    :foreground comments
+    :background (doom-lighten bg 0.05))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
-   (mode-line :background modeline-bg :foreground modeline-fg)
-   (mode-line-inactive :background modeline-bg-inactive :foreground modeline-fg-alt)
-   (mode-line-emphasis :foreground highlight)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis
+    :foreground (if -modeline-bright base8 highlight))
 
-   (magit-blame-heading :foreground orange :background bg-alt)
-   (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-blend red bg 0.1))
-   (magit-diff-removed-highlight :foreground red :background (doom-blend red bg 0.2) :bold bold)
+   ;; (solaire-mode-line-face
+   ;;  :inherit 'mode-line
+   ;;  :background modeline-bg-l
+   ;;  :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   ;; (solaire-mode-line-inactive-face
+   ;;  :inherit 'mode-line-inactive
+   ;;  :background modeline-bg-inactive-l
+   ;;  :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
-   (evil-ex-lazy-highlight :background baby-blue)
+   ;; Doom modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :weight 'normal)
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'normal)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
+   (doom-modeline-buffer-project-root :foreground blue :weight 'normal)
+   (doom-modeline-project-dir :foreground blue :weight 'normal)
 
+   ;; ivy-mode
+   (ivy-current-match :background ui-line)
+   (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-4 :foreground common-accent :weight 'bold)
+
+   ;; --- major-mode faces -------------------
+
+   ;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
-   (markdown-markup-face     :foreground base5)
-   (markdown-header-face     :inherit 'bold :foreground red)
-   (markdown-code-face       :background base1)
-   (mmm-default-submode-face :background base1)
+   ;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten common-bg 0.05))
 
-   (org-block            :background base0)
-   (org-level-1          :foreground base8 :weight 'bold :height 1.25)
-   (org-level-2          :foreground base6 :weight 'bold :height 1.1)
-   (org-level-3          :foreground base5 :bold bold :height 1.0)
-   (org-level-4          :foreground base4 :bold bold :height 1.0)
-   (org-ellipsis         :underline nil :background bg-alt     :foreground grey)
-   (org-quote            :background base1)
-   (org-checkbox-statistics-done :foreground base2 :weight 'normal)
-   (org-done nil)
-   (org-done :foreground green :weight 'normal)
-   (org-headline-done :foreground base3 :weight 'normal :strike-through t)
-   (org-date :foreground orange)
-   (org-code :foreground dark-blue)
-   (org-special-keyword :foreground base8 :underline t)
-   (org-document-title :foreground base8 :weight 'bold :height 1.5)
-   (org-document-info-keyword :foreground base4 :height 0.75)
-   (org-block-begin-line :foreground base4 :height 0.65)
-   (org-meta-line :foreground base4 :height 0.65)
-   (org-list-dt :foreground magenta)
-
-   (org-todo-keyword-faces
-    '(("TODO" :foreground "#7c7c75" :weight normal :underline t)
-      ("WAITING" :foreground "#9f7efe" :weight normal :underline t)
-      ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
-      ("DONE" :foreground "#50a14f" :weight normal :underline t)
-      ("CANCELLED" :foreground "#ff6480" :weight normal :underline t)))
-
+   ;; org-mode
+   (org-document-title :foreground (doom-darken common-fg 0.1) :weight 'bold :height 1.5)
+   (org-document-info-keyword :foreground common-bg :height 0.2)
+   (org-level-1 :foreground (doom-darken common-fg 0.1) :weight 'bold :height 1.25)
+   (org-level-2 :foreground (doom-darken common-fg 0.1) :weight 'bold :height 1.1)
+   (org-level-3 :foreground (doom-darken common-fg 0.1) :weight 'bold :height 1.0)
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden)
+   (org-headline-done :foreground syntax-comment)
+   (org-block-begin-line
+    :background (doom-darken common-bg 0.02)
+    :foreground (doom-darken common-bg 0.02))
+   (org-block
+    :background (doom-darken common-bg 0.02))
+   (org-code
+    :foreground (doom-darken common-fg 0.5)
+    :background (doom-darken common-bg 0.02))
    (org-priority-faces '((65 :foreground "#e45649")
                          (66 :foreground "#da8548")
                          (67 :foreground "#0098dd")))
 
-   (helm-candidate-number :background blue :foreground bg)
+   (js2-object-property :foreground common-fg)
 
-   (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
+   (rjsx-tag :foreground cyan)
+   (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))
+   (rjsx-attr :foreground syntax-func)
 
-   (wgrep-face :background base1)
+   (web-mode-html-tag-face :foreground cyan)
+   (web-mode-html-tag-bracket-face :foreground (doom-lighten cyan 0.5))
+   (web-mode-html-attr-name-face :foreground syntax-func)
 
-   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
-   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
-   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
-   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
+   (company-tooltip :foreground common-fg :background common-bg)
+   (company-tooltip-annotation :foreground common-fg)
+   (company-tooltip-selection :background ui-line)
+   (company-tooltip-search :foreground common-accent :weight 'bold)
+   (company-scrollbar-bg :background common-bg)
+   (company-scrollbar-fg :background syntax-comment)
 
-   (tooltip :background base1 :foreground fg)
+   (highlight-numbers-number :foreground syntax-func :weight 'normal)
 
-   (ivy-posframe :background base0)
-
-   (lsp-ui-doc-background      :background base0)
-   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
-
-
+   ;; diff-mode
+   (diff-removed :foreground vcs-removed)
    )
-
-  ;; --- extra variables ---------------------
-  ;;()
   )
 
-;;; FIXME This below isn't good. Help needed
-
-(after! org
-  (setq
-   org-bullets-bullet-list '("⁖")
-   org-ellipsis " ... "
-   org-todo-keyword-faces
-   ;;; FIXME no access to defined colours
-   '(("TODO" :foreground "#7c7c75" :weight normal :underline t)
-     ("WAITING" :foreground "#9f7efe" :weight normal :underline t)
-     ("INPROGRESS" :foreground "#0098dd" :weight normal :underline t)
-     ("DONE" :foreground "#50a14f" :weight normal :underline t)
-     ("CANCELLED" :foreground "#ff6480" :weight normal :underline t))
-   org-priority-faces '((65 :foreground "#e45649")
-                        (66 :foreground "#da8548")
-                        (67 :foreground "#0098dd"))
-   ))
-
 ;;; doom-zaiste-theme.el ends here
+
+(with-eval-after-load 'org
+  (setq org-superstar-headline-bullets-list '("⁖")
+        org-hide-emphasis-markers t))
+
+(with-eval-after-load 'org-fancy-priorities
+  (setq org-fancy-priorities-list '("●" "●" "●")))
