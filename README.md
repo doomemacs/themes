@@ -49,7 +49,8 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-miramare`: a port of [Franbach's][franbach] [Miramare][miramare], a variant of gruvbox theme (thanks to [sagittaros])
   - [X] `doom-molokai`: a theme based on Texmate's Monokai
   - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
-  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
+  - [X] `doom-monokai-machine`: port of [Monokai]'s Machine variant (thanks to [ianpan870102])
+  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow])
   - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
   - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
   - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
@@ -70,7 +71,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
   - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
   - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
-  - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
+  - [X] `doom-wilmersdorf`: port of [Ian Pan]'s [Wilmersdorf] (thanks to [ema2159])
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
@@ -117,7 +118,7 @@ A list of themes which are usable, yet may need some minor adjustments.
     out [my mode-line configuration][mode-line] in my [emacs.d].
 
 ## Themes customization
-There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable. 
+There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable.
 
 ## Install
 
@@ -157,13 +158,13 @@ Here is a example configuration for `doom-theme`:
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
-  
+
   ;; Enable custom neotree theme (all-the-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
   (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
   (doom-themes-treemacs-config)
-  
+
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
 ```
@@ -220,11 +221,13 @@ pointers. Additional theme and plugin support requests are welcome too.
 [flatwhite]: https://github.com/biletskyy/flatwhite-syntax
 [franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
-[gagbo]: https://github.com/gagbo 
+[gagbo]: https://github.com/gagbo
 [gruvbox]: https://github.com/morhetz/gruvbox
 [henna]: https://github.com/httpsterio/vscode-henna
 [horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
+[ianpan870102]: https://github.com/ianpan870102
+[Ian Pan]: https://github.com/ianpan870102
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
@@ -267,7 +270,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ztlevi]: https://github.com/ztlevi
 [laserwave]: https://github.com/Jaredk3nt/laserwave
 [hyakt]: https://github.com/hyakt
-[rouge theme]: https://github.com/josefaidt/rouge-theme 
+[rouge theme]: https://github.com/josefaidt/rouge-theme
 [JordanFaust]: https://github.com/JordanFaust
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
 [eziam]: https://github.com/thblt/eziam-theme-emacs
