@@ -1212,6 +1212,9 @@
     (term-color-magenta :background magenta :foreground magenta)
     (term-color-cyan    :background cyan    :foreground cyan)
     (term-color-white   :background base8   :foreground base8)
+    ;;;; terraform-mode
+    (terraform--resource-type-face :foreground type)
+    (terraform--resource-name-face :foreground strings)
     ;;;; tldr
     (tldr-command-itself   :foreground bg :background green :weight 'semi-bold)
     (tldr-title            :foreground yellow :bold t :height 1.4)
