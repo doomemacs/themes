@@ -1,7 +1,8 @@
 ;;; doom-themes-ext-treemacs.el --- description -*- lexical-binding: t; no-byte-compile: t -*-
+;;; Commentary:
 
 (defgroup doom-themes-treemacs nil
-  "Options for doom's treemacs theme"
+  "Options for doom's treemacs theme."
   :group 'doom-themes)
 
 
@@ -9,8 +10,9 @@
 ;;; Variables
 
 (defcustom doom-themes-treemacs-enable-variable-pitch t
-  "If non-nil, the labels for files, folders and projects are displayed with the
-variable-pitch face."
+  "If non-nil, remap file, folder & project labels to `variable-pitch'.
+
+See `doom-themes-treemacs-variable-pitch-face'."
   :type 'boolean
   :group 'doom-themes-treemacs)
 
@@ -26,9 +28,17 @@ variable-pitch face."
   :group 'doom-themes-treemacs)
 
 (defcustom doom-themes-treemacs-bitmap-indicator-width 3
-  "Default treemacs bitmap indicators width"
+  "Default treemacs bitmap indicators width."
   :type 'integer
   :group 'doom-themes-treemacs)
+
+(defcustom doom-themes-treemacs-variable-pitch-face 'variable-pitch
+  "The face to remap file/directory labels to.
+
+Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
+  :type 'face
+  :group 'doom-themes-treemacs)
+
 
 ;;
 ;;; Faces
@@ -86,7 +96,8 @@ variable-pitch face."
       (let ((faces (face-attribute face :inherit nil)))
         (set-face-attribute
          face nil :inherit
-         `(variable-pitch ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
+         `(,doom-themes-treemacs-variable-pitch-face
+           ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
 
 (defun doom-themes-fix-treemacs-icons-dired-mode ()
   "Set `tab-width' to 1 in dired-mode if `treemacs-icons-dired-mode' is active."
