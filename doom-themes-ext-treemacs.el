@@ -105,6 +105,39 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
            'dired-mode-hook
            #'doom-themes-setup-tab-width))
 
+(defun doom-themes--get-treemacs-extensions (ext)
+  "Expand the extension pattern EXT into a list of extensions.
+
+This is used to generate extensions for `treemacs' from `all-the-icons-icon-alist'."
+  (let* ((subs '((".\\?" . "") ("\\?" . "") ("\\." . "")
+                 ("\\" . "") ("^" . "") ("$" . "")
+                 ("'" . "") ("*." . "") ("*" . "")))
+         (e (replace-regexp-in-string
+             (regexp-opt (mapcar 'car subs))
+             (lambda (it) (cdr (assoc-string it subs)))
+             ext t t))
+         (exts (list e)))
+    ;; Handle "[]"
+    (when-let* ((s (split-string e "\\[\\|\\]"))
+                (f (car s))
+                (m (cadr s))
+                (l (cadr (cdr s)))
+                (mcs (delete "" (split-string m ""))))
+      (setq exts nil)
+      (dolist (c mcs)
+        (push (concat f c l) exts)))
+    ;; Handle '?
+    (dolist (ext exts)
+      (when (string-match-p "?" ext)
+        (when-let ((s (split-string ext "?")))
+          (setq exts nil)
+          (push (string-join s "") exts)
+          (push (concat (if (> (length (car s)) 1)
+                            (substring (car s) 0 -1))
+                        (cadr s)) exts))))
+    exts))
+
+
 ;;
 ;;; Bootstrap
 
@@ -268,8 +301,8 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
          :icon (format "%s\t" (all-the-icons-octicon "book" :height 1.0 :v-adjust 0.0 :face 'all-the-icons-blue))
          :extensions (license))
 
-        (dolist (item all-the-icons-extension-icon-alist)
-          (let* ((extension (car item))
+        (dolist (item all-the-icons-icon-alist)
+          (let* ((extensions (doom-themes--get-treemacs-extensions (car item)))
                  (func (cadr item))
                  (args (append (list (cadr (cdr item))) '(:v-adjust -0.05 :height 0.85) (cdr (cddr item))))
                  (icon (apply func args)))
@@ -278,8 +311,9 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
                    (tui-icons (treemacs-theme->tui-icons treemacs--current-theme))
                    (gui-icon  (car icon-pair))
                    (tui-icon  (cdr icon-pair)))
-              (ht-set! gui-icons extension gui-icon)
-              (ht-set! tui-icons extension tui-icon))))
+              (--each extensions
+                (ht-set! gui-icons it gui-icon)
+                (ht-set! tui-icons it tui-icon)))))
 
         ;; File extensions for whom the above did not work (likely because their
         ;; regexp is too complicated to be reversed with
