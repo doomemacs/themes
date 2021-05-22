@@ -72,7 +72,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
-  - [ ] `doom-tron`: based on Tron Legacy from [daylerees]
+  - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
 
 ## Features
 
