@@ -67,6 +67,7 @@
     (hor-highlight  (doom-lighten base3 0.05))
     (hor-highlight-selected (doom-lighten base3 0.1))
     (hor-highlight-bright (doom-lighten base3 0.2))
+    (hor-highlight-brighter (doom-lighten base3 0.5))
 
     ;; face categories -- required for all themes
     (highlight      red)
@@ -121,7 +122,7 @@
 
     ;; ((line-number &override) :foreground (doom-lighten bg 0.05))
     ((line-number &override) :foreground hor-highlight-selected)
-    ((line-number-current-line &override) :foreground hor-highlight-bright)
+    ((line-number-current-line &override) :foreground hor-highlight-brighter)
 
     (font-lock-comment-face
       :inherit 'italic
