@@ -155,7 +155,7 @@ Can be an integer to determine the exact padding."
 
    (fringe :background bg)
 
-   ((line-number &override) :foreground base5 :background (doom-darken bg 0.06))
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg :background line-highlight)
    ((linum &inherit line-number))
 
