@@ -95,21 +95,12 @@ Can be an integer to determine the exact padding."
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
    (mode-line-emphasis
     :foreground fg
     :weight 'bold)
-
-   (solaire-mode-line-face
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (solaire-mode-line-inactive-face
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
    (fringe :background bg-alt)
 

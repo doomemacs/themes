@@ -137,10 +137,6 @@ background contrast. All other values default to \"medium\"."
    (doom-modeline-bar :background dark-green)
    (doom-modeline-panel :background dark-green :foreground fg)
 
-   ;; Solaire
-   (solaire-mode-line-face :inherit 'mode-line)
-   (solaire-mode-line-inactive-face :inherit 'mode-line-inactive)
-
    ;;;;;;;; Search ;;;;;;;;
    ;; /find
    (isearch :foreground base0 :background orange)

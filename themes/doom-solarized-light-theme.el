@@ -99,13 +99,13 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-lighten bg 0.7)
-      (doom-lighten base3 0.2)))
+      (doom-darken bg 0.05)))
    (modeline-bg-l
     (if -modeline-bright
         (doom-lighten bg 0.7)
-      (doom-darken bg 0.05)))
-   (modeline-bg-inactive   (doom-darken bg 0.02))
-   (modeline-bg-inactive-l (doom-darken bg 0.025)))
+      (doom-lighten base3 0.2)))
+   (modeline-bg-inactive   (doom-darken bg 0.025))
+   (modeline-bg-inactive-l (doom-darken bg 0.02)))
 
 
   ;; --- extra faces ------------------------

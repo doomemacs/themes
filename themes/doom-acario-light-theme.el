@@ -103,14 +103,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-dark
-        (doom-blend blue bg-alt 0.35)
-      `(,(car base2) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-dark
         modeline-bg
       `(,(car base3) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.20))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-dark
+        (doom-blend blue bg-alt 0.35)
+      `(,(car base2) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
+   (modeline-bg-inactive-l (doom-darken bg 0.20)))
 
 ;;;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)

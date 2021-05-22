@@ -92,13 +92,6 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   (solaire-mode-line-face
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (solaire-mode-line-inactive-face
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
    (fringe :background base2)
 
    ;; --- major-mode faces ------------------------

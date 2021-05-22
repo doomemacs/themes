@@ -97,9 +97,7 @@ real file buffers will now be brighter instead."
    (modeline-bg
     `(,(car (if doom-manegarm-muted-modeline (doom-darken teal 0.75) (doom-darken green 0.8)))
       ,@(cdr base0)))
-   (modeline-bg-l modeline-bg)
-   (modeline-bg-inactive   `(,(doom-darken (car bg) 0.2) ,@(cdr base0)))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg) 0.2) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg) 0.2) ,@(cdr base0))))
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
@@ -125,15 +123,6 @@ real file buffers will now be brighter instead."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground highlight)
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
 
    ;; Doom modeline
    (doom-modeline-bar :background highlight)

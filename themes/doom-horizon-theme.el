@@ -36,8 +36,8 @@
   "A port of the port of the Visual Studio Code theme Horizon"
 
   ;; name        default   256       16
-  ( (bg         '("#1c1e26" nil           nil            ))
-    (bg-alt     '("#232530" nil           nil            ))
+  ( (bg         '("#232530" nil           nil            ))
+    (bg-alt     '("#1c1e26" nil           nil            ))
     (base0      '("#16161c" "black"       "black"        ))
     (base1      '("#1a1c23" "brightblack" "brightblack"  ))
     (base2      '("#1d1f27" "brightblack" "brightblack"  ))
@@ -105,15 +105,10 @@
     (modeline-fg-alt (doom-lighten bg 0.2))
 
     (modeline-bg
-      (if -modeline-bright
-          base4
-        `(,(car base1) "black")))
-    (modeline-bg-l
-      (if -modeline-bright
-          base4
-        `(,(car base1) "black")))
-    (modeline-bg-inactive   base1)
-    (modeline-bg-inactive-l base1))
+     (if -modeline-bright
+         base4
+       `(,(car base1) "black")))
+    (modeline-bg-inactive base1))
 
 
   ;; --- extra faces ------------------------
@@ -155,12 +150,10 @@
 
     (solaire-mode-line-face
       :inherit 'mode-line
-      :background modeline-bg-l
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
     (solaire-mode-line-inactive-face
       :inherit 'mode-line-inactive
-      :background modeline-bg-inactive-l
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
 
     ;; --- major-mode faces -------------------
     ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
