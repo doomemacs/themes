@@ -10,8 +10,9 @@
     (doom-visual-bell :background error)
     ;;;; --- Base faces -------------------------
     (bold        :weight 'bold :foreground (unless bold base8))
-    (italic      :slant  'italic)
     (bold-italic :inherit '(bold italic))
+    (italic      :slant  'italic)
+    (escape-glyph :foreground cyan)
     (default :background bg :foreground fg)
     (fringe  :inherit 'default :foreground base4)
     (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2) :extend t)
