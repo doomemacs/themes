@@ -125,8 +125,8 @@ determine the exact padding."
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ((paren-face-match &override) :foreground bg :background teal :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base7 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
 
@@ -138,6 +138,22 @@ determine the exact padding."
     :foreground doc-comments)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+
+   (fringe :foreground teal :background modeline-bg)
+   (tab-line
+    :background modeline-bg :foreground blue
+    :box `(:line-width 4 :color ,modeline-bg))
+   (tab-line-tab
+    :inherit 'tab-line
+    :box '(:line-width 1))
+   (tab-line-tab-current
+    :inherit 'tab-line-tab
+    :foreground fg-alt
+    :background blue)
+   (tab-line-tab-inactive
+    :inherit 'tab-line-tab
+    :foreground bg-alt
+    :background dark-blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
