@@ -126,7 +126,6 @@ determine the exact padding."
 
 ;;;;; comments and doc
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif
     :slant 'italic
     :foreground comments
     :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
