@@ -1,12 +1,12 @@
 ;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2020 Henrik Lissner
+;; Copyright (C) 2016-2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: August 22, 2018
-;; Version: 2.1.6
+;; Modified: May 22, 2021
+;; Version: 2.2.0
 ;; Keywords: dark light blue atom one theme neotree icons faces nova
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
