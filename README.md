@@ -63,6 +63,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [x] `doom-plain`: based on [plain][plain] (thanks to [mateossh])
   - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
   - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
+  - [X] `doom-shades-of-purple`: a purple and vibrant theme inspired by VSCode's [Shades of Purple][shades-of-purple] (thanks to [jwbaldwin])
   - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
   - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
   - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
@@ -257,6 +258,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [ShaneKilkelly]: https://github.com/ShaneKilkelly
+[shades-of-purple]: https://github.com/ahmadawais/shades-of-purple-vscode
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
