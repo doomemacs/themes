@@ -634,9 +634,9 @@
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
     ;;;; hideshow <built-in>
-    (+doom-folded-face :inherit 'font-lock-comment-face
-                       :weight 'light
-                       :background (doom-darken bg 0.125))
+    (+fold-hideshow-folded-face :inherit 'font-lock-comment-face
+                                :weight 'light
+                                :background (doom-darken bg 0.125))
     ;;;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
     ;;;; highlight-indentation-mode
