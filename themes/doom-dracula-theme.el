@@ -111,16 +111,15 @@ determine the exact padding."
    (modeline-fg-alt base5)
 
    (modeline-bg
-
-    (if -modeline-bright
-        (doom-darken  magenta 0.675)
-      `(,(car bg) ,@(cdr base0))))
-   (modeline-bg-l
     (if -modeline-bright
         (doom-darken magenta 0.6)
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg) 0.075) ,@(cdr base1))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-darken  magenta 0.675)
+      `(,(car bg) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg) 0.075) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------
