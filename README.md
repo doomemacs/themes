@@ -27,6 +27,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
   - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
 - Additional themes
+  - [X] `doom-1337`: ported from [VSCode's 1337 Theme][vscode-1337]
   - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
   - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
   - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
@@ -72,7 +73,6 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
   - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
   - [ ] `doom-tron`: based on Tron Legacy from [daylerees]
-  - [X] `doom-1337`: ported from VSCode's 1337 Theme
 
 ## Features
 
@@ -258,4 +258,5 @@ pointers. Additional theme and plugin support requests are welcome too.
 [hyakt]: https://github.com/hyakt
 [rouge theme]: https://github.com/josefaidt/rouge-theme 
 [JordanFaust]: https://github.com/JordanFaust
+[vscode-1337]: https://github.com/microsoft/vscode-themes/tree/main/1337
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
