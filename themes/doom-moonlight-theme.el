@@ -238,7 +238,7 @@ Can be an integer to determine the exact padding."
    ;; doom-dashboard
    (doom-dashboard-menu-desc :foreground dark-cyan)
    (doom-dashboard-menu-tile :foreground dark-teal)
-  
+
    ;; diredfl
    (diredfl-date-time    :foreground blue)
    (diredfl-file-name    :foreground base7)

@@ -112,12 +112,12 @@
     (when (memq doom-ephemeral-region-highlight '(frost snowstorm))
       bg-alt))
 
-    (modeline-fg            fg)
-    (modeline-fg-alt        light-grey)
-    (modeline-bg            bg)
-    (modeline-bg-l          base2)
-    (modeline-bg-inactive   base3)
-    (modeline-bg-inactive-l `(,(car base3), (cdr base6))))
+   (modeline-fg            fg)
+   (modeline-fg-alt        light-grey)
+   (modeline-bg            bg)
+   (modeline-bg-l          base2)
+   (modeline-bg-inactive   base3)
+   (modeline-bg-inactive-l `(,(car base3), (cdr base6))))
 
 
   ;; --- extra faces ------------------------

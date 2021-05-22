@@ -6,9 +6,9 @@
   :group 'doom-themes)
 
 (defcustom doom-oceanic-next-brighter-modeline nil
- "If non-nil, more vivid colors will be used to style the mode-line."
- :group 'doom-oceanic-next-theme
- :type 'boolean)
+  "If non-nil, more vivid colors will be used to style the mode-line."
+  :group 'doom-oceanic-next-theme
+  :type 'boolean)
 
 (defcustom doom-oceanic-next-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."

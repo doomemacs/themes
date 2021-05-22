@@ -98,8 +98,8 @@
     (hidden     `(,(car bg) "black" "black"))
     (-modeline-bright doom-horizon-brighter-modeline)
     (-modeline-pad
-      (when doom-horizon-padded-modeline
-        (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
+     (when doom-horizon-padded-modeline
+       (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
 
     (modeline-fg     (doom-darken fg 0.2))
     (modeline-fg-alt (doom-lighten bg 0.2))
@@ -115,112 +115,112 @@
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
 
 
-    ;; ((line-number &override) :foreground (doom-lighten bg 0.05))
-    ((line-number &override) :foreground hor-highlight-selected)
-    ((line-number-current-line &override) :foreground hor-highlight-brighter)
+   ;; ((line-number &override) :foreground (doom-lighten bg 0.05))
+   ((line-number &override) :foreground hor-highlight-selected)
+   ((line-number-current-line &override) :foreground hor-highlight-brighter)
 
-    (font-lock-comment-face
-      :inherit 'italic
-      :foreground comments
-      :background (if doom-horizon-comment-bg (doom-lighten bg 0.03)))
-    (font-lock-doc-face
-      :inherit 'font-lock-comment-face
-      :foreground doc-comments)
+   (font-lock-comment-face
+    :inherit 'italic
+    :foreground comments
+    :background (if doom-horizon-comment-bg (doom-lighten bg 0.03)))
+   (font-lock-doc-face
+    :inherit 'font-lock-comment-face
+    :foreground doc-comments)
 
-    (mode-line
-      :background modeline-bg :foreground modeline-fg
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-    (mode-line-inactive
-      :background modeline-bg-inactive :foreground modeline-fg-alt
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-    (mode-line-emphasis
-      :foreground (if -modeline-bright base8 highlight))
-    (mode-line-highlight :background base1 :foreground fg)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis
+    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-highlight :background base1 :foreground fg)
 
-    ;; modeline
-    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-    (doom-modeline-highlight :foreground (doom-lighten bg 0.3))
-    (doom-modeline-project-dir :foreground red :inherit 'bold )
-    (doom-modeline-buffer-path :foreground red)
-    (doom-modeline-buffer-file :foreground fg)
-    (doom-modeline-buffer-modified :foreground violet)
-    (doom-modeline-panel :background base1)
-    (doom-modeline-urgent :foreground modeline-fg)
-    (doom-modeline-info :foreground cyan)
+   ;; modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-highlight :foreground (doom-lighten bg 0.3))
+   (doom-modeline-project-dir :foreground red :inherit 'bold )
+   (doom-modeline-buffer-path :foreground red)
+   (doom-modeline-buffer-file :foreground fg)
+   (doom-modeline-buffer-modified :foreground violet)
+   (doom-modeline-panel :background base1)
+   (doom-modeline-urgent :foreground modeline-fg)
+   (doom-modeline-info :foreground cyan)
 
-    (solaire-mode-line-face
-      :inherit 'mode-line
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-    (solaire-mode-line-inactive-face
-      :inherit 'mode-line-inactive
-      :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
 
-    ;; --- major-mode faces -------------------
-    ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
+   ;; --- major-mode faces -------------------
+   ;; NOTE: there are lots of tweaks here to mimic the VSCode theme
 
-    ;; css-mode / scss-mode
-    (css-proprietary-property :foreground violet)
-    (css-property             :foreground fg)
-    (css-selector             :foreground red)
+   ;; css-mode / scss-mode
+   (css-proprietary-property :foreground violet)
+   (css-property             :foreground fg)
+   (css-selector             :foreground red)
 
-    ;; mic-paren
-    (paren-face-match    :foreground green   :background base0 :weight 'ultra-bold)
-    (paren-face-mismatch :foreground yellow :background base0   :weight 'ultra-bold)
-    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
+   ;; mic-paren
+   (paren-face-match    :foreground green   :background base0 :weight 'ultra-bold)
+   (paren-face-mismatch :foreground yellow :background base0   :weight 'ultra-bold)
+   (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
-    ;; markdown-mode
-    (markdown-markup-face           :foreground cyan)
-    (markdown-link-face             :foreground orange)
-    (markdown-link-title-face       :foreground yellow)
-    (markdown-header-face           :foreground red :inherit 'bold)
-    (markdown-header-delimiter-face :foreground red :inherit 'bold)
-    (markdown-language-keyword-face :foreground orange)
-    (markdown-markup-face           :foreground fg)
-    (markdown-bold-face             :foreground violet)
-    (markdown-table-face            :foreground fg :background base1)
-    ((markdown-code-face &override) :foreground orange :background base1)
+   ;; markdown-mode
+   (markdown-markup-face           :foreground cyan)
+   (markdown-link-face             :foreground orange)
+   (markdown-link-title-face       :foreground yellow)
+   (markdown-header-face           :foreground red :inherit 'bold)
+   (markdown-header-delimiter-face :foreground red :inherit 'bold)
+   (markdown-language-keyword-face :foreground orange)
+   (markdown-markup-face           :foreground fg)
+   (markdown-bold-face             :foreground violet)
+   (markdown-table-face            :foreground fg :background base1)
+   ((markdown-code-face &override) :foreground orange :background base1)
 
-    ;; outline (affects org-mode)
-    ((outline-1 &override) :foreground blue :background nil)
+   ;; outline (affects org-mode)
+   ((outline-1 &override) :foreground blue :background nil)
 
-    ;; org-mode
-    ((org-block &override) :background base1)
-    ((org-block-begin-line &override) :background base1 :foreground comments)
-    (org-hide :foreground hidden)
-    (org-link :inherit 'underline :foreground yellow)
-    (org-agenda-done :foreground cyan)
+   ;; org-mode
+   ((org-block &override) :background base1)
+   ((org-block-begin-line &override) :background base1 :foreground comments)
+   (org-hide :foreground hidden)
+   (org-link :inherit 'underline :foreground yellow)
+   (org-agenda-done :foreground cyan)
 
-    ;; tooltip
-    (tooltip              :background base0 :foreground fg)
+   ;; tooltip
+   (tooltip              :background base0 :foreground fg)
 
-    ;; haskell
-    (haskell-type-face :foreground violet)
-    (haskell-constructor-face :foreground yellow)
-    (haskell-operator-face :foreground fg)
-    (haskell-literate-comment-face :foreground hor-highlight-selected)
+   ;; haskell
+   (haskell-type-face :foreground violet)
+   (haskell-constructor-face :foreground yellow)
+   (haskell-operator-face :foreground fg)
+   (haskell-literate-comment-face :foreground hor-highlight-selected)
 
-    ;; magit
-    (magit-section-heading :foreground red)
-    (magit-branch-remote   :foreground orange)
+   ;; magit
+   (magit-section-heading :foreground red)
+   (magit-branch-remote   :foreground orange)
 
-    ;; --- extra variables ---------------------
-    ;; basics
-    (link :foreground yellow :inherit 'underline)
-    (fringe :background bg)
+   ;; --- extra variables ---------------------
+   ;; basics
+   (link :foreground yellow :inherit 'underline)
+   (fringe :background bg)
 
-    ;; evil
-    (evil-ex-search          :background hor-highlight-selected :foreground fg)
-    (evil-ex-lazy-highlight  :background hor-highlight :foreground fg)
+   ;; evil
+   (evil-ex-search          :background hor-highlight-selected :foreground fg)
+   (evil-ex-lazy-highlight  :background hor-highlight :foreground fg)
 
-    ;; ivy
-    (ivy-current-match       :background hor-highlight :distant-foreground nil)
-    (ivy-posframe-cursor     :background red :foreground base0)
-    (ivy-minibuffer-match-face-2 :foreground red :weight 'bold)
+   ;; ivy
+   (ivy-current-match       :background hor-highlight :distant-foreground nil)
+   (ivy-posframe-cursor     :background red :foreground base0)
+   (ivy-minibuffer-match-face-2 :foreground red :weight 'bold)
 
-    ;; company
-    (company-box-background    :background base0 :foreground fg)
-    (company-tooltip-common    :foreground red :weight 'bold)
-    (company-tooltip-selection :background hor-highlight :foreground fg)
+   ;; company
+   (company-box-background    :background base0 :foreground fg)
+   (company-tooltip-common    :foreground red :weight 'bold)
+   (company-tooltip-selection :background hor-highlight :foreground fg)
 
    ;; treemacs
    (treemacs-root-face :foreground fg :weight 'bold :height 1.2)
@@ -241,7 +241,7 @@
    (web-mode-html-tag-bracket-face :foreground red)
    (web-mode-html-tag-face         :foreground red)
    (web-mode-html-attr-name-face   :foreground orange)
-    ))
+   ))
 
 
 ;;; doom-horizon-theme.el ends here

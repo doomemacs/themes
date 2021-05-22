@@ -191,11 +191,11 @@ determine the exact padding."
    (ivy-minibuffer-match-highlight  :foreground red)
    (ivy-highlight-face              :foreground red)
    (ivy-minibuffer-match-face-2
-     :inherit 'ivy-minibuffer-match-face-1
-     :foreground red :background base1 :weight 'semi-bold)
+    :inherit 'ivy-minibuffer-match-face-1
+    :foreground red :background base1 :weight 'semi-bold)
    (ivy-minibuffer-match-face-4
-     :inherit 'ivy-minibuffer-match-face-2
-     :foreground red :weight 'semi-bold)
+    :inherit 'ivy-minibuffer-match-face-2
+    :foreground red :weight 'semi-bold)
    (ivy-current-match :background red :distant-foreground base0 :weight 'normal)
 
    ;; treemacs

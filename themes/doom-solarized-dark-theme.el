@@ -51,8 +51,8 @@ determine the exact padding."
    (base8      '("#626C6C" "#626C6C" "white"       ))
    (fg-alt     '("#657b83" "#657b83" "white"       ))
    (fg         (if doom-solarized-dark-brighter-text
-		   '("#BBBBBB" "#BBBBBB" "brightwhite")
-		   '("#839496" "#839496" "brightwhite")))
+                   '("#BBBBBB" "#BBBBBB" "brightwhite")
+                 '("#839496" "#839496" "brightwhite")))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))

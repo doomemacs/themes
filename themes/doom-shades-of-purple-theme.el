@@ -5,25 +5,24 @@
 ;; URL: https://github.com/jwbaldwin/spacemacs-shades-of-purple
 ;; Version: 1.0
 
-
-;;Background 	#2D2B55 #2D2B55
-;;Background Dark 	#1E1E3F #1E1E3F
-;;Foreground 	#A599E9 #A599E9
-;;Hover Background 	#4D21FC #4D21FC
-;;Contrast 	#FAD000 #FAD000
-;;Contrast Lite 	#FFEE80 #FFEE80
-;;Contrast Lite II 	#FAEFA5 #FAEFA5
-;;Highlight 	#FF7200 #FF7200
-;;Comment 	#B362FF #B362FF
-;;Constants 	#FF628C #FF628C
-;;Keywords 	#FF9D00 #FF9D00
-;;Other 	#9EFFFF #9EFFFF
-;;Strings 	#A5FF90 #A5FF90
-;;Templates 	#3AD900 #3AD900
-;;Definitions 	#FB94FF #FB94FF
-;;Invalid 	#EC3A37F5 #EC3A37F5
-;;Diff Added 	#00FF009A #00FF009A
-;Diff Removed 	#FF000D81 #FF000D81
+;;Background            #2D2B55 #2D2B55
+;;Background Dark       #1E1E3F #1E1E3F
+;;Foreground            #A599E9 #A599E9
+;;Hover Background      #4D21FC #4D21FC
+;;Contrast              #FAD000 #FAD000
+;;Contrast Lite         #FFEE80 #FFEE80
+;;Contrast Lite II      #FAEFA5 #FAEFA5
+;;Highlight             #FF7200 #FF7200
+;;Comment               #B362FF #B362FF
+;;Constants             #FF628C #FF628C
+;;Keywords              #FF9D00 #FF9D00
+;;Other                 #9EFFFF #9EFFFF
+;;Strings               #A5FF90 #A5FF90
+;;Templates             #3AD900 #3AD900
+;;Definitions           #FB94FF #FB94FF
+;;Invalid               #EC3A37F5 #EC3A37F5
+;;Diff Added            #00FF009A #00FF009A
+;;Diff Removed          #FF000D81 #FF000D81
 
 (require 'doom-themes)
 
@@ -85,7 +84,7 @@ Can be an integer to determine the exact padding."
    (dark-cyan     '("#9effff" "#9effff" "cyan"))
    (purple        '("#b362ff" "#b362ff" "magenta"))
 
-;; face categories -- required for all themes
+   ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   bg-alt)
    (line-highlight bg-alt)
@@ -276,7 +275,7 @@ Can be an integer to determine the exact padding."
    ;; doom-dashboard
    (doom-dashboard-menu-desc :foreground dark-cyan)
    (doom-dashboard-menu-tile :foreground dark-teal)
-  
+
    ;; diredfl
    (diredfl-date-time    :foreground blue)
    (diredfl-file-name    :foreground base7)

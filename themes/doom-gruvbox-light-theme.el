@@ -410,7 +410,7 @@ background contrast. All other values default to \"medium\"."
 
    ;; major-mode faces -------------------
 
-    ;; anzu
+   ;; anzu
    (anzu-mode-line         :foreground yellow :weight 'bold)
    (anzu-match-1           :background green)
    (anzu-match-2           :background faded-yellow)

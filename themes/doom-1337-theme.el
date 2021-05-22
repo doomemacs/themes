@@ -130,15 +130,15 @@ Can be an integer to determine the exact padding."
    ;; centaur-tabs
    (centaur-tabs-active-bar-face :background base6)
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
-				   :foreground fg
-				   :weight 'bold)
+                                   :foreground fg
+                                   :weight 'bold)
    (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected
-				     :foreground fg
-				     :weight 'bold)
+                                     :foreground fg
+                                     :weight 'bold)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-					  :foreground fg)
+                                          :foreground fg)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-					    :foreground fg)
+                                            :foreground fg)
    ;; dashboard
    (dashboard-heading :foreground green :weight 'bold)
 

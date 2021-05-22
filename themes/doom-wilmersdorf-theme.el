@@ -124,10 +124,10 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
-    ;; mic-paren
-    (paren-face-match    :foreground teal   :background base0 :weight 'ultra-bold)
-    (paren-face-mismatch :foreground red :background violet   :weight 'ultra-bold)
-    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
+   ;; mic-paren
+   (paren-face-match    :foreground teal   :background base0 :weight 'ultra-bold)
+   (paren-face-mismatch :foreground red :background violet   :weight 'ultra-bold)
+   (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)

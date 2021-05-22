@@ -127,9 +127,9 @@ determine the exact padding."
    ;; Centaur tabs
    (centaur-tabs-active-bar-face :background blue)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-					  :foreground blue)
+                                          :foreground blue)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-					    :foreground blue)
+                                            :foreground blue)
    ;; Doom modeline
    (doom-modeline-bar :background blue)
 
