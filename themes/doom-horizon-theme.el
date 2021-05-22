@@ -36,19 +36,19 @@
   "A port of the port of the Visual Studio Code theme Horizon"
 
   ;; name        default   256       16
-  ( (bg         '("#1c1e26" "#232530" nil            ))
-    (bg-alt     '("#232530" "#1c1e26" nil            ))
-    (base0      '("#16161c" "#16161c" "black"        ))
-    (base1      '("#1a1c23" "#1a1c23" "brightblack"  ))
-    (base2      '("#1d1f27" "#1c1e26" "brightblack"  ))
-    (base3      '("#232530" "#232530" "brightblack"  ))
-    (base4      '("#6a6a6a" "#6a6a6a" "brightblack"  ))
-    (base5      '("#f9cec3" "#f9cec3" "brightblack"  ))
-    (base6      '("#f9cbbe" "#f9cbbe" "brightblack"  ))
-    (base7      '("#fadad1" "#fadad1" "brightblack"  ))
-    (base8      '("#fdf0ed" "#fdf0ed" "white"        ))
-    (fg-alt     '("#fdf0ed" "#fdf0ed" "brightwhite"  ))
-    (fg         '("#c7c9cb" "#c7c9cb" "white"        ))
+  ( (bg         '("#1c1e26" nil           nil            ))
+    (bg-alt     '("#232530" nil           nil            ))
+    (base0      '("#16161c" "black"       "black"        ))
+    (base1      '("#1a1c23" "brightblack" "brightblack"  ))
+    (base2      '("#1d1f27" "brightblack" "brightblack"  ))
+    (base3      '("#232530" "brightblack" "brightblack"  ))
+    (base4      '("#6a6a6a" "#6a6a6a"     "brightblack"  ))
+    (base5      '("#f9cec3" "#f9cec3"     "brightblack"  ))
+    (base6      '("#f9cbbe" "#f9cbbe"     "brightblack"  ))
+    (base7      '("#fadad1" "#fadad1"     "brightblack"  ))
+    (base8      '("#fdf0ed" "#fdf0ed"     "white"        ))
+    (fg-alt     '("#fdf0ed" "#fdf0ed"     "brightwhite"  ))
+    (fg         '("#c7c9cb" "#c7c9cb"     "white"        ))
 
     (grey       base4)
     (red        '("#e95678" "#e95678" "red"          ))
@@ -106,11 +106,11 @@
     (modeline-bg
       (if -modeline-bright
           base4
-        `(,(car base1), (cdr fg-alt))))
+        `(,(car base1) "black")))
     (modeline-bg-l
       (if -modeline-bright
           base4
-        `(,(car base1), (cdr fg))))
+        `(,(car base1) "black")))
     (modeline-bg-inactive   base1)
     (modeline-bg-inactive-l base1))
 
