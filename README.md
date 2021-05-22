@@ -158,7 +158,7 @@ extensions][wiki].
   [Atom]'s, and a second more colorful implementation.
 - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
   fontification issues.
-  -  Re-set `org-todo' & `org-headline-done' faces to make them respect
+  -  Re-set `org-todo` & `org-headline-done` faces to make them respect
      underlying faces (i.e. don't override the :height or :background of
      underlying faces).
   -  Make statistic cookies respect underlying faces.
