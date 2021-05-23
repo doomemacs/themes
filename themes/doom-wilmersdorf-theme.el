@@ -79,11 +79,11 @@ determine the exact padding."
    (modeline-fg-alt base5)
 
    (modeline-bg
-    `(,(doom-darken (car bg) 0.15) ,@(cdr base0)))
-   (modeline-bg-l
     `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-bg-l
+    `(,(doom-darken (car bg) 0.15) ,@(cdr base0)))
+   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------
@@ -124,10 +124,10 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
 
-    ;; mic-paren
-    (paren-face-match    :foreground teal   :background base0 :weight 'ultra-bold)
-    (paren-face-mismatch :foreground red :background violet   :weight 'ultra-bold)
-    (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
+   ;; mic-paren
+   (paren-face-match    :foreground teal   :background base0 :weight 'ultra-bold)
+   (paren-face-mismatch :foreground red :background violet   :weight 'ultra-bold)
+   (paren-face-no-match :inherit 'paren-face-mismatch :weight 'ultra-bold)
 
    ;; markdown-mode
    (markdown-markup-face :foreground base5)

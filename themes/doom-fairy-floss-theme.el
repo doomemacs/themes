@@ -97,11 +97,11 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         base3
-        `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         base3
-        `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
@@ -127,9 +127,9 @@ determine the exact padding."
    ;; Centaur tabs
    (centaur-tabs-active-bar-face :background blue)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-					  :foreground blue)
+                                          :foreground blue)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-					    :foreground blue)
+                                            :foreground blue)
    ;; Doom modeline
    (doom-modeline-bar :background blue)
 

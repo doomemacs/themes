@@ -10,8 +10,9 @@
     (doom-visual-bell :background error)
     ;;;; --- Base faces -------------------------
     (bold        :weight 'bold :foreground (unless bold base8))
-    (italic      :slant  'italic)
     (bold-italic :inherit '(bold italic))
+    (italic      :slant  'italic)
+    (escape-glyph :foreground cyan)
     (default :background bg :foreground fg)
     (fringe  :inherit 'default :foreground base4)
     (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2) :extend t)
@@ -57,8 +58,10 @@
     ;;;; tab-line/tab-bar (Emacs 27+)
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
-    (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
+    (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground base5)
+    (tab-line-tab-inactive-alternate :inherit 'tab-line-tab-inactive)
     (tab-line-tab-current :background bg :foreground fg)
+    ;; (tab-line-special )
     (tab-line-highlight :inherit 'tab-line-tab)
     (tab-line-close-highlight :foreground highlight)
     ((tab-bar &inherit tab-line))
@@ -249,9 +252,9 @@
     (cfw:face-disable            :foreground grey)
     (cfw:face-select             :background region)
     ;;;; centaur-tabs
-    ((centaur-tabs-default &inherit tab-bar))
-    ((centaur-tabs-selected &inherit tab-bar-tab))
-    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive))
+    ((centaur-tabs-default &inherit tab-bar) :box nil)
+    ((centaur-tabs-selected &inherit tab-bar-tab) :box nil)
+    ((centaur-tabs-unselected &inherit tab-bar-tab-inactive) :box nil)
     (centaur-tabs-selected-modified   :background bg :foreground teal)
     (centaur-tabs-unselected-modified :background bg-alt :foreground teal)
     (centaur-tabs-active-bar-face :background (if (bound-and-true-p -modeline-bright) modeline-bg highlight))
@@ -634,9 +637,9 @@
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
     ;;;; hideshow <built-in>
-    (+doom-folded-face :inherit 'font-lock-comment-face
-                       :weight 'light
-                       :background (doom-darken bg 0.125))
+    (+fold-hideshow-folded-face :inherit 'font-lock-comment-face
+                                :weight 'light
+                                :background (doom-darken bg 0.125))
     ;;;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
     ;;;; highlight-indentation-mode
@@ -715,6 +718,10 @@
     ;;;; ivy-posframe
     (ivy-posframe :background (doom-darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
+
+    ;;;; selectrum
+    (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+
     ;;;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
@@ -751,6 +758,9 @@
     (js2-object-property   :foreground violet)
     (js2-jsdoc-tag         :foreground doc-comments)
     (js2-external-variable :foreground operators)
+    ;;;; keycast
+    (keycast-command :inherit 'mode-line-emphasis)
+    (keycast-key     :inherit '(bold mode-line-highlight))
     ;;;; ledger-mode <modes:ledger-mode>
     (ledger-font-posting-date-face    :foreground blue)
     (ledger-font-posting-amount-face  :foreground yellow)
@@ -1144,8 +1154,8 @@
     ;;;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-mode-line-face                  :background bg     :foreground fg     :distant-foreground bg)
-    (solaire-mode-line-inactive-face         :background bg-alt :foreground fg-alt :distant-foreground bg-alt)
+    ((solaire-mode-line-face &inherit mode-line))
+    ((solaire-mode-line-inactive-face &inherit mode-line-inactive))
     ;;;; spaceline
     (spaceline-highlight-face   :background highlight)
     (spaceline-modified         :background vc-modified)
@@ -1205,6 +1215,9 @@
     (term-color-magenta :background magenta :foreground magenta)
     (term-color-cyan    :background cyan    :foreground cyan)
     (term-color-white   :background base8   :foreground base8)
+    ;;;; terraform-mode
+    (terraform--resource-type-face :foreground type)
+    (terraform--resource-name-face :foreground strings)
     ;;;; tldr
     (tldr-command-itself   :foreground bg :background green :weight 'semi-bold)
     (tldr-title            :foreground yellow :bold t :height 1.4)

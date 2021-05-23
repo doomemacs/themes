@@ -1,104 +1,133 @@
-;;; doom-moonlight-theme.el --- inspired by VS code's Moonlight -*- no-byte-compile: t; -*-
+;;; shades-of-purple-theme.el --- an implementation of the awesome Shades of Purple theme for Spacemacs
+;; Credit to the original https://github.com/ahmadawais/shades-of-purple-vscode
+
+;; Author: James Baldwin <jwbaldwin3@gmail.com>
+;; URL: https://github.com/jwbaldwin/spacemacs-shades-of-purple
+;; Version: 1.0
+
+;;Background            #2D2B55 #2D2B55
+;;Background Dark       #1E1E3F #1E1E3F
+;;Foreground            #A599E9 #A599E9
+;;Hover Background      #4D21FC #4D21FC
+;;Contrast              #FAD000 #FAD000
+;;Contrast Lite         #FFEE80 #FFEE80
+;;Contrast Lite II      #FAEFA5 #FAEFA5
+;;Highlight             #FF7200 #FF7200
+;;Comment               #B362FF #B362FF
+;;Constants             #FF628C #FF628C
+;;Keywords              #FF9D00 #FF9D00
+;;Other                 #9EFFFF #9EFFFF
+;;Strings               #A5FF90 #A5FF90
+;;Templates             #3AD900 #3AD900
+;;Definitions           #FB94FF #FB94FF
+;;Invalid               #EC3A37F5 #EC3A37F5
+;;Diff Added            #00FF009A #00FF009A
+;;Diff Removed          #FF000D81 #FF000D81
+
 (require 'doom-themes)
 
 ;;
-(defgroup doom-moonlight-theme nil
+(defgroup doom-shades-of-purple-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
-(defcustom doom-moonlight-padded-modeline doom-themes-padded-modeline
+(defcustom doom-shades-of-purple-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
-  :group 'doom-moonlight-theme
+  :group 'doom-shades-of-purple-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-moonlight
-  "A dark theme inspired by VS code's Moonlight"
+(def-doom-theme doom-shades-of-purple
+  "A dark theme inspired by VS code's shades-of-purple"
 
   ;; name        default   256       16
-  ((bg         '("#212337" "#212337"  "black"))
-   (bg-alt     '("#191a2a" "#191a2a" "black"))
+  ((bg         '("#2d2b55" "#2d2b55"  "black"))
+   (bg-alt     '("#1e1e3f" "#1e1e3f" "black"))
    (base0      '("#161a2a" "#161a2a" "black"))
    (base1      '("#191a2a" "#191a2a" "brightblack"))
    (base2      '("#1e2030" "#1e2030" "brightblack"))
    (base3      '("#222436" "#222436" "brightblack"))
-   (base4      '("#2f334d" "#2f334d" "brightblack"))
+   (base4      '("#a599e9" "#a599e9" "brightblack"))
    (base5      '("#444a73" "#444a73" "brightblack"))
    (base6      '("#828bb8" "#828bb8" "brightblack"))
    (base7      '("#a9b8e8" "#a9b8e8" "brightblack"))
    (base8      '("#b4c2f0" "#b4c2f0" "white"))
    (indigo     '("#7a88cf" "#7a88cf" "brightblack"))
-   (region     '("#383e5c" "#383e5c" "brightblack"))
-   (fg         '("#c8d3f5" "#c8d3f5" "brightwhite"))
+   (region     '("#b362ff" "#b362ff" "brightblack"))
+   (selection  '("#b362ff" "#b362ff" "brightblack"))
+   (fg         '("#e3e9fa" "#e3e9fa" "brightwhite"))
    (fg-alt     '("#b4c2f0" "#b4c2f0" "white"))
 
    (grey base5)
 
    (dark-red      '("#ff5370" "#ff5370" "red"))
-   (red           '("#ff757f" "#ff757f" "red"))
+   (red           '("#ff000d" "#ff000d" "red"))
    (light-red     '("#ff98a4" "#ff98a4" "brightred"))
-   (orange        '("#ff995e" "#ff995e" "brightred"))
-   (green         '("#c3e88d" "#c3e88d" "green"))
-   (dark-teal     '("#4fd6be" "#4fd6be" "green"))
-   (teal          '("#77e0c6" "#77e0c6" "brightgreen"))
+   (orange        '("#ff9d00" "#ff9d00" "brightred"))
+   (light-green   '("#a5ff90" "#a5ff90" "green"))
+   (green         '("#3ad900" "#3ad900" "green"))
+   (dark-green    '("#00ff00" "#00ff00" "green"))
+   (dark-teal     '("#37fea1" "#37fea1" "green"))
+   (teal          '("#ff628c" "#ff628c" "brightgreen"))
    (light-teal    '("#7af8ca" "#7af8ca" "brightgreen"))
-   (yellow        '("#ffc777" "#ffc777" "brightyellow"))
+   (yellow        '("#fad000" "#fad000" "brightyellow"))
    (blue          '("#82aaff" "#82aaff" "brightblue"))
    (dark-blue     '("#4976eb" "#4976eb" "brightblue"))
    (light-blue    '("#50c4fa" "#50c4fa" "blue"))
    (light-magenta '("#baacff" "#baacff" "brightmagenta"))
-   (magenta       '("#c099ff" "#c099ff" "brightmagenta"))
+   (magenta       '("#ff9d00" "#ff9d00" "brightmagenta"))
    (violet        '("#f989d3" "#f989d3" "magenta"))
-   (light-pink    '("#fca7ea" "#fca7ea" "magenta"))
-   (pink          '("#f3c1ff" "#f3c1ff" "magenta"))
-   (cyan          '("#b4f9f8" "#b4f9f8" "brightcyan"))
-   (dark-cyan     '("#86e1fc" "#86e1fc" "cyan"))
+   (light-pink    '("#fb94ff" "#fb94ff" "magenta"))
+   (pink          '("#ff628c" "#ff628c" "magenta"))
+   (cyan          '("#ff628c" "#ff628c" "brightcyan"))
+   (dark-cyan     '("#9effff" "#9effff" "cyan"))
+   (purple        '("#b362ff" "#b362ff" "magenta"))
 
    ;; face categories -- required for all themes
    (highlight      blue)
-   (vertical-bar   base0)
-   (line-highlight base4)
-   (selection      region)
+   (vertical-bar   bg-alt)
+   (line-highlight bg-alt)
+   (selection      selection)
    (builtin        magenta)
-   (comments       indigo)
+   (comments       purple)
    (doc-comments   (doom-lighten comments 0.25))
-   (constants      orange)
-   (functions      blue)
-   (keywords       magenta)
-   (methods        red)
-   (operators      dark-cyan)
-   (type           yellow)
-   (strings        green)
-   (variables      light-red)
+   (constants      light-pink)
+   (functions      (doom-lighten yellow 0.15))
+   (keywords       orange)
+   (methods        yellow)
+   (operators      orange)
+   (type           green)
+   (strings        light-green)
+   (variables      dark-teal)
    (numbers        orange)
    (region         region)
    (error          red)
    (warning        yellow)
    (success        green)
    (vc-modified    blue)
-   (vc-added       teal)
+   (vc-added       dark-green)
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (doom-darken base2 0.1))
+   (modeline-bg     (doom-darken bg-alt 0.1))
    (modeline-bg-alt (doom-darken bg 0.1))
    (modeline-fg     base8)
    (modeline-fg-alt comments)
 
    (-modeline-pad
-    (when doom-moonlight-padded-modeline
-      (if (integerp doom-moonlight-padded-modeline) doom-moonlight-padded-modeline 4))))
+    (when doom-shades-of-purple-padded-modeline
+      (if (integerp doom-shades-of-purple-padded-modeline) doom-shades-of-purple-padded-modeline 4))))
 
   ;; --- base faces ------------------------
-  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg)
+  (((lazy-highlight &override) :background purple :foreground fg :distant-foreground fg)
 
    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
 
    (doom-modeline-buffer-file       :foreground base7)
    (doom-modeline-icon-inactive     :foreground indigo)
    (doom-modeline-evil-normal-state :foreground dark-cyan)
-   (doom-modeline-evil-insert-state :foreground blue)
+   (doom-modeline-evil-insert-state :foreground yellow)
    (doom-modeline-project-dir       :foreground light-teal)
    (doom-modeline-buffer-path       :foreground blue)
    (doom-modeline-buffer-modified :inherit 'bold :foreground yellow)
@@ -109,15 +138,23 @@ Can be an integer to determine the exact padding."
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+
    (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+
+   (solaire-mode-line-face
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (solaire-mode-line-inactive-face
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
    (tooltip :background base0 :foreground fg)
 
-   (fringe :background base2)
+   (fringe :background bg)
 
-   ((line-number &override) :foreground base5 :background (doom-darken bg 0.06))
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg :background line-highlight)
    ((linum &inherit line-number))
 
@@ -265,7 +302,6 @@ Can be an integer to determine the exact padding."
    (markdown-url-face              :inherit 'underline :foreground orange)
    (markdown-gfm-checkbox-face     :foreground blue)
    (markdown-blockquote-face       :inherit 'italic :foreground fg)
-   (mmm-default-submode-face       :background base1)
 
    ;; nav-flash
    (nav-flash-face :background region)
@@ -306,5 +342,4 @@ Can be an integer to determine the exact padding."
    (which-key-group-description-face :foreground magenta)
    (which-key-local-map-description-face :foreground cyan)))
 
-
-;;; doom-moonlight-theme.el ends here
+;;; doom-shades-of-purple-theme.el ends here

@@ -97,14 +97,14 @@ determine the exact padding."
 
    (modeline-bg
     (if doom-vibrant-brighter-modeline
-        `("#383f58" ,@(cdr base1))
-      `(,(car bg-alt) ,@(cdr base0))))
-   (modeline-bg-l
-    (if doom-vibrant-brighter-modeline
         modeline-bg
       `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
-   (modeline-bg-inactive   (doom-darken bg 0.25))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
+   (modeline-bg-l
+    (if doom-vibrant-brighter-modeline
+        `("#383f58" ,@(cdr base1))
+      `(,(car bg-alt) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
+   (modeline-bg-inactive-l (doom-darken bg 0.25)))
 
 
   ;; --- extra faces ------------------------
