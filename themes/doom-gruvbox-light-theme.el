@@ -448,8 +448,6 @@ background contrast. All other values default to \"medium\"."
    ;; lsp
    (lsp-ui-doc-background      :background base2)
    (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
 
    ;; markdown-mode
    (markdown-markup-face     :foreground base5)

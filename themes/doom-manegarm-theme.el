@@ -196,15 +196,15 @@ real file buffers will now be brighter instead."
    (markdown-code-face :background (doom-lighten base3 0.05))
 
    ;; UI
-   (button :foreground teal :bold t :underline t)
-   (custom-button :foreground teal :bold t :underline t :background bg)
+   (button :foreground teal :weight 'bold :underline t)
+   (custom-button :foreground teal :weight 'bold :underline t :background bg)
 
    ;; evil
-   (evil-ex-search :background fg :foreground bg)
-   (evil-ex-lazy-highlight :background fg :foreground bg)
+   (evil-ex-search :inverse-radio t)
+   (evil-ex-lazy-highlight :inverse-radio t)
 
    ;; isearch
-   (isearch :foreground bg :background fg :weight 'bold)
+   (isearch :inverse-radio t :weight 'bold)
 
    ;; dired / diredfl
    (dired-directory :foreground green :bold 'bold)
@@ -214,9 +214,7 @@ real file buffers will now be brighter instead."
    (diredfl-number :foreground red)
 
    ;; lsp
-   (lsp-face-highlight-read :background (doom-darken blue 0.5) :foreground yellow)
-   (lsp-face-highlight-write :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
+   ((lsp-face-highlight-textual &override) :background (doom-darken blue 0.5) :foreground yellow)
 
    ;; we don't want numbers to be bold
    ((highlight-numbers-number &override) :inherit 'normal :foreground numbers)

@@ -951,10 +951,9 @@
     (notmuch-wash-cited-text                 :foreground base4)
     (notmuch-wash-toggle-button :foreground fg)
     ;;;; lsp-mode
-    ;; TODO Add light versions
-    (lsp-face-highlight-textual :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-read    :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
-    (lsp-face-highlight-write   :background dark-blue :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-textual :background (doom-blend highlight bg 0.3) :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-read    :inherit 'lsp-face-highlight-textual)
+    (lsp-face-highlight-write   :inherit 'lsp-face-highlight-textual)
     (lsp-ui-doc-background :inherit 'tooltip)
     (lsp-ui-peek-filename :inherit 'mode-line-buffer-id)
     (lsp-ui-peek-header :foreground fg :background (doom-lighten bg 0.1) :bold bold)
@@ -967,7 +966,7 @@
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
     (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
                                  :background bg-alt :extend t)
-    (lsp-headerline-breadcrumb-separator-face :foreground fg-alt)
+    (lsp-headerline-breadcrumb-separator-face :inherit 'shadow)
     ;;;; objed
     (objed-mode-line :inherit 'warning :weight 'bold)
     (objed-hl        :inherit 'region :background (doom-blend region bg 0.5))
