@@ -65,6 +65,7 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
   - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
   - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
+  - [X] `doom-solarized-dark-high-contrast`: high contrast dark variant of [Solarized][solarized] (thanks to [jmorag])
   - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
   - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
   - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
@@ -228,6 +229,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
+[jmorag]: https://github.com/jmorag
 [JongW]: https://github.com/JongW
 [jsoa]: https://github.com/jsoa
 [jwintz]: https://github.com/jwintz
