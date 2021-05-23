@@ -111,7 +111,7 @@ N is the match index."
                   1 'org-headline-done prepend)))
              ;; custom #hashtags & @at-tags for another level of organization
              (when doom-themes-org-fontify-special-tags
-               '(("\\s-\\(\\([#@]\\)[^+ \n.,]+\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
+               '(("\\s-\\(\\([#@]\\)[^@#+ \n][^+ \n.,]*\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
 
 (add-hook 'org-font-lock-set-keywords-hook #'doom-themes-enable-org-fontification)
 
