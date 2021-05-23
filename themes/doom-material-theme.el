@@ -93,15 +93,7 @@ Can be an integer to determine the exact padding."
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-
    (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
-   (solaire-mode-line-face
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (solaire-mode-line-inactive-face
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
@@ -139,6 +131,9 @@ Can be an integer to determine the exact padding."
    (js2-function-param         :foreground violet)
    (js2-jsdoc-type             :foreground base8)
    (js2-jsdoc-value            :foreground cyan)
+
+   ;; lsp
+   (lsp-headerline-breadcrumb-symbols-face :foreground base7)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)

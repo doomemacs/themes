@@ -51,16 +51,14 @@
 
    ;; face categories -- required for all themes
    (highlight      blue) ;; when searching with (/) ?
-   ;; (vertical-bar   (doom-darken base1 0.1)) ;; no idea what this is
-   (vertical-bar (doom-darken base1 0.1)) ;; the bar that separates modeline and
-                                          ;; minibuffer?
-   (selection      dark-blue) ;; for like company autocomplete and stuff
-   (builtin magenta) ;; saw this in company autocomplete if i moved my mouse
-                     ;; over it
+   (vertical-bar   (doom-darken base1 0.1)) ; the bar that separates modeline and minibuffer?
+   (selection      dark-blue)  ; for like company autocomplete and stuff
+   (builtin        magenta)    ; saw this in company autocomplete if i moved my mouse
+   ;; over it
    (comments       ui1) ;; comments
    (doc-comments (doom-lighten yellow 0.25)) ;; easy to test with elisp
-                                             ;; documentation or git commit
-                                             ;; first line thing
+   ;; documentation or git commit
+   ;; first line thing
    (constants      green)
    (functions      blue)
    (keywords       orange)

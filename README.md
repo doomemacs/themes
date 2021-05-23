@@ -5,89 +5,160 @@
 
 # doom-themes
 
-DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
-[emacs.d], inspired by some of my favorite color themes.
+A theme megapack for GNU Emacs, inspired by community favorites. Special
+attention is given for [Doom Emacs](https://doomemacs.org) and [solaire-mode]
+support, but will work fine anywhere else. 
 
 [See the screenshots.][screenshots]
 
 **Table of Contents**
 
-- [Theme list](#theme-list)
-- [Features](#features)
 - [Install](#install)
     - [Doom Emacs](#doom-emacs)
     - [Manually](#manually)
-- [Common Issues](#common-issues)
+- [Theme list](#theme-list)
+    - [Flagship themes](#flagship-themes)
+    - [Additional themes](#additional-themes)
+    - [Planned themes](#planned-themes)
+- [Extensions](#extensions)
+- [Complimentary plugins](#complimentary-plugins)
+- [FAQ](#faq)
 - [Contribute](#contribute)
+
+## Install
+
+### Doom Emacs
+
+The built-in `:ui doom` module installs and configures `doom-themes` for you,
+and loads `doom-one` by default. To change the theme, change `doom-theme`:
+
+``` emacs-lisp
+;; in ~/.doom.d/config.el
+(setq doom-theme 'doom-city-lights)
+```
+
+### Manually + `use-package`
+
+`doom-themes` is available on MELPA. Here is an example configuration with some
+common defaults laid out:
+
+```emacs-lisp
+(use-package doom-themes
+  :ensure t
+  :config
+  ;; Global settings (defaults)
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (load-theme 'doom-one t)
+
+  ;; Enable flashing mode-line on errors
+  (doom-themes-visual-bell-config)
+  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  (doom-themes-neotree-config)
+  ;; or for treemacs users
+  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  (doom-themes-treemacs-config)
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
+```
+
 
 ## Theme list
 
-- Flagship themes
-  - [X] `doom-one`: doom-themes' flagship theme, inspired by [Atom]'s One Dark themes
-  - [X] `doom-one-light`: light version of doom-one (thanks to [ztlevi])
-  - [X] `doom-vibrant`: a slightly more vibrant version of `doom-one`
-- Additional themes
-  - [X] `doom-acario-dark`: an original dark theme (thanks to [gagbo])
-  - [X] `doom-acario-light`: an original light theme (thanks to [gagbo])
-  - [X] `doom-city-lights`: based on Atom's [City lights][city-lights] (thanks to [fuxialexander])
-  - [X] `doom-challenger-deep`: based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])
-  - [X] `doom-dark+` ported from VS Code's [Dark+][dark+] theme (thanks to [ema2159])
-  - [X] `doom-dracula`: an implementation of [Dracula][dracula] theme (thanks to [fuxialexander])
-  - [X] `doom-ephemeral`: inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])
-  - [X] `doom-fairy-floss`: a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])
-  - [X] `doom-flatwhite`: a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])
-  - [X] `doom-gruvbox`: adapted from Morhetz's [Gruvbox][gruvbox] (thanks to [JongW])
-  - [X] `doom-gruvbox-light`: adapted from Morhetz's [Gruvbox][gruvbox] light variant (thanks for [jsoa])
-  - [X] `doom-henna`: based on VS Code's [Henna][henna] (thanks to [jsoa])
-  - [X] `doom-horizon`: ported from VS Code's [Horizon][horizon] (thanks to [karetsu])
-  - [X] `doom-Iosvkem`: adapted from [Iosvkem][Iosvkem] (thanks to [neutaaaaan])
-  - [X] `doom-laserwave`: a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])
-  - [X] `doom-material` adapted from [Material Themes] (thanks to [tam5])
-  - [X] `doom-manegarm`: an original autumn-inspired dark theme (thanks to [kenranunderscore])
-  - [X] `doom-miramare`: a port of [Franbach's][franbach] [Miramare][miramare], a variant of gruvbox theme (thanks to [sagittaros])
-  - [X] `doom-molokai`: a theme based on Texmate's Monokai
-  - [X] `doom-monokai-classic`: port of [Monokai]'s Classic variant (thanks to [ema2159])
-  - [X] `doom-monokai-pro`: port of [Monokai]'s Pro variant (thanks to [kadenbarlow]) 
-  - [X] `doom-moonlight` ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])
-  - [X] `doom-nord`: dark variant of [Nord][nord] (thanks to [fuxialexander])
-  - [X] `doom-nord-light`: light variant of [Nord][nord] (thanks to [fuxialexander])
-  - [X] `doom-nova`: adapted from [Nova] (thanks to [bigardone])
-  - [X] `doom-oceanic-next`: adapted from [Oceanic Next] theme (thanks to [juanwolf])
-  - [X] `doom-old-hope`: based on [An Old Hope] theme (thanks to [teesloane])
-  - [X] `doom-opera`: an original dark theme (thanks to [jwintz])
-  - [X] `doom-opera-light`: an original light theme (thanks to [jwintz])
-  - [X] `doom-outrun-electric`: a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])
-  - [X] `doom-palenight` adapted from [Material Themes] (thanks to [Brettm12345])
-  - [x] `doom-plain`: based on [plain][plain] (thanks to [mateossh])
-  - [X] `doom-peacock`: based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])
-  - [X] `doom-rouge`: ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])
-  - [X] `doom-snazzy`: a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])
-  - [X] `doom-solarized-dark`: dark variant of [Solarized][solarized] (thanks to [ema2159])
-  - [X] `doom-solarized-light`: light variant of [Solarized][solarized] (thanks to [fuxialexander])
-  - [X] `doom-sourcerer`: based on [Sourcerer][sourcerer] (thanks to [defphil])
-  - [X] `doom-spacegrey`: [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])
-  - [x] `doom-tomorrow-day`: [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])
-  - [X] `doom-tomorrow-night`: one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])
-  - [X] `doom-wilmersdorf`: port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])
-  - [X] `doom-zenburn`: port of the popular [Zenburn] theme (thanks to [jsoa])
-  - [ ] `doom-mono-dark` / `doom-mono-light`: a minimalistic, monochromatic theme
-  - [ ] `doom-tron`: based on Tron Legacy from [daylerees' themes][daylerees]
+### Flagship themes
+These themes were written by the author of this package and are most maintained:
 
-## Features
+| Name             | Description                            |
+|------------------|----------------------------------------|
+| `doom-one`       | Flagship theme based on atom One Dark  |
+| `doom-one-light` | Flagship theme based on atom One Light |
+| `doom-vibrant`   | A more vibrant version of `doom-one`   |
+
+### Additional themes
+These themes were submitted to us by the community. We welcome PRs to help us
+maintain them and address inconsistencies:
+
+| Name                    | Description                                                                                                  |
+|-------------------------|--------------------------------------------------------------------------------------------------------------|
+| `doom-1337`             | ported from [VSCode's 1337 Theme][vscode-1337]                                                               |
+| `doom-acario-dark`      | an original dark theme (thanks to [gagbo])                                                                   |
+| `doom-acario-light`     | an original light theme (thanks to [gagbo])                                                                  |
+| `doom-ayu-dark`         | Light variant from [Ayu] themes (thanks to [LoveSponge])                                                     |
+| `doom-ayu-light`        | Dark variant from [Ayu] themes(thanks to [LoveSponge])                                                       |
+| `doom-badger`           | Based on [original Badger theme](https://github.com/ccann/badger-theme)                                      |
+| `doom-challenger-deep`  | based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])                          |
+| `doom-city-lights`      | based on Atom's [City lights][city-lights] (thanks to [fuxialexander])                                       |
+| `doom-dark+`            | ported from VS Code's [Dark+][dark+] theme (thanks to [ema2159])                                             |
+| `doom-dracula`          | an implementation of [Dracula] theme (thanks to [fuxialexander])                                             |
+| `doom-ephemeral`        | inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])                             |
+| `doom-fairy-floss`      | a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])                                            |
+| `doom-flatwhite`        | a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])                   |
+| `doom-gruvbox-light`    | adapted from Morhetz's [Gruvbox] light variant (thanks for [jsoa])                                           |
+| `doom-gruvbox`          | adapted from Morhetz's [Gruvbox] (thanks to [JongW])                                                         |
+| `doom-henna`            | based on VS Code's [Henna] (thanks to [jsoa])                                                                |
+| `doom-homage-black`     | dark variant of doom-homage white. (thanks to [mskorzhinskiy])                                               |
+| `doom-homage-white`     | a minimalistic, colorless theme, inspired by [eziam], [tao] and [jbeans] themes. (thanks to [mskorzhinskiy]) |
+| `doom-horizon`          | ported from VS Code's [Horizon] (thanks to [karetsu])                                                        |
+| `doom-Iosvkem`          | adapted from [Iosvkem] (thanks to [neutaaaaan])                                                              |
+| `doom-laserwave`        | a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])       |
+| `doom-manegarm`         | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
+| `doom-material`         | adapted from [Material Themes] (thanks to [tam5])                                                            |
+| `doom-miramare`         | a port of [Franbach's][franbach] [Miramare], a variant of gruvbox theme (thanks to [sagittaros])             |
+| `doom-molokai`          | a theme based on Texmate's Monokai                                                                           |
+| `doom-monokai-classic`  | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
+| `doom-monokai-pro`      | port of [Monokai]'s Pro variant (thanks to [kadenbarlow])                                                    |
+| `doom-moonlight`        | ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])                                            |
+| `doom-nord-light`       | light variant of [Nord][nord] (thanks to [fuxialexander])                                                    |
+| `doom-nord`             | dark variant of [Nord][nord] (thanks to [fuxialexander])                                                     |
+| `doom-nova`             | adapted from [Nova] (thanks to [bigardone])                                                                  |
+| `doom-oceanic-next`     | adapted from [Oceanic Next] theme (thanks to [juanwolf])                                                     |
+| `doom-old-hope`         | based on [An Old Hope] theme (thanks to [teesloane])                                                         |
+| `doom-opera-light`      | an original light theme (thanks to [jwintz])                                                                 |
+| `doom-opera`            | an original dark theme (thanks to [jwintz])                                                                  |
+| `doom-outrun-electric`  | a neon colored theme inspired in VS Code's [Outrun Electric][outrun] (thanks to [ema2159])                   |
+| `doom-palenight`        | adapted from [Material Themes] (thanks to [Brettm12345])                                                     |
+| `doom-peacock`          | based on Peacock from [daylerees' themes][daylerees] (thanks to [teesloane])                                 |
+| `doom-plain-dark`       | based on [plain] (thanks to [das-s])                                                                         |
+| `doom-plain`            | based on [plain] (thanks to [mateossh])                                                                      |
+| `doom-rouge`            | ported from [VSCode's Rouge Theme][rouge theme]  (thanks to [JordanFaust])                                   |
+| `doom-shades-of-purple` | a purple and vibrant theme inspired by VSCode's [Shades of Purple][shades-of-purple] (thanks to [jwbaldwin]) |
+| `doom-snazzy`           | a dark theme inspired in Atom's [Hyper Snazzy][snazzy] (thanks to [ar1a])                                    |
+| `doom-solarized-dark`   | dark variant of [Solarized][solarized] (thanks to [ema2159])                                                 |
+| `doom-solarized-light`  | light variant of [Solarized][solarized] (thanks to [fuxialexander])                                          |
+| `doom-sourcerer`        | based on [Sourcerer][sourcerer] (thanks to [defphil])                                                        |
+| `doom-spacegrey`        | [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])                                             |
+| `doom-tomorrow-day`     | [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])                                              |
+| `doom-tomorrow-night`   | one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])                                  |
+| `doom-wilmersdorf`      | port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])                                                        |
+| `doom-xcode`            | Based off of Apple's Xcode Dark theme (thanks to [kadenbarlow])                                              |
+| `doom-zenburn`          | port of the popular [Zenburn] theme (thanks to [jsoa])                                                       |
+
+### Planned themes
+
+| Name                                 | Description                                              |
+|--------------------------------------|----------------------------------------------------------|
+| `doom-mono-dark` / `doom-mono-light` | a minimalistic, monochromatic theme                      |
+| `doom-tron`                          | based on Tron Legacy from [daylerees' themes][daylerees] |
+
+
+## Extensions
+[Check out the wiki for details on customizing our neotree/treemacs/etc
+extensions][wiki].
 
 - `(doom-themes-visual-bell-config)`: flash the mode-line when the Emacs bell
-  rings (i.e. an error occurs).
+  rings (i.e. an error occurs). May not be compatible with all mode line
+  plugins.
 - `(doom-themes-neotree-config)`: a [neotree] theme that takes after [Atom]'s
-  file drawer, and is simpler than the built in icon theme in neotree
-  ([screenshot](/../screenshots/doom-one.png), [more details][wiki]).
+  file drawer; a more minimalistic icon theme plus variable pitch file/directory
+  labels, as seen [in the doom-one screenshot](/../screenshots/doom-one.png).
 
-  This requires `all-the-icons`' fonts to be installed: `M-x
-  all-the-icons-install-fonts`
+  (This requires `all-the-icons`' fonts to be installed: `M-x
+  all-the-icons-install-fonts`)
 - `(doom-themes-treemacs-config)`: two [treemacs] icon themes, one that takes after
-  [Atom]'s, and a second more colorful implementation (WIP).
+  [Atom]'s, and a second more colorful implementation.
 - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
-  fontification.
-  -  Re-set `org-todo' & `org-headline-done' faces to make them respect
+  fontification issues.
+  -  Re-set `org-todo` & `org-headline-done` faces to make them respect
      underlying faces (i.e. don't override the :height or :background of
      underlying faces).
   -  Make statistic cookies respect underlying faces.
@@ -97,98 +168,52 @@ DOOM Themes is an opinionated UI plugin and pack of themes extracted from my
   -  Fontify dividers/separators (5+ dashes)
   -  Fontify #hashtags and @at-tags, for personal convenience; see
      `doom-org-special-tags` to disable this.
-- **Resources that may interest you:**
-  - To get dimmed sidebars and brighter source buffers (like in the
-    [screenshots]), see [solaire-mode].
-  - To get line number highlighting for `nlinum`, set
-    `nlinum-highlight-current-line` to non-nil (or see [hlinum] for `linum`).
-  - [AnthonyDiGirolamo] added doom-one ([screenshot][airline-doom-one]) and
-    doom-molokai ([screenshot][airline-doom-molokai]) skins to
-    [airline-themes][airline-themes].
-  - I'm working on making my modeline more accessible. In the meantime, check
-    out [my mode-line configuration][mode-line] in my [emacs.d].
+     
+## Complimentary plugins
+The following plugins compliment our themes:
 
-## Themes customization
-There are several themes which have their own customization options. For example, `doom-dark+` default modeline color can be changed with the `doom-dark+-blue-modeline` custom variable, or you can switch between `doom-gruvbox-light` variants with the `doom-gruvbox-light-variant` custom variable. 
-
-## Install
-
-### Doom Emacs
-
-The built-in `:ui doom` module installs `doom-themes` for you, and loads
-`doom-one` by default. You can change the theme by changing the `doom-theme`
-variable from `~/.doom.d/config.el`:
-
-``` emacs-lisp
-(setq doom-theme 'doom-city-lights)
-```
-
-Or by loading it manually:
-
-``` emacs-lisp
-(load-theme 'doom-city-lights t)
-```
-
-### Manually
-
-`doom-themes` is available on MELPA.
-
-- [Straight](https://github.com/raxod502/straight.el) users can install it with
-  `M-x straight-use-package RET doom-themes`
-- And package.el users: `M-x package-install RET doom-themes`
-
-Here is a example configuration for `doom-theme`:
-
-```emacs-lisp
-(use-package doom-themes
-  :config
-  ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
-  (load-theme 'doom-one t)
-
-  ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
+- To get dimmed sidebars and brighter source buffers (like in the
+  [screenshots]), see [solaire-mode].
+- [AnthonyDiGirolamo] added doom-one ([screenshot][airline-doom-one]) and
+  doom-molokai ([screenshot][airline-doom-molokai]) skins to
+  [airline-themes][airline-themes].
+- The modeline in the screenshots is
+  [doom-modeline](https://github.com/seagle0128/doom-modeline).
+     
+## FAQ
++ **I don't like X in theme Y, can I change it?**
+  _Yes._ Several themes have variable customization options. Use `C-h v ^doom-`
+  or `M-x customize-group RET doom-themes` to explore them.
   
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
-  (doom-themes-neotree-config)
-  ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-  (doom-themes-treemacs-config)
+  Alternatively, use `custom-set-faces` (Doom users should use
+  `custom-set-faces!` instead) to customize any face. e.g.
   
-  ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
-```
-
-[The wiki contains details for customizing the neotree theme][wiki].
-
-## Common Issues
-
-+ If you use `nlinum` or `linum` in org-mode, the larger headline sizes in some
-  themes [could bleed into the line numbers](https://github.com/hlissner/emacs-doom-themes/issues/86).
-
-  Fix this by setting :height explicitly for your line number plugins, after
-  you've loaded the theme. e.g.
-
-  ```emacs-lisp
-  (let ((height (face-attribute 'default :height)))
-    ;; for all linum/nlinum users
-    (set-face-attribute 'linum nil :height height)
-    ;; only for `linum-relative' users:
-    (set-face-attribute 'linum-relative-current-face nil :height height)
-    ;; only for `nlinum-relative' users:
-    (set-face-attribute 'nlinum-relative-current-face nil :height height))
+  ```elisp
+  ;; Must be used *after* the theme is loaded
+  (custom-set-faces
+    `(mode-line ((t (:background ,(doom-color 'dark-violet)))))
+    `(font-lock-comment-face ((t (:foreground ,(doom-color 'base6))))))
   ```
-
+  
++ **These themes don't look good in the terminal. Why?**
+  Many of our themes don't degrade well into 256 colors, so expect a different
+  experience in terminal Emacs vs GUI Emacs. In order to enjoy these themes as
+  they're intended, either use the GUI or set up your shell to display 24bit
+  color, if it is capable of it.
+  
+  There are multiple guides for setting up 24bit color in your terminal, [for
+  example](http://www.skybert.net/emacs/colourful-tty-emacs).
+  
 ## Contribute
 
-I welcome contributions of any kind, be they pull requests, bug reports or elisp
-pointers. Additional theme and plugin support requests are welcome too.
+PRs are welcome to maintain our themes, including additional theme and plugin
+support.
 
 
 [An Old Hope]: https://github.com/mohkale/an-old-hope-theme
 [AnthonyDiGirolamo]: https://github.com/AnthonyDiGirolamo
 [Atom]: http://atom.io
+[Ayu]: https://github.com/ayu-theme/ayu-colors
 [Nova]: https://trevordmiller.com/projects/nova
 [airline-doom-molokai]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-molokai-theme.png
 [airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
@@ -200,9 +225,10 @@ pointers. Additional theme and plugin support requests are welcome too.
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
 [city-lights]: http://citylights.xyz/
 [dark+]: https://github.com/microsoft/vscode/blob/master/extensions/theme-defaults/themes/dark_plus.json
+[das-s]: https://github.com/das-s
 [daylerees]: http://daylerees.github.io/
 [defphil]: https://github.com/defphil
-[dracula]: https://draculatheme.com/
+[Dracula]: https://draculatheme.com/
 [elenapan's dotfiles]: https://github.com/elenapan/dotfiles
 [ema2159]: https://github.com/ema2159
 [emacs.d]: https://github.com/hlissner/.emacs.d
@@ -210,10 +236,10 @@ pointers. Additional theme and plugin support requests are welcome too.
 [flatwhite]: https://github.com/biletskyy/flatwhite-syntax
 [franbach]: https://github.com/franbach
 [fuxialexander]: https://github.com/fuxialexander
-[gagbo]: https://github.com/gagbo 
-[gruvbox]: https://github.com/morhetz/gruvbox
-[henna]: https://github.com/httpsterio/vscode-henna
-[horizon]: https://github.com/jolaleye/horizon-theme-vscode
+[gagbo]: https://github.com/gagbo
+[Gruvbox]: https://github.com/morhetz/gruvbox
+[Henna]: https://github.com/httpsterio/vscode-henna
+[Horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
@@ -224,12 +250,14 @@ pointers. Additional theme and plugin support requests are welcome too.
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
+[LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
-[miramare]: https://github.com/franbach/miramare
+[Miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
 [Monokai]: https://monokai.pro/
+[mskorzhinskiy]: https://github.com/mskorzhinskiy
 [neotree]: https://github.com/jaypei/emacs-neotree
 [nlinum-hl]: https://github.com/hlissner/emacs-nlinum-hl
 [neutaaaaan]: https://github.com/neutaaaaan
@@ -241,6 +269,7 @@ pointers. Additional theme and plugin support requests are welcome too.
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
 [ShaneKilkelly]: https://github.com/ShaneKilkelly
+[shades-of-purple]: https://github.com/ahmadawais/shades-of-purple-vscode
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
@@ -255,6 +284,10 @@ pointers. Additional theme and plugin support requests are welcome too.
 [ztlevi]: https://github.com/ztlevi
 [laserwave]: https://github.com/Jaredk3nt/laserwave
 [hyakt]: https://github.com/hyakt
-[rouge theme]: https://github.com/josefaidt/rouge-theme 
+[rouge theme]: https://github.com/josefaidt/rouge-theme
 [JordanFaust]: https://github.com/JordanFaust
+[vscode-1337]: https://github.com/microsoft/vscode-themes/tree/main/1337
 [Zenburn]: https://github.com/bbatsov/zenburn-emacs
+[eziam]: https://github.com/thblt/eziam-theme-emacs
+[jbeans]: https://github.com/synic/jbeans-emacs
+[tao]: https://github.com/11111000000/tao-theme-emacs

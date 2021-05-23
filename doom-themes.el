@@ -1,12 +1,12 @@
 ;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2020 Henrik Lissner
+;; Copyright (C) 2016-2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
 ;; Created: May 22, 2016
-;; Modified: August 22, 2018
-;; Version: 2.1.6
+;; Modified: May 22, 2021
+;; Version: 2.2.0
 ;; Keywords: dark light blue atom one theme neotree icons faces nova
 ;; Homepage: https://github.com/hlissner/emacs-doom-theme
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
@@ -26,6 +26,8 @@
 ;; Additional themes
 ;;   [X] `doom-acario-dark' (added by gagbo)
 ;;   [X] `doom-acario-light' (added by gagbo)
+;;   [X] `doom-ayu-dark': (added by LoveSponge)
+;;   [X] `doom-ayu-light': (added by LoveSponge)
 ;;   [X] `doom-city-lights' (added by fuxialexnder)
 ;;   [X] `doom-challenger-deep' (added by fuxialexnder)
 ;;   [X] `doom-dark+' (added by ema2159)
@@ -36,6 +38,8 @@
 ;;   [X] `doom-gruvbox' (added by JongW)
 ;;   [X] `doom-gruxbox-light' (added by jsoa)
 ;;   [X] `doom-henna' (added by jsoa)
+;;   [X] `doom-homage-white' (added by [mskorzhinskiy])
+;;   [X] `doom-homage-black': (added by [mskorzhinskiy])
 ;;   [X] `doom-horizon' (added by karetsu)
 ;;   [X] `doom-Iosvkem' (added by neutaaaaan)
 ;;   [X] `doom-laserwave' (added by hyakt)
@@ -56,6 +60,8 @@
 ;;   [X] `doom-outrun' (added by ema2159)
 ;;   [X] `doom-palenight' (added by Brettm12345)
 ;;   [X] `doom-peacock' (added by teesloane)
+;;   [x] `doom-plain': (added by [mateossh])
+;;   [x] `doom-plain-dark': (added by [das-s])
 ;;   [X] `doom-rouge' (added by JordanFaust)
 ;;   [X] `doom-snazzy' (added by ar1a)
 ;;   [X] `doom-solarized-dark' (added by ema2159)

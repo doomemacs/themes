@@ -161,7 +161,6 @@ Can be an integer to determine the exact padding."
    (widget-field :foreground fg :background base7)
    (escape-glyph :foreground yellow :weight 'bold)
    (fringe :foreground fg :background base5)
-   (header-line :foreground yellow :background base1)
    (highlight :background base4)
    (success :foreground green :weight 'bold)
    (warning :foreground orange :weight 'bold)
@@ -211,7 +210,7 @@ Can be an integer to determine the exact padding."
    (vertical-border :foreground fg-1) ;; different
 
    ;; line numbers
-   (line-number :inherit 'default :foreground base7 :background base3)
+   (line-number :inherit 'default :foreground base7)
    (line-number-current-line :inherit 'line-number :foreground yellow-2)
 
    ;; woman
@@ -304,9 +303,9 @@ Can be an integer to determine the exact padding."
    (helm-grep-lineno :foreground fg-1 :background bg)
    (helm-grep-match :foreground 'nil :background 'nil :inherit 'helm-match)
    (helm-grep-running :foreground red :background bg)
-   (helm-match :foreground orange :background base1 :weight bold)
+   (helm-match :foreground orange :background base1 :weight 'bold)
    (helm-swoop-target-line-face :foreground fg :background base6)
-   (helm-swoop-target-word-face :foreground yellow :background base6 :weight bold)
+   (helm-swoop-target-word-face :foreground yellow :background base6 :weight 'bold)
 
    ;; js2-mode
    (js2-jsdoc-tag :foreground green-2)

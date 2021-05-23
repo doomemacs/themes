@@ -97,14 +97,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken bg 0.475)
-      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
         (doom-darken blue 0.45)
       `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-darken bg 0.475)
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------
@@ -124,18 +124,18 @@ determine the exact padding."
    (tooltip              :background bg-alt :foreground fg)
 
    ;; company
-    (company-tooltip            :inherit 'tooltip)
-    (company-tooltip-common                           :foreground highlight)
-    (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
-    (company-tooltip-selection  :background selection)
-    (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
-    (company-tooltip-annotation                       :foreground violet)
-    (company-scrollbar-bg       :inherit 'tooltip)
-    (company-scrollbar-fg       :background highlight)
-    (company-preview                                  :foreground highlight)
-    (company-preview-common     :background base3 :foreground magenta)
-    (company-preview-search     :inherit 'company-tooltip-search)
-    (company-template-field     :inherit 'match)
+   (company-tooltip            :inherit 'tooltip)
+   (company-tooltip-common                           :foreground highlight)
+   (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
+   (company-tooltip-selection  :background selection)
+   (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
+   (company-tooltip-annotation                       :foreground violet)
+   (company-scrollbar-bg       :inherit 'tooltip)
+   (company-scrollbar-fg       :background highlight)
+   (company-preview                                  :foreground highlight)
+   (company-preview-common     :background base3 :foreground magenta)
+   (company-preview-search     :inherit 'company-tooltip-search)
+   (company-template-field     :inherit 'match)
 
    ;; popup
    (popup-face :inherit 'tooltip)

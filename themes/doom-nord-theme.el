@@ -75,9 +75,9 @@ determine the exact padding."
    (comments       (if doom-nord-brighter-comments dark-cyan (doom-lighten base5 0.2)))
    (doc-comments   (doom-lighten (if doom-nord-brighter-comments dark-cyan base5) 0.25))
    (constants      blue)
-   (functions      teal)
+   (functions      cyan)
    (keywords       blue)
-   (methods        teal)
+   (methods        cyan)
    (operators      blue)
    (type           teal)
    (strings        green)
@@ -103,7 +103,7 @@ determine the exact padding."
 
    (region-fg
     (when (memq doom-nord-region-highlight '(frost snowstorm))
-      bg-alt))
+      base0))
 
    (modeline-fg     nil)
    (modeline-fg-alt base6)
@@ -111,13 +111,13 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         (doom-blend bg base5 0.2)
-      base1))
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         (doom-blend bg base5 0.2)
-      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+      base1))
+   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------
@@ -125,8 +125,8 @@ determine the exact padding."
 
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ((paren-face-match &override) :foreground bg :background teal :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base7 :background red :weight 'ultra-bold)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
    ((vimish-fold-fringe &override)  :foreground teal)
 
@@ -138,6 +138,10 @@ determine the exact padding."
     :foreground doc-comments)
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+
+   (fringe :foreground teal)
+   ((tab-line &override) :background modeline-bg :foreground blue)
+   ((tab-line-tab-inactive &override) :foreground dark-blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -164,6 +168,16 @@ determine the exact padding."
 
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+   ;; highlight-symbol
+   (highlight-symbol-face :background (doom-lighten base4 0.1) :distant-foreground fg-alt)
+
+   ;; highlight-thing
+   (highlight-thing :background (doom-lighten base4 0.1) :distant-foreground fg-alt)
+
+   ;; ivy
+   ((ivy-current-match &override) :foreground region-fg :weight 'semi-bold)
+
 
    ;; --- major-mode faces -------------------
    ;; css-mode / scss-mode

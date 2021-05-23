@@ -97,13 +97,13 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         base3
-      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         base3
-      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------
@@ -130,7 +130,6 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
-   (header-line :inherit 'mode-line :background "#23214b")
 
    (solaire-mode-line-face
     :inherit 'mode-line

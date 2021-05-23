@@ -34,8 +34,8 @@ Can be an integer to determine the exact padding."
 (def-doom-theme doom-sourcerer
   "A dark theme based off of xero's Sourcerer VIM colorscheme"
 
-  ((bg         '("#222222"))
-   (bg-alt     '("#171717"))
+  ((bg         '("#171717"))
+   (bg-alt     '("#222222"))
    (base0      '("#1d2127"))
    (base1      '("#1d2127"))
    (base2      '("#272727"))
@@ -97,14 +97,14 @@ Can be an integer to determine the exact padding."
 
    (modeline-bg
     (if doom-sourcerer-brighter-modeline
-        `("#383f58" ,@(cdr base1))
-      `(,(car base3) ,@(cdr base0))))
-   (modeline-bg-l
-    (if doom-sourcerer-brighter-modeline
         modeline-bg
       `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
-   (modeline-bg-inactive   (doom-darken bg 0.20))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
+   (modeline-bg-l
+    (if doom-sourcerer-brighter-modeline
+        `("#383f58" ,@(cdr base1))
+      `(,(car base3) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
+   (modeline-bg-inactive-l (doom-darken bg 0.20)))
 
   ;; --- extra faces ------------------------
   ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")

@@ -51,8 +51,8 @@ determine the exact padding."
    (base8      '("#626C6C" "#626C6C" "white"       ))
    (fg-alt     '("#657b83" "#657b83" "white"       ))
    (fg         (if doom-solarized-dark-brighter-text
-		   '("#BBBBBB" "#BBBBBB" "brightwhite")
-		   '("#839496" "#839496" "brightwhite")))
+                   '("#BBBBBB" "#BBBBBB" "brightwhite")
+                 '("#839496" "#839496" "brightwhite")))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))
@@ -81,7 +81,7 @@ determine the exact padding."
    (operators      orange)
    (type           yellow)
    (strings        cyan)
-   (variables      fg)
+   (variables      violet)
    (numbers        magenta)
    (region         base0)
    (error          red)
@@ -104,13 +104,13 @@ determine the exact padding."
    (modeline-bg
     (if -modeline-bright
         base3
-        `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+      `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
    (modeline-bg-l
     (if -modeline-bright
         base3
-        `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+      `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
   ;; --- extra faces ------------------------

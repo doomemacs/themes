@@ -83,15 +83,9 @@ determine the exact padding."
    (hidden     `(,(car bg) "black" "black"))
    (-modeline-pad
     (when doom-monokai-pro-padded-modeline
-      (if (integerp doom-monokai-pro-padded-modeline) doom-monokai-pro-padded-modeline 4)))
-
-
-   (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
-
-
-  ;; --- extra faces ------------------------
-  ((cursor                                       :background fg)
-   (default                                      :foreground fg :background bg)
+      (if (integerp doom-monokai-pro-padded-modeline)
+          doom-monokai-pro-padded-modeline
+        4))))
 
    ;; I-search
    (match                                        :foreground fg :background base3)

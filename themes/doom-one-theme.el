@@ -96,14 +96,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
         (doom-darken blue 0.45)
       `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-darken blue 0.475)
+      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(car bg-alt) ,@(cdr base1)))
+   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt))))
 
 
   ;; --- extra faces ------------------------
@@ -164,8 +164,14 @@ determine the exact padding."
 
    ;; org-mode
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
+   (solaire-org-hide-face :foreground hidden)
 
+   ;; lsp-mode
+   (lsp-headerline-breadcrumb-separator-face :foreground green)
+
+   ;; rjsx
+   (rjsx-tag :foreground red)
+   (rjsx-attr :foreground orange))
 
   ;; --- extra variables ---------------------
   ()

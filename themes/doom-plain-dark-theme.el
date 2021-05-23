@@ -1,39 +1,39 @@
-;;; doom-plain-theme.el --- inspired by gko's plain theme for VSCode
+;;; doom-plain-dark-theme.el --- inspired by gko's plain theme for VSCode
 
 (require 'doom-themes)
 
-(defgroup doom-plain-theme nil
+(defgroup doom-plain-dark-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
 
 (defcustom doom-plain-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-plain-theme
+  :group 'doom-plain-dark-theme
   :type 'boolean)
 
 (defcustom doom-plain-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
 determine the exact padding."
-  :group 'doom-plain-theme
+  :group 'doom-plain-dark-theme
   :type '(or integer boolean))
 
-(def-doom-theme doom-plain
-  "Theme inspired by gko's plain."
+(def-doom-theme doom-plain-dark
+  "Theme inspired by gko's plain dark."
 
   ;; name        default   256       16
-  ((bg         '("#ffffff" nil       nil ))
-   (bg-alt     '("#f3f3f3" nil       nil ))
-   (base0      '("#969896" nil nil ))
-   (base1      '("#f1f3f5" nil nil ))
-   (base2      '("#444444" nil nil ))
-   (base3      '("#cccccc" nil nil ))
-   (base4      '("#e7e7e7" nil nil ))
-   (base5      '("#c5c8c6" nil nil ))
-   (base6      '("#fafafa" nil nil ))
-   (base7      '("#dfdfdf" nil nil ))
-   (base8      '("#fafafa" nil nil ))
-   (fg         '("#282a2e" nil nil ))
-   (fg-alt     (doom-lighten fg 0.15))
+  ((bg         '("#222222" nil       nil ))
+   (bg-alt     (doom-lighten bg 0.15))
+   (base0      '("#838083" nil nil ))
+   (base1      '("#0e0c0a" nil nil ))
+   (base2      '("#bbbbbb" nil nil ))
+   (base3      '("#444444" nil nil ))
+   (base4      '("#202020" nil nil ))
+   (base5      '("#545053" nil nil ))
+   (base6      '("#050505" nil nil ))
+   (base7      '("#ffdddd" nil nil ))
+   (base8      '("#050505" nil nil ))
+   (fg         '("#d7d5d1" nil nil ))
+   (fg-alt     '("#e7e5e3" nil nil ))
 
    (grey       fg)
    (red        fg)
@@ -64,7 +64,7 @@ determine the exact padding."
    (strings        base0)
    (variables      base0)
    (numbers        base0)
-   (region         base4)
+   (region         base1)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -101,20 +101,13 @@ determine the exact padding."
    (hl-line
     :background base8)
 
-   ;; Org
    (org-block-begin-line
-    :foreground base5
-    :background bg-alt
-    :extend t)
+    :foreground base2
+    :background base3)
 
    (org-block-end-line
-    :foreground base5
-    :background bg-alt
-    :extend t)
-
-   (org-block
-    :background bg-alt
-    :extend t)
+    :foreground base2
+    :background base3)
 
    (org-level-1
     :slant 'italic
@@ -131,9 +124,11 @@ determine the exact padding."
     :foreground base2
     :background nil)
 
-   ;; Ivy
-   (ivy-posframe
-    :background bg-alt)
+   (org-level-3
+    :slant 'italic
+    :foreground base2
+    :background nil)
+
 
    ;; Font lock
    (font-lock-comment-face
@@ -175,4 +170,4 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))))
 
-;;; doom-plain-theme.el ends here
+;;; doom-plain-dark-theme.el ends here

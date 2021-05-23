@@ -118,11 +118,11 @@ determine the exact padding."
    
    ;; Centaur tabs
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
-				   :background bg
-				   :foreground yellow)
+                                   :background bg
+                                   :foreground yellow)
    (centaur-tabs-unselected-modified :inherit 'centaur-tabs-unselected
-				     :background bg-alt
-				     :foreground yellow)
+                                     :background bg-alt
+                                     :foreground yellow)
    (centaur-tabs-active-bar-face :background yellow)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)

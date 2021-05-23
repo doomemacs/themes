@@ -102,14 +102,14 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        (doom-blend blue bg-alt 0.35)
-      `(,(car base2) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
         modeline-bg
       `(,(car base3) ,@(cdr base1))))
-   (modeline-bg-inactive   (doom-darken bg 0.20))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0))))
+   (modeline-bg-l
+    (if -modeline-bright
+        (doom-blend blue bg-alt 0.35)
+      `(,(car base2) ,@(cdr base0))))
+   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
+   (modeline-bg-inactive-l (doom-darken bg 0.20)))
 
 ;;;; --- extra faces ------------------------
   (((all-the-icons-dblue &override) :foreground teal)
@@ -126,7 +126,6 @@ determine the exact padding."
 
 ;;;;; comments and doc
    (font-lock-comment-face
-    :inherit 'fixed-pitch-serif
     :slant 'italic
     :foreground comments
     :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
