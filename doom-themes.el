@@ -48,7 +48,8 @@
 ;;   [X] `doom-miramare' (added by sagittaros)
 ;;   [X] `doom-molokai'
 ;;   [X] `doom-monokai-classic' (added by ema2159)
-;;   [X] `doom-monokai-pro' (added by kadenbarlow)
+;;   [X] `doom-monokai-pro' (added by kadenbarlow, minikN)
+;;   [X] `doom-monokai-pro-classic' (added by minikN)
 ;;   [X] `doom-moonlight' (added by Brettm12345)
 ;;   [X] `doom-nord' (added by fuxialexnder)
 ;;   [X] `doom-nord-light' (added by fuxialexnder)
