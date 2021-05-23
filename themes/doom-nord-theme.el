@@ -139,7 +139,7 @@ determine the exact padding."
 
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
 
-   (fringe :foreground teal :background modeline-bg)
+   (fringe :foreground teal)
    ((tab-line &override) :background modeline-bg :foreground blue)
    ((tab-line-tab-inactive &override) :foreground dark-blue)
 
