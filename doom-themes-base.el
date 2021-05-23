@@ -495,6 +495,8 @@
     (evil-snipe-matches-face     :foreground highlight :underline t :weight 'bold)
     ;;;; evil-googles
     (evil-goggles-default-face :inherit 'region)
+    ;;;; eyebrowse
+    (eyebrowse-mode-line-active :weight 'bold :foreground highlight)
     ;;;; flycheck
     (flycheck-error          :underline `(:style wave :color ,red))
     (flycheck-warning        :underline `(:style wave :color ,yellow))
@@ -1250,6 +1252,13 @@
     ;;;; vimish-fold
     (vimish-fold-overlay :inherit 'font-lock-comment-face :background base0 :weight 'light)
     (vimish-fold-fringe  :foreground magenta)
+    ;;;; visual-regexp
+    (vr/group-0 :background blue    :foreground bg)
+    (vr/group-1 :background magenta :foreground bg)
+    (vr/group-2 :background green   :foreground bg)
+    (vr/match-0 :background (doom-blend green bg 0.2) :foreground fg)
+    (vr/match-1 :background (doom-blend green bg 0.4) :foreground fg)
+    (vr/match-separator-face :inherit 'bold :foreground red)
     ;;;; volatile-highlights
     (vhl/default-face :background grey)
     ;;;; vterm
@@ -1312,9 +1321,16 @@
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)
     (window-divider-last-pixel  :inherit 'window-divider)
+    ;;;; winum
+    (winum-face :inherit 'bold :foreground highlight)
     ;;;; woman <built-in>
     (woman-bold :inherit 'Man-overstrike)
     (woman-italic :inherit 'Man-underline)
+    ;;;; xah-elisp-mode
+    (xah-elisp-at-symbol     :inherit 'font-lock-warning-face)
+    (xah-elisp-cap-variable  :inherit 'font-lock-preprocessor-face)
+    (xah-elisp-command-face  :inherit 'font-lock-type-face)
+    (xah-elisp-dollar-symbol :inherit 'font-lock-variable-name-face)
     ;;;; workgroups2
     (wg-current-workgroup-face :foreground base0 :background highlight)
     (wg-other-workgroup-face   :foreground base5)
@@ -1322,6 +1338,10 @@
     (wg-brace-face             :foreground highlight)
     ;;;; yasnippet
     (yas-field-highlight-face :inherit 'match)
+    ;;;; xref <built-in>
+    ((xref-file-header &inherit compilation-info))
+    ((xref-line-number &inherit compilation-line-number))
+    ((xref-match &inherit match))
     ;;;; --- END Package faces ------------------
     )
   "TODO")
@@ -1335,12 +1355,18 @@
     ;;;; rustic <modes:rustic-mode>
     (rustic-ansi-faces
      (vconcat (mapcar #'doom-color '(bg red green yellow blue magenta cyan fg))))
+    ;;;; exwm
+    (exwm-floating-border-color (doom-color 'vertical-bar))
     ;;;; fill-column-indicator
     (fci-rule-color (doom-color 'base5))
     ;;;; jdee <modes:jdee-mode>
     (jdee-db-spec-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'grey)))
     (jdee-db-requested-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'green)))
     (jdee-db-active-breakpoint-face-colors `(cons ,(doom-color 'base0) ,(doom-color 'highlight)))
+    ;;;; highlight-tail
+    (highlight-tail-colors
+     `((,(doom-blend green bg 0.1) . 0)
+       (,(doom-blend cyan bg 0.1) . 20)))
     ;;;; objed
     (objed-cursor-color (doom-color 'red))
     ;;;; pdf-tools
