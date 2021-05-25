@@ -116,8 +116,8 @@ determine the exact padding."
     (if -modeline-bright
         (doom-blend bg base5 0.2)
       base1))
-   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
-   (modeline-bg-inactive-l (doom-darken bg 0.1)))
+   (modeline-bg-inactive   (doom-darken bg 0.1))
+   (modeline-bg-inactive-l (doom-darken bg 0.025)))
 
 
   ;; --- extra faces ------------------------
