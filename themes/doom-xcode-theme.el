@@ -15,8 +15,8 @@ Can be an integer to determine the exact padding."
   "A theme based off of the Xcode Dark Theme"
 
   ;; name        gui       256       16
-  ((bg         '("#1d1f21" nil       nil          ))
-   (bg-alt     '("#161719" nil       nil          ))
+  ((bg         '("#292A30" nil       nil          ))
+   (bg-alt     '("#252629" nil       nil          ))
    (base0      '("#0d0d0d" "black"   "black"      ))
    (base1      '("#1b1b1b" "#1b1b1b"              ))
    (base2      '("#212122" "#1e1e1e"              ))
@@ -26,27 +26,26 @@ Can be an integer to determine the exact padding."
    (base6      '("#757878" "#6b6b6b" "brightblack"))
    (base7      '("#969896" "#979797" "brightblack"))
    (base8      '("#ffffff" "#ffffff" "white"      ))
-   (fg         '("#b2bbc2" "#b2bbc2" "white"))
+   (fg         '("#FFFFFF" "#ffffff" "white"))
    (fg-alt     (doom-darken fg 0.4))
 
-   (red        '("#cc6666" "#cc6666" "red"))
-   (orange     '("#de935f" "#dd9955" "brightred"))
-   (yellow     '("#f0c674" "#f0c674" "yellow"))
-   (green      '("#b5bd68" "#b5bd68" "green"))
-   (blue       '("#81a2be" "#88aabb" "brightblue"))
+   (red        '("#F16A5E" "#F16A5E" "red"))
+   (orange     '("#F9C79B" "#D8C77B" "orange"))
+   (yellow     '("#D8C77B" "#D8C77B" "yellow"))
+   (green      '("#9BD46A" "#9BD46A" "green"))
+   (blue       '("#59B0CF" "#59B0CF" "brightblue"))
    (teal       blue) ; FIXME replace with real teal
    (magenta    '("#c9b4cf" "#c9b4cf" "magenta"))
    (cyan       '("#8abeb7" "#8abeb7" "cyan"))
    (dark-cyan  (doom-darken cyan 0.4))
 
 
-   (grey       '("#7a8590" "#7a8590" "brightblack"))
-   (light-green'("#88c0b3" "#88c0b3" "lightgreen"))
-   (violet     '("#b294bb" "#b294bb" "brightmagenta"))
-   (light-blue '("#7eddfc" "#7eddfc" "lightblue"))
-   (dark-blue  '("#5db8d9" "#5db8d9" "darkblue"))
-   (orange     '("#ef8775" "#ef8775" "orange"))
-   (pink       '("#ef82af" "#ef82af" "pink"))
+   (grey       '("#818C98" "#818C98" "brightblack"))
+   (light-green'("#95D1C4" "#95D1C4" "lightgreen"))
+   (violet     '("#A29DF5" "#A29DF5" "brightmagenta"))
+   (light-blue '("#77E8FF" "#77E8FF" "lightblue"))
+   (dark-blue  '("#41B2D0" "#41B2D0" "darkblue"))
+   (pink       '("#F47AB0" "#F47AB0" "pink"))
 
    ;; face categories
    (highlight      blue)
@@ -56,14 +55,14 @@ Can be an integer to determine the exact padding."
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.14))
    (constants      dark-blue)
-   (functions      violet)
+   (functions      red)
    (keywords       pink)
-   (methods        violet)
+   (methods        red)
    (operators      fg)
    (type           light-blue)
    (strings        light-green)
    (variables      dark-blue)
-   (numbers        light-green)
+   (numbers        violet)
    (region         selection)
    (error          red)
    (warning        yellow)
@@ -89,6 +88,8 @@ Can be an integer to determine the exact padding."
 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground orange :bold bold)
+
+   (font-lock-keyword-face :inherit 'bold :foreground keywords)
 
    ;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
