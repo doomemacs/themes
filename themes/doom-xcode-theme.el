@@ -30,7 +30,7 @@ Can be an integer to determine the exact padding."
    (fg-alt     (doom-darken fg 0.4))
 
    (red        '("#F16A5E" "#F16A5E" "red"))
-   (orange     '("#F9C79B" "#D8C77B" "orange"))
+   (orange     '("#F48170" "#F48170" "orange"))
    (yellow     '("#D8C77B" "#D8C77B" "yellow"))
    (green      '("#9BD46A" "#9BD46A" "green"))
    (blue       '("#59B0CF" "#59B0CF" "brightblue"))
