@@ -83,8 +83,8 @@ maintain them and address inconsistencies:
 | `doom-1337`             | ported from [VSCode's 1337 Theme][vscode-1337]                                                               |
 | `doom-acario-dark`      | an original dark theme (thanks to [gagbo])                                                                   |
 | `doom-acario-light`     | an original light theme (thanks to [gagbo])                                                                  |
-| `doom-ayu-mirage`       | Dark variant from [Ayu] themes (thanks to [LoveSponge])                                                     |
-| `doom-ayu-light`        | Light variant from [Ayu] themes(thanks to [LoveSponge])                                                       |
+| `doom-ayu-mirage`       | Dark variant from [Ayu] themes (thanks to [LoveSponge])                                                      |
+| `doom-ayu-light`        | Light variant from [Ayu] themes(thanks to [LoveSponge])                                                      |
 | `doom-badger`           | Based on [original Badger theme](https://github.com/ccann/badger-theme)                                      |
 | `doom-challenger-deep`  | based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])                          |
 | `doom-city-lights`      | based on Atom's [City lights][city-lights] (thanks to [fuxialexander])                                       |
