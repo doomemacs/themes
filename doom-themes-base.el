@@ -20,9 +20,11 @@
     (cursor               :background highlight)
     (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
-    (tooltip              :background base3 :foreground fg)
+    (tooltip              :background bg-alt :foreground fg)
     (secondary-selection  :background grey :extend t)
-    (lazy-highlight       :background dark-blue  :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lazy-highlight
+     (&dark  :background (doom-darken highlight 0.3)   :foreground base8 :distant-foreground base0 :weight 'bold)
+     (&light :background (doom-blend bg highlight 0.7) :foreground base0 :distant-foreground base8))
     (match                :foreground green      :background base0 :weight 'bold)
     (trailing-whitespace  :background red)
     (nobreak-space        :inherit 'default :underline nil)
@@ -953,7 +955,10 @@
     (notmuch-wash-cited-text                 :foreground base4)
     (notmuch-wash-toggle-button :foreground fg)
     ;;;; lsp-mode
-    (lsp-face-highlight-textual :background (doom-blend highlight bg 0.3) :foreground base8 :distant-foreground base0 :weight 'bold)
+    (lsp-face-highlight-textual
+     (&all   :weight 'bold)
+     (&light :background base3 :foreground base0 :distant-foreground base8)
+     (&dark  :background (doom-blend highlight bg 0.3) :foreground base8 :distant-foreground base0))
     (lsp-face-highlight-read    :inherit 'lsp-face-highlight-textual)
     (lsp-face-highlight-write   :inherit 'lsp-face-highlight-textual)
     (lsp-ui-doc-background :inherit 'tooltip)
