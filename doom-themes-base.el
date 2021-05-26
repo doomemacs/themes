@@ -714,7 +714,7 @@
     (ivy-confirm-face :foreground success)
     (ivy-match-required-face :foreground error)
     (ivy-virtual :inherit 'italic :foreground doc-comments)
-    (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
+    (ivy-modified-buffer :inherit 'bold :foreground warning)
     ;;;; ivy-posframe
     (ivy-posframe :background (doom-darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
