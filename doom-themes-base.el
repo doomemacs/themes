@@ -531,11 +531,11 @@
     (git-commit-comment-file          :foreground violet)
     (git-commit-comment-action)
     ;;;; git-gutter
-    (git-gutter:modified :inherit 'fringe :foreground cyan)
+    (git-gutter:modified :inherit 'fringe :foreground vc-modified)
     (git-gutter:added    :inherit 'fringe :foreground vc-added)
     (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
     ;;;; git-gutter+
-    (git-gutter+-modified :inherit 'fringe :foreground cyan :background nil)
+    (git-gutter+-modified :inherit 'fringe :foreground vc-modified :background nil)
     (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
     (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
     ;;;; git-gutter-fringe
