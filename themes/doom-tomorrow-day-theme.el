@@ -72,6 +72,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
+   (org-block-bg             (doom-lighten bg-alt 0.3))
    (modeline-bg              `(,(doom-lighten (car bg-alt) 0.4) ,@(cdr base3)))
    (modeline-bg-alt          bg)
    (modeline-bg-inactive     `(,(doom-darken (car bg) 0.04) ,@(cdr base1)))
@@ -108,7 +109,10 @@ Can be an integer to determine the exact padding."
    (ivy-minibuffer-match-face-3 :inherit 'ivy-minibuffer-match-face-2 :foreground blue)
    (ivy-minibuffer-match-face-4 :inherit 'ivy-minibuffer-match-face-2 :foreground red)
    ;;;; org <built-in>
-   (org-block-begin-line         :foreground base7 :background base3 :extend t)
+   ((org-block &override)            :background org-block-bg)
+   ((org-block-background &override) :background org-block-bg)
+   ((org-block-begin-line &override) :background org-block-bg)
+   ((org-quote &override)            :background org-block-bg)
    ;;;; outline <built-in>
    ((outline-1 &override) :foreground teal)
    ((outline-2 &override) :foreground blue)
