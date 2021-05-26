@@ -195,6 +195,7 @@ determine the exact padding."
    (org-headline-base :foreground comments :strike-through t :bold nil)
    (org-link :foreground orange :underline t :weight 'bold)
    (org-priority :foreground cyan)
+   ((org-quote &override) :background (doom-darken base1 0.125))
    (org-scheduled :foreground green)
    (org-scheduled-previously :foreground yellow)
    (org-scheduled-today :foreground orange)
