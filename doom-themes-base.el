@@ -2,12 +2,6 @@
 
 (defvar doom-themes-base-faces
   '(
-    ;;;; --- Doom Emacs specific faces ----------
-    (doom-modeline-error
-     :background (doom-darken red 0.25)
-     :foreground base0
-     :distant-foreground base0)
-    (doom-visual-bell :background error)
     ;;;; --- Base faces -------------------------
     (bold        :weight 'bold :foreground (unless bold base8))
     (bold-italic :inherit '(bold italic))
@@ -408,6 +402,8 @@
     ;;;; doom-modeline
     (doom-modeline-eldoc-bar :background green)
     (doom-modeline-bar-inactive :background nil) ; transparent
+    ;;;; doom-themes
+    (doom-visual-bell :background error)
     ;;;; ediff <built-in>
     (ediff-fine-diff-A    :background (doom-blend selection bg 0.7) :weight 'bold :extend t)
     (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
