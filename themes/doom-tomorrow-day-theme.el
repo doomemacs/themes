@@ -59,7 +59,7 @@ Can be an integer to determine the exact padding."
    (keywords       violet)
    (methods        blue)
    (operators      fg)
-   (type           (doom-darken yellow 0.1))
+   (type           (doom-darken yellow 0.2))
    (strings        green)
    (variables      red)
    (numbers        orange)
