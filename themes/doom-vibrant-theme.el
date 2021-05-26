@@ -108,23 +108,11 @@ determine the exact padding."
 
 
   ;; --- extra faces ------------------------
-  (((all-the-icons-dblue &override) :foreground dark-cyan)
-   (centaur-tabs-unselected :background bg-alt :foreground base6)
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (font-lock-comment-face
-    :foreground comments
+  (;;;; emacs
+   ((font-lock-comment-face &override)
     :background (if doom-vibrant-comment-bg (doom-darken bg-alt 0.095)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
-
-   (doom-modeline-bar :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
-   (doom-modeline-buffer-path :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -133,7 +121,27 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if doom-vibrant-brighter-modeline base8 highlight))
-
+   ;;;; all-the-icons
+   ((all-the-icons-dblue &override) :foreground dark-cyan)
+   ;;;; centaur-tabs
+   (centaur-tabs-unselected :background bg-alt :foreground base6)
+   ;;;; css-mode / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar
+    :background (if doom-vibrant-brighter-modeline modeline-bg highlight))
+   (doom-modeline-buffer-path
+    :foreground (if doom-vibrant-brighter-modeline base8 blue) :bold bold)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; markdown-mode
+   (markdown-header-face :inherit 'bold :foreground red)
+   ;;;; org-mode
+   (org-hide :foreground hidden)
+   (solaire-org-hide-face :foreground hidden-alt)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -142,21 +150,9 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
+   ;;;; whitespace <built-in>
    (whitespace-empty :background base2)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
-   (markdown-header-face :inherit 'bold :foreground red)
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden-alt))
+   )
 
 
   ;; --- extra variables --------------------
