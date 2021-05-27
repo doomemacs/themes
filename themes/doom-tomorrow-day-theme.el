@@ -53,7 +53,7 @@ Can be an integer to determine the exact padding."
    (selection      base1)
    (builtin        blue)
    (comments       grey)
-   (doc-comments   (doom-darken grey 0.3))
+   (doc-comments   grey)
    (constants      orange)
    (functions      blue)
    (keywords       violet)
@@ -89,6 +89,7 @@ Can be an integer to determine the exact padding."
 
   ;; --- faces ------------------------------
   (;;;; emacs
+   ((font-lock-doc-face &override) :slant 'italic)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground base8)
    (mode-line
