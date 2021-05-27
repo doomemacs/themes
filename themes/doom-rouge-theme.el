@@ -99,55 +99,76 @@ determine the exact padding."
 
    (modeline-fg     nil)
    (modeline-fg-alt base6)
-
    (modeline-bg base1)
    (modeline-bg-l `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
    (modeline-bg-inactive   (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
-  ;; --- extra faces ------------------------
-  ((lazy-highlight :background base4)
-
-   ;; highlight-thing highlight-symbol
-   (highlight-symbol-face :background region :distant-foreground fg-alt)
-
-   ;; highlight-thing
-   (highlight-thing :background region :distant-foreground fg-alt)
-
-   ;; ivy
-   (ivy-current-match :background base3)
-   (ivy-minibuffer-match-face-2 :foreground highlight :weight 'extra-bold)
-   
-   ;; ivy-posframe
-   (ivy-posframe :background bg-alt)
-   (ivy-posframe-border :background highlight)
-
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override) :slant 'italic)
+   ((font-lock-keyword-face &override) :slant 'italic)
+   (font-lock-preprocessor-face :foreground magenta :slant 'italic)
+   (lazy-highlight :background base4)
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
-   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
-   ((vimish-fold-fringe &override)  :foreground teal)
-   
-   ;; font-lock
-   (font-lock-keyword-face :slant 'italic :foreground keywords)
-   (font-lock-comment-face :foreground comments :slant 'italic)
-   (font-lock-doc-face :foreground doc-comments :slant 'italic)
-   (font-lock-preprocessor-face :foreground magenta :slant 'italic)
-   ;; vertical border
-   (vertical-border :foreground base6)
-   
-   ;; mode-line
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground highlight)
+   (mode-line-emphasis :foreground highlight)
+   (tooltip :background base3 :foreground fg-alt)
+   (vertical-border :foreground base6)
 
+   ;;;; centuar-tabs
+   (centaur-tabs-selected :foreground tabs-fg :background tabs-bg)
+   (centaur-tabs-selected-modified :foreground tabs-fg :background tabs-bg)
+   (centaur-tabs-unselected-modified :foreground tabs-fg :background bg)
+   (centaur-tabs-active-bar-face :background tabs-bar-bg)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground tabs-marker)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground tabs-marker)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-project-root-dir :foreground base6)
+   ;;;; doom-themes
+   (doom-themes-treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
+   (doom-themes-treemacs-file-face :foreground highlight)
+   ;;;; ediff <built-in>
+   (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
+   (ediff-current-diff-A :background (doom-darken base0 0.25))
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+   ;;;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+   ;;;; ivy
+   (ivy-current-match :background base3)
+   (ivy-minibuffer-match-face-2 :foreground highlight :weight 'extra-bold)
+   ;;;; ivy-posframe
+   (ivy-posframe :background bg-alt)
+   (ivy-posframe-border :background highlight)
+   ;;;; magit
+   (magit-diff-hunk-heading           :foreground bg                    :background (doom-blend highlight bg 0.3) :extend t)
+   (magit-diff-hunk-heading-highlight :foreground bg                    :background highlight :weight 'bold :extend t)
+   (magit-section-heading :foreground highlight)
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ;;;; mic-paren
+   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ;;;; neotree
+   (neo-root-dir-face :foreground red)
+   ;;;; org <built-in>
+   (org-hide :foreground hidden)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -157,58 +178,14 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
    (solaire-hl-line-face :background base3)
-
-   ;; doom-modeline
-   (doom-modeline-project-root-dir :foreground base6)
-
-   ;; ediff
-   (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
-   (ediff-current-diff-A :background (doom-darken base0 0.25))
-
-   ;; elscreen
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; magit
-   (magit-diff-hunk-heading           :foreground bg                    :background (doom-blend highlight bg 0.3) :extend t)
-   (magit-diff-hunk-heading-highlight :foreground bg                    :background highlight :weight 'bold :extend t)
-   (magit-section-heading :foreground highlight)
-   
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-
-   ;; centuar-tabs
-   (centaur-tabs-selected :foreground tabs-fg :background tabs-bg)
-   (centaur-tabs-selected-modified :foreground tabs-fg :background tabs-bg)
-   (centaur-tabs-unselected-modified :foreground tabs-fg :background bg)
-   (centaur-tabs-active-bar-face :background tabs-bar-bg)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground tabs-marker)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground tabs-marker)
-
-   ;; neotree
-   (neo-root-dir-face :foreground red)
-
-   ;; treemacs
+   ;;;; treemacs
    (treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
-   (doom-themes-treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
-   (doom-themes-treemacs-file-face :foreground highlight)
    (treemacs-directory-face :foreground highlight)
+   ;;;; vimish-fold
+   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
+   ((vimish-fold-fringe &override)  :foreground teal))
 
-   ;; tooltip 
-   (tooltip :background base3 :foreground fg-alt))
   ;; --- extra variables ---------------------
-  ()
-  )
+  ())
 
 ;;; doom-rouge-theme.el ends here

@@ -142,24 +142,14 @@ determine the exact padding."
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((centaur-tabs-unselected :background bg-alt :foreground base4)
 
-   (default :background bg :foreground fg)
-
-   (font-lock-builtin-face              :foreground fg
-                                        :inherit 'italic :extend t)
-   (font-lock-comment-face              :foreground comments)
-   (font-lock-comment-delimiter-face    :inherit font-lock-comment-face)
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments
-    :slant 'italic)
-   (font-lock-type-face                 :inherit 'default)
-
+  ;;;; Base theme face overrides
+  ((font-lock-builtin-face :inherit 'italic :foreground fg :extend t)
+   ((font-lock-doc-face &override) :slant 'italic)
+   (font-lock-type-face :inherit 'default)
    (font-lock-variable-name-face
     :foreground (if -no-highlight-variables fg fw-blue-text)
-    :background (if -no-highlight-variables bg fw-blue-blend ))
+    :background (if -no-highlight-variables bg fw-blue-blend))
    (font-lock-warning-face              :background fw-red-blend
                                         :foreground fw-red-text)
    (font-lock-negation-char-face        :inherit 'default)
@@ -176,11 +166,27 @@ determine the exact padding."
    (font-lock-string-face               :background fw-green-blend
                                         :foreground fw-green-text )
 
-   ;; makefile-*-mode
-   (makefile-targets :foreground fw-purple-text
-                     :background fw-purple-blend)
+   (lazy-highlight :background fw--light-accent
+                   :foreground fw-blue-text
+                   :distant-foreground base0
+                   :weight 'bold)
 
-   ;; swiper
+   ((line-number &override) :foreground (doom-lighten base4 0.15))
+   ((line-number-current-line &override) :foreground base8)
+
+   (mode-line
+    :background modeline-bg
+    :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive
+    :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+
+   ;;;; centaur-tabs
+   (centaur-tabs-unselected :background bg-alt :foreground base4)
+   ;;;; swiper
    (swiper-line-face    :background fw--light-accent
                         :foreground fw-blue-text)
    (swiper-match-face-1 :inherit 'unspecified
@@ -213,14 +219,7 @@ determine the exact padding."
                                    :background fw-teal-blend
                                    :foreground fw-teal-text-sec
                                    :weight 'bold)
-
-   (lazy-highlight       :background fw--light-accent
-                         :foreground fw-blue-text :distant-foreground base0 :weight 'bold)
-
-   ;; tooltip
-   (tooltip :background bg-alt :foreground fg)
-
-   ;; company
+   ;;;; company
    (company-tooltip            :inherit 'tooltip)
    (company-tooltip-annotation            :foreground fw-purple-text-sec )
    (company-tooltip-annotation-selection  :foreground fw-purple-text )
@@ -246,84 +245,106 @@ determine the exact padding."
                                :foreground highlight)
    (company-preview-search     :inherit 'company-tooltip-search)
    (company-template-field     :inherit 'match)
-
-   ;; company-box
+   ;;;; clojure
+   (clojure-keyword-face :foreground fw-orange-text
+                         :background fw-orange-blend)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-property             :foreground fg
+                             :inherit 'italic)
+   (css-proprietary-property :foreground fw-orange-text
+                             :background fw-orange-blend)
+   (css-selector             :foreground fw-purple-text
+                             :background fw-purple-blend)
+   ;;;; company-box
    (company-box-candidate :foreground fg)
-
-   ;; doom modeline
+   ;;;; doom-dashboard
+   (doom-dashboard-banner      :foreground comments)
+   (doom-dashboard-menu-title  :foreground fw-purple-text-sec)
+   (doom-dashboard-menu-desc   :foreground fw-green-text-sec)
+   (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
+   (doom-dashboard-loaded      :foreground fw-orange-text)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-path       :foreground fw-blue-text-sec
                                     :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path )
    (doom-modeline-info              :foreground fw-green-text-sec)
    (doom-modeline-project-dir       :foreground fw-purple-text-sec)
    (doom-modeline-evil-insert-state :foreground fw-teal)
-
-   ;; which-key
-   (which-key-key-face                   :foreground fw-green-text-sec)
-   (which-key-group-description-face     :foreground fw-purple-text-sec)
-   (which-key-command-description-face   :foreground fg)
-   (which-key-local-map-description-face :foreground fw-orange-text-sec)
-   (which-key-separator-face             :background bg-alt
-                                         :foreground comments)
-
-   ;; highlight-numbers-mode
+   ;;;; diff-mode
+   (diff-removed :foreground red
+                 :background fw-red-blend)
+   ;;;; ediff <built-in>
+   (ediff-current-diff-A        :foreground red
+                                :background (doom-lighten red 0.8))
+   (ediff-current-diff-B        :foreground green
+                                :background (doom-lighten green 0.8))
+   (ediff-current-diff-C        :foreground blue
+                                :background (doom-lighten blue 0.8))
+   (ediff-current-diff-Ancestor :foreground teal
+                                :background (doom-lighten teal 0.8))
+   ;;;; elixir
+   (elixir-atom-face :foreground fw-blue-text
+                     :background fw-blue-blend)
+   (elixir-attribute-face :foreground fw-teal-text
+                          :background fw-teal-blend)
+   ;;;; fill column
+   (hl-fill-column-face :foreground fg
+                        :background fw--light-accent)
+   ;;;; git-commit
+   (git-commit-summary :foreground fg)
+   ;;;; highlight-numbers-mode
    (highlight-numbers-number :foreground fw-teal-text
                              :background fw-teal-blend)
-
-   ;; web-mode
-   (web-mode-doctype-face           :background bg
-                                    :foreground comments)
-   (web-mode-html-tag-face          :background fw-purple-blend
-                                    :foreground fw-purple-text)
-   (web-mode-html-attr-name-face    :background bg
-                                    :foreground fg
-                                    :inherit 'italic)
-   (web-mode-html-attr-value-face   :inherit 'font-lock-string-face)
-   (web-mode-html-entity-face       :background fw-orange-blend
-                                    :foreground fw-orange-text
-                                    :inherit 'italic)
-   (web-mode-block-control-face     :background bg
-                                    :foreground fw-base1)
-   (web-mode-html-tag-bracket-face  :background bg
-                                    :foreground fg-alt)
-   (web-mode-symbol-face            :foreground fw-blue-text
-                                    :background fw-blue-blend)
-   (web-mode-string-face            :inherit 'font-lock-string-face)
-
-
-   
-
-   ;; rjsx-mode
-   (rjsx-tag  :background fw-purple-blend
-              :foreground fw-purple-text)
-   (rjsx-text :inherit 'default)
-   (rjsx-tag-bracket-face :background bg
-                          :foreground fg-alt)
-   (rjsx-attr :background bg
-              :foreground fg
-              :inherit 'italic)
-
-
-   ;; highlight-quoted-mode
+   ;;;; highlight-quoted-mode
    (highlight-quoted-symbol :background fw-blue-blend
                             :foreground fw-blue-text)
    (highlight-quoted-quote  :foreground fw-teal-blend
                             :foreground fw-teal-text)
-
-   ;; rainbow-delimiters
-   (rainbow-delimiters-depth-1-face :foreground fw-blue-text-sec)
-   (rainbow-delimiters-depth-2-face :foreground fw-purple-text-sec)
-   (rainbow-delimiters-depth-3-face :foreground fw-green-text-sec)
-   (rainbow-delimiters-depth-4-face :foreground fw-orange-text-sec)
-   (rainbow-delimiters-depth-5-face :foreground fw-teal-text-sec)
-   (rainbow-delimiters-depth-6-face :foreground fw-red-text-sec)
-   (rainbow-delimiters-depth-7-face :foreground fw-green-text-sec)
-   (rainbow-delimiters-unmatched-face  :foreground red
-                                       :weight 'bold
-                                       :inverse-video t)
-   (rainbow-delimiters-mismatched-face :inherit 'rainbow-delimiters-unmatched-face)
-
-   ;; magit
+   ;;;; ivy
+   (ivy-current-match :background fw-base5
+                      :distant-foreground nil
+                      :extend t)
+   (ivy-minibuffer-match-face-1
+    :background nil
+    :foreground fg
+    :weight 'light)
+   (ivy-minibuffer-match-face-2
+    :inherit 'ivy-minibuffer-match-face-1
+    :foreground fw-orange-text
+    :background fw-orange-blend
+    :weight 'semi-bold)
+   (ivy-minibuffer-match-face-3
+    :inherit 'ivy-minibuffer-match-face-2
+    :foreground fw-blue-text
+    :background fw-blue-blend
+    :weight 'semi-bold)
+   (ivy-minibuffer-match-face-4
+    :inherit 'ivy-minibuffer-match-face-2
+    :foreground fw-green-text
+    :background fw-green-blend
+    :weight 'semi-bold)
+   (ivy-minibuffer-match-highlight :foreground bg
+                                   :background fw-purple-text-sec)
+   (ivy-highlight-face :foreground fw-purple-text)
+   (ivy-confirm-face :foreground success)
+   (ivy-match-required-face :foreground error)
+   (ivy-virtual :inherit 'italic :foreground doc-comments)
+   (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
+   ;;;; ivy-posframe
+   (ivy-posframe               :background base0)
+   ;;;; js2-mode
+   (js2-function-param    :foreground fg)
+   (js2-function-call     :foreground fg )
+   (js2-object-property   :foreground fg :inherit 'italic)
+   (js2-jsdoc-tag         :foreground doc-comments)
+   (js2-external-variable :foreground fg)
+   ;;;; lsp-mode
+   (lsp-ui-doc-background      :background base0)
+   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
+   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
+   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
+   ;;;; magit
    (magit-bisect-bad        :background fw-red-blend
                             :foreground fw-red-text)
    (magit-bisect-good       :background fw-green-blend
@@ -441,110 +462,10 @@ determine the exact padding."
    (magit-section-secondary-heading :foreground violet
                                     :weight 'bold
                                     :extend t)
-
-   ;; diff-mode
-   (diff-removed :foreground red
-                 :background fw-red-blend)
-
-   ;; git-commit
-   (git-commit-summary :foreground fg)
-
-   ;; js2-mode
-   (js2-function-param    :foreground fg)
-   (js2-function-call     :foreground fg )
-   (js2-object-property   :foreground fg
-                          :inherit 'italic)
-   (js2-jsdoc-tag         :foreground doc-comments)
-   (js2-external-variable :foreground fg)
-
-   ;; racket
-   (racket-keyword-argument-face :foreground fw-orange-text
-                                 :background fw-orange-blend)
-   (racket-selfeval-face :foreground fw-teal-text
-                         :background fw-teal-blend)
-
-   ;; clojure
-   (clojure-keyword-face :foreground fw-orange-text
-                         :background fw-orange-blend)
-
-   ;; fill column
-   (hl-fill-column-face :foreground fg
-                        :background fw--light-accent)
-
-   ;; elixir
-   (elixir-atom-face :foreground fw-blue-text
-                     :background fw-blue-blend)
-   (elixir-attribute-face :foreground fw-teal-text
-                          :background fw-teal-blend)
-
-   ;; ivy
-   (ivy-current-match :background fw-base5
-                      :distant-foreground nil
-                      :extend t)
-   (ivy-minibuffer-match-face-1
-    :background nil
-    :foreground fg
-    :weight 'light)
-   (ivy-minibuffer-match-face-2
-    :inherit 'ivy-minibuffer-match-face-1
-    :foreground fw-orange-text
-    :background fw-orange-blend
-    :weight 'semi-bold)
-   (ivy-minibuffer-match-face-3
-    :inherit 'ivy-minibuffer-match-face-2
-    :foreground fw-blue-text
-    :background fw-blue-blend
-    :weight 'semi-bold)
-   (ivy-minibuffer-match-face-4
-    :inherit 'ivy-minibuffer-match-face-2
-    :foreground fw-green-text
-    :background fw-green-blend
-    :weight 'semi-bold)
-   (ivy-minibuffer-match-highlight :foreground bg
-                                   :background fw-purple-text-sec)
-   (ivy-highlight-face :foreground fw-purple-text)
-   (ivy-confirm-face :foreground success)
-   (ivy-match-required-face :foreground error)
-   (ivy-virtual :inherit 'italic :foreground doc-comments)
-   (ivy-modified-buffer :inherit 'bold :foreground vc-modified)
-   ;; ------
-
-   ((line-number &override) :foreground (doom-lighten base4 0.15))
-   ((line-number-current-line &override) :foreground base8
-    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight)))
-
-   (mode-line
-    :background modeline-bg
-    :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-inactive
-    :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-property             :foreground fg
-                             :inherit 'italic)
-   (css-proprietary-property :foreground fw-orange-text
-                             :background fw-orange-blend)
-   (css-selector             :foreground fw-purple-text
-                             :background fw-purple-blend)
-   (web-mode-css-property-name-face :foreground fg
-                                    :inherit 'italic)
-
-   ;; markdown-mode
+   ;;;; makefile-*-mode
+   (makefile-targets :foreground fw-purple-text
+                     :background fw-purple-blend)
+   ;;;; markdown-mode
    (markdown-header-face           :inherit 'bold
                                    :foreground fw-purple-text
                                    :background fw-purple-blend)
@@ -577,58 +498,86 @@ determine the exact padding."
    (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
    (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
    (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
-
-   ;; org-mode
+   ;;;; org-mode
    ((outline-1 &override) :foreground red)
    ((outline-2 &override) :foreground orange)
    (org-ellipsis :underline nil :background bg     :foreground red)
    ((org-block-begin-line &override)
     :background fw-orange-blend
     :foreground fw-orange-text
-    :weight 'semi-bold
-    :extend t)
+    :weight 'semi-bold)
    ((org-block &override)
     :background fw-orange-blend
-    :foreground fw-orange-text
-    :extend t)
+    :foreground fw-orange-text)
    ((org-quote &override)
     :background fw-orange-blend
-    :foreground fw-orange-text
-    :extend t)
-
-   ;; web-mode
+    :foreground fw-orange-text)
+   ;;;; racket
+   (racket-keyword-argument-face :foreground fw-orange-text
+                                 :background fw-orange-blend)
+   (racket-selfeval-face :foreground fw-teal-text
+                         :background fw-teal-blend)
+   ;;;; rainbow-delimiters
+   (rainbow-delimiters-depth-1-face :foreground fw-blue-text-sec)
+   (rainbow-delimiters-depth-2-face :foreground fw-purple-text-sec)
+   (rainbow-delimiters-depth-3-face :foreground fw-green-text-sec)
+   (rainbow-delimiters-depth-4-face :foreground fw-orange-text-sec)
+   (rainbow-delimiters-depth-5-face :foreground fw-teal-text-sec)
+   (rainbow-delimiters-depth-6-face :foreground fw-red-text-sec)
+   (rainbow-delimiters-depth-7-face :foreground fw-green-text-sec)
+   (rainbow-delimiters-unmatched-face  :foreground red
+                                       :weight 'bold
+                                       :inverse-video t)
+   (rainbow-delimiters-mismatched-face :inherit 'rainbow-delimiters-unmatched-face)
+   ;;;; rjsx-mode
+   (rjsx-tag  :background fw-purple-blend
+              :foreground fw-purple-text)
+   (rjsx-text :inherit 'default)
+   (rjsx-tag-bracket-face :background bg
+                          :foreground fg-alt)
+   (rjsx-attr :background bg
+              :foreground fg
+              :inherit 'italic)
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue
                                             :foreground bg)
-
-   ;; wgrep
+   (web-mode-css-property-name-face :foreground fg
+                                    :inherit 'italic)
+   (web-mode-doctype-face           :background bg
+                                    :foreground comments)
+   (web-mode-html-tag-face          :background fw-purple-blend
+                                    :foreground fw-purple-text)
+   (web-mode-html-attr-name-face    :background bg
+                                    :foreground fg
+                                    :inherit 'italic)
+   (web-mode-html-attr-value-face   :inherit 'font-lock-string-face)
+   (web-mode-html-entity-face       :background fw-orange-blend
+                                    :foreground fw-orange-text
+                                    :inherit 'italic)
+   (web-mode-block-control-face     :background bg
+                                    :foreground fw-base1)
+   (web-mode-html-tag-bracket-face  :background bg
+                                    :foreground fg-alt)
+   (web-mode-symbol-face            :foreground fw-blue-text
+                                    :background fw-blue-blend)
+   (web-mode-string-face            :inherit 'font-lock-string-face)
+   ;;;; wgrep <built-in>
    (wgrep-face :background base1)
-
-   ;; ediff
-   (ediff-current-diff-A        :foreground red
-                                :background (doom-lighten red 0.8))
-   (ediff-current-diff-B        :foreground green
-                                :background (doom-lighten green 0.8))
-   (ediff-current-diff-C        :foreground blue
-                                :background (doom-lighten blue 0.8))
-   (ediff-current-diff-Ancestor :foreground teal
-                                :background (doom-lighten teal 0.8))
-
-   ;; posframe
-   (ivy-posframe               :background base0)
-
-   ;; lsp
-   (lsp-ui-doc-background      :background base0)
-   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
-
-   ;; doom dashboard
-   (doom-dashboard-banner      :foreground comments)
-   (doom-dashboard-menu-title  :foreground fw-purple-text-sec)
-   (doom-dashboard-menu-desc   :foreground fw-green-text-sec)
-   (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
-   (doom-dashboard-loaded      :foreground fw-orange-text)
-   )
+   ;;;; which-key
+   (which-key-key-face                   :foreground fw-green-text-sec)
+   (which-key-group-description-face     :foreground fw-purple-text-sec)
+   (which-key-command-description-face   :foreground fg)
+   (which-key-local-map-description-face :foreground fw-orange-text-sec)
+   (which-key-separator-face             :background bg-alt :foreground comments))
 
   ;; --- extra variables ---------------------
   ()

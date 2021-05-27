@@ -111,122 +111,62 @@ Can be an integer to determine the exact padding."
     (when doom-zenburn-padded-modeline
       (if (integerp doom-zenburn-padded-modeline) doom-zenburn-padded-modeline 4)))
 
-   (modeline-fg     fg)
-   (modeline-fg-alt base5)
+   (modeline-fg     green+1)
+   (modeline-fg-alt `(,(car fg-alt) ,@(cdr base6)))
 
    (modeline-bg
     (if -modeline-bright
         (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
+      base1))
    (modeline-bg-l
     (if -modeline-bright
         (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt)))
+      bg))
+   (modeline-bg-inactive   `(,(doom-lighten (car modeline-bg) 0.05) ,@(cdr base1)))
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
-   (font-lock-comment-face
-    :foreground comments
+  ;;;; Base theme face overrides
+  ((cursor :foreground fg :background base8)
+   (escape-glyph :foreground yellow :weight 'bold)
+   (font-lock-builtin-face :foreground fg :weight 'bold)
+   (font-lock-comment-delimiter-face :foreground green-2)
+   ((font-lock-comment-face &override)
     :background (if doom-zenburn-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
+   (font-lock-constant-face :foreground green+4)
+   (font-lock-doc-face :foreground green+2)
+   (font-lock-type-face :foreground blue-1)
+   (font-lock-warning-face :foreground yellow-1 :weight 'bold)
+   (font-lock-keyword-face :foreground yellow :weight 'bold)
+   (fringe :foreground fg :background base5)
+   (highlight :background base4)
+   (isearch :freground yellow-2 :weight 'bold :background base6)
+   (isearch-fail :foreground fg :background red-4)
+   (lazy-highlight :foreground yellow-2 :weight 'bold :background base3)
+   ((line-number &override) :foreground base7)
+   ((line-number-current-line &override) :foreground yellow-2)
+   (link :foreground yellow-2 :underline t :weight 'bold)
+   (minibuffer-prompt :foreground yellow)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   (link :foreground yellow-2 :underline t :weight 'bold)
-   (cursor :foreground fg :background base8)
-   (widget-field :foreground fg :background base7)
-   (escape-glyph :foreground yellow :weight 'bold)
-   (fringe :foreground fg :background base5)
-   (highlight :background base4)
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    (success :foreground green :weight 'bold)
-   (warning :foreground orange :weight 'bold)
    (tooltip :foreground fg :background base5)
+   (vertical-border :foreground fg-1) ;; different
+   (warning :foreground orange :weight 'bold)
+   (widget-field :foreground fg :background base7)
 
-   (font-lock-builtin-face :foreground fg :weight 'bold)
-   (font-lock-comment-delimiter-face :foreground green-2)
-   (font-lock-constant-face :foreground green+4)
-   (font-lock-doc-face :foreground green+2)
-   (font-lock-type-face :foreground blue-1)
-   (font-lock-warning-face :foreground yellow-1 :weigth 'bold)
-   (font-lock-keyword-face :foreground yellow :weight 'bold)
-
-   ;; compilation
+   ;;;; compilation
    (compilation-error-face :inherit error :underline t)
    (compilation-info :foreground blue)
    (compilation-line-number :foreground yellow)
    (compilation-warning-face :foreground yellow)
    (compilation-mode-line-exit :foreground green+2 :weight 'bold)
-
-   ;; Completions
-   (completion-annotations :foreground fg-1)
-
-   ;; Customize
-   (custom-variable-tag :foreground blue :weight 'bold)
-   (custom-group-tag :foreground blue :weight 'bold)
-   (custom-state :foreground green+4)
-
-   ;;fill-column
-   (fill-column-indicator :foreground base4 :weight 'semilight)
-
-   ;; hi-lock
-   (hi-green :background green+4 :background base1)
-   (hi-green-b :foreground green+2 :weight 'bold)
-
-
-   ;; isearch
-   (isearch :freground yellow-2 :weight 'bold :background base6)
-   (isearch-fail :foreground fg :background red-4)
-   (lazy-highlight :foreground yellow-2 :weight 'bold :background base3)
-
-   (minibuffer-prompt :foreground yellow)
-
-   (mode-line :foreground green+1 :background base1)
-   (mode-line-inactive :foreground green-2)
-
-   (vertical-border :foreground fg-1) ;; different
-
-   ;; line numbers
-   (line-number :inherit 'default :foreground base7)
-   (line-number-current-line :inherit 'line-number :foreground yellow-2)
-
-   ;; woman
-   (woman :inherit 'font-lock-keyword-face)
-   (woman :inherit 'font-lock-string-face italic)
-
-   ;; centaur-tabs
-   (centaur-tabs-selected :background bg :foreground fg+2)
-   (centaur-tabs-unselected :background base1 :foreground fg-alt)
-   (centaur-tabs-selected-modified :background bg :foreground orange)
-   (centaur-tabs-unselected-modified :background base1 :foreground orange)
-   (centaur-tabs-active-bar-face :background yellow)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected-modified :foreground yellow)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected-modified :foreground yellow)
-
-   ;; calfw
+   ;;;; calfw
    (cfw:face-default-content :foreground green)
    (cfw:face-disable :foreground fg-1)
    (cfw:face :inherit 'shadow)
@@ -241,44 +181,59 @@ Can be an integer to determine the exact padding."
    (cfw:face-today :foreground cyan :weight 'bold)
    (cfw:face-toolbar-button-off :underline nil :inherit 'link)
    (cfw:face-toolbar-button-on :underline nil :inherit 'link-visited)
-
-   ;; diff-hl
+   ;;;; company
+   (company-tooltip-selection  :background base6)
+   (company-scrollbar-fg       :background base7)
+   (company-tooltip-annotation :foreground green :distant-foreground green)
+   ;;;; centaur-tabs
+   (centaur-tabs-selected :background bg :foreground fg+2)
+   (centaur-tabs-unselected :background base1 :foreground fg-alt)
+   (centaur-tabs-selected-modified :background bg :foreground orange)
+   (centaur-tabs-unselected-modified :background base1 :foreground orange)
+   (centaur-tabs-active-bar-face :background yellow)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected-modified :foreground yellow)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected-modified :foreground yellow)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; custom
+   (custom-variable-tag :foreground blue :weight 'bold)
+   (custom-group-tag :foreground blue :weight 'bold)
+   (custom-state :foreground green+4)
+   ;;;; diff-hl
    (diff-hl-change :foreground blue :background blue-2)
    (diff-hl-delete :foreground red+1 :background red-1)
    (diff-hl-insert :foreground green+1 :background green-2)
-
-   ;; Doom modeline
+   ;;;; doom-modeline
    (doom-modeline-bar :background yellow)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; flycheck
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; fill-column
+   (fill-column-indicator :foreground base4 :weight 'semilight)
+   ;;;; flycheck
    (flycheck-error :underline `(:style wave :color ,red-1) :weight 'bold)
    (flycheck-warning :underline `(:style wave :color ,yellow) :weight 'bold)
    (flycheck-info :underline `(:style wave :color ,cyan) :weight 'bold)
-
-   ;; git-commit
+   ;;;; git-commit
    (git-commit-comment-action :foreground green+1 :weight 'bold)
    (git-commit-comment-branch :foreground blue+1 :weight 'bold)
    (git-commit-comment-branch-local :foreground blue+1 :weight 'bold)
-
-   ;; git-gutter
+   ;;;; git-gutter
    (git-gutter:added :foreground green :weight 'bold)
    (git-gutter:deleted :foreground red :weight 'bold)
    (git-gutter:modified :foreground magenta :weight 'bold)
-
-   ;; ivy
-   (ivy-current-match :background bg-alt :weight 'bold)
-   (ivy-minibuffer-match-face-2 :foreground green+4 :weight 'bold)
-
-   ;; helm
+   ;;;; hi-lock
+   (hi-green :background green+4 :background base1)
+   (hi-green-b :foreground green+2 :weight 'bold)
+   ;;;; highlight-symbol
+   (highlight-symbol-face :background base6)
+   ;;;; highlight-thing
+   (highlight-thing :background base6)
+   ;;;; helm
    (helm-header :foreground yellow :background base1 :weight 'bold :extend t)
    (helm-source-header :foreground yellow :background base1 :weight 'bold :extend t)
    (helm-selection :background base5)
@@ -306,8 +261,10 @@ Can be an integer to determine the exact padding."
    (helm-match :foreground orange :background base1 :weight 'bold)
    (helm-swoop-target-line-face :foreground fg :background base6)
    (helm-swoop-target-word-face :foreground yellow :background base6 :weight 'bold)
-
-   ;; js2-mode
+   ;;;; ivy
+   (ivy-current-match :background bg-alt :weight 'bold)
+   (ivy-minibuffer-match-face-2 :foreground green+4 :weight 'bold)
+   ;;;; js2-mode
    (js2-jsdoc-tag :foreground green-2)
    (js2-jsdoc-type :foreground green+2)
    (js2-jsdoc-value :foreground green+3)
@@ -321,23 +278,21 @@ Can be an integer to determine the exact padding."
    (js2-function-call :foreground cyan)
    (js2-private-member :foreground blue-1)
    (js2-keywords :foreground magenta)
-
-   ;; lui
+   ;;;; lui
    (lui-time-stampe-face :foreground blue-1)
    (lui-hilight-face :foreground green+2 :background bg)
    (lui-button-face :inherit 'hover-highlight)
-
-   ;; mic-paren
-   (paren-face-match    :foreground cyan :background bg :weight 'bold)
-   (paren-face-mismatch :foreground bg :background magenta :weight 'bold)
-   (paren-face-no-match :foreground bg :background red :weight 'bold)
-
-   ;; markdown-mode
+   ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; org-mode
+   ;;;; mic-paren
+   (paren-face-match    :foreground cyan :background bg :weight 'bold)
+   (paren-face-mismatch :foreground bg :background magenta :weight 'bold)
+   (paren-face-no-match :foreground bg :background red :weight 'bold)
+   ;;;; minibuffer
+   (completion-annotations :foreground fg-1)
+   ;;;; outline <built-in>
    (outline-1 :foreground orange)
    (outline-2 :foreground green+4)
    (outline-3 :foreground blue-1)
@@ -346,48 +301,42 @@ Can be an integer to determine the exact padding."
    (outline-6 :foreground green+2)
    (outline-7 :foreground red-4)
    (outline-8 :foreground blue-4)
-
-   ;; rpm-model
+   ;;;; rpm-model
    (rpm-doc-face :foreground green)
    (rpm-ghost-face :foreground red)
    (rpm-package-face :foreground red)
    (rpm-package-section-face :foreground yellow)
-
-   ;; rst-mode
+   ;;;; rst-mode <built-in>
    (rst-level-1-face :foreground orange)
    (rst-level-2-face :foreground green+1)
    (rst-level-3-face :foreground blue-1)
    (rst-level-4-face :foreground yellow-2)
    (rst-level-5-face :foreground cyan)
    (rst-level-6-face :foreground green-2)
-
-   ;; solaire
+   ;;;; solaire-mode
    (solaire-default-face :inherit 'default :background base2)
-   (solaire-minibuffer-face :inherit 'default :background base2)
    (solaire-hl-line-face :inherit 'hl-line :background bg)
-   (solaire-org-hide-face :inherit 'org-hide :background bg)
-
-   ;; web-mode
+   (solaire-minibuffer-face :inherit 'default :background base2)
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; web-mode
    (web-mode-html-attr-name-face :foreground orange)
    (web-mode-css-pseudo-class-face :foreground green+3 :weight 'bold)
    (web-mode-css-at-rule-face :foreground orange )
    (web-mode-function-name-face :foreground blue)
    (web-mode-html-attr-value-face :inherit 'font-lock-string-face)
    (web-mode-whitespaces-face :background red)
-
-   ;; company
-   (company-tooltip-selection  :background base6)
-   (company-scrollbar-fg       :background base7)
-   (company-tooltip-annotation :foreground green :distant-foreground green)
-
-   ;; highlight-symbol
-   (highlight-symbol-face :background base6)
-
-   ;; highlight-thing
-   (highlight-thing :background base6))
+   ;;;; woman <built-in>
+   (woman :inherit 'font-lock-keyword-face)
+   (woman :inherit 'font-lock-string-face italic))
 
   ;; --- extra variables ---------------------
-  ()
-  )
+  ())
 
 ;;; doom-zenburn-theme.el ends here

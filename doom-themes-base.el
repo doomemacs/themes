@@ -1,9 +1,10 @@
 ;;; doom-themes-base.el -*- lexical-binding: t; -*-
 
+;; These are applied to every Doom theme defined with `def-doom-theme', as a set
+;; of reasonble defaults. They are intended to be overidden where it makes
+;; sense to.
 (defvar doom-themes-base-faces
-  '(
-    ;;;; --- Base faces -------------------------
-    (bold        :weight 'bold :foreground (unless bold base8))
+  '((bold        :weight 'bold :foreground (unless bold base8))
     (bold-italic :inherit '(bold italic))
     (italic      :slant  'italic)
     (escape-glyph :foreground cyan)
@@ -492,7 +493,7 @@
     (evil-snipe-first-match-face :foreground highlight :background dark-blue :weight 'bold)
     (evil-snipe-matches-face     :foreground highlight :underline t :weight 'bold)
     ;;;; evil-googles
-    (evil-goggles-default-face :inherit 'region)
+    (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
     ;;;; eyebrowse
     (eyebrowse-mode-line-active :weight 'bold :foreground highlight)
     ;;;; flycheck
@@ -718,10 +719,8 @@
     ;;;; ivy-posframe
     (ivy-posframe :background (doom-darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
-
     ;;;; selectrum
     (selectrum-current-candidate :background region :distant-foreground nil :extend t)
-
     ;;;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
@@ -780,6 +779,7 @@
     (magit-bisect-bad        :foreground red)
     (magit-bisect-good       :foreground green)
     (magit-bisect-skip       :foreground orange)
+    (magit-blame-hash        :foreground cyan)
     (magit-blame-date        :foreground red)
     (magit-blame-heading     :foreground orange :background base3 :extend t)
     (magit-branch-current    :foreground blue)
@@ -797,15 +797,16 @@
     (magit-diff-file-heading-selection :foreground magenta               :background dark-blue :weight 'bold :extend t)
     (magit-diff-hunk-heading           :foreground bg                    :background (doom-blend violet bg 0.3) :extend t)
     (magit-diff-hunk-heading-highlight :foreground bg                    :background violet :weight 'bold :extend t)
+    (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
     (magit-diff-removed                :foreground (doom-darken red 0.2) :background (doom-blend red base3 0.1) :extend t)
     (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red base3 0.2) :weight 'bold :extend t)
-    (magit-diff-lines-heading          :foreground yellow :background red :extend t :extend t)
     (magit-diffstat-added              :foreground green)
     (magit-diffstat-removed            :foreground red)
     (magit-dimmed :foreground comments)
     (magit-hash :foreground comments)
     (magit-header-line :background dark-blue :foreground base8 :weight 'bold
                        :box `(:line-width 3 :color ,dark-blue))
+    (magit-filename :foreground violet)
     (magit-log-author :foreground orange)
     (magit-log-date :foreground blue)
     (magit-log-graph :foreground comments)
@@ -824,6 +825,7 @@
     (magit-section-heading :foreground blue :weight 'bold :extend t)
     (magit-section-heading-selection :foreground orange :weight 'bold :extend t)
     (magit-section-highlight :inherit 'hl-line)
+    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     (magit-sequence-drop :foreground red)
     (magit-sequence-head :foreground blue)
     (magit-sequence-part :foreground orange)
@@ -835,8 +837,6 @@
     (magit-signature-revoked :foreground magenta)
     (magit-signature-untrusted :foreground yellow)
     (magit-tag :foreground yellow)
-    (magit-filename :foreground violet)
-    (magit-section-secondary-heading :foreground violet :weight 'bold :extend t)
     ;;;; make-mode <built-in> <modes:makefile-mode,makefile-automake-mode,makefile-makepp-mode,makefile-gmake-mode,makefile-imake-mode,makefile-bsdmake-mode>
     (makefile-targets :foreground blue)
     ;;;; man <built-in> <mode:Man-mode>
@@ -975,9 +975,9 @@
     (objed-hl        :inherit 'region :background (doom-blend region bg 0.5))
     ;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
-    (org-block                    :background base3           :extend t)
-    (org-block-background         :background base3           :extend t)
-    (org-block-begin-line         :foreground comments        :background base3 :extend t)
+    (org-block                    :background base3    :extend t)
+    (org-block-background         :background base3    :extend t)
+    (org-block-begin-line         :inherit 'org-block  :foreground comments)
     (org-block-end-line           :inherit 'org-block-begin-line)
     (org-checkbox                 :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
@@ -988,12 +988,11 @@
     (org-document-info            :foreground builtin)
     (org-document-title           :foreground builtin         :weight 'bold)
     (org-done                     :inherit 'org-headline-done :bold 'inherit)
-    (org-ellipsis                 :underline nil              :background nil   :foreground grey)
+    (org-ellipsis                 :underline nil              :background nil :foreground comments)
     (org-footnote                 :foreground orange)
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
-    ((solaire-org-hide-face &inherit org-hide))
     (org-latex-and-related        :foreground base8           :weight 'bold)
     (org-list-dt                  :foreground highlight)
     (org-meta-line                :foreground doc-comments)
@@ -1094,6 +1093,10 @@
     (rainbow-delimiters-depth-5-face :foreground violet)
     (rainbow-delimiters-depth-6-face :foreground yellow)
     (rainbow-delimiters-depth-7-face :foreground teal)
+    (rainbow-delimiters-depth-8-face :foreground blue)
+    (rainbow-delimiters-depth-9-face :foreground magenta)
+    (rainbow-delimiters-base-error-face :inherit 'rainbow-delimiters-base-face :foreground error)
+    (rainbow-delimiters-base-face :inherit 'default)
     (rainbow-delimiters-unmatched-face  :foreground red :weight 'bold :inverse-video t)
     (rainbow-delimiters-mismatched-face :inherit 'rainbow-delimiters-unmatched-face)
     ;;;; re-builder <built-in>
@@ -1290,7 +1293,7 @@
     (web-mode-keyword-face           :foreground keywords)
     (web-mode-string-face            :foreground strings)
     (web-mode-type-face              :foreground type)
-    ;;;; wgrep
+    ;;;; wgrep <built-in>
     (wgrep-face :weight 'bold :foreground green :background base5)
     (wgrep-delete-face :foreground base3 :background red)
     (wgrep-done-face   :foreground blue)
@@ -1303,7 +1306,7 @@
     (which-key-group-description-face     :foreground violet)
     (which-key-command-description-face   :foreground blue)
     (which-key-local-map-description-face :foreground magenta)
-    ;;;; whitespace
+    ;;;; whitespace <built-in>
     (whitespace-empty    :background base3)
     (whitespace-space    :foreground base4)
     (whitespace-newline  :foreground base4)

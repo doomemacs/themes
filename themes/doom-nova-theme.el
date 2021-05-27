@@ -84,18 +84,51 @@ determine the exact padding."
           doom-nova-padded-modeline
         4))))
 
-  ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground violet :bold nil)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-   (doom-modeline-bar :inherit 'mode-line-highlight)
 
-   (fringe :inherit 'default :foreground "#6c808d")
-   (region :background (doom-lighten current-line 0.1) :foreground nil :distant-foreground nil :weight 'bold)
-
+  ;;;; Base theme face overrides
+  ((fringe :inherit 'default :foreground "#6c808d")
    ((line-number &override) :foreground "#6c808d")
    ((line-number-current-line &override) :foreground highlight :weight 'bold)
+   (hl-line :background current-line)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+   (region :background (doom-lighten current-line 0.1) :foreground nil :distant-foreground nil :weight 'bold)
 
-   ;; rainbow-delimiters
+   ;;;; company
+   (company-tooltip            :inherit 'tooltip :background (doom-lighten bg 0.075))
+   (company-tooltip-selection  :background base5 :foreground base8 :weight 'bold)
+   (company-tooltip-common     :foreground cyan :distant-foreground cyan :weight 'bold)
+   (company-tooltip-search     :background highlight :foreground base1 :weight 'ultra-bold)
+   (company-tooltip-search-selection :background highlight :foreground base1 :weight 'ultra-bold)
+   (company-tooltip-mouse      :background base6 :foreground bg :distant-foreground fg)
+   ;;;; doom-modeline
+   (doom-modeline-buffer-path       :foreground violet :bold nil)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   (doom-modeline-bar :inherit 'mode-line-highlight)
+   ;;;; ediff <built-in>
+   (ediff-fine-diff-A    :background base3 :weight 'bold)
+   (ediff-current-diff-A :inherit 'hl-line)
+   (ediff-even-diff-A    :background base3)
+   ;;;; helm
+   (helm-selection :background current-line :weight 'bold)
+   (helm-match     :foreground highlight)
+   (helm-source-header :foreground base0 :background base6)
+   ;;;; highlight-thing highlight-symbol
+   (highlight-symbol-face :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
+   ;;;; highlight-thing
+   (highlight-thing :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
+   ;;;; mic-paren
+   ((paren-face-match &override)    :foreground red :background (doom-darken violet 0.4))
+   ((paren-face-mismatch &override) :foreground (doom-darken red 0.4) :background cyan)
+   ;;;; ivy
+   (ivy-current-match :background current-line :distant-foreground base0)
+   ;;;; org <built-in>
+   (org-headline-done :foreground base7)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
@@ -103,54 +136,11 @@ determine the exact padding."
    (rainbow-delimiters-depth-5-face :foreground magenta)
    (rainbow-delimiters-depth-6-face :foreground yellow)
    (rainbow-delimiters-depth-7-face :foreground teal)
-
-   (hl-line :background current-line)
-   (solaire-hl-line-face :inherit 'hl-line)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
-   ;; helm
-   (helm-selection :background current-line :weight 'bold)
-   (helm-match     :foreground highlight)
-   (helm-source-header :foreground base0 :background base6)
-
-   ;; ivy
-   (ivy-current-match :background current-line :distant-foreground base0)
-
-   ;; company
-   (company-tooltip            :inherit 'tooltip :background (doom-lighten bg 0.075))
-   (company-tooltip-selection  :background base5 :foreground base8 :weight 'bold)
-   (company-tooltip-common     :foreground cyan :distant-foreground cyan :weight 'bold)
-   (company-tooltip-search     :background highlight :foreground base1 :weight 'ultra-bold)
-   (company-tooltip-search-selection :background highlight :foreground base1 :weight 'ultra-bold)
-   (company-tooltip-mouse      :background base6 :foreground bg :distant-foreground fg)
-
-   ;; ediff
-   (ediff-fine-diff-A    :background base3 :weight 'bold)
-   (ediff-current-diff-A :inherit 'hl-line)
-   (ediff-even-diff-A    :background base3)
-
-   ;; highlight-thing highlight-symbol
-   (highlight-symbol-face :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
-
-   ;; highlight-thing
-   (highlight-thing :background (doom-lighten current-line 0.1) :distant-foreground fg-alt)
-
-   ;; show-paren
-   ((paren-face-match &override)    :foreground red :background (doom-darken violet 0.4))
-   ((paren-face-mismatch &override) :foreground (doom-darken red 0.4) :background cyan)
-
-   ;; org-mode
-   (org-headline-done :foreground base7))
+   ;;;; solaire-mode
+   (solaire-hl-line-face :inherit 'hl-line))
 
   ;; --- variables --------------------------
   ;; ()
   )
 
-(provide 'doom-nova-theme)
 ;;; doom-nova-theme.el ends here

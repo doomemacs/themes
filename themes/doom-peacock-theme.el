@@ -103,27 +103,28 @@ determine the exact padding."
     (if -modeline-bright
         (doom-darken bg 0.475)
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive   `(,(doom-darken (car bg) 0.1) ,@(cdr base1)))
    (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (font-lock-comment-face
+  ;;;; Base theme face overrides
+  ((font-lock-comment-face
     :foreground comments
     :background (if doom-peacock-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
-
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground base7)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
-   ;; tooltip
-   (tooltip              :background bg-alt :foreground fg)
-
-   ;; company
+   ;;;; company
    (company-tooltip            :inherit 'tooltip)
    (company-tooltip-common                           :foreground highlight)
    (company-tooltip-search     :background highlight :foreground bg :distant-foreground fg)
@@ -136,27 +137,27 @@ determine the exact padding."
    (company-preview-common     :background base3 :foreground magenta)
    (company-preview-search     :inherit 'company-tooltip-search)
    (company-template-field     :inherit 'match)
-
-   ;; popup
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ;;;; popup
    (popup-face :inherit 'tooltip)
    (popup-selection-face :inherit 'tooltip)
-
-   ;; pos-tip
-   (popup          :inherit 'tooltip)
+   ;;;; pos-tip
    (popup-tip-face :inherit 'tooltip)
-
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
+   ;;;; rjsx-mode
+   (rjsx-tag :foreground teal)
+   (rjsx-attr :foreground red)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -164,24 +165,7 @@ determine the exact padding."
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; rjsx-mode
-   (rjsx-tag :foreground teal)
-   (rjsx-attr :foreground red)
-   )
-
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
 
   ;; --- extra variables ---------------------
   ;; ()

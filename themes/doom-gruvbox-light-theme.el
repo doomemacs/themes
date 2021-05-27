@@ -136,50 +136,35 @@ background contrast. All other values default to \"medium\"."
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((centaur-tabs-unselected :background bg-alt :foreground base4)
-   (font-lock-comment-face
-    :foreground comments
-    :background (if doom-gruvbox-light-comment-bg base0))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments
-    :slant 'italic)
 
-   (cursor :background base4)
-
-   ;; Line number
-   ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground orange)
-   (linum :foreground base4)
-   (linum-highlight-face :foreground orange)
-   (linum-relative-current-face :foreground orange)
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
-   (lazy-highlight    :background base2  :foreground base8 :distant-foreground base0 :weight 'bold)
+  ;;;; Base theme face overrides
+  ((cursor :background base4)
+   ((font-lock-comment-face &override) :background (if doom-gruvbox-light-comment-bg base0))
+   ((font-lock-doc-face &override) :slant 'italic)
    (isearch           :foreground "black" :background orange)
    (isearch-fail      :foreground fg :background red)
-
+   (lazy-highlight    :background base2  :foreground base8 :distant-foreground base0 :weight 'bold)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground orange)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+   (tooltip :background base1 :foreground base6)
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; company-mode
+   ;;;; anzu
+   (anzu-mode-line         :foreground yellow :weight 'bold)
+   (anzu-match-1           :background green)
+   (anzu-match-2           :background faded-yellow)
+   (anzu-match-3           :background aquamarine4)
+   (anzu-replace-to        :foreground yellow)
+   (anzu-replace-highlight :inherit 'isearch)
+   ;;;; centaur-tabs
+   (centaur-tabs-unselected :background bg-alt :foreground base4)
+   ;;;; company
    (company-scrollbar-bg                      :background base1)
    (company-scrollbar-fg                      :background bg-alt)
    (company-tooltip                           :background bg-alt)
@@ -193,25 +178,13 @@ background contrast. All other values default to \"medium\"."
    (company-preview-search                    :background turquoise4)
    (company-template-field                    :foreground "black" :background yellow)
    (company-echo-common                       :foreground faded-red)
-
-   ;; diredp
-   (diredp-file-name :foreground base5)
-   (diredp-file-suffix :foreground light4)
-   (diredp-compressed-file-suffix :foreground faded-blue)
-   (diredp-dir-name :foreground faded-blue)
-   (diredp-symlink :foreground orange)
-   (diredp-date-time :foreground light3)
-   (diredp-number :foreground faded-blue)
-   (diredp-no-priv :foreground base4)
-   (diredp-other-priv :foreground base2)
-   (diredp-rare-priv :foreground base4)
-   (diredp-ignored-file-name :foreground base5)
-
-   (diredp-dir-priv :foreground faded-blue :background dark-blue)
-   ((diredp-dir-exec-priv &inherit diredp-dir-priv))
-   (diredp-link-priv :foreground faded-aqua)
-
-   ;; diredfl
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; diredfl
    (diredfl-autofile-name :foreground base5)
    (diredfl-compressed-file-name :foreground base5)
    (diredfl-compressed-file-suffix :foreground faded-blue)
@@ -224,41 +197,55 @@ background contrast. All other values default to \"medium\"."
    (diredfl-number :foreground yellow)
    (diredfl-other-priv :foreground violet)
    (diredfl-rare-priv :foreground base5)
-
-   ;; doom dashboard
+   ;;;; diredp
+   (diredp-file-name :foreground base5)
+   (diredp-file-suffix :foreground light4)
+   (diredp-compressed-file-suffix :foreground faded-blue)
+   (diredp-dir-name :foreground faded-blue)
+   (diredp-symlink :foreground orange)
+   (diredp-date-time :foreground light3)
+   (diredp-number :foreground faded-blue)
+   (diredp-no-priv :foreground base4)
+   (diredp-other-priv :foreground base2)
+   (diredp-rare-priv :foreground base4)
+   (diredp-ignored-file-name :foreground base5)
+   (diredp-dir-priv :foreground faded-blue :background dark-blue)
+   ((diredp-dir-exec-priv &inherit diredp-dir-priv))
+   (diredp-link-priv :foreground faded-aqua)
+   ;;;; doom-dashboard
    (doom-dashboard-banner      :foreground (doom-darken base4 0.3))
    (doom-dashboard-menu-title  :foreground green)
    (doom-dashboard-menu-desc   :foreground green)
    (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
    (doom-dashboard-loaded      :foreground yellow)
-
-   ;; diffs
+   ;;;; diff-mode
    (diff-changed                   :background nil :foreground base6)
    (diff-removed                   :background nil :foreground red)
    (diff-indicator-changed         :inherit 'diff-changed)
    (diff-indicator-added           :inherit 'diff-added)
    (diff-indicator-removed         :inherit 'diff-removed)
-
-   ;; ediff
+   ;;;; ediff <built-in>
    (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
    (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
    (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
    (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
-
-   ;; flycheck
+   ;;;; elfeed
+   (elfeed-search-title-face :foreground grey)
+   (elfeed-search-date-face :inherit 'font-lock-builtin-face :underline t)
+   (elfeed-search-tag-face :inherit 'font-lock-keyword-face)
+   (elfeed-search-unread-count-face :inherit 'font-lock-comment-face)
+   (elfeed-search-filter-face :inherit 'font-lock-string-face)
+   ;;;; flycheck
    (flycheck-info :underline `(:style wave :color ,blue))
-
-   ;; git-gutter
+   ;;;; git-gutter
    (git-gutter:modified :foreground faded-blue :background blue)
    (git-gutter:added    :foreground faded-green :background green)
    (git-gutter:deleted  :foreground faded-red :backgrond red)
-
-   ;; git-gutter+
+   ;;;; git-gutter+
    (git-gutter+-modified :foreground faded-blue :background blue)
    (git-gutter+-added    :foreground faded-green :background green)
    (git-gutter+-deleted  :foreground faded-red :backgrond red)
-
-   ;; helm
+   ;;;; helm
    (helm-candidate-number       :background blue :foreground bg)
    (helm-M-x-key                :foreground orange)
    (helm-action                 :foreground base8 :underline t)
@@ -302,17 +289,31 @@ background contrast. All other values default to \"medium\"."
    (helm-separator              :foreground faded-red)
    (helm-source-header          :foreground base5)
    (helm-visible-mark           :foreground "black" :background light3)
-
-   ;; ivy
+   ;;;; ivy
    (ivy-minibuffer-match-face-1     :foreground orange)
    (ivy-minibuffer-match-face-2     :foreground yellow)
    (ivy-minibuffer-match-face-3     :foreground faded-orange)
    (ivy-minibuffer-match-face-4     :foreground faded-yellow)
-
-   ;; posframe
+   ;;;; ivy-posframe
    (ivy-posframe               :background bg-alt)
-
-   ;; magit
+   ;;;; js2-mode
+   (js2-warning                    :underline `(:style wave :color ,yellow))
+   (js2-error                      :underline `(:style wave :color ,red))
+   (js2-external-variable          :underline `(:style wave :color ,cyan))
+   (js2-jsdoc-tag                  :background nil :foreground grey  )
+   (js2-jsdoc-type                 :background nil :foreground light4)
+   (js2-jsdoc-value                :background nil :foreground light3)
+   (js2-function-param             :background nil :foreground cyan)
+   (js2-function-call              :background nil :foreground blue)
+   (js2-instance-member            :background nil :foreground orange)
+   (js2-private-member             :background nil :foreground yellow)
+   (js2-private-function-call      :background nil :foreground faded-aqua)
+   (js2-jsdoc-html-tag-name        :background nil :foreground light4)
+   (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
+   ;;;; lsp-mode
+   (lsp-ui-doc-background      :background base2)
+   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
+   ;;;; magit
    (magit-bisect-bad                      :foreground faded-red)
    (magit-bisect-good                     :foreground faded-green)
    (magit-bisect-skip                     :foreground faded-yellow)
@@ -367,89 +368,7 @@ background contrast. All other values default to \"medium\"."
    (magit-signature-revoked               :foreground violet)
    (magit-signature-untrusted             :foreground blue)
    (magit-tag                             :foreground yellow)
-
-   ;; message-mode
-   (message-header-cc :inherit 'font-lock-variable-name-face)
-   (message-header-subject :foreground orange :weight 'bold)
-   (message-header-other :inherit 'font-lock-variable-name-face)
-   (message-header-name :inherit 'font-lock-keyword-face)
-   (message-cited-text :inherit 'font-lock-comment-face)
-   (message-mml :foregrond faded-green :weight 'bold)
-
-   ;; popup
-   (popup-face :foreground base6  :background base1)
-   (popup-menu-selection-face :foreground fg :background faded-green)
-   (popup-menu-mouse-face :foreground fg :background faded-green)
-   (popup-tip-face :foreground base5 :background base2)
-
-   ;; rainbow-delimiters
-   (rainbow-delimiters-depth-3-face :foreground delimiter-3)
-   (rainbow-delimiters-depth-4-face :foreground faded-orange)
-   (rainbow-delimiters-depth-7-face :foreground delimiter-3)
-   (rainbox-delimiters-depth-8-face :foreground faded-orange)
-   (rainbow-delimiters-depth-11-face :foreground delimiter-3)
-   (rainbox-delimiters-depth-12-face :foreground faded-orange)
-   (rainbow-delimiters-unmatched-face: :foreground fg :background 'nil)
-
-   ;; swiper
-   (swiper-line-face    :background base3 :foreground base0)
-   (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
-   (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
-   (swiper-match-face-3 :inherit 'unspecified :background violet :foreground base1 :weight 'bold)
-   (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base2 :weight 'bold)
-   (swiper-background-match-face-1 :inherit 'unspecified :background base2)
-   (swiper-background-match-face-2 :inherit 'unspecified :background base3)
-   (swiper-background-match-face-3 :inherit 'unspecified :background base4)
-   (swiper-background-match-face-4 :inherit 'unspecified :background base5)
-
-   ;; whitespace
-   (whitespace-trailing :foreground red :background base1)
-   (whitespace-line :foreground red :background base1)
-   (whitespace-indentation :foreground base4 :background bg)
-   (whitespace-empty :foreground 'nil :background 'nil)
-
-   ;; major-mode faces -------------------
-
-   ;; anzu
-   (anzu-mode-line         :foreground yellow :weight 'bold)
-   (anzu-match-1           :background green)
-   (anzu-match-2           :background faded-yellow)
-   (anzu-match-3           :background aquamarine4)
-   (anzu-replace-to        :foreground yellow)
-   (anzu-replace-highlight :inherit 'isearch)
-
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; elfeed
-   (elfeed-search-title-face :foreground grey)
-   (elfeed-search-date-face :inherit 'font-lock-builtin-face :underline t)
-   (elfeed-search-tag-face :inherit 'font-lock-keyword-face)
-   (elfeed-search-unread-count-face :inherit 'font-lock-comment-face)
-   (elfeed-search-filter-face :inherit 'font-lock-string-face)
-
-   ;; js2
-   (js2-warning                    :underline `(:style wave :color ,yellow))
-   (js2-error                      :underline `(:style wave :color ,red))
-   (js2-external-variable          :underline `(:style wave :color ,cyan))
-   (js2-jsdoc-tag                  :background nil :foreground grey  )
-   (js2-jsdoc-type                 :background nil :foreground light4)
-   (js2-jsdoc-value                :background nil :foreground light3)
-   (js2-function-param             :background nil :foreground cyan)
-   (js2-function-call              :background nil :foreground blue)
-   (js2-instance-member            :background nil :foreground orange)
-   (js2-private-member             :background nil :foreground yellow)
-   (js2-private-function-call      :background nil :foreground faded-aqua)
-   (js2-jsdoc-html-tag-name        :background nil :foreground light4)
-   (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
-
-   ;; lsp
-   (lsp-ui-doc-background      :background base2)
-   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
-
-   ;; markdown-mode
+   ;;;; markdown-mode
    (markdown-markup-face     :foreground base5)
    (markdown-header-face     :inherit 'bold :foreground red)
    ((markdown-code-face &override)       :background base1)
@@ -460,15 +379,39 @@ background contrast. All other values default to \"medium\"."
    (markdown-header-face-4          :foreground red)
    (markdown-header-face-5          :foreground green)
    (markdown-header-face-6          :foreground dark-cyan)
-
-   ;; mu4e
+   ;;;; message <built-in>
+   (message-header-cc :inherit 'font-lock-variable-name-face)
+   (message-header-subject :foreground orange :weight 'bold)
+   (message-header-other :inherit 'font-lock-variable-name-face)
+   (message-header-name :inherit 'font-lock-keyword-face)
+   (message-cited-text :inherit 'font-lock-comment-face)
+   (message-mml :foregrond faded-green :weight 'bold)
+   ;;;; mu4e
    (mu4e-highlight-face :foreground green)
    (mu4e-unread-face :foreground blue :weight 'bold)
    (mu4e-header-key-face :foreground green :weight 'bold)
-
-   ;; org-mode
+   ;;;; outline <built-in>
    ((outline-1 &override) :foreground red)
    ((outline-2 &override) :foreground orange)
+   ;;;; org <built-in>
+   (org-agenda-date-today       :foreground base7 :weight 'bold :italic t)
+   (org-agenda-done             :foreground cyan)
+   (org-agenda-structure        :inherit 'font-lock-comment-face)
+   (org-archived                :foreground base7 :weight 'bold)
+   (org-block                   :background base1 :extend t)
+   (org-block-begin-line        :background base2 :extend t)
+   (org-block-end-line          :background base2 :extend t)
+   (org-date                    :foreground blue :underline t)
+   (org-deadline-announce       :foreground faded-red)
+   (org-document-info           :foreground faded-blue)
+   (org-document-title          :foreground faded-blue)
+   (org-done                    :foreground cyan :weight 'bold :bold t)
+   (org-drawer                  :inherit 'font-lock-function-name-face)
+   (org-ellipsis                :foreground light4)
+   (org-footnote                :foreground cyan :underline t)
+   (org-formula                 :foreground yellow)
+   (org-headline-done           :foreground cyan)
+   (org-latex-and-related       :foreground blue)
    (org-level-1                 :foreground blue)
    (org-level-2                 :foreground yellow)
    (org-level-3                 :foreground violet)
@@ -477,37 +420,18 @@ background contrast. All other values default to \"medium\"."
    (org-level-6                 :foreground cyan)
    (org-level-7                 :foreground faded-blue)
    (org-level-8                 :foreground orange)
-   (org-drawer                  :inherit 'font-lock-function-name-face)
-   ;; (org-column   :background )
-   (org-warning                 :foreground red :weight 'bold :bold t)
-   (org-archived                :foreground base7 :weight 'bold)
    (org-link                    :foreground faded-aqua :underline t)
-   (org-footnote                :foreground cyan :underline t)
-   (org-ellipsis                :foreground light4)
-   (org-date                    :foreground blue :underline t)
-   (org-sexp-date               :foreground faded-blue :underline t)
-   (org-tag                     :bold t :weight 'bold)
-   (org-todo                    :foreground red :weight 'bold :bold t)
-   (org-done                    :foreground cyan :weight 'bold :bold t)
-   (org-agenda-done             :foreground cyan)
-   (org-headline-done           :foreground cyan)
-   (org-table                   :foreground blue)
-   (org-block                   :background base1 :extend t)
-   (org-block-begin-line        :background base2 :extend t)
-   (org-block-end-line          :background base2 :extend t)
-   (org-formula                 :foreground yellow)
-   (org-document-title          :foreground faded-blue)
-   (org-document-info           :foreground faded-blue)
-   (org-agenda-structure        :inherit 'font-lock-comment-face)
-   (org-agenda-date-today       :foreground base7 :weight 'bold :italic t)
    (org-scheduled               :foreground yellow)
-   (org-scheduled-today         :foreground blue)
    (org-scheduled-previously    :foreground faded-red)
-   (org-upcoming-deadline       :inherit 'font-lock-keyword-face)
-   (org-deadline-announce       :foreground faded-red)
+   (org-scheduled-today         :foreground blue)
+   (org-sexp-date               :foreground faded-blue :underline t)
+   (org-table                   :foreground blue)
+   (org-tag                     :bold t :weight 'bold)
    (org-time-grid               :foreground faded-orange)
-   (org-latex-and-related       :foreground blue)
-
+   (org-todo                    :foreground red :weight 'bold :bold t)
+   (org-upcoming-deadline       :inherit 'font-lock-keyword-face)
+   (org-warning                 :foreground red :weight 'bold :bold t)
+   ;;;; org-habit
    (org-habit-clear-face          :background faded-blue)
    (org-habit-clear-future-face   :background blue)
    (org-habit-ready-face          :background faded-green)
@@ -516,22 +440,49 @@ background contrast. All other values default to \"medium\"."
    (org-habit-alert-future-face   :background yellow)
    (org-habit-overdue-face        :background faded-red)
    (org-habit-overdue-future-face :background red)
-
-   ;; tooltip
-   (tooltip :background base1 :foreground base6)
-
-   ;; web-mode
+   ;;;; popup
+   (popup-face :foreground base6  :background base1)
+   (popup-menu-selection-face :foreground fg :background faded-green)
+   (popup-menu-mouse-face :foreground fg :background faded-green)
+   (popup-tip-face :foreground base5 :background base2)
+   ;;;; rainbow-delimiters
+   (rainbow-delimiters-depth-3-face :foreground delimiter-3)
+   (rainbow-delimiters-depth-4-face :foreground faded-orange)
+   (rainbow-delimiters-depth-7-face :foreground delimiter-3)
+   (rainbox-delimiters-depth-8-face :foreground faded-orange)
+   (rainbow-delimiters-depth-11-face :foreground delimiter-3)
+   (rainbox-delimiters-depth-12-face :foreground faded-orange)
+   (rainbow-delimiters-unmatched-face: :foreground fg :background 'nil)
+   ;;;; swiper
+   (swiper-line-face    :background base3 :foreground base0)
+   (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
+   (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
+   (swiper-match-face-3 :inherit 'unspecified :background violet :foreground base1 :weight 'bold)
+   (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base2 :weight 'bold)
+   (swiper-background-match-face-1 :inherit 'unspecified :background base2)
+   (swiper-background-match-face-2 :inherit 'unspecified :background base3)
+   (swiper-background-match-face-3 :inherit 'unspecified :background base4)
+   (swiper-background-match-face-4 :inherit 'unspecified :background base5)
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
-
-   ;; wgrep
+   ;;;; wgrep <built-in>
    (wgrep-face :background base1)
-
-
-
-   )
+   ;;;; whitespace <built-in>
+   (whitespace-trailing :foreground red :background base1)
+   (whitespace-line :foreground red :background base1)
+   (whitespace-indentation :foreground base4 :background bg)
+   (whitespace-empty :foreground 'nil :background 'nil))
 
   ;; --- extra variables ---------------------
-  ()
-  )
+  ())
 
 ;;; doom-gruvbox-light-theme.el ends here

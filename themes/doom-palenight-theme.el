@@ -79,53 +79,43 @@ Can be an integer to determine the exact padding."
     (when doom-palenight-padded-modeline
       (if (integerp doom-palenight-padded-modeline) doom-palenight-padded-modeline 4))))
 
-  ;; --- base faces ------------------------
-  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg :bold bold)
-   (doom-modeline-buffer-path       :foreground green :weight 'bold)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-
+  ;;;; Base theme face overrides
+  ((lazy-highlight :background base4 :foreground fg :weight 'bold)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-
    (mode-line-inactive
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+   (tooltip :background (doom-darken bg-alt 0.2) :foreground fg)
 
-   (fringe :background base2)
-
-   ;; --- major-mode faces ------------------------
-   ;; man-mode
-   (Man-overstrike :inherit 'bold :foreground magenta)
-   (Man-underline :inherit 'underline :foreground blue)
-
-   ;; org-mode
-   ((org-block &override) :background base2)
-   ((org-block-background &override) :background base2)
-   ((org-block-begin-line &override) :background base2)
-
-   ;; --- plugin faces -------------------
-   ;; css-mode / scss-mode
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-
-   ;; dired-k
+   ;;;; dired-k
    (dired-k-commited :foreground base4)
    (dired-k-modified :foreground vc-modified)
    (dired-k-ignored :foreground cyan)
    (dired-k-added    :foreground vc-added)
-
-
-   ;; js2-mode
+   ;;;; doom-modeline
+   (doom-modeline-buffer-path       :foreground green :weight 'bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   ;;;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
    (js2-object-property        :foreground yellow)
    (js2-object-property-access :foreground cyan)
    (js2-function-param         :foreground violet)
    (js2-jsdoc-type             :foreground base8)
    (js2-jsdoc-value            :foreground cyan)
-
-   ;; rainbow-delimiters
+   ;;;; man <built-in>
+   (Man-overstrike :inherit 'bold :foreground magenta)
+   (Man-underline :inherit 'underline :foreground blue)
+   ;;;; org <built-in>
+   ((org-block &override) :background base2)
+   ((org-block-background &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
    (rainbow-delimiters-depth-3-face :foreground green)
@@ -135,12 +125,6 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-7-face :foreground blue)
    (rainbow-delimiters-depth-8-face :foreground teal)
    (rainbow-delimiters-depth-9-face :foreground dark-cyan)
-
-   ;; rjsx-mode
+   ;;;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
-
-   ;; tooltip
-   (tooltip              :background (doom-darken bg-alt 0.2) :foreground fg)))
-
-(provide 'doom-palenight-theme)
+   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))

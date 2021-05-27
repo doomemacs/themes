@@ -117,22 +117,11 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
    ((line-number &override) :foreground base6)
    ((line-number-current-line &override) :foreground fg)
-   (linum :foreground base6 :background base6)
-
-   (font-lock-comment-face
-    :foreground comments
     :background (if doom-badger-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -142,66 +131,46 @@ determine the exact padding."
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; centaur tabs
+   ;;;; centaur tabs
    (centaur-tabs-selected-modified   :background bg :foreground yellow)
    (centaur-tabs-unselected-modified :background bg-alt :foreground yellow)
-
-   ;; Doom modeline
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
-   ;; ivy-mode
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; ivy
    (ivy-current-match :background dark-blue :distant-foreground base0 :weight 'normal)
-
-   (popup-tip-face :background sand :foreground "black")
-   (popup-scroll-bar-foreground-face :background dark-violet)
-   (popup-scroll-bar-background-face :background olive)
-   (popup-isearch-match :background yellow :foreground "black")
-
-   ;; treemacs
-   (treemacs-directory-face    :foreground base6)
-   (treemacs-git-modified-face :foreground yellow)
-   (treemacs-file-face         :foreground base8)
-   (treemacs-root-face         :foreground blue :weight 'bold)
-   (doom-themes-treemacs-file-face :foreground blue)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
+   ;;;; linum
+   (linum :foreground base6 :background base6)
+   ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-
+   ;;;; org <built-in>
+   (org-agenda-date :foreground blue)
+   (org-agenda-date-today  :foreground salmon :weight 'light :slant 'italic)
+   (org-agenda-structure  :inherit font-lock-comment-face)
+   (org-archived :foreground fg :weight 'bold)
+   (org-code :foreground olive)
+   (org-column :background "black")
+   (org-column-title :background "black" :foreground lime :underline t)
+   (org-date :foreground link :underline t)
+   (org-deadline-announce :foreground dull-red)
    (org-document-info-keyword :foreground olive)
    (org-document-title :foreground salmon :height 1.50)
-
-   (org-archived :foreground fg :weight 'bold)
-   ;; (org-checkbox :foreground fg+alt :foreground olive
-   ;;                                 :box (:line-width 1 :style released-button))
    (org-done :foreground lime :strike-through t)
-   (org-todo :foreground red)
+   (org-footnote :foreground link :underline t)
    (org-formula :foreground violet)
    (org-headline-done :strike-through t :foreground base6)
    (org-hide :foreground bg)
+   (org-hide :foreground hidden)
    (org-level-1 :foreground blue)
    (org-level-2 :foreground violet)
    (org-level-3 :foreground orange)
@@ -211,34 +180,43 @@ determine the exact padding."
    (org-level-7 :foreground brown)
    (org-level-8 :foreground teal)
    (org-link :foreground link :underline t)
-
-   (org-agenda-date :foreground blue)
-   (org-deadline-announce :foreground dull-red)
-   (org-date :foreground link :underline t)
-   (org-agenda-date-today  :foreground salmon :weight 'light :slant 'italic)
-   (org-agenda-structure  :inherit font-lock-comment-face)
-
+   (org-mode-line-clock :foreground yellow)
    (org-special-keyword :foreground olive :weight 'normal)
    (org-table :foreground olive)
    (org-tag :bold t :foreground orange :strike-through nil)
-   (org-warning :bold t :foreground magenta :weight 'bold)
-   (org-column :background "black")
-   (org-column-title :background "black" :foreground lime :underline t)
-   (org-mode-line-clock :foreground yellow)
-   (org-footnote :foreground link :underline t)
-   (org-code :foreground olive)
+   (org-todo :foreground red)
    (org-verbatim :inherit 'org-code)
-
-   ;; web-mode
-   (web-mode-html-attr-equal-face  :foreground fg)
-   (web-mode-html-attr-name-face   :foreground base8)
-   (web-mode-html-tag-face         :foreground blue)
-   (web-mode-html-tag-bracket-face :foreground sand)
-   (web-mode-keyword-face          :foreground blue)
+   (org-warning :bold t :foreground magenta :weight 'bold)
+   ;;;; popup
+   (popup-tip-face :background sand :foreground "black")
+   (popup-scroll-bar-foreground-face :background dark-violet)
+   (popup-scroll-bar-background-face :background olive)
+   (popup-isearch-match :background yellow :foreground "black")
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; treemacs
+   (treemacs-directory-face    :foreground base6)
+   (treemacs-git-modified-face :foreground yellow)
+   (treemacs-file-face         :foreground base8)
+   (treemacs-root-face         :foreground blue :weight 'bold)
+   (doom-themes-treemacs-file-face :foreground blue)
+   ;;;; web-mode
    (web-mode-block-control-face    :foreground orange)
    (web-mode-block-delimiter-face  :foreground sand)
-   (web-mode-variable-name-face    :foreground (doom-lighten constants 0.3))
-   )
+   (web-mode-html-attr-equal-face  :foreground fg)
+   (web-mode-html-attr-name-face   :foreground base8)
+   (web-mode-html-tag-bracket-face :foreground sand)
+   (web-mode-html-tag-face         :foreground blue)
+   (web-mode-keyword-face          :foreground blue)
+   (web-mode-variable-name-face    :foreground (doom-lighten constants 0.3)))
+
   ;; --- extra variables ---------------------
   ()
   )

@@ -82,33 +82,30 @@ Can be an integer to determine the exact padding."
         4))))
 
   ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground dark-blue :bold bold)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-
+  (((font-lock-keyword-face &override) :weight 'bold)
    ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground orange :bold bold)
+   ((line-number-current-line &override) :foreground orange :weight 'bold)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   (font-lock-keyword-face :inherit 'bold :foreground keywords)
-
-   ;; rainbow-delimiters
+   ;;;; doom-modeline
+   (doom-modeline-buffer-path       :foreground dark-blue :bold bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground magenta)
    (rainbow-delimiters-depth-6-face :foreground yellow)
-   (rainbow-delimiters-depth-7-face :foreground teal)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+   (rainbow-delimiters-depth-7-face :foreground teal))
 
   ;; --- variables --------------------------
   ;; ()
   )
 
-(provide 'doom-xcode-theme)
 ;;; doom-xcode-theme.el ends here

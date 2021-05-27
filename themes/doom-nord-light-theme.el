@@ -115,28 +115,12 @@ determine the exact padding."
    (modeline-bg-inactive-l (doom-darken bg 0.01)))
 
 
-  ;; --- extra faces ------------------------
-  (((region &override)
-    :foreground
-    (when (memq doom-nord-light-region-highlight '(frost snowstorm))
-      bg-alt))
-
-   ((lazy-highlight &override) :background (doom-blend teal bg 0.8))
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
+    :background (if doom-nord-light-comment-bg (doom-lighten bg 0.05)))
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
-   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
-   ((vimish-fold-fringe &override) :foreground teal)
-   (font-lock-comment-face
-    :foreground comments
-    :background (if doom-nord-light-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
+   (internal-border :foreground (doom-blend blue bg 0.2) :background (doom-blend blue bg 0.2))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -145,8 +129,39 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
+   ((region &override)
+    :foreground (if (memq doom-nord-light-region-highlight '(frost snowstorm))
+                    bg-alt))
 
+   ;;;; css-mode <built-in> / scss-mode <built-in>
+   (css-proprietary-property :foreground orange)
+   (css-property :foreground green)
+   (css-selector :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-project-root-dir :foreground base6)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; ivy
+   (ivy-minibuffer-match-face-1 :background nil :foreground (doom-blend fg bg 0.5) :weight 'light)
+   (ivy-virtual :foreground (doom-blend blue bg 0.8))
+   ;;;; ivy-posframe
+   (ivy-posframe :background (doom-blend blue bg 0.2))
+   ;;;; magit
+   (magit-diff-hunk-heading-highlight :foreground bg :background blue :weight 'bold)
+   (magit-diff-hunk-heading :foreground bg :background (doom-blend blue bg 0.3))
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ;;;; mic-paren
+   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
+   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ;;;; nav-flash
+   (nav-flash-face :background region :foreground base8 :weight 'bold)
+   ;;;; org <built-in>
+   (org-hide :foreground hidden)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -155,32 +170,9 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; elscreen
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (magit-diff-hunk-heading-highlight :foreground bg :background blue :weight 'bold)
-   (magit-diff-hunk-heading :foreground bg :background (doom-blend blue bg 0.3))
-   (ivy-posframe :background (doom-blend blue bg 0.2))
-   (ivy-virtual :foreground (doom-blend blue bg 0.8))
-   (ivy-minibuffer-match-face-1 :background nil :foreground (doom-blend fg bg 0.5) :weight 'light)
-   (internal-border :foreground (doom-blend blue bg 0.2) :background (doom-blend blue bg 0.2))
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property :foreground green)
-   (css-selector :foreground blue)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   (nav-flash-face :background region :foreground base8 :weight 'bold)
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden))
-
+   ;;;; vimish-fold
+   ((vimish-fold-fringe &override) :foreground teal)
+   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light))
 
   ;; --- extra variables ---------------------
   ()

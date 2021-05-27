@@ -78,13 +78,16 @@ determine the exact padding."
         4))))
 
   ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground violet :bold bold)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-
-   ((line-number &override) :foreground base4)
+  (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   ;; rainbow-delimiters
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
@@ -92,17 +95,12 @@ determine the exact padding."
    (rainbow-delimiters-depth-5-face :foreground magenta)
    (rainbow-delimiters-depth-6-face :foreground yellow)
    (rainbow-delimiters-depth-7-face :foreground teal)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+   ;;;; doom-modeline
+   (doom-modeline-buffer-path       :foreground violet :bold bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path))
 
   ;; --- variables --------------------------
   ;; ()
   )
 
-(provide 'doom-tomorrow-night-theme)
 ;;; doom-tomorrow-night-theme.el ends here

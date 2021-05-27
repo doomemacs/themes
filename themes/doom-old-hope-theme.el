@@ -107,64 +107,35 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1))))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   ;; (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
+  ;;;; Base theme face overrides
+  (
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments
+   ((font-lock-comment-face &override)
     :background (if doom-old-hope-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; Doom modeline
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
    (doom-modeline-bar         :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; LaTeX-mode
-   (font-latex-math-face :foreground green)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-
-   ;; js/rjsx/web
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; ivy
+   (ivy-current-match       :background base3 :foreground orange)
+   (ivy-posframe-cursor     :background red :foreground base0)
+   ;;;; js2-mode
    (js2-function-name              :forground yellow)
    (js2-function-param             :foreground blue)
    (js2-warning                    :underline `(:style wave :color ,yellow))
@@ -175,16 +146,13 @@ determine the exact padding."
    (js2-jsdoc-value                :background nil :foreground blue)
    (js2-private-member             :background nil :foreground orange)
    (js2-object-property            :foreground fg)
-   (rjsx-tag                       :foreground fg)
-   (rjsx-attr                      :foreground orange :slant 'italic :weight 'medium)
-   (rjsx-tag-bracket-face          :foreground green)
-   (web-mode-html-tag-face         :foreground fg :slant 'italic)
-
-   ;; ivy
-   (ivy-current-match       :background base3 :foreground orange)
-   (ivy-posframe-cursor     :background red :foreground base0)
-
-   ;; markdown-mode
+   ;;;; LaTeX-mode
+   (font-latex-math-face :foreground green)
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ;;;; markdown-mode
    (markdown-list-face         :foreground green)
    (markdown-pre-face          :foreground blue)
    (markdown-blockquote-face   :inherit 'italic :foreground blue)
@@ -195,29 +163,46 @@ determine the exact padding."
    (markdown-header-face-4     :weight 'bold    :foreground yellow)
    (markdown-header-face-5     :weight 'bold    :foreground blue)
    (markdown-header-face-6     :weight 'bold    :foreground orange)
-   ;; org
-   (org-level-1                      :foreground blue)
-   (org-level-2                      :foreground orange)
-   (org-level-3                      :foreground teal)
-   (org-level-4                      :foreground magenta)
-   (org-level-5                      :foreground blue)
-   (org-level-6                      :foreground orange)
-   (org-level-7                      :foreground teal)
-   (org-level-8                      :foreground magenta)
+   ;;;; outline <built-in>
+   (outline-1 :foreground blue)
+   (outline-2 :foreground orange)
+   (outline-3 :foreground teal)
+   (outline-4 :foreground magenta)
+   (outline-5 :foreground blue)
+   (outline-6 :foreground orange)
+   (outline-7 :foreground teal)
+   (outline-8 :foreground magenta)
+   ;;;; org <built-in>
    (org-link                         :foreground blue :underline t)
    (org-document-title               :foreground orange)
    (org-document-info-keyword        :foreground comments)
    (org-meta-line                    :foreground base6)
    (org-tag             :foreground base6 :weight 'normal)
    (org-block                        :background (doom-darken bg 0.2 ) :extend t)
-
+   (org-hide :foreground hidden)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face  :foreground red)
    (rainbow-delimiters-depth-2-face  :foreground orange)
    (rainbow-delimiters-depth-3-face  :foreground green)
    (rainbow-delimiters-depth-4-face  :foreground cyan)
    (rainbow-delimiters-depth-5-face  :foreground blue)
    (rainbow-delimiters-depth-6-face  :foreground yellow)
-   (rainbow-delimiters-depth-7-face  :foreground green))
+   (rainbow-delimiters-depth-7-face  :foreground green)
+   ;;;; rjsx-mode
+   (rjsx-tag                       :foreground fg)
+   (rjsx-attr                      :foreground orange :slant 'italic :weight 'medium)
+   (rjsx-tag-bracket-face          :foreground green)
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; web-mode
+   (web-mode-html-tag-face         :foreground fg :slant 'italic))
 
   ;; --- extra variables ---------------------
   ())

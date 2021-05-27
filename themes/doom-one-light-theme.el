@@ -104,21 +104,12 @@ determine the exact padding."
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((centaur-tabs-unselected :background bg-alt :foreground base4)
-   (font-lock-comment-face
-    :foreground comments
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
     :background (if doom-one-light-comment-bg base0))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments
-    :slant 'italic)
-
+   ((font-lock-doc-face &override) :slant 'italic)
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -127,7 +118,47 @@ determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if -modeline-bright base8 highlight))
+   (tooltip :background base1 :foreground fg)
 
+   ;;;; centaur-tabs
+   (centaur-tabs-unselected :background bg-alt :foreground base4)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; ediff <built-in>
+   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
+   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
+   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
+   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
+   ;;;; helm
+   (helm-candidate-number :background blue :foreground bg)
+   ;;;; lsp-mode
+   (lsp-ui-doc-background      :background base0)
+   ;;;; magit
+   (magit-blame-heading     :foreground orange :background bg-alt)
+   (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-blend red bg 0.1))
+   (magit-diff-removed-highlight :foreground red :background (doom-blend red bg 0.2) :bold bold)
+   ;;;; markdown-mode
+   (markdown-markup-face     :foreground base5)
+   (markdown-header-face     :inherit 'bold :foreground red)
+   ((markdown-code-face &override)       :background base1)
+   (mmm-default-submode-face :background base1)
+   ;;;; outline <built-in>
+   ((outline-1 &override) :foreground red)
+   ((outline-2 &override) :foreground orange)
+   ;;;; org <built-in>
+   ((org-block &override) :background base1)
+   ((org-block-begin-line &override) :foreground fg :slant 'italic)
+   (org-ellipsis :underline nil :background bg     :foreground red)
+   ((org-quote &override) :background base1)
+   ;;;; posframe
+   (ivy-posframe               :background base0)
+   ;;;; selectrum
+   (selectrum-current-candidate :background base1)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -136,59 +167,10 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; magit
-   (magit-blame-heading     :foreground orange :background bg-alt)
-   (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-blend red bg 0.1))
-   (magit-diff-removed-highlight :foreground red :background (doom-blend red bg 0.2) :bold bold)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
-   (markdown-markup-face     :foreground base5)
-   (markdown-header-face     :inherit 'bold :foreground red)
-   ((markdown-code-face &override)       :background base1)
-   (mmm-default-submode-face :background base1)
-
-   ;; org-mode
-   ((outline-1 &override) :foreground red)
-   ((outline-2 &override) :foreground orange)
-   ((org-block &override) :background base1)
-   ((org-block-begin-line &override) :foreground fg :slant 'italic)
-   (org-ellipsis :underline nil :background bg     :foreground red)
-   ((org-quote &override) :background base1)
-
-   ;; helm
-   (helm-candidate-number :background blue :foreground bg)
-
-   ;; selectrum
-   (selectrum-current-candidate :background base1)
-
-   ;; web-mode
+   ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
-
-   ;; wgrep
-   (wgrep-face :background base1)
-
-   ;; ediff
-   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
-   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
-   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
-   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
-
-   ;; tooltip
-   (tooltip :background base1 :foreground fg)
-
-   ;; posframe
-   (ivy-posframe               :background base0)
-
-   ;; lsp
-   (lsp-ui-doc-background      :background base0)
-   )
+   ;;;; wgrep <built-in>
+   (wgrep-face :background base1))
 
   ;; --- extra variables ---------------------
   ()

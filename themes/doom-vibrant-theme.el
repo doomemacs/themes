@@ -107,9 +107,8 @@ determine the exact padding."
    (modeline-bg-inactive-l (doom-darken bg 0.25)))
 
 
-  ;; --- extra faces ------------------------
-  (;;;; emacs
-   ((font-lock-comment-face &override)
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
     :background (if doom-vibrant-comment-bg (doom-darken bg-alt 0.095)))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
@@ -119,13 +118,13 @@ determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if doom-vibrant-brighter-modeline base8 highlight))
+   (mode-line-emphasis :foreground (if doom-vibrant-brighter-modeline base8 highlight))
+
    ;;;; all-the-icons
    ((all-the-icons-dblue &override) :foreground dark-cyan)
    ;;;; centaur-tabs
    (centaur-tabs-unselected :background bg-alt :foreground base6)
-   ;;;; css-mode / scss-mode
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
@@ -138,9 +137,8 @@ determine the exact padding."
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; markdown-mode
    (markdown-header-face :inherit 'bold :foreground red)
-   ;;;; org-mode
+   ;;;; org <built-in>
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden-alt)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
@@ -151,9 +149,7 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
    ;;;; whitespace <built-in>
-   (whitespace-empty :background base2)
-   )
-
+   (whitespace-empty :background base2))
 
   ;; --- extra variables --------------------
   ;; ()

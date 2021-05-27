@@ -87,9 +87,8 @@ Can be an integer to determine the exact padding."
           doom-tomorrow-day-padded-modeline
         4))))
 
-  ;; --- faces ------------------------------
-  (;;;; emacs
-   ((font-lock-doc-face &override) :slant 'italic)
+  ;;;; Base theme face overrides
+  (((font-lock-doc-face &override) :slant 'italic)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground base8)
    (mode-line
@@ -99,6 +98,7 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-inactive
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-highlight :inherit 'bold :background highlight :foreground base0)
+
    ;;;; doom-modeline
    (doom-modeline-bar :background highlight)
    (doom-modeline-buffer-path       :foreground violet :weight 'bold)
@@ -141,12 +141,10 @@ Can be an integer to determine the exact padding."
    (treemacs-git-untracked-face :foreground yellow)
    ;;;; whitespace <built-in>
    (whitespace-tab :background (doom-lighten base0 0.6)
-                   :foreground comments)
-   )
+                   :foreground comments))
 
   ;; --- variables --------------------------
   ;; ()
   )
 
-(provide 'doom-tomorrow-day-theme)
 ;;; doom-tomorrow-day-theme.el ends here

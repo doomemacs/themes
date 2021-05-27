@@ -108,49 +108,29 @@ determine the exact padding."
    (modeline-bg-inactive-l (doom-darken bg 0.02)))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (hl-line :background base3)
-
-   ((line-number &override) :foreground base6)
-   ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
-
-   (org-block :background (doom-blend yellow bg 0.04) :extend t)
-   (org-block-background :background (doom-blend yellow bg 0.04))
-   (org-block-begin-line :background (doom-blend yellow bg 0.08) :extend t)
-   (org-block-end-line :background (doom-blend yellow bg 0.08) :extend t)
-   (lsp-ui-sideline-code-action :foreground blue)
-
-   (font-lock-comment-face
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
     :slant 'italic
-    :foreground comments
     :background (if doom-solarized-light-comment-bg (doom-blend teal base0 0.07)))
-   ((font-lock-doc-face &override) :foreground doc-comments)
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :foreground type)
-
-   (font-lock-keyword-face
-    :weight 'bold
-    :foreground keywords)
-
-   (font-lock-constant-face
-    :weight 'bold
-    :foreground constants)
-
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
+   ((font-lock-keyword-face &override) :weight 'bold)
+   ((font-lock-constant-face &override) :weight 'bold)
+   (hl-line :background base3)
+   ((line-number &override) :foreground base6)
+   ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -159,56 +139,51 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-
-   ;; markdown-mode
+   ;;;; lsp-ui
+   (lsp-ui-sideline-code-action :foreground blue)
+   ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-   ;; ivy-mode
+   ;;;; ivy
    (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
    (ivy-minibuffer-match-face-1 :foreground blue :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-2 :foreground magenta :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-3 :foreground green   :background base3 :weight 'bold)
    (ivy-minibuffer-match-face-4 :foreground yellow  :background base3 :weight 'bold)
    (ivy-minibuffer-match-highlight :foreground violet :weight 'bold)
+   ;;;; ivy-posframe
+   (ivy-posframe :background modeline-bg-l)
+   ;;;; swiper
    (swiper-match-face-1 :inherit 'ivy-minibuffer-match-face-1)
    (swiper-match-face-2 :inherit 'ivy-minibuffer-match-face-2)
    (swiper-match-face-3 :inherit 'ivy-minibuffer-match-face-3)
    (swiper-match-face-4 :inherit 'ivy-minibuffer-match-face-4)
-
-   ;; posframe
-   (ivy-posframe :background modeline-bg-l)
-   ;; org-mode
+   ;;;; org <built-in>
    (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-
-   ;; helm
+   ;;;; helm
    (helm-selection :foreground base0 :weight 'bold :background blue)
-
-   ;; company
-   (company-tooltip-selection :background blue
-                              :foreground base3)
-
-   ;; widget
+   ;;;; company
+   (company-tooltip-selection :background blue :foreground base3)
+   ;;;; org <built-in>
+   (org-block :background (doom-blend yellow bg 0.04) :extend t)
+   (org-block-background :background (doom-blend yellow bg 0.04))
+   (org-block-begin-line :background (doom-blend yellow bg 0.08) :extend t)
+   (org-block-end-line :background (doom-blend yellow bg 0.08) :extend t)
+   ;;;; widget
    (widget-field :foreground fg :background base3)
    (widget-single-line-field :foreground fg :background base3)
-
-   ;; latex
+   ;;;; latex
    (font-latex-sedate-face :foreground base6)
-
-   ;; notmuch
+   ;;;; notmuch
    (notmuch-message-summary-face :foreground teal)
-   (notmuch-wash-cited-text :foreground base6)
-
-   )
-
+   (notmuch-wash-cited-text :foreground base6))
 
   ;; --- extra variables ---------------------
   ;; ()

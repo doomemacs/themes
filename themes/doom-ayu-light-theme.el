@@ -140,30 +140,63 @@ determine the exact padding."
    (modeline-bg-inactive   `(,(doom-lighten (car bg) 0.1) ,@(cdr bg)))
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
-   ((line-number &override) :foreground base4)
+  ;;;; Base theme face overrides
+  (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments
+   ((font-lock-comment-face &override)
     :background (if doom-ayu-light-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
+   ;;;; company
+   (company-tooltip :foreground common-fg :background common-bg)
+   (company-tooltip-annotation :foreground common-fg)
+   (company-tooltip-selection :background ui-line)
+   (company-tooltip-search :foreground common-accent :weight 'bold)
+   (company-scrollbar-bg :background common-bg)
+   (company-scrollbar-fg :background syntax-comment)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; diff-mode <built-in>
+   (diff-removed :foreground vcs-removed)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :weight 'normal)
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'normal)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
+   (doom-modeline-buffer-project-root :foreground green :weight 'normal)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; highlight-numbers
+   (highlight-numbers-number :foreground syntax-func :weight 'normal)
+   ;;;; ivy
+   (ivy-current-match :background ui-line)
+   (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
+   (ivy-minibuffer-match-face-4 :foreground common-accent :weight 'bold)
+   ;;;; js2-mode
+   (js2-object-property :foreground common-fg)
+   ;;;; LaTeX-mode
+   (font-latex-math-face :foreground green)
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten common-bg 0.05))
+   ;;;; org <built-in>
+   (org-hide :foreground hidden)
+   (org-headline-done :foreground syntax-comment)
+   ;;;; rjsx-mode
+   (rjsx-tag :foreground cyan)
+   (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))
+   (rjsx-attr :foreground syntax-func)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -172,61 +205,9 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; Doom modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight) :weight 'normal)
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'normal)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
-   (doom-modeline-buffer-project-root :foreground green :weight 'normal)
-
-   ;; ivy-mode
-   (ivy-current-match :background ui-line)
-   (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
-   (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
-   (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
-   (ivy-minibuffer-match-face-4 :foreground common-accent :weight 'bold)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; LaTeX-mode
-   (font-latex-math-face :foreground green)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten common-bg 0.05))
-
-   ;; org-mode
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-   (org-headline-done :foreground syntax-comment)
-
-   (js2-object-property :foreground common-fg)
-
-   (rjsx-tag :foreground cyan)
-   (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))
-   (rjsx-attr :foreground syntax-func)
-
+   ;;;; web-mode
    (web-mode-html-tag-face :foreground cyan)
    (web-mode-html-tag-bracket-face :foreground (doom-lighten cyan 0.5))
-   (web-mode-html-attr-name-face :foreground syntax-func)
-
-   (company-tooltip :foreground common-fg :background common-bg)
-   (company-tooltip-annotation :foreground common-fg)
-   (company-tooltip-selection :background ui-line)
-   (company-tooltip-search :foreground common-accent :weight 'bold)
-   (company-scrollbar-bg :background common-bg)
-   (company-scrollbar-fg :background syntax-comment)
-
-   (highlight-numbers-number :foreground syntax-func :weight 'normal)
-
-   ;; diff-mode
-   (diff-removed :foreground vcs-removed)
-   )
-  )
+   (web-mode-html-attr-name-face :foreground syntax-func)))
 
 ;;; doom-ayu-light-theme.el ends here
