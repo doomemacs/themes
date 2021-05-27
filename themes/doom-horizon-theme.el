@@ -35,80 +35,77 @@
 (def-doom-theme doom-horizon
   "A port of the port of the Visual Studio Code theme Horizon"
 
-  ;; name        default   256       16
-  ( (bg         '("#232530" nil           nil            ))
-    (bg-alt     '("#1c1e26" nil           nil            ))
-    (base0      '("#16161c" "black"       "black"        ))
-    (base1      '("#1a1c23" "brightblack" "brightblack"  ))
-    (base2      '("#1d1f27" "brightblack" "brightblack"  ))
-    (base3      '("#232530" "brightblack" "brightblack"  ))
-    (base4      '("#6a6a6a" "#6a6a6a"     "brightblack"  ))
-    (base5      '("#f9cec3" "#f9cec3"     "brightblack"  ))
-    (base6      '("#f9cbbe" "#f9cbbe"     "brightblack"  ))
-    (base7      '("#fadad1" "#fadad1"     "brightblack"  ))
-    (base8      '("#fdf0ed" "#fdf0ed"     "white"        ))
-    (fg-alt     '("#fdf0ed" "#fdf0ed"     "brightwhite"  ))
-    (fg         '("#c7c9cb" "#c7c9cb"     "white"        ))
+  ;; name       default    256       16
+  ((bg         '("#232530" nil       nil            ))
+   (bg-alt     '("#1c1e26" nil       nil            ))
+   (base0      '("#16161c" "black"   "black"        ))
+   (base1      '("#1a1c23" "#111111" "brightblack"  ))
+   (base2      '("#1d1f27" "#333333" "brightblack"  ))
+   (base3      '("#232530" "#555555" "white"        ))
+   (base4      '("#6a6a6a" "#6a6a6a" "white"        ))
+   (base5      '("#f9cec3" "#f9cec3" "white"        ))
+   (base6      '("#f9cbbe" "#f9cbbe" "white"        ))
+   (base7      '("#fadad1" "#fadad1" "white"        ))
+   (base8      '("#fdf0ed" "#fdf0ed" "white"        ))
+   (fg-alt     '("#fdf0ed" "#fdf0ed" "brightwhite"  ))
+   (fg         '("#c7c9cb" "#c7c9cb" "white"        ))
 
-    (grey       base4)
-    (red        '("#e95678" "#e95678" "red"          ))
-    (orange     '("#f09383" "#f09383" "brightred"    ))
-    (green      '("#09f7a0" "#09f7a0" "green"        ))
-    (teal       '("#21bfc2" "#21bfc2" "brightgreen"  ))
-    (yellow     '("#fab795" "#fab795" "yellow"       ))
-    (blue       '("#21bfc2" "#21bfc2" "brightblue"   ))
-    (dark-blue  '("#25b2bc" "#25b2bc" "blue"         ))
-    (magenta    '("#6c6f93" "#6c6f93" "magenta"      ))
-    (violet     '("#b877db" "#b877db" "brightmagenta"))
-    (cyan       '("#59e3e3" "#59e3e3" "brightcyan"   ))
-    (dark-cyan  '("#27d797" "#27d797" "cyan"   ))
+   (grey       base4)
+   (red        '("#e95678" "#e95678" "red"          ))
+   (orange     '("#f09383" "#f09383" "brightred"    ))
+   (green      '("#09f7a0" "#09f7a0" "green"        ))
+   (teal       '("#21bfc2" "#21bfc2" "brightgreen"  ))
+   (yellow     '("#fab795" "#fab795" "yellow"       ))
+   (blue       '("#21bfc2" "#21bfc2" "brightblue"   ))
+   (dark-blue  '("#25b2bc" "#25b2bc" "blue"         ))
+   (magenta    '("#6c6f93" "#6c6f93" "magenta"      ))
+   (violet     '("#b877db" "#b877db" "brightmagenta"))
+   (cyan       '("#59e3e3" "#59e3e3" "brightcyan"   ))
+   (dark-cyan  '("#27d797" "#27d797" "cyan"   ))
 
-    ;; additional highlighting colours for horizon
-    (hor-highlight  (doom-lighten base3 0.05))
-    (hor-highlight-selected (doom-lighten base3 0.1))
-    (hor-highlight-bright (doom-lighten base3 0.2))
-    (hor-highlight-brighter (doom-lighten base3 0.5))
+   ;; additional highlighting colours for horizon
+   (hor-highlight  `(,(doom-lighten (car base3) 0.05) ,@(cdr base2)))
+   (hor-highlight-selected (doom-lighten base3 0.1))
+   (hor-highlight-bright (doom-lighten base3 0.2))
+   (hor-highlight-brighter (doom-lighten base3 0.5))
 
-    ;; face categories -- required for all themes
-    (highlight      red)
-    (vertical-bar   base0)
-    (selection      violet)
-    (builtin        violet)
-    (comments       (if doom-horizon-brighter-comments magenta hor-highlight-bright))
-    (doc-comments   yellow)
-    (constants      orange)
-    (functions      teal)
-    (keywords       violet)
-    (methods        magenta)
-    (operators      teal)
-    (type           teal)
-    (strings        yellow)
-    (variables      red)
-    (numbers        orange)
-    (region         hor-highlight)
-    (error          red)
-    (warning        dark-cyan)
-    (success        green)
-    (vc-modified    orange)
-    (vc-added       green)
-    (vc-deleted     red)
+   ;; face categories -- required for all themes
+   (highlight      red)
+   (vertical-bar   base0)
+   (selection      violet)
+   (builtin        violet)
+   (comments       (if doom-horizon-brighter-comments magenta hor-highlight-bright))
+   (doc-comments   yellow)
+   (constants      orange)
+   (functions      teal)
+   (keywords       violet)
+   (methods        magenta)
+   (operators      teal)
+   (type           teal)
+   (strings        yellow)
+   (variables      red)
+   (numbers        orange)
+   (region         hor-highlight)
+   (error          red)
+   (warning        dark-cyan)
+   (success        green)
+   (vc-modified    orange)
+   (vc-added       green)
+   (vc-deleted     red)
 
 
-    ;; custom categories
-    (hidden     `(,(car bg) "black" "black"))
-    (-modeline-bright doom-horizon-brighter-modeline)
-    (-modeline-pad
-     (when doom-horizon-padded-modeline
-       (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
+   ;; custom categories
+   (hidden     `(,(car bg) "black" "black"))
+   (-modeline-bright doom-horizon-brighter-modeline)
+   (-modeline-pad
+    (when doom-horizon-padded-modeline
+      (if (integerp doom-horizon-padded-modeline) doom-horizon-padded-modeline 4)))
 
-    (modeline-fg     (doom-darken fg 0.2))
-    (modeline-fg-alt (doom-lighten bg 0.2))
+   (modeline-fg     `(,(doom-darken (car fg) 0.2) ,@(cdr fg-alt)))
+   (modeline-fg-alt `(,(doom-lighten (car bg) 0.2) ,@(cdr base3)))
 
-    (modeline-bg
-     (if -modeline-bright
-         base4
-       `(,(car base1) "black")))
-    (modeline-bg-inactive base1))
+   (modeline-bg (if -modeline-bright base4 base1))
+   (modeline-bg-inactive base1))
 
 
   ;;;; Base theme face overrides
