@@ -153,7 +153,7 @@ determine the exact padding."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

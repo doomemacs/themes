@@ -151,7 +151,7 @@ determine the exact padding."
    ;;;; whitespace <built-in>
    (whitespace-empty :background base2))
 
-  ;; --- extra variables --------------------
+  ;;;; Base theme variable overrides
   ;; ()
   )
 

@@ -243,7 +243,7 @@ determine the exact padding."
    (whitespace-indentation :inherit 'default)
    (whitespace-big-indent :inherit 'default))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 

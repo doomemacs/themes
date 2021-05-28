@@ -217,7 +217,7 @@ determine the exact padding."
    (web-mode-keyword-face          :foreground blue)
    (web-mode-variable-name-face    :foreground (doom-lighten constants 0.3)))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

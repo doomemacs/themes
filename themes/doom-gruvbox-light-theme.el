@@ -212,7 +212,7 @@ background contrast. All other values default to \"medium\"."
    (diredp-dir-priv :foreground faded-blue :background dark-blue)
    ((diredp-dir-exec-priv &inherit diredp-dir-priv))
    (diredp-link-priv :foreground faded-aqua)
-   ;;;; doom-dashboard
+   ;;;; doom-emacs
    (doom-dashboard-banner      :foreground (doom-darken base4 0.3))
    (doom-dashboard-menu-title  :foreground green)
    (doom-dashboard-menu-desc   :foreground green)
@@ -482,7 +482,7 @@ background contrast. All other values default to \"medium\"."
    (whitespace-indentation :foreground base4 :background bg)
    (whitespace-empty :foreground 'nil :background 'nil))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 ;;; doom-gruvbox-light-theme.el ends here

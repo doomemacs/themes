@@ -257,7 +257,7 @@ determine the exact padding."
                              :background fw-purple-blend)
    ;;;; company-box
    (company-box-candidate :foreground fg)
-   ;;;; doom-dashboard
+   ;;;; doom-emacs
    (doom-dashboard-banner      :foreground comments)
    (doom-dashboard-menu-title  :foreground fw-purple-text-sec)
    (doom-dashboard-menu-desc   :foreground fw-green-text-sec)
@@ -579,7 +579,7 @@ determine the exact padding."
    (which-key-local-map-description-face :foreground fw-orange-text-sec)
    (which-key-separator-face             :background bg-alt :foreground comments))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

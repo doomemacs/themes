@@ -252,7 +252,7 @@ background contrast. All other values default to \"medium\"."
    (which-key-group-description-face :foreground (doom-lighten fg-alt 0.25))
    (which-key-local-map-description-face :foreground cyan))
 
-  ;; --- extra variables --------------------
+  ;;;; Base theme variable overrides
   ;; ()
   )
 

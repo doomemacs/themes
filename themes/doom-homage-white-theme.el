@@ -208,7 +208,7 @@ determine the exact padding."
    ;;;; wgrep <built-in>
    (wgrep-face :background base1))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 ;;; doom-homage-white-theme.el ends here

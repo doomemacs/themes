@@ -336,7 +336,7 @@ Can be an integer to determine the exact padding."
    (woman :inherit 'font-lock-keyword-face)
    (woman :inherit 'font-lock-string-face italic))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 ;;; doom-zenburn-theme.el ends here

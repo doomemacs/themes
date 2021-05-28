@@ -116,8 +116,7 @@ determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    (tooltip :background base1 :foreground fg)
 
    ;;;; centaur-tabs
@@ -172,7 +171,7 @@ determine the exact padding."
    ;;;; wgrep <built-in>
    (wgrep-face :background base1))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

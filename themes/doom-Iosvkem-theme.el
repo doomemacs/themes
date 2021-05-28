@@ -189,7 +189,7 @@ determine the exact padding."
    ;;;; whitespace <built-in>
    ((whitespace-tab &override) :background bg))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 

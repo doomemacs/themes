@@ -170,7 +170,7 @@ determine the exact padding."
    (rainbow-delimiters-depth-6-face :foreground orange)
    (rainbow-delimiters-depth-7-face :foreground green))
 
-  ;; --- extra variables --------------------
+  ;;;; Base theme variable overrides
   ;; ()
   )
 

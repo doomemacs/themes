@@ -233,7 +233,7 @@ Can be an integer to determine the exact padding."
    (company-tooltip-common :foreground highlight)
    ;;;; company-box
    (company-box-annotation :foreground base7)
-   ;;;; doom-dashboard
+   ;;;; doom-emacs
    (doom-dashboard-menu-desc :foreground dark-cyan)
    (doom-dashboard-menu-tile :foreground dark-teal)
    ;;;; diredfl

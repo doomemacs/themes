@@ -264,7 +264,7 @@ determine the exact padding."
    ;;;; rjsx
    (rjsx-attr :foreground blue))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 ;;; doom-henna-theme.el ends here

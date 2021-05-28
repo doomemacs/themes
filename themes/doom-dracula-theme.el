@@ -123,8 +123,7 @@ determine the exact padding."
 
 
   ;;;; Base theme face overrides
-  (;;;; emacs
-   ((line-number &override) :foreground base5)
+  (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
     :background (if doom-dracula-comment-bg (doom-lighten bg 0.05)))
@@ -244,7 +243,7 @@ determine the exact padding."
    (web-mode-html-tag-face :foreground magenta :weight 'bold)
    (web-mode-preprocessor-face :foreground orange))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

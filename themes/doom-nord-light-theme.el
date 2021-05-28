@@ -174,7 +174,7 @@ determine the exact padding."
    ((vimish-fold-fringe &override) :foreground teal)
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

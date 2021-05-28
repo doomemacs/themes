@@ -205,7 +205,7 @@ real file buffers will now be brighter instead."
    (which-key-group-description-face :foreground yellow)
    (which-key-local-map-description-face :foreground yellow))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 ;;; doom-manegarm-theme.el ends here

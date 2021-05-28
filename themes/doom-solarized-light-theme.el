@@ -185,7 +185,7 @@ determine the exact padding."
    (notmuch-message-summary-face :foreground teal)
    (notmuch-wash-cited-text :foreground base6))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 

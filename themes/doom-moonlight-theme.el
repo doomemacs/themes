@@ -146,7 +146,7 @@ Can be an integer to determine the exact padding."
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-   ;;;; doom-dashboard
+   ;;;; doom-emacs
    (doom-dashboard-menu-desc :foreground dark-cyan)
    (doom-dashboard-menu-tile :foreground dark-teal)
    ;;;; diredfl

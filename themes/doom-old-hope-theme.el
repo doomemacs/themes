@@ -204,7 +204,7 @@ determine the exact padding."
    ;;;; web-mode
    (web-mode-html-tag-face         :foreground fg :slant 'italic))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ())
 
 
