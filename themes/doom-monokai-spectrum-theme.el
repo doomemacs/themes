@@ -71,7 +71,7 @@ Can be an integer to determine the exact padding."
    (strings        yellow)
    (variables      fg)
    (numbers        violet)
-   (region         base2)
+   (region         base3)
    (error          red)
    (warning        orange)
    (success        green)
