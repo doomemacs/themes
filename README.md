@@ -107,6 +107,10 @@ maintain them and address inconsistencies:
 | `doom-molokai`          | a theme based on Texmate's Monokai                                                                           |
 | `doom-monokai-classic`  | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
 | `doom-monokai-pro`      | port of [Monokai]'s Pro variant (thanks to [kadenbarlow])                                                    |
+| `doom-monokai-machine`  | port of [Monokai]'s Pro (Machine) variant (thanks to [minikN])                                               |
+| `doom-monokai-octagon`  | port of [Monokai]'s Pro (Octagon) variant (thanks to [minikN])                                               |
+| `doom-monokai-ristretto`| port of [Monokai]'s Pro (Ristretto) variant (thanks to [minikN])                                             |
+| `doom-monokai-spectrum` | port of [Monokai]'s Pro (Spectrum) variant (thanks to [minikN])                                              |
 | `doom-moonlight`        | ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])                                            |
 | `doom-nord-light`       | light variant of [Nord][nord] (thanks to [fuxialexander])                                                    |
 | `doom-nord`             | dark variant of [Nord][nord] (thanks to [fuxialexander])                                                     |
