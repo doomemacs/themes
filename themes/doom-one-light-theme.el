@@ -169,7 +169,10 @@ determine the exact padding."
    ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
    ;;;; wgrep <built-in>
-   (wgrep-face :background base1))
+   (wgrep-face :background base1)
+   ;;;; whitespace
+   ((whitespace-tab &override)         :background (unless (default-value 'indent-tabs-mode) base0))
+   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0)))
 
   ;;;; Base theme variable overrides-
   ()
