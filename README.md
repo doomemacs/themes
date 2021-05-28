@@ -257,6 +257,7 @@ support.
 [LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[minikN]: https://github.com/minikN
 [Miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el
