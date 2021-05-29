@@ -90,11 +90,80 @@ Can be an integer to determine the exact padding."
     (when doom-moonlight-padded-modeline
       (if (integerp doom-moonlight-padded-modeline) doom-moonlight-padded-modeline 4))))
 
-  ;; --- base faces ------------------------
-  (((lazy-highlight &override) :background base4 :foreground fg :distant-foreground fg)
+  ;;;; Base theme face overrides
+  ((font-lock-keyword-face :foreground keywords)
+   (font-lock-comment-face :foreground comments)
+   (font-lock-doc-face :foreground doc-comments)
+   (fringe :background base2)
+   (hl-line :background line-highlight)
+   (lazy-highlight :background base4 :foreground fg)
+   ((line-number &override) :foreground base5 :background (doom-darken bg 0.06))
+   ((line-number-current-line &override) :foreground fg :background line-highlight)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+   (tooltip :background base0 :foreground fg)
 
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
+   ;;;; all-the-icons
+   (all-the-icons-cyan       :foreground dark-cyan)
+   (all-the-icons-cyan-alt   :foreground dark-cyan)
+   (all-the-icons-dblue      :foreground (doom-darken blue 0.1))
+   (all-the-icons-dgreen     :foreground dark-teal)
+   (all-the-icons-dmaroon    :foreground magenta)
+   (all-the-icons-dorange    :foreground orange)
+   (all-the-icons-dpink      :foreground pink)
+   (all-the-icons-dpurple    :foreground magenta)
+   (all-the-icons-dred       :foreground dark-red)
+   (all-the-icons-dsilver    :foreground grey)
+   (all-the-icons-dyellow    :foreground orange)
+   (all-the-icons-green      :foreground teal)
+   (all-the-icons-lcyan      :foreground (doom-lighten dark-cyan 0.3))
+   (all-the-icons-lgreen     :foreground green)
+   (all-the-icons-lmaroon    :foreground light-magenta)
+   (all-the-icons-lorange    :foreground orange)
+   (all-the-icons-lpink      :foreground light-pink)
+   (all-the-icons-lpurple    :foreground light-magenta)
+   (all-the-icons-lred       :foreground light-red)
+   (all-the-icons-lsilver    :foreground (doom-lighten grey 0.4))
+   (all-the-icons-lyellow    :foreground (doom-lighten yellow 0.3))
+   (all-the-icons-orange     :foreground orange)
+   (all-the-icons-pink       :foreground pink)
+   (all-the-icons-purple     :foreground magenta)
+   (all-the-icons-purple-alt :foreground magenta)
+   (all-the-icons-red-alt    :foreground red)
+   (all-the-icons-silver     :foreground (doom-lighten grey 0.2))
+   ;;;; all-the-icons-dired
+   (all-the-icons-dired-dir-face :foreground indigo)
+   ;;;; company
+   (company-tooltip :inherit 'tooltip)
+   (company-tooltip-common :foreground highlight)
+   ;;;; company-box
+   (company-box-annotation :foreground base7)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-emacs
+   (doom-dashboard-menu-desc :foreground dark-cyan)
+   (doom-dashboard-menu-tile :foreground dark-teal)
+   ;;;; diredfl
+   (diredfl-date-time    :foreground blue)
+   (diredfl-file-name    :foreground base7)
+   (diredfl-file-suffix  :foreground base6)
+   (diredfl-symlink      :foreground dark-cyan)
+   ;;;; dired+
+   (diredp-number :foreground orange)
+   ;;;; dired-k
+   (dired-k-commited :foreground base4)
+   (dired-k-modified :foreground vc-modified)
+   (dired-k-ignored  :foreground cyan)
+   (dired-k-added    :foreground vc-added)
+   ;;;; doom-emacs
+   (+workspace-tab-selected-face :background region :foreground blue)
+   ;;;; doom-modeline
    (doom-modeline-buffer-file       :foreground base7)
    (doom-modeline-icon-inactive     :foreground indigo)
    (doom-modeline-evil-normal-state :foreground dark-cyan)
@@ -103,29 +172,39 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-path       :foreground blue)
    (doom-modeline-buffer-modified :inherit 'bold :foreground yellow)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-
-   (hl-line :background line-highlight)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
-
-   (tooltip :background base0 :foreground fg)
-
-   (fringe :background base2)
-
-   ((line-number &override) :foreground base5 :background (doom-darken bg 0.06))
-   ((line-number-current-line &override) :foreground fg :background line-highlight)
+   ;;;; ivy-posframe
+   (ivy-posframe :background base0)
+   (ivy-posframe-border :background base0)
+   ;;;; js2-mode
+   (js2-jsdoc-tag              :foreground magenta)
+   (js2-object-property        :foreground dark-teal)
+   (js2-object-property-access :foreground fg-alt)
+   (js2-function-param         :foreground pink)
+   (js2-jsdoc-type             :foreground base8)
+   (js2-jsdoc-value            :foreground cyan)
+   ;;;; linum
    ((linum &inherit line-number))
-
-   (font-lock-keyword-face :foreground keywords)
-   (font-lock-comment-face :foreground comments)
-   (font-lock-doc-face :foreground doc-comments)
-
-   ;; message
+   ;;;; lsp-mode
+   (lsp-face-highlight-read :background region)
+   (lsp-face-highlight-textual :background region)
+   (lsp-face-highlight-write :background region)
+   (lsp-face-semhl-type-primative :foreground orange)
+   (lsp-face-semhl-method :foreground magenta)
+   ;;;; magit
+   (magit-filename :foreground teal)
+   ;;;; man <built-in>
+   (Man-overstrike :inherit 'bold :foreground magenta)
+   (Man-underline :inherit 'underline :foreground blue)
+   ;;;; markdown-mode
+   (markdown-header-face           :inherit 'bold :foreground yellow)
+   (markdown-header-delimiter-face :inherit 'markdown-header-face)
+   (markdown-metadata-key-face     :foreground magenta :inherit 'italic)
+   (markdown-list-face             :foreground red)
+   (markdown-url-face              :inherit 'underline :foreground orange)
+   (markdown-gfm-checkbox-face     :foreground blue)
+   (markdown-blockquote-face       :inherit 'italic :foreground fg)
+   (mmm-default-submode-face       :background base1)
+   ;;;; message <built-in>
    (message-header-name       :foreground green)
    (message-header-subject    :foreground highlight :weight 'bold)
    (message-header-to         :foreground highlight :weight 'bold)
@@ -136,37 +215,12 @@ Can be an integer to determine the exact padding."
    (message-separator         :foreground comments)
    (message-mml               :foreground comments :slant 'italic)
    (message-cited-text        :foreground magenta)
-
-   ;; --- major-mode faces ------------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; nix-mode
+   ;;;; nav-flash
+   (nav-flash-face :background region)
+   ;;;; nix-mode
    (nix-attribute-face :foreground blue)
    (nix-builtin-face :foreground dark-teal)
-
-   ;; man-mode
-   (Man-overstrike :inherit 'bold :foreground magenta)
-   (Man-underline :inherit 'underline :foreground blue)
-
-   ;; lsp-mode
-   (lsp-face-highlight-read :background region)
-   (lsp-face-highlight-textual :background region)
-   (lsp-face-highlight-write :background region)
-   (lsp-face-semhl-type-primative :foreground orange)
-   (lsp-face-semhl-method :foreground magenta)
-
-   ;; js2-mode
-   (js2-jsdoc-tag              :foreground magenta)
-   (js2-object-property        :foreground dark-teal)
-   (js2-object-property-access :foreground fg-alt)
-   (js2-function-param         :foreground pink)
-   (js2-jsdoc-type             :foreground base8)
-   (js2-jsdoc-value            :foreground cyan)
-
-   ;; org-mode
+   ;;;; org <built-in>
    ((outline-1 &override) :foreground light-blue)
    ((outline-2 &override) :foreground dark-cyan)
    ((outline-3 &override) :foreground light-red)
@@ -177,112 +231,12 @@ Can be an integer to determine the exact padding."
    ((org-block &override) :background base2)
    ((org-block-background &override) :background base2)
    ((org-block-begin-line &override) :background base2)
-
-   ;; rjsx-mode
-   (rjsx-tag :foreground violet)
-   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
-
-   ;; --- plugin faces -------------------
-   ;; all-the-icons
-   (all-the-icons-red        :foreground red)
-   (all-the-icons-red-alt     :foreground red)
-   (all-the-icons-lred       :foreground light-red)
-   (all-the-icons-dred       :foreground dark-red)
-   (all-the-icons-green      :foreground teal)
-   (all-the-icons-green-alt  :foreground teal)
-   (all-the-icons-lgreen     :foreground green)
-   (all-the-icons-dgreen     :foreground dark-teal)
-   (all-the-icons-yellow     :foreground yellow)
-   (all-the-icons-yellow-alt :foreground yellow)
-   (all-the-icons-lyellow    :foreground (doom-lighten yellow 0.3))
-   (all-the-icons-dyellow    :foreground orange)
-   (all-the-icons-orange     :foreground orange)
-   (all-the-icons-orange-alt :foreground orange)
-   (all-the-icons-lorange    :foreground orange)
-   (all-the-icons-dorange    :foreground orange)
-   (all-the-icons-blue       :foreground blue)
-   (all-the-icons-blue-alt   :foreground teal)
-   (all-the-icons-lblue      :foreground (doom-lighten blue 0.3))
-   (all-the-icons-dblue      :foreground (doom-darken blue 0.1))
-   (all-the-icons-maroon     :foreground magenta)
-   (all-the-icons-maroon-alt :foreground magenta)
-   (all-the-icons-lmaroon    :foreground light-magenta)
-   (all-the-icons-dmaroon    :foreground magenta)
-   (all-the-icons-purple     :foreground magenta)
-   (all-the-icons-purple-alt :foreground magenta)
-   (all-the-icons-lpurple    :foreground light-magenta)
-   (all-the-icons-dpurple    :foreground magenta)
-   (all-the-icons-cyan       :foreground dark-cyan)
-   (all-the-icons-cyan-alt   :foreground dark-cyan)
-   (all-the-icons-lcyan      :foreground (doom-lighten dark-cyan 0.3))
-   (all-the-icons-dcyan      :foreground dark-cyan)
-   (all-the-icons-pink       :foreground pink)
-   (all-the-icons-pink-alt   :foreground pink)
-   (all-the-icons-lpink      :foreground light-pink)
-   (all-the-icons-dpink      :foreground pink)
-   (all-the-icons-silver     :foreground (doom-lighten grey 0.2))
-   (all-the-icons-silver-alt :foreground (doom-lighten grey 0.2))
-   (all-the-icons-lsilver    :foreground (doom-lighten grey 0.4))
-   (all-the-icons-dsilver    :foreground grey)
-
-   ;; all-the-icons-dired
-   (all-the-icons-dired-dir-face :foreground indigo)
-
-   ;; company
-   (company-tooltip :inherit 'tooltip)
-   (company-tooltip-common :foreground highlight)
-
-   ;; company-box
-   (company-box-annotation :foreground base7)
-
-   ;; doom-dashboard
-   (doom-dashboard-menu-desc :foreground dark-cyan)
-   (doom-dashboard-menu-tile :foreground dark-teal)
-
-   ;; diredfl
-   (diredfl-date-time    :foreground blue)
-   (diredfl-file-name    :foreground base7)
-   (diredfl-file-suffix  :foreground base6)
-   (diredfl-symlink      :foreground dark-cyan)
-
-   ;; dired+
-   (diredp-number :foreground orange)
-
-   ;; dired-k
-   (dired-k-commited :foreground base4)
-   (dired-k-modified :foreground vc-modified)
-   (dired-k-ignored  :foreground cyan)
-   (dired-k-added    :foreground vc-added)
-
-   ;; magit
-   (magit-filename :foreground teal)
-
-   ;; markdown-mode
-   (markdown-header-face           :inherit 'bold :foreground yellow)
-   (markdown-header-delimiter-face :inherit 'markdown-header-face)
-   (markdown-metadata-key-face     :foreground magenta :inherit 'italic)
-   (markdown-list-face             :foreground red)
-   (markdown-url-face              :inherit 'underline :foreground orange)
-   (markdown-gfm-checkbox-face     :foreground blue)
-   (markdown-blockquote-face       :inherit 'italic :foreground fg)
-   (mmm-default-submode-face       :background base1)
-
-   ;; nav-flash
-   (nav-flash-face :background region)
-
-   ;; ivy-posframe
-   (ivy-posframe :background base0)
-   (ivy-posframe-border :background base0)
-
-   ;; popup
+   ;;;; popup
    (popup-face :inherit 'tooltip)
    (popup-selection-face :inherit 'tooltip)
-
-   ;; pos-tip
-   (popup          :inherit 'tooltip)
+   ;;;; pos-tip
    (popup-tip-face :inherit 'tooltip)
-
-   ;; rainbow-delimiters
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
    (rainbow-delimiters-depth-3-face :foreground light-red)
@@ -292,19 +246,15 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-7-face :foreground blue)
    (rainbow-delimiters-depth-8-face :foreground teal)
    (rainbow-delimiters-depth-9-face :foreground dark-cyan)
-
-   ;; treemacs
-   (treemacs-directory-face :foreground blue)
-   (treemacs-git-modified-face :foreground blue)
-
-   ;; workspaces
-   (+workspace-tab-selected-face :background region :foreground blue)
-
-   ;; which-key
-   (which-func :foreground blue)
+   ;;;; rjsx-mode
+   (rjsx-tag :foreground violet)
+   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
+   ;;;; treemacs
+   (treemacs-directory-face :foreground highlight)
+   (treemacs-git-modified-face :foreground highlight)
+   ;;;; which-key
    (which-key-command-description-face :foreground fg)
    (which-key-group-description-face :foreground magenta)
    (which-key-local-map-description-face :foreground cyan)))
-
 
 ;;; doom-moonlight-theme.el ends here

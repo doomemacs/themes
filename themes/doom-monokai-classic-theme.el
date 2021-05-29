@@ -94,10 +94,13 @@ determine the exact padding."
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
 
-  ;; --- extra faces ------------------------
-  ((lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
-   (cursor :background magenta)
-
+  ;;;; Base theme face overrides
+  ((cursor :background magenta)
+   ((font-lock-comment-face &override) :slant 'italic)
+   ((font-lock-type-face &override) :slant 'italic)
+   (lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
+   ((line-number &override) :foreground base5 :distant-foreground nil)
+   ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))
@@ -105,18 +108,7 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
 
-   ;; Font lock
-   (font-lock-comment-face
-    :foreground comments
-    :slant 'italic)
-   (font-lock-doc-face
-    :foreground doc-comments
-    :slant 'italic)
-   (font-lock-type-face
-    :foreground type
-    :slant 'italic)
-   
-   ;; Centaur tabs
+   ;;;; centaur-tabs
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
                                    :background bg
                                    :foreground yellow)
@@ -126,77 +118,61 @@ determine the exact padding."
    (centaur-tabs-active-bar-face :background yellow)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground fg)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground fg)
-
-   ;; Doom modeline
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground keywords)
+   ;;;; doom-modeline
    (doom-modeline-bar :background yellow)
    (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
    (doom-modeline-buffer-path :inherit 'bold :foreground green)
    (doom-modeline-buffer-project-root :foreground green :weight 'bold)
    (doom-modeline-buffer-modified :inherit 'bold :foreground orange)
 
-   ((line-number &override) :foreground base5 :distant-foreground nil)
-   ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
 
    (isearch :foreground base0 :background green)
-
-   ;; ediff
+   ;;;; ediff <built-in>
    (ediff-fine-diff-A :background (doom-blend magenta bg 0.3) :weight 'bold)
-
-   ;; evil-mode
+   ;;;; evil
    (evil-search-highlight-persist-highlight-face :background violet)
-
-   ;; evil-snipe
+   ;;;; evil-snipe
    (evil-snipe-first-match-face :foreground base0 :background green)
    (evil-snipe-matches-face     :foreground green :underline t)
-
-   ;; flycheck
+   ;;;; flycheck
    (flycheck-error   :underline `(:style wave :color ,red)    :background base3)
    (flycheck-warning :underline `(:style wave :color ,yellow) :background base3)
    (flycheck-info    :underline `(:style wave :color ,green)  :background base3)
-
-   ;; helm
+   ;;;; helm
    (helm-swoop-target-line-face :foreground magenta :inverse-video t)
-
-   ;; ivy
+   ;;;; ivy
    (ivy-current-match :background base3)
    (ivy-minibuffer-match-face-1 :background base1 :foreground base4)
-
-   ;; neotree
+   ;;;; markdown-mode
+   (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
+   (markdown-list-face :foreground magenta)
+   (markdown-pre-face  :foreground cyan)
+   (markdown-link-face :inherit 'bold :foreground blue)
+   ((markdown-code-face &override) :background (doom-lighten base2 0.045))
+   ;;;; neotree
    (neo-dir-link-face   :foreground cyan)
    (neo-expand-btn-face :foreground magenta)
-
-   ;; rainbow-delimiters
+   ;;;; outline <built-in>
+   ((outline-1 &override) :foreground magenta)
+   ((outline-2 &override) :foreground orange)
+   ;;;; org <built-in>
+   (org-ellipsis :foreground orange)
+   (org-tag :foreground yellow :bold nil)
+   ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
+   (org-todo :foreground yellow :bold 'inherit)
+   (org-list-dt :foreground yellow)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground magenta)
    (rainbow-delimiters-depth-2-face :foreground orange)
    (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground cyan)
    (rainbow-delimiters-depth-5-face :foreground magenta)
    (rainbow-delimiters-depth-6-face :foreground orange)
-   (rainbow-delimiters-depth-7-face :foreground green)
+   (rainbow-delimiters-depth-7-face :foreground green))
 
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground keywords)
-
-   ;; markdown-mode
-   (markdown-blockquote-face :inherit 'italic :foreground dark-blue)
-   (markdown-list-face :foreground magenta)
-   (markdown-pre-face  :foreground cyan)
-   (markdown-link-face :inherit 'bold :foreground blue)
-   ((markdown-code-face &override) :background (doom-lighten base2 0.045))
-
-   ;; org-mode
-   ((outline-1 &override) :foreground magenta)
-   ((outline-2 &override) :foreground orange)
-   (org-ellipsis :foreground orange)
-   (org-tag :foreground yellow :bold nil)
-   ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
-   (org-todo :foreground yellow :bold 'inherit)
-   (org-list-dt :foreground yellow))
-
-
-  ;; --- extra variables --------------------
+  ;;;; Base theme variable overrides
   ;; ()
   )
 

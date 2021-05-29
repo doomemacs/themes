@@ -83,8 +83,8 @@ maintain them and address inconsistencies:
 | `doom-1337`                         | ported from [VSCode's 1337 Theme][vscode-1337]                                                               |
 | `doom-acario-dark`                  | an original dark theme (thanks to [gagbo])                                                                   |
 | `doom-acario-light`                 | an original light theme (thanks to [gagbo])                                                                  |
-| `doom-ayu-dark`                     | Light variant from [Ayu] themes (thanks to [LoveSponge])                                                     |
-| `doom-ayu-light`                    | Dark variant from [Ayu] themes(thanks to [LoveSponge])                                                       |
+| `doom-ayu-mirage`                   | Dark variant from [Ayu] themes (thanks to [LoveSponge])                                                      |
+| `doom-ayu-light`                    | Light variant from [Ayu] themes(thanks to [LoveSponge])                                                      |
 | `doom-badger`                       | Based on [original Badger theme](https://github.com/ccann/badger-theme)                                      |
 | `doom-challenger-deep`              | based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])                          |
 | `doom-city-lights`                  | based on Atom's [City lights][city-lights] (thanks to [fuxialexander])                                       |
@@ -107,6 +107,10 @@ maintain them and address inconsistencies:
 | `doom-molokai`                      | a theme based on Texmate's Monokai                                                                           |
 | `doom-monokai-classic`              | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
 | `doom-monokai-pro`                  | port of [Monokai]'s Pro variant (thanks to [kadenbarlow])                                                    |
+| `doom-monokai-machine`              | port of [Monokai]'s Pro (Machine) variant (thanks to [minikN])                                               |
+| `doom-monokai-octagon`              | port of [Monokai]'s Pro (Octagon) variant (thanks to [minikN])                                               |
+| `doom-monokai-ristretto`            | port of [Monokai]'s Pro (Ristretto) variant (thanks to [minikN])                                             |
+| `doom-monokai-spectrum`             | port of [Monokai]'s Pro (Spectrum) variant (thanks to [minikN])                                              |
 | `doom-moonlight`                    | ported from VS Code's [Moonlight Theme] (thanks to [Brettm12345])                                            |
 | `doom-nord-light`                   | light variant of [Nord][nord] (thanks to [fuxialexander])                                                    |
 | `doom-nord`                         | dark variant of [Nord][nord] (thanks to [fuxialexander])                                                     |
@@ -255,6 +259,7 @@ support.
 [LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[minikN]: https://github.com/minikN
 [Miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
 [mode-line]: https://github.com/hlissner/.emacs.d/blob/master/modules/ui/doom-modeline/config.el

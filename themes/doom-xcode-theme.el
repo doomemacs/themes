@@ -15,8 +15,8 @@ Can be an integer to determine the exact padding."
   "A theme based off of the Xcode Dark Theme"
 
   ;; name        gui       256       16
-  ((bg         '("#1d1f21" nil       nil          ))
-   (bg-alt     '("#161719" nil       nil          ))
+  ((bg         '("#292A30" nil       nil          ))
+   (bg-alt     '("#252629" nil       nil          ))
    (base0      '("#0d0d0d" "black"   "black"      ))
    (base1      '("#1b1b1b" "#1b1b1b"              ))
    (base2      '("#212122" "#1e1e1e"              ))
@@ -26,27 +26,25 @@ Can be an integer to determine the exact padding."
    (base6      '("#757878" "#6b6b6b" "brightblack"))
    (base7      '("#969896" "#979797" "brightblack"))
    (base8      '("#ffffff" "#ffffff" "white"      ))
-   (fg         '("#b2bbc2" "#b2bbc2" "white"))
+   (fg         '("#FFFFFF" "#ffffff" "white"))
    (fg-alt     (doom-darken fg 0.4))
 
-   (red        '("#cc6666" "#cc6666" "red"))
-   (orange     '("#de935f" "#dd9955" "brightred"))
-   (yellow     '("#f0c674" "#f0c674" "yellow"))
-   (green      '("#b5bd68" "#b5bd68" "green"))
-   (blue       '("#81a2be" "#88aabb" "brightblue"))
-   (teal       blue) ; FIXME replace with real teal
-   (magenta    '("#c9b4cf" "#c9b4cf" "magenta"))
+   (red        '("#FC6A5D" "#FC6A5D" "red"))
+   (orange     '("#FD8F3F" "#FD8F3F" "orange"))
+   (yellow     '("#D0BF68" "#D0BF68" "yellow"))
+   (green      '("#67B7A4" "#67B7A4" "green"))
+   (blue       '("#5DD8FF" "#5DD8FF" "brightblue"))
+   (teal       '("#59B0CF" "#59B0CF" "brightblue"))
+   (magenta    '("#D0A8FF" "#D0A8FF" "magenta"))
    (cyan       '("#8abeb7" "#8abeb7" "cyan"))
    (dark-cyan  (doom-darken cyan 0.4))
 
 
-   (grey       '("#7a8590" "#7a8590" "brightblack"))
-   (light-green'("#88c0b3" "#88c0b3" "lightgreen"))
-   (violet     '("#b294bb" "#b294bb" "brightmagenta"))
-   (light-blue '("#7eddfc" "#7eddfc" "lightblue"))
-   (dark-blue  '("#5db8d9" "#5db8d9" "darkblue"))
-   (orange     '("#ef8775" "#ef8775" "orange"))
-   (pink       '("#ef82af" "#ef82af" "pink"))
+   (grey       '("#6C7986" "#6C7986" "brightblack"))
+   (light-green'("#9EF1DD" "#9EF1DD" "lightgreen"))
+   (violet     '("#A167E6" "#A167E6" "brightmagenta"))
+   (dark-blue  '("#41A1C0" "#41A1C0" "darkblue"))
+   (pink       '("#FC5FA3" "#FC5FA3" "pink"))
 
    ;; face categories
    (highlight      blue)
@@ -55,15 +53,15 @@ Can be an integer to determine the exact padding."
    (builtin        light-green)
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.14))
-   (constants      dark-blue)
-   (functions      violet)
+   (constants      violet)
+   (functions      dark-blue)
    (keywords       pink)
-   (methods        violet)
-   (operators      fg)
-   (type           light-blue)
-   (strings        light-green)
+   (methods        dark-blue)
+   (operators      orange)
+   (type           blue)
+   (strings        red)
    (variables      dark-blue)
-   (numbers        light-green)
+   (numbers        yellow)
    (region         selection)
    (error          red)
    (warning        yellow)
@@ -84,31 +82,30 @@ Can be an integer to determine the exact padding."
         4))))
 
   ;; --- faces ------------------------------
-  ((doom-modeline-buffer-path       :foreground dark-blue :bold bold)
-   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
-
+  (((font-lock-keyword-face &override) :weight 'bold)
    ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground orange :bold bold)
+   ((line-number-current-line &override) :foreground orange :weight 'bold)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-alt :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
 
-   ;; rainbow-delimiters
+   ;;;; doom-modeline
+   (doom-modeline-buffer-path       :foreground dark-blue :bold bold)
+   (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground magenta)
    (rainbow-delimiters-depth-6-face :foreground yellow)
-   (rainbow-delimiters-depth-7-face :foreground teal)
-
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-alt :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt))))
+   (rainbow-delimiters-depth-7-face :foreground teal))
 
   ;; --- variables --------------------------
   ;; ()
   )
 
-(provide 'doom-xcode-theme)
 ;;; doom-xcode-theme.el ends here

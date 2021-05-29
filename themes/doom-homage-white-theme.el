@@ -96,72 +96,68 @@ determine the exact padding."
    (modeline-bg-inactive (doom-darken bg 0.1))
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((centaur-tabs-unselected :background bg-alt :foreground base4)
-   (font-lock-comment-face
-    :foreground comments)
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments
-    :slant 'italic)
-
-   ((line-number &override) :foreground (doom-lighten base4 0.15))
-   ((line-number-current-line &override) :foreground base8)
-
-   ;; Override secondary selection
-   ((secondary-selection &override) :background base0)
-
-   ;; Change swiper colours, background and foreground are too close
-   ((swiper-match-face-1 &override) :foreground bg :background fg)
-   ((swiper-line-face    &override) :background (doom-lighten blue 0.70) :foreground fg)
-   ((ivy-minibuffer-match-face-1 &override) :foreground (doom-darken grey 0.70))
-
-   ;; Apply bold value for different things
-   (font-lock-builtin-face       :inherit 'bold)
+  ;;;; Base theme face overrides
+  ((font-lock-builtin-face       :inherit 'bold)
+   ((font-lock-doc-face &override) :slant 'italic)
    (font-lock-function-name-face :inherit 'bold)
    (font-lock-keyword-face       :inherit 'bold)
    (font-lock-type-face          :inherit 'bold)
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
+   ((line-number &override) :foreground (doom-lighten base4 0.15))
+   ((line-number-current-line &override) :foreground base8)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+   (tooltip :background base1 :foreground fg)
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;; Override secondary selection
+   ((secondary-selection &override) :background base0)
 
-   ;; magit
+   ;;;; centaur-tabs
+   (centaur-tabs-unselected :background bg-alt :foreground base4)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; ediff <built-in>
+   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
+   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
+   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
+   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
+   ;;;; magit
    ((magit-diff-hunk-heading           &override) :foreground base4 :background bg :bold bold)
    ((magit-diff-hunk-heading-highlight &override) :foreground fg    :background bg :bold bold)
    (magit-blame-heading     :foreground orange :background bg-alt)
    (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-blend red bg 0.1))
    (magit-diff-removed-highlight :foreground red :background (doom-blend red bg 0.2) :bold bold)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
+   ;;;; helm
+   (helm-candidate-number :background blue :foreground bg)
+   ;;;; highlight-indent-guides
+   (highlight-indent-guides-character-face :foreground base2)
+   ;;;; ivy
+   ((ivy-minibuffer-match-face-1 &override) :foreground (doom-darken grey 0.70))
+   ;;;; ivy-posframe
+   (ivy-posframe               :background base0)
+   ;;;; lsp-mode
+   (lsp-ui-doc-background      :background base0)
+   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
+   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
+   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
+   ;;;; markdown-mode
    (markdown-markup-face     :foreground base5)
    (markdown-header-face     :inherit 'bold :foreground red)
    ((markdown-code-face &override)       :background base1)
    (mmm-default-submode-face :background base1)
-
-   ;; org-mode: make outline just the same colour as normal text
+   ;;;; mu4e
+   (mu4e-highlight-face         :background bg :inherit 'bold)
+   (mu4e-header-highlight-face :foreground dark-blue :inherit 'bold)
+   (mu4e-unread-face :foreground blue)
+   ;;;; outline <built-in>
    ((outline-1 &override) :foreground fg)
    ((outline-2 &override) :foreground fg)
    ((outline-3 &override) :foreground fg)
@@ -170,72 +166,49 @@ determine the exact padding."
    ((outline-6 &override) :foreground fg)
    ((outline-7 &override) :foreground fg)
    ((outline-8 &override) :foreground fg)
-   ;; org-mode: make unfinished cookie and todo keywords to be very bright to
-   ;; grab attention
+   ;;;; org <built-in>
+   ;; Make unfinished cookie & todo keywords bright to grab attention
    ((org-todo &override) :foreground red)
-   ;; org-mode: make tags and dates to have pretty box around them
+   ;; Make tags and dates to have pretty box around them
    ((org-tag &override)   :foreground fg :background yellow-alt
     :box `(:line-width -1 :color ,base5 :style 'released-button))
    ((org-date &override)  :foreground fg :background base1
     :box `(:line-width -1 :color ,base5  :style 'released-button))
-   ;; org-mode: Make drawers and special keywords (like scheduled) to be very bleak
+   ;; Make drawers and special keywords (like scheduled) to be very bleak
    ((org-special-keyword &override)  :foreground grey)
    ((org-drawer          &override)  :foreground grey)
-   ;; org-mode: Make ellipsis as bleak as possible and reset any underline and boxing
-   ;; properties
+   ;; Make ellipsis as bleak as possible and reset underline/boxing
    (org-ellipsis :underline nil :box nil :foreground fg :background bg)
-   ;; org-mode: Make blocks have a slightly different background
+   ;; Make blocks have a slightly different background
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :foreground fg :slant 'italic)
    ((org-quote &override) :background base1)
    ((org-table &override) :foreground fg)
-
-   ;; org-agendamode: make "unimportant" things like distant deadlines and
-   ;; things scheduled for today to be bleak.
+   ;; Make "unimportant" things like distant deadlines and things scheduled for
+   ;; today to be bleak.
    (org-upcoming-deadline         :foreground base8)
    (org-upcoming-distant-deadline :foreground fg)
    (org-scheduled                 :foreground fg)
    (org-scheduled-today           :foreground fg)
    (org-scheduled-previously      :foreground base8)
-
-   ;; Indent guides character face
-   (highlight-indent-guides-character-face :foreground base2)
-
-   ;; helm
-   (helm-candidate-number :background blue :foreground bg)
-
-   ;; web-mode
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; swiper
+   ((swiper-match-face-1 &override) :foreground bg :background fg)
+   ((swiper-line-face    &override) :background (doom-lighten blue 0.70) :foreground fg)
+   ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
+   ;;;; wgrep <built-in>
+   (wgrep-face :background base1))
 
-   ;; wgrep
-   (wgrep-face :background base1)
-
-   ;; ediff
-   (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
-   (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
-   (ediff-current-diff-C        :foreground blue  :background (doom-lighten blue 0.8))
-   (ediff-current-diff-Ancestor :foreground teal  :background (doom-lighten teal 0.8))
-
-   ;; tooltip
-   (tooltip :background base1 :foreground fg)
-
-   ;; posframe
-   (ivy-posframe               :background base0)
-
-   ;; lsp
-   (lsp-ui-doc-background      :background base0)
-   (lsp-face-highlight-read    :background (doom-blend red bg 0.3))
-   (lsp-face-highlight-textual :inherit 'lsp-face-highlight-read)
-   (lsp-face-highlight-write   :inherit 'lsp-face-highlight-read)
-
-   ;; mu4e
-   (mu4e-highlight-face         :background bg :inherit 'bold)
-   (mu4e-header-highlight-face :foreground dark-blue :inherit 'bold)
-   (mu4e-unread-face :foreground blue)
-   )
-
-  ;; --- extra variables ---------------------
-  ()
-  )
+  ;;;; Base theme variable overrides-
+  ())
 
 ;;; doom-homage-white-theme.el ends here

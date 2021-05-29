@@ -122,114 +122,30 @@ determine the exact padding."
    (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
-   ((line-number &override) :foreground base5)
+  ;;;; Base theme face overrides
+  (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments
+   ((font-lock-comment-face &override)
     :background (if doom-dracula-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-   (solaire-hl-line-face :background base2)
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
+   ;;;; company
+   (company-tooltip-selection     :background base3)
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground violet)
    (css-property             :foreground violet)
    (css-selector             :foreground green)
-
-   ;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-darken 'bg 0.075))
-
-   ;; org-mode
-   ((outline-1 &override) :foreground level1)
-   (outline-2 :inherit 'outline-1 :foreground level2)
-   (outline-3 :inherit 'outline-1 :foreground level3)
-   (outline-4 :inherit 'outline-1 :foreground level4)
-   (outline-5 :inherit 'outline-1 :foreground level5)
-   (outline-6 :inherit 'outline-1 :foreground level6)
-   (outline-7 :inherit 'outline-1 :foreground level7)
-
-   (org-todo :foreground orange :bold 'inherit :background (doom-darken base1 0.02))
-   (org-done :foreground green :strike-through nil :background base2 :bold t)
-   (org-headline-done :foreground base4 :strike-through nil)
-   ((org-tag &override) :foreground (doom-lighten orange 0.3))
-   (org-agenda-date :foreground cyan)
-   (org-agenda-dimmed-todo-face :foreground comments)
-   (org-agenda-done :foreground base4)
-   (org-agenda-structure :foreground violet)
-   ((org-block &override) :background (doom-darken base1 0.125) :foreground violet)
-   ((org-block-begin-line &override) :background (doom-darken base1 0.125) :foreground comments)
-   (org-code :foreground yellow)
-   (org-column :background base1)
-   (org-column-title :background base1 :bold t :underline t)
-   (org-date :foreground cyan)
-   (org-document-info :foreground blue)
-   (org-document-info-keyword :foreground comments)
-   (org-ellipsis :foreground comments)
-   (org-footnote :foreground blue)
-   (org-headline-base :foreground comments :strike-through t :bold nil)
-   (org-link :foreground orange :underline t :weight 'bold)
-   (org-priority :foreground cyan)
-   (org-scheduled :foreground green)
-   (org-scheduled-previously :foreground yellow)
-   (org-scheduled-today :foreground orange)
-   (org-sexp-date :foreground base4)
-   (org-special-keyword :foreground yellow)
-   (org-table :foreground violet)
-   (org-upcoming-deadline :foreground yellow)
-   (org-warning :foreground magenta)
-
-   ;; tooltip and company
-   (tooltip              :background bg-alt :foreground fg)
-   (company-tooltip-selection     :background base3)
-
-   ;; rjsx-mode
-   (rjsx-tag :foreground magenta)
-   (rjsx-attr :foreground green :slant 'italic :weight 'medium)
-
-   ;; js2-mode
-   (js2-external-variable :foreground violet)
-   (js2-function-param :foreground cyan)
-   (js2-jsdoc-html-tag-delimiter :foreground yellow)
-   (js2-jsdoc-html-tag-name :foreground dark-blue)
-   (js2-jsdoc-value :foreground yellow)
-   (js2-private-function-call :foreground cyan)
-   (js2-private-member :foreground base7)
-
-   ;; web-mode
-   (web-mode-builtin-face :foreground orange)
-   (web-mode-css-selector-face :foreground green)
-   (web-mode-html-attr-name-face :foreground green)
-   (web-mode-html-tag-bracket-face :inherit 'default)
-   (web-mode-html-tag-face :foreground magenta :weight 'bold)
-   (web-mode-preprocessor-face :foreground orange)
-
-   ;; helm
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; helm
    (helm-bookmark-w3m :foreground violet)
    (helm-buffer-not-saved :foreground violet)
    (helm-buffer-process :foreground orange)
@@ -251,13 +167,83 @@ determine the exact padding."
    (helm-time-zone-current :foreground orange)
    (helm-time-zone-home :foreground violet)
    (helm-visible-mark :foreground bg :background base3)
-
-   ;; highlight-quoted-mode
+   ;;;; highlight-quoted-mode
    (highlight-quoted-symbol :foreground cyan)
    (highlight-quoted-quote  :foreground magenta)
-   )
+   ;;;; js2-mode
+   (js2-external-variable :foreground violet)
+   (js2-function-param :foreground cyan)
+   (js2-jsdoc-html-tag-delimiter :foreground yellow)
+   (js2-jsdoc-html-tag-name :foreground dark-blue)
+   (js2-jsdoc-value :foreground yellow)
+   (js2-private-function-call :foreground cyan)
+   (js2-private-member :foreground base7)
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-darken 'bg 0.075))
+   ;;;; outline <built-in>
+   ((outline-1 &override) :foreground level1)
+   (outline-2 :inherit 'outline-1 :foreground level2)
+   (outline-3 :inherit 'outline-2 :foreground level3)
+   (outline-4 :inherit 'outline-3 :foreground level4)
+   (outline-5 :inherit 'outline-4 :foreground level5)
+   (outline-6 :inherit 'outline-5 :foreground level6)
+   (outline-7 :inherit 'outline-6 :foreground level7)
+   (outline-8 :inherit 'outline-7 :foreground level8)
+   ;;;; org <built-in>
+   (org-agenda-date :foreground cyan)
+   (org-agenda-dimmed-todo-face :foreground comments)
+   (org-agenda-done :foreground base4)
+   (org-agenda-structure :foreground violet)
+   ((org-block &override) :background (doom-darken base1 0.125) :foreground violet)
+   ((org-block-begin-line &override) :background (doom-darken base1 0.125) :foreground comments)
+   (org-code :foreground yellow)
+   (org-column :background base1)
+   (org-column-title :background base1 :bold t :underline t)
+   (org-date :foreground cyan)
+   (org-document-info :foreground blue)
+   (org-document-info-keyword :foreground comments)
+   (org-done :foreground green :strike-through nil :background base2 :bold t)
+   (org-ellipsis :foreground comments)
+   (org-footnote :foreground blue)
+   (org-headline-base :foreground comments :strike-through t :bold nil)
+   (org-headline-done :foreground base4 :strike-through nil)
+   (org-link :foreground orange :underline t :weight 'bold)
+   (org-priority :foreground cyan)
+   ((org-quote &override) :background (doom-darken base1 0.125))
+   (org-scheduled :foreground green)
+   (org-scheduled-previously :foreground yellow)
+   (org-scheduled-today :foreground orange)
+   (org-sexp-date :foreground base4)
+   (org-special-keyword :foreground yellow)
+   (org-table :foreground violet)
+   ((org-tag &override) :foreground (doom-lighten orange 0.3))
+   (org-todo :foreground orange :bold 'inherit :background (doom-darken base1 0.02))
+   (org-upcoming-deadline :foreground yellow)
+   (org-warning :foreground magenta)
+   ;;;; rjsx-mode
+   (rjsx-tag :foreground magenta)
+   (rjsx-attr :foreground green :slant 'italic :weight 'medium)
+   ;;;; solaire-mode
+   (solaire-hl-line-face :background base2)
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; web-mode
+   (web-mode-builtin-face :foreground orange)
+   (web-mode-css-selector-face :foreground green)
+   (web-mode-html-attr-name-face :foreground green)
+   (web-mode-html-tag-bracket-face :inherit 'default)
+   (web-mode-html-tag-face :foreground magenta :weight 'bold)
+   (web-mode-preprocessor-face :foreground orange))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ()
   )
 

@@ -32,7 +32,6 @@ determine the exact padding."
 (def-doom-theme doom-acario-dark
   "A dark theme inspired by Acario"
 
-;;;; Colors
   ;; name        default   256         16
   ((bg         '("#0D0E16" "color-233" "black"        ))
    (bg-alt     '("#040408" "color-232" "brightblack"  ))
@@ -66,7 +65,7 @@ determine the exact padding."
    (bg-cyan    '("#092D27" "color-23"   "brightblack"  ))
    (dark-cyan  bg-cyan)
 
-;;;; face categories -- required for all themes
+   ;; face categories -- required for all themes
    (highlight      orange)
    (vertical-bar   base0)
    (selection      bg-blue)
@@ -90,7 +89,7 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
-;;;; custom categories
+   ;; custom categories
    (hidden bg)
    (-modeline-bright doom-acario-dark-brighter-modeline)
    (-modeline-pad
@@ -111,35 +110,54 @@ determine the exact padding."
    (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
    (modeline-bg-inactive-l (doom-darken bg 0.20)))
 
-;;;; --- extra faces ------------------------
-  (((all-the-icons-dblue &override) :foreground teal)
-   (elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
 
-   (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
-
-;;;;; hl-fill-column-face
-   (hl-fill-column-face :background bg-alt :foreground fg-alt)
-
-;;;;; line-number
-   ((line-number &override) :foreground base4)
-   ((line-number-current-line &override) :foreground orange :bold bold)
-
-;;;;; comments and doc
-   (font-lock-comment-face
+  ;;;; Base theme face overrides
+  ((font-lock-comment-face
     :slant 'italic
     :foreground comments
     :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
+   ((line-number &override) :foreground base4)
+   ((line-number-current-line &override) :foreground orange :bold bold)
+   (mode-line
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
+   (mode-line-inactive
+    :background modeline-bg-inactive :foreground modeline-fg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
-;;;;; Flycheck
+   ;;;; all-the-icons
+   ((all-the-icons-dblue &override) :foreground teal)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
+   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
+   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background bg-blue :foreground fg-alt)
+   ;;;; flycheck
    (flycheck-popup-tip-face :background bg-blue :foreground fg-alt)
    (flycheck-posframe-info-face :background bg-blue :foreground fg-alt)
    (flycheck-posframe-warning-face :inherit 'warning)
    (flycheck-posframe-error-face :inherit 'error)
-
-;;;;; Magit
+   ;;;; hl-fill-column-face
+   (hl-fill-column-face :background bg-alt :foreground fg-alt)
+   ;;;; ivy
+   (ivy-current-match :background bg-blue :distant-foreground base0 :weight 'normal)
+   (ivy-posframe :background base1 :foreground fg)
+   (internal-border :background base7)
+   ;;;; lsp-mode and lsp-ui-mode
+   (lsp-ui-peek-highlight :foreground yellow)
+   (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
+                                :background bg-alt)
+   ;;;; magit
    (magit-blame-culprit :foreground yellow)
    (magit-blame-header :foreground green)
    (magit-blame-sha1 :foreground yellow)
@@ -205,22 +223,16 @@ determine the exact padding."
    (magithub-ci-no-status :foreground grey)
    (magithub-issue-number :foreground fg)
    (magithub-notification-reason :foreground fg)
-
-;;;;; Modeline, Solaire modeline and Doom modeline
-   (mode-line
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-   (mode-line-inactive
-    :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-   (doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-   (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-   (doom-modeline-buffer-project-root :foreground green :weight 'bold)
-
+   ;;;; markdown-mode
+   (markdown-markup-face :foreground base5)
+   (markdown-header-face :inherit 'bold :foreground red)
+   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ;;;; org <built-in>
+   ((org-block &override) :background bg-alt)
+   ((org-block-begin-line &override) :background bg :foreground comments :slant 'italic)
+   ((org-quote &override) :background base1)
+   (org-hide :foreground hidden)
+   ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l
@@ -229,41 +241,11 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-;;;;; whitespace
+   ;;;; whitespace <built-in>
    (whitespace-indentation :inherit 'default)
-   (whitespace-big-indent :inherit 'default)
+   (whitespace-big-indent :inherit 'default))
 
-;;;;; ivy-mode
-   (ivy-current-match :background bg-blue :distant-foreground base0 :weight 'normal)
-   (ivy-posframe :background base1 :foreground fg)
-   (internal-border :background base7)
-
-;;;;; lsp-mode and lsp-ui-mode
-   (lsp-ui-peek-highlight :foreground yellow)
-   (lsp-ui-sideline-symbol-info :foreground (doom-blend comments bg 0.85)
-                                :background bg-alt)
-
-;;;; --- major-mode faces -------------------
-;;;;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-;;;;; markdown-mode
-   (markdown-markup-face :foreground base5)
-   (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
-
-;;;;; org-mode
-   ((org-block &override) :background bg-alt)
-   ((org-block-begin-line &override) :background bg :foreground comments :slant 'italic)
-   ((org-quote &override) :background base1)
-
-   (org-hide :foreground hidden))
-
-
-  ;;;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 

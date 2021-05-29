@@ -90,13 +90,8 @@ determine the exact padding."
     (when doom-spacegrey-padded-modeline
       (if (integerp doom-spacegrey-padded-modeline) doom-spacegrey-padded-modeline 4)))
 
-
-
-   ;; --- Modeline config -------------------
-
    (modeline-fg     nil)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
-
    (modeline-bg
     (if -modeline-bright
         (doom-darken base3 0.1)
@@ -109,54 +104,32 @@ determine the exact padding."
    (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
 
-  ;; --- extra faces ------------------------
-  ((elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
+    :background (if doom-spacegrey-comment-bg (doom-lighten bg 0.05)))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments
-    :background (if doom-spacegrey-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground fg)
    (css-selector             :foreground red)
-
-   ;; markdown-mode
+   ;;;; doom-modeline
+   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-darken bg 0.1))
-
-   ;; org-mode
-   (org-block            :background (doom-darken bg-alt 0.04))
-   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
-
+   ;;;; outline <built-in>
    ((outline-1 &override) :foreground fg :weight 'ultra-bold)
    ((outline-2 &override) :foreground (doom-blend fg blue 0.35))
    ((outline-3 &override) :foreground (doom-blend fg blue 0.7))
@@ -165,17 +138,23 @@ determine the exact padding."
    ((outline-6 &override) :foreground (doom-blend magenta blue 0.4))
    ((outline-7 &override) :foreground (doom-blend magenta blue 0.6))
    ((outline-8 &override) :foreground fg)
-
+   ;;;; org <built-in>
+   (org-block            :background (doom-darken bg-alt 0.04))
+   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
    (org-ellipsis         :underline nil :background bg    :foreground red)
    ((org-quote &override) :background base1)
-
-   ;; org-mode
    (org-hide :foreground bg)
-   (solaire-org-hide-face :foreground hidden)
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
 
-   (tooltip              :background bg-alt :foreground fg))
-
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 

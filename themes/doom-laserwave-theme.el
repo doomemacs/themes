@@ -45,7 +45,7 @@ determine the exact padding."
    (dark-cyan  '("#6D7E8A" "#667788" "cyan"         ))
 
    ;; face categories -- required for all themes
-   (highlight      blue)
+   (highlight      magenta)
    (vertical-bar   (doom-darken base1 0.2))
    (selection      dark-blue)
    (builtin        magenta)
@@ -75,50 +75,36 @@ determine the exact padding."
       (if (integerp doom-laserwave-padded-modeline) doom-laserwave-padded-modeline 4)))
 
    (modeline-fg     bg-alt)
-   (modeline-fg-alt base5)
-
-   (modeline-bg
-    base6)
-   (modeline-bg-l
-    `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-fg-alt base6)
+   (modeline-bg base6)
+   (modeline-bg-inactive (doom-darken bg 0.1)))
 
 
-  ;; --- extra faces ------------------------
-  ;; Centaur tabs
-  ((centaur-tabs-active-bar-face :background magenta)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-                                          :foreground magenta)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-                                            :foreground magenta)
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
+  ;;;; Base theme face overrides
+  ((lazy-highlight :background (doom-darken magenta 0.4) :foreground fg)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments)
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-
-   (doom-modeline-bar :background highlight)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground bg-alt)
-
-   (solaire-mode-line-face
-    :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
-
-   ;; Doom modeline
+   (mode-line-emphasis :foreground bg-alt)
+   (mode-line-highlight :background orange :weight 'bold)
+   ;;;; centaur-tabs
+   (centaur-tabs-active-bar-face :background magenta)
+   (centaur-tabs-modified-marker-selected
+    :inherit 'centaur-tabs-selected :foreground magenta)
+   (centaur-tabs-modified-marker-unselected
+    :inherit 'centaur-tabs-unselected :foreground magenta)
+   ;;;; company
+   (company-box-background :foreground fg :background bg-alt)
+   ;;;; css-mode <built-in> / scss-mode
+   (css-proprietary-property :foreground orange)
+   (css-property             :foreground green)
+   (css-selector             :foreground blue)
+   ;;;; doom-modeline
    (doom-modeline-bar :background base6)
    (doom-modeline-info :inherit 'mode-line-emphasis)
    (doom-modeline-urgent :inherit 'mode-line-emphasis)
@@ -136,14 +122,11 @@ determine the exact padding."
    (doom-modeline-evil-visual-state :foreground yellow)
    (doom-modeline-evil-replace-state :foreground orange)
    (doom-modeline-evil-operator-state :foreground teal)
-
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
-   (css-proprietary-property :foreground orange)
-   (css-property             :foreground green)
-   (css-selector             :foreground blue)
-
-   ;; markdown-mode
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; ivy
+   (ivy-current-match :background base2 :distant-foreground nil)
+   ;;;; markdown-mode
    (markdown-header-delimiter-face :foreground base7)
    (markdown-metadata-key-face     :foreground base7)
    (markdown-list-face             :foreground base7)
@@ -153,8 +136,9 @@ determine the exact padding."
    (markdown-bold-face             :inherit 'bold :foreground magenta)
    (markdown-markup-face           :foreground base7)
    (markdown-gfm-checkbox-face :foreground cyan)
-
-   ;; outline (affects org-mode)
+   ;;;; mic-paren
+   (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
+   ;;;; outline <built-in>
    ((outline-1 &override) :foreground blue)
    ((outline-2 &override) :foreground green)
    ((outline-3 &override) :foreground teal)
@@ -163,23 +147,17 @@ determine the exact padding."
    ((outline-6 &override) :foreground (doom-darken teal 0.2))
    ((outline-7 &override) :foreground (doom-darken blue 0.4))
    ((outline-8 &override) :foreground (doom-darken green 0.4))
-
-   ;; org-mode
+   ;;;; org <built-in>
    ((org-block &override) :background base2)
    ((org-block-begin-line &override) :background base2)
    (org-hide :foreground hidden)
-
-   ;; org-pomodoro
+   ;;;; org-pomodoro
    (org-pomodoro-mode-line :inherit 'mode-line-emphasis :weight 'bold) ; unreadable otherwise
    (org-pomodoro-mode-line-overtime :inherit 'org-pomodoro-mode-line)
    (org-pomodoro-mode-line-break :inherit 'org-pomodoro-mode-line)
-
-   ;; --- extra variables ---------------------
-   (paren-face-match  :foreground yellow   :background (doom-darken bg 0.2) :weight 'ultra-bold)
-   (ivy-current-match :background base2 :distant-foreground nil)
-   (tooltip           :background bg-alt :foreground fg)
-   (company-box-background :foreground fg :background bg-alt))
-
-  )
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))))
 
 ;;; doom-laserwave-theme.el ends here

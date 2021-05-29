@@ -106,80 +106,52 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
 
-  ;; --- extra faces ------------------------
-  (
-   (company-tooltip-selection     :background base3)
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
-
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
+    :background (if doom-fairy-floss-comment-bg (doom-lighten bg 0.05)))
+   ((font-lock-keyword-face &override ) :slant 'italic)
+   ((hl-line &override) :background base2)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (font-lock-comment-face
-    :foreground comments
-    :background (if doom-fairy-floss-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-   (font-lock-keyword-face
-    :slant 'italic
-    :foreground keywords)
-
-   ;; Centaur tabs
-   (centaur-tabs-active-bar-face :background blue)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-                                          :foreground blue)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-                                            :foreground blue)
-   ;; Doom modeline
-   (doom-modeline-bar :background blue)
-
-   ;; highlight-thing highlight-symbol
-   (highlight-symbol-face :background region :distant-foreground fg-alt)
-
-   ;; highlight-thing
-   (highlight-thing :background region :distant-foreground fg-alt)
-
-   ;; hl-line
-   (hl-line :background base2)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright cyan highlight))
+   (mode-line-emphasis :foreground (if -modeline-bright cyan highlight))
 
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   (tooltip              :background bg-alt :foreground fg)
-   ;; --- major-mode faces -------------------
-   ;; css-mode / scss-mode
+   ;;;; centaur-tabs
+   (centaur-tabs-active-bar-face :background blue)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
+                                          :foreground blue)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
+                                            :foreground blue)
+   ;;;; company
+   (company-tooltip-selection     :background base3)
+   ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-
-   ;; markdown-mode
+   ;;;; doom-modeline
+   (doom-modeline-bar :background blue)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; highlight-symbol
+   (highlight-symbol-face :background region :distant-foreground fg-alt)
+   ;;;; highlight-thing
+   (highlight-thing :background region :distant-foreground fg-alt)
+   ;;;; magit
+   (magit-diff-removed                :foreground (doom-darken red 0.2) :background (doom-blend red base5 0.1))
+   (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red base5 0.2) :weight 'bold)
+   ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-url-face    :foreground teal :weight 'normal)
    (markdown-reference-face :foreground base6)
    ((markdown-bold-face &override)   :foreground fg)
    ((markdown-italic-face &override) :foreground fg-alt)
-
-   ;; magit
-   (magit-diff-removed                :foreground (doom-darken red 0.2) :background (doom-blend red base5 0.1))
-   (magit-diff-removed-highlight      :foreground red                   :background (doom-blend red base5 0.2) :weight 'bold)
-
-   ;; outline (affects org-mode)
+   ;;;; outline <built-in>
    ((outline-1 &override) :foreground orange)
    ((outline-2 &override) :foreground green)
    ((outline-3 &override) :foreground teal)
@@ -188,16 +160,24 @@ determine the exact padding."
    ((outline-6 &override) :foreground (doom-darken teal 0.2))
    ((outline-7 &override) :foreground (doom-darken orange 0.4))
    ((outline-8 &override) :foreground (doom-darken green 0.4))
-
-   ;; org-mode
+   ;;;; org <built-in>
    ((org-block &override) :background base0)
    ((org-block-begin-line &override) :background base0)
    (org-scheduled         :foreground green)
    (org-scheduled-previously :foreground yellow)
    (org-scheduled-today   :foreground orange)
-   (org-hide              :foreground hidden))
+   (org-hide              :foreground hidden)
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-l
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
 
-  ;; --- extra variables ---------------------
+  ;;;; Base theme variable overrides-
   ;; ()
   )
 
