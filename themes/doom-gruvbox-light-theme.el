@@ -311,8 +311,9 @@ background contrast. All other values default to \"medium\"."
    (js2-jsdoc-html-tag-name        :background nil :foreground light4)
    (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
    ;;;; lsp-mode
-   (lsp-ui-doc-background      :background base2)
-   (lsp-face-highlight-read    :background (doom-blend bg orange 0.5))
+   (lsp-face-highlight-textual     :background (doom-blend bg orange 0.9) :foreground base0 :distant-foreground base8)
+   ;;;; lsp-ui
+   (lsp-ui-doc-background          :background base2)
    ;;;; magit
    (magit-bisect-bad                      :foreground faded-red)
    (magit-bisect-good                     :foreground faded-green)
