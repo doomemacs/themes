@@ -117,10 +117,10 @@ Can be an integer to determine the exact padding."
    (modeline-fg             fg)
    (modeline-fg-inactive    (doom-blend blue grey (if doom-vibrant-brighter-modeline 0.9 0.2)))
    (modeline-bg             (if doom-vibrant-brighter-modeline
-                                modeline-bg
+                                `("#383f58" ,@(cdr base1))
                               `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
    (modeline-bg-alt         (if doom-vibrant-brighter-modeline
-                                `("#383f58" ,@(cdr base1))
+                                modeline-bg
                               `(,(car bg-alt) ,@(cdr base0))))
    (modeline-bg-inactive     `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
    (modeline-bg-alt-inactive (doom-darken bg 0.25))
