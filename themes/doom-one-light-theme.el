@@ -1,9 +1,29 @@
 ;;; doom-one-light-theme.el --- inspired by Atom One Light -*- no-byte-compile: t; -*-
+;;
+;; Copyright (C) 2016-2021 Henrik Lissner
+;;
+;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Created: December 6, 2020
+;; Modified: May 30, 2021
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; Inspired by Atom's One Light color scheme.
+;;
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-one-light-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-one-light' theme."
   :group 'doom-themes)
 
 (defcustom doom-one-light-brighter-modeline nil
@@ -16,25 +36,33 @@
   :group 'doom-one-light-theme
   :type 'boolean)
 
-(defcustom doom-one-light-comment-bg doom-one-light-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-one-light-theme
-  :type 'boolean)
-
 (defcustom doom-one-light-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-one-light-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-one-light
-  "A light theme inspired by Atom One"
+  "A light theme inspired by Atom One Light."
 
   ;; name        default   256       16
-  ((bg         '("#fafafa" nil       nil            ))
-   (bg-alt     '("#f0f0f0" nil       nil            ))
+  ((bg         '("#fafafa" "white"   "white"        ))
+   (fg         '("#383a42" "#424242" "black"        ))
+
+   ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
+   ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
+   ;; or region), especially when paired with the `doom-darken', `doom-lighten',
+   ;; and `doom-blend' helper functions.
+   (bg-alt     '("#f0f0f0" "white"   "white"        ))
+   (fg-alt     '("#c6c7c7" "#c7c7c7" "brightblack"  ))
+
+   ;; These should represent a spectrum from bg to fg, where base0 is a starker
+   ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
+   ;; dark grey, base0 should be white and base8 should be black.
    (base0      '("#f0f0f0" "#f0f0f0" "white"        ))
    (base1      '("#e7e7e7" "#e7e7e7" "brightblack"  ))
    (base2      '("#dfdfdf" "#dfdfdf" "brightblack"  ))
@@ -44,8 +72,6 @@ determine the exact padding."
    (base6      '("#202328" "#2e2e2e" "brightblack"  ))
    (base7      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base8      '("#1b2229" "black"   "black"        ))
-   (fg         '("#383a42" "#424242" "black"        ))
-   (fg-alt     '("#c6c7c7" "#c7c7c7" "brightblack"  ))
 
    (grey       base4)
    (red        '("#e45649" "#e45649" "red"          ))
@@ -60,7 +86,9 @@ determine the exact padding."
    (cyan       '("#0184bc" "#0184bc" "brightcyan"   ))
    (dark-cyan  '("#005478" "#005478" "cyan"         ))
 
-   ;; face categories -- required for all themes
+   ;; These are the "universal syntax classes" that doom-themes establishes.
+   ;; These *must* be included in every doom themes, or your theme will throw an
+   ;; error, as they are used in the base theme defined in doom-themes-base.
    (highlight      blue)
    (vertical-bar   (doom-darken base2 0.1))
    (selection      dark-blue)
@@ -84,29 +112,28 @@ determine the exact padding."
    (vc-added       green)
    (vc-deleted     red)
 
-   ;; custom categories
-   (-modeline-bright doom-one-light-brighter-modeline)
+   ;; These are extra color variables used only in this theme; i.e. they aren't
+   ;; mandatory for derived themes.
+   (modeline-fg              fg)
+   (modeline-fg-alt          (doom-blend
+                              violet base4
+                              (if doom-modeline-brighter-modeline 0.5 0.2)))
+   (modeline-bg              (if doom-modeline-brighter-modeline
+                                 (doom-darken base2 0.05)
+                               base1))
+   (modeline-bg-alt          (if doom-modeline-brighter-modeline
+                                 (doom-darken base2 0.1)
+                               base2))
+   (modeline-bg-inactive     (doom-darken bg 0.1))
+   (modeline-bg-alt-inactive `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1)))
+
    (-modeline-pad
     (when doom-one-light-padded-modeline
-      (if (integerp doom-one-light-padded-modeline) doom-one-light-padded-modeline 4)))
-
-   (modeline-fg     nil)
-   (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
-
-   (modeline-bg
-    (if -modeline-bright
-        (doom-darken base2 0.05)
-      base1))
-   (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken base2 0.1)
-      base2))
-   (modeline-bg-inactive (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.05) ,@(cdr base1))))
+      (if (integerp doom-one-light-padded-modeline) doom-one-light-padded-modeline 4))))
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-one-light-comment-bg base0))
+    :background (if doom-one-light-brighter-comments base0))
    ((font-lock-doc-face &override) :slant 'italic)
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
@@ -116,7 +143,8 @@ determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis
+    :foreground (if doom-modeline-brighter-modeline base8 highlight))
    (tooltip :background base1 :foreground fg)
 
    ;;;; centaur-tabs
@@ -126,7 +154,7 @@ determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
    ;;;; doom-modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-bar :background (if doom-modeline-brighter-modeline modeline-bg highlight))
    ;;;; ediff <built-in>
    (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
    (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
@@ -160,12 +188,12 @@ determine the exact padding."
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+    :background modeline-bg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+    :background modeline-bg-alt-inactive
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt-inactive)))
    ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
    ;;;; wgrep <built-in>
