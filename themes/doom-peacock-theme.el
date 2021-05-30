@@ -2,7 +2,7 @@
 (require 'doom-themes)
 
 (defgroup doom-peacock-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-peacock' theme."
   :group 'doom-themes)
 
 (defcustom doom-peacock-brighter-modeline nil

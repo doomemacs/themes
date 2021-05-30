@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-ayu-light-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-ayu-light' theme."
   :group 'doom-themes)
 
 (defcustom doom-ayu-light-brighter-modeline nil

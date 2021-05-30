@@ -23,7 +23,7 @@
 ;;; Variables
 
 (defgroup doom-vibrant-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-vibrant' theme."
   :group 'doom-themes)
 
 (defcustom doom-vibrant-brighter-modeline nil

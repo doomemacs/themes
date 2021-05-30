@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-city-lights-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-city-lights' theme."
   :group 'doom-themes)
 
 (defcustom doom-city-lights-brighter-modeline nil

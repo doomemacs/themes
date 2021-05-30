@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-laserwave-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-laserwave' theme."
   :group 'doom-themes)
 
 (defcustom doom-laserwave-padded-modeline doom-themes-padded-modeline

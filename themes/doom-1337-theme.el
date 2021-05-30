@@ -1,9 +1,12 @@
 ;;; doom-1337-theme.el --- inspired by 1337 Theme  -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-1337-theme nil
-  "Options for doom-themes"
+  "Options for the doom-1337 theme."
   :group 'doom-themes)
 
 (defcustom doom-1337-padded-modeline doom-themes-padded-modeline
@@ -17,9 +20,12 @@ Can be an integer to determine the exact padding."
   :group 'doom-1337-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-1337
-  "A dark theme inspired by 1337 Theme"
+  "A dark theme inspired by 1337 Theme."
 
   ;; name        default   256       16
   ((bg         '("#191919" "#191919" nil))
@@ -190,3 +196,5 @@ Can be an integer to determine the exact padding."
    (treemacs-root-face :foreground fg :weight 'ultra-bold :height 1.2)
    (treemacs-directory-face :foreground fg)
    (treemacs-git-modified-face :foreground blue)))
+
+;;; doom-1337-theme.el ends here

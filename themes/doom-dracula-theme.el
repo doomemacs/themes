@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-dracula-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-dracula' theme."
   :group 'doom-themes)
 
 (defcustom doom-dracula-brighter-modeline nil

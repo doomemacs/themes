@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-flatwhite-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-flatwhite' theme."
   :group 'doom-themes)
 
 (defcustom doom-flatwhite-brighter-modeline nil

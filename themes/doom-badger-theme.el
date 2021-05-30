@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-badger-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-badger' theme."
   :group 'doom-themes)
 
 (defcustom doom-badger-brighter-modeline nil

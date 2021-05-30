@@ -8,7 +8,7 @@
 
 ;;; Code:
 (defgroup doom-horizon-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-horizon' theme."
   :group 'doom-themes)
 
 (defcustom doom-horizon-brighter-modeline nil

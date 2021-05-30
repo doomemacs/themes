@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-solarized-dark-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-solarized-dark' theme."
   :group 'doom-themes)
 
 (defcustom doom-solarized-dark-brighter-modeline nil

@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-dark+-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-dark' theme."
   :group 'doom-themes)
 
 (defcustom doom-dark+-padded-modeline doom-themes-padded-modeline
@@ -183,3 +183,5 @@ Can be an integer to determine the exact padding."
    (doom-themes-treemacs-file-face :foreground fg)
    (treemacs-directory-face :foreground fg)
    (treemacs-git-modified-face :foreground blue)))
+
+;;; doom-dark+-theme.el ends here

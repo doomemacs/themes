@@ -249,4 +249,5 @@ determine the exact padding."
   ;; --- extra variables --------------------
   ;; ()
   )
+
 ;;; doom-miramare-theme.el ends here

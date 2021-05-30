@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-ayu-mirage-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-ayu-mirage' theme."
   :group 'doom-themes)
 
 (defcustom doom-ayu-mirage-brighter-modeline nil

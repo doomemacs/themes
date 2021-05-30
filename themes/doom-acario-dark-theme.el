@@ -3,7 +3,7 @@
 
 ;;; Variables
 (defgroup doom-acario-dark-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-acario-dark' theme."
   :group 'doom-themes)
 
 (defcustom doom-acario-dark-brighter-modeline nil

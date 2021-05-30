@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-manegarm-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-manegarm' theme."
   :group 'doom-themes)
 
 (defcustom doom-manegarm-padded-modeline doom-themes-padded-modeline

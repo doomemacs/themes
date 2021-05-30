@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-rouge-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-rouge' theme."
   :group 'doom-themes)
 
 (defcustom doom-rouge-brighter-comments nil

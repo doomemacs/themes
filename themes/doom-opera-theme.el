@@ -3,7 +3,7 @@
 (require 'doom-themes)
 
 (defgroup doom-opera-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-opera' theme."
   :group 'doom-themes)
 
 (defcustom doom-opera-brighter-modeline nil

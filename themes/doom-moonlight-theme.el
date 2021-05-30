@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-moonlight-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-moonlight' theme."
   :group 'doom-themes)
 
 (defcustom doom-moonlight-padded-modeline doom-themes-padded-modeline

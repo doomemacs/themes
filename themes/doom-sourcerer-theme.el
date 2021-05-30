@@ -4,7 +4,7 @@
 ;;; Code:
 ;;
 (defgroup doom-sourcerer-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-sourcerer' theme."
   :group 'doom-themes)
 
 (defcustom doom-sourcerer-brighter-modeline nil

@@ -10,7 +10,7 @@
 
 ;;
 (defgroup doom-homage-white-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-homage-white' theme."
   :group 'doom-themes)
 
 (defcustom doom-homage-white-padded-modeline doom-themes-padded-modeline

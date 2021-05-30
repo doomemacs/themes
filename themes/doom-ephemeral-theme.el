@@ -7,7 +7,7 @@
 
 ;;
 (defgroup doom-ephemeral-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-ephemeral' theme."
   :group 'doom-themes)
 
 (defcustom doom-ephemeral-brighter-modeline nil

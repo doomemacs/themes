@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-palenight-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-palenight' theme."
   :group 'doom-themes)
 
 (defcustom doom-palenight-padded-modeline doom-themes-padded-modeline
@@ -128,3 +128,5 @@ Can be an integer to determine the exact padding."
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
+
+;;; doom-palenight-theme.el ends here

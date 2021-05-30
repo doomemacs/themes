@@ -2,7 +2,7 @@
 (require 'doom-themes)
 
 (defgroup doom-xcode-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-xcode' theme."
   :group 'doom-themes)
 
 (defcustom doom-xcode-padded-modeline doom-themes-padded-modeline

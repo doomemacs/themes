@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-Iosvkem-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-theme.el' theme."
   :group 'doom-themes)
 
 (defcustom doom-Iosvkem-brighter-modeline nil
@@ -192,7 +192,5 @@ determine the exact padding."
   ;;;; Base theme variable overrides-
   ;; ()
   )
-
-
 
 ;;; doom-Iosvkem-theme.el ends here

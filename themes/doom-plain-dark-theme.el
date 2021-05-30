@@ -3,7 +3,7 @@
 (require 'doom-themes)
 
 (defgroup doom-plain-dark-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-plain-dark' theme."
   :group 'doom-themes)
 
 (defcustom doom-plain-brighter-modeline nil

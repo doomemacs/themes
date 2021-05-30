@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-material-theme nil
-  "Options for doom-themes"
+  "Options for the `material' theme."
   :group 'doom-themes)
 
 (defcustom doom-material-padded-modeline doom-themes-padded-modeline
@@ -137,3 +137,5 @@ Can be an integer to determine the exact padding."
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
+
+;;; doom-material-theme.el ends here

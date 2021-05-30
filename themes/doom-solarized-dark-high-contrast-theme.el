@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-solarized-dark-high-contrast-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-solarized-dark-high-contrast' theme."
   :group 'doom-themes)
 
 (defcustom doom-solarized-dark-high-contrast-brighter-modeline nil
@@ -224,6 +224,5 @@ determine the exact padding."
    (vterm-color-cyan    :background (doom-lighten cyan 0.75)    :foreground cyan)
    (vterm-color-white   :background (doom-lighten base8 0.75)   :foreground base8)
    ))
-
 
 ;;; doom-solarized-dark-high-contrast-theme.el ends here

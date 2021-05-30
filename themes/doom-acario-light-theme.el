@@ -3,7 +3,7 @@
 
 ;;; Variables
 (defgroup doom-acario-light-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-acario-light' theme."
   :group 'doom-themes)
 
 (defcustom doom-acario-light-brighter-modeline nil
@@ -248,4 +248,3 @@ determine the exact padding."
   )
 
 ;;; doom-acario-light-theme.el ends here
-

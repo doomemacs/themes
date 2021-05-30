@@ -9,7 +9,7 @@
 
 ;;
 (defgroup doom-snazzy-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-snazzy' theme."
   :group 'doom-themes)
 
 ;;

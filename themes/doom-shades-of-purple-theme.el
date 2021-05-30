@@ -28,7 +28,7 @@
 
 ;;
 (defgroup doom-shades-of-purple-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-shades-of-purple' theme."
   :group 'doom-themes)
 
 (defcustom doom-shades-of-purple-padded-modeline doom-themes-padded-modeline

@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-old-hope-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-old-hope' theme."
   :group 'doom-themes)
 
 (defcustom doom-old-hope-brighter-modeline nil
@@ -206,6 +206,5 @@ determine the exact padding."
 
   ;;;; Base theme variable overrides-
   ())
-
 
 ;;; doom-old-hope-theme.el ends here

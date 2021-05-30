@@ -3,7 +3,7 @@
 
 ;;; Code:
 (defgroup doom-henna-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-henna' theme."
   :group 'doom-themes)
 
 (defcustom doom-henna-brighter-modeline nil

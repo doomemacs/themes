@@ -2,7 +2,7 @@
 (require 'doom-themes)
 
 (defgroup doom-oceanic-next-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-oceanic-next' theme."
   :group 'doom-themes)
 
 (defcustom doom-oceanic-next-brighter-modeline nil

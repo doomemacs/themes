@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-challenger-deep-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-challenger-deep' theme."
   :group 'doom-themes)
 
 (defcustom doom-challenger-deep-brighter-modeline nil
@@ -153,4 +153,5 @@ determine the exact padding."
   ;;;; Base theme variable overrides-
   ;; ()
   )
+
 ;;; doom-challenger-deep-theme.el ends here

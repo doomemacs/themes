@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-wilmersdorf-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-wilmersdorf' theme."
   :group 'doom-themes)
 
 (defcustom doom-wilmersdorf-padded-modeline doom-themes-padded-modeline

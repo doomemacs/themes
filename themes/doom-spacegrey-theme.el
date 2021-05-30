@@ -2,7 +2,7 @@
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-spacegrey' theme."
   :group 'doom-themes)
 
 (defcustom doom-spacegrey-brighter-modeline nil

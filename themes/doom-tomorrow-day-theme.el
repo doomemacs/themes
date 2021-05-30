@@ -7,7 +7,7 @@
 (require 'doom-themes)
 
 (defgroup doom-tomorrow-day-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-tomorrow-day' theme."
   :group 'doom-themes)
 
 (defcustom doom-tomorrow-day-padded-modeline doom-themes-padded-modeline

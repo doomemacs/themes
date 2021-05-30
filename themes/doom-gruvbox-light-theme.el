@@ -3,7 +3,7 @@
 
 ;;
 (defgroup doom-gruvbox-light-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-gruvbox-light' theme."
   :group 'doom-themes)
 
 (defcustom doom-gruvbox-light-brighter-modeline nil
