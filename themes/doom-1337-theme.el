@@ -95,7 +95,6 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
   (((highlight &override) :foreground base8)
    (lazy-highlight :background base4 :foreground fg :weight 'bold)
-   (fringe :background bg-alt)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
