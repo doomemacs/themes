@@ -4,11 +4,12 @@
 ;;
 ;; Author: Henrik Lissner <http://github/hlissner>
 ;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Maintainer: Emmanuel Bustos Torres <ema2159@gmail.com>
 ;; Created: May 22, 2016
-;; Modified: May 22, 2021
-;; Version: 2.2.0
-;; Keywords: dark light blue atom one theme neotree icons faces nova
-;; Homepage: https://github.com/hlissner/emacs-doom-theme
+;; Modified: May 30, 2021
+;; Version: 2.2.1
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
 ;;
 ;; This file is not part of GNU Emacs.
@@ -76,8 +77,6 @@
 ;;   [X] `doom-tomorrow-day' (added by emacswatcher)
 ;;   [X] `doom-wilmersdorf' (added by ianpan870102)
 ;;   [X] `doom-zenburn' (added by jsoa)
-;;   [ ] `doom-mono-dark' / `doom-mono-light'
-;;   [ ] `doom-tron'
 ;;
 ;; ## Install
 ;;
