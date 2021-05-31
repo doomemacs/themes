@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '**.md'
       - '.gitignore'
+      - 'doom-themes-ext-*.el'   # not tested yet
       - 'LICENSE'
     branches:
       - master
