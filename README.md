@@ -1,6 +1,6 @@
 ![Release tag](https://img.shields.io/github/tag/hlissner/emacs-doom-themes.svg?label=release&style=flat-square)
 [![MELPA](http://melpa.org/packages/doom-themes-badge.svg?style=flat-square)](http://melpa.org/#/doom-themes)
-[![Build Status](https://travis-ci.org/hlissner/emacs-doom-themes.svg?branch=master&style=flat-square)](https://travis-ci.org/hlissner/emacs-doom-themes)
+![Build status](https://img.shields.io/github/workflow/status/hlissner/emacs-doom-themes/CI/master?style=flat-square)
 [![MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](./LICENSE)
 
 # doom-themes
