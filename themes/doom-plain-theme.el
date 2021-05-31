@@ -1,4 +1,4 @@
-;;; doom-plain-theme.el --- inspired by gko's plain theme for VSCode
+;;; doom-plain-theme.el --- inspired by gko's plain theme for VSCode -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (require 'doom-themes)
 

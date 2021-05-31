@@ -1,4 +1,4 @@
-;;; shades-of-purple-theme.el --- A port of Spacemacs' Shades of Purple theme -*- lexical-binding: t -*-
+;;; shades-of-purple-theme.el --- A port of Spacemacs' Shades of Purple theme -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Author: James Baldwin <jwbaldwin3@gmail.com>
 ;; Homepage: https://github.com/jwbaldwin/spacemacs-shades-of-purple
