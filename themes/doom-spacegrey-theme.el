@@ -1,4 +1,4 @@
-;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark -*- no-byte-compile: t; -*-
+;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil

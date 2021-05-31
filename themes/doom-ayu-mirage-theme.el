@@ -1,4 +1,4 @@
-;;; doom-ayu-mirage-theme.el -*- no-byte-compile: t; -*-
+;;; doom-ayu-mirage-theme.el -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

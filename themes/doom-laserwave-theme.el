@@ -1,4 +1,4 @@
-;;; doom-laserwave-theme.el --- inspired by VS Code laserwave -*- no-byte-compile: t; -*-
+;;; doom-laserwave-theme.el --- inspired by VS Code laserwave -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

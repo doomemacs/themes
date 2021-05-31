@@ -1,4 +1,4 @@
-;;; doom-badger-theme.el --- inspired by original badger theme -*- no-byte-compile: t; -*-
+;;; doom-badger-theme.el --- inspired by original badger theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

@@ -1,4 +1,4 @@
-;; doom-miramare-theme.el --- inspired by Franbach miramare -*- no-byte-compile: t; -*-
+;; doom-miramare-theme.el --- inspired by Franbach miramare -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;; Compiler pacifier

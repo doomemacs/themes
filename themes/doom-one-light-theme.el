@@ -1,4 +1,4 @@
-;;; doom-one-light-theme.el --- inspired by Atom One Light -*- no-byte-compile: t; -*-
+;;; doom-one-light-theme.el --- inspired by Atom One Light -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Copyright (C) 2016-2021 Henrik Lissner
 ;;

@@ -1,4 +1,20 @@
-;;; doom-1337-theme.el --- inspired by 1337 Theme  -*- no-byte-compile: t; -*-
+;;; doom-1337-theme.el --- inspired by 1337 Theme  -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Copyright (C) 2017 Mark Herpich
+;;
+;; Author: ccmywish <ccmywish@users.noreply.github.com>
+;; Created: December 6, 2020
+;; Version: 1.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; Ported from: https://github.com/microsoft/vscode-themes/tree/main/1337
+;;
+;;; Code:
+
 (require 'doom-themes)
 
 

@@ -1,4 +1,4 @@
-;;; doom-solarized-dark-high-contrast-theme.el --- inspired by VS Code Solarized Dark -*- no-byte-compile: t; -*-
+;;; doom-solarized-dark-high-contrast-theme.el --- inspired by VS Code Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

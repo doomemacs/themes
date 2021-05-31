@@ -1,4 +1,4 @@
-;;; doom-ayu-light-theme.el --- inspired by Atom One Dark -*- no-byte-compile: t; -*-
+;;; doom-ayu-light-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

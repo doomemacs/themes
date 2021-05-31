@@ -1,4 +1,4 @@
-;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- no-byte-compile: t; -*-
+;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Copyright (C) 2016-2021 Henrik Lissner
 ;;

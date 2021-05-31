@@ -1,4 +1,4 @@
-;; doom-monokai-ristretto-theme.el --- Ristretto filter of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-ristretto-theme.el --- Ristretto filter of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;; Code:

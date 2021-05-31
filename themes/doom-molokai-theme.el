@@ -1,4 +1,4 @@
-;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
+;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Copyright (C) 2016-2021 Henrik Lissner
 ;;

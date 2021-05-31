@@ -1,4 +1,4 @@
-;; doom-monokai-machine-theme.el --- Machine filter of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-machine-theme.el --- Machine filter of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;; Code:

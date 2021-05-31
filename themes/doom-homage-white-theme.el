@@ -1,4 +1,4 @@
-;;; doom-homage-white-theme.el --- minimal white theme inspired by editors from 2000s -*- no-byte-compile: t; -*-
+;;; doom-homage-white-theme.el --- minimal white theme inspired by editors from 2000s -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

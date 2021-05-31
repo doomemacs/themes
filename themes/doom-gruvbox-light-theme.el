@@ -1,4 +1,4 @@
-;;; doom-gruvbox-light-theme.el --- gruvbox light soft -*- no-byte-compile: t; -*-
+;;; doom-gruvbox-light-theme.el --- gruvbox light soft -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

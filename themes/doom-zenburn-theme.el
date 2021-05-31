@@ -1,4 +1,4 @@
-;;; doom-zenburn-theme.el ---  -*- no-byte-compile: t; -*-
+;;; doom-zenburn-theme.el ---  -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

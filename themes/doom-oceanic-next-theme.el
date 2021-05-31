@@ -1,4 +1,4 @@
-;;; doom-oceanic-next-theme.el --- inspired by Oceanic Next -*- no-byte-compile: t; -*-
+;;; doom-oceanic-next-theme.el --- inspired by Oceanic Next -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-oceanic-next-theme nil

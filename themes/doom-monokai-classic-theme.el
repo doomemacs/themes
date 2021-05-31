@@ -1,4 +1,4 @@
-;; doom-monokai-classic-theme.el --- inspired by Textmate's Monokai -*- no-byte-compile: t; -*-
+;; doom-monokai-classic-theme.el --- inspired by Textmate's Monokai -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

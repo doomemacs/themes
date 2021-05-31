@@ -1,9 +1,12 @@
-;;; shades-of-purple-theme.el --- an implementation of the awesome Shades of Purple theme for Spacemacs
-;; Credit to the original https://github.com/ahmadawais/shades-of-purple-vscode
-
+;;; shades-of-purple-theme.el --- A port of Spacemacs' Shades of Purple theme -*- lexical-binding: t -*-
+;;
 ;; Author: James Baldwin <jwbaldwin3@gmail.com>
-;; URL: https://github.com/jwbaldwin/spacemacs-shades-of-purple
-;; Version: 1.0
+;; Homepage: https://github.com/jwbaldwin/spacemacs-shades-of-purple
+;; Version: 1.0.0
+;;
+;;; Commentary:
+;; Credit to the original https://github.com/ahmadawais/shades-of-purple-vscode
+;;; Code:
 
 ;;Background            #2D2B55 #2D2B55
 ;;Background Dark       #1E1E3F #1E1E3F

@@ -1,4 +1,4 @@
-;;; doom-horizon-theme.el --- Inspired by VSCode Horizon -*- no-byte-compile: t; -*-
+;;; doom-horizon-theme.el --- Inspired by VSCode Horizon -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;; This theme was inspired by the port of Horizon to Emacs

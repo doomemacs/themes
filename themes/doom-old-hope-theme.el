@@ -1,4 +1,4 @@
-;;; doom-one-theme.el --- inspired by An Old Hope -*- no-byte-compile: t; -*-
+;;; doom-one-theme.el --- inspired by An Old Hope -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

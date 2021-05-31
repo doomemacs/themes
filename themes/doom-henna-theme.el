@@ -1,4 +1,4 @@
-;;; doom-henna-theme.el --- inspired by vscode henna theme -*- no-byte-compile: t; -*-
+;;; doom-henna-theme.el --- inspired by vscode henna theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;; Code:

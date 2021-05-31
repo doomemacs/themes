@@ -1,4 +1,4 @@
-;;; doom-ephemeral-theme.el --- ephemeral -*- no-byte-compile: t; -*-
+;;; doom-ephemeral-theme.el --- ephemeral -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;; Commentary:
 ;;; A doom theme inspired by https://github.com/elenapan/dotfiles
 

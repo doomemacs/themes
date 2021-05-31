@@ -1,4 +1,4 @@
-;;; doom-snazzy-theme.el --- inspired by Hyper Snazzy -*- no-byte-compile: t; -*-
+;;; doom-snazzy-theme.el --- inspired by Hyper Snazzy -*- lexical-binding: t; no-byte-compile: t; -*-
 
 ;;; Commentary:
 ;;; Code:

@@ -1,4 +1,4 @@
-;;; doom-rouge-theme.el --- ported from Rouge Theme -*- no-byte-compile: t; -*-
+;;; doom-rouge-theme.el --- ported from Rouge Theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

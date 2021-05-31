@@ -1,4 +1,4 @@
-;;; doom-xcode-theme.el --- ibased off of Apple's Xcode Dark Theme -*- no-byte-compile: t; -*-
+;;; doom-xcode-theme.el --- ibased off of Apple's Xcode Dark Theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-xcode-theme nil

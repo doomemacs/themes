@@ -1,4 +1,4 @@
-;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem -*- no-byte-compile: t; -*-
+;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

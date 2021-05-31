@@ -1,4 +1,4 @@
-;;; doom-outrun-electric-theme.el --- inspired by VS Code Outrun Electric -*- no-byte-compile: t; -*-
+;;; doom-outrun-electric-theme.el --- inspired by VS Code Outrun Electric -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

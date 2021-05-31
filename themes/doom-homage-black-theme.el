@@ -1,4 +1,4 @@
-;;; doom-homage-black-theme.el --- pitch-black theme version of homage-white -*- no-byte-compile: t; -*-
+;;; doom-homage-black-theme.el --- pitch-black theme version of homage-white -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;;
 ;;; Commentary:
 ;;;

@@ -1,4 +1,4 @@
-;; doom-monokai-pro-theme.el --- Port of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-pro-theme.el --- Port of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-monokai-pro-theme nil

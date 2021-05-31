@@ -1,4 +1,4 @@
-;;; doom-moonlight-theme.el --- inspired by VS code's Moonlight -*- no-byte-compile: t; -*-
+;;; doom-moonlight-theme.el --- inspired by VS code's Moonlight -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

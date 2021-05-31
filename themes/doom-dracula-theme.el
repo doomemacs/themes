@@ -1,4 +1,4 @@
-;;; doom-dracula-theme.el - based on https://draculatheme.com/ -*- no-byte-compile: t; -*-
+;;; doom-dracula-theme.el - based on https://draculatheme.com/ -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

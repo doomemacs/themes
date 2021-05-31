@@ -1,4 +1,4 @@
-;;; doom-wilmersdorf-theme.el --- inspired by Atom City Lights -*- no-byte-compile: t; -*-
+;;; doom-wilmersdorf-theme.el --- inspired by Atom City Lights -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

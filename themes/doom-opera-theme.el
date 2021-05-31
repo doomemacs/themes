@@ -1,4 +1,4 @@
-;;; doom-opera-theme.el --- Opera theme -*- no-byte-compile: t; -*-
+;;; doom-opera-theme.el --- Opera theme -*- lexical-binding: t; no-byte-compile: t; -*-
 
 (require 'doom-themes)
 

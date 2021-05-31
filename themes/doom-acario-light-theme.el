@@ -1,4 +1,4 @@
-;;; doom-acario-light-theme.el --- Acario light theme -*- no-byte-compile: t; -*-
+;;; doom-acario-light-theme.el --- Acario light theme -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;; Variables

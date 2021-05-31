@@ -1,4 +1,4 @@
-;;; doom-challenger-deep-theme.el --- inspired by VIM Challenger Deep -*- no-byte-compile: t; -*-
+;;; doom-challenger-deep-theme.el --- inspired by VIM Challenger Deep -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

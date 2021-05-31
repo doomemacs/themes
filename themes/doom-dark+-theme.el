@@ -1,4 +1,4 @@
-;;; doom-dark+-theme.el --- inspired by dark+ Theme by equinusocio -*- no-byte-compile: t; -*-
+;;; doom-dark+-theme.el --- inspired by dark+ Theme by equinusocio -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

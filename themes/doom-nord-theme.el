@@ -1,4 +1,4 @@
-;;; doom-nord-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
+;;; doom-nord-theme.el --- inspired by Nord -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;

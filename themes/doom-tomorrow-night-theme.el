@@ -1,4 +1,4 @@
-;;; doom-tomorrow-night-theme.el -*- no-byte-compile: t; -*-
+;;; doom-tomorrow-night-theme.el -*- lexical-binding: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 (defgroup doom-tomorrow-night-theme nil
