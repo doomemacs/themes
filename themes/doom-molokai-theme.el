@@ -110,7 +110,7 @@ Can be an integer to determine the exact padding."
    (error          red)
    (warning        yellow)
    (success        green)
-   (vc-modified    base4)
+   (vc-modified    cyan)
    (vc-added       (doom-darken green 0.15))
    (vc-deleted     red)
 
