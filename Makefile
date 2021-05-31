@@ -1,11 +1,12 @@
-all:
-	@cask
+all: compile test clean
+
+compile:
+	@emacs -batch -L . -L themes/ -f batch-byte-compile *.el themes/*.el
 
 test:
-	@cask exec ert-runner -l test/test-helper.el
+	@emacs -batch -L . -L themes/ -l test/test-helper.el test/*-test.el
 
 clean:
-	@rm -rf .cask
-	@rm -f *.elc test/*.elc
+	@rm -vf *.elc themes/*.elc *-autoloads.el *~
 
 .PHONY: test

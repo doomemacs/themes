@@ -1,7 +1,6 @@
-;;; test-helper.el -*- lexical-binding: t; -*-
-
-(push (expand-file-name "../" (file-name-directory load-file-name)) load-path)
-(push (expand-file-name "../themes" (file-name-directory load-file-name)) load-path)
+;;; test-helper.el --- test init -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
 (require 'doom-themes-base)
@@ -33,5 +32,20 @@
             (faces (list ,@(mapcar #'doom-themes--build-face doom-themes--faces))))
        ,@body
        faces)))
+
+
+
+;;
+;;; Bootstrap
+
+(while command-line-args-left
+  (let ((path (expand-file-name (pop command-line-args-left))))
+    (if (file-directory-p path)
+        (setq command-line-args-left
+              (append (directory-files path nil emacs-lisp-file-regexp t)
+                      command-line-args-left))
+      (when (string-match-p emacs-lisp-file-regexp path)
+        (load path nil t)))))
+(ert-run-tests-batch)
 
 ;;; test-helper.el ends here
