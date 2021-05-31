@@ -1,5 +1,16 @@
-;;; doom-themes-ext-treemacs.el --- description -*- lexical-binding: t; no-byte-compile: t -*-
+;;; doom-themes-ext-treemacs.el --- ... -*- lexical-binding: t; no-byte-compile: t -*-
+;;
+;; Copyright (C) 2021 Henrik Lissner
+;;
+;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Created: August 3, 2017
+;; Homepage: https://github.com/hlissner/doom-themes-ext-org
+;;
+;; This file is not part of GNU Emacs.
+;;
 ;;; Commentary:
+;;; Code:
 
 (defgroup doom-themes-treemacs nil
   "Options for doom's treemacs theme."

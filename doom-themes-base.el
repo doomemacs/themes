@@ -1,8 +1,10 @@
-;;; doom-themes-base.el -*- lexical-binding: t; -*-
+;;; doom-themes-base.el --- base faces for all doom themes -*- lexical-binding: t; -*-
+;;; Commentary:
+;;; Code:
 
-;; These are applied to every Doom theme defined with `def-doom-theme', as a set
-;; of reasonble defaults. They are intended to be overidden where it makes
-;; sense to.
+;; These are used as a basis for every Doom theme defined with `def-doom-theme',
+;; as a set of reasonble defaults. They are intended to be overidden where it
+;; makes sense to.
 (defvar doom-themes-base-faces
   '((bold        :weight 'bold :foreground (unless bold base8))
     (bold-italic :inherit '(bold italic))
@@ -405,7 +407,7 @@
     (doom-modeline-eldoc-bar :background green)
     (doom-modeline-bar-inactive :background nil) ; transparent
     ;;;; doom-themes
-    (doom-visual-bell :background error)
+    (doom-themes-visual-bell :background error)
     ;;;; ediff <built-in>
     (ediff-fine-diff-A    :background (doom-blend selection bg 0.7) :weight 'bold :extend t)
     (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
@@ -1406,4 +1408,4 @@
   "TODO")
 
 (provide 'doom-themes-base)
-;;; doom-themes-common.el ends here
+;;; doom-themes-base.el ends here
