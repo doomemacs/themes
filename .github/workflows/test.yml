@@ -26,4 +26,4 @@ jobs:
       - name: Check emacs version
         run: emacs --version
       - name: Run tests
-        run: make
+        run: make && make clean

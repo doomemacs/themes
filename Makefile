@@ -1,4 +1,4 @@
-all: compile test clean
+all: compile test
 
 compile:
 	@emacs -batch -L . -L themes/ -f batch-byte-compile *.el themes/*.el
