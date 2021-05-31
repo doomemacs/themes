@@ -117,11 +117,11 @@ Can be an integer to determine the exact padding."
    (modeline-fg              fg)
    (modeline-fg-alt          (doom-blend
                               violet base4
-                              (if doom-modeline-brighter-modeline 0.5 0.2)))
-   (modeline-bg              (if doom-modeline-brighter-modeline
+                              (if doom-one-light-brighter-modeline 0.5 0.2)))
+   (modeline-bg              (if doom-one-light-brighter-modeline
                                  (doom-darken base2 0.05)
                                base1))
-   (modeline-bg-alt          (if doom-modeline-brighter-modeline
+   (modeline-bg-alt          (if doom-one-light-brighter-modeline
                                  (doom-darken base2 0.1)
                                base2))
    (modeline-bg-inactive     (doom-darken bg 0.1))
@@ -144,7 +144,7 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
-    :foreground (if doom-modeline-brighter-modeline base8 highlight))
+    :foreground (if doom-one-light-brighter-modeline base8 highlight))
    (tooltip :background base1 :foreground fg)
 
    ;;;; centaur-tabs
@@ -154,7 +154,7 @@ Can be an integer to determine the exact padding."
    (css-property             :foreground green)
    (css-selector             :foreground blue)
    ;;;; doom-modeline
-   (doom-modeline-bar :background (if doom-modeline-brighter-modeline modeline-bg highlight))
+   (doom-modeline-bar :background (if doom-one-light-brighter-modeline modeline-bg highlight))
    ;;;; ediff <built-in>
    (ediff-current-diff-A        :foreground red   :background (doom-lighten red 0.8))
    (ediff-current-diff-B        :foreground green :background (doom-lighten green 0.8))
