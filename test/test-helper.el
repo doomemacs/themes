@@ -39,12 +39,13 @@
 ;;; Bootstrap
 
 (while command-line-args-left
-  (let ((path (expand-file-name (pop command-line-args-left))))
+  (let ((regexp "\\.el\\'")
+        (path (expand-file-name (pop command-line-args-left))))
     (if (file-directory-p path)
         (setq command-line-args-left
-              (append (directory-files path nil emacs-lisp-file-regexp t)
+              (append (directory-files path nil regexp t)
                       command-line-args-left))
-      (when (string-match-p emacs-lisp-file-regexp path)
+      (when (string-match-p regexp path)
         (load path nil t)))))
 (ert-run-tests-batch)
 
