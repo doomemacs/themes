@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'subr-x)
+
 (require 'doom-themes)
 (require 'doom-themes-base)
 
@@ -43,7 +45,7 @@
         (path (expand-file-name (pop command-line-args-left))))
     (if (file-directory-p path)
         (setq command-line-args-left
-              (append (directory-files path nil regexp t)
+              (append (directory-files path nil regexp)
                       command-line-args-left))
       (when (string-match-p regexp path)
         (load path nil t)))))
