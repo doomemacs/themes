@@ -185,13 +185,23 @@ The following plugins compliment our themes:
 - The modeline in the screenshots is
   [doom-modeline](https://github.com/seagle0128/doom-modeline).
      
-## FAQ
-+ **I don't like X in theme Y, can I change it?**
-  _Yes._ Several themes have variable customization options. Use `C-h v ^doom-`
-  or `M-x customize-group RET doom-themes` to explore them.
+## Customization
+There are three ways to customize themes in this package:
+
+1. Explore the available variables provided by our themes, starting with the
+   ones provided for all packages:
+   + `doom-themes-enable-bold` (default: `t`): if `nil`, disables bolding as
+     much as possible (only affects faces that our theme supports; it won't
+     catch them all).
+   + `doom-themes-enable-italic` (default: `t`): if `nil`, disables
+     italicization as much as possible (only affects faces that our theme
+     supports; it won't catch them all).
+   + `doom-themes-padded-modeline` (default: `nil`): if `t`, pad the mode-line
+     in 4px on each side. Can also be set to an integer to specify the exact
+     padding.  or `M-x customize-group RET doom-themes` to explore them.
   
-  Alternatively, use `custom-set-faces` (Doom users should use
-  `custom-set-faces!` instead) to customize any face. e.g.
+2. Use the `custom-set-faces` macro (Doom users should use `custom-set-faces!`
+   instead) to customize any face. e.g.
   
   ```elisp
   ;; Must be used *after* the theme is loaded
@@ -200,14 +210,9 @@ The following plugins compliment our themes:
     `(font-lock-comment-face ((t (:foreground ,(doom-color 'base6))))))
   ```
   
-+ **These themes don't look good in the terminal. Why?**
-  Many of our themes don't degrade well into 256 colors, so expect a different
-  experience in terminal Emacs vs GUI Emacs. In order to enjoy these themes as
-  they're intended, either use the GUI or set up your shell to display 24bit
-  color, if it is capable of it.
-  
-  There are multiple guides for setting up 24bit color in your terminal, [for
-  example](http://www.skybert.net/emacs/colourful-tty-emacs).
+3. Copy your favorite theme into your `custom-theme-directory` (normally
+   `~/.emacs.d/`, or `~/.doom.d/themes` for Doom users), and tweak it there.
+   
   
 ## Contribute
 
