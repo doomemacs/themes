@@ -20,19 +20,19 @@ determine the exact padding."
 (def-doom-theme doom-plain
   "Theme inspired by gko's plain."
 
-  ;; name        default   256       16
-  ((bg         '("#ffffff" nil       nil ))
-   (bg-alt     '("#f3f3f3" nil       nil ))
-   (base0      '("#969896" nil nil ))
-   (base1      '("#f1f3f5" nil nil ))
-   (base2      '("#444444" nil nil ))
-   (base3      '("#cccccc" nil nil ))
-   (base4      '("#e7e7e7" nil nil ))
-   (base5      '("#c5c8c6" nil nil ))
-   (base6      '("#fafafa" nil nil ))
-   (base7      '("#dfdfdf" nil nil ))
-   (base8      '("#fafafa" nil nil ))
-   (fg         '("#282a2e" nil nil ))
+  ;; name      default/256/16
+  ((bg         "#ffffff")
+   (bg-alt     "#f3f3f3")
+   (base0      "#969896")
+   (base1      "#f1f3f5")
+   (base2      "#444444")
+   (base3      "#cccccc")
+   (base4      "#e7e7e7")
+   (base5      "#c5c8c6")
+   (base6      "#fafafa")
+   (base7      "#dfdfdf")
+   (base8      "#fafafa")
+   (fg         "#282a2e")
    (fg-alt     (doom-lighten fg 0.15))
 
    (grey       fg)
@@ -73,7 +73,6 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-plain-brighter-modeline)
    (-modeline-pad
     (when doom-plain-padded-modeline
