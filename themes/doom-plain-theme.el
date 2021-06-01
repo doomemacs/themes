@@ -1,6 +1,25 @@
 ;;; doom-plain-theme.el --- inspired by gko's plain theme for VSCode -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Author: Konstantin <https://github.com/gko>
+;; Ported by: Mateusz Ż <https://github.com/mateossh>
+;; Created: January 11, 2019
+;; Modified: May 30, 2021
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; Ported from VsCode Plain: https://github.com/gko/plain
+;;
+;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-plain-theme nil
   "Options for the `doom-plain' theme."
@@ -12,10 +31,14 @@
   :type 'boolean)
 
 (defcustom doom-plain-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-plain-theme
   :type '(or integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-plain
   "Theme inspired by gko's plain."
