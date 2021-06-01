@@ -6,6 +6,11 @@
   "Options for doom-themes"
   :group 'doom-themes)
 
+(defcustom doom-ir-black-smooth-bg nil
+  "If non-nil, comments will be highlighted in more vivid colors."
+  :group 'doom-ir-black-theme
+  :type 'boolean)
+
 (defcustom doom-ir-black-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
   :group 'doom-ir-black-theme
@@ -25,11 +30,12 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-ir-black
-  "A dark theme inspired by Atom One Dark"
+  "Port of the original IR black theme"
 
   ;; name        default   256       16
-  ((bg         '("#232323" nil       nil            ))
-   (bg-alt     '("#21242b" nil       nil            ))
+  ((bg         (if doom-ir-black-smooth-bg '("#232323" nil nil)
+		  '("#000000" nil nil)))
+   (bg-alt     '("#121212" nil       nil            ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -41,7 +47,7 @@ determine the exact padding."
    (base8      '("#DFDFDF" "#dfdfdf" "white"        ))
    (extra-1    '("#3D3D3D" "#3D3D3D" "brightblack"  ))
    (extra-2    '("#3D3D3D" "#3D3D3D" "brightblack"  ))
-   
+
    (fg         '("#f6f3e8" "#f6f3e8" "brightwhite"  ))
    (fg-alt     '("#5B6268" "#2d2d2d" "white"        ))
    (white      '("#ffffff" "#ffffff" "white"))
@@ -155,3 +161,4 @@ determine the exact padding."
   )
 
 ;;; doom-ir-black-theme.el ends here
+
