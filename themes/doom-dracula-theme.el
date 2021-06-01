@@ -82,7 +82,7 @@ determine the exact padding."
    (strings        yellow)
    (variables      (doom-lighten magenta 0.6))
    (numbers        violet)
-   (region         base3)
+   (region         `(,(car base3) ,@(cdr base1)))
    (error          red)
    (warning        yellow)
    (success        green)
@@ -101,11 +101,12 @@ determine the exact padding."
    (level8 (if doom-dracula-colorful-headers magenta (doom-lighten magenta 0.85)))
    (level9 (if doom-dracula-colorful-headers violet  (doom-lighten violet 0.95)))
 
-   (hidden     base1)
    (-modeline-bright doom-dracula-brighter-modeline)
    (-modeline-pad
     (when doom-dracula-padded-modeline
       (if (integerp doom-dracula-padded-modeline) doom-dracula-padded-modeline 4)))
+
+   (region-alt `(,(car base3) ,@(cdr base4)))
 
    (modeline-fg     nil)
    (modeline-fg-alt base5)
@@ -235,6 +236,7 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   (solaire-region-face :background region-alt)
    ;;;; web-mode
    (web-mode-builtin-face :foreground orange)
    (web-mode-css-selector-face :foreground green)
