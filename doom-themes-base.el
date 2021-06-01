@@ -612,7 +612,6 @@
      (&light :distant-foreground base0))
     (helm-match :inherit 'bold :foreground highlight :distant-foreground base8)
     (helm-source-header          :background base2 :foreground keywords :weight 'bold)
-    (helm-swoop-target-line-face :foreground highlight :inverse-video t)
     (helm-visible-mark           :inherit '(bold highlight))
     (helm-moccur-buffer          :inherit 'link)
     (helm-ff-file                :foreground fg)
@@ -624,10 +623,24 @@
     (helm-grep-file              :foreground methods)
     (helm-grep-lineno            :foreground base5)
     (helm-grep-finish            :foreground green)
+    ;;;; helm-swoop
     (helm-swoop-target-line-face       :foreground highlight :inverse-video t)
     (helm-swoop-target-line-block-face :foreground yellow)
     (helm-swoop-target-word-face       :foreground green :inherit 'bold)
     (helm-swoop-target-number-face     :foreground base5)
+    ;;;; helm-rg
+    (helm-rg-active-arg-face        :foreground green  :weight 'normal)
+    (helm-rg-base-rg-cmd-face       :foreground grey   :weight 'normal)
+    (helm-rg-colon-separator-ripgrep-output-face :foreground base8)
+    (helm-rg-directory-cmd-face     :foreground (doom-darken yellow 0.25) :background base0 :weight 'normal)
+    (helm-rg-directory-header-face  :foreground base8 :background base0 :weight 'bold)
+    (helm-rg-error-message          :foreground red)
+    (helm-rg-extra-arg-face         :foreground yellow :weight 'normal)
+    (helm-rg-file-match-face        :foreground cyan :underline t)
+    (helm-rg-inactive-arg-face      :foreground grey   :weight 'normal)
+    (helm-rg-line-number-match-face :foreground orange :underline t)
+    (helm-rg-match-text-face        :foreground base8 :background violet)
+    (helm-rg-title-face             :foreground violet :background base0 :weight 'bold)
     ;;;; helpful
     (helpful-heading :weight 'bold :height 1.2)
     ;;;; hi-lock <built-in>
