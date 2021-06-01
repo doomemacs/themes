@@ -71,7 +71,7 @@ background contrast. All other values default to \"medium\"."
 
    ;; face categories
    (highlight      yellow)
-   (vertical-bar   grey)
+   (vertical-bar   bg-alt2)
    (selection      bg-alt2)
    (builtin        orange)
    (comments       (if doom-gruvbox-brighter-comments magenta grey))
@@ -100,6 +100,10 @@ background contrast. All other values default to \"medium\"."
       (if (integerp doom-gruvbox-padded-modeline)
           doom-gruvbox-padded-modeline
         4)))
+   (modeline-bg bg-alt2)
+   (modeline-fg (doom-lighten fg-alt 0.25))
+   (modeline-inactive-bg (doom-darken modeline-bg 0.15))
+   (modeline-inactive-fg base6)
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
 
@@ -115,11 +119,11 @@ background contrast. All other values default to \"medium\"."
    ((link &override) :foreground violet)
    (minibuffer-prompt :foreground cyan)
    (mode-line
-    :background bg-alt2 :foreground (doom-lighten fg-alt 0.25)
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
+    :background modeline-bg :foreground modeline-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background bg :foreground base4
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
+    :background modeline-inactive-bg :foreground modeline-inactive-fg
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-inactive-bg)))
 
    ;;;; company
    (company-preview-common :foreground cyan)
