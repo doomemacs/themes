@@ -142,6 +142,8 @@ determine the exact padding."
    (css-selector             :foreground blue)
    ;;;; doom-modeline
    (doom-modeline-bar :background blue)
+   (doom-modeline-evil-emacs-state  :foreground magenta)
+   (doom-modeline-evil-insert-state :foreground blue)
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; helm

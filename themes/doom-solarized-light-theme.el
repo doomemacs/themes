@@ -130,6 +130,8 @@ determine the exact padding."
 
    ;;;; doom-modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-evil-emacs-state  :foreground magenta)
+   (doom-modeline-evil-insert-state :foreground blue)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line

@@ -146,6 +146,8 @@ determine the exact padding."
                                             :foreground blue)
    ;;;; Doom modeline
    (doom-modeline-bar :background blue)
+   (doom-modeline-evil-emacs-state  :foreground magenta)
+   (doom-modeline-evil-insert-state :foreground blue)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
