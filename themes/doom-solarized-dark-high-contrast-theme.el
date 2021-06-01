@@ -1,7 +1,26 @@
 ;;; doom-solarized-dark-high-contrast-theme.el --- inspired by VS Code Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
+;; Ported by: Joseph Morag <jmorag@users.noreply.github.com>
+;; Created: February 18, 2021
+;; Modified: June 1, 2021
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; See https://ethanschoonover.com/solarized/
+;;
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-solarized-dark-high-contrast-theme nil
   "Options for the `doom-solarized-dark-high-contrast' theme."
   :group 'doom-themes)
@@ -21,26 +40,34 @@
   :group 'doom-solarized-dark-high-contrast-theme
   :type 'boolean)
 
-(defcustom doom-solarized-dark-high-contrast-comment-bg doom-solarized-dark-high-contrast-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-solarized-dark-high-contrast-theme
-  :type 'boolean)
-
 (defcustom doom-solarized-dark-high-contrast-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-solarized-dark-high-contrast-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-solarized-dark-high-contrast
   "A dark theme inspired by VS Code Solarized Dark"
 
   ;; name        default   256       16
-  ((bg         '("#002732" "#002732"       nil     ))
-   (bg-alt     '("#00212B" "#00212B"       nil     ))
-   (base0      '("#01323d" "#01323d"   "black"     ))
+  ((bg         '("#002732" "#002732" "black"      ))
+   (fg         '("#8d9fa1" "#8d9fa1" "brightwhite"))
+
+   ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
+   ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
+   ;; or region), especially when paired with the `doom-darken', `doom-lighten',
+   ;; and `doom-blend' helper functions.
+   (bg-alt     '("#00212B" "#00212B" "black"       ))
+   (fg-alt     '("#60767e" "#60767e" "white"       ))
+
+   ;; These should represent a spectrum from bg to fg, where base0 is a starker
+   ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
+   ;; dark grey, base0 should be white and base8 should be black.
+   (base0      '("#01323d" "#01323d" "black"       ))
    (base1      '("#03282F" "#03282F" "brightblack" ))
    (base2      '("#00212C" "#00212C" "brightblack" ))
    (base3      '("#13383C" "#13383C" "brightblack" ))
@@ -49,8 +76,6 @@ determine the exact padding."
    (base6      '("#96A7A9" "#96A7A9" "brightblack" ))
    (base7      '("#788484" "#788484" "brightblack" ))
    (base8      '("#626C6C" "#626C6C" "white"       ))
-   (fg-alt     '("#60767e" "#60767e" "white"       ))
-   (fg         '("#8d9fa1" "#8d9fa1" "brightwhite"))
 
    (grey       base4)
    (red        '("#ec423a" "#ec423a" "red"          ))
@@ -65,7 +90,9 @@ determine the exact padding."
    (cyan       '("#3cafa5" "#3cafa5" "brightcyan"   ))
    (dark-cyan  '("#03373f" "#03373f" "cyan"         ))
 
-   ;; face categories -- required for all themes
+   ;; These are the "universal syntax classes" that doom-themes establishes.
+   ;; These *must* be included in every doom themes, or your theme will throw an
+   ;; error, as they are used in the base theme defined in doom-themes-base.
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.5))
    (selection      dark-blue)
@@ -90,7 +117,6 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-solarized-dark-high-contrast-brighter-modeline)
    (-modeline-pad
     (when doom-solarized-dark-high-contrast-padded-modeline
@@ -103,77 +129,62 @@ determine the exact padding."
     (if -modeline-bright
         base3
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
+   (modeline-bg-alt
     (if -modeline-bright
         base3
       `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg 0.1))
-   (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
+   (modeline-bg-inactive     (doom-darken bg 0.1))
+   (modeline-bg-inactive-alt `(,(car bg) ,@(cdr base1))))
 
-  ;; --- extra faces ------------------------
-  ((company-tooltip-selection     :background dark-cyan)
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+
+  ;;;; Base theme face overrides
+  (((font-lock-comment-face &override)
+    :slant 'italic
+    :background (if doom-solarized-dark-high-contrast-brighter-comments
+                    (doom-lighten bg 0.05)))
+   ((font-lock-keyword-face &override)  :weight 'bold)
+   ((font-lock-constant-face &override) :weight 'bold)
+   ((font-lock-type-face &override)     :slant 'italic)
+   ((font-lock-builtin-face &override)  :slant 'italic)
 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
-
-   (helm-selection :inherit 'bold
-                   :background selection
-                   :distant-foreground bg
-                   :extend t)
-
-   (font-lock-comment-face
-    :slant 'italic
-    :foreground comments
-    :background (if doom-solarized-dark-high-contrast-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face
-    :inherit 'font-lock-comment-face
-    :foreground doc-comments)
-   (font-lock-keyword-face
-    :weight 'bold
-    :foreground keywords)
-   (font-lock-constant-face
-    :weight 'bold
-    :foreground constants)
-   ((font-lock-type-face &override) :slant 'italic)
-   ((font-lock-builtin-face &override) :slant 'italic)
-
-   ;;;; Centaur tabs
-   (centaur-tabs-active-bar-face :background blue)
-   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
-                                          :foreground blue)
-   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
-                                            :foreground blue)
-   ;;;; Doom modeline
-   (doom-modeline-bar :background blue)
-   (doom-modeline-evil-emacs-state  :foreground magenta)
-   (doom-modeline-evil-insert-state :foreground blue)
-
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis
-    :foreground (if -modeline-bright base8 highlight))
-
-   (solaire-mode-line-face
-    :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
-   (solaire-mode-line-inactive-face
-    :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
+   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    (tooltip              :background bg-alt :foreground fg)
-   ;;; --- major-mode faces -------------------
+
+   ;;;; centaur-tabs
+   (centaur-tabs-active-bar-face :background blue)
+   (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected
+                                          :foreground blue)
+   (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected
+                                            :foreground blue)
+   ;;;; company
+   (company-tooltip-selection :background dark-cyan)
    ;;;; css-mode / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-
+   ;;;; doom-modeline
+   (doom-modeline-bar :background blue)
+   (doom-modeline-evil-emacs-state  :foreground magenta)
+   (doom-modeline-evil-insert-state :foreground blue)
+   ;;;; elscreen
+   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   ;;;; eshell-git-prompt powerline theme
+   (eshell-git-prompt-powerline-dir-face :background "steel blue" :foreground bg)
+   (eshell-git-prompt-powerline-clean-face :background "foreset green" :foreground bg)
+   (eshell-git-prompt-powerline-not-clean-face :background "indian red" :foreground bg)
+   ;;; helm
+   (helm-selection :inherit 'bold
+                   :background selection
+                   :distant-foreground bg
+                   :extend t)
    ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground violet)
@@ -181,7 +192,6 @@ determine the exact padding."
    (markdown-reference-face :foreground base6)
    ((markdown-bold-face &override)   :foreground fg)
    ((markdown-italic-face &override) :foreground fg-alt)
-
    ;;;; outline (affects org-mode)
    ((outline-1 &override) :foreground blue)
    ((outline-2 &override) :foreground green)
@@ -191,13 +201,11 @@ determine the exact padding."
    ((outline-6 &override) :foreground (doom-darken teal 0.2))
    ((outline-7 &override) :foreground (doom-darken blue 0.4))
    ((outline-8 &override) :foreground (doom-darken green 0.4))
-
-   ;;;; org-mode
+   ;;;; org <built-in>
    ((org-block &override) :background base0)
    ((org-block-begin-line &override) :foreground comments :background base0)
-   (org-hide :foreground hidden)
-   (solaire-org-hide-face :foreground hidden)
-
+   ;;;; git-gutter-fringe
+   (git-gutter-fr:modified :foreground vc-modified)
    ;;;; rainbow-delimeters
    (rainbow-delimiters-depth-1-face :foreground blue)
    (rainbow-delimiters-depth-2-face :foreground yellow)
@@ -205,15 +213,15 @@ determine the exact padding."
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground cyan)
    (rainbow-delimiters-depth-6-face :foreground violet)
-
-   ;;;; git-gutter-fringe
-   (git-gutter-fr:modified :foreground vc-modified)
-
-   ;;;; eshell-git-prompt powerline theme
-   (eshell-git-prompt-powerline-dir-face :background "steel blue" :foreground bg)
-   (eshell-git-prompt-powerline-clean-face :background "foreset green" :foreground bg)
-   (eshell-git-prompt-powerline-not-clean-face :background "indian red" :foreground bg)
-
+   ;;;; solaire-mode
+   (solaire-mode-line-face
+    :inherit 'mode-line
+    :background modeline-bg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
+   (solaire-mode-line-inactive-face
+    :inherit 'mode-line-inactive
+    :background modeline-bg-inactive-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt)))
    ;;;; vterm
    (vterm               :foreground fg)
    (vterm-color-default :foreground fg)

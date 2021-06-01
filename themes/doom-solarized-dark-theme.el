@@ -1,7 +1,26 @@
 ;;; doom-solarized-dark-theme.el --- inspired by VS Code Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
+;; Ported by: Emmanuel Bustos Torres <ema2159@gmail.com>
+;; Created: July 14, 2019
+;; Modified: June 1, 2021
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; See https://ethanschoonover.com/solarized/
+;;
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-solarized-dark-theme nil
   "Options for the `doom-solarized-dark' theme."
   :group 'doom-themes)
@@ -21,26 +40,36 @@
   :group 'doom-solarized-dark-theme
   :type 'boolean)
 
-(defcustom doom-solarized-dark-comment-bg doom-solarized-dark-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-solarized-dark-theme
-  :type 'boolean)
-
 (defcustom doom-solarized-dark-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-solarized-dark-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-solarized-dark
   "A dark theme inspired by VS Code Solarized Dark"
 
   ;; name        default   256       16
-  ((bg         '("#002b36" "#002b36"       nil     ))
-   (bg-alt     '("#00212B" "#00212B"       nil     ))
-   (base0      '("#073642" "#073642"   "black"     ))
+  ((bg         '("#002b36" "#002b36" "brightwhite" ))
+   (fg         (if doom-solarized-dark-brighter-text
+                   '("#BBBBBB" "#BBBBBB" "brightwhite")
+                 '("#839496" "#839496" "brightwhite")))
+
+   ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
+   ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
+   ;; or region), especially when paired with the `doom-darken', `doom-lighten',
+   ;; and `doom-blend' helper functions.
+   (bg-alt     '("#00212B" "#00212B" "white"       ))
+   (fg-alt     '("#657b83" "#657b83" "white"       ))
+
+   ;; These should represent a spectrum from bg to fg, where base0 is a starker
+   ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
+   ;; dark grey, base0 should be white and base8 should be black.
+   (base0      '("#073642" "#073642" "black"       ))
    (base1      '("#03282F" "#03282F" "brightblack" ))
    (base2      '("#00212C" "#00212C" "brightblack" ))
    (base3      '("#13383C" "#13383C" "brightblack" ))
@@ -49,10 +78,6 @@ determine the exact padding."
    (base6      '("#96A7A9" "#96A7A9" "brightblack" ))
    (base7      '("#788484" "#788484" "brightblack" ))
    (base8      '("#626C6C" "#626C6C" "white"       ))
-   (fg-alt     '("#657b83" "#657b83" "white"       ))
-   (fg         (if doom-solarized-dark-brighter-text
-                   '("#BBBBBB" "#BBBBBB" "brightwhite")
-                 '("#839496" "#839496" "brightwhite")))
 
    (grey       base4)
    (red        '("#dc322f" "#ff6655" "red"          ))
@@ -92,7 +117,6 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-solarized-dark-brighter-modeline)
    (-modeline-pad
     (when doom-solarized-dark-padded-modeline
@@ -105,17 +129,17 @@ determine the exact padding."
     (if -modeline-bright
         base3
       `(,(doom-darken (car bg) 0.1) ,@(cdr base0))))
-   (modeline-bg-l
+   (modeline-bg-alt
     (if -modeline-bright
         base3
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
-   (modeline-bg-inactive-l (doom-darken bg 0.1)))
+   (modeline-bg-inactive     `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive-alt (doom-darken bg 0.1)))
 
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-solarized-dark-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-solarized-dark-brighter-comments (doom-lighten bg 0.05)))
    ((font-lock-keyword-face &override) :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
    ((line-number &override) :foreground base4)
@@ -170,16 +194,15 @@ determine the exact padding."
    ;;;; org <built-in>
    ((org-block &override) :background base0)
    ((org-block-begin-line &override) :foreground comments :background base0)
-   (org-hide :foreground hidden)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+    :background modeline-bg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l))))
+    :background modeline-bg-inactive-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt))))
 
   ;;;; Base theme variable overrides-
   ;; ()

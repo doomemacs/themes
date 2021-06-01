@@ -1,7 +1,26 @@
 ;;; doom-solarized-light-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
+;; Ported by: Xi "Alexander" Fu <fuxialexander@users.noreply.github.com>
+;; Created: February 20, 2018
+;; Modified: June 1, 2021
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
+;;; Commentary:
+;;
+;; See https://ethanschoonover.com/solarized/
+;;
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-solarized-light-theme nil
   "Options for the `doom-solarized-light' theme."
   :group 'doom-themes)
@@ -16,25 +35,33 @@
   :group 'doom-solarized-light-theme
   :type 'boolean)
 
-(defcustom doom-solarized-light-comment-bg doom-solarized-light-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-solarized-light-theme
-  :type 'boolean)
-
 (defcustom doom-solarized-light-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
   :group 'doom-solarized-light-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-solarized-light
   "A light theme inspired by Solarized light"
 
   ;; name        default   256       16
-  ((bg         '("#FDF6E3" "#FDF6E3" nil            ))
-   (bg-alt     '("#FFFBEA" "#FFFBEA" nil            ))
+  ((bg         '("#FDF6E3" "#FDF6E3" "white"        ))
+   (fg         '("#556b72" "#556b72" "black"        ))
+
+   ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
+   ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
+   ;; or region), especially when paired with the `doom-darken', `doom-lighten',
+   ;; and `doom-blend' helper functions.
+   (bg-alt     '("#FFFBEA" "#FFFBEA" "white"        ))
+   (fg-alt     '("#7B8787" "#7B8787" "brightwhite"  ))
+
+   ;; These should represent a spectrum from bg to fg, where base0 is a starker
+   ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
+   ;; dark grey, base0 should be white and base8 should be black.
    (base0      '("#FFFBF0" "#FFFBF0" "white"        ))
    (base1      '("#FCF8ED" "#FCF8ED" "brightblack"  ))
    (base2      '("#FCF7E8" "#FCF7E8" "brightblack"  ))
@@ -44,8 +71,6 @@ determine the exact padding."
    (base6      '("#96A7A9" "#96A7A9" "brightblack"  ))
    (base7      '("#788484" "#788484" "brightblack"  ))
    (base8      '("#626C6C" "#626C6C" "black"        ))
-   (fg         '("#556b72" "#556b72" "black"        ))
-   (fg-alt     '("#7B8787" "#7B8787" "brightwhite"  ))
 
    (grey       base4)
    (red        '("#dc322f" "#dc322f" "red"          ))
@@ -87,7 +112,6 @@ determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-solarized-light-brighter-modeline)
    (-modeline-pad
     (when doom-solarized-light-padded-modeline
@@ -100,18 +124,19 @@ determine the exact padding."
     (if -modeline-bright
         (doom-lighten bg 0.7)
       (doom-darken bg 0.05)))
-   (modeline-bg-l
+   (modeline-bg-alt
     (if -modeline-bright
         (doom-lighten bg 0.7)
       (doom-lighten base3 0.2)))
-   (modeline-bg-inactive   (doom-darken bg 0.025))
-   (modeline-bg-inactive-l (doom-darken bg 0.02)))
+   (modeline-bg-inactive     (doom-darken bg 0.025))
+   (modeline-bg-inactive-alt (doom-darken bg 0.02)))
 
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :slant 'italic
-    :background (if doom-solarized-light-comment-bg (doom-blend teal base0 0.07)))
+    :background (if doom-solarized-light-brighter-comments
+                    (doom-blend teal base0 0.07)))
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :foreground type)
@@ -135,12 +160,12 @@ determine the exact padding."
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+    :background modeline-bg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+    :background modeline-bg-inactive-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt)))
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; css-mode <built-in> / scss-mode
@@ -161,14 +186,12 @@ determine the exact padding."
    (ivy-minibuffer-match-face-4 :foreground yellow  :background base3 :weight 'bold)
    (ivy-minibuffer-match-highlight :foreground violet :weight 'bold)
    ;;;; ivy-posframe
-   (ivy-posframe :background modeline-bg-l)
+   (ivy-posframe :background modeline-bg-alt)
    ;;;; swiper
    (swiper-match-face-1 :inherit 'ivy-minibuffer-match-face-1)
    (swiper-match-face-2 :inherit 'ivy-minibuffer-match-face-2)
    (swiper-match-face-3 :inherit 'ivy-minibuffer-match-face-3)
    (swiper-match-face-4 :inherit 'ivy-minibuffer-match-face-4)
-   ;;;; org <built-in>
-   (org-hide :foreground hidden)
    ;;;; helm
    (helm-selection :foreground base0 :weight 'bold :background blue)
    ;;;; company
