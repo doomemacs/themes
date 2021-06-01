@@ -133,7 +133,7 @@ Can be an integer to determine the exact padding."
     (if -modeline-bright
         base3
       `(,(doom-darken (car bg) 0.15) ,@(cdr base0))))
-   (modeline-bg-inactive     `(,(car bg) ,@(cdr base1)))
+   (modeline-bg-inactive     `(,(car bg-alt) ,@(cdr base1)))
    (modeline-bg-inactive-alt (doom-darken bg 0.1)))
 
 
