@@ -1233,6 +1233,11 @@
     (spaceline-evil-replace     :background orange)
     (spaceline-evil-visual      :background grey)
     (spaceline-evil-motion      :background magenta)
+    ;;;; spell-fu
+    (spell-fu-incorrect-face
+     `((((supports :underline (:style wave)))
+        (:underline (:style wave :color ,(car error))))
+       (t (:inherit error :underline t))))
     ;;;; stripe-buffer
     (stripe-highlight
      (&light :background base5)
