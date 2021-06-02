@@ -15,22 +15,23 @@ determine the exact padding."
   "A light theme inspired by Trevord Miller's Nova. See
 <https://trevordmiller.com/projects/nova>."
 
-  ;; name      gui
-  ((bg         '("#3c4c55" nil       nil))
-   (bg-alt     '("#44545d" "#445566" "black"))
+  ;; name        default   256       16
+  ((bg         '("#3c4c55" nil       nil           ))
+   (fg         '("#c5d4dd" "#c5c6c6" "white"       ))
 
-   (base0      '("#0d0f11" "#0d0f11" "black"      ))
-   (base1      '("#1e272c" "#1b1b1b" "black"      ))
-   (base2      '("#212122" "#1e1e1e" "black"      ))
-   (base3      '("#2f3f48" "#292929" "brightblack"))
-   (base4      '("#3c4c55" "#3f3f3f" "brightblack"))
-   (base5      '("#556873" "#525252" "brightblack"))
-   (base6      '("#6A7D89" "#6b6b6b" "brightblack"))
-   (base7      '("#899BA6" "#878797" "brightblack"))
-   (base8      '("#e6eef3" "#efefef" "brightwhite"))
-   (fg         '("#c5d4dd" "#c5c6c6" "white"      ))
-   (fg-alt     '("#c5c8c6" "#c5c8c6" "white"      ))
-   
+   (bg-alt     '("#44545d" "#445566" "black"       ))
+   (fg-alt     '("#c5c8c6" "#c5c8c6" "white"       ))
+
+   (base0      '("#0d0f11" "#0d0f11" "black"       ))
+   (base1      '("#1e272c" "#1b1b1b" "black"       ))
+   (base2      '("#212122" "#1e1e1e" "black"       ))
+   (base3      '("#2f3f48" "#292929" "brightblack" ))
+   (base4      '("#3c4c55" "#3f3f3f" "brightblack" ))
+   (base5      '("#556873" "#525252" "brightblack" ))
+   (base6      '("#6A7D89" "#6b6b6b" "brightblack" ))
+   (base7      '("#899BA6" "#878797" "brightblack" ))
+   (base8      '("#e6eef3" "#efefef" "brightwhite" ))
+
    (grey       base7)
    (red        '("#DF8C8C"))
    (orange     '("#F2C38F"))
