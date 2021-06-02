@@ -25,11 +25,6 @@
   "Options for the `doom-plain' theme."
   :group 'doom-themes)
 
-(defcustom doom-plain-brighter-modeline nil
-  "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-plain-theme
-  :type 'boolean)
-
 (defcustom doom-plain-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
@@ -44,18 +39,18 @@ Can be an integer to determine the exact padding."
   "Theme inspired by gko's plain."
 
   ;; name      default/256/16
-  ((bg         "#ffffff")
-   (bg-alt     "#f3f3f3")
-   (base0      "#969896")
-   (base1      "#f1f3f5")
-   (base2      "#444444")
-   (base3      "#cccccc")
-   (base4      "#e7e7e7")
-   (base5      "#c5c8c6")
-   (base6      "#fafafa")
-   (base7      "#dfdfdf")
-   (base8      "#fafafa")
-   (fg         "#282a2e")
+  ((bg         '("#ffffff"))
+   (bg-alt     '("#f3f3f3"))
+   (base0      '("#969896"))
+   (base1      '("#f1f3f5"))
+   (base2      '("#444444"))
+   (base3      '("#cccccc"))
+   (base4      '("#e7e7e7"))
+   (base5      '("#c5c8c6"))
+   (base6      '("#fafafa"))
+   (base7      '("#dfdfdf"))
+   (base8      '("#fafafa"))
+   (fg         '("#282a2e"))
    (fg-alt     (doom-lighten fg 0.15))
 
    (grey       fg)
@@ -73,7 +68,7 @@ Can be an integer to determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      base2)
-   (vertical-bar   (doom-lighten fg 0.3))
+   (vertical-bar   base5)
    (selection      base1)
    (builtin        base0)
    (comments       base5)
@@ -91,28 +86,21 @@ Can be an integer to determine the exact padding."
    (error          (doom-blend fg "#ff0000" 0.4))
    (warning        base2)
    (success        green)
-   (vc-modified    fg)
-   (vc-added       (doom-lighten fg 0.6))
-   (vc-deleted     red)
+   (vc-modified    base5)
+   (vc-added       (doom-lighten fg 0.7))
+   (vc-deleted     base2)
 
    ;; custom categories
-   (-modeline-bright doom-plain-brighter-modeline)
    (-modeline-pad
     (when doom-plain-padded-modeline
       (if (integerp doom-plain-padded-modeline) doom-plain-padded-modeline 4)))
 
-   (modeline-bg
-    (if -modeline-bright
-        (doom-darken blue 0.475)
-      `(,(doom-darken (car bg-alt) 0.15) ,@(cdr base0))))
-   (modeline-bg-l
-    (if -modeline-bright
-        (doom-darken blue 0.45)
-      `(,(doom-darken (car bg-alt) 0.1) ,@(cdr base0))))
-   (modeline-bg-inactive   (doom-darken bg-alt 0.1))
-   (modeline-bg-inactive-l `(,(car bg-alt) ,@(cdr base1)))
-   (modeline-fg     nil)
-   (modeline-fg-alt (doom-darken modeline-bg-inactive 0.35)))
+   (modeline-bg              (doom-darken bg-alt 0.15))
+   (modeline-bg-alt          (doom-darken bg-alt 0.1))
+   (modeline-bg-inactive     (doom-darken bg-alt 0.1))
+   (modeline-bg-inactive-alt bg-alt)
+   (modeline-fg              fg)
+   (modeline-fg-alt          (doom-darken modeline-bg-inactive 0.35)))
 
   ;;;; Base theme face overrides
   ((error   :underline `(:style wave :color ,error))
@@ -134,8 +122,15 @@ Can be an integer to determine the exact padding."
 
    ;;;; doom-modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-project-dir :foreground fg)
+   (doom-modeline-buffer-file :foreground fg)
+   (doom-modeline-buffer-modified :weight 'bold :foreground "#000000")
    ;;;; ivy
    (ivy-posframe :background bg-alt)
+   ;;;; magit
+   ((magit-diff-added-highlight &override)   :foreground fg :background (doom-blend vc-added bg 0.3))
+   ((magit-diff-removed &override)           :foreground (doom-lighten fg 0.4) :background (doom-blend vc-deleted bg 0.1))
+   ((magit-diff-removed-highlight &override) :foreground fg :background (doom-blend vc-deleted bg 0.22))
    ;;;; lsp-mode
    (lsp-headerline-breadcrumb-symbols-face :foreground keywords :weight 'bold)
    ;;;; outline <built-in>
@@ -153,11 +148,11 @@ Can be an integer to determine the exact padding."
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
-    :background modeline-bg-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-l)))
+    :background modeline-bg-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    (solaire-mode-line-inactive-face
     :inherit 'mode-line-inactive
-    :background modeline-bg-inactive-l
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))))
+    :background modeline-bg-inactive-alt
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt)))))
 
 ;;; doom-plain-theme.el ends here
