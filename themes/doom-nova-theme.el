@@ -30,10 +30,7 @@ determine the exact padding."
    (base8      '("#e6eef3" "#efefef" "brightwhite"))
    (fg         '("#c5d4dd" "#c5c6c6" "white"      ))
    (fg-alt     '("#c5c8c6" "#c5c8c6" "white"      ))
-
-   (dark-grey  base3)
-   (light-grey '("#E6EEF3"))
-
+   
    (grey       base7)
    (red        '("#DF8C8C"))
    (orange     '("#F2C38F"))
