@@ -118,10 +118,10 @@ Can be an integer to determine the exact padding."
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
-   (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+   (mode-line-emphasis :foreground highlight)
 
    ;;;; doom-modeline
-   (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-bar :background highlight)
    (doom-modeline-project-dir :foreground fg)
    (doom-modeline-buffer-file :foreground fg)
    (doom-modeline-buffer-modified :weight 'bold :foreground "#000000")
