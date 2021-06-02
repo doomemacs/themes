@@ -88,8 +88,8 @@ Can be an integer to determine the exact padding."
    (variables      base0)
    (numbers        base0)
    (region         base4)
-   (error          red)
-   (warning        yellow)
+   (error          (doom-blend fg "#ff0000" 0.4))
+   (warning        base2)
    (success        green)
    (vc-modified    fg)
    (vc-added       (doom-lighten fg 0.6))
@@ -115,7 +115,9 @@ Can be an integer to determine the exact padding."
    (modeline-fg-alt (doom-darken modeline-bg-inactive 0.35)))
 
   ;;;; Base theme face overrides
-  (((font-lock-constant-face &override)      :slant 'italic)
+  ((error   :underline `(:style wave :color ,error))
+   (warning :underline `(:style wave :color ,warning))
+   ((font-lock-constant-face &override)      :slant 'italic)
    ((font-lock-comment-face &override)       :slant 'italic)
    ((font-lock-function-name-face &override) :slant 'italic)
    ((font-lock-type-face &override)          :slant 'italic)
