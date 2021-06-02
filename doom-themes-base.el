@@ -1396,6 +1396,9 @@
     ;;;; widget
     (widget-button-pressed :foreground red)
     (widget-documentation  :foreground green)
+    (widget-single-line-field :background base3 :distant-foreground bg)
+    (widget-field :background base3 :distant-foreground bg
+                  :box `(:line-width -1 :color ,grey) :extend t)
     ;;;; window-divider
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)
