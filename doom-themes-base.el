@@ -538,6 +538,15 @@
     (evil-snipe-matches-face     :foreground highlight :underline t :weight 'bold)
     ;;;; evil-googles
     (evil-goggles-default-face :inherit 'region :background (doom-blend region bg 0.5))
+    ;;;; eww
+    (eww-form-checkbox :inherit 'eww-form-file)
+    (eww-form-file   :inherit 'eww-form-submit :background bg-alt)
+    (eww-form-select :inherit 'eww-form-submit :background bg-alt)
+    (eww-form-submit :inherit 'eww-form-text :box `(:line-width 2 :style released-button) :background base2)
+    (eww-form-text :box `(:line-width 1 :color ,base3) :background bg :foreground fg :distant-foreground bg)
+    (eww-form-textarea :inherit 'eww-form-text)
+    (eww-invalid-certificate :foreground error)
+    (eww-valid-certificate :foreground highlight)
     ;;;; eyebrowse
     (eyebrowse-mode-line-active :weight 'bold :foreground highlight)
     ;;;; flycheck
