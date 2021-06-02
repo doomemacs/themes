@@ -121,10 +121,12 @@ Can be an integer to determine the exact padding."
    (mode-line-emphasis :foreground highlight)
 
    ;;;; doom-modeline
-   (doom-modeline-bar :background highlight)
+   (doom-modeline-bar :background modeline-bg)
+   (doom-modeline-bar-inactive :inherit 'doom-modeline-bar)
    (doom-modeline-project-dir :foreground fg)
    (doom-modeline-buffer-file :foreground fg)
    (doom-modeline-buffer-modified :weight 'bold :foreground "#000000")
+   (doom-modeline-panel :inherit 'mode-line-highlight :background base3 :foreground fg)
    ;;;; ivy
    (ivy-posframe :background bg-alt)
    ;;;; magit
