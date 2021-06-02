@@ -3,7 +3,6 @@
 ;; Author: Konstantin <https://github.com/gko>
 ;; Ported by: Mateusz Ż <https://github.com/mateossh>
 ;; Created: January 11, 2019
-;; Modified: May 30, 2021
 ;; Version: 2.0.0
 ;; Keywords: custom themes, faces
 ;; Homepage: https://github.com/hlissner/emacs-doom-themes

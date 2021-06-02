@@ -4,7 +4,6 @@
 ;;
 ;; Author: Henrik Lissner <https://github.com/hlissner>
 ;; Created: December 6, 2020
-;; Modified: May 30, 2021
 ;; Version: 2.0.0
 ;; Keywords: custom themes, faces
 ;; Homepage: https://github.com/hlissner/emacs-doom-themes

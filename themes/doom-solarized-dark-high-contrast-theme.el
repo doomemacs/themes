@@ -3,7 +3,6 @@
 ;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
 ;; Ported by: Joseph Morag <jmorag@users.noreply.github.com>
 ;; Created: February 18, 2021
-;; Modified: June 1, 2021
 ;; Version: 2.0.0
 ;; Keywords: custom themes, faces
 ;; Homepage: https://github.com/hlissner/emacs-doom-themes
