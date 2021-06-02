@@ -1,11 +1,24 @@
 ;;; doom-ephemeral-theme.el --- ephemeral -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Author: Aloysuis <aloysuis@users.noreply.github.com>
+;; Created: January 27, 2020
+;; Version: 2.0.0
+;; Keywords: custom themes, faces
+;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;;
 ;;; Commentary:
-;;; A doom theme inspired by https://github.com/elenapan/dotfiles
-
+;;
+;; Inspired by https://github.com/elenapan/dotfiles
+;;
 ;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-ephemeral-theme nil
   "Options for the `doom-ephemeral' theme."
   :group 'doom-themes)
@@ -20,62 +33,61 @@
   :group 'doom-ephemeral-theme
   :type 'boolean)
 
-(defcustom doom-ephemeral-comment-bg doom-ephemeral-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their legibility."
-  :group 'doom-ephemeral-theme
-  :type 'boolean)
-
 (defcustom doom-ephemeral-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to determine the exact padding."
   :group 'doom-ephemeral-theme
   :type '(choice integer boolean))
 
-(eval-and-compile
-  (defcustom doom-ephemeral-region-highlight t
-    "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
+(defcustom doom-ephemeral-region-highlight t
+  "Determines the selection highlight style. Can be 'frost, 'snowstorm or t
 (default)."
-    :group 'doom-ephemeral-theme
-    :type 'symbol))
+  :group 'doom-ephemeral-theme
+  :type 'symbol)
+
 
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-ephemeral
   "A dark theme inspired by Nord."
 
   ;; name        default   256       16
-  ((bg         '("#323f4e" nil       nil            ))
-   (bg-alt     '("#28323e" nil       nil            ))
-   (base0      '("#181e26" "black"   "black"        ))
-   (base1      '("#1e262d" "#1e262f" "brightblack"  ))
-   (base2      '("#242d39" "#242d39" "brightblack"  ))
-   (base3      '("#2a3542" "#2a3542" "brightblack"  ))
-   (base4      '("#323f4e" "#323f4e" "brightblack"  ))
-   (base5      '("#364455" "#364455" "brightblack"  ))
-   (base6      '("#505d6f" "#505d6f" "brightblack"  ))
-   (base7      '("#77818f" "#77818f" "brightblack"  ))
-   (base8      '("#ebedef" "#ebedef" "white"        ))
-   (fg         '("#f8f8f2" "#f8f8f2" "white"        ))
-   (fg-alt     '("#fdfdfd" "#fdfdfd" "brightwhite"  ))
+  ((bg          '("#323f4e" "#000000" "black"        ))
+   (fg          '("#f8f8f2" "#f8f8f2" "white"        ))
 
-   (grey       '("#3d4c5f" "#3d4c5f" "grey"         ))
-   (red        '("#f48fb1" "#f48fb1" "red"          ))
-   (orange     '("#f2a272" "#f2a272" "brightred"    ))
-   (green      '("#53e2ae" "#53e2ae" "green"        ))
-   (teal       '("#a1efd3" "#a1efd3" "brightgreen"  ))
-   (yellow     '("#f1fa8c" "#f1fa8c" "yellow"       ))
-   (blue       '("#92b6f4" "#92b6f4" "brightblue"   ))
-   (dark-blue  '("#9f92f4" "#9f92f4" "blue"         ))
-   (magenta    '("#BD99FF" "#c574dd" "magenta"      ))
-   (violet     '("#8897f4" "#8897f4" "brightmagenta"))
-   (dark-violet     '("#985EFF" "#8897f4" "brightmagenta"))
-   (cyan       '("#79e6f3" "#87dfeb" "brightcyan"   ))
-   (dark-cyan  '("#24d1e7" "#24d1e7" "cyan"         ))
+   (bg-alt      '("#28323e" "#000000" "black"        ))
+   (fg-alt      '("#fdfdfd" "#fdfdfd" "brightwhite"  ))
+
+   (base0       '("#181e26" "black"   "black"        ))
+   (base1       '("#1e262d" "#1e262f" "brightblack"  ))
+   (base2       '("#242d39" "#242d39" "brightblack"  ))
+   (base3       '("#2a3542" "#2a3542" "brightblack"  ))
+   (base4       '("#323f4e" "#323f4e" "brightblack"  ))
+   (base5       '("#364455" "#364455" "brightblack"  ))
+   (base6       '("#505d6f" "#505d6f" "brightblack"  ))
+   (base7       '("#77818f" "#77818f" "brightblack"  ))
+   (base8       '("#ebedef" "#ebedef" "white"        ))
+
+   (grey        '("#3d4c5f" "#3d4c5f" "grey"         ))
+   (red         '("#f48fb1" "#f48fb1" "red"          ))
+   (orange      '("#f2a272" "#f2a272" "brightred"    ))
+   (green       '("#53e2ae" "#53e2ae" "green"        ))
+   (teal        '("#a1efd3" "#a1efd3" "brightgreen"  ))
+   (yellow      '("#f1fa8c" "#f1fa8c" "yellow"       ))
+   (blue        '("#92b6f4" "#92b6f4" "brightblue"   ))
+   (dark-blue   '("#9f92f4" "#9f92f4" "blue"         ))
+   (magenta     '("#BD99FF" "#c574dd" "magenta"      ))
+   (violet      '("#8897f4" "#8897f4" "brightmagenta"))
+   (dark-violet '("#985EFF" "#8897f4" "brightmagenta"))
+   (cyan        '("#79e6f3" "#87dfeb" "brightcyan"   ))
+   (dark-cyan   '("#24d1e7" "#24d1e7" "cyan"         ))
 
    ;; ephemeral colours
-   (pink       '("#c574dd" "#c574dd" "grey"         ))
-   (light-pink (doom-lighten pink 0.6))
-   (dark-grey  (doom-darken grey 0.3)                )
-   (light-grey '("#56687e" "#56687e" "grey"         ))
-   (alt-blue   '("#87DFEB" "#87dfeb" "brightblue"   ))
+   (pink        '("#c574dd" "#c574dd" "grey"         ))
+   (light-pink  (doom-lighten pink 0.6))
+   (dark-grey   (doom-darken grey 0.3)                )
+   (light-grey  '("#56687e" "#56687e" "grey"         ))
+   (alt-blue    '("#87DFEB" "#87dfeb" "brightblue"   ))
 
    ;; face categories -- required for all themes
    (highlight      alt-blue)
@@ -102,7 +114,6 @@
    (vc-deleted     orange)
 
    ;; custom categories
-   (hidden     `(,(car bg) "black" "black"))
    (-modeline-bright doom-ephemeral-brighter-modeline)
    (-modeline-pad
     (when doom-ephemeral-padded-modeline
@@ -125,10 +136,10 @@
    ((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground blue)
    (link :foreground (doom-lighten light-grey 0.3) :inherit 'underline)
-   (font-lock-comment-face :inherit 'bold :foreground comments :background (if doom-ephemeral-comment-bg (doom-lighten bg 0.05)))
-   (font-lock-doc-face :inherit 'font-lock-comment-face :foreground doc-comments)
-   (font-lock-builtin-face :inherit 'italic :foreground builtin)
-   (font-lock-keyword-face :inherit 'bold :foreground keywords)
+   ((font-lock-comment-face &override)
+    :inherit 'bold :background (if doom-ephemeral-brighter-comments (doom-lighten bg 0.05)))
+   ((font-lock-builtin-face &override) :inherit 'italic)
+   ((font-lock-keyword-face &override) :inherit 'bold)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -137,13 +148,14 @@
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    ((region &override) :foreground region-fg)
-   (shadow               :foreground base6)
-   (tooltip :background base1 :foreground fg)
+   (shadow :foreground base6)
+   ((tooltip &override) :background base1)
 
    ;;;; company
-   (company-box-background      :background base0  :foreground fg )
-   (company-tooltip-common      :foreground violet                )
-   (company-tooltip-selection   :background base0  :foreground red)
+   (company-tooltip-common :foreground violet)
+   (company-tooltip-selection :background base0 :foreground red)
+   ;;;; company-box
+   (company-box-background :background base0 :foreground fg)
    ;;;; css-mode <built-in> / scss-mode
    (css-property             :foreground fg)
    (css-proprietary-property :foreground violet)
@@ -218,13 +230,12 @@
    ((org-block-begin-line &override) :inherit 'bold :background base2 :foreground light-grey)
    (org-document-info-keyword :foreground comments)
    (org-headline-done :foreground red)
-   (org-hide :foreground hidden)
    (org-link :inherit 'underline :foreground pink)
    (org-list-dt :foreground light-grey)
    (org-todo :foreground red)
    ;;;; mic-paren
-   ((paren-face-match &override) :foreground red :background base3 :weight 'ultra-bold)
-   ((paren-face-mismatch &override) :foreground base3 :background red :weight 'ultra-bold)
+   ((paren-face-match &override) :background base3)
+   ((paren-face-mismatch &override) :foreground base3)
    ;;;; rjsx-mode
    (rjsx-tag :foreground magenta)
    ;;;; solaire-mode
@@ -237,7 +248,7 @@
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
    ;;;; vimish-fold
-   ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background base3 :weight 'light)
+   ((vimish-fold-overlay &override) :background base3)
    ((vimish-fold-fringe &override)  :foreground teal)))
 
 ;;; doom-ephemeral-theme.el ends here
