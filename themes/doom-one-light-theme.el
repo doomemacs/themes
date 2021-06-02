@@ -144,6 +144,7 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis
     :foreground (if doom-one-light-brighter-modeline base8 highlight))
+   (shadow :foreground base4)
    (tooltip :background base1 :foreground fg)
 
    ;;;; centaur-tabs
