@@ -65,10 +65,10 @@ background contrast. All other values default to \"medium\"."
    (green       '("#b8bb26" "#b8bb26" "green"))         ; bright-green
    (dark-green  '("#98971a" "#98971a" "green"))         ; green
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
-   (my_blue     '("#318ce0" "#318ce0" "brightblue"))
+   (my-blue     '("#318ce0" "#318ce0" "brightblue"))
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
    (cyan        '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
-   (my-black    '("#37302f" "#37302f" "brightcyan"))
+   (my-black    '("#37302f" "#37302f" "black"))
    (dark-cyan   '("#689d6a" "#689d6a" "cyan"))          ; aqua
 
    ;; face categories
@@ -83,7 +83,7 @@ background contrast. All other values default to \"medium\"."
    (keywords       red)
    (methods        orange)
    (operators      yellow)
-   (type           my_blue)
+   (type           my-blue)
    (strings        green)
    (variables      blue)
    (numbers        violet)
@@ -226,6 +226,12 @@ background contrast. All other values default to \"medium\"."
    ((outline-6 &override) :foreground (doom-lighten violet 0.4))
    ((outline-7 &override) :foreground (doom-lighten dark-cyan 0.5))
    ((outline-8 &override) :foreground (doom-lighten violet 0.6))
+   ; ((outline-1 &override) :foreground green)
+   ; ((outline-2 &override) :foreground green)
+   ; ((outline-3 &override) :foreground yellow)
+   ; ((outline-4 &override) :foreground yellow)
+   ; ((outline-5 &override) :foreground dark-yellow)
+   ; ((outline-6 &override) :foreground dark-yellow)
    ;;;; org <built-in>
    (org-code :foreground orange)
    (org-date :foreground green)
@@ -236,10 +242,13 @@ background contrast. All other values default to \"medium\"."
    (org-formula :foreground green)
    (org-meta-line :foreground comments)
    (org-list-dt :foreground cyan)
+   ; (org-list-dt :foreground yellow)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
    (org-table :foreground cyan)
    (org-tag :foreground (doom-darken comments 0.15) :weight 'normal)
+   ; (org-tag :foreground yellow :bold nil)
    (org-todo :foreground green :bold 'inherit)
+   ; (org-todo :foreground yellow :bold 'inherit)
    (org-verbatim :foreground yellow)
    ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground orange)
