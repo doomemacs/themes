@@ -59,14 +59,17 @@ background contrast. All other values default to \"medium\"."
    (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
    (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
+   (my_orange   '("#d65d0e" "#d65d0e" "orange"))
    (yellow      '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow
    (dark-yellow '("#d79921" "#fabd2f" "yellow"))        ; yellow
    (teal        '("#8ec07c" "#8ec07c" "green"))         ; bright-aqua
    (green       '("#b8bb26" "#b8bb26" "green"))         ; bright-green
    (dark-green  '("#98971a" "#98971a" "green"))         ; green
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
+   (my_blue     '("#318ce0" "#318ce0" "brightblue"))
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
    (cyan        '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
+   (my-black    '("#37302f" "#37302f" "brightcyan"))
    (dark-cyan   '("#689d6a" "#689d6a" "cyan"))          ; aqua
 
    ;; face categories
@@ -77,11 +80,11 @@ background contrast. All other values default to \"medium\"."
    (comments       (if doom-gruvbox-brighter-comments magenta grey))
    (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
    (constants      violet)
-   (functions      green)
+   (functions      orange)
    (keywords       red)
-   (methods        green)
-   (operators      fg)
-   (type           yellow)
+   (methods        orange)
+   (operators      yellow)
+   (type           my_blue)
    (strings        green)
    (variables      blue)
    (numbers        violet)
@@ -119,10 +122,10 @@ background contrast. All other values default to \"medium\"."
    ((link &override) :foreground violet)
    (minibuffer-prompt :foreground cyan)
    (mode-line
-    :background modeline-bg :foreground modeline-fg
+    :background my-black :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background modeline-inactive-bg :foreground modeline-inactive-fg
+    :background bg :foreground base4
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-inactive-bg)))
 
    ;;;; company
@@ -240,9 +243,9 @@ background contrast. All other values default to \"medium\"."
    (org-todo :foreground green :bold 'inherit)
    (org-verbatim :foreground yellow)
    ;;;; rainbow-delimiters
-   (rainbow-delimiters-depth-1-face :foreground orange)
+   (rainbow-delimiters-depth-1-face :foreground my_orange)
    (rainbow-delimiters-depth-2-face :foreground red)
-   (rainbow-delimiters-depth-3-face :foreground magenta)
+   (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
    ((show-paren-match &override) :foreground nil :background base5 :bold t)
@@ -263,10 +266,10 @@ background contrast. All other values default to \"medium\"."
    (web-mode-json-key-face         :foreground green)
    (web-mode-json-context-face     :foreground cyan)
    ;;;; which-key
-   (which-func :foreground cyan)
-   (which-key-command-description-face :foreground fg)
-   (which-key-group-description-face :foreground (doom-lighten fg-alt 0.25))
-   (which-key-local-map-description-face :foreground cyan))
+   (which-key-key-face                   :foreground green)
+   (which-key-group-description-face     :foreground red)
+   (which-key-command-description-face   :foreground blue)
+   (which-key-local-map-description-face :foreground orange))
 
   ;;;; Base theme variable overrides
   ;; ()
