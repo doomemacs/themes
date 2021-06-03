@@ -59,7 +59,6 @@ background contrast. All other values default to \"medium\"."
    (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
    (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
-   (my_orange   '("#d65d0e" "#d65d0e" "orange"))
    (yellow      '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow
    (dark-yellow '("#d79921" "#fabd2f" "yellow"))        ; yellow
    (teal        '("#8ec07c" "#8ec07c" "green"))         ; bright-aqua
@@ -243,8 +242,8 @@ background contrast. All other values default to \"medium\"."
    (org-todo :foreground green :bold 'inherit)
    (org-verbatim :foreground yellow)
    ;;;; rainbow-delimiters
-   (rainbow-delimiters-depth-1-face :foreground my_orange)
-   (rainbow-delimiters-depth-2-face :foreground red)
+   (rainbow-delimiters-depth-1-face :foreground orange)
+   (rainbow-delimiters-depth-2-face :foreground magenta)
    (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
