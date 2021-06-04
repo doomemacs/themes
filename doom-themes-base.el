@@ -196,6 +196,8 @@
      (&all   :inherit 'avy-lead-face)
      (&dark  :background (doom-lighten highlight 0.9))
      (&light :background (doom-darken highlight 0.9)))
+    ;;;; bookmark
+    (bookmark-face :background (doom-blend highlight bg 0.1) :extend t)
     ;;;; bookmark+
     (bmkp-*-mark :foreground bg :background yellow)
     (bmkp->-mark :foreground yellow)
