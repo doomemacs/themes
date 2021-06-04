@@ -1,15 +1,10 @@
-;;; doom-ir-black-theme.el --- port of the original ir_black theme
+;;; doom-ir-black-theme.el --- port of the original ir_black theme -*- lexical-bindings: t; no-byte-compile: t; -*-
 (require 'doom-themes)
 
 ;;
 (defgroup doom-ir-black-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
-
-(defcustom doom-ir-black-smooth-bg nil
-  "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-ir-black-theme
-  :type 'boolean)
 
 (defcustom doom-ir-black-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
@@ -30,12 +25,11 @@ determine the exact padding."
 
 ;;
 (def-doom-theme doom-ir-black
-  "Port of the original IR black theme"
+  "A dark theme inspired by Atom One Dark"
 
   ;; name        default   256       16
-  ((bg         (if doom-ir-black-smooth-bg '("#232323" nil nil)
-		  '("#000000" nil nil)))
-   (bg-alt     '("#121212" nil       nil            ))
+  ((bg         '("#000000" "black"   "black"        ))
+   (bg-alt     '("#121212" "black"   "black"        ))
    (base0      '("#1B2229" "black"   "black"        ))
    (base1      '("#1c1f24" "#1e1e1e" "brightblack"  ))
    (base2      '("#202328" "#2e2e2e" "brightblack"  ))
@@ -161,4 +155,3 @@ determine the exact padding."
   )
 
 ;;; doom-ir-black-theme.el ends here
-
