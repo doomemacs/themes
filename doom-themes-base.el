@@ -196,6 +196,8 @@
      (&all   :inherit 'avy-lead-face)
      (&dark  :background (doom-lighten highlight 0.9))
      (&light :background (doom-darken highlight 0.9)))
+    ;;;; bookmark
+    (bookmark-face :background (doom-blend highlight bg 0.1) :extend t)
     ;;;; bookmark+
     (bmkp-*-mark :foreground bg :background yellow)
     (bmkp->-mark :foreground yellow)
@@ -353,9 +355,9 @@
         (:inherit unspecified :underline (:style wave :color ,(car error))))
        (t (:inherit font-lock-warning-face :underline t))))
     (cider-warning-highlight-face
-      `((((supports :underline (:style wave)))
-         (:underline (:style wave :color ,(car warning)) :inherit unspecified))
-        (t (:inherit font-lock-warning-face :underline (:color ,(car warning))))))
+     `((((supports :underline (:style wave)))
+        (:underline (:style wave :color ,(car warning)) :inherit unspecified))
+       (t (:inherit font-lock-warning-face :underline (:color ,(car warning))))))
     (cider-test-failure-face :background (doom-blend bg error 0.7))
     (cider-test-error-face   :background orange)
     (cider-test-success-face
@@ -1396,6 +1398,9 @@
     ;;;; widget
     (widget-button-pressed :foreground red)
     (widget-documentation  :foreground green)
+    (widget-single-line-field :background base3 :distant-foreground bg)
+    (widget-field :background base3 :distant-foreground bg
+                  :box `(:line-width -1 :color ,grey) :extend t)
     ;;;; window-divider
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)

@@ -43,6 +43,7 @@
 ;;   + `doom-homage-black': (added by [mskorzhinskiy])
 ;;   + `doom-horizon' (added by karetsu)
 ;;   + `doom-Iosvkem' (added by neutaaaaan)
+;;   + `doom-ir-black' (added by legendre6891)
 ;;   + `doom-laserwave' (added by hyakt)
 ;;   + `doom-material' (added by tam5)
 ;;   + `doom-manegarm' (added by kenranunderscore)

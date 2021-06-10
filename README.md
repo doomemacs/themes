@@ -100,6 +100,7 @@ maintain them and address inconsistencies:
 | `doom-homage-white`                 | a minimalistic, colorless theme, inspired by [eziam], [tao] and [jbeans] themes. (thanks to [mskorzhinskiy]) |
 | `doom-horizon`                      | ported from VS Code's [Horizon] (thanks to [karetsu])                                                        |
 | `doom-Iosvkem`                      | adapted from [Iosvkem] (thanks to [neutaaaaan])                                                              |
+| `doom-ir-black`                     | Port of VIM's IR_Black color scheme (thanks to [legendre6891])                                               |
 | `doom-laserwave`                    | a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])       |
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
@@ -261,6 +262,7 @@ support.
 [kadenbarlow]: https://github.com/kadenbarlow
 [karetsu]: https://github.com/karetsu
 [kenranunderscore]: https://github.com/kenranunderscore
+[legendre6891]: https://github.com/legendre6891
 [LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
