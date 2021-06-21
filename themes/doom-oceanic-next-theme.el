@@ -120,6 +120,16 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+   
+   ;;;; VCS/magit readability
+   (diff-refine-removed :foreground vc-deleted :background bg :inverse-video t)
+   (diff-refine-added :foreground vc-added :background bg :inverse-video t)
+
+   (magit-diff-removed-highlight :foreground vc-deleted :background base1 :weight 'bold)
+
+   (magit-diff-base :foreground vc-modified :background bg-alt)
+   (magit-diff-removed :foreground vc-deleted :background base1)
+   (magit-diff-added :foreground vc-added :background base1)
 
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
