@@ -110,7 +110,6 @@ Can be an integer to determine the exact padding."
   ((cursor :background blue)
    ((font-lock-comment-face &override)
     :background (if doom-sourcerer-comment-bg (doom-darken bg-alt 0.095)))
-   (fringe :background base2)
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
    (mode-line

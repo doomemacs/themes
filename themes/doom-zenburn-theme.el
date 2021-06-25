@@ -138,7 +138,6 @@ Can be an integer to determine the exact padding."
    (font-lock-type-face :foreground blue-1)
    (font-lock-warning-face :foreground yellow-1 :weight 'bold)
    (font-lock-keyword-face :foreground yellow :weight 'bold)
-   (fringe :foreground fg :background base5)
    (highlight :background base4)
    (isearch :freground yellow-2 :weight 'bold :background base6)
    (isearch-fail :foreground fg :background red-4)

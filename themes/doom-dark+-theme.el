@@ -97,7 +97,6 @@ Can be an integer to determine the exact padding."
    (mode-line-emphasis
     :foreground fg
     :weight 'bold)
-   (fringe :background bg-alt)
 
    ;;;; all-the-icons
    (all-the-icons-dblue :foreground blue)

@@ -94,7 +94,6 @@ Can be an integer to determine the exact padding."
   ((font-lock-keyword-face :foreground keywords)
    (font-lock-comment-face :foreground comments)
    (font-lock-doc-face :foreground doc-comments)
-   (fringe :background base2)
    (hl-line :background line-highlight)
    (lazy-highlight :background base4 :foreground fg)
    ((line-number &override) :foreground base5 :background (doom-darken bg 0.06))

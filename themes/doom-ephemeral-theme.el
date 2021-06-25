@@ -132,8 +132,7 @@
 
 
   ;;;; Base theme face overrides
-  ((fringe :background bg-alt :foreground bg-alt)
-   ((line-number &override) :foreground grey)
+  (((line-number &override) :foreground grey)
    ((line-number-current-line &override) :foreground blue)
    (link :foreground (doom-lighten light-grey 0.3) :inherit 'underline)
    ((font-lock-comment-face &override)
