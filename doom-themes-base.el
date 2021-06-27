@@ -789,6 +789,8 @@
     (ivy-posframe-border :inherit 'internal-border)
     ;;;; selectrum
     (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+    ;;;; vertico
+    (vertico-current :background region :distant-foreground nil :extend t)
     ;;;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
