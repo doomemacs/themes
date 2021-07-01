@@ -101,7 +101,7 @@ determine the exact padding."
 
    (modeline-bg
     (if -modeline-bright
-        modeline-bg
+        (doom-blend blue bg 0.35)
       `(,(car base3) ,@(cdr base1))))
    (modeline-bg-l
     (if -modeline-bright
