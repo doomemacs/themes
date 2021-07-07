@@ -103,6 +103,7 @@ maintain them and address inconsistencies:
 | `doom-ir-black`                     | Port of VIM's IR_Black color scheme (thanks to [legendre6891])                                               |
 | `doom-laserwave`                    | a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])       |
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
+| `doom-manilla`                      | a higher contrast theme based on Solarized Light (thanks to [obar])                                          |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
 | `doom-miramare`                     | a port of [Franbach's][franbach] [Miramare], a variant of gruvbox theme (thanks to [sagittaros])             |
 | `doom-molokai`                      | a theme based on Texmate's Monokai                                                                           |
