@@ -48,8 +48,8 @@ Can be an integer to determine the exact padding."
 (def-doom-theme doom-vibrant
   "A dark theme based off of doom-one with more vibrant colors."
 
-  ;; name        gui       256       16
-  ((bg         '("#242730" "brightblack" "brightblack" ))
+  ;; name        gui       256           16
+  ((bg         '("#242730" "black"       "black" ))
    (fg         '("#bbc2cf" "#bfbfbf"     "brightwhite" ))
 
    ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
