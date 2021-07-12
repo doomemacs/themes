@@ -54,7 +54,7 @@
    (red        '("#e95678" "#e95678" "red"          ))
    (orange     '("#f09383" "#f09383" "brightred"    ))
    (green      '("#09f7a0" "#09f7a0" "green"        ))
-   (teal       '("#21bfc2" "#21bfc2" "brightgreen"  ))
+   (teal       '("#87ceeb" "#87ceeb" "brightgreen"  ))
    (yellow     '("#fab795" "#fab795" "yellow"       ))
    (blue       '("#21bfc2" "#21bfc2" "brightblue"   ))
    (dark-blue  '("#25b2bc" "#25b2bc" "blue"         ))
