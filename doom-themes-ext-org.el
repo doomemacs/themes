@@ -38,6 +38,15 @@ Uses `doom-themes-org-at-tag' and `doom-themes-org-hash-tag' faces."
   :type 'boolean
   :group 'doom-themes-org)
 
+(defcustom doom-themes-org-fontify-exclude-types
+  '(src-block
+    link
+    citation-reference)
+  "A list of org elements not to highlight special tags in.
+See `doom-themes-org-fontify-special-tags'."
+  :type '(repeat symbol)
+  :group 'doom-themes-org)
+
 (defface doom-themes-org-at-tag '((t :inherit org-formula))
   "Face used to fontify @-tags in org-mode."
   :group 'doom-themes-org)
@@ -60,9 +69,11 @@ Uses `doom-themes-org-at-tag' and `doom-themes-org-hash-tag' faces."
   "Return the face to use for the currently matched tag.
 N is the match index."
   (declare (pure t) (side-effect-free t))
-  (pcase (match-string n)
-    ("#" 'doom-themes-org-hash-tag)
-    ("@" 'doom-themes-org-at-tag)))
+  (let ((context (save-match-data (org-element-context))))
+    (unless (memq (org-element-type context) '(src-block link))
+      (pcase (match-string n)
+        ("#" 'doom-themes-org-hash-tag)
+        ("@" 'doom-themes-org-at-tag)))))
 
 (defun doom-themes-enable-org-fontification ()
   "Correct (and improve) org-mode's font-lock keywords.
@@ -79,7 +90,9 @@ N is the match index."
   (let ((org-todo (format org-heading-keyword-regexp-format
                           org-todo-regexp))
         (org-done (format org-heading-keyword-regexp-format
-                          (concat "\\(?:" (mapconcat #'regexp-quote org-done-keywords "\\|") "\\)"))))
+                          (concat "\\(?:" (mapconcat #'regexp-quote org-done-keywords
+                                                     "\\|")
+                                  "\\)"))))
     (setq
      org-font-lock-extra-keywords
      (append (org-delete-all
@@ -111,7 +124,8 @@ N is the match index."
                   1 'org-headline-done prepend)))
              ;; custom #hashtags & @at-tags for another level of organization
              (when doom-themes-org-fontify-special-tags
-               '(("\\s-\\(\\([#@]\\)[^@#+ \n][^+ \n.,]*\\)" 1 (doom-themes--org-tag-face 2) prepend)))))))
+               '(("\\s-\\(\\([#@]\\)[A-Za-z0-9_-.:]*\\)"
+                  1 (doom-themes--org-tag-face 2) prepend)))))))
 
 (add-hook 'org-font-lock-set-keywords-hook #'doom-themes-enable-org-fontification)
 
