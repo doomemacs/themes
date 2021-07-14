@@ -1456,7 +1456,7 @@
     ;;;; objed
     (objed-cursor-color (doom-color 'red))
     ;;;; pdf-tools
-    (pdf-view-midnight-colors `(cons ,(doom-color 'fg) ,(doom-color 'bg)))
+    (setq pdf-view-midnight-colors (cons (doom-color 'fg) (doom-color 'bg)))
     ;;;; vc <built-in>
     (vc-annotate-color-map
      `(list (cons 20  ,(doom-color 'green))
