@@ -141,6 +141,7 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-inactive
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if doom-vibrant-brighter-modeline base8 highlight))
+   (org-block :background (doom-darken base3 0.1))
 
    ;;;; all-the-icons
    ((all-the-icons-dblue &override) :foreground dark-cyan)
