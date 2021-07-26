@@ -1044,6 +1044,11 @@
     ;;;; objed
     (objed-mode-line :inherit 'warning :weight 'bold)
     (objed-hl        :inherit 'region :background (doom-blend region bg 0.5))
+    ;;;; orderless
+    (orderless-match-face-0 :weight 'bold :foreground (doom-blend blue    fg 0.6) :background (doom-blend blue    bg 0.1))
+    (orderless-match-face-1 :weight 'bold :foreground (doom-blend magenta fg 0.6) :background (doom-blend magenta bg 0.1))
+    (orderless-match-face-2 :weight 'bold :foreground (doom-blend green   fg 0.6) :background (doom-blend green   bg 0.1))
+    (orderless-match-face-3 :weight 'bold :foreground (doom-blend yellow  fg 0.6) :background (doom-blend yellow  bg 0.1))
     ;;;; org <built-in> <modes:org-mode>
     (org-archived                 :foreground doc-comments)
     (org-block                    :background base3    :extend t)
