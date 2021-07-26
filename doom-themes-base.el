@@ -933,6 +933,7 @@
     (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
     (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
     ;;;; marginalia
+    (marginalia-documentation   :inherit 'font-lock-doc-face)
     (marginalia-file-priv-dir   :foreground blue)
     (marginalia-file-priv-exec  :foreground green)
     (marginalia-file-priv-link  :foreground violet)
