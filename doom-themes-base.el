@@ -932,6 +932,14 @@
     (markdown-html-entity-face        :inherit 'font-lock-variable-name-face)
     (markdown-html-tag-delimiter-face :inherit 'markdown-markup-face)
     (markdown-html-tag-name-face      :inherit 'font-lock-keyword-face)
+    ;;;; marginalia
+    (marginalia-file-priv-dir   :foreground blue)
+    (marginalia-file-priv-exec  :foreground green)
+    (marginalia-file-priv-link  :foreground violet)
+    (marginalia-file-priv-other :foreground magenta)
+    (marginalia-file-priv-rare  :foreground fg)
+    (marginalia-file-priv-read  :foreground yellow)
+    (marginalia-file-priv-write :foreground red)
     ;;;; message <built-in>
     (message-header-name       :foreground green)
     (message-header-subject    :foreground highlight :weight 'bold)
