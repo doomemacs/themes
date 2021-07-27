@@ -1079,6 +1079,7 @@
     (org-headline-done            :foreground base5)
     (org-hide                     :foreground bg)
     (org-latex-and-related        :foreground base8           :weight 'bold)
+    (org-link                     :inherit 'link              :foreground highlight)
     (org-list-dt                  :foreground highlight)
     (org-meta-line                :foreground doc-comments)
     (org-priority                 :foreground red)
