@@ -1077,7 +1077,7 @@
     (org-document-info            :foreground builtin)
     (org-document-title           :foreground builtin         :weight 'bold)
     (org-done                     :inherit 'org-headline-done :strike-through nil :weight 'bold)
-    (org-drawer                   :foreground doc-comments)
+    (org-drawer                   :foreground comments)
     (org-ellipsis                 :underline nil              :background nil :foreground comments)
     (org-footnote                 :foreground orange)
     (org-formula                  :foreground cyan)
