@@ -1067,7 +1067,7 @@
     (org-checkbox                 :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
     (org-checkbox-statistics-todo :inherit 'org-todo)
-    (org-code                     :foreground orange)
+    (org-code                     :inherit 'org-block :foreground orange)
     (org-date                     :foreground yellow)
     (org-default                  :inherit 'variable-pitch)
     (org-document-info            :foreground builtin)

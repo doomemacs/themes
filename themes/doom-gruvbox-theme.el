@@ -225,7 +225,7 @@ background contrast. All other values default to \"medium\"."
    ((outline-7 &override) :foreground (doom-lighten dark-cyan 0.5))
    ((outline-8 &override) :foreground (doom-lighten violet 0.6))
    ;;;; org <built-in>
-   (org-code :foreground orange)
+   ((org-code &override) :foreground orange)
    (org-date :foreground green)
    (org-document-info :foreground red)
    (org-document-title :foreground red)

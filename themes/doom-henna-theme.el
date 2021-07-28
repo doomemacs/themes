@@ -239,7 +239,7 @@ determine the exact padding."
    (outline-8 :foreground (doom-lighten blue 0.8)     :weight 'bold :extend t)
    ;;;; org <built-in>
    (org-hide              :foreground hidden)
-   (org-code              :foreground blue)
+   ((org-code &override)  :foreground blue)
    (org-table             :foreground fg-alt)
    ;;;; web-mode
    (web-mode-html-attr-equal-face  :foreground teal)

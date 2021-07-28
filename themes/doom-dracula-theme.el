@@ -199,7 +199,7 @@ determine the exact padding."
    (org-agenda-structure :foreground violet)
    ((org-block &override) :background (doom-darken base1 0.125) :foreground violet)
    ((org-block-begin-line &override) :background (doom-darken base1 0.125) :foreground comments)
-   (org-code :foreground yellow)
+   ((org-code &override) :foreground yellow)
    (org-column :background base1)
    (org-column-title :background base1 :bold t :underline t)
    (org-date :foreground cyan)

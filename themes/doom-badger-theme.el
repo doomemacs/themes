@@ -158,7 +158,7 @@ determine the exact padding."
    (org-agenda-date-today  :foreground salmon :weight 'light :slant 'italic)
    (org-agenda-structure  :inherit font-lock-comment-face)
    (org-archived :foreground fg :weight 'bold)
-   (org-code :foreground olive)
+   ((org-code &override) :foreground olive)
    (org-column :background "black")
    (org-column-title :background "black" :foreground lime :underline t)
    (org-date :foreground link :underline t)
