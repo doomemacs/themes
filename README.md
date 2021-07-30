@@ -104,6 +104,7 @@ maintain them and address inconsistencies:
 | `doom-laserwave`                    | a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])       |
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
+| `doom-material-dark`                | adapted from [Material Dark Theme][Material Dark Theme] (thanks to [trev-dev][trev-dev])                     |
 | `doom-miramare`                     | a port of [Franbach's][franbach] [Miramare], a variant of gruvbox theme (thanks to [sagittaros])             |
 | `doom-molokai`                      | a theme based on Texmate's Monokai                                                                           |
 | `doom-monokai-classic`              | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
@@ -266,6 +267,8 @@ support.
 [LoveSponge]: https://github.com/LoveSponge
 [mateossh]: https://github.com/mateossh
 [Material Themes]: https://github.com/equinusocio/vsc-material-theme
+[Material Dark Theme]: https://github.com/xrei/material-dark-vscode
+[trev-dev]: https://github.com/trev-dev
 [minikN]: https://github.com/minikN
 [Miramare]: https://github.com/franbach/miramare
 [Moonlight Theme]: https://github.com/atomiks/moonlight-vscode-theme
