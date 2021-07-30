@@ -148,5 +148,7 @@ Can be an integer to determine the exact padding."
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
+   ;;;; Treemacs
+   (treemacs-git-modified-face :foreground vc-modified)))
 
 ;;; doom-material-theme.el ends here
