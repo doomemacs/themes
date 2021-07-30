@@ -147,7 +147,10 @@ Can be an integer to determine the exact padding."
    (rainbow-delimiters-depth-9-face :foreground dark-cyan)
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
-   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)))
+   (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
+   ;;;; Magit
+   (magit-header-line :background (doom-lighten modeline-bg 0.2) :foreground green :weight 'bold
+                      :box `(:line-width 3 :color ,(doom-lighten modeline-bg 0.2)))
    ;;;; Treemacs
    (treemacs-git-modified-face :foreground vc-modified)))
 
