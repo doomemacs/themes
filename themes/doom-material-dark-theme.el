@@ -6,6 +6,7 @@
   "Options for the `material dark' theme."
   :group 'doom-themes)
 
+
 (defcustom doom-material-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
@@ -148,10 +149,27 @@ Can be an integer to determine the exact padding."
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
    (rjsx-attr :foreground yellow :slant 'italic :weight 'medium)
+   (rjsx-tag-bracket-face :foreground cyan)
    ;;;; Magit
    (magit-header-line :background (doom-lighten modeline-bg 0.2) :foreground green :weight 'bold
                       :box `(:line-width 3 :color ,(doom-lighten modeline-bg 0.2)))
    ;;;; Treemacs
-   (treemacs-git-modified-face :foreground vc-modified)))
+   (treemacs-git-modified-face :foreground vc-modified)
+   ;;;; Web Mode
+   (web-mode-html-tag-face :foreground red)
+   (web-mode-html-attr-equal-face :foreground cyan)
+   ;;;; Org Mode
+   (org-level-1 :foreground green)
+   (org-level-2 :foreground yellow)
+   (org-level-3 :foreground red)
+   (org-level-4 :foreground cyan)
+   (org-level-5 :foreground blue)
+   (org-level-6 :foreground magenta)
+   (org-level-7 :foreground teal)
+   (org-level-8 :foreground violet)
+   ;;;; css
+   (css-property :foreground orange)
+   (css-proprietary-property :foreground magenta)
+   (css-selector :foreground yellow)))
 
 ;;; doom-material-theme.el ends here
