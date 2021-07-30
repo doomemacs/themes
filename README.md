@@ -7,7 +7,7 @@
 
 A theme megapack for GNU Emacs, inspired by community favorites. Special
 attention is given for [Doom Emacs](https://doomemacs.org) and [solaire-mode]
-support, but will work fine anywhere else. 
+support, but will work fine anywhere else.
 
 [See the screenshots.][screenshots]
 
@@ -175,7 +175,7 @@ extensions][wiki].
   -  Fontify dividers/separators (5+ dashes)
   -  Fontify #hashtags and @at-tags, for personal convenience; see
      `doom-org-special-tags` to disable this.
-     
+
 ## Complimentary plugins
 The following plugins compliment our themes:
 
@@ -186,7 +186,7 @@ The following plugins compliment our themes:
   [airline-themes][airline-themes].
 - The modeline in the screenshots is
   [doom-modeline](https://github.com/seagle0128/doom-modeline).
-     
+
 ## Customization
 There are three ways to customize themes in this package:
 
@@ -201,21 +201,20 @@ There are three ways to customize themes in this package:
    + `doom-themes-padded-modeline` (default: `nil`): if `t`, pad the mode-line
      in 4px on each side. Can also be set to an integer to specify the exact
      padding.  or `M-x customize-group RET doom-themes` to explore them.
-  
+
 2. Use the `custom-set-faces` macro (Doom users should use `custom-set-faces!`
    instead) to customize any face. e.g.
-  
+
   ```elisp
   ;; Must be used *after* the theme is loaded
   (custom-set-faces
     `(mode-line ((t (:background ,(doom-color 'dark-violet)))))
     `(font-lock-comment-face ((t (:foreground ,(doom-color 'base6))))))
   ```
-  
+
 3. Copy your favorite theme into your `custom-theme-directory` (normally
    `~/.emacs.d/`, or `~/.doom.d/themes` for Doom users), and tweak it there.
-   
-  
+
 ## Contribute
 
 PRs are welcome to maintain our themes, including additional theme and plugin
