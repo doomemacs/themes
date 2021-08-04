@@ -84,7 +84,7 @@ Can be an integer to determine the exact padding."
   (;;;; emacs
    (lazy-highlight :background (doom-darken green 0.5) :foreground green :weight 'bold)
    (minibuffer-prompt :foreground yellow)
-   (region :background bg-alt :foreground nil :distant-foreground (doom-darken fg 0.2) :extend t)
+   (region :background (doom-darken dark-cyan 0.5) :foreground dark-cyan :distant-foreground (doom-darken fg 0.2) :extend t)
    (hl-line :background base2 :foreground nil)
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -172,4 +172,4 @@ Can be an integer to determine the exact padding."
    (css-proprietary-property :foreground magenta)
    (css-selector :foreground yellow)))
 
-;;; doom-material-theme.el ends here
+;;; Doom-material-theme.el ends here
