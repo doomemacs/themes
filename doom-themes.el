@@ -36,6 +36,7 @@
 ;;   + `doom-ephemeral' (added by karetsu)
 ;;   + `doom-fairy-floss' (added by ema2159)
 ;;   + `doom-flatwhite' (added by ShaneKilkelly)
+;;   + `doom-gotham' (added by devwolff)
 ;;   + `doom-gruvbox' (added by JongW)
 ;;   + `doom-gruxbox-light' (added by jsoa)
 ;;   + `doom-henna' (added by jsoa)
