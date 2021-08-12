@@ -40,7 +40,7 @@ determine the exact padding."
    (base2      '("#091f2e" "#110d26" "brightblack" ))
    (base3      '("#1d84ad" "#3b4167" "brightblack" ))
    (base4      '("#245361" "#2d2844" "brightblack" ))
-   (base5      '("#599cab" "#BA45A3" "brightblack" ))
+   (base5      '("#0c171a" "#BA45A3" "brightblack" ))
    (base6      '("#99d1ce" "#6A6EA3" "brightblack" ))
    (base7      '("#d3ebe9" "#6564D1" "brightblack" ))
    (base8      '("#1d1d8a" "#919ad9" "white"       ))
@@ -125,32 +125,33 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
-   (mode-line-highlight :background blood-red :foreground bg :weight 'bold)
+   (mode-line-highlight :background blood-red :foreground green :weight 'bold)
    (vertical-border :foreground base5)
 
-   ;;;; centaur-tabs
+;;;; centaur-tabs
    (centaur-tabs-active-bar-face :background deep-blue)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground magenta)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground magenta)
-   ;;;; company
+;;;; company
    (company-tooltip-selection :background dark-cyan)
    (company-tooltip-common    :foreground magenta :distant-foreground base0 :weight 'bold)
-   ;;;; css-mode <built-in> / scss-mode
+;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
    (css-selector             :foreground blue)
-   ;;;; doom-modeline
+;;;; doom-modeline
    (doom-modeline-bar :background blood-red :foreground green)
-   ;;;; elscreen
+;;;; elscreen
    (elscreen-tab-other-screen-face :background blood-red :foreground green)
-   ;;;; markdown-mode
-   (markdown-markup-face :foreground base5)
+;;;; markdown-mode
+   (markdown-markup-face :foreground blue)
    (markdown-header-face :inherit 'bold :foreground red)
    (markdown-url-face    :foreground teal :weight 'normal)
    (markdown-reference-face :foreground base6)
    ((markdown-bold-face &override)   :foreground fg)
    ((markdown-italic-face &override) :foreground fg-alt)
-   ;;;; outline <built-in>
+   (markdown-code-face :background base2 :foreground fg)
+;;;; outline <built-in>
    ((outline-1 &override) :foreground deep-blue)
    ((outline-2 &override) :foreground sky-blue)
    ((outline-3 &override) :foreground teal)
@@ -159,11 +160,12 @@ determine the exact padding."
    ((outline-6 &override) :foreground (doom-darken teal 0.2))
    ((outline-7 &override) :foreground (doom-darken blue 0.4))
    ((outline-8 &override) :foreground (doom-darken green 0.4))
-   ;;;; org <built-in>
+;;;; org <built-in>
    ((org-block &override) :background base0)
    ((org-block-begin-line &override) :background base0)
    (org-hide              :foreground hidden)
-   ;;;; solaire-mode
+   (org-document-title :foreground violet)
+;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-l

@@ -93,6 +93,7 @@ maintain them and address inconsistencies:
 | `doom-ephemeral`                    | inspired in the Ephemeral Theme from [elenapan's dotfiles] (thanks to [karetsu])                             |
 | `doom-fairy-floss`                  | a candy colored Sublime theme by [sailorhg] (thanks to [ema2159])                                            |
 | `doom-flatwhite`                    | a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])                   |
+| `doom-gotham       `                | a very dark theme inspired by gotham and doom-outrun-electric                                                |
 | `doom-gruvbox-light`                | adapted from Morhetz's [Gruvbox] light variant (thanks for [jsoa])                                           |
 | `doom-gruvbox`                      | adapted from Morhetz's [Gruvbox] (thanks to [JongW])                                                         |
 | `doom-henna`                        | based on VS Code's [Henna] (thanks to [jsoa])                                                                |
