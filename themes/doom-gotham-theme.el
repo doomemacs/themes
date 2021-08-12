@@ -35,34 +35,34 @@ determine the exact padding."
   ;; name        default   256       16
   ((bg         '("#0c0a20" "#0c0a20" nil           ))
    (bg-alt     '("#090819" "#090819" nil           ))
-   (base0      '("#0c1014" "#131033" "black"       ))
-   (base1      '("#11151c" "#161130" "brightblack" ))
-   (base2      '("#091f2e" "#110d26" "brightblack" ))
-   (base3      '("#1d84ad" "#3b4167" "brightblack" ))
-   (base4      '("#245361" "#2d2844" "brightblack" ))
-   (base5      '("#0c171a" "#BA45A3" "brightblack" ))
-   (base6      '("#99d1ce" "#6A6EA3" "brightblack" ))
-   (base7      '("#d3ebe9" "#6564D1" "brightblack" ))
-   (base8      '("#1d1d8a" "#919ad9" "white"       ))
+   (base0      '("#0c1014" "#0c1014" "black"       ))
+   (base1      '("#11151c" "#11151c" "brightblack" ))
+   (base2      '("#091f2e" "#091f2e" "brightblack" ))
+   (base3      '("#1d84ad" "#1d84ad" "brightblack" ))
+   (base4      '("#245361" "#245361" "brightblack" ))
+   (base5      '("#0c171a" "#0c171a" "brightblack" ))
+   (base6      '("#99d1ce" "#99d1ce" "brightblack" ))
+   (base7      '("#d3ebe9" "#d3ebe9" "brightblack" ))
+   (base8      '("#1d1d8a" "#1d1d8a" "white"       ))
    (fg-alt     '("#7984D1" "#7984D1" "white"       ))
    (fg         '("#f2f3f7" "#f2f3f7" "brightwhite" ))
 
-   (grey       '("#546A90" "#546A90" "gray"          ))
-   (red        '("#c23127" "#e61f44" "red"          ))
-   (orange     '("#cf433e" "#ff9b50" "brightred"    ))
-   (green      '("#2aa889" "#a7da1e" "green"        ))
+   (grey       '("#546A90" "#546A90" "gray"         ))
+   (red        '("#c23127" "#c23127" "red"          ))
+   (orange     '("#cf433e" "#cf433e" "brightred"    ))
+   (green      '("#2aa889" "#2aa889" "green"        ))
    (teal       '("#A875FF" "#A875FF" "brightgreen"  ))
    (yellow     '("#ffd400" "#ffd400" "yellow"       ))
    (blue       '("#1ea8fc" "#1ea8fc" "brightblue"   ))
-   (dark-blue  '("#3761a1" "#3F88AD" "blue"         ))
+   (dark-blue  '("#3761a1" "#3761a1" "blue"         ))
    (magenta    '("#ff2afc" "#ff2afc" "magenta"      ))
-   (violet     '("#ee3a8c" "#df85ff" "brightmagenta"))
-   (cyan       '("#33859e" "#42c6ff" "brightcyan"   ))
-   (dark-cyan  '("#008b8b" "#204052" "cyan"         ))
-   (cadet-blue '("#5f9ea0" "#ef9ea0" "brightblue"   ))
-   (sky-blue   '("#00b2ee" "#ef9ea0" "blue"         ))
-   (deep-blue  '("#4876ff" "#204052" "blue"         ))
-   (blood-red  '("#590621" "#e61f44" "red"          ))
+   (violet     '("#ee3a8c" "#ee3a8c" "brightmagenta"))
+   (cyan       '("#33859e" "#33859e" "brightcyan"   ))
+   (dark-cyan  '("#008b8b" "#008b8b" "cyan"         ))
+   (cadet-blue '("#5f9ea0" "#5f9ea0" "brightblue"   ))
+   (sky-blue   '("#00b2ee" "#00b2ee" "blue"         ))
+   (deep-blue  '("#4876ff" "#4876ff" "blue"         ))
+   (blood-red  '("#590621" "#590621" "red"          ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
@@ -109,8 +109,7 @@ determine the exact padding."
    (modeline-bg-inactive   `(,(car bg) ,@(cdr base1)))
    (modeline-bg-inactive-l (doom-darken bg 0.1)))
 
-
-  ;;;; Base theme face overrides
+;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :background (if doom-gotham-comment-bg (doom-lighten bg 0.05)))
    ((font-lock-keyword-face &override) :weight 'bold)
@@ -127,7 +126,6 @@ determine the exact padding."
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
    (mode-line-highlight :background blood-red :foreground green :weight 'bold)
    (vertical-border :foreground base5)
-
 ;;;; centaur-tabs
    (centaur-tabs-active-bar-face :background deep-blue)
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground magenta)
@@ -164,7 +162,7 @@ determine the exact padding."
    ((org-block &override) :background base0)
    ((org-block-begin-line &override) :background base0)
    (org-hide              :foreground hidden)
-   (org-document-title :foreground violet)
+   (org-document-title    :foreground violet)
 ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
