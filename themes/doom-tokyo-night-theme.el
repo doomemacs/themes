@@ -141,6 +141,8 @@
 
    ;;; Doom Modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+   (doom-modeline-buffer-path :foreground base8 :weight 'normal)
+   (doom-modeline-buffer-file :foreground brown :weight 'normal)
 
    (mode-line
     :background modeline-bg :foreground modeline-fg
