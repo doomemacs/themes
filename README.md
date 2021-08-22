@@ -133,6 +133,7 @@ maintain them and address inconsistencies:
 | `doom-solarized-light`              | light variant of [Solarized][solarized] (thanks to [fuxialexander])                                          |
 | `doom-sourcerer`                    | based on [Sourcerer][sourcerer] (thanks to [defphil])                                                        |
 | `doom-spacegrey`                    | [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])                                             |
+| `doom-tokyo-night`                  | based on [Tokyo Night] (thanks to [FosterHangdaan])                                                          |
 | `doom-tomorrow-day`                 | [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])                                              |
 | `doom-tomorrow-night`               | one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])                                  |
 | `doom-wilmersdorf`                  | port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])                                                        |
@@ -291,6 +292,7 @@ support.
 [spacegrey]: http://kkga.github.io/spacegray/
 [tam5]: https://github.com/tam5
 [teesloane]: https://github.com/teesloane
+[Tokyo Night]: https://github.com/enkia/tokyo-night-vscode-theme
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
@@ -305,3 +307,4 @@ support.
 [eziam]: https://github.com/thblt/eziam-theme-emacs
 [jbeans]: https://github.com/synic/jbeans-emacs
 [tao]: https://github.com/11111000000/tao-theme-emacs
+[FosterHangdaan]: https://github.com/FosterHangdaan
