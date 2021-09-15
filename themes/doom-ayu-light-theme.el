@@ -141,7 +141,7 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
   ;;;; Base theme face overrides
-  (((line-number &override) :foreground base4)
+  (((line-number &override) :foreground (doom-lighten fg 0.7))
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
     :background (if doom-ayu-light-comment-bg (doom-lighten bg 0.05)))
