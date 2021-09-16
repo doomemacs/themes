@@ -1071,6 +1071,8 @@
     (org-checkbox                 :inherit 'org-todo)
     (org-checkbox-statistics-done :inherit 'org-done)
     (org-checkbox-statistics-todo :inherit 'org-todo)
+    (org-cite                     :foreground (doom-blend teal fg 0.9))
+    (org-cite-key                 :foreground (doom-blend teal fg 0.6) :underline t)
     (org-code                     :inherit 'org-block :foreground orange)
     (org-date                     :foreground yellow)
     (org-default                  :inherit 'variable-pitch)
