@@ -941,6 +941,9 @@
     (marginalia-file-priv-rare  :foreground fg)
     (marginalia-file-priv-read  :foreground yellow)
     (marginalia-file-priv-write :foreground red)
+    (marginalia-number          :foreground numbers)
+    (marginalia-size            :foreground violet)
+    (marginalia-lighter         :foreground violet)
     ;;;; message <built-in>
     (message-header-name       :foreground green)
     (message-header-subject    :foreground highlight :weight 'bold)
