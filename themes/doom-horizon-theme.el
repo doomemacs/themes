@@ -171,6 +171,8 @@
    (markdown-bold-face             :foreground violet)
    (markdown-table-face            :foreground fg :background base1)
    ((markdown-code-face &override) :foreground orange :background base1)
+   ;;;; orderless
+   (orderless-match-face-1 :weight 'bold :foreground (doom-blend red fg 0.6) :background (doom-blend red bg 0.1))
    ;;;; mic-paren
    (paren-face-match    :foreground green   :background base0 :weight 'ultra-bold)
    (paren-face-mismatch :foreground yellow :background base0   :weight 'ultra-bold)
