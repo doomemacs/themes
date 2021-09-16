@@ -1,7 +1,11 @@
-;;; doom-ayu-mirage-theme.el -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ayu-light-theme.el --- inspired by Ayu Mirage -*- lexical-binding: t; no-byte-compile: t; -*-
+
 (require 'doom-themes)
 
+
 ;;
+;; Variables
+
 (defgroup doom-ayu-mirage-theme nil
   "Options for the `doom-ayu-mirage' theme."
   :group 'doom-themes)
@@ -57,13 +61,16 @@ determine the exact padding."
    (ui-line               (doom-darken common-bg 0.25))
    (ui-panel-shadow       (doom-darken common-bg 0.35))
    (ui-panel-border       (doom-darken common-bg 0.45))
-   (ui-gutter-normal      (doom-darken common-ui 0.45)) ;; alpha replacement
-   (ui-gutter-active      common-ui) ;; alpha replacement
-   (ui-selection-bg       (doom-blend common-bg test 0.8)) ;; fade replacement
-   (ui-selection-inactive (doom-lighten test 0.93)) ;; fade replacement
-   (ui-selection-border   (doom-lighten test 0.93)) ;; fade replacement
-   (ui-guide-active       (doom-darken common-ui 0.75)) ;; alpha replacement
-   (ui-guide-normal       (doom-darken common-ui 0.35)) ;; alpha replacement
+   (ui-gutter-normal      (doom-darken common-ui 0.45))
+   (ui-gutter-active      common-ui)
+   (ui-selection-bg       (doom-blend common-bg test 0.8))
+   (ui-selection-inactive (doom-lighten test 0.93))
+   (ui-selection-border   (doom-lighten test 0.93))
+   (ui-guide-normal       (doom-darken common-ui 0.35))
+   (ui-guide-active       (doom-darken common-ui 0.75))
+   (ui-org-block          (doom-darken common-bg 0.10))
+   (elscreen-bg           (doom-darken common-ui 0.55))
+   (elscreen-fg           ui-line)
    ;; vcs
    (vcs-added    '("#a6cc70" "green" "green" ))
    (vcs-modified '("#77a8d9" "blue"  "blue"  ))
@@ -74,9 +81,9 @@ determine the exact padding."
    (base0      ui-gutter-normal)
    (base1      ui-gutter-active)
    (base2      ui-selection-bg)
-   (base3      ui-selection-inactive)
+   (base3      ui-org-block)
    (base4      ui-selection-border)
-   (base5      ui-guide-active)
+   (base5      ui-guide-normal)
    (base6      ui-guide-normal)
    (base7      ui-panel-shadow)
    (base8      ui-panel-border)
@@ -94,15 +101,15 @@ determine the exact padding."
    (magenta    syntax-constant)
    (violet     (doom-lighten syntax-constant 0.2))
    (cyan       syntax-tag)
-   (dark-cyan  (doom-darken syntax-tag 0.2))
+   (dark-cyan  test)
 
    ;; face categories -- required for all themes
    (highlight      common-accent)
    (vertical-bar   ui-panel-border)
    (selection      nil)
    (builtin        nil)
-   (comments       (if doom-ayu-mirage-brighter-comments syntax-comment syntax-comment))
-   (doc-comments   (if doom-ayu-mirage-brighter-comments syntax-comment syntax-comment))
+   (comments       (if doom-ayu-mirage-brighter-comments dark-cyan base5))
+   (doc-comments   (doom-lighten (if doom-ayu-mirage-brighter-comments dark-cyan base5) 0.25))
    (constants      syntax-constant)
    (functions      syntax-func)
    (keywords       syntax-keyword)
@@ -176,7 +183,7 @@ determine the exact padding."
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
    (doom-modeline-buffer-project-root :foreground green :weight 'normal)
    ;;;; elscreen
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   (elscreen-tab-other-screen-face :background elscreen-bg :foreground elscreen-fg)
    ;;;; ivy
    (ivy-current-match :background common-bg)
    (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
@@ -192,6 +199,7 @@ determine the exact padding."
    ;;;; org-mode
    (org-hide :foreground hidden)
    (org-headline-done :foreground syntax-comment)
+   (org-document-info-keyword :foreground comments)
    ;;;; mic-paren
    ((paren-face-match &override) :foreground fg :background ui-selection-bg :weight 'ultra-bold)
    ;;;; rjsx-mode
