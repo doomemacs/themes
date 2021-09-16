@@ -438,7 +438,7 @@
     (diredfl-flag-mark-line         :background (doom-blend yellow bg 0.1))
     (diredfl-ignored-file-name      :foreground comments)
     (diredfl-link-priv              :foreground violet)
-    (diredfl-no-priv                :foreground fg)
+    (diredfl-no-priv                :inherit 'shadow)
     (diredfl-number                 :foreground orange)
     (diredfl-other-priv             :foreground magenta)
     (diredfl-rare-priv              :foreground fg)
