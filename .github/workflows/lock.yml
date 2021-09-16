@@ -1,8 +1,8 @@
-name: 'Lock Threads'
+name: Lock closed threads
 
 on:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '0 */12 * * *'  # twice, daily
 
 jobs:
   lock:
