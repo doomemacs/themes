@@ -70,7 +70,7 @@ See `doom-themes-org-fontify-special-tags'."
 N is the match index."
   (declare (pure t) (side-effect-free t))
   (let ((context (save-match-data (org-element-context))))
-    (unless (memq (org-element-type context) '(src-block link))
+    (unless (memq (org-element-type context) doom-themes-org-fontify-exclude-types)
       (pcase (match-string n)
         ("#" 'doom-themes-org-hash-tag)
         ("@" 'doom-themes-org-at-tag)))))
