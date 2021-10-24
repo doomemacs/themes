@@ -226,7 +226,9 @@
 
    ;;; rjsx-mode
    (rjsx-tag :foreground red)
+   (rjsx-text :foreground violet)
    (rjsx-attr :foreground magenta :slant 'italic :weight 'medium)
+   (rjsx-tag-bracket-face :foreground (doom-darken red 0.3))
 
    ;;; css-mode / scss-mode
    (css-property             :foreground blue)
