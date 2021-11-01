@@ -282,6 +282,9 @@
     (company-template-field     :inherit 'match)
     ;;;; company-box
     (company-box-candidate :foreground fg)
+    ;;;; corfu
+    (corfu-background :inherit 'tooltip)
+    (corfu-current :background bg :foreground fg)
     ;;;; circe
     (circe-fool :foreground doc-comments)
     (circe-highlight-nick-face :weight 'bold :foreground constants)
