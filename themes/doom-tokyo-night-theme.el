@@ -156,7 +156,8 @@
     :foreground highlight)
 
    ;;; Indentation
-   (whitespace-indentation :background base0)
+   (whitespace-indentation :background bg)
+   (whitespace-tab :background bg)
 
    ;;; Ivy
    (ivy-subdir :foreground blue)
@@ -216,9 +217,12 @@
    (magit-diff-removed-highlight :foreground red :background (doom-darken red 0.5) :weight 'bold)
 
    ;; --- Major-Mode Faces -------------------
+   ;;; elisp
+   (highlight-quoted-symbol :foreground yellow)
+
    ;;; js2-mode
    (js2-function-param :foreground yellow)
-   (js2-object-property :foreground dark-cyan)
+   (js2-object-property :foreground green)
 
    ;;; typescript-mode
    (typescript-this-face :foreground red)
