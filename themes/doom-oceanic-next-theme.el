@@ -61,7 +61,7 @@ determine the exact padding."
 
    ;; face categories -- required for all themes
    (highlight      yellow)
-   (vertical-bar   (doom-darken base1 0.5))
+   (vertical-bar   (doom-darken base4 0.25))
    (selection      base2)
    (builtin        red)
    (comments       (if doom-oceanic-next-brighter-comments dark-cyan base3))
