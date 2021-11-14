@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016-2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Emmanuel Bustos Torres <ema2159@gmail.com>
 ;; Created: May 22, 2016
 ;; Modified: May 30, 2021
