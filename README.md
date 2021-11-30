@@ -25,7 +25,7 @@ support, but will work fine anywhere else.
 - [FAQ](#faq)
 - [Contribute](#contribute)
 
-## Install
+## Install 📥
 
 ### Doom Emacs
 
@@ -63,7 +63,7 @@ common defaults laid out:
 ```
 
 
-## Theme list
+## Theme list✨ 
 
 ### Flagship themes
 These themes were written by the author of this package and are most maintained:
@@ -139,7 +139,7 @@ maintain them and address inconsistencies:
 | `doom-xcode`                        | Based off of Apple's Xcode Dark theme (thanks to [kadenbarlow])                                              |
 | `doom-zenburn`                      | port of the popular [Zenburn] theme (thanks to [jsoa])                                                       |
 
-### Planned themes
+### Planned themes 👷
 
 | Name                                 | Description                                              |
 |--------------------------------------|----------------------------------------------------------|
@@ -175,7 +175,7 @@ extensions][wiki].
   -  Fontify #hashtags and @at-tags, for personal convenience; see
      `doom-org-special-tags` to disable this.
      
-## Complimentary plugins
+## Complimentary plugins ⚡
 The following plugins compliment our themes:
 
 - To get dimmed sidebars and brighter source buffers (like in the
@@ -186,7 +186,7 @@ The following plugins compliment our themes:
 - The modeline in the screenshots is
   [doom-modeline](https://github.com/seagle0128/doom-modeline).
      
-## Customization
+## Customization ✨
 There are three ways to customize themes in this package:
 
 1. Explore the available variables provided by our themes, starting with the
@@ -215,7 +215,7 @@ There are three ways to customize themes in this package:
    `~/.emacs.d/`, or `~/.doom.d/themes` for Doom users), and tweak it there.
    
   
-## Contribute
+## Contribute 🤝
 
 PRs are welcome to maintain our themes, including additional theme and plugin
 support.
