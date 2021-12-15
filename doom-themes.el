@@ -74,6 +74,7 @@
 ;;   + `doom-solarized-light' (added by fuxialexnder)
 ;;   + `doom-sourcerer' (added by defphil)
 ;;   + `doom-spacegrey' (added by teesloane)
+;;   + `doom-tokyo-night' (added by FosterHangdaan)
 ;;   + `doom-tomorrow-night' (added by emacswatcher)
 ;;   + `doom-tomorrow-day' (added by emacswatcher)
 ;;   + `doom-wilmersdorf' (added by ianpan870102)
