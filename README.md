@@ -21,7 +21,7 @@ support, but will work fine anywhere else.
     - [Additional themes](#additional-themes)
     - [Planned themes](#planned-themes)
 - [Extensions](#extensions)
-- [Complimentary plugins](#complimentary-plugins)
+- [Complementary plugins](#complementary-plugins)
 - [FAQ](#faq)
 - [Contribute](#contribute)
 
@@ -176,8 +176,8 @@ extensions][wiki].
   -  Fontify #hashtags and @at-tags, for personal convenience; see
      `doom-org-special-tags` to disable this.
      
-## Complimentary plugins
-The following plugins compliment our themes:
+## Complementary plugins
+The following plugins complement our themes:
 
 - To get dimmed sidebars and brighter source buffers (like in the
   [screenshots]), see [solaire-mode].
