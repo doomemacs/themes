@@ -105,6 +105,7 @@ maintain them and address inconsistencies:
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
 | `doom-material-dark`                | adapted from [Material Dark Theme][Material Dark Theme] (thanks to [trev-dev][trev-dev])                     |
+| `doom-meltbus`                      | a dark, mostly monochromatic theme (thanks to [spacefrogg])                                                  |
 | `doom-miramare`                     | a port of [Franbach's][franbach] [Miramare], a variant of gruvbox theme (thanks to [sagittaros])             |
 | `doom-molokai`                      | a theme based on Texmate's Monokai                                                                           |
 | `doom-monokai-classic`              | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
@@ -292,6 +293,7 @@ support.
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [sourcerer]: https://github.com/xero/sourcerer.vim
+[spacefrogg]: https://github.com/spacefrogg/
 [spacegrey]: http://kkga.github.io/spacegray/
 [tam5]: https://github.com/tam5
 [teesloane]: https://github.com/teesloane

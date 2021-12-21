@@ -48,6 +48,7 @@
 ;;   + `doom-material' (added by tam5)
 ;;   + `doom-material-dark' (added by trev-dev)
 ;;   + `doom-manegarm' (added by kenranunderscore)
+;;   + `doom-meltbus' (added by spacefrogg)
 ;;   + `doom-miramare' (added by sagittaros)
 ;;   + `doom-molokai' (added by hlissner)
 ;;   + `doom-monokai-classic' (added by ema2159)
