@@ -46,6 +46,7 @@
 ;;   + `doom-ir-black' (added by legendre6891)
 ;;   + `doom-laserwave' (added by hyakt)
 ;;   + `doom-material' (added by tam5)
+;;   + `doom-material-dark' (added by trev-dev)
 ;;   + `doom-manegarm' (added by kenranunderscore)
 ;;   + `doom-miramare' (added by sagittaros)
 ;;   + `doom-molokai' (added by hlissner)
