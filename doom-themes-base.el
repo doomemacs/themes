@@ -284,8 +284,10 @@
     ;;;; company-box
     (company-box-candidate :foreground fg)
     ;;;; corfu
-    (corfu-background :inherit 'tooltip)
-    (corfu-current :background bg :foreground fg)
+    (corfu-default     :inherit 'tooltip)
+    (corfu-current     :background region                          :distant-foreground nil :extend t)
+    (corfu-bar         :background highlight)
+    (corfu-annotations                       :foreground violet    :distant-foreground bg)
     ;;;; circe
     (circe-fool :foreground doc-comments)
     (circe-highlight-nick-face :weight 'bold :foreground constants)
