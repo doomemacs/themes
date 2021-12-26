@@ -195,6 +195,8 @@ Can be an integer to determine the exact padding."
    (helm-selection :foreground base0 :weight 'bold :background blue)
    ;;;; company
    (company-tooltip-selection :background blue :foreground base3)
+   (company-tooltip-scrollbar-track :background grey)
+   (company-tooltip-scrollbar-thumb :background (doom-lighten blue 0.25))
    ;;;; org <built-in>
    (org-block :background (doom-blend yellow bg 0.04) :extend t)
    (org-block-background :background (doom-blend yellow bg 0.04))
