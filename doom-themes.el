@@ -3,7 +3,7 @@
 ;; Copyright (C) 2016-2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Emmanuel Bustos Torres <ema2159@gmail.com>
 ;; Created: May 22, 2016
 ;; Modified: May 30, 2021
@@ -46,7 +46,9 @@
 ;;   + `doom-ir-black' (added by legendre6891)
 ;;   + `doom-laserwave' (added by hyakt)
 ;;   + `doom-material' (added by tam5)
+;;   + `doom-material-dark' (added by trev-dev)
 ;;   + `doom-manegarm' (added by kenranunderscore)
+;;   + `doom-meltbus' (added by spacefrogg)
 ;;   + `doom-miramare' (added by sagittaros)
 ;;   + `doom-molokai' (added by hlissner)
 ;;   + `doom-monokai-classic' (added by ema2159)
@@ -74,6 +76,7 @@
 ;;   + `doom-solarized-light' (added by fuxialexnder)
 ;;   + `doom-sourcerer' (added by defphil)
 ;;   + `doom-spacegrey' (added by teesloane)
+;;   + `doom-tokyo-night' (added by FosterHangdaan)
 ;;   + `doom-tomorrow-night' (added by emacswatcher)
 ;;   + `doom-tomorrow-day' (added by emacswatcher)
 ;;   + `doom-wilmersdorf' (added by ianpan870102)
