@@ -275,6 +275,8 @@
     (company-tooltip-selection  :background selection :weight 'bold)
     (company-tooltip-mouse      :background magenta   :foreground bg :distant-foreground fg)
     (company-tooltip-annotation                       :foreground violet :distant-foreground bg)
+    (company-tooltip-scrollbar-track :background grey)
+    (company-tooltip-scrollbar-thumb :background (doom-lighten blue 0.25))
     (company-scrollbar-bg       :inherit 'tooltip)
     (company-scrollbar-fg       :background highlight)
     (company-preview                              :foreground comments)
