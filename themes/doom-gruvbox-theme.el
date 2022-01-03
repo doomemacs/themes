@@ -65,7 +65,6 @@ background contrast. All other values default to \"medium\"."
    (green       '("#b8bb26" "#b8bb26" "green"))         ; bright-green
    (dark-green  '("#98971a" "#98971a" "green"))         ; green
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
-   (my-blue     '("#318ce0" "#318ce0" "brightblue"))
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
    (cyan        '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
    (my-black    '("#37302f" "#37302f" "black"))
@@ -79,11 +78,11 @@ background contrast. All other values default to \"medium\"."
    (comments       (if doom-gruvbox-brighter-comments magenta grey))
    (doc-comments   (if doom-gruvbox-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
    (constants      violet)
-   (functions      orange)
+   (functions      green)
    (keywords       red)
-   (methods        orange)
-   (operators      yellow)
-   (type           my-blue)
+   (methods        green)
+   (operators      fg)
+   (type           yellow)
    (strings        green)
    (variables      blue)
    (numbers        violet)
