@@ -66,7 +66,7 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
 ;;
 ;;; Library
 
-(defun doom-themes-hide-fringes-maybe ()
+(defun doom-themes-hide-fringes-maybe (&rest _)
   "Remove fringes in current window if `treemacs-fringe-indicator-mode' is nil"
   (when (display-graphic-p)
     (if treemacs-fringe-indicator-mode
