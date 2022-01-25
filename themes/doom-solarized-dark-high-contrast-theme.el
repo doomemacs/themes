@@ -179,6 +179,10 @@ Can be an integer to determine the exact padding."
                    :background selection
                    :distant-foreground bg
                    :extend t)
+   ;;;; lsp-mode
+   (lsp-face-highlight-read    :foreground base8)
+   (lsp-face-highlight-textual :foreground base8)
+   (lsp-face-highlight-write   :foreground base8)
    ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground violet)
