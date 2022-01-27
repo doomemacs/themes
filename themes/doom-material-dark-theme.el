@@ -169,6 +169,7 @@ Can be an integer to determine the exact padding."
    (org-level-6 :foreground magenta)
    (org-level-7 :foreground teal)
    (org-level-8 :foreground violet)
+   (org-todo :foreground orange)
    ;;;; css
    (css-property :foreground orange)
    (css-proprietary-property :foreground magenta)
