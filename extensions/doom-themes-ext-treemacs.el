@@ -3,7 +3,7 @@
 ;; Copyright (C) 2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Created: August 3, 2017
 ;; Homepage: https://github.com/hlissner/doom-themes-ext-org
 ;;
@@ -66,7 +66,7 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
 ;;
 ;;; Library
 
-(defun doom-themes-hide-fringes-maybe ()
+(defun doom-themes-hide-fringes-maybe (&rest _)
   "Remove fringes in current window if `treemacs-fringe-indicator-mode' is nil"
   (when (display-graphic-p)
     (if treemacs-fringe-indicator-mode

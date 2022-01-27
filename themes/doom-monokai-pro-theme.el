@@ -2,7 +2,7 @@
 (require 'doom-themes)
 
 (defgroup doom-monokai-pro-theme nil
-  "Options for doom-themes"
+  "Options for the `doom-monokai-pro' theme."
   :group 'doom-themes)
 
 (defcustom doom-monokai-pro-padded-modeline doom-themes-padded-modeline
@@ -85,10 +85,10 @@ Can be an integer to determine the exact padding."
    (lazy-highlight                               :inherit 'match)
    (isearch-fail                                 :foreground red)
 
-   ;; deadgrep
+   ;;;; deadgrep
    (deadgrep-match-face                          :inherit 'match :box `(:line-width 2 :color ,yellow))
 
-   ;; swiper
+   ;;;; swiper
    (swiper-background-match-face-1               :inherit 'match :bold bold)
    (swiper-background-match-face-2               :inherit 'match)
    (swiper-background-match-face-3               :inherit 'match :foreground green)
@@ -99,7 +99,7 @@ Can be an integer to determine the exact padding."
    (swiper-match-face-4                          :inherit 'isearch :bold bold :foreground green)
    (swiper-line-face                             :inherit 'hl-line)
 
-   ;; Centaur tabs
+   ;;;; centaur-tabs
    (centaur-tabs-selected :foreground yellow :background bg)
    (centaur-tabs-unselected :foreground fg-alt :background bg-alt)
    (centaur-tabs-selected-modified :foreground yellow :background bg)
@@ -108,7 +108,7 @@ Can be an integer to determine the exact padding."
    (centaur-tabs-modified-marker-selected :inherit 'centaur-tabs-selected :foreground base8)
    (centaur-tabs-modified-marker-unselected :inherit 'centaur-tabs-unselected :foreground base8)
 
-   ;; Doom modeline
+   ;;;; doom-modeline
    (doom-modeline-bar :background yellow)
    (doom-modeline-buffer-path       :foreground blue :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
@@ -116,7 +116,7 @@ Can be an integer to determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground yellow :bold bold)
 
-   ;; rainbow-delimiters
+   ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground violet)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
@@ -132,7 +132,7 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-alt :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-alt)))
    
-   ;; treemacs
+   ;;;; treemacs
    (treemacs-file-face :foreground fg-alt)
 
    ;; tooltip

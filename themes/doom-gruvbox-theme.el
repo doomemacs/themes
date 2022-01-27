@@ -67,6 +67,7 @@ background contrast. All other values default to \"medium\"."
    (blue        '("#83a598" "#83a598" "brightblue"))    ; bright-blue
    (dark-blue   '("#458588" "#458588" "blue"))          ; blue
    (cyan        '("#8ec07c" "#8ec07c" "brightcyan"))    ; bright-aqua
+   (my-black    '("#37302f" "#37302f" "black"))
    (dark-cyan   '("#689d6a" "#689d6a" "cyan"))          ; aqua
 
    ;; face categories
@@ -119,10 +120,10 @@ background contrast. All other values default to \"medium\"."
    ((link &override) :foreground violet)
    (minibuffer-prompt :foreground cyan)
    (mode-line
-    :background modeline-bg :foreground modeline-fg
+    :background my-black :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
-    :background modeline-inactive-bg :foreground modeline-inactive-fg
+    :background bg :foreground base4
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-inactive-bg)))
 
    ;;;; company
@@ -224,6 +225,12 @@ background contrast. All other values default to \"medium\"."
    ((outline-6 &override) :foreground (doom-lighten violet 0.4))
    ((outline-7 &override) :foreground (doom-lighten dark-cyan 0.5))
    ((outline-8 &override) :foreground (doom-lighten violet 0.6))
+   ; ((outline-1 &override) :foreground green)
+   ; ((outline-2 &override) :foreground green)
+   ; ((outline-3 &override) :foreground yellow)
+   ; ((outline-4 &override) :foreground yellow)
+   ; ((outline-5 &override) :foreground dark-yellow)
+   ; ((outline-6 &override) :foreground dark-yellow)
    ;;;; org <built-in>
    ((org-code &override) :foreground orange)
    (org-date :foreground green)
@@ -234,15 +241,18 @@ background contrast. All other values default to \"medium\"."
    (org-formula :foreground green)
    (org-meta-line :foreground comments)
    (org-list-dt :foreground cyan)
+   ; (org-list-dt :foreground yellow)
    ((org-quote &override) :inherit 'italic :foreground base7 :background org-quote)
    (org-table :foreground cyan)
    (org-tag :foreground (doom-darken comments 0.15) :weight 'normal)
+   ; (org-tag :foreground yellow :bold nil)
    (org-todo :foreground green :bold 'inherit)
+   ; (org-todo :foreground yellow :bold 'inherit)
    (org-verbatim :foreground yellow)
    ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground orange)
-   (rainbow-delimiters-depth-2-face :foreground red)
-   (rainbow-delimiters-depth-3-face :foreground magenta)
+   (rainbow-delimiters-depth-2-face :foreground magenta)
+   (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
    ((show-paren-match &override) :foreground nil :background base5 :bold t)
@@ -263,10 +273,10 @@ background contrast. All other values default to \"medium\"."
    (web-mode-json-key-face         :foreground green)
    (web-mode-json-context-face     :foreground cyan)
    ;;;; which-key
-   (which-func :foreground cyan)
-   (which-key-command-description-face :foreground fg)
-   (which-key-group-description-face :foreground (doom-lighten fg-alt 0.25))
-   (which-key-local-map-description-face :foreground cyan))
+   (which-key-key-face                   :foreground green)
+   (which-key-group-description-face     :foreground red)
+   (which-key-command-description-face   :foreground blue)
+   (which-key-local-map-description-face :foreground orange))
 
   ;;;; Base theme variable overrides
   ;; ()

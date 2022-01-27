@@ -3,7 +3,7 @@
 ;; Copyright (C) 2021 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Maintainer: Henrik Lissner <henrik@lissner.net>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Created: August 3, 2017
 ;; Homepage: https://github.com/hlissner/doom-themes-ext-org
 ;;

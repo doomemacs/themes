@@ -1,7 +1,11 @@
-;;; doom-ayu-light-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ayu-light-theme.el --- inspired by Ayu Mirage -*- lexical-binding: t; no-byte-compile: t; -*-
+
 (require 'doom-themes)
 
+
 ;;
+;; Variables
+
 (defgroup doom-ayu-light-theme nil
   "Options for the `doom-ayu-light' theme."
   :group 'doom-themes)
@@ -64,6 +68,9 @@ determine the exact padding."
    (ui-selection-border   (doom-lighten test 0.93))
    (ui-guide-active       (doom-lighten common-ui 0.75))
    (ui-guide-normal       (doom-lighten common-ui 0.35))
+   (ui-org-block          (doom-lighten test 0.95))
+   (elscreen-bg           (doom-lighten common-fg 0.65))
+   (elscreen-fg           (doom-darken common-fg 0.85))
    ;; vcs
    (vcs-added    '("#99bf4d" "green" "green" ))
    (vcs-modified '("#709ecc" "blue"  "blue"  ))
@@ -74,14 +81,15 @@ determine the exact padding."
    (base0      ui-gutter-normal)
    (base1      ui-gutter-active)
    (base2      ui-selection-bg)
-   (base3      ui-selection-inactive)
-   (base4      ui-selection-border)
+   (base3      ui-selection-border)
+   (base4      ui-selection-inactive)
    (base5      ui-guide-active)
    (base6      ui-guide-normal)
    (base7      ui-panel-shadow)
    (base8      ui-panel-border)
    (fg         common-fg)
    (fg-alt     common-ui)
+
    (grey       syntax-comment)
    (red        syntax-markup)
    (orange     syntax-keyword)
@@ -100,8 +108,8 @@ determine the exact padding."
    (vertical-bar   ui-panel-border)
    (selection      ui-selection-inactive)
    (builtin        syntax-func)
-   (comments       (if doom-ayu-light-brighter-comments syntax-comment syntax-comment))
-   (doc-comments   (if doom-ayu-light-brighter-comments syntax-comment syntax-comment))
+   (comments       (if doom-ayu-light-brighter-comments syntax-comment elscreen-bg))
+   (doc-comments   (doom-lighten (if doom-ayu-light-brighter-comments syntax-comment elscreen-bg) 0.25))
    (constants      syntax-constant)
    (functions      syntax-func)
    (keywords       syntax-keyword)
@@ -141,7 +149,7 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(car bg) ,@(cdr base1))))
 
   ;;;; Base theme face overrides
-  (((line-number &override) :foreground base4)
+  (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
     :background (if doom-ayu-light-comment-bg (doom-lighten bg 0.05)))
@@ -152,6 +160,7 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+
 
    ;;;; company
    (company-tooltip :foreground common-fg :background common-bg)
@@ -172,7 +181,7 @@ determine the exact padding."
    (doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'normal)
    (doom-modeline-buffer-project-root :foreground green :weight 'normal)
    ;;;; elscreen
-   (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
+   (elscreen-tab-other-screen-face :background elscreen-bg :foreground elscreen-fg)
    ;;;; highlight-numbers
    (highlight-numbers-number :foreground syntax-func :weight 'normal)
    ;;;; ivy
@@ -192,6 +201,7 @@ determine the exact padding."
    ;;;; org <built-in>
    (org-hide :foreground hidden)
    (org-headline-done :foreground syntax-comment)
+   (org-document-info-keyword :foreground comments)
    ;;;; rjsx-mode
    (rjsx-tag :foreground cyan)
    (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))

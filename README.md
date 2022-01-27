@@ -21,7 +21,7 @@ support, but will work fine anywhere else.
     - [Additional themes](#additional-themes)
     - [Planned themes](#planned-themes)
 - [Extensions](#extensions)
-- [Complimentary plugins](#complimentary-plugins)
+- [Complementary plugins](#complementary-plugins)
 - [FAQ](#faq)
 - [Contribute](#contribute)
 
@@ -105,6 +105,7 @@ maintain them and address inconsistencies:
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
 | `doom-material-dark`                | adapted from [Material Dark Theme][Material Dark Theme] (thanks to [trev-dev][trev-dev])                     |
+| `doom-meltbus`                      | a dark, mostly monochromatic theme (thanks to [spacefrogg])                                                  |
 | `doom-miramare`                     | a port of [Franbach's][franbach] [Miramare], a variant of gruvbox theme (thanks to [sagittaros])             |
 | `doom-molokai`                      | a theme based on Texmate's Monokai                                                                           |
 | `doom-monokai-classic`              | port of [Monokai]'s Classic variant (thanks to [ema2159])                                                    |
@@ -134,6 +135,7 @@ maintain them and address inconsistencies:
 | `doom-solarized-light`              | light variant of [Solarized][solarized] (thanks to [fuxialexander])                                          |
 | `doom-sourcerer`                    | based on [Sourcerer][sourcerer] (thanks to [defphil])                                                        |
 | `doom-spacegrey`                    | [I'm sure you've heard of it][spacegrey] (thanks to [teesloane])                                             |
+| `doom-tokyo-night`                  | based on [Tokyo Night] (thanks to [FosterHangdaan])                                                          |
 | `doom-tomorrow-day`                 | [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])                                              |
 | `doom-tomorrow-night`               | one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])                                  |
 | `doom-wilmersdorf`                  | port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])                                                        |
@@ -176,8 +178,8 @@ extensions][wiki].
   -  Fontify #hashtags and @at-tags, for personal convenience; see
      `doom-org-special-tags` to disable this.
      
-## Complimentary plugins
-The following plugins compliment our themes:
+## Complementary plugins
+The following plugins complement our themes:
 
 - To get dimmed sidebars and brighter source buffers (like in the
   [screenshots]), see [solaire-mode].
@@ -291,9 +293,11 @@ support.
 [solarized]: http://ethanschoonover.com/solarized
 [solaire-mode]: https://github.com/hlissner/emacs-solaire-mode
 [sourcerer]: https://github.com/xero/sourcerer.vim
+[spacefrogg]: https://github.com/spacefrogg/
 [spacegrey]: http://kkga.github.io/spacegray/
 [tam5]: https://github.com/tam5
 [teesloane]: https://github.com/teesloane
+[Tokyo Night]: https://github.com/enkia/tokyo-night-vscode-theme
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs
 [wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
@@ -308,3 +312,4 @@ support.
 [eziam]: https://github.com/thblt/eziam-theme-emacs
 [jbeans]: https://github.com/synic/jbeans-emacs
 [tao]: https://github.com/11111000000/tao-theme-emacs
+[FosterHangdaan]: https://github.com/FosterHangdaan
