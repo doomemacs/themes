@@ -22,15 +22,21 @@
 ;;;###autoload
 (defun doom-themes-visual-bell-fn ()
   "Blink the mode-line red briefly. Set `ring-bell-function' to this to use it."
-  (let ((doom-themes--bell-cookie (face-remap-add-relative 'mode-line 'doom-themes-visual-bell)))
+  ;; Since emacs 29, the mode-line face is the parent of the new face
+  ;; mode-line-active and mode-line-inactive.  For remapping purposes, the
+  ;; mode-line-active face has to be used, see details at:
+  ;; http://debbugs.gnu.org/cgi/bugreport.cgi?bug=53636
+  (let* ((face (if (facep 'mode-line-active)
+                   'mode-line-active
+                 'mode-line))
+         (buf (current-buffer))
+         (cookie (face-remap-add-relative face 'doom-themes-visual-bell)))
     (force-mode-line-update)
     (run-with-timer 0.15 nil
-                    (lambda (cookie buf)
+                    (lambda ()
                       (with-current-buffer buf
                         (face-remap-remove-relative cookie)
-                        (force-mode-line-update)))
-                    doom-themes--bell-cookie
-                    (current-buffer))))
+                        (force-mode-line-update))))))
 
 ;;;###autoload
 (defun doom-themes-visual-bell-config ()
