@@ -62,7 +62,9 @@ See `doom-themes-org-fontify-special-tags'."
 (defvar org-todo-regexp)
 (defvar org-fontify-done-headline)
 (defvar org-activate-links)
-(declare-function org-delete-all "ext:org" (elts list))
+(declare-function org-delete-all "ext:org-macs" (elts list))
+(declare-function org-element-type "ext:org-element" (element))
+(declare-function org-element-context "ext:org-element" (&optional element))
 
 ;;
 (defun doom-themes--org-tag-face (n)
