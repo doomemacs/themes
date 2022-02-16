@@ -795,6 +795,13 @@
     (selectrum-current-candidate :background region :distant-foreground nil :extend t)
     ;;;; vertico
     (vertico-current :background region :distant-foreground nil :extend t)
+    ;;;; vertico-posframe
+    ;;(vertico-posframe :inherit 'default)
+    (vertico-posframe-border :background grey)
+    (vertico-posframe-border-2 :background red)
+    (vertico-posframe-border-3 :background green)
+    (vertico-posframe-border-4 :background blue)
+    (vertico-posframe-border-fallback :background yellow)
     ;;;; jabber
     (jabber-activity-face          :foreground red   :weight 'bold)
     (jabber-activity-personal-face :foreground blue  :weight 'bold)
