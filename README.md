@@ -101,6 +101,7 @@ maintain them and address inconsistencies:
 | `doom-horizon`                      | ported from VS Code's [Horizon] (thanks to [karetsu])                                                        |
 | `doom-Iosvkem`                      | adapted from [Iosvkem] (thanks to [neutaaaaan])                                                              |
 | `doom-ir-black`                     | Port of VIM's IR_Black color scheme (thanks to [legendre6891])                                               |
+| `doom-lantern`                      | based on [Gitleptune's lantern theme](https://github.com/Gitleptune/lantern-theme) (thanks to [pala])        |
 | `doom-laserwave`                    | a clean 80's synthwave / outrun theme inspired by VS Code's [laserwave][laserwave] (thanks to [hyakt])       |
 | `doom-manegarm`                     | an original autumn-inspired dark theme (thanks to [kenranunderscore])                                        |
 | `doom-material`                     | adapted from [Material Themes] (thanks to [tam5])                                                            |
@@ -283,6 +284,7 @@ support.
 [nord]: https://www.nordtheme.com/
 [Oceanic Next]: https://github.com/voronianski/oceanic-next-color-scheme
 [outrun]: https://github.com/samrap/outrun-theme-vscode
+[paladhammika]: https://github.com/paladhammika
 [plain]: https://github.com/gko/plain
 [sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
