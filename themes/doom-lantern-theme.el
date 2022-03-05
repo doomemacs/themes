@@ -64,18 +64,18 @@ Can be an integer to determine the exact padding."
    (highlight      ochre)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      dark-brown)
-   (builtin        magenta)
+   (builtin        orange)
    (comments       (if doom-lantern-brighter-comments dark-cyan base8))
    (doc-comments   (doom-lighten (if doom-lantern-brighter-comments dark-cyan base5) 0.25))
    (constants      violet)
-   (functions      magenta)
+   (functions      orange)
    (keywords       blue)
    (methods        cyan)
    (operators      blue)
    (type           yellow)
    (strings        green)
    (variables      (doom-lighten magenta 0.4))
-   (numbers        orange)
+   (numbers        yellow)
    (region         brown)
    (error          red)
    (warning        yellow)
@@ -99,12 +99,12 @@ Can be an integer to determine the exact padding."
     (when doom-lantern-padded-modeline
       (if (integerp doom-lantern-padded-modeline) doom-lantern-padded-modeline 4))))
 
-
   ;;;; Base theme face overrides
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
     :background (if doom-lantern-brighter-comments (doom-lighten bg 0.05)))
+   ;; (hl-line                                     :background brown)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -145,7 +145,18 @@ Can be an integer to determine the exact padding."
    (rjsx-tag :foreground red)
    (rjsx-attr :foreground orange)
 
+   ;;;; ediff <built-in>
+   (ediff-current-diff-A        :foreground red :weight 'bold :background (doom-lighten red 0.4))
+   (ediff-current-diff-B        :foreground green :weight 'bold :background (doom-lighten green 0.4))
+   (ediff-current-diff-C        :foreground blue :weight 'bold :background (doom-lighten blue 0.4))
+
+   ;;;; org <built-in>
+   (org-level-1 :bold t :foreground ochre :weight 'bold)
+   (org-level-2 :foreground yellow)
+   (org-level-3 :foreground orange)
+
    ;;;; solaire-mode
+   (solaire-hl-line-face :background brown)
    (solaire-mode-line-face
     :inherit 'mode-line
     :background modeline-bg-alt
