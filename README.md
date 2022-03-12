@@ -95,6 +95,7 @@ maintain them and address inconsistencies:
 | `doom-flatwhite`                    | a unique light theme ported from [Flatwhite Syntax][flatwhite] (thanks to [ShaneKilkelly])                   |
 | `doom-gruvbox-light`                | adapted from Morhetz's [Gruvbox] light variant (thanks for [jsoa])                                           |
 | `doom-gruvbox`                      | adapted from Morhetz's [Gruvbox] (thanks to [JongW])                                                         |
+| `doom-gruvbox-material`             | adapted from sainnhe [Gruvbox Material] (thanks to [Ian Pan])                                                         |
 | `doom-henna`                        | based on VS Code's [Henna] (thanks to [jsoa])                                                                |
 | `doom-homage-black`                 | dark variant of doom-homage white. (thanks to [mskorzhinskiy])                                               |
 | `doom-homage-white`                 | a minimalistic, colorless theme, inspired by [eziam], [tao] and [jbeans] themes. (thanks to [mskorzhinskiy]) |
@@ -138,7 +139,7 @@ maintain them and address inconsistencies:
 | `doom-tokyo-night`                  | based on [Tokyo Night] (thanks to [FosterHangdaan])                                                          |
 | `doom-tomorrow-day`                 | [Tomorrow][tomorrow]'s light variant (thanks to [emacswatcher])                                              |
 | `doom-tomorrow-night`               | one of the dark variants of [Tomorrow][tomorrow] (thanks to [emacswatcher])                                  |
-| `doom-wilmersdorf`                  | port of Ian Pan's [Wilmersdorf] (thanks to [ema2159])                                                        |
+| `doom-wilmersdorf`                  | port of [Ian Pan]'s [Wilmersdorf] (thanks to [ema2159])                                                        |
 | `doom-xcode`                        | Based off of Apple's Xcode Dark theme (thanks to [kadenbarlow])                                              |
 | `doom-zenburn`                      | port of the popular [Zenburn] theme (thanks to [jsoa])                                                       |
 
@@ -252,9 +253,11 @@ support.
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo
 [Gruvbox]: https://github.com/morhetz/gruvbox
+[Gruvbox Material]: https://github.com/sainnhe/gruvbox-material
 [Henna]: https://github.com/httpsterio/vscode-henna
 [Horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
+[Ian Pan]: https://github.com/ianyepan
 [issues]: https://github.com/hlissner/emacs-doom-themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
