@@ -58,6 +58,7 @@ determine the exact padding."
    (syntax-operator '("#f29668" "orange"  "orange" ))
    (syntax-error    '("#d95757" "red"     "red"    ))
    ;; ui
+   (alt-accent            (doom-lighten common-accent 0.4))
    (ui-line               (doom-darken common-bg 0.25))
    (ui-panel-shadow       (doom-darken common-bg 0.35))
    (ui-panel-border       (doom-darken common-bg 0.45))
@@ -75,6 +76,7 @@ determine the exact padding."
    (vcs-added    '("#aad94c" "green" "green" ))
    (vcs-modified '("#39bae6" "blue"  "blue"  ))
    (vcs-removed  '("#f26d78" "red"   "red"   ))
+   
 
    (bg         common-bg)
    (bg-alt     ui-line)
@@ -149,7 +151,8 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt))))
 
   ;;;; Base theme face overrides
-  (((line-number &override) :foreground base4)
+  ((hl-line :background ui-selection-bg) 
+   ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    (diff-removed :foreground vcs-removed)
    (font-lock-comment-face
@@ -165,6 +168,9 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
+
+   ;;;; LSP
+   (lsp-face-highlight-textual :background alt-accent :foreground common-ui)
 
    ;;;; company
    (company-tooltip :foreground common-fg :background common-bg)
@@ -185,7 +191,7 @@ determine the exact padding."
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background elscreen-bg :foreground elscreen-fg)
    ;;;; ivy
-   (ivy-current-match :background common-bg)
+   (ivy-current-match :background common-ui)
    (ivy-minibuffer-match-face-1 :foreground common-accent :weight 'bold)
    (ivy-minibuffer-match-face-2 :foreground common-accent :weight 'bold)
    (ivy-minibuffer-match-face-3 :foreground common-accent :weight 'bold)
