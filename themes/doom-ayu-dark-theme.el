@@ -40,7 +40,8 @@ determine the exact padding."
   (
    ;; common
    (common-accent   '("#e6b450" "orange"  "orange" ))
-   (common-bg       '("#0b0e14" "black"   "black"  ))
+   (common-bg       '("#0d1017" "black"   "black"  ))
+   (common-line     '("#131721" "grey"    "grey"  ))
    (common-fg       '("#bfbdb6" "grey"    "grey"   ))
    (common-ui       '("#565b66" "grey"    "grey"   ))
    (test            '("#73b8ff" "grey"    "grey"   ))
@@ -57,6 +58,8 @@ determine the exact padding."
    (syntax-constant '("#d2a6ff" "magenta" "purple" ))
    (syntax-operator '("#f29668" "orange"  "orange" ))
    (syntax-error    '("#d95757" "red"     "red"    ))
+   ;; editor
+   (editor-selection-active '("#1B3A5B" "grey" "grey"))
    ;; ui
    (alt-accent            (doom-lighten common-accent 0.4))
    (ui-line               (doom-darken common-bg 0.25))
@@ -151,7 +154,7 @@ determine the exact padding."
    (modeline-bg-inactive-l `(,(doom-darken (car bg-alt) 0.1) ,@(cdr bg-alt))))
 
   ;;;; Base theme face overrides
-  ((hl-line :background ui-selection-bg) 
+  ((hl-line :background common-line) 
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    (diff-removed :foreground vcs-removed)
