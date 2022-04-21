@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Project Do-not-PR list
+    url: https://discourse.doomemacs.org/do-not-pr
+    about: "A list of pull requests that will be rejected"
+  - name: Visit our Discourse
+    url: https://discourse.doomemacs.org
+    about: "Our public discussion and support forum; includes guides, news, and resources"
+  - name: Visit our Discord
+    url: https://doomemacs.org/discord
+    about: "A less formal space to chat, get to know the community, and get help quick"
