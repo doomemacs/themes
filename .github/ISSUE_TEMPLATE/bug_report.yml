@@ -88,7 +88,6 @@ body:
       - doom-wilmersdorf
       - doom-xcode
       - doom-zenburn
-      - doom-gruvbox
 - type: textarea
   attributes:
     label: What were you expecting?

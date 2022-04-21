@@ -75,7 +75,6 @@ body:
       - doom-wilmersdorf
       - doom-xcode
       - doom-zenburn
-      - doom-gruvbox
   validations:
     required: true
 - type: textarea
