@@ -1374,8 +1374,6 @@
     ;;;; volatile-highlights
     (vhl/default-face :background grey)
     ;;;; vterm
-    (vterm               :foreground fg)
-    (vterm-color-default :foreground fg)
     (vterm-color-black   :background (doom-lighten base0 0.25)   :foreground base0)
     (vterm-color-red     :background (doom-lighten red 0.25)     :foreground red)
     (vterm-color-green   :background (doom-lighten green 0.25)   :foreground green)
