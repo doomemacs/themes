@@ -1,14 +1,10 @@
 ;;; doom-themes-ext-visual-bell.el --- flash mode-line on error -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
+;; Copyright (C) 2019-2022 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Modified: May 30, 2021
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Author: Henrik Lissner <contact@henrik.io>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
+;; Created: July 29, 2019
 ;;
 ;;; Commentary:
 ;;; Code:

@@ -1,11 +1,10 @@
 ;;; doom-themes-ext-neotree.el --- ... -*- lexical-binding: t; no-byte-compile: t -*-
 ;;
-;; Copyright (C) 2021 Henrik Lissner
+;; Copyright (C) 2016-2022 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
-;; Created: August 3, 2017
-;; Homepage: https://github.com/hlissner/doom-themes-ext-org
+;; Created: September 10, 2016
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
