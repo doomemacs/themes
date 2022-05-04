@@ -3,8 +3,8 @@
 ;;; Code:
 
 ;;; Types
-(add-to-list 'doom-cli-commit-types 'module)
-(add-to-list 'doom-cli-commit-scopeless-types 'module)
+(add-to-list 'doom-cli-commit-types 'theme)
+(add-to-list 'doom-cli-commit-scopeless-types 'theme)
 
 
 ;;; Scopes
