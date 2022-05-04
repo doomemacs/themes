@@ -474,8 +474,6 @@ background contrast. All other values default to \"medium\"."
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
    ;;;; vterm
-   (vterm               :foreground fg)
-   (vterm-color-default :foreground fg)
    (vterm-color-black   :background grey    :foreground base1)
    (vterm-color-red     :background red     :foreground faded-red)
    (vterm-color-green   :background green   :foreground faded-green)

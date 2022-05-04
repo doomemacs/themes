@@ -217,8 +217,6 @@ Can be an integer to determine the exact padding."
     :background modeline-bg-inactive-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt)))
    ;;;; vterm
-   (vterm               :foreground fg)
-   (vterm-color-default :foreground fg)
    (vterm-color-black   :background (doom-lighten base0 0.75)   :foreground base0)
    (vterm-color-red     :background (doom-lighten red 0.75)     :foreground red)
    (vterm-color-green   :background (doom-lighten green 0.75)   :foreground green)
