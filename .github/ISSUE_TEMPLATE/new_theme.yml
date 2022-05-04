@@ -1,7 +1,7 @@
 ---
 name: 📝 Theme request
-description: Request a new theme by added to the project
-labels: ["type:theme-request", "needs-triage"]
+description: Request a new theme be added to the project
+labels: ["is:theme", "needs-triage"]
 body:
 - type: textarea
   attributes:

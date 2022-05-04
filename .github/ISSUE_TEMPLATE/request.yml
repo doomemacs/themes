@@ -1,7 +1,7 @@
 ---
 name: 📝 Feature request
-description: Request a change or new feature for a theme or themes
-labels: ["type:request", "needs-triage"]
+description: Request a new feature in or change to existing themes
+labels: ["is:feature", "needs-triage"]
 body:
 - type: textarea
   attributes:

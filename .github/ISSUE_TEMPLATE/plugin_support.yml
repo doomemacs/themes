@@ -1,7 +1,7 @@
 ---
 name: 📝 Request support for more packages/faces
-description: Ask that a theme (or themes) support an Emacs package or new faces
-labels: ["type:faces", "needs-triage"]
+description: Request existing theme(s) add support for a package or new faces
+labels: ["is:faces", "needs-triage"]
 body:
 - type: dropdown
   attributes:
