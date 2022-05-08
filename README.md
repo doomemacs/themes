@@ -1,9 +1,10 @@
-![Release tag](https://img.shields.io/github/tag/hlissner/emacs-doom-themes.svg?label=release&style=flat-square)
+![Release tag](https://img.shields.io/github/tag/doomemacs/themes.svg?label=release&style=flat-square)
 [![MELPA](http://melpa.org/packages/doom-themes-badge.svg?style=flat-square)](http://melpa.org/#/doom-themes)
-![Build status](https://img.shields.io/github/workflow/status/hlissner/emacs-doom-themes/CI/master?style=flat-square)
-[![MIT](https://img.shields.io/badge/license-MIT-green.svg?style=flat-square)](./LICENSE)
+![Build status](https://img.shields.io/github/workflow/status/doomemacs/themes/CI/master?style=flat-square)
+[![Discord Server](https://img.shields.io/discord/406534637242810369?color=738adb&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://doomemacs.org/discord)
+[![Discourse server](https://img.shields.io/discourse/users?server=https%3A%2F%2Fdiscourse.doomemacs.org&logo=discourse&label=Discourse&style=flat-square&color=9cf)](https://discourse.doomemacs.org)
 
-# doom-themes
+# Doom Emacs' Theme Pack
 
 A theme megapack for GNU Emacs, inspired by community favorites. Special
 attention is given for [Doom Emacs](https://doomemacs.org) and [solaire-mode]
@@ -256,7 +257,7 @@ support.
 [Henna]: https://github.com/httpsterio/vscode-henna
 [Horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
-[issues]: https://github.com/hlissner/emacs-doom-themes/issues
+[issues]: https://github.com/doomemacs/themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
 [jmorag]: https://github.com/jmorag
@@ -288,7 +289,7 @@ support.
 [plain]: https://github.com/gko/plain
 [sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
-[screenshots]: https://github.com/hlissner/emacs-doom-themes/tree/screenshots
+[screenshots]: https://github.com/doomemacs/themes/tree/screenshots
 [ShaneKilkelly]: https://github.com/ShaneKilkelly
 [shades-of-purple]: https://github.com/ahmadawais/shades-of-purple-vscode
 [snazzy]: https://github.com/sindresorhus/hyper-snazzy
@@ -302,7 +303,7 @@ support.
 [Tokyo Night]: https://github.com/enkia/tokyo-night-vscode-theme
 [tomorrow]: https://github.com/ChrisKempson/Tomorrow-Theme
 [treemacs]: https://github.com/Alexander-Miller/treemacs
-[wiki]: https://github.com/hlissner/emacs-doom-themes/wiki
+[wiki]: https://github.com/doomemacs/themes/wiki
 [Wilmersdorf]: https://github.com/ianpan870102/wilmersdorf-emacs-theme
 [ztlevi]: https://github.com/ztlevi
 [laserwave]: https://github.com/Jaredk3nt/laserwave

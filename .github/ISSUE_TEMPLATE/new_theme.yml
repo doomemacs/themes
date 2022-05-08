@@ -1,0 +1,26 @@
+---
+name: 📝 Theme request
+description: Request a new theme be added to the project
+labels: ["is:theme", "needs-triage"]
+body:
+- type: textarea
+  attributes:
+    label: Describe your request
+    placeholder: |
+      ...
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Resources
+    description: |
+      ...
+    placeholder: |
+      ...
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: |
+      Please keep in mind that it may take us a long time to get around to theme
+      requests. We **much** prefer theme PRs, instead.

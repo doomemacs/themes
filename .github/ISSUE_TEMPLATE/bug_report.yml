@@ -1,0 +1,153 @@
+---
+name: 📝 Bug Report
+description: Report something that isn't working as intended
+labels: ["is:bug", "needs-triage"]
+body:
+- type: markdown
+  attributes:
+    value: |
+      > :warning: **Our issue tracker is not for how-to or configuration questions.** Please refer to [the customization section of our readme](https://github.com/doomemacs/themes/blob/master/README.md#customization), otherwise post on [the Doom Emacs Discord](https://doomemacs.org/discord) or its [Discourse](https://discourse.doomemacs.org) instead.
+
+      **Before you proceed, please ensure the following:**
+
+      - I've searched [our issue tracker](https://github.com/doomemacs/themes/issues) for similar or duplicate issues.
+      - I've read [the README](https://github.com/doomemacs/themes) and did not find a solution.
+      - I can reproduce the issue on the **latest** commit of doom-themes.
+      - The issue can be reproduced in vanilla Emacs (with your private configuration disabled).
+      - If my issue contains an error message, I've included [a backtrace](https://discourse.doomemacs.org/t/what-is-a-backtrace-how-to-produce-them/85#how-to-produce-a-backtrace-3).
+- type: dropdown
+  attributes:
+    label: Theme(s)
+    description: What theme(s) are relevant to this issue
+    multiple: true
+    options:
+      - I don't know
+      - All themes (base)
+      - doom-1337
+      - doom-Iosvkem
+      - doom-acario-dark
+      - doom-acario-light
+      - doom-ayu-light
+      - doom-ayu-mirage
+      - doom-badger
+      - doom-challenger-deep
+      - doom-city-lights
+      - doom-dark+
+      - doom-dracula
+      - doom-earl-grey
+      - doom-ephemeral
+      - doom-fairy-floss
+      - doom-flatwhite
+      - doom-gruvbox-light
+      - doom-gruvbox
+      - doom-henna
+      - doom-homage-black
+      - doom-homage-white
+      - doom-horizon
+      - doom-ir-black
+      - doom-laserwave
+      - doom-manegarm
+      - doom-material-dark
+      - doom-material
+      - doom-meltbus
+      - doom-miramare
+      - doom-molokai
+      - doom-monokai-classic
+      - doom-monokai-machine
+      - doom-monokai-octagon
+      - doom-monokai-pro
+      - doom-monokai-ristretto
+      - doom-monokai-spectrum
+      - doom-moonlight
+      - doom-nord-light
+      - doom-nord
+      - doom-nova
+      - doom-oceanic-next
+      - doom-old-hope
+      - doom-one-light
+      - doom-one
+      - doom-opera-light
+      - doom-opera
+      - doom-outrun-electric
+      - doom-palenight
+      - doom-peacock
+      - doom-plain-dark
+      - doom-plain
+      - doom-rouge
+      - doom-shades-of-purple
+      - doom-snazzy
+      - doom-solarized-dark-high-contrast
+      - doom-solarized-dark
+      - doom-solarized-light
+      - doom-sourcerer
+      - doom-spacegrey
+      - doom-tokyo-night
+      - doom-tomorrow-day
+      - doom-tomorrow-night
+      - doom-vibrant
+      - doom-wilmersdorf
+      - doom-xcode
+      - doom-zenburn
+- type: textarea
+  attributes:
+    label: What were you expecting?
+    placeholder: X should look like Y
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What actually happened?
+    description: |
+      - Include screenshots/casts, if possible
+      - List *all* error messages and **[include backtraces for each of them](https://doomemacs.org/d/how2backtrace)
+      - Include any suspicious logs in the **[\*Messages\*](https://doomemacs.org/d/t/55) buffer.
+      - If you include log dumps, please use [pastebin.com](https://pastebin.com)
+      - **Use [code fences](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks) for code, error messages, and backtraces.**
+      - Avoid phrases like "X does not work" or "X stopped working" without explaining what "working" means.
+    placeholder: |
+      X looked like Z instead, then threw an error. Here is the backtrace:
+
+      ```
+      Debugger entered--Lisp error: (error "Beep Boop")
+        error("Beep Boop")
+        pp-eval-expression((error "Beep Boop"))
+        \#<subr funcall-interactively>(pp-eval-expression (error "Beep Boop"))
+        apply(#<subr funcall-interactively> (pp-eval-expression (error "Beep Boop")))
+        funcall-interactively(pp-eval-expression (error "Beep Boop"))
+      ```
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Steps to reproduce
+    description: How do we reproduce your issue? Walk us through a minimal test case.
+    placeholder: |
+      1. Switch to doom-one theme
+      2. Open dired
+      3. Error occurs
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Operating system
+    placeholder: NixOS 21.11
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Emacs version
+    placeholder: Emacs 28.1 w/ native-comp
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: Installed commit of doom-themes
+    placeholder: 65fb964f3693
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: |
+      Before you go, please make sure your report's title is descriptive and specific. Avoid phrases like "X doesn't work" or "X stopped working". Error messages are best, but failing that, try to describe what "working" means to you.
+
+      **Thank you for taking the time to fill out a bug report!**

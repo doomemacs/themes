@@ -1,13 +1,10 @@
 ;;; doom-one-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
+;; Copyright (C) 2016-2022 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Author: Henrik Lissner <contact@henrik.io>
+;; Maintainer: Henrik Lissner <contact@henrik.io>
+;; Created: May 23, 2016
 ;;
 ;;; Commentary:
 ;;

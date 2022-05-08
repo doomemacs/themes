@@ -1,0 +1,105 @@
+---
+name: 📝 Request support for more packages/faces
+description: Request existing theme(s) add support for a package or new faces
+labels: ["is:faces", "needs-triage"]
+body:
+- type: dropdown
+  attributes:
+    label: Theme(s)
+    description: What theme(s) are relevant to this issue
+    multiple: true
+    options:
+      - All themes (base)
+      - doom-1337
+      - doom-Iosvkem
+      - doom-acario-dark
+      - doom-acario-light
+      - doom-ayu-light
+      - doom-ayu-mirage
+      - doom-badger
+      - doom-challenger-deep
+      - doom-city-lights
+      - doom-dark+
+      - doom-dracula
+      - doom-earl-grey
+      - doom-ephemeral
+      - doom-fairy-floss
+      - doom-flatwhite
+      - doom-gruvbox-light
+      - doom-gruvbox
+      - doom-henna
+      - doom-homage-black
+      - doom-homage-white
+      - doom-horizon
+      - doom-ir-black
+      - doom-laserwave
+      - doom-manegarm
+      - doom-material-dark
+      - doom-material
+      - doom-meltbus
+      - doom-miramare
+      - doom-molokai
+      - doom-monokai-classic
+      - doom-monokai-machine
+      - doom-monokai-octagon
+      - doom-monokai-pro
+      - doom-monokai-ristretto
+      - doom-monokai-spectrum
+      - doom-moonlight
+      - doom-nord-light
+      - doom-nord
+      - doom-nova
+      - doom-oceanic-next
+      - doom-old-hope
+      - doom-one-light
+      - doom-one
+      - doom-opera-light
+      - doom-opera
+      - doom-outrun-electric
+      - doom-palenight
+      - doom-peacock
+      - doom-plain-dark
+      - doom-plain
+      - doom-rouge
+      - doom-shades-of-purple
+      - doom-snazzy
+      - doom-solarized-dark-high-contrast
+      - doom-solarized-dark
+      - doom-solarized-light
+      - doom-sourcerer
+      - doom-spacegrey
+      - doom-tokyo-night
+      - doom-tomorrow-day
+      - doom-tomorrow-night
+      - doom-vibrant
+      - doom-wilmersdorf
+      - doom-xcode
+      - doom-zenburn
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: What package(s)/face(s) do you want support for?
+    description: |
+      Please link the package's project homepage, if possible.
+    placeholder: |
+      - [vertico](https://github.com/minad/vertico)
+        - vertico-border
+        - vertico-current
+      - [consult](https://github.com/minad/consult)
+        - consult-key
+      - [marginalia](https://github.com/minad/marginalia)
+        - marginalia-on
+        - marginalia-type
+        - marginalia-value
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Screenshots
+    description: |
+      Please show some screenshots of what it looks like now, and include any faces that you know need special attention, so we have some idea of what we're supposed to be fixing.
+- type: markdown
+  attributes:
+    value: |
+      **Thank you for taking the time to fill out a feature request!**
