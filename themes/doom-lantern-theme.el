@@ -133,6 +133,12 @@ Can be an integer to determine the exact padding."
    (ivy-minibuffer-match-highlight  :foreground yellow :weight 'bold)
    (ivy-highlight-face              :foreground yellow :weight 'bold)
 
+   ;;;; orderless
+   (orderless-match-face-0 :weight 'bold :foreground (doom-blend ochre   fg 0.8) :background (doom-blend ochre  bg 0.1))
+   (orderless-match-face-1 :weight 'bold :foreground (doom-blend red     fg 0.6) :background (doom-blend red    bg 0.1))
+   (orderless-match-face-2 :weight 'bold :foreground (doom-blend green   fg 0.6) :background (doom-blend green  bg 0.1))
+   (orderless-match-face-3 :weight 'bold :foreground (doom-blend cyan    fg 0.6) :background (doom-blend cyan   bg 0.1))
+
    ;;;; LaTeX-mode
    (font-latex-math-face :foreground green)
 
