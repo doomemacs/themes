@@ -212,7 +212,7 @@ incorrectly, so remove them."
                                :family ,(all-the-icons-octicon-family)
                                :height 1.3)
               'display '(raise 0)))
-            (t (all-the-icons-icon-for-file node)))
+            (t (all-the-icons-icon-for-file (neo-path--file-short-name node))))
     (all-the-icons-fileicon "default")))
 
 (defun doom--neotree-insert-dir-icon (node type &optional faces)
