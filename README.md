@@ -86,6 +86,7 @@ maintain them and address inconsistencies:
 | `doom-acario-light`                 | an original light theme (thanks to [gagbo])                                                                   |
 | `doom-ayu-mirage`                   | Dark variant from [Ayu] themes (thanks to [LoveSponge])                                                       |
 | `doom-ayu-light`                    | Light variant from [Ayu] themes(thanks to [LoveSponge])                                                       |
+| `doom-ayu-dark`                     | Another Dark variant from [Ayu] themes(thanks to [ashton])                                                   |
 | `doom-badger`                       | Based on [original Badger theme](https://github.com/ccann/badger-theme)                                       |
 | `doom-challenger-deep`              | based on Vim's [Challenger deep][challenger-deep] theme (thanks to [fuxialexander])                           |
 | `doom-city-lights`                  | based on Atom's [City lights][city-lights] (thanks to [fuxialexander])                                        |
@@ -236,6 +237,7 @@ support.
 [airline-themes]: https://github.com/AnthonyDiGirolamo/airline-themes
 [all-the-icons]: https://github.com/domtronn/all-the-icons.el
 [ar1a]: https://github.com/ar1a
+[ashton]: https://github.com/ashton
 [bigardone]: https://github.com/bigardone
 [Brettm12345]: https://github.com/Brettm12345
 [challenger-deep]: https://github.com/challenger-deep-theme/vim
