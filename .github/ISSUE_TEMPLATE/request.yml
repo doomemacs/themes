@@ -1,0 +1,32 @@
+---
+name: 📝 Feature request
+description: Request a new feature in or change to existing themes
+labels: ["is:feature", "needs-triage"]
+body:
+- type: textarea
+  attributes:
+    label: Describe your request
+    placeholder: |
+      I'd like Doom to incorporate the game, Doom Eternal, into Doom Emacs, [found here](https://store.steampowered.com/app/379720/DOOM/).
+
+      It replaces `M-x doctor` with a superior alternative: a distraction from your personal problems.
+  validations:
+    required: true
+- type: textarea
+  attributes:
+    label: Briefly explain its use-case
+    description: |
+      A screencast is ideal, but a list of steps and effects showing off how it would work is acceptable.
+    placeholder: |
+      1. Install Linux
+      2. Install Emacs
+      3. Install Doom
+      4. Install Doom Eternal
+      5. Speed run Doom Eternal
+      6. Ponder why your wife left you
+  validations:
+    required: true
+- type: markdown
+  attributes:
+    value: |
+      **Thank you for taking the time to fill out a feature request!**

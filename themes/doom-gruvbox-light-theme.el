@@ -473,6 +473,15 @@ background contrast. All other values default to \"medium\"."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
+   ;;;; vterm
+   (vterm-color-black   :background grey    :foreground base1)
+   (vterm-color-red     :background red     :foreground faded-red)
+   (vterm-color-green   :background green   :foreground faded-green)
+   (vterm-color-yellow  :background yellow  :foreground faded-yellow)
+   (vterm-color-blue    :background blue    :foreground faded-blue)
+   (vterm-color-magenta :background violet  :foreground magenta)
+   (vterm-color-cyan    :background cyan    :foreground faded-aqua)
+   (vterm-color-white   :background base7   :foreground light4)
    ;;;; web-mode
    (web-mode-current-element-highlight-face :background dark-blue :foreground bg)
    ;;;; wgrep <built-in>

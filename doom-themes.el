@@ -1,15 +1,14 @@
 ;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
+;; Copyright (C) 2016-2022 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Emmanuel Bustos Torres <ema2159@gmail.com>
 ;; Created: May 22, 2016
-;; Modified: May 30, 2021
 ;; Version: 2.2.1
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
+;; Keywords: themes faces
+;; Homepage: https://github.com/doomemacs/themes
 ;; Package-Requires: ((emacs "25.1") (cl-lib "0.5"))
 ;;
 ;; This file is not part of GNU Emacs.
@@ -44,6 +43,7 @@
 ;;   + `doom-horizon' (added by karetsu)
 ;;   + `doom-Iosvkem' (added by neutaaaaan)
 ;;   + `doom-ir-black' (added by legendre6891)
+;;   + `doom-lantern' (added by paladhammika)
 ;;   + `doom-laserwave' (added by hyakt)
 ;;   + `doom-material' (added by tam5)
 ;;   + `doom-material-dark' (added by trev-dev)

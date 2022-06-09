@@ -1,11 +1,10 @@
 ;;; doom-themes-ext-org.el --- fix fontification issues in org-mode -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2021 Henrik Lissner
+;; Copyright (C) 2017-2022 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
 ;; Created: August 3, 2017
-;; Homepage: https://github.com/hlissner/doom-themes-ext-org
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -115,8 +114,13 @@ N is the match index."
              ;; Make checkbox statistic cookies respect underlying faces
              '(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
                 (0 (org-get-checkbox-statistics-face) prepend))
-               ;; make plain list bullets stand out
-               ("^ *\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)[ \t]" 1 'org-list-dt append)
+               ;; make plain list bullets stand out.
+               ;; give spaces before and after list bullet org-indent face to
+               ;; keep correct indentation on mixed-pitch-mode
+               ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
+                (1 'org-indent append)
+                (2 'org-list-dt append)
+                (3 'org-indent append))
                ;; and separators/dividers
                ("^ *\\(-----+\\)$" 1 'org-meta-line))
              ;; I like how org-mode fontifies checked TODOs and want this to
