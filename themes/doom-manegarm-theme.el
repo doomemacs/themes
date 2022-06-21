@@ -103,7 +103,6 @@ real file buffers will now be brighter instead."
   ((button :foreground teal :weight 'bold :underline t)
    (custom-button :foreground teal :weight 'bold :underline t :background bg)
    ((font-lock-comment-face &override)
-    :inherit 'fixed-pitch-serif
     :slant 'italic
     :background nil)
    ((line-number &override) :foreground vertical-bar)
