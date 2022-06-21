@@ -181,9 +181,9 @@ Can be an integer to determine the exact padding."
    ;;;; posframe
    (ivy-posframe               :background base0)
    ;;;; selectrum
-   (selectrum-current-candidate :background base1)
+   (selectrum-current-candidate :background base2)
    ;;;; vertico
-   (vertico-current :background base1)
+   (vertico-current :background base2)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
