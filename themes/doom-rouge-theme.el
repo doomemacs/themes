@@ -1,7 +1,19 @@
-;;; doom-rouge-theme.el --- ported from Rouge Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-rouge-theme.el --- ported from VSCode's Rouge Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 20, 2020 (#418)
+;; Author: das-s <https://github.com/das-s>
+;; Maintainer:
+;; Source: https://github.com/josefaidt/rouge-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-rouge-theme nil
   "Options for the `doom-rouge' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-rouge-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-rouge
   "A dark theme ported from VS Code's Rouge."
 

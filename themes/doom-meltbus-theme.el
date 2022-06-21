@@ -1,10 +1,18 @@
-;;; doom-meltbus-theme.el ---  -*- lexical-binding: t; no-byte-compile: t; -*-
-
+;;; doom-meltbus-theme.el --- a dark (mostly) monochromatic theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: November 20, 2021 (#683)
+;; Author: spacefrogg <https://github.com/spacefrogg>
+;; Maintainer:
+;; Source: https://github.com/equinusocio/vsc-material-theme
+;;
+;;; Commentary:
 ;;; Code:
 
 (require 'doom-themes)
 
-;;; Variables:
+
+;;
+;;; Variables
 
 (defgroup doom-meltbus-theme nil
   "Options for the `meltbus' theme"
@@ -19,6 +27,10 @@
   "If non-nil, all faces use the basic font size."
   :group 'doom-meltbus-theme
   :type 'boolean)
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-meltbus
   "A dark mostly monochromatic theme inspired by the eltbus theme.

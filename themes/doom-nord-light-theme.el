@@ -1,7 +1,19 @@
-;;; doom-nord-light-theme.el --- inspired by Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-nord-light-theme.el --- light variant of Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 18, 2018 (#163)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://github.com/arcticicestudio/nord
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-nord-light-theme nil
   "Options for the `doom-nord-light' theme."
   :group 'doom-themes)
@@ -34,7 +46,10 @@ determine the exact padding."
   :group 'doom-nord-light-theme
   :type 'symbol)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-nord-light
   "A light theme inspired by Nord-Light."
 

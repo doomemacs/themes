@@ -1,7 +1,19 @@
-;;; doom-laserwave-theme.el --- inspired by VS Code laserwave -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-laserwave-theme.el --- a clean synthwave/outrun theme inspired by VSCode's Laserwave -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: October 29, 2019 (#352)
+;; Author: hyakt <https://github.com/hyakt>
+;; Maintainer:
+;; Source: https://github.com/Jaredk3nt/laserwave
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-laserwave-theme nil
   "Options for the `doom-laserwave' theme."
   :group 'doom-themes)
@@ -12,7 +24,10 @@ determine the exact padding."
   :group 'doom-laserwave-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-laserwave
   "An clean 80's synthwave / outrun theme inspired by VS Code laserwave."
 

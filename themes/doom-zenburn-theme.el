@@ -1,7 +1,19 @@
-;;; doom-zenburn-theme.el ---  -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-zenburn-theme.el --- port of the popular Zenburn theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 26, 2020 (#447)
+;; Author: jsoa <https://github.com/jsoa>
+;; Maintainer:
+;; Source: https://github.com/bbatsov/zenburn-emacs
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-zenburn-theme nil
   "Options for the `doom-zenburn' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-zenburn-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-zenburn
   "An implementation of the popular Zenburn theme."
 

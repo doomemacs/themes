@@ -1,5 +1,18 @@
 ;;; doom-oceanic-next-theme.el --- inspired by Oceanic Next -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: October 11, 2019 (#337)
+;; Author: juanwolf <https://github.com/juanwolf>
+;; Maintainer:
+;; Source: https://github.com/voronianski/oceanic-next-color-scheme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-oceanic-next-theme nil
   "Options for the `doom-oceanic-next' theme."
@@ -27,7 +40,10 @@ determine the exact padding."
   :group 'doom-oceanic-next-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-oceanic-next
   "A dark theme inspired by Oceanic Next "
 

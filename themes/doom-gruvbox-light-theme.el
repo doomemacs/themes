@@ -1,7 +1,19 @@
-;;; doom-gruvbox-light-theme.el --- gruvbox light soft -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-gruvbox-light-theme.el --- inspired by morhetz's Gruvbox (light) -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: May 6, 2020 (#446)
+;; Author: jsoa <https://github.com/jsoa>
+;; Maintainer:
+;; Source: https://github.com/morhetz/gruvbox
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-gruvbox-light-theme nil
   "Options for the `doom-gruvbox-light' theme."
   :group 'doom-themes)
@@ -34,7 +46,10 @@ background contrast. All other values default to \"medium\"."
   :group 'doom-gruvbox-light-theme
   :type  'string)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-gruvbox-light
   "gruvbox light theme"
 

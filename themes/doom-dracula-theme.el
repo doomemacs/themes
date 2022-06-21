@@ -1,7 +1,19 @@
-;;; doom-dracula-theme.el - based on https://draculatheme.com/ -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-dracula-theme.el --- inspired by the popular Dracula theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (1337e9b2c4bb)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer: hlissner <https://github.com/hlissner>
+;; Source: https://draculatheme.com
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-dracula-theme nil
   "Options for the `doom-dracula' theme."
   :group 'doom-themes)
@@ -34,7 +46,10 @@ determine the exact padding."
   :group 'doom-dracula-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-dracula
   "A dark theme based on Dracula theme"
 

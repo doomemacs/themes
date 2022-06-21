@@ -1,11 +1,22 @@
 ;;; doom-material-dark-theme.el --- inspired by Material Theme by xrei -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: July 31, 2021 (#643)
+;; Author: trev-dev <https://github.com/trev-dev>
+;; Maintainer:
+;; Source: https://github.com/xrei/material-dark-vscode
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-material-dark-theme nil
   "Options for the `material dark' theme."
   :group 'doom-themes)
-
 
 (defcustom doom-material-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
@@ -13,7 +24,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-material-dark-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-material-dark
   "A darker version of the Material Theme inspired by xrei"
 

@@ -1,14 +1,24 @@
 ;;; doom-homage-white-theme.el --- minimal white theme inspired by editors from 2000s -*- lexical-binding: t; no-byte-compile: t; -*-
-;;;
+;;
+;; Added: February 4, 2021 (#497)
+;; Author: mskorzhinskiy <https://github.com/mskorzhinskiy>
+;; Maintainer:
+;; Source: original
+;;
 ;;; Commentary:
-;;;
-;;; Theme is using palette inspired by various editors from 2000s, with a lot of
-;;; inspiration from eziam theme (thblt/eziam-theme-emacs) and tao themes
-;;; (11111000000/tao-theme-emacs).
+;;
+;; Theme is using palette inspired by various editors from 2000s, with a lot of
+;; inspiration from eziam theme (thblt/eziam-theme-emacs) and tao themes
+;; (11111000000/tao-theme-emacs).
+;;
+;;; Code:
 
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-homage-white-theme nil
   "Options for the `doom-homage-white' theme."
   :group 'doom-themes)
@@ -19,7 +29,10 @@ determine the exact padding."
   :group 'doom-homage-white-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-homage-white
   "A light theme inspired by Atom One"
 

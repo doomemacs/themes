@@ -1,5 +1,18 @@
-;;; doom-peacock-theme.el --- inspired by daylerees Peacock -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-peacock-theme.el --- inspired by daylerees' Peacock -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: November 9, 2017 (#112)
+;; Author: teesloane <https://github.com/teesloane>
+;; Maintainer:
+;; Source: https://github.com/daylerees/colour-schemes/blob/master/emacs/peacock-theme.el
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-peacock-theme nil
   "Options for the `doom-peacock' theme."
@@ -27,7 +40,10 @@ determine the exact padding."
   :group 'doom-peacock-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-peacock
   "Peacock theme from daylerees themes "
 

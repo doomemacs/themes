@@ -1,7 +1,19 @@
-;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-Iosvkem-theme.el --- ported from the default dark theme for Adobe Brackets -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: September 12, 2018 (#220)
+;; Author: neutaaaaan <https://github.com/neutaaaaan>
+;; Maintainer:
+;; Source: https://github.com/neutaaaaan/iosvkem
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-Iosvkem-theme nil
   "Options for the `doom-theme.el' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-Iosvkem-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-Iosvkem
   "A dark theme inspired by VIM Iosvkem"
 

@@ -1,10 +1,18 @@
-;;; doom-ayu-dark-theme.el --- inspired by Ayu dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ayu-dark-theme.el --- inspired by Ayu Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 24, 2022 (#717)
+;; Author: ashton <https://github.com/ashton>
+;; Maintainer:
+;; Source: https://github.com/dempfi/ayu
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
 
 
 ;;
-;; Variables
+;;; Variables
 
 (defgroup doom-ayu-dark-theme nil
   "Options for the `doom-ayu-dark' theme."
@@ -32,7 +40,10 @@ determine the exact padding."
   :group 'doom-ayu-dark-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-ayu-dark
   "A dark theme inspired by Ayu dark"
 

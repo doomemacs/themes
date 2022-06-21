@@ -1,10 +1,22 @@
-;; doom-miramare-theme.el --- inspired by Franbach miramare -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-miramare-theme.el --- a port of Franbach's Miramare theme; a variant of Grubox -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: July 11, 2020 (#492)
+;; Author: sagittaros <https://github.com/sagittaros>
+;; Maintainer:
+;; Source: https://github.com/franbach/miramare
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
 ;; Compiler pacifier
 (defvar modeline-bg)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-miramare-theme nil
   "Options for doom-miramare."
   :group 'doom-themes)
@@ -19,6 +31,10 @@
 determine the exact padding."
   :group 'doom-miramare-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-miramare
   "A gruvbox variant with comfortable and pleasant colors."

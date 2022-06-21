@@ -1,15 +1,11 @@
-;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-molokai-theme.el --- inspired by Tomas Restrepo's Molokai -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2017-2022 Henrik Lissner
-;;
-;; Author: Henrik Lissner <contact@henrik.io>
-;; Maintainer: Henrik Lissner <contact@henrik.io>
-;; Created: June 23, 2017
+;; Added: September 15, 2016 (32f8b5ae5feb)
+;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Maintainer:
+;; Source: https://github.com/tomasr/molokai
 ;;
 ;;; Commentary:
-;;
-;; Inspired by the Molokai color scheme available in Textmate.
-;;
 ;;; Code:
 
 (require 'doom-themes)

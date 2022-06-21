@@ -1,7 +1,19 @@
-;;; doom-fairy-floss-theme.el --- inspired by sailorhg Fairy Floss -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-fairy-floss-theme.el --- a candy colored theme by sailorhg -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: July 28, 2019 (651a69d79c88)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source: https://github.com/sailorhg/fairyfloss
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-fairy-floss-theme nil
   "Options for doom-themes."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-fairy-floss-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-fairy-floss
   "A candy colored theme inspired by Sublime's Fairy Floss"
 

@@ -1,8 +1,19 @@
-;; doom-sourcerer-theme.el --- a more Sourcerer version of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
-;;; Commentary:
-(require 'doom-themes)
-;;; Code:
+;;; doom-sourcerer-theme.el --- a port of xero's Sourcerer -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
+;; Added: August 23, 2018 (#215)
+;; Author: fm0xb <https://github.com/fm0xb>
+;; Maintainer:
+;; Source: https://github.com/xero/sourcerer
+;;
+;;; Commentary:
+;;; Code:
+
+(require 'doom-themes)
+
+
+;;
+;;; Variables
+
 (defgroup doom-sourcerer-theme nil
   "Options for the `doom-sourcerer' theme."
   :group 'doom-themes)
@@ -31,6 +42,8 @@ Can be an integer to determine the exact padding."
 
 
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-sourcerer
   "A dark theme based off of xero's Sourcerer VIM colorscheme"
 

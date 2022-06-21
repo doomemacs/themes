@@ -1,17 +1,12 @@
-;;; doom-solarized-dark-high-contrast-theme.el --- inspired by VS Code Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-solarized-dark-high-contrast-theme.el --- a high-contrast variant of Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
-;; Ported by: Joseph Morag <jmorag@users.noreply.github.com>
-;; Created: February 18, 2021
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: May 29, 2021 (#558)
+;; Author: jmorag <https://github.com/jmorag>
+;; Maintainer:
+;; Source: https://github.com/bbatsov/solarized-emacs
+;; Source: https://ethanschoonover.com/solarized
 ;;
 ;;; Commentary:
-;;
-;; See https://ethanschoonover.com/solarized/
-;;
 ;;; Code:
 
 (require 'doom-themes)

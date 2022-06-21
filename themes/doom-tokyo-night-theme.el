@@ -1,7 +1,19 @@
-;;; doom-tokyo-night-theme.el - based on https://github.com/enkia/tokyo-night-vscode-theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-tokyo-night-theme.el --- inspired by VSCode's Tokyo Night theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: December 15, 2021 (#650)
+;; Author: FosterHangdaan <https://github.com/FosterHangdaan>
+;; Maintainer:
+;; Source: https://github.com/enkia/tokyo-night-vscode-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-tokyo-night-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
@@ -25,6 +37,10 @@
   "If non-nil, adds a 4px padding to the mode-line. Can be an integer to determine the exact padding."
   :group 'doom-tokyo-night-theme
   :type '(or integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-tokyo-night
   "A clean, dark theme that celebrates the lights of downtown Tokyo at night."

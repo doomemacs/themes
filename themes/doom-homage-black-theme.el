@@ -1,14 +1,24 @@
-;;; doom-homage-black-theme.el --- pitch-black theme version of homage-white -*- lexical-binding: t; no-byte-compile: t; -*-
-;;;
+;;; doom-homage-black-theme.el --- a minimalistic, colorless theme inspired by eziam, tao, and jbeans -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 4, 2021 (#497)
+;; Author: mskorzhinskiy <https://github.com/mskorzhinskiy>
+;; Maintainer:
+;; Source: original
+;;
 ;;; Commentary:
-;;;
-;;; Theme is (manually) inverted homage-white theme with a focus of having
-;;; pitch-black backgrounds. I'm also incorporated a several ideas from jbeans
-;;; theme (synic/jbeans-emacs).
+;;
+;; Theme is (manually) inverted homage-white theme with a focus of having
+;; pitch-black backgrounds. I'm also incorporated a several ideas from jbeans
+;; theme (synic/jbeans-emacs).
+;;
+;;; Code:
 
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-homage-black-theme nil
   "Options for the `doom-homage-black' theme."
   :group 'doom-themes)
@@ -19,7 +29,10 @@ determine the exact padding."
   :group 'doom-homage-black-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-homage-black
   "A light theme inspired by Atom One"
 

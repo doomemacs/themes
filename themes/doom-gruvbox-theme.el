@@ -1,10 +1,22 @@
-;; doom-gruvbox-theme.el --- inspired by morhetz Gruvbox -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-gruvbox-theme.el --- inspired by morhetz's Gruvbox -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: May 1, 2019 (#277)
+;; Author: JongW <https://github.com/JongW>
+;; Maintainer:
+;; Source: https://github.com/morhetz/gruvbox
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
 ;; Compiler pacifier
 (defvar modeline-bg)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-gruvbox-theme nil
   "Options for doom-gruvbox."
   :group 'doom-themes)
@@ -26,7 +38,10 @@ background contrast. All other values default to \"medium\"."
   :group 'doom-gruvbox-theme
   :type  'string)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-gruvbox
   "Dark theme with pastel 'retro groove' colors."
 

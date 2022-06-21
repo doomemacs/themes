@@ -1,17 +1,11 @@
-;;; doom-ir-black-theme.el --- port of ir_black -*- lexical-bindings: t; no-byte-compile: t; -*-
+;;; doom-ir-black-theme.el --- ported from Vim's ir_black colorscheme -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Todd Werth <todd@infinite.red>
-;; Ported by: Kevin Kainan Li <legendre6891@users.noreply.github.com>
-;; Created: January 10, 2019
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: January 10, 2019 (#255)
+;; Author: Kevin Kainan Li <https://github.com/legendre6891>
+;; Maintainer:
+;; Source: https://github.com/twerth/ir_black
 ;;
 ;;; Commentary:
-;;
-;; Ported from the original ir_black theme in hlissner/emacs-doom-themes#255.
-;;
 ;;; Code:
 
 (require 'doom-themes)

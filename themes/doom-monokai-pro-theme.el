@@ -1,5 +1,18 @@
-;; doom-monokai-pro-theme.el --- Port of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-monokai-pro-theme.el --- Port of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: May 23, 2021 (#601)
+;; Author: minikN <https://github.com/minikN>
+;; Maintainer:
+;; Source: https://monokai.pro
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-monokai-pro-theme nil
   "Options for the `doom-monokai-pro' theme."
@@ -10,6 +23,10 @@
 Can be an integer to determine the exact padding."
   :group 'doom-monokai-pro-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-monokai-pro
   "A port of VS Code's Monokai Pro"

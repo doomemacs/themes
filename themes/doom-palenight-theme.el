@@ -1,7 +1,19 @@
-;;; doom-palenight-theme.el --- inspired by Material-PaleNight -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-palenight-theme.el --- adapted from equinusocio's Material themes -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 8, 2019 (7c7e871f2221)
+;; Author: Brettm12345 <https://github.com/Brettm12345>
+;; Maintainer:
+;; Source: https://github.com/equinusocio/vsc-material-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-palenight-theme nil
   "Options for the `doom-palenight' theme."
   :group 'doom-themes)
@@ -12,7 +24,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-palenight-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-palenight
   "A dark theme inspired by Material-Palenight"
 

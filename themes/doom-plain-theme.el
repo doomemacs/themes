@@ -1,17 +1,11 @@
 ;;; doom-plain-theme.el --- inspired by gko's plain theme for VSCode -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Konstantin <https://github.com/gko>
-;; Ported by: Mateusz Ż <https://github.com/mateossh>
-;; Created: January 11, 2019
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: February 4, 2021 (#558)
+;; Author: das-s <https://github.com/das-s>
+;; Maintainer:
+;; Source: https://github.com/gko/plain/
 ;;
 ;;; Commentary:
-;;
-;; Ported from VsCode Plain: https://github.com/gko/plain
-;;
 ;;; Code:
 
 (require 'doom-themes)

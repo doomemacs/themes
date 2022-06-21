@@ -1,4 +1,13 @@
 ;;; doom-moonlight-theme.el --- inspired by VS code's Moonlight -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (741defec2c08)
+;; Author: Brettm12345 <https://github.com/Brettm12345>
+;; Maintainer:
+;; Source: https://github.com/atomiks/moonlight-vscode-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
 ;;

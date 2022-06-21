@@ -1,7 +1,19 @@
-;;; doom-outrun-electric-theme.el --- inspired by VS Code Outrun Electric -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-outrun-electric-theme.el --- a high contrast, neon theme inspired by Outrun Electric on VSCode -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: July 30, 2019 (c810f6b96648)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source: https://github.com/samrap/outrun-theme-vscode
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-outrun-electric-theme nil
   "Options for doom-themes."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-outrun-electric-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-outrun-electric
   "A vibrant, neon colored theme inspired by VS Code Outrun Electric."
 

@@ -1,7 +1,19 @@
-;;; doom-wilmersdorf-theme.el --- inspired by Atom City Lights -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-wilmersdorf-theme.el --- port of Ian Pan's Wilmersdorf -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (6035392a1a01)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source: https://github.com/ianpan870102/wilmersdorf-emacs-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-wilmersdorf-theme nil
   "Options for the `doom-wilmersdorf' theme."
   :group 'doom-themes)
@@ -12,7 +24,10 @@ determine the exact padding."
   :group 'doom-wilmersdorf-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-wilmersdorf
   "A dark theme inspired by Atom City Lights"
 

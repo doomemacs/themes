@@ -1,7 +1,19 @@
-;;; doom-challenger-deep-theme.el --- inspired by VIM Challenger Deep -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-challenger-deep-theme.el --- inspired by Vim's Challenger Deep theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 5, 2016 (#163)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://github.com/challenger-deep-theme/vim
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-challenger-deep-theme nil
   "Options for the `doom-challenger-deep' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-challenger-deep-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-challenger-deep
   "A dark theme inspired by VIM Challenger Deep"
 

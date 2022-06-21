@@ -1,7 +1,19 @@
 ;;; doom-earl-grey-theme.el --- a gentle color scheme, for code -*- no-byte-compile: t; -*-
+;;
+;; Added: August 30, 2021 (#653)
+;; Author: JuneKelly <https://github.com/JuneKelly>
+;; Maintainer:
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-earl-grey-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
@@ -22,7 +34,10 @@ determine the exact padding."
   :group 'doom-earl-grey-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-earl-grey
   "A gentle color scheme for code."
 

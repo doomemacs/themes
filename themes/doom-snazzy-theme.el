@@ -1,18 +1,30 @@
 ;;; doom-snazzy-theme.el --- inspired by Hyper Snazzy -*- lexical-binding: t; no-byte-compile: t; -*-
-
+;;
+;; Added: July 30, 2019 (#313)
+;; Author: ar1a <https://github.com/ar1a>
+;; Maintainer:
+;; Source: https://github.com/sindresorhus/hyper-snazzy
+;;
 ;;; Commentary:
 ;;; Code:
+
 (require 'doom-themes)
 
 ;; Compiler pacifier
 (defvar modeline-bg)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-snazzy-theme nil
   "Options for the `doom-snazzy' theme."
   :group 'doom-themes)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-snazzy
   "A dark theme inspired by Atom Snazzy Dark"
 

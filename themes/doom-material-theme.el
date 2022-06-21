@@ -1,7 +1,19 @@
-;;; doom-material-theme.el --- inspired by Material Theme by equinusocio -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-material-theme.el --- adapted from equinusocio's Material themes -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: December 12, 2019 (#363)
+;; Author: tam5 <https://github.com/tam5>
+;; Maintainer:
+;; Source: https://github.com/equinusocio/vsc-material-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-material-theme nil
   "Options for the `material' theme."
   :group 'doom-themes)
@@ -12,7 +24,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-material-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-material
   "A dark theme inspired by Material Theme by equinusocio"
 

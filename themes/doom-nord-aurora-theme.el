@@ -1,7 +1,19 @@
-;;; doom-nord-aurora-theme.el --- inspired by Nord -*- no-byte-compile: t; -*-
+;;; doom-nord-aurora-theme.el --- a light variant of Nord -*- no-byte-compile: t; -*-
+;;
+;; Added: January 27, 2022 (#703)
+;; Author: MoskitoHero <https://github.com/MoskitoHero>
+;; Maintainer:
+;; Source: https://www.nordtheme.com
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-nord-aurora-theme nil
   "Options for doom-themes"
   :group 'doom-themes)
@@ -35,7 +47,10 @@ determine the exact padding."
     :group 'doom-nord-aurora-theme
     :type 'symbol))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-nord-aurora
   "A dark theme inspired by Nord. Aurora flavour."
 

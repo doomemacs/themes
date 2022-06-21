@@ -1,7 +1,19 @@
-;;; doom-acario-light-theme.el --- Acario light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-acario-light-theme.el --- an original light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (#319)
+;; Author: gagbo <https://github.com/gagbo>
+;; Maintainer: gagbo <https://github.com/gagbo>
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
+;;
 ;;; Variables
+
 (defgroup doom-acario-light-theme nil
   "Options for the `doom-acario-light' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-acario-light-theme
   :type '(or integer boolean))
 
+
+;;
 ;;; Theme definition
+
 (def-doom-theme doom-acario-light
   "A light theme inspired by Acario light"
 

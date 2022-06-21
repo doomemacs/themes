@@ -1,7 +1,19 @@
-;; doom-monokai-classic-theme.el --- inspired by Textmate's Monokai -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-monokai-classic-theme.el --- port of Monokai Classic -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 12, 2020 (3767e6854429)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source: https://monokai.pro
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-monokai-classic-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
@@ -23,7 +35,10 @@ determine the exact padding."
   :group 'doom-monokai-classic-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-monokai-classic
   "A dark, vibrant theme inspired by Textmate's Monokai."
 

@@ -1,5 +1,18 @@
 ;;; doom-nova-theme.el --- inspired by Trevord Miller's Nova -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: June 6, 2017 (#64)
+;; Author: bigardone <https://github.com/bigardone>
+;; Maintainer:
+;; Source: https://github.com/trevordmiller/nova-colors
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-nova-theme nil
   "Options for the `doom-nova' theme."
@@ -10,6 +23,10 @@
 determine the exact padding."
   :group 'doom-nova-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-nova
   "A light theme inspired by Trevord Miller's Nova. See

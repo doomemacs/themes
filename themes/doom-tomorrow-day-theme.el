@@ -1,10 +1,18 @@
-;;; doom-tomorrow-day-theme.el -- port of tomorrow theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-tomorrow-day-theme.el --- a light variant of Tomorrow -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (#144)
+;; Author: emacswatcher <https://github.com/emacswatcher>
+;; Maintainer:
+;; Source: https://github.com/ChrisKempson/Tomorrow-Theme
+;;
 ;;; Commentary:
-;; This file is part of emacs-doom-themes, which provides license
-;; information.
 ;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-tomorrow-day-theme nil
   "Options for the `doom-tomorrow-day' theme."
@@ -15,6 +23,10 @@
 Can be an integer to determine the exact padding."
   :group 'doom-tomorrow-day-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-tomorrow-day
   "A light theme based off of Chris Kempson's Tomorrow Dark."

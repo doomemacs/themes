@@ -1,7 +1,19 @@
-;;; doom-city-lights-theme.el --- inspired by Atom City Lights -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-city-lights-theme.el --- inspired by Atom's City Lights theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (7d6ff334c45a)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://citylights.xyz
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-city-lights-theme nil
   "Options for the `doom-city-lights' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-city-lights-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-city-lights
   "A dark theme inspired by Atom City Lights"
 

@@ -1,6 +1,18 @@
-;;; doom-opera-light-theme.el --- Opera-Light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-opera-light-theme.el --- an original light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: June 16, 2018 (#189)
+;; Author: jwintz <https://github.com/jwintz>
+;; Maintainer:
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-opera-light-theme nil
   "Options for the `doom-opera-light' theme."
@@ -33,6 +45,10 @@ determine the exact padding."
 (default)."
   :group 'doom-opera-light-theme
   :type 'symbol)
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-opera-light
   "A light Opera theme."

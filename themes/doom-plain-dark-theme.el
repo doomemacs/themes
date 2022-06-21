@@ -1,6 +1,18 @@
 ;;; doom-plain-dark-theme.el --- inspired by gko's plain theme for VSCode -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 4, 2021 (#558)
+;; Author: das-s <https://github.com/das-s>
+;; Maintainer:
+;; Source: https://github.com/gko/plain/
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-plain-dark-theme nil
   "Options for the `doom-plain-dark' theme."
@@ -16,6 +28,10 @@
 determine the exact padding."
   :group 'doom-plain-dark-theme
   :type '(or integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-plain-dark
   "Theme inspired by gko's plain dark."

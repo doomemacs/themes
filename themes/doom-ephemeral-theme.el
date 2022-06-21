@@ -1,16 +1,11 @@
-;;; doom-ephemeral-theme.el --- ephemeral -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ephemeral-theme.el --- inspired by the Ephemeral Theme from elenapan's dotfiles -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Aloysuis <aloysuis@users.noreply.github.com>
-;; Created: January 27, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: January 27, 2020 (#384)
+;; Author: karetsu <https://github.com/karetsu>
+;; Maintainer:
+;; Source: https://github.com/elenapan/dotfiles
 ;;
 ;;; Commentary:
-;;
-;; Inspired by https://github.com/elenapan/dotfiles
-;;
 ;;; Code:
 
 (require 'doom-themes)

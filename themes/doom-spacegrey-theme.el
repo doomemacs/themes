@@ -1,4 +1,19 @@
-;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-spacegrey-theme.el --- I'm sure you've heard of it -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: December 31, 2017 (#129)
+;; Author: teesloane <https://github.com/teesloane>
+;; Maintainer:
+;; Source: http://kkga.github.io/spacegray/
+;;
+;;; Commentary:
+;;; Code:
+
+(require 'doom-themes)
+
+
+;;
+;;; Variables
+
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
@@ -27,7 +42,10 @@ determine the exact padding."
   :group 'doom-spacegrey-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-spacegrey
   "A dark theme inspired by Atom Spacegrey Dark"
 

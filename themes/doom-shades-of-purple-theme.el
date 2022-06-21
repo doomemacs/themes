@@ -1,35 +1,40 @@
-;;; shades-of-purple-theme.el --- A port of Spacemacs' Shades of Purple theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-shades-of-purple-theme.el --- a port of VSCode's Shades of Purple -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: James Baldwin <jwbaldwin3@gmail.com>
-;; Homepage: https://github.com/jwbaldwin/spacemacs-shades-of-purple
-;; Version: 1.0.0
+;; Added: May 22, 2021 (#521)
+;; Author: jwbaldwin <https://github.com/jwbaldwin>
+;; Maintainer:
+;; Source: https://github.com/jwbaldwin/spacemacs-shades-of-purple
+;; Source: https://github.com/ahmadawais/shades-of-purple-vscode
 ;;
 ;;; Commentary:
-;; Credit to the original https://github.com/ahmadawais/shades-of-purple-vscode
+;;
+;; Background            #2D2B55   #2D2B55
+;; Background Dark       #1E1E3F   #1E1E3F
+;; Foreground            #A599E9   #A599E9
+;; Hover Background      #4D21FC   #4D21FC
+;; Contrast              #FAD000   #FAD000
+;; Contrast Lite         #FFEE80   #FFEE80
+;; Contrast Lite II      #FAEFA5   #FAEFA5
+;; Highlight             #FF7200   #FF7200
+;; Comment               #B362FF   #B362FF
+;; Constants             #FF628C   #FF628C
+;; Keywords              #FF9D00   #FF9D00
+;; Other                 #9EFFFF   #9EFFFF
+;; Strings               #A5FF90   #A5FF90
+;; Templates             #3AD900   #3AD900
+;; Definitions           #FB94FF   #FB94FF
+;; Invalid               #EC3A37F5 #EC3A37F5
+;; Diff Added            #00FF009A #00FF009A
+;; Diff Removed          #FF000D81 #FF000D81
+;;
 ;;; Code:
-
-;;Background            #2D2B55 #2D2B55
-;;Background Dark       #1E1E3F #1E1E3F
-;;Foreground            #A599E9 #A599E9
-;;Hover Background      #4D21FC #4D21FC
-;;Contrast              #FAD000 #FAD000
-;;Contrast Lite         #FFEE80 #FFEE80
-;;Contrast Lite II      #FAEFA5 #FAEFA5
-;;Highlight             #FF7200 #FF7200
-;;Comment               #B362FF #B362FF
-;;Constants             #FF628C #FF628C
-;;Keywords              #FF9D00 #FF9D00
-;;Other                 #9EFFFF #9EFFFF
-;;Strings               #A5FF90 #A5FF90
-;;Templates             #3AD900 #3AD900
-;;Definitions           #FB94FF #FB94FF
-;;Invalid               #EC3A37F5 #EC3A37F5
-;;Diff Added            #00FF009A #00FF009A
-;;Diff Removed          #FF000D81 #FF000D81
 
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-shades-of-purple-theme nil
   "Options for the `doom-shades-of-purple' theme."
   :group 'doom-themes)
@@ -40,7 +45,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-shades-of-purple-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-shades-of-purple
   "A dark theme inspired by VS code's shades-of-purple"
 

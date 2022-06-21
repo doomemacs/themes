@@ -1,7 +1,19 @@
-;;; doom-flatwhite-theme.el --- inspired by Flatwhite Syntax -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-flatwhite-theme.el --- inspired by Atom's Flatwhite Syntax theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 9, 2020 (#507)
+;; Author: JuneKelly <https://github.com/JuneKelly>
+;; Maintainer:
+;; Source: https://github.com/biletskyy/flatwhite-syntax
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-flatwhite-theme nil
   "Options for the `doom-flatwhite' theme."
   :group 'doom-themes)
@@ -22,7 +34,10 @@ determine the exact padding."
   :group 'doom-flatwhite-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-flatwhite
   "A minimal light syntax theme"
 

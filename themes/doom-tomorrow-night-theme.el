@@ -1,5 +1,18 @@
-;;; doom-tomorrow-night-theme.el -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-tomorrow-night-theme.el --- One of the dark variants of Tomorrow -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: May 14, 2017 (4c981f2cccf3)
+;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Maintainer:
+;; Source: https://github.com/ChrisKempson/Tomorrow-Theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-tomorrow-night-theme nil
   "Options for the `doom-tomorrow-night' theme."
@@ -10,6 +23,10 @@
 determine the exact padding."
   :group 'doom-tomorrow-night-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-tomorrow-night
   "A theme based off of Chris Kempson's Tomorrow Dark."

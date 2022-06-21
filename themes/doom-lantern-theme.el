@@ -1,6 +1,17 @@
-;;; doom-lantern-theme.el --- Combination of Hlissner's Doom One and Gitleptune's Lantern theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-lantern-theme.el --- based on Gitleptune's Lantern theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 22, 2022 (#708)
+;; Author: paladhammika <https://github.com/paladhammika>
+;; Maintainer:
+;; Source: https://github.com/Gitleptune/lantern-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
+;;
 ;;; Variables
 
 (defgroup doom-lantern-theme nil
@@ -23,6 +34,8 @@ Can be an integer to determine the exact padding."
   :group 'doom-lantern-theme
   :type '(choice integer boolean))
 
+
+;;
 ;;; Theme definition
 
 (def-doom-theme doom-lantern

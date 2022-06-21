@@ -1,12 +1,19 @@
-;;; doom-horizon-theme.el --- Inspired by VSCode Horizon -*- lexical-binding: t; no-byte-compile: t; -*-
-
+;;; doom-horizon-theme.el --- ported from VSCode Horizon -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: January 21, 2020 (#374)
+;; Author: karetsu <https://github.com/karetsu>
+;; Maintainer:
+;; Source: https://github.com/aodhneine/horizon-theme.el
+;;
 ;;; Commentary:
-;;; This theme was inspired by the port of Horizon to Emacs
-;;; see: https://github.com/aodhneine/horizon-theme.el
+;;; Code:
 
 (require 'doom-themes)
 
-;;; Code:
+
+;;
+;;; Variables
+
 (defgroup doom-horizon-theme nil
   "Options for the `doom-horizon' theme."
   :group 'doom-themes)
@@ -31,7 +38,10 @@
   :group 'doom-horizon-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-horizon
   "A port of the port of the Visual Studio Code theme Horizon"
 

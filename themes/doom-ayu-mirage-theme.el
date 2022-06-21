@@ -1,10 +1,18 @@
-;;; doom-ayu-light-theme.el --- inspired by Ayu Mirage -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ayu-mirage-theme.el --- inspired by Ayu Mirage -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 5, 2021 (#499)
+;; Author: LoveSponge <https://github.com/LoveSponge>
+;; Maintainer:
+;; Source: https://github.com/dempfi/ayu
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
 
 
 ;;
-;; Variables
+;;; Variables
 
 (defgroup doom-ayu-mirage-theme nil
   "Options for the `doom-ayu-mirage' theme."
@@ -32,7 +40,10 @@ determine the exact padding."
   :group 'doom-ayu-mirage-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-ayu-mirage
   "A dark theme inspired by Ayu Mirage"
 

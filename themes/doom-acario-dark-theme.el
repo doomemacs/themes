@@ -1,4 +1,13 @@
-;;; doom-acario-dark-theme.el --- Acario dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-acario-dark-theme.el --- an original dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (#319)
+;; Author: gagbo <https://github.com/gagbo>
+;; Maintainer: gagbo <https://github.com/gagbo>
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
 ;;; Variables
@@ -28,7 +37,10 @@ determine the exact padding."
   :group 'doom-acario-dark-theme
   :type '(or integer boolean))
 
+
+;;
 ;;; Theme definition
+
 (def-doom-theme doom-acario-dark
   "A dark theme inspired by Acario"
 

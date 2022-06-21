@@ -1,18 +1,11 @@
-;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-vibrant-theme.el --- a more vibrant variant of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
-;;
+;; Added: May 10, 2017 (7532a705db9c)
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Maintainer: Henrik Lissner <https://github.com/hlissner>
+;; Source: doom-one
 ;;
 ;;; Commentary:
-;;
-;; A version of `doom-one' that uses more vibrant colors.
-;;
 ;;; Code:
 
 (require 'doom-themes)

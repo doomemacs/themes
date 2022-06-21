@@ -1,7 +1,19 @@
-;;; doom-badger-theme.el --- inspired by original badger theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-badger-theme.el --- inspired by cann's Badger colorscheme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 19, 2020 (#443)
+;; Author: jsoa <https://github.com/jsoa>
+;; Maintainer:
+;; Source: https://github.com/ccann/badger-theme/
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-badger-theme nil
   "Options for the `doom-badger' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-badger-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-badger
   "A dark theme inspired by original badger theme"
 
