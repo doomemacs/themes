@@ -12,8 +12,8 @@ support, but will work fine anywhere else.
 
 [See the screenshots.][screenshots]
 
-**Table of Contents**
 
+# Table of Contents
 - [Install](#install)
     - [Doom Emacs](#doom-emacs)
     - [Manually](#manually)
@@ -199,12 +199,12 @@ There are three ways to customize themes in this package:
 2. Use the `custom-set-faces` macro (Doom users should use `custom-set-faces!`
    instead) to customize any face. e.g.
   
-  ```elisp
-  ;; Must be used *after* the theme is loaded
-  (custom-set-faces
-    `(mode-line ((t (:background ,(doom-color 'dark-violet)))))
-    `(font-lock-comment-face ((t (:foreground ,(doom-color 'base6))))))
-  ```
+   ```elisp
+   ;; Must be used *after* the theme is loaded
+   (custom-set-faces
+     `(mode-line ((t (:background ,(doom-color 'dark-violet)))))
+     `(font-lock-comment-face ((t (:foreground ,(doom-color 'base6))))))
+   ```
   
 3. Copy your favorite theme into your `custom-theme-directory` (normally
    `~/.emacs.d/`, or `~/.doom.d/themes` for Doom users), and tweak it there.
