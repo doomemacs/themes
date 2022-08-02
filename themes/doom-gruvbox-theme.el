@@ -217,6 +217,12 @@ background contrast. All other values default to \"medium\"."
    (magit-diff-context                :foreground base3 :foreground fg-alt)
    ;;;; markdown-mode
    (markdown-header-face :inherit 'bold :foreground green)
+   (markdown-header-face-1 :inherit 'bold :foreground green :height 1.20)
+   (markdown-header-face-2 :inherit 'bold :foreground orange :height 1.15)
+   (markdown-header-face-3 :bold nil :foreground yellow :height 1.10)
+   (markdown-header-face-4 :bold nil :foreground yellow :height 1.05)
+   (markdown-header-face-5 :foreground dark-cyan :height 1.00)
+   (markdown-header-face-6 :foreground dark-cyan :height 1.0)
    (markdown-header-delimiter-face :foreground orange)
    (markdown-blockquote-face :inherit 'italic :foreground grey)
    (markdown-list-face :foreground grey)
