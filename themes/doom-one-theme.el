@@ -156,6 +156,12 @@ Can be an integer to determine the exact padding."
    ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
+   (markdown-header-face-1 :inherit 'bold :foreground red :height 1.20)
+   (markdown-header-face-2 :inherit 'bold :foreground violet :height 1.15)
+   (markdown-header-face-3 :bold nil :foreground magenta :height 1.10)
+   (markdown-header-face-4 :bold nil :foreground magenta :height 1.05)
+   (markdown-header-face-5 :foreground violet :height 1.0)
+   (markdown-header-face-6 :foreground violet :height 1.0)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
    ;;;; rjsx-mode
    (rjsx-tag :foreground red)
