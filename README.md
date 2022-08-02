@@ -16,7 +16,7 @@ support, but will work fine anywhere else.
 # Table of Contents
 - [Install](#install)
     - [Doom Emacs](#doom-emacs)
-    - [Manually](#manually)
+    - [Manually](#manually--use-package)
 - [Theme list](#theme-list)
     - [Flagship themes](#flagship-themes)
     - [Additional themes](#additional-themes)
