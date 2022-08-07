@@ -1,8 +1,9 @@
-;;; ci.el -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; .doomrc --- doom runtime config -*- mode: emacs-lisp; lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
+(require 'doom) ; be silent, byte-compiler
 
-(after! core-cli-ci
+(after! doom-cli-ci
   ;;; Types
   (add-to-list 'doom-ci-commit-types 'theme)
   (add-to-list 'doom-ci-commit-scopeless-types 'theme)
@@ -21,4 +22,4 @@
            if (string-remove-prefix "doom-themes-" it)
            do (add-to-list 'doom-ci-commit-scopes it)))
 
-;;; ci.el ends here
+;;; .doomrc ends here
