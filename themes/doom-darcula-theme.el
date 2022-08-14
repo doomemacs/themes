@@ -14,6 +14,9 @@
 ;; This is a WIP. I have tested it with C, seems OK. This essentialy the One Dark theme but
 ;; with different colors.
 ;;
+;; Much of the work is done by tree-sitter-langs package by matching tree-sitter faces to
+;; font-lock faces.
+;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -166,10 +169,10 @@ Although non-standard, they are considered as keywords"
 
    ;; Comments ------------------------------------------------------
    ((comment) @comment.doc
-    (.match? @comment.doc "^\/\*\*.*\*\/"))
+    (.match? @comment.doc "^\/\\*\\*"))
 
    ((comment) @comment.block
-    (.match? @comment.block "^\/\*.*\*\/"))
+    (.match? @comment.block "^\/\*"))
 
    ((comment) @comment.line
     (.match? @comment.line "^\/\/"))
@@ -207,9 +210,11 @@ Although non-standard, they are considered as keywords"
 (def-doom-theme doom-darcula
   "A dark theme inspired by Atom One Dark."
 
+  ;; TODO: Enhance colors to have better contrasts.
+
   ;; name        default   256           16
   ((bg         '("#2b2b2b" "#2b2b2b"     "black"        ))
-   (fg         '("#a9b7c6" "#a9b7c6"     "brightwhite"  ))
+   (fg         '("#d2dbe9" "#a9b7c6"     "brightwhite"  ))
 
    ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
    ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
@@ -234,7 +239,7 @@ Although non-standard, they are considered as keywords"
    (grey       base4)
    (red        '("#bc3f3c" "#bc3f3c" "red"          ))
    (orange     '("#cc7832" "#cc7832" "brightred"    ))
-   (green      '("#6a8759" "#6a8752" "green"        ))
+   (green      '("#88ac73" "#88ac73" "green"        ))
    (teal       '("#0f9795" "#0f9795" "brightgreen"  ))
    (yellow     '("#bbb529" "#bbb529" "yellow"       ))
    (blue       '("#6897bb" "#6897bb" "brightblue"   ))
@@ -251,8 +256,8 @@ Although non-standard, they are considered as keywords"
    (vertical-bar   (doom-darken base1 0.1))
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-darcula-brighter-comments dark-cyan base5))
-   (doc-comments   (doom-lighten (if doom-darcula-brighter-comments dark-cyan base5) 0.25))
+   (comments       (if doom-darcula-brighter-comments (doom-lighten grey 0.2) grey))
+   (doc-comments   (if doom-darcula-brighter-comments (doom-lighten green 0.2) green))
    (constants      violet)
    (functions      magenta)
    (keywords       (doom-darken orange 0.1))
@@ -299,6 +304,9 @@ Although non-standard, they are considered as keywords"
    (tree-sitter-hl-face:number :foreground blue)
    (tree-sitter-hl-face:property.definition :slant 'normal :foreground violet)
    (tree-sitter-hl-face:property :slant 'normal :foreground violet)
+   (tree-sitter-hl-face:comment.doc :slant 'italic :foreground (doom-darken green 0.1))
+   (tree-sitter-hl-face:comment.block :foreground grey)
+   (tree-sitter-hl-face:comment.line :foreground grey)
    
    (font-lock-preprocessor-face
       :inherit 'bold
