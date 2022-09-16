@@ -6,14 +6,14 @@
 ;; as a set of reasonble defaults. They are intended to be overidden where it
 ;; makes sense to.
 (defvar doom-themes-base-faces
-  '((bold        :weight 'bold :foreground (unless bold base8))
+  '((bold        :weight 'bold :foreground (if bold 'unspecified base8))
     (bold-italic :inherit '(bold italic))
     (italic      :slant  'italic)
     (escape-glyph :foreground cyan)
     (default :background bg :foreground fg)
     (fringe  :inherit 'default :foreground base4)
-    (region               :background region     :foreground nil   :distant-foreground (doom-darken fg 0.2) :extend t)
-    (highlight            :background highlight  :foreground base0 :distant-foreground base8)
+    (region               :background region :distant-foreground (doom-darken fg 0.2) :extend t)
+    (highlight            :background highlight :foreground base0 :distant-foreground base8)
     (cursor               :background highlight)
     (shadow               :foreground base5)
     (minibuffer-prompt    :foreground highlight)
@@ -74,12 +74,14 @@
     ;; 2. All other line number plugin faces should &inherit from these.
     (line-number
      :inherit 'default
-     :foreground base5 :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
+     :foreground base5 :distant-foreground 'unspecified
+     :weight 'normal :italic 'unspecified
+     :underline 'unspecified :strike-through 'unspecified)
     (line-number-current-line
      :inherit '(hl-line default)
-     :foreground fg :distant-foreground nil
-     :weight 'normal :italic nil :underline nil :strike-through nil)
+     :foreground fg :distant-foreground 'unspecified
+     :weight 'normal :italic 'unspecified
+     :underline 'unspecified :strike-through 'unspecified)
 
     ;;;; --- Package faces ----------------------
     ;; What follows are faces for all the packages doom-themes explicitly
@@ -257,17 +259,17 @@
     (cfw:face-header             :foreground (doom-blend blue bg 0.8) :weight 'bold)
     (cfw:face-sunday             :foreground (doom-blend red bg 0.8)  :weight 'bold)
     (cfw:face-saturday           :foreground (doom-blend red bg 0.8)  :weight 'bold)
-    (cfw:face-holiday            :foreground nil :background bg-alt   :weight 'bold)
+    (cfw:face-holiday            :background bg-alt :weight 'bold)
     (cfw:face-grid               :foreground vertical-bar)
     (cfw:face-periods            :foreground yellow)
-    (cfw:face-toolbar            :foreground nil :background nil)
+    (cfw:face-toolbar)
     (cfw:face-toolbar-button-off :foreground base6                    :weight 'bold             :inherit 'variable-pitch)
     (cfw:face-toolbar-button-on  :foreground blue                     :weight 'bold             :inherit 'variable-pitch)
     (cfw:face-default-content    :foreground fg)
     (cfw:face-day-title          :foreground fg                       :weight 'bold)
     (cfw:face-today-title        :foreground bg  :background blue     :weight 'bold)
     (cfw:face-default-day                                             :weight 'bold)
-    (cfw:face-today              :foreground nil :background nil      :weight 'bold)
+    (cfw:face-today              :weight 'bold)
     (cfw:face-annotation         :foreground violet)
     (cfw:face-disable            :foreground grey)
     (cfw:face-select             :background region)
@@ -333,7 +335,7 @@
     (custom-comment-tag             :foreground grey)
     (custom-modified                :foreground blue   :background (doom-blend blue bg 0.2))
     (custom-variable-tag            :foreground magenta)
-    (custom-visibility              :foreground blue   :underline nil)
+    (custom-visibility              :foreground blue   :underline 'unspecified)
     (custom-group-subtitle          :foreground red)
     (custom-group-tag               :foreground violet)
     (custom-group-tag-1             :foreground blue)
@@ -395,8 +397,8 @@
      (&dark  :foreground (doom-darken fg 0.12))
      (&light :foreground (doom-lighten fg 0.12)))
     (diff-removed :foreground red :background base3)
-    (diff-header  :foreground cyan :background nil)
-    (diff-file-header :foreground blue :background nil)
+    (diff-header  :foreground cyan)
+    (diff-file-header :foreground blue)
     (diff-hunk-header :foreground violet)
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
@@ -469,7 +471,7 @@
     (diredfl-write-priv             :foreground red)
     ;;;; doom-modeline
     (doom-modeline-eldoc-bar :background green)
-    (doom-modeline-bar-inactive :background nil) ; transparent
+    (doom-modeline-bar-inactive) ; transparent
     ;;;; doom-themes
     (doom-themes-visual-bell :background error)
     ;;;; ediff <built-in>
@@ -552,7 +554,7 @@
     (evil-ex-substitute-replacement :background base0     :foreground green :weight 'bold)
     (evil-search-highlight-persist-highlight-face :inherit 'lazy-highlight)
     ;;;; evil-mc
-    (evil-mc-cursor-default-face :background magenta :foreground base0 :inverse-video nil)
+    (evil-mc-cursor-default-face :background magenta :foreground base0)
     (evil-mc-region-face         :inherit 'region)
     (evil-mc-cursor-bar-face     :height 1 :background magenta :foreground base0)
     (evil-mc-cursor-hbar-face    :underline `(:color ,highlight))
@@ -612,9 +614,9 @@
     (git-gutter:added    :inherit 'fringe :foreground vc-added)
     (git-gutter:deleted  :inherit 'fringe :foreground vc-deleted)
     ;;;; git-gutter+
-    (git-gutter+-modified :inherit 'fringe :foreground vc-modified :background nil)
-    (git-gutter+-added    :inherit 'fringe :foreground vc-added :background nil)
-    (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted :background nil)
+    (git-gutter+-modified :inherit 'fringe :foreground vc-modified :background 'unspecified)
+    (git-gutter+-added    :inherit 'fringe :foreground vc-added    :background 'unspecified)
+    (git-gutter+-deleted  :inherit 'fringe :foreground vc-deleted  :background 'unspecified)
     ;;;; git-gutter-fringe
     ((git-gutter-fr:modified &inherit git-gutter:modified))
     ((git-gutter-fr:added    &inherit git-gutter:added))
@@ -755,7 +757,7 @@
     ;;;; hl-todo
     (hl-todo :foreground red :weight 'bold)
     ;;;; hlinum
-    (linum-highlight-face :foreground fg :distant-foreground nil :weight 'normal)
+    (linum-highlight-face :foreground fg :weight 'normal)
     ;;;; hydra
     (hydra-face-red      :foreground red     :weight 'bold)
     (hydra-face-blue     :foreground blue    :weight 'bold)
@@ -785,9 +787,8 @@
     (isearch :inherit 'lazy-highlight :weight 'bold)
     (isearch-fail :background error :foreground base0 :weight 'bold)
     ;;;; ivy
-    (ivy-current-match :background region :distant-foreground nil :extend t)
+    (ivy-current-match :background region :extend t)
     (ivy-minibuffer-match-face-1
-     :background nil
      :foreground (doom-lighten grey 0.14)
      :weight 'light)
     (ivy-minibuffer-match-face-2
@@ -809,9 +810,9 @@
     (ivy-posframe :background (doom-darken bg-alt 0.2))
     (ivy-posframe-border :inherit 'internal-border)
     ;;;; selectrum
-    (selectrum-current-candidate :background region :distant-foreground nil :extend t)
+    (selectrum-current-candidate :background region :extend t)
     ;;;; vertico
-    (vertico-current :background region :distant-foreground nil :extend t)
+    (vertico-current :background region :extend t)
     ;;;; vertico-posframe
     ;;(vertico-posframe :inherit 'default)
     (vertico-posframe-border :background grey)
@@ -1002,7 +1003,7 @@
     (mmm-output-submode-face :background (doom-blend violet bg 0.1))
     (mmm-special-submode-face :background (doom-blend green bg 0.1))
     (mmm-code-submode-face :background bg-alt)
-    (mmm-default-submode-face :background nil) ; make transparent
+    (mmm-default-submode-face) ; make transparent
     ;;;; multiple cursors
     (mc/cursor-face :inherit 'cursor)
     ;;;; nav-flash
@@ -1037,7 +1038,7 @@
     ;; (notmuch-crypto-signature-good-key       :foreground aqua-l)
     ;; (notmuch-crypto-signature-unknown        :foreground yellow)
     ;; (notmuch-hello-logo-background           :foreground fg)
-    (notmuch-message-summary-face            :foreground grey :background nil)
+    (notmuch-message-summary-face            :foreground grey)
     (notmuch-search-count                    :foreground comments)
     (notmuch-search-date                     :foreground numbers)
     (notmuch-search-flagged-face             :foreground (doom-blend red base4 0.5))
@@ -1111,7 +1112,7 @@
     (org-document-title           :foreground builtin         :weight 'bold)
     (org-done                     :inherit 'org-headline-done :strike-through nil :weight 'bold)
     (org-drawer                   :foreground comments)
-    (org-ellipsis                 :underline nil              :background nil :foreground comments)
+    (org-ellipsis                 :foreground comments :underline nil)
     (org-footnote                 :foreground orange)
     (org-formula                  :foreground cyan)
     (org-headline-done            :foreground base5)
@@ -1123,10 +1124,10 @@
     (org-priority                 :foreground red)
     (org-property-value           :foreground doc-comments)
     (org-quote                    :inherit 'org-block :slant 'italic)
-    (org-special-keyword          :foreground doc-comments    :underline nil)
+    (org-special-keyword          :foreground doc-comments)
     (org-table                    :foreground violet)
-    (org-tag                      :foreground doc-comments    :weight 'normal)
-    (org-todo                     :foreground green           :bold 'inherit)
+    (org-tag                      :foreground doc-comments :weight 'normal)
+    (org-todo                     :foreground green :bold 'inherit)
     (org-verbatim                 :foreground green)
     (org-warning                  :foreground warning)
     ;; Omitted because we rely on style they inherit from the outline-N faces
@@ -1441,10 +1442,10 @@
     (whitespace-newline  :foreground base4)
     (whitespace-tab
      :foreground base4
-     :background (unless (default-value 'indent-tabs-mode) base3))
+     :background (if (default-value 'indent-tabs-mode) 'unspecified base3))
     (whitespace-indentation
      :foreground base4
-     :background (if (default-value 'indent-tabs-mode) base3))
+     :background (if (default-value 'indent-tabs-mode) base3 'unspecified))
     (whitespace-trailing :inherit 'trailing-whitespace)
     (whitespace-line     :background base0 :foreground red :weight 'bold)
     ;;;; widget
