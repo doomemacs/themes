@@ -229,7 +229,7 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
                       "ini" "inputrc" "json" "ledgerrc" "lock" "nginx"
                       "npm-shrinkwrap.json" "npmignore" "npmrc"
                       "package-lock.json" "package.json" "phpunit" "pkg" "plist"
-                      "properties" "terminalrc" "toml" "tridactylrc"
+                      "pom.xml" "properties" "terminalrc" "toml" "tridactylrc"
                       "vimperatorrc" "vimrc" "vrapperrc" "xdefaults" "xml"
                       "xresources" "yaml" "yarn-integrity" "yarnclean"
                       "yarnignore" "yarnrc" "yml"))
