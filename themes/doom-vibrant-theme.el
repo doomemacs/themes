@@ -94,7 +94,7 @@ Can be an integer to determine the exact padding."
    (operators      magenta)
    (type           yellow)
    (strings        green)
-   (variables      base8)
+   (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
    (region         "#3d4451")
    (error          red)
