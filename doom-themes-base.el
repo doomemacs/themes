@@ -995,6 +995,8 @@
     ;;;; minimap
     (minimap-current-line-face :background selection)
     (minimap-active-region-background :background vertical-bar)
+    ;; mm
+    (mm-uu-extract :background (doom-blend highlight base2 0.07) :foreground (doom-blend highlight fg 0.15))
     ;;;; mmm-mode
     (mmm-init-submode-face :background (doom-blend red bg 0.1))
     (mmm-cleanup-submode-face :background (doom-blend yellow bg 0.1))
