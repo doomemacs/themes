@@ -469,6 +469,11 @@
     (diredfl-symlink                :foreground violet)
     (diredfl-tagged-autofile-name   :foreground base5)
     (diredfl-write-priv             :foreground red)
+    ;;;; disk-usage
+    (disk-usage-children            :foreground yellow)
+    (disk-usage-percent             :foreground violet)
+    (disk-usage-size                :foreground blue)
+    (disk-usage-symlink             :foreground cyan :weight 'bold)
     ;;;; doom-modeline
     (doom-modeline-eldoc-bar :background green)
     (doom-modeline-bar-inactive) ; transparent
