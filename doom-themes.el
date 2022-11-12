@@ -33,6 +33,8 @@
 ;;  - doom-earl-grey -- a gentle color scheme, for code (ported by @JuneKelly)
 ;;  - doom-ephemeral -- inspired by the Ephemeral Theme from elenapan's dotfiles (ported by @karetsu)
 ;;  - doom-fairy-floss -- a candy colored theme by sailorhg (ported by @ema2159)
+;;  - doom-feather-dark -- a purple-tinted theme, inspired by doom-one (by @Plunne)
+;;  - doom-feather-light -- a light variable of feather-dark, inspired by doom-one (by @Plunne)
 ;;  - doom-flatwhite -- inspired by Atom's Flatwhite Syntax theme (ported by @JuneKelly)
 ;;  - doom-gruvbox -- inspired by morhetz's Gruvbox (ported by @JongW)
 ;;  - doom-gruvbox-light -- inspired by morhetz's Gruvbox (light) (ported by @jsoa)

@@ -37,6 +37,8 @@ body:
       - doom-earl-grey
       - doom-ephemeral
       - doom-fairy-floss
+      - doom-feather-dark
+      - doom-feather-light
       - doom-flatwhite
       - doom-gruvbox-light
       - doom-gruvbox
