@@ -72,6 +72,7 @@
 ;;  - doom-outrun-electric -- a high contrast, neon theme inspired by Outrun Electric on VSCode (ported by @ema2159)
 ;;  - doom-palenight -- adapted from equinusocio's Material themes (ported by @Brettm12345)
 ;;  - doom-peacock -- inspired by daylerees' Peacock (ported by @teesloane)
+;;  - doom-pine -- a green flavor of doom-gruvbox (by @RomanHargrave)
 ;;  - doom-plain -- inspired by gko's plain theme for VSCode (ported by @das-s)
 ;;  - doom-plain-dark -- inspired by gko's plain theme for VSCode (ported by @das-s)
 ;;  - doom-rouge -- ported from VSCode's Rouge Theme (ported by @das-s)
