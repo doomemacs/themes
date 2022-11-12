@@ -23,7 +23,7 @@ support, but will work fine anywhere else.
     - [Planned themes](#planned-themes)
 - [Extensions](#extensions)
 - [Complementary plugins](#complementary-plugins)
-- [FAQ](#faq)
+- [Customization](#customization)
 - [Contribute](#contribute)
 
 ## Install
