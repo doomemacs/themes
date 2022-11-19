@@ -134,7 +134,7 @@
    ;; markdown
    ((markdown-blockquote-face &override) :foreground violet)
    ((markdown-bold-face &override) :foreground red :weight 'bold)
-   ((markdown-code-face &override) :foreground brown :background (doom-lighten base1 0.3))
+   ((markdown-code-face &override) :foreground brown :background bg-alt)
    ((markdown-header-face &override) :inherit 'bold :foreground yellow)
    ((markdown-italic-face &override) :foreground orange :slant 'italic)
    ((markdown-link-face &override) :foreground dark-blue :underline t)
