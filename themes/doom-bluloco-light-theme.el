@@ -31,7 +31,7 @@
   ((bg           '("#f9f9f9" "white"   "white"        ))
    (fg           '("#383a42" "#424242" "black"        ))
 
-   (bg-alt       '("#E8E8E8" "white"   "white"        ))
+   (bg-alt       '("#e7e7e7" "white"   "white"        ))
    (fg-alt       '("#c6c7c7" "#c7c7c7" "brightblack"  ))
 
    (base0        '("#f1f1f1" "#f0f0f0" "white"        ))
