@@ -151,7 +151,7 @@
    ((org-code &override) :foreground brown :background bg)
    ((org-document-title &override) :inherit 'bold :foreground green :height 1.25)
    ((org-link &override) :foreground dark-blue :weight 'normal)
-   ((org-meta-line &override) :foreground yellow :slant 'italic)
+   ((org-meta-line &override) :foreground yellow)
    ((org-quote &override) :foreground violet :background bg-alt)
    ((org-table &override) :foreground brown)
    ((org-verbatim &override) :foreground brown :background bg)
@@ -160,6 +160,9 @@
    (org-level-2 :inherit 'bold :foreground magenta :height 1.15)
    (org-level-3 :inherit 'bold :foreground green :height 1.1)
    (org-level-4 :inherit 'bold :foreground (doom-lighten blue 0.25)  :height 1.05)
+
+   ;; org-modern-indent
+   (org-modern-indent-line :inherit 'org-block-begin-line)
 
    ;; rainbow delimiters
    (rainbow-delimiters-depth-1-face :foreground operators)
