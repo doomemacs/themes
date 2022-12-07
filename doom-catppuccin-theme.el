@@ -39,8 +39,8 @@ Can be an integer to determine the exact padding."
 
 (defcustom doom-catppuccin-dark-variant nil
   "Color palette used for catppuccin theme.
-A choice of \"frappe\" or \"mocha\" can be used to change the
-background contrast. All other values default to \"macchiato\"."
+A choice of \"latte\", \"frappe\" or \"macchiato\" can be used to change the
+background contrast. All other values default to \"mocha\"."
   :group 'doom-catppuccin-theme
   :type  'string)
 
@@ -50,111 +50,137 @@ background contrast. All other values default to \"macchiato\"."
 (def-doom-theme doom-catppuccin
   "A dark theme based on catppuccin colorscheme."
 
-  ;; name                                                  default    256      16
+  ;; name                                                      default    256      16
   ((_crust
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#232634" "black" "black")) ; crust
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#11111b" "black" "black"))
-          (t                                             '("#181926" "black" "black"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#dce0e8" "black" "black")) ; crust
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#232634" "black" "black"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#181926" "black" "black"))
+          (t                                                 '("#11111b" "black" "black"))))
    (_mantle
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#292c3c" "#1e1e1e" "brightblack")) ; mantle
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#181825" "#1e1e1e" "brightblack"))
-          (t                                             '("#1e2030" "#1e1e1e" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#e6e9ef" "#1e1e1e" "brightblack")) ; mantle
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#292c3c" "#1e1e1e" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#1e2030" "#1e1e1e" "brightblack"))
+          (t                                                 '("#181825" "#1e1e1e" "brightblack"))))
    (_base
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#303446" "#2e2e2e" "brightblack")) ; base
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#1e1e2e" "#2e2e2e" "brightblack"))
-          (t                                             '("#24273a" "#2e2e2e" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#eff1f5" "#2e2e2e" "brightblack")) ; base
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#303446" "#2e2e2e" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#24273a" "#2e2e2e" "brightblack"))
+          (t                                                 '("#1e1e2e" "#2e2e2e" "brightblack"))))
    (_surface0
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#414559" "#262626" "brightblack")) ; surface0
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#313244" "#262626" "brightblack"))
-          (t                                             '("#363a4f" "#262626" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#ccd0da" "#262626" "brightblack")) ; surface0
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#414559" "#262626" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#363a4f" "#262626" "brightblack"))
+          (t                                                 '("#313244" "#262626" "brightblack"))))
    (_surface1
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#51576d" "#3f3f3f" "brightblack")) ; surface1
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#45475a" "#3f3f3f" "brightblack"))
-          (t                                             '("#494d64" "#3f3f3f" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#bcc0cc" "#3f3f3f" "brightblack")) ; surface1
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#51576d" "#3f3f3f" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#494d64" "#3f3f3f" "brightblack"))
+          (t                                                 '("#45475a" "#3f3f3f" "brightblack"))))
    (_surface2
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#628880" "#525252" "brightblack")) ; surface2
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#585b70" "#525252" "brightblack"))
-          (t                                             '("#5b6078" "#525252" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#acb0be" "#525252" "brightblack")) ; surface2
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#626880" "#525252" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#5b6078" "#525252" "brightblack"))
+          (t                                                 '("#585b70" "#525252" "brightblack"))))
    (_overlay0
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#737994" "#6b6b6b" "brightblack")) ; overlay0
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#6c7086" "#6b6b6b" "brightblack"))
-          (t                                             '("#6e738d" "#6b6b6b" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#9ca0b0" "#6b6b6b" "brightblack")) ; overlay0
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#737994" "#6b6b6b" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#6e738d" "#6b6b6b" "brightblack"))
+          (t                                                 '("#6c7086" "#6b6b6b" "brightblack"))))
    (_overlay1
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#838ba7" "#979797" "brightblack")) ; overlay1
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#7f849c" "#979797" "brightblack"))
-          (t                                             '("#8087a2" "#979797" "brightblack"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#8c8fa1" "#979797" "brightblack")) ; overlay1
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#838ba7" "#979797" "brightblack"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#8087a2" "#979797" "brightblack"))
+          (t                                                 '("#7f849c" "#979797" "brightblack"))))
    (_overlay2
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#949cbb" "#dfdfdf" "white")) ; overlay2
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#9399b2" "#dfdfdf" "white"))
-          (t                                             '("#939ab7" "#dfdfdf" "white"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#7c7f93" "#dfdfdf" "white")) ; overlay2
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#949cbb" "#dfdfdf" "white"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#939ab7" "#dfdfdf" "white"))
+          (t                                                 '("#9399b2" "#dfdfdf" "white"))))
    (_subtext0
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#a5adce" "#dfdfdf" "white")) ; subtext0
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#a6adc8" "#dfdfdf" "white"))
-          (t                                             '("#a5adcb" "#dfdfdf" "white"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#6c6f85" "#dfdfdf" "white")) ; subtext0
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#a5adce" "#dfdfdf" "white"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#a5adcb" "#dfdfdf" "white"))
+          (t                                                 '("#a6adc8" "#dfdfdf" "white"))))
    (_subtext1
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#b5bfe2" "#dfdfdf" "white")) ; subtext1
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#bac2de" "#dfdfdf" "white"))
-          (t                                             '("#b8c0e0" "#dfdfdf" "white"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#5c5f77" "#dfdfdf" "white")) ; subtext1
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#b5bfe2" "#dfdfdf" "white"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#b8c0e0" "#dfdfdf" "white"))
+          (t                                                 '("#bac2de" "#dfdfdf" "white"))))
    (_text
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#c6d0f5" "#dfdfdf" "white")) ; text
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#cdd6f4" "#dfdfdf" "white"))
-          (t                                             '("#cad3f5" "#dfdfdf" "white"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#4c4f69" "#dfdfdf" "white")) ; text
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#c6d0f5" "#dfdfdf" "white"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#cad3f5" "#dfdfdf" "white"))
+          (t                                                 '("#cdd6f4" "#dfdfdf" "white"))))
    (_rosewater
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#f2d5cf" "#c678dd" "brightmagenta")) ; pink
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#f5e0dc" "#c678dd" "brightmagenta"))
-          (t                                             '("#f4dbd6" "#c678dd" "brightmagenta"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#dc8a78" "#c678dd" "brightmagenta")) ; rosewater
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#f2d5cf" "#c678dd" "brightmagenta"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#f4dbd6" "#c678dd" "brightmagenta"))
+          (t                                                 '("#f5e0dc" "#c678dd" "brightmagenta"))))
    (_flamingo
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#eebebe" "#c678dd" "brightmagenta"))
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#f2cdcd" "#c678dd" "brightmagenta"))
-          (t                                             '("#f0c6c6" "#c678dd" "brightmagenta"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#dd7878" "#c678dd" "brightmagenta")) ; flamingo
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#eebebe" "#c678dd" "brightmagenta"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#f0c6c6" "#c678dd" "brightmagenta"))
+          (t                                                 '("#f2cdcd" "#c678dd" "brightmagenta"))))
    (_pink
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#f4b8e4" "#c678dd" "brightmagenta"))
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#f5c2e7" "#c678dd" "brightmagenta"))
-          (t                                             '("#f5bde6" "#c678dd" "brightmagenta"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#ea76cb" "#c678dd" "brightmagenta")) ; pink
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#f4b8e4" "#c678dd" "brightmagenta"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#f5bde6" "#c678dd" "brightmagenta"))
+          (t                                                 '("#f5c2e7" "#c678dd" "brightmagenta"))))
    (_mauve
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#ca9ee6" "#a9a1e1" "magenta")) ; mauve
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#cba6f7" "#a9a1e1" "magenta"))
-          (t                                             '("#c6a0f6" "#a9a1e1" "magenta"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#8839ef" "#a9a1e1" "magenta")) ; mauve
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#ca9ee6" "#a9a1e1" "magenta"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#c6a0f6" "#a9a1e1" "magenta"))
+          (t                                                 '("#cba6f7" "#a9a1e1" "magenta"))))
    (_red
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#e78284" "#ff6655" "red")) ; red
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#f38ba8" "#ff6655" "red"))
-          (t                                             '("#ed8796" "#ff6655" "red"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#d20f39" "#ff6655" "red")) ; red
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#e78284" "#ff6655" "red"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#ed8796" "#ff6655" "red"))
+          (t                                                 '("#f38ba8" "#ff6655" "red"))))
    (_maroon
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#ea999c" "#ff6655" "red"))
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#eba0ac" "#ff6655" "red"))
-          (t                                             '("#ee99a0" "#ff6655" "red"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#e64553" "#ff6655" "red")) ; maroon
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#ea999c" "#ff6655" "red"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#ee99a0" "#ff6655" "red"))
+          (t                                                 '("#eba0ac" "#ff6655" "red"))))
    (_peach
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#ef9f76" "#dd8844" "brightred")) ; peach
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#fab387" "#dd8844" "brightred"))
-          (t                                             '("#f5a97f" "#dd8844" "brightred"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#fe640b" "#dd8844" "brightred")) ; peach
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#ef9f76" "#dd8844" "brightred"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#f5a97f" "#dd8844" "brightred"))
+          (t                                                 '("#fab387" "#dd8844" "brightred"))))
    (_yellow
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#e5c890" "#ecbe7b" "yellow")) ; yellow
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#f9e2af" "#ecbe7b" "yellow"))
-          (t                                             '("#eed49f" "#ecbe7b" "yellow"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#df8e1d" "#ecbe7b" "yellow")) ; yellow
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#e5c890" "#ecbe7b" "yellow"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#eed49f" "#ecbe7b" "yellow"))
+          (t                                                 '("#f9e2af" "#ecbe7b" "yellow"))))
    (_green
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#a6d189" "#99bb66" "green")) ; green
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#a6e3a1" "#99bb66" "green"))
-          (t                                             '("#a6da95" "#99bb66" "green"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#40a02b" "#99bb66" "green")) ; green
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#a6d189" "#99bb66" "green"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#a6da95" "#99bb66" "green"))
+          (t                                                 '("#a6e3a1" "#99bb66" "green"))))
    (_teal
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#81c8be" "#44b9b1" "brightgreen")) ; teal
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#94e2d5" "#44b9b1" "brightgreen"))
-          (t                                             '("#8bd5ca" "#44b9b1" "brightgreen"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#179299" "#44b9b1" "brightgreen")) ; teal
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#81c8be" "#44b9b1" "brightgreen"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#8bd5ca" "#44b9b1" "brightgreen"))
+          (t                                                 '("#94e2d5" "#44b9b1" "brightgreen"))))
    (_sky
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#99d1db" "#46d9ff" "brightcyan")) ; sky
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#89dceb" "#46d9ff" "brightcyan"))
-          (t                                             '("#91d7e3" "#46d9ff" "brightcyan"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#04a5e5" "#46d9ff" "brightcyan")) ; sky
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#99d1db" "#46d9ff" "brightcyan"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#91d7e3" "#46d9ff" "brightcyan"))
+          (t                                                 '("#89dceb" "#46d9ff" "brightcyan"))))
    (_sapphire
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#85c1dc" "#5699af" "cyan")) ; sapphire
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#74c7ec" "#5699af" "cyan"))
-          (t                                             '("#7dc4e4" "#5699af" "cyan"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#209fb5" "#5699af" "cyan")) ; sapphire
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#85c1dc" "#5699af" "cyan"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#7dc4e4" "#5699af" "cyan"))
+          (t                                                 '("#74c7ec" "#5699af" "cyan"))))
    (_blue
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#8caaee" "#2257a0" "blue")) ; blue
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#89b4fa" "#2257a0" "blue"))
-          (t                                             '("#8aadf4" "#2257a0" "blue"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#1e66f5" "#2257a0" "blue")) ; blue
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#8caaee" "#2257a0" "blue"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#8aadf4" "#2257a0" "blue"))
+          (t                                                 '("#89b4fa" "#2257a0" "blue"))))
    (_lavender
-    (cond ((equal doom-catppuccin-dark-variant "frappe") '("#babbf1" "#51afef" "brightblue")) ; lavender
-          ((equal doom-catppuccin-dark-variant "mocha")  '("#b4befe" "#51afef" "brightblue"))
-          (t                                             '("#b7bdf8" "#51afef" "brightblue"))))
+    (cond ((equal doom-catppuccin-dark-variant "latte")      '("#7287fd" "#51afef" "brightblue")) ; lavender
+          ((equal doom-catppuccin-dark-variant "frappe")     '("#babbf1" "#51afef" "brightblue"))
+          ((equal doom-catppuccin-dark-variant "macchiato")  '("#b7bdf8" "#51afef" "brightblue"))
+          (t                                                 '("#b4befe" "#51afef" "brightblue"))))
 
    (bg _base)
    (fg _text)
