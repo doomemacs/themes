@@ -47,7 +47,7 @@ highlight interactive elements."
 
    (base0 '("black"   "black"   "black"))
    (base1 '("#111111" "#111111" "brightblack"))
-   (base2 '("#242424" "#222222" "brightblack"))
+   (base2 '("#353535" "#333333" "brightblack"))
    (base3 '("#464646" "#444444" "brightblack"))
    (base4 '("#686868" "#666666" "brightblack"))
    (base5 '("#8a8a8a" "#888888" "brightblack"))
@@ -177,7 +177,6 @@ highlight interactive elements."
    (git-commit-comment-detached :foreground warning)
    (git-commit-comment-file :foreground doc-comments)
    ;;;; magit
-   ;; TODO reflog colours
    (magit-blame-hash :foreground fg)
    (magit-blame-date :foreground base6)
    (magit-blame-heading :inherit 'magit-log-author :background base3 :extend t)
@@ -189,8 +188,11 @@ highlight interactive elements."
    (magit-diff-base :foreground (doom-darken orange 0.2))
    (magit-diff-base-highlight :foreground orange)
    (magit-diff-context-highlight :foreground base7 :background base1)
+   (magit-diff-file-heading-selection :inherit 'magit-diff-hunk-heading-selection)
    (magit-diff-hunk-heading :inherit 'diff-hunk-header)
    (magit-diff-hunk-heading-highlight :inherit 'diff-file-header)
+   (magit-diff-hunk-heading-selection :inherit 'magit-diff-hunk-heading-highlight :foreground base7)
+   (magit-diff-lines-heading :inherit 'magit-diff-hunk-heading-highlight)
    (magit-diff-removed :inherit 'diff-removed)
    (magit-diff-removed-highlight :inherit 'magit-diff-context-highlight :foreground vc-deleted)
    (magit-diff-whitespace-warning :foreground bg :background vc-deleted)
@@ -203,6 +205,7 @@ highlight interactive elements."
    (magit-log-date :foreground fg)
    (magit-section-heading :weight 'bold :extend t)
    (magit-section-highlight :background base1)
+   (magit-section-heading-selection :foreground base7 :weight 'bold)
    (magit-tag :foreground vc-added)
    ;;;; marginalia
    ;; TODO (uses many colours)
