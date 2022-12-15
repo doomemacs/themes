@@ -96,7 +96,14 @@ highlight interactive elements."
    (vc-conflict magenta)
 
    ;; theme-local variables
-   (almost-invisible base3))
+   (almost-invisible base3)
+   ;; faded colors for vterm
+   (faded-red     '("#fac7c7" "#ffcccc" "red"))
+   (faded-blue    '("#abc7ff" "#aaccff" "brightblue"))
+   (faded-green   '("#7cab7c" "#77aa77" "green"))
+   (faded-yellow  '("#dcc54c" "#ddcc44" "yellow"))
+   (faded-magenta '("#e59ab3" "#ee99bb" "brightmagenta"))
+   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan")))
 
   ;; Base theme face overrides
   (((cursor &override) :background base7)
@@ -346,14 +353,14 @@ highlight interactive elements."
    (treemacs-git-conflict-face :foreground vc-conflict)
    (treemacs-git-modified-face :foreground vc-modified)
    ;;;; vterm
-   (vterm-color-black :inherit 'term-color-black)
-   (vterm-color-red :inherit 'term-color-red)
-   (vterm-color-blue :inherit 'term-color-blue)
-   (vterm-color-green :inherit 'term-color-green)
-   (vterm-color-yellow :inherit 'term-color-yellow)
-   (vterm-color-magenta :inherit 'term-color-magenta)
-   (vterm-color-cyan :inherit 'term-color-cyan)
-   (vterm-color-white :inherit 'term-color-white)
+   (vterm-color-black :inherit 'term-color-black :background base3)
+   (vterm-color-red :inherit 'term-color-red :background faded-red)
+   (vterm-color-blue :inherit 'term-color-blue :background faded-blue)
+   (vterm-color-green :inherit 'term-color-green :background faded-green)
+   (vterm-color-yellow :inherit 'term-color-yellow :background faded-yellow)
+   (vterm-color-magenta :inherit 'term-color-magenta :background faded-magenta)
+   (vterm-color-cyan :inherit 'term-color-cyan :background faded-cyan)
+   (vterm-color-white :foreground base7 :background base8)
    ;;;; which-key
    (which-key-key-face :foreground base5)
    (which-key-group-description-face :foreground base5)
