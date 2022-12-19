@@ -45,7 +45,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-henna
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by VSCode's Henna theme"
 
   ;; name        default   256       16
   ((bg         '("#21272e" nil       nil            ))
