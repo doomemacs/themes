@@ -108,6 +108,7 @@ highlight interactive elements."
   ;; Base theme face overrides
   (((cursor &override) :background base7)
    (region :inverse-video t)
+   (lazy-highlight :foreground base0 :background (doom-darken highlight 0.1))
    (hl-line :underline doom-meltbus-hl-line)
    ((link &override) :weight 'normal :underline nil :foreground highlight)
    (link-visited :inherit 'link)
@@ -151,8 +152,13 @@ highlight interactive elements."
    (dired-marked :foreground orange :weight 'bold)
    (dired-symlink :foreground doc-comments :weight 'bold)
    ;;;; diredfl
+   (diredfl-deletion :inherit 'dired-mark)
+   (diredfl-deletion-file-name :inherit 'dired-flagged)
+   (diredfl-flag-mark :inherit 'dired-mark)
+   (diredfl-flag-mark-line :inherit 'dired-marked)
    (diredfl-read-priv :foreground fg)
    (diredfl-symlink :foreground cyan :weight 'bold)
+   (diredfl-date-time :foreground base6)
    ;;;; doom-modeline
    (doom-modeline-bar :background fg :foreground bg)
    (doom-modeline-bar-inactive :background base4 :foreground bg)
@@ -163,6 +169,9 @@ highlight interactive elements."
    (doom-modeline-evil-normal-state :foreground base5)
    (doom-modeline-evil-visual-state :foreground white)
    (doom-modeline-evil-operator-state :inherit 'doom-modeline-evil-visual-state)
+   ;;;; embark
+   (embark-target :underline t)
+   (embark-keybinding :foreground builtin)
    ;;;; evil
    ((evil-ex-substitute-replacement &override) :foreground cyan)
    ;;;; evil-snipe
@@ -215,7 +224,17 @@ highlight interactive elements."
    (magit-section-heading-selection :foreground base7 :weight 'bold)
    (magit-tag :foreground vc-added)
    ;;;; marginalia
-   ;; TODO (uses many colours)
+   (marginalia-date :inherit 'diredfl-date-time)
+   (marginalia-documentation :foreground fg)
+   (marginalia-size :inherit 'marginalia-date)
+   (marginalia-file-priv-no :inherit 'diredfl-no-priv)
+   (marginalia-file-priv-dir :inherit 'diredfl-dir-priv)
+   (marginalia-file-priv-exec :inherit 'diredfl-exec-priv)
+   (marginalia-file-priv-link :inherit 'diredfl-link-priv)
+   (marginalia-file-priv-rare :inherit 'diredfl-rare-priv)
+   (marginalia-file-priv-read :inherit 'diredfl-read-priv)
+   (marginalia-file-priv-other :inherit 'diredfl-other-priv)
+   (marginalia-file-priv-write :inherit 'diredfl-write-priv)
    ;;;; markdown <modes:markdown-mode,gfm-mode>
    (markdown-header-face :inherit 'bold :foreground fg)
    (markdown-metadata-key-face :foreground builtin)
@@ -352,6 +371,9 @@ highlight interactive elements."
    ;;;; treemacs
    (treemacs-git-conflict-face :foreground vc-conflict)
    (treemacs-git-modified-face :foreground vc-modified)
+   ;;;; vertico
+   (vertico-current :inherit 'embark-target)
+   (vertico-group-title :inherit 'shadow)
    ;;;; vterm
    (vterm-color-black :inherit 'term-color-black :background base3)
    (vterm-color-red :inherit 'term-color-red :background faded-red)
