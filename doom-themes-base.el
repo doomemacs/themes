@@ -41,6 +41,7 @@
     (font-lock-string-face               :foreground strings)
     (font-lock-type-face                 :foreground type)
     (font-lock-variable-name-face        :foreground variables)
+    (font-lock-number-face               :foreground numbers)
     (font-lock-warning-face              :inherit 'warning)
     (font-lock-negation-char-face        :inherit 'bold :foreground operators)
     (font-lock-preprocessor-face         :inherit 'bold :foreground operators)
