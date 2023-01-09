@@ -11,7 +11,7 @@
     - [doom-acario-light](#doom-acario-light)
     - [doom-city-lights](#doom-city-lights)
     - [doom-challenger-deep](#doom-challenger-deep)
-    - [doom-dark+](#doom-dark+)
+    - [doom-dark+](#doom-dark)
     - [doom-dracula](#doom-dracula)
     - [doom-fairy-floss](#doom-fairy-floss)
     - [doom-gruvbox](#doom-gruvbox)
