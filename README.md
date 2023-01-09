@@ -23,7 +23,7 @@ support, but will work fine anywhere else.
     - [Planned themes](#planned-themes)
 - [Extensions](#extensions)
 - [Complementary plugins](#complementary-plugins)
-- [FAQ](#faq)
+- [Customization](#customization)
 - [Contribute](#contribute)
 
 ## Install
@@ -86,6 +86,8 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-earl-grey                    | original                                                                               | a gentle color scheme, for code (ported by [@JuneKelly](https://github.com/JuneKelly))                                            |
 | doom-ephemeral                    | [link](https://github.com/elenapan/dotfiles)                                           | inspired by the Ephemeral Theme from elenapan's dotfiles (ported by [@karetsu](https://github.com/karetsu))                       |
 | doom-fairy-floss                  | [link](https://github.com/sailorhg/fairyfloss)                                         | a candy colored theme by sailorhg (ported by [@ema2159](https://github.com/ema2159))                                              |
+| doom-feather-dark                 | original                                                                               | a candy colored theme by sailorhg (ported by [@Plunne](https://gitlab.com/Plunne))                                                |
+| doom-feather-light                | original                                                                               | a candy colored theme by sailorhg (ported by [@Plunne](https://gitlab.com/Plunne))                                                |
 | doom-flatwhite                    | [link](https://github.com/biletskyy/flatwhite-syntax)                                  | inspired by Atom's Flatwhite Syntax theme (ported by [@JuneKelly](https://github.com/JuneKelly))                                  |
 | doom-gruvbox                      | [link](https://github.com/morhetz/gruvbox)                                             | inspired by morhetz's Gruvbox (ported by [@JongW](https://github.com/JongW))                                                      |
 | doom-gruvbox-light                | [link](https://github.com/morhetz/gruvbox)                                             | inspired by morhetz's Gruvbox (light) (ported by [@jsoa](https://github.com/jsoa))                                                |
@@ -123,6 +125,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-outrun-electric              | [link](https://github.com/samrap/outrun-theme-vscode)                                  | a high contrast, neon theme inspired by Outrun Electric on VSCode (ported by [@ema2159](https://github.com/ema2159))              |
 | doom-palenight                    | [link](https://github.com/equinusocio/vsc-material-theme)                              | adapted from equinusocio's Material themes (ported by [@Brettm12345](https://github.com/Brettm12345))                             |
 | doom-peacock                      | [link](https://github.com/daylerees/colour-schemes/blob/master/emacs/peacock-theme.el) | inspired by daylerees' Peacock (ported by [@teesloane](https://github.com/teesloane))                                             |
+| doom-pine                         | [link](https://github.com/morhetz/gruvbox)                                             | a green-tinged Gruvbox (by [@RomanHargrave](https://github.com/RomanHargrave))                                           |
 | doom-plain                        | [link](https://github.com/gko/plain/)                                                  | inspired by gko's plain theme for VSCode (ported by [@das-s](https://github.com/das-s))                                           |
 | doom-plain-dark                   | [link](https://github.com/gko/plain/)                                                  | inspired by gko's plain theme for VSCode (ported by [@das-s](https://github.com/das-s))                                           |
 | doom-rouge                        | [link](https://github.com/josefaidt/rouge-theme)                                       | ported from VSCode's Rouge Theme (ported by [@das-s](https://github.com/das-s))                                                   |

@@ -37,6 +37,8 @@ body:
       - doom-earl-grey
       - doom-ephemeral
       - doom-fairy-floss
+      - doom-feather-dark
+      - doom-feather-light
       - doom-flatwhite
       - doom-gruvbox-light
       - doom-gruvbox
@@ -71,6 +73,7 @@ body:
       - doom-outrun-electric
       - doom-palenight
       - doom-peacock
+      - doom-pine
       - doom-plain-dark
       - doom-plain
       - doom-rouge
