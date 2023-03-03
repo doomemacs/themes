@@ -72,7 +72,7 @@ Can be an integer to determine the exact padding."
    (base5      '("#98A8A8" "#98A8A8" "brightblack" ))
    (base6      '("#8FAAAB" "#8FAAAB" "brightblack" ))
    (base7      '("#F1E9D2" "#F1E9D2" "brightblack" ))
-   (base8      '("#FBF7EF" "#FBF7EF" "brightblack" ))
+   (base8      '("#FBF7EF" "#FBF7EF" "white" ))
 
    (grey       base4)
    (red        '("#F23749" "#ff6655" "red"          ))
@@ -103,7 +103,7 @@ Can be an integer to determine the exact padding."
    (strings        cyan)
    (variables      violet)
    (numbers        magenta)
-   (region         base0)
+   (region         (doom-lighten bg-alt 0.15))
    (error          red)
    (warning        yellow)
    (success        green)
