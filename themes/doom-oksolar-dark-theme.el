@@ -103,7 +103,7 @@ Can be an integer to determine the exact padding."
    (strings        cyan)
    (variables      violet)
    (numbers        magenta)
-   (region         base1)
+   (region         base0)
    (error          red)
    (warning        yellow)
    (success        green)
