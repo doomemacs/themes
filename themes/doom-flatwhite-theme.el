@@ -594,8 +594,8 @@ determine the exact padding."
    (which-key-local-map-description-face :foreground fw-orange-text-sec)
    (which-key-separator-face             :background bg-alt :foreground comments)
    ;;;; whitespace
-   ((whitespace-tab &override)         :background (unless (default-value 'indent-tabs-mode) base0))
-   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0)))
+   ((whitespace-tab &override)         :background (if (not (default-value 'indent-tabs-mode)) base0 'unspecified))
+   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0 'unspecified)))
 
   ;;;; Base theme variable overrides-
   ()
