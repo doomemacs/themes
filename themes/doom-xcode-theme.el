@@ -71,7 +71,7 @@ Can be an integer to determine the exact padding."
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.14))
    (constants      violet)
-   (functions      dark-blue)
+   (functions      magenta)
    (keywords       pink)
    (methods        dark-blue)
    (operators      orange)
