@@ -88,7 +88,7 @@ Can be an integer to determine the exact padding."
    ;; error, as they are used in the base theme defined in doom-themes-base.
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.1))
-   (selection      dark-blue)
+   (selection      (doom-darken dark-blue 0.5))
    (builtin        magenta)
    (comments       (if doom-kanagawa-brighter-comments dark-cyan base5))
    (doc-comments   (doom-lighten (if doom-kanagawa-brighter-comments dark-cyan base5) 0.25))
