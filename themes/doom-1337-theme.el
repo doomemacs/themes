@@ -170,7 +170,7 @@ Can be an integer to determine the exact padding."
    (doom-themes-treemacs-file-face :foreground fg)
    ;;;; ivy
    (counsel-active-mode :foreground (doom-lighten base6 0.1))
-   (ivy-current-match :background bg)
+   (ivy-current-match :background bg-alt)
    (ivy-minibuffer-match-face-2 :foreground (doom-lighten base6 0.1) :weight 'extra-bold)
    ;;;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)
