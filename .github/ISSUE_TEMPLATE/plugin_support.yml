@@ -2,6 +2,7 @@
 name: 📝 Request support for more packages/faces
 description: Request existing theme(s) add support for a package or new faces
 labels: ["is:faces", "needs-triage"]
+projects: ["doomemacs/2"]
 body:
 - type: dropdown
   attributes:
