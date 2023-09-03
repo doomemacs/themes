@@ -513,6 +513,8 @@
     (elscreen-tab-control-face        :background bg     :foreground bg)
     (elscreen-tab-current-screen-face :background bg-alt :foreground fg)
     (elscreen-tab-other-screen-face   :background bg     :foreground fg-alt)
+    ;;;; embark
+    ((embark-target &inherit vertico-current))
     ;;;; enh-ruby-mode <modes:enh-ruby-mode>
     (enh-ruby-heredoc-delimiter-face :inherit 'font-lock-string-face)
     (enh-ruby-op-face                :foreground operators)
