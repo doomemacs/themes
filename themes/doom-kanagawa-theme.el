@@ -3,13 +3,12 @@
 ;; Added: June 4 2023
 ;; Author: Anskrevy <https://github.com/Anskrevy
 ;; Maintainer:
-;; Source: ????
+;; Source: https://github.com/rebelot/kanagawa.nvim
 ;;
 ;;; Commentary:
 ;;; Original theme by rebelot see: https://github.com/rebelot/kanagawa.nvim
 ;;; Inspiration taken from modified version in https://github.com/NvChad/base46
 ;;; and konrad1977 https://github.com/konrad1977/emacs .
-;;; fi
 ;;
 ;;; Code:
 
