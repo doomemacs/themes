@@ -34,7 +34,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-homage-black
-  "A light theme inspired by Atom One"
+  "A light theme inspired by eziam"
 
   ;; name        default   256       16
   ((bg         '("#000000" nil       nil            ))

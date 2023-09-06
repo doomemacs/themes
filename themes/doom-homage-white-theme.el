@@ -34,7 +34,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-homage-white
-  "A light theme inspired by Atom One"
+  "A light theme inspired by editors from 2000s"
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil            ))
