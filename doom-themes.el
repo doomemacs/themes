@@ -64,6 +64,8 @@
 ;;  - doom-nord-light -- light variant of Nord (ported by @fuxialexander)
 ;;  - doom-nova -- inspired by Trevord Miller's Nova (ported by @bigardone)
 ;;  - doom-oceanic-next -- inspired by Oceanic Next (ported by @juanwolf)
+;;  - doom-oksolar-dark -- an OKLab variant of Solarized dark (ported by @logc)
+;;  - doom-oksolar-light -- an OKLab variant of Solarized light (ported by @logc)
 ;;  - doom-old-hope -- inspired by An Old Hope, in a galaxy far far away (ported by @teesloane)
 ;;  - doom-one -- inspired by Atom One Dark (ported by @hlissner)
 ;;  - doom-one-light -- inspired by Atom One Light (ported by @ztlevi)
