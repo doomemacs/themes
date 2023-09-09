@@ -130,7 +130,7 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-path       :foreground blue :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
 
-   ((line-number &override) :foreground base4)
+   ((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground yellow :bold bold)
 
    ;;;; rainbow-delimiters
