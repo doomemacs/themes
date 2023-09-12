@@ -1129,7 +1129,7 @@
     (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
     (lsp-ui-peek-list :background (doom-darken bg 0.1))
     (lsp-ui-peek-peek :background (doom-darken bg 0.1))
-    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
+    (lsp-ui-peek-highlight :inherit 'isearch :box t)
     (lsp-ui-peek-line-number :foreground success)
     (lsp-ui-sideline-code-action :foreground (doom-blend highlight bg 0.85))
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
@@ -1419,7 +1419,7 @@
     (tldr-description      :foreground fg :weight 'semi-bold)
     (tldr-introduction     :foreground (doom-blend blue bg 0.8) :weight 'semi-bold)
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
-    (tldr-command-argument :foreground fg :background region )
+    (tldr-command-argument :foreground fg :background region)
     ;;;; typescript-mode <modes:typescript-mode,typescript-tsx-mode>
     (typescript-jsdoc-tag :foreground doc-comments)
     (typescript-jsdoc-type :foreground (doom-darken doc-comments 0.15))
@@ -1542,9 +1542,9 @@
     ;;;; xref <built-in>
     ((xref-file-header &inherit compilation-info))
     ((xref-line-number &inherit compilation-line-number))
-    ((xref-match &inherit match))
+    ((xref-match &inherit match)))
     ;;;; --- END Package faces ------------------
-    )
+    
   "TODO")
 
 ;;;; --- Package variables ------------------
