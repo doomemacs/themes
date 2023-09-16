@@ -121,7 +121,9 @@ determine the exact padding."
 
 
   ;;;; Base theme face overrides
-  (((font-lock-comment-face &override) :slant 'italic)
+  (((font-lock-comment-face &override)
+    :background (if doom-rouge-comment-bg (doom-darken bg 0.2) 'unspecified)
+    :slant 'italic)
    ((font-lock-keyword-face &override) :slant 'italic)
    (font-lock-preprocessor-face :foreground magenta :slant 'italic)
    (lazy-highlight :background base4)
