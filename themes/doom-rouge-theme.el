@@ -28,7 +28,7 @@
   :group 'doom-rouge-theme
   :type 'boolean)
 
-(defcustom doom-rouge-comment-bg doom-rouge-brighter-comments
+(defcustom doom-rouge-comment-bg nil
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
   :group 'doom-rouge-theme
@@ -82,7 +82,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.2))
    (selection      base4)
    (builtin        light-red)
-   (comments       grey)
+   (comments       (if doom-rouge-brighter-comments violet grey))
    (doc-comments   green)
    (constants      red)
    (functions      salmon)
