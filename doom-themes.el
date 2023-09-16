@@ -208,8 +208,8 @@
       (maphash (lambda (face plist)
                  (when (keywordp (car plist))
                    ;; TODO Clean up duplicates in &all/&light/&dark blocks
-                   (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold nil))
-                                         (unless doom-themes-enable-italic '(:slant normal :italic nil))))
+                   (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold unspecified))
+                                         (unless doom-themes-enable-italic '(:slant normal :italic unspecified))))
                      (when (and (plist-member plist prop)
                                 (not (eq (plist-get plist prop) 'inherit)))
                        (plist-put plist prop
@@ -431,8 +431,8 @@ theme face specs. These is a simplified spec. For example:
         ',name ,@(doom-themes-prepare-facelist extra-faces))
        (custom-theme-set-variables
         ',name ,@(doom-themes-prepare-varlist extra-vars))
-       (unless bold (set-face-bold 'bold nil))
-       (unless italic (set-face-italic 'italic nil))
+       (unless bold (set-face-bold 'bold 'unspecified))
+       (unless italic (set-face-italic 'italic 'unspecified))
        (provide-theme ',name))))
 
 ;;;###autoload
