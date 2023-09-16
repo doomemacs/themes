@@ -106,7 +106,7 @@ determine the exact padding."
     (when doom-outrun-electric-padded-modeline
       (if (integerp doom-outrun-electric-padded-modeline) doom-outrun-electric-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

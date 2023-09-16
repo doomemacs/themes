@@ -198,7 +198,7 @@ determine the exact padding."
       (if (integerp doom-earl-grey-padded-modeline)
           doom-earl-grey-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt eg-grey6)
 
    (modeline-bg

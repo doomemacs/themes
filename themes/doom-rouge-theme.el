@@ -112,7 +112,7 @@ determine the exact padding."
    (tabs-bar-bg (if doom-rouge-brighter-tabs bg red))
    (tabs-marker (if doom-rouge-brighter-tabs base8 highlight))
 
-   (modeline-fg     nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base6)
    (modeline-bg base1)
    (modeline-bg-l `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))

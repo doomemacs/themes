@@ -108,7 +108,7 @@ determine the exact padding."
     (when doom-peacock-padded-modeline
       (if (integerp doom-peacock-padded-modeline) doom-peacock-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg

@@ -137,7 +137,7 @@ background contrast. All other values default to \"medium\"."
     (when doom-gruvbox-light-padded-modeline
       (if (integerp doom-gruvbox-light-padded-modeline) doom-gruvbox-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg

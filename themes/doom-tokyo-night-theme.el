@@ -128,7 +128,7 @@
     (when doom-tokyo-night-padded-modeline
       (if (integerp doom-tokyo-night-padded-modeline) doom-tokyo-night-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

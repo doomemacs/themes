@@ -117,7 +117,7 @@ Can be an integer to determine the exact padding."
     (when doom-oksolar-dark-padded-modeline
       (if (integerp doom-oksolar-dark-padded-modeline) doom-oksolar-dark-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -134,7 +134,7 @@ Can be an integer to determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-oksolar-dark-brighter-comments (doom-lighten bg 0.05)))
+    :background (if doom-oksolar-dark-brighter-comments (doom-lighten bg 0.05) 'unspecified))
    ((font-lock-keyword-face &override) :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
    ((line-number &override) :foreground base4)

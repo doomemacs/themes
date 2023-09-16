@@ -90,7 +90,7 @@ determine the exact padding."
     (when doom-wilmersdorf-padded-modeline
       (if (integerp doom-wilmersdorf-padded-modeline) doom-wilmersdorf-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

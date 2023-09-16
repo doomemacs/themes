@@ -107,7 +107,7 @@ determine the exact padding."
     (when doom-city-lights-padded-modeline
       (if (integerp doom-city-lights-padded-modeline) doom-city-lights-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

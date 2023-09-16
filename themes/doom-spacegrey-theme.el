@@ -108,7 +108,7 @@ determine the exact padding."
     (when doom-spacegrey-padded-modeline
       (if (integerp doom-spacegrey-padded-modeline) doom-spacegrey-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
    (modeline-bg
     (if -modeline-bright

@@ -115,7 +115,7 @@ determine the exact padding."
     (when doom-nord-light-padded-modeline
       (if (integerp doom-nord-light-padded-modeline) doom-nord-light-padded-modeline 4)))
 
-   (modeline-fg nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg

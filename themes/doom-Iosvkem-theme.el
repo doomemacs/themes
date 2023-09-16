@@ -112,7 +112,7 @@ determine the exact padding."
     (when doom-Iosvkem-padded-modeline
       (if (integerp doom-Iosvkem-padded-modeline) doom-Iosvkem-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg

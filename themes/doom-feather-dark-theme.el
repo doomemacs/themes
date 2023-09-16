@@ -124,7 +124,7 @@ Can be an integer to determine the exact padding."
   (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :background (doom-lighten bg 0.00) :foreground base7 :weight 'bold)
    ((font-lock-comment-face &override)
-    :background (if doom-feather-brighter-comments (doom-lighten bg 0.05)) :italic t)
+    :background (if doom-feather-brighter-comments (doom-lighten bg 0.05) 'unspecified) :italic t)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

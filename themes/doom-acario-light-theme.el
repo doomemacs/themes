@@ -113,7 +113,7 @@ determine the exact padding."
     (when doom-acario-light-padded-modeline
       (if (integerp doom-acario-light-padded-modeline) doom-acario-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

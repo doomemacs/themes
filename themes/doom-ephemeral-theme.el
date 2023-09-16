@@ -131,7 +131,7 @@
    ((line-number-current-line &override) :foreground blue)
    (link :foreground (doom-lighten light-grey 0.3) :inherit 'underline)
    ((font-lock-comment-face &override)
-    :inherit 'bold :background (if doom-ephemeral-brighter-comments (doom-lighten bg 0.05)))
+    :inherit 'bold :background (if doom-ephemeral-brighter-comments (doom-lighten bg 0.05) 'unspecified))
    ((font-lock-builtin-face &override) :inherit 'italic)
    ((font-lock-keyword-face &override) :inherit 'bold)
    (mode-line

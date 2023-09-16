@@ -143,7 +143,7 @@ determine the exact padding."
     (when doom-fw-padded-modeline
       (if (integerp doom-fw-padded-modeline) doom-fw-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt fw-base2)
 
    (modeline-bg

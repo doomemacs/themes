@@ -106,7 +106,7 @@ determine the exact padding."
     (when doom-oceanic-next-padded-modeline
       (if (integerp doom-oceanic-next-padded-modeline) doom-oceanic-next-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg

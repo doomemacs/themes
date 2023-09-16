@@ -120,7 +120,7 @@ determine the exact padding."
     (when (memq doom-nord-aurora-region-highlight '(frost snowstorm))
       base0))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
