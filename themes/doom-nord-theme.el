@@ -117,8 +117,8 @@ determine the exact padding."
       (if (integerp doom-nord-padded-modeline) doom-nord-padded-modeline 4)))
 
    (region-fg
-    (when (memq doom-nord-region-highlight '(frost snowstorm))
-      base0))
+    (if (memq doom-nord-region-highlight '(frost snowstorm))
+      base0 'unspecified))
 
    (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
@@ -140,7 +140,7 @@ determine the exact padding."
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
    ((font-lock-comment-face &override)
-    :background (if doom-nord-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-nord-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((tab-line &override) :background modeline-bg :foreground blue)
    ((tab-line-tab-inactive &override) :foreground dark-blue)
    (mode-line
