@@ -220,6 +220,7 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (org-headline-done :foreground syntax-comment)
    (org-document-info-keyword :foreground comments)
+   (org-macro :foreground syntax-operator)
    ;;;; mic-paren
    ((paren-face-match &override) :foreground fg :background ui-selection-bg :weight 'ultra-bold)
    ;;;; rjsx-mode
