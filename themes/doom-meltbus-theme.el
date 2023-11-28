@@ -141,6 +141,8 @@ highlight interactive elements."
    (diff-changed :foreground vc-modified)
    (diff-header :foreground fg :weight 'bold)
    (diff-hunk-header :foreground base7 :background base3)
+   (diff-indicator-added :foreground vc-added)
+   (diff-indicator-removed :foreground vc-deleted)
    (diff-file-header :foreground fg :background base3 :weight 'bold)
    (diff-refine-added :foreground bg :background vc-added :distant-foreground fg)
    (diff-refine-changed :foreground bg :background vc-modified :distant-foreground fg)
