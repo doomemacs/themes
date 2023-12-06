@@ -146,7 +146,8 @@ determine the exact padding."
     :foreground (if -modeline-bright base8 highlight))
    ((region &override)
     :foreground (if (memq doom-nord-light-region-highlight '(frost snowstorm))
-                    bg-alt))
+                    bg-alt
+                  'unspecified))
 
    ;;;; css-mode <built-in> / scss-mode <built-in>
    (css-proprietary-property :foreground orange)
