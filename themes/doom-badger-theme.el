@@ -135,7 +135,8 @@ determine the exact padding."
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
    ((line-number &override) :foreground base6)
-   ((line-number-current-line &override) :foreground fg)
+   ((line-number-current-line &override)
+    :foreground fg
     :background (if doom-badger-comment-bg (doom-lighten bg 0.05)))
    (mode-line
     :background modeline-bg :foreground modeline-fg
