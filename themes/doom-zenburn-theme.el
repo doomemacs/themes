@@ -147,7 +147,7 @@ Can be an integer to determine the exact padding."
    (font-lock-builtin-face :foreground fg :weight 'bold)
    (font-lock-comment-delimiter-face :foreground green-2)
    ((font-lock-comment-face &override)
-    :background (if doom-zenburn-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-zenburn-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-constant-face :foreground green+4)
    (font-lock-doc-face :foreground green+2)
    (font-lock-type-face :foreground blue-1)

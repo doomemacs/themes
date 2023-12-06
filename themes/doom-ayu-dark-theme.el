@@ -171,7 +171,7 @@ determine the exact padding."
    (diff-removed :foreground vcs-removed)
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-ayu-dark-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-ayu-dark-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)

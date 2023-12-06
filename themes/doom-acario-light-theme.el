@@ -130,7 +130,7 @@ determine the exact padding."
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :slant 'italic
-    :background (if doom-acario-light-comment-bg (doom-darken bg 0.05)))
+    :background (if doom-acario-light-comment-bg (doom-darken bg 0.05) 'unspecified))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground orange)
    (mode-line

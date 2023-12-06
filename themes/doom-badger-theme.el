@@ -137,7 +137,7 @@ determine the exact padding."
    ((line-number &override) :foreground base6)
    ((line-number-current-line &override)
     :foreground fg
-    :background (if doom-badger-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-badger-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

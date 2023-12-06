@@ -121,7 +121,7 @@
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :slant 'italic
-    :background (if doom-horizon-comment-bg (doom-lighten bg 0.03)))
+    :background (if doom-horizon-comment-bg (doom-lighten bg 0.03) 'unspecified))
    (fringe :background bg)
    (link :foreground yellow :inherit 'underline)
    ((line-number &override) :foreground hor-highlight-selected)
