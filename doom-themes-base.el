@@ -368,7 +368,7 @@
     ;; (cider-repl-stderr-face :inherit 'font-lock-warning-face)
     ;; (cider-repl-input-face :weight 'bold)
     ;; (cider-repl-result-face )
-    (cider-result-overlay-face :background base3 :box `(:line-width -1 :color base5))
+    (cider-result-overlay-face :background base3 :box `(:line-width -1 :color ,base5))
     (cider-fringe-good-face    :foreground green)
     (cider-deprecated-face     :background (doom-blend bg yellow 0.8))
     (cider-instrumented-face   :background (doom-blend bg red 0.8))
