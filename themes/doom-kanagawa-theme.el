@@ -46,14 +46,14 @@ Can be an integer to determine the exact padding."
   "A dark theme inspired by rebelot/kanagawa.nvim and others."
 
   ;; name        default   256           16
-  ((bg         '("#1d1c1c" "black"       "black"  ))
+  ((bg         '("#181616" "black"       "black"  ))
    (fg         '("#DCD7BA" "#DCD7BA"     "brightwhite"  ))
 
    ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
    ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
    ;; or region), especially when paired with the `doom-darken', `doom-lighten',
    ;; and `doom-blend' helper functions.
-   (bg-alt     '("#181616" "black"       "black"        ))
+   (bg-alt     '("#1D1C19" "black"       "black"        ))
    (fg-alt     '("#C8C093" "#C8C093"     "white"        ))
 
    ;; These should represent a spectrum from bg to fg, where base0 is a starker
@@ -70,15 +70,15 @@ Can be an integer to determine the exact padding."
    (base8      '("#BABDB9" "#BABDB9"     "white"        ))
 
    (grey       base4)
-   (red        '("#d8616b" "#d8616b" "red"          ))
-   (orange     '("#ffa066" "#ffa066" "brightred"    ))
-   (green      '("#98bb6c" "#98bb6c" "green"        ))
+   (red        '("#FF5D62" "#FF5D62" "red"          ))
+   (orange     '("#FFA066" "#FFA066" "brightred"    ))
+   (green      '("#98BB6C" "#98BB6C" "green"        ))
    (teal       '("#7AA89F" "#7AA89F" "brightgreen"  ))
    (yellow     '("#E6C384" "#E6C384" "yellow"       ))
    (blue       '("#7FB4CA" "#7FB4CA" "brightblue"   ))
    (dark-blue  '("#7E9CD8" "#7E9CD8" "blue"         ))
    (magenta    '("#957FB8" "#957FB8" "brightmagenta"))
-   (violet     '("#aaa1c8" "#aaa1c8" "magenta"      ))
+   (violet     '("#9CABCA" "#9CABCA" "magenta"      ))
    (cyan       '("#A3D4D5" "#A3D4D5" "brightcyan"   ))
    (dark-cyan  '("#658594" "#658594" "cyan"         ))
 
@@ -139,6 +139,10 @@ Can be an integer to determine the exact padding."
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if doom-kanagawa-brighter-modeline base8 highlight))
 
+   ;;;; indent-guides
+   (highlight-indent-guides-character-face :foreground base4)
+   (highlight-indent-guides-top-character-face :foreground base4)
+   (highlight-indent-guides-stack-character-face :foreground base4)
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
