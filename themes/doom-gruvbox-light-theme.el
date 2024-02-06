@@ -137,7 +137,7 @@ background contrast. All other values default to \"medium\"."
     (when doom-gruvbox-light-padded-modeline
       (if (integerp doom-gruvbox-light-padded-modeline) doom-gruvbox-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
@@ -154,7 +154,7 @@ background contrast. All other values default to \"medium\"."
 
   ;;;; Base theme face overrides
   ((cursor :background base4)
-   ((font-lock-comment-face &override) :background (if doom-gruvbox-light-comment-bg base0))
+   ((font-lock-comment-face &override) :background (if doom-gruvbox-light-comment-bg base0 'unspecified))
    ((font-lock-doc-face &override) :slant 'italic)
    (isearch           :foreground "black" :background orange)
    (isearch-fail      :foreground fg :background red)
@@ -234,8 +234,8 @@ background contrast. All other values default to \"medium\"."
    (doom-dashboard-footer-icon :foreground (doom-darken yellow 0.4))
    (doom-dashboard-loaded      :foreground yellow)
    ;;;; diff-mode
-   (diff-changed                   :background nil :foreground base6)
-   (diff-removed                   :background nil :foreground red)
+   (diff-changed                   :foreground base6)
+   (diff-removed                   :foreground red)
    (diff-indicator-changed         :inherit 'diff-changed)
    (diff-indicator-added           :inherit 'diff-added)
    (diff-indicator-removed         :inherit 'diff-removed)
@@ -315,16 +315,16 @@ background contrast. All other values default to \"medium\"."
    (js2-warning                    :underline `(:style wave :color ,yellow))
    (js2-error                      :underline `(:style wave :color ,red))
    (js2-external-variable          :underline `(:style wave :color ,cyan))
-   (js2-jsdoc-tag                  :background nil :foreground grey  )
-   (js2-jsdoc-type                 :background nil :foreground light4)
-   (js2-jsdoc-value                :background nil :foreground light3)
-   (js2-function-param             :background nil :foreground cyan)
-   (js2-function-call              :background nil :foreground blue)
-   (js2-instance-member            :background nil :foreground orange)
-   (js2-private-member             :background nil :foreground yellow)
-   (js2-private-function-call      :background nil :foreground faded-aqua)
-   (js2-jsdoc-html-tag-name        :background nil :foreground light4)
-   (js2-jsdoc-html-tag-delimiter   :background nil :foreground light3)
+   (js2-jsdoc-tag                  :foreground grey)
+   (js2-jsdoc-type                 :foreground light4)
+   (js2-jsdoc-value                :foreground light3)
+   (js2-function-param             :foreground cyan)
+   (js2-function-call              :foreground blue)
+   (js2-instance-member            :foreground orange)
+   (js2-private-member             :foreground yellow)
+   (js2-private-function-call      :foreground faded-aqua)
+   (js2-jsdoc-html-tag-name        :foreground light4)
+   (js2-jsdoc-html-tag-delimiter   :foreground light3)
    ;;;; lsp-mode
    (lsp-face-highlight-textual     :background (doom-blend bg orange 0.9) :foreground base0 :distant-foreground base8)
    ;;;; lsp-ui
@@ -468,13 +468,13 @@ background contrast. All other values default to \"medium\"."
    (rainbox-delimiters-depth-8-face :foreground faded-orange)
    (rainbow-delimiters-depth-11-face :foreground delimiter-3)
    (rainbox-delimiters-depth-12-face :foreground faded-orange)
-   (rainbow-delimiters-unmatched-face: :foreground fg :background 'nil)
+   (rainbow-delimiters-unmatched-face: :foreground fg)
    ;;;; swiper
    (swiper-line-face    :background base3 :foreground base0)
-   (swiper-match-face-1 :inherit 'unspecified :background base1   :foreground base5)
-   (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
+   (swiper-match-face-1 :inherit 'unspecified :background base1  :foreground base5)
+   (swiper-match-face-2 :inherit 'unspecified :background orange :foreground base0 :weight 'bold)
    (swiper-match-face-3 :inherit 'unspecified :background violet :foreground base1 :weight 'bold)
-   (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base2 :weight 'bold)
+   (swiper-match-face-4 :inherit 'unspecified :background green  :foreground base2 :weight 'bold)
    (swiper-background-match-face-1 :inherit 'unspecified :background base2)
    (swiper-background-match-face-2 :inherit 'unspecified :background base3)
    (swiper-background-match-face-3 :inherit 'unspecified :background base4)
@@ -505,7 +505,7 @@ background contrast. All other values default to \"medium\"."
    (whitespace-trailing :foreground red :background base1)
    (whitespace-line :foreground red :background base1)
    (whitespace-indentation :foreground base4 :background bg)
-   (whitespace-empty :foreground 'nil :background 'nil))
+   (whitespace-empty))
 
   ;;;; Base theme variable overrides-
   ())

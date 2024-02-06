@@ -116,7 +116,7 @@ Can be an integer to determine the exact padding."
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-lantern-brighter-comments (doom-lighten bg 0.05)))
+    :background (if doom-lantern-brighter-comments (doom-lighten bg 0.05) 'unspecified))
    ;; (hl-line                                     :background brown)
    (mode-line
     :background modeline-bg :foreground modeline-fg

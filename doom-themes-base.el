@@ -41,6 +41,7 @@
     (font-lock-string-face               :foreground strings)
     (font-lock-type-face                 :foreground type)
     (font-lock-variable-name-face        :foreground variables)
+    (font-lock-number-face               :foreground numbers)
     (font-lock-warning-face              :inherit 'warning)
     (font-lock-negation-char-face        :inherit 'bold :foreground operators)
     (font-lock-preprocessor-face         :inherit 'bold :foreground operators)
@@ -324,11 +325,11 @@
     (compilation-mode-line-exit :inherit 'compilation-info)
     (compilation-mode-line-fail :inherit 'compilation-error)
     ;;;; custom <built-in>
-    (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style none))
-    (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style none))
-    (custom-button-pressed-unraised :foreground bg     :background violet :box '(:line-width 1 :style none))
-    (custom-button-pressed          :foreground bg     :background blue   :box '(:line-width 1 :style none))
-    (custom-button-mouse            :foreground bg     :background blue   :box '(:line-width 1 :style none))
+    (custom-button                  :foreground blue   :background bg     :box '(:line-width 1 :style nil))
+    (custom-button-unraised         :foreground violet :background bg     :box '(:line-width 1 :style nil))
+    (custom-button-pressed-unraised :foreground bg     :background violet :box '(:line-width 1 :style nil))
+    (custom-button-pressed          :foreground bg     :background blue   :box '(:line-width 1 :style nil))
+    (custom-button-mouse            :foreground bg     :background blue   :box '(:line-width 1 :style nil))
     (custom-variable-button         :foreground green  :underline t)
     (custom-saved                   :foreground green  :background (doom-blend green bg 0.2) :bold bold)
     (custom-comment                 :foreground fg     :background region)
@@ -1033,6 +1034,45 @@
     (doom-neotree-text-file-face :foreground fg)
     (doom-neotree-data-file-face :foreground violet)
     (doom-neotree-media-file-face :inherit 'doom-neotree-hidden-file-face)
+    ;;;; nerd-icons
+    (nerd-icons-blue       :foreground blue)
+    (nerd-icons-blue-alt   :foreground teal)
+    (nerd-icons-cyan       :foreground cyan)
+    (nerd-icons-cyan-alt   :foreground cyan)
+    (nerd-icons-dblue      :foreground dark-blue)
+    (nerd-icons-dcyan      :foreground dark-cyan)
+    (nerd-icons-dgreen     :foreground (doom-darken green 0.3))
+    (nerd-icons-dmaroon    :foreground (doom-darken magenta 0.3))
+    (nerd-icons-dorange    :foreground (doom-darken orange 0.3))
+    (nerd-icons-dpink      :foreground (doom-lighten red 0.15))
+    (nerd-icons-dpurple    :foreground (doom-darken violet 0.3))
+    (nerd-icons-dred       :foreground (doom-darken red 0.3))
+    (nerd-icons-dsilver    :foreground (doom-lighten grey 0.1))
+    (nerd-icons-dyellow    :foreground (doom-darken yellow 0.3))
+    (nerd-icons-green      :foreground green)
+    (nerd-icons-lblue      :foreground (doom-lighten blue 0.3))
+    (nerd-icons-lcyan      :foreground (doom-lighten cyan 0.3))
+    (nerd-icons-lgreen     :foreground (doom-lighten green 0.3))
+    (nerd-icons-lmaroon    :foreground (doom-lighten magenta 0.3))
+    (nerd-icons-lorange    :foreground (doom-lighten orange 0.3))
+    (nerd-icons-lpink      :foreground (doom-lighten red 0.55))
+    (nerd-icons-lpurple    :foreground (doom-lighten violet 0.3))
+    (nerd-icons-lred       :foreground (doom-lighten red 0.3))
+    (nerd-icons-lsilver    :foreground (doom-lighten grey 0.7))
+    (nerd-icons-lyellow    :foreground (doom-lighten yellow 0.3))
+    (nerd-icons-maroon     :foreground magenta)
+    (nerd-icons-orange     :foreground orange)
+    (nerd-icons-pink       :foreground (doom-lighten red 0.35))
+    (nerd-icons-purple     :foreground violet)
+    (nerd-icons-purple-alt :foreground (doom-blend violet grey 0.15))
+    (nerd-icons-red        :foreground red)
+    (nerd-icons-red-alt    :foreground (doom-blend red grey 0.15))
+    (nerd-icons-silver     :foreground (doom-lighten grey 0.45))
+    (nerd-icons-yellow     :foreground yellow)
+    ;;;; nerd-icons-completion
+    (nerd-icons-completion-dir-face :foreground doc-comments)
+    ;;;; nerd-icons-dired
+    (nerd-icons-dired-dir-face    :foreground doc-comments)
     ;;;; nlinum
     ((nlinum-current-line &inherit line-number-current-line))
     ;;;; nlinum-hl
@@ -1089,7 +1129,7 @@
     (lsp-ui-peek-selection :foreground bg :background blue :bold bold)
     (lsp-ui-peek-list :background (doom-darken bg 0.1))
     (lsp-ui-peek-peek :background (doom-darken bg 0.1))
-    (lsp-ui-peek-highlight :inherit 'lsp-ui-peek-header :background region :foreground bg :box t)
+    (lsp-ui-peek-highlight :inherit 'isearch :box t)
     (lsp-ui-peek-line-number :foreground success)
     (lsp-ui-sideline-code-action :foreground (doom-blend highlight bg 0.85))
     (lsp-ui-sideline-current-symbol :inherit 'highlight)
@@ -1379,7 +1419,7 @@
     (tldr-description      :foreground fg :weight 'semi-bold)
     (tldr-introduction     :foreground (doom-blend blue bg 0.8) :weight 'semi-bold)
     (tldr-code-block       :foreground green :background region :weight 'semi-bold)
-    (tldr-command-argument :foreground fg :background region )
+    (tldr-command-argument :foreground fg :background region)
     ;;;; typescript-mode <modes:typescript-mode,typescript-tsx-mode>
     (typescript-jsdoc-tag :foreground doc-comments)
     (typescript-jsdoc-type :foreground (doom-darken doc-comments 0.15))
@@ -1396,6 +1436,9 @@
     (treemacs-on-success-pulse-face :foreground base0 :background success :extend t)
     (treemacs-root-face             :inherit 'font-lock-string-face :weight 'bold       :height 1.2)
     (treemacs-tags-face             :foreground highlight)
+    ;;;; treemacs-nerd-icons
+    (treemacs-nerd-icons-file-face :foreground doc-comments)
+    (treemacs-nerd-icons-root-face :inherit 'font-lock-string-face :weight 'bold :height 1.2)
     ;;;; twittering-mode
     (twitter-divider  ; custom face in Doom Emacs
      (&light :underline `(:color ,(doom-lighten vertical-bar 0.2)))
@@ -1499,9 +1542,9 @@
     ;;;; xref <built-in>
     ((xref-file-header &inherit compilation-info))
     ((xref-line-number &inherit compilation-line-number))
-    ((xref-match &inherit match))
+    ((xref-match &inherit match)))
     ;;;; --- END Package faces ------------------
-    )
+    
   "TODO")
 
 ;;;; --- Package variables ------------------

@@ -106,7 +106,7 @@ determine the exact padding."
     (when doom-outrun-electric-padded-modeline
       (if (integerp doom-outrun-electric-padded-modeline) doom-outrun-electric-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -123,7 +123,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-outrun-electric-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-outrun-electric-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((font-lock-keyword-face &override) :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
    ((font-lock-function-name-face &override) :foreground functions)

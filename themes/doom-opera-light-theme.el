@@ -112,7 +112,7 @@ determine the exact padding."
     (when doom-opera-light-padded-modeline
       (if (integerp doom-opera-light-padded-modeline) doom-opera-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -128,7 +128,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-opera-light-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-opera-light-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (lazy-highlight :background (doom-blend bg highlight 0.7) :weight 'bold)
    ((line-number &override) :foreground fg-alt)
    ((line-number-current-line &override) :foreground fg)

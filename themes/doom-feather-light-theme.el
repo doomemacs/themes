@@ -124,7 +124,7 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
    (((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :background bg :foreground base5)
-   ((font-lock-comment-face &override) :background (if doom-feather-light-brighter-comments base0) :italic t)
+   ((font-lock-comment-face &override) :background (if doom-feather-light-brighter-comments base0 'unspecified) :italic t)
    ((font-lock-doc-face &override) :slant 'italic)
    (mode-line
     :background modeline-bg :foreground modeline-fg
@@ -223,8 +223,8 @@ Can be an integer to determine the exact padding."
    ;;;; wgrep <built-in>
    (wgrep-face :background base1)
    ;;;; whitespace
-   ((whitespace-tab &override)         :background (unless (default-value 'indent-tabs-mode) base0))
-   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0)))
+   ((whitespace-tab &override)         :background (if (not (default-value 'indent-tabs-mode)) base0 'unspecified))
+   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0 'unspecified)))
 
   ;;;; Base theme variable overrides-
   ()

@@ -111,7 +111,7 @@ Can be an integer to determine the exact padding."
     (when doom-solarized-dark-high-contrast-padded-modeline
       (if (integerp doom-solarized-dark-high-contrast-padded-modeline) doom-solarized-dark-high-contrast-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -130,7 +130,8 @@ Can be an integer to determine the exact padding."
   (((font-lock-comment-face &override)
     :slant 'italic
     :background (if doom-solarized-dark-high-contrast-brighter-comments
-                    (doom-lighten bg 0.05)))
+                    (doom-lighten bg 0.05)
+                  'unspecified))
    ((font-lock-keyword-face &override)  :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
    ((font-lock-type-face &override)     :slant 'italic)

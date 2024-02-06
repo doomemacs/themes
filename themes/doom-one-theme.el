@@ -31,6 +31,12 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-comment-bg doom-one-brighter-comments
+  "If non-nil, comments will have a subtle highlight to enhance their
+legibility."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-one-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
@@ -129,7 +135,7 @@ Can be an integer to determine the exact padding."
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-one-brighter-comments (doom-lighten bg 0.05)))
+    :background (if doom-one-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

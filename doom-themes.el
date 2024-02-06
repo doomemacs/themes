@@ -64,6 +64,8 @@
 ;;  - doom-nord-light -- light variant of Nord (ported by @fuxialexander)
 ;;  - doom-nova -- inspired by Trevord Miller's Nova (ported by @bigardone)
 ;;  - doom-oceanic-next -- inspired by Oceanic Next (ported by @juanwolf)
+;;  - doom-oksolar-dark -- an OKLab variant of Solarized dark (ported by @logc)
+;;  - doom-oksolar-light -- an OKLab variant of Solarized light (ported by @logc)
 ;;  - doom-old-hope -- inspired by An Old Hope, in a galaxy far far away (ported by @teesloane)
 ;;  - doom-one -- inspired by Atom One Dark (ported by @hlissner)
 ;;  - doom-one-light -- inspired by Atom One Light (ported by @ztlevi)
@@ -206,8 +208,8 @@
       (maphash (lambda (face plist)
                  (when (keywordp (car plist))
                    ;; TODO Clean up duplicates in &all/&light/&dark blocks
-                   (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold nil))
-                                         (unless doom-themes-enable-italic '(:slant normal :italic nil))))
+                   (dolist (prop (append (unless doom-themes-enable-bold   '(:weight normal :bold unspecified))
+                                         (unless doom-themes-enable-italic '(:slant normal :italic unspecified))))
                      (when (and (plist-member plist prop)
                                 (not (eq (plist-get plist prop) 'inherit)))
                        (plist-put plist prop
@@ -398,12 +400,12 @@ Variables in EXTRA-VARS override the default ones."
 If THEME is nil, it applies to all themes you load. FACES is a list of Doom
 theme face specs. These is a simplified spec. For example:
 
-  (doom-themes-set-faces 'user
-    '(default :background red :foreground blue)
-    '(doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
-    '(doom-modeline-buffer-file :inherit 'mode-line-buffer-id :weight 'bold)
-    '(doom-modeline-buffer-path :inherit 'mode-line-emphasis :weight 'bold)
-    '(doom-modeline-buffer-project-root :foreground green :weight 'bold))"
+  (doom-themes-set-faces \\='user
+    \\='(default :background red :foreground blue)
+    \\='(doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
+    \\='(doom-modeline-buffer-file :inherit \\='mode-line-buffer-id :weight \\='bold)
+    \\='(doom-modeline-buffer-path :inherit \\='mode-line-emphasis :weight \\='bold)
+    \\='(doom-modeline-buffer-project-root :foreground green :weight \\='bold))"
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)
@@ -429,8 +431,8 @@ theme face specs. These is a simplified spec. For example:
         ',name ,@(doom-themes-prepare-facelist extra-faces))
        (custom-theme-set-variables
         ',name ,@(doom-themes-prepare-varlist extra-vars))
-       (unless bold (set-face-bold 'bold nil))
-       (unless italic (set-face-italic 'italic nil))
+       (unless bold (set-face-bold 'bold 'unspecified))
+       (unless italic (set-face-italic 'italic 'unspecified))
        (provide-theme ',name))))
 
 ;;;###autoload

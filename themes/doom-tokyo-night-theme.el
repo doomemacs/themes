@@ -128,7 +128,7 @@
     (when doom-tokyo-night-padded-modeline
       (if (integerp doom-tokyo-night-padded-modeline) doom-tokyo-night-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -150,7 +150,7 @@
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-tokyo-night-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-tokyo-night-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)

@@ -34,7 +34,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-homage-white
-  "A light theme inspired by Atom One"
+  "A light theme inspired by editors from 2000s"
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil            ))
@@ -95,7 +95,7 @@ determine the exact padding."
     (when doom-homage-white-padded-modeline
       (if (integerp doom-homage-white-padded-modeline) doom-homage-white-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg

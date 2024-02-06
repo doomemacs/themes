@@ -106,7 +106,7 @@ determine the exact padding."
     (when doom-oceanic-next-padded-modeline
       (if (integerp doom-oceanic-next-padded-modeline) doom-oceanic-next-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -127,7 +127,7 @@ determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-oceanic-next-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-oceanic-next-comment-bg (doom-lighten bg 0.05) 'unspecified))
 
    (mode-line
     :background modeline-bg :foreground modeline-fg

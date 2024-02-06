@@ -100,7 +100,7 @@ determine the exact padding."
     (when doom-monokai-classic-padded-modeline
       (if (integerp doom-monokai-classic-padded-modeline) doom-monokai-classic-padded-modeline 4)))
 
-   (modeline-fg nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base4)
 
    (modeline-bg base1)

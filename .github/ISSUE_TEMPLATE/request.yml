@@ -2,6 +2,7 @@
 name: 📝 Feature request
 description: Request a new feature in or change to existing themes
 labels: ["is:feature", "needs-triage"]
+projects: ["doomemacs/2"]
 body:
 - type: textarea
   attributes:

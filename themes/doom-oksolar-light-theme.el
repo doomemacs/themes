@@ -1,10 +1,10 @@
-;;; doom-solarized-light-theme.el --- a light variant of Solarized -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-oksolar-light-theme.el --- an OKLab variant of Solarized light -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Added: January 9, 2018 (#131)
-;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Added:
+;; Author: logc <https://github.com/logc>
 ;; Maintainer:
-;; Source: https://github.com/bbatsov/solarized-emacs
-;; Source: https://ethanschoonover.com/solarized
+;; Source: https://meat.io/oksolar.json
+;; Source: https://meat.io/oksolar
 ;;
 ;;; Commentary:
 ;;; Code:
@@ -15,76 +15,77 @@
 ;;
 ;;; Variables
 
-(defgroup doom-solarized-light-theme nil
-  "Options for the `doom-solarized-light' theme."
+(defgroup doom-oksolar-light-theme nil
+  "Options for the `doom-oksolar-light' theme."
   :group 'doom-themes)
 
-(defcustom doom-solarized-light-brighter-modeline nil
+(defcustom doom-oksolar-light-brighter-modeline nil
   "If non-nil, more vivid colors will be used to style the mode-line."
-  :group 'doom-solarized-light-theme
+  :group 'doom-oksolar-light-theme
   :type 'boolean)
 
-(defcustom doom-solarized-light-brighter-comments nil
+(defcustom doom-oksolar-light-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-solarized-light-theme
+  :group 'doom-oksolar-light-theme
   :type 'boolean)
 
-(defcustom doom-solarized-light-padded-modeline doom-themes-padded-modeline
+(defcustom doom-oksolar-light-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
-  :group 'doom-solarized-light-theme
+  :group 'doom-oksolar-light-theme
   :type '(choice integer boolean))
 
 
 ;;
 ;;; Theme definition
 
-(def-doom-theme doom-solarized-light
-  "A light theme inspired by Solarized light"
+(def-doom-theme doom-oksolar-light
+  "A light theme inspired by OKSolar."
 
   ;; name        default   256       16
-  ((bg         '("#FDF6E3" "#FDF6E3" "white"        ))
-   (fg         '("#556b72" "#556b72" "black"        ))
+  ((bg         '("#FBF7EF" "#FBF7EF" "white"        ))
+   (fg         '("#657377" "#657377" "black"        ))
 
    ;; These are off-color variants of bg/fg, used primarily for `solaire-mode',
    ;; but can also be useful as a basis for subtle highlights (e.g. for hl-line
    ;; or region), especially when paired with the `doom-darken', `doom-lighten',
    ;; and `doom-blend' helper functions.
-   (bg-alt     '("#EEE8D5" "#EEE8D5" "white"        ))
-   (fg-alt     '("#7B8787" "#7B8787" "brightwhite"  ))
+   (bg-alt     '("#F1E9D2" "#F1E9D2" "white"        ))
+   (fg-alt     '("#5B7279" "#5B7279" "brightwhite"  ))
 
    ;; These should represent a spectrum from bg to fg, where base0 is a starker
    ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
    ;; dark grey, base0 should be white and base8 should be black.
-   (base0      '("#FFFBF0" "#FFFBF0" "white"        ))
-   (base1      '("#FCF8ED" "#FCF8ED" "brightblack"  ))
-   (base2      '("#FCF7E8" "#FCF7E8" "brightblack"  ))
-   (base3      '("#F2E6CE" "#F2E6CE" "brightblack"  ))
-   (base4      '("#E1DBCD" "#E1DBCD" "brightblack"  ))
-   (base5      '("#D6D6D6" "#D6D6D6" "brightblack"  ))
-   (base6      '("#96A7A9" "#96A7A9" "brightblack"  ))
-   (base7      '("#788484" "#788484" "brightblack"  ))
-   (base8      '("#626C6C" "#626C6C" "black"        ))
+   (base0      '("#FBF7EF" "#FBF7EF" "white"        ))
+   (base1      '("#F1E9D2" "#F1E9D2" "white"        ))
+   ;; NOTE: base 2 never used, left as-is in Solarized
+   (base2      '("#8FAAAB" "#8FAAAB" "brightblack"  ))
+   (base3      '("#FCF7E8" "#FCF7E8" "brightblack"  ))
+   (base4      '("#8FAAAB" "#8FAAAB" "brightblack"  ))
+   (base5      '("#98A8A8" "#98A8A8" "brightblack"  ))
+   (base6      '("#657377" "#657377" "brightblack"  ))
+   (base7      '("#5B7279" "#5B7279" "brightblack"  ))
+   (base8      '("#657377" "#657377" "brightblack"  ))
 
    (grey       base4)
-   (red        '("#dc322f" "#dc322f" "red"          ))
-   (orange     '("#cb4b16" "#cb4b16" "brightred"    ))
-   (green      '("#859900" "#859900" "green"        ))
-   (teal       '("#35a69c" "#35a69c" "brightgreen"  ))
-   (yellow     '("#b58900" "#b58900" "yellow"       ))
-   (blue       '("#268bd2" "#268bd2" "brightblue"   ))
-   (dark-blue  '("#3F88AD" "#3F88AD" "blue"         ))
-   (magenta    '("#d33682" "#d33682" "magenta"      ))
-   (violet     '("#6c71c4" "#6c71c4" "brightmagenta"))
-   (cyan       '("#2aa198" "#2aa198" "brightcyan"   ))
-   (dark-cyan  '("#204052" "#204052" "cyan"         ))
+   (red        '("#F23749" "#ff6655" "red"          ))
+   (orange     '("#D56500" "#dd8844" "brightred"    ))
+   (green      '("#819500" "#99bb66" "green"        ))
+   (teal       '("#35A69C" "#33aa99" "brightgreen"  ))
+   (yellow     '("#AC8300" "#ECBE7B" "yellow"       ))
+   (blue       '("#2B90D8" "#51afef" "brightblue"   ))
+   (dark-blue  '("#3F88AD" "#2257A0" "blue"         ))
+   (magenta    '("#DD459D" "#c678dd" "magenta"      ))
+   (violet     '("#7D80D1" "#a9a1e1" "brightmagenta"))
+   (cyan       '("#259D94" "#46D9FF" "brightcyan"   ))
+   (dark-cyan  '("#204052" "#5699AF" "cyan"         ))
 
    ;; face categories -- required for all themes
    (highlight      blue)
    (vertical-bar   base4)
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       (if doom-solarized-light-brighter-comments
+   (comments       (if doom-oksolar-light-brighter-comments
                        (doom-lighten teal 0.25)
                      base6))
    (doc-comments   teal)
@@ -106,10 +107,10 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (-modeline-bright doom-solarized-light-brighter-modeline)
+   (-modeline-bright doom-oksolar-light-brighter-modeline)
    (-modeline-pad
-    (when doom-solarized-light-padded-modeline
-      (if (integerp doom-solarized-light-padded-modeline) doom-solarized-light-padded-modeline 4)))
+    (when doom-oksolar-light-padded-modeline
+      (if (integerp doom-oksolar-light-padded-modeline) doom-oksolar-light-padded-modeline 4)))
 
    (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
@@ -129,7 +130,7 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :slant 'italic
-    :background (if doom-solarized-light-brighter-comments
+    :background (if doom-oksolar-light-brighter-comments
                     (doom-blend teal base0 0.07)
                   'unspecified))
    ((font-lock-type-face &override) :slant 'italic)
@@ -137,7 +138,7 @@ Can be an integer to determine the exact padding."
    ((font-lock-function-name-face &override) :foreground type)
    ((font-lock-keyword-face &override) :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
-   (hl-line :background base3)
+   (hl-line :background base1)
    ((line-number &override) :foreground base6)
    ((line-number-current-line &override) :foreground fg :background region :weight 'bold)
    (mode-line
@@ -172,7 +173,7 @@ Can be an integer to determine the exact padding."
    ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)
-   ((markdown-code-face &override) :background (doom-lighten base3 0.05))
+   ((markdown-code-face &override) :background (doom-darken base3 0.05))
    ;;;; ivy
    (ivy-current-match :background (doom-lighten yellow 0.65) :distant-foreground fg)
    (ivy-minibuffer-match-face-1 :foreground blue :background base3 :weight 'bold)
@@ -209,4 +210,4 @@ Can be an integer to determine the exact padding."
   ;; ()
   )
 
-;;; doom-solarized-light-theme.el ends here
+;;; doom-oksolar-light-theme.el ends here

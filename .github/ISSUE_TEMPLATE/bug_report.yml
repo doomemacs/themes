@@ -2,6 +2,7 @@
 name: 📝 Bug Report
 description: Report something that isn't working as intended
 labels: ["is:bug", "needs-triage"]
+projects: ["doomemacs/2"]
 body:
 - type: markdown
   attributes:
@@ -65,6 +66,8 @@ body:
       - doom-nord
       - doom-nova
       - doom-oceanic-next
+      - doom-oksolar-dark
+      - doom-oksolar-light
       - doom-old-hope
       - doom-one-light
       - doom-one

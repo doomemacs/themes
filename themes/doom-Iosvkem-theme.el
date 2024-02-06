@@ -112,7 +112,7 @@ determine the exact padding."
     (when doom-Iosvkem-padded-modeline
       (if (integerp doom-Iosvkem-padded-modeline) doom-Iosvkem-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
@@ -129,7 +129,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-Iosvkem-comment-bg (doom-lighten bg 0.05))
+    :background (if doom-Iosvkem-comment-bg (doom-lighten bg 0.05) 'unspecified)
     :slant 'italic)
    ((font-lock-function-name-face &override) :weight 'bold)
    ((font-lock-doc-face &override) :slant 'normal)

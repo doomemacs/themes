@@ -108,7 +108,7 @@ determine the exact padding."
     (when doom-peacock-padded-modeline
       (if (integerp doom-peacock-padded-modeline) doom-peacock-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
@@ -126,7 +126,7 @@ determine the exact padding."
   ;;;; Base theme face overrides
   ((font-lock-comment-face
     :foreground comments
-    :background (if doom-peacock-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-peacock-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
