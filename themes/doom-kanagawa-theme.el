@@ -38,6 +38,11 @@ Can be an integer to determine the exact padding."
   :group 'doom-kanagawa-theme
   :type '(choice integer boolean))
 
+(defcustom doom-kanagawa-red-cursor nil
+  "If non-nil, cursor will be red."
+  :group 'doom-kanagawa-theme
+  :type 'boolean)
+
 
 ;;
 ;;; Theme definition
@@ -127,7 +132,8 @@ Can be an integer to determine the exact padding."
 
 
   ;;;; Base theme face overrides
-  (((line-number &override) :foreground base4)
+  ((cursor :background (if doom-kanagawa-red-cursor red fg-alt))
+   ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
     :background (if doom-kanagawa-brighter-comments (doom-lighten bg 0.05)))
@@ -143,6 +149,8 @@ Can be an integer to determine the exact padding."
    (highlight-indent-guides-character-face :foreground base4)
    (highlight-indent-guides-top-character-face :foreground base4)
    (highlight-indent-guides-stack-character-face :foreground base4)
+   ;;;; evil-snipe
+   (evil-snipe-first-match-face :foreground (if doom-kanagawa-red-cursor red blue) :background bg-alt)
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
