@@ -46,12 +46,21 @@ See `doom-themes-org-fontify-special-tags'."
   :type '(repeat symbol)
   :group 'doom-themes-org)
 
+(defcustom doom-themes-org-fontify-horizontal-rules t
+  "If non-nil, fontify horizontal rules defined by 5 or more dashes."
+  :type 'boolean
+  :group 'doom-themes-org)
+
 (defface doom-themes-org-at-tag '((t :inherit org-formula))
   "Face used to fontify @-tags in org-mode."
   :group 'doom-themes-org)
 
 (defface doom-themes-org-hash-tag '((t :inherit org-tag))
   "Face used to fontify #hashtags in org-mode."
+  :group 'doom-themes-org)
+
+(defface doom-themes-org-horizontal-rule '((t :inherit org-meta-line))
+  "Face used to fontify horizontal rules in org-mode."
   :group 'doom-themes-org)
 
 
@@ -120,9 +129,10 @@ N is the match index."
                ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
                 (1 'org-indent append)
                 (2 'org-list-dt append)
-                (3 'org-indent append))
+                (3 'org-indent append)))
+             (when doom-themes-org-fontify-horizontal-rules
                ;; and separators/dividers
-               ("^ *\\(-----+\\)$" 1 'org-meta-line))
+               '(("^ *\\(-----+\\)$" 1 'doom-themes-org-horizontal-rule)))
              ;; I like how org-mode fontifies checked TODOs and want this to
              ;; extend to checked checkbox items:
              (when org-fontify-done-headline
