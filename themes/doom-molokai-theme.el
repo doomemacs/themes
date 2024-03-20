@@ -125,8 +125,8 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
   ((cursor :background magenta)
    (lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
-   ((line-number &override) :foreground base5 :distant-foreground nil)
-   ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
+   ((line-number &override) :foreground base5 :distant-foreground 'unspecified)
+   ((line-number-current-line &override) :foreground base7 :distant-foreground 'unspecified)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))
