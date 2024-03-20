@@ -16,11 +16,11 @@
 ;;   (with-eval-after-load 'org-mode
 ;;     (require 'doom-themes-ext-org))
 ;;
-;; Or call `doom-themes-enable-org-config', which does nothing but load this
+;; Or call `doom-themes-org-config', which does nothing but load this
 ;; package (because it's autoloaded).
 ;;
 ;;   (with-eval-after-load 'org-mode
-;;     (doom-themes-enable-org-config))
+;;     (doom-themes-org-config))
 ;;
 ;;; Code:
 
