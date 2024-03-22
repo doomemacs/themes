@@ -605,7 +605,7 @@
     ;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; forge
-    (forge-dimmed :foreground fg-alt)
+    (forge-dimmed :inherit 'magit-dimmed)
     (forge-pullreq-open :inherit 'forge-issue-open)
     (forge-pullreq-merged :inherit 'forge-issue-completed)
     (forge-pullreq-rejected :inherit 'forge-issue-unplanned)
@@ -914,7 +914,7 @@
     (magit-diff-removed-highlight      :foreground vc-deleted                   :background (doom-blend vc-deleted base3 0.2) :weight 'bold :extend t)
     (magit-diffstat-added              :foreground vc-added)
     (magit-diffstat-removed            :foreground vc-deleted)
-    (magit-dimmed :foreground comments)
+    (magit-dimmed :foreground fg-alt)
     (magit-hash :foreground comments)
     (magit-header-line :background dark-blue :foreground base8 :weight 'bold
                        :box `(:line-width 3 :color ,dark-blue))
