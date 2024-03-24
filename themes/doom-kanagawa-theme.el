@@ -105,7 +105,7 @@ Can be an integer to determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
-   (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
+   (region         base3)
    (error          red)
    (warning        yellow)
    (success        green)
@@ -152,7 +152,7 @@ Can be an integer to determine the exact padding."
    ;;;; evil-snipe
    (evil-snipe-first-match-face :foreground (if doom-kanagawa-red-cursor red blue) :background bg-alt)
    ;;;; corfu
-   (corfu-current :background base5)
+   (corfu-current :background base3)
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
