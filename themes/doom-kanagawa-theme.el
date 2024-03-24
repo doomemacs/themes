@@ -151,6 +151,8 @@ Can be an integer to determine the exact padding."
    (highlight-indent-guides-stack-character-face :foreground base4)
    ;;;; evil-snipe
    (evil-snipe-first-match-face :foreground (if doom-kanagawa-red-cursor red blue) :background bg-alt)
+   ;;;; corfu
+   (corfu-current :background base5)
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
    (css-property             :foreground green)
