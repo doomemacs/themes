@@ -604,6 +604,11 @@
     (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
     ;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
+    ;;;; forge
+    (forge-dimmed :foreground fg-alt)
+    (forge-pullreq-open :inherit 'forge-issue-open)
+    (forge-pullreq-merged :inherit 'forge-issue-completed)
+    (forge-pullreq-rejected :inherit 'forge-issue-unplanned)
     ;;;; git-commit
     (git-commit-summary               :foreground strings)
     (git-commit-overlong-summary      :inherit 'error          :background base0 :slant 'italic :weight 'bold)
