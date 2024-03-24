@@ -105,7 +105,7 @@ Can be an integer to determine the exact padding."
    (strings        green)
    (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
-   (region         base3)
+   (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
    (error          red)
    (warning        yellow)
    (success        green)
