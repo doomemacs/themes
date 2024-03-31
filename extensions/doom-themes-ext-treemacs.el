@@ -26,14 +26,14 @@ See `doom-themes-treemacs-variable-pitch-face'."
   :type 'boolean
   :group 'doom-themes-treemacs)
 
-(defcustom doom-themes-treemacs-hide-modelone t
-  "If non-nil, hide the modeline in treemacs buffer."
-  :type 'boolean
-  :group 'doom-themes-treemacs)
-
 (defcustom doom-themes-treemacs-line-spacing 1
   "Line-spacing for treemacs buffer."
   :type 'integer
+  :group 'doom-themes-treemacs)
+
+(defcustom doom-themes-treemacs-hide-modelone t
+  "If non-nil, hide the modeline in treemacs buffer."
+  :type 'boolean
   :group 'doom-themes-treemacs)
 
 (defcustom doom-themes-treemacs-theme "doom-atom"
@@ -90,6 +90,10 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
 (defun doom-themes-setup-line-spacing ()
   "Set `line-spacing' in treemacs buffers."
   (setq line-spacing doom-themes-treemacs-line-spacing))
+
+(defun doom-themes-hide-modeline ()
+  (when doom-themes-treemacs-hide-modeline
+    (setq mode-line-format nil)))
 
 (defun doom-themes-enable-treemacs-variable-pitch-labels (&rest _)
   (when doom-themes-treemacs-enable-variable-pitch
