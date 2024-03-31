@@ -26,6 +26,11 @@ See `doom-themes-treemacs-variable-pitch-face'."
   :type 'boolean
   :group 'doom-themes-treemacs)
 
+(defcustom doom-themes-treemacs-hide-modelone t
+  "If non-nil, hide the modeline in treemacs buffer."
+  :type 'boolean
+  :group 'doom-themes-treemacs)
+
 (defcustom doom-themes-treemacs-line-spacing 1
   "Line-spacing for treemacs buffer."
   :type 'integer
