@@ -135,6 +135,8 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
   ;; Fix #293: tabs messing up formatting in `treemacs-icons-dired-mode'
   (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-fix-treemacs-icons-dired-mode)
 
+  (add-hook 'treemacs-mode-hook #'doom-themes-hide-modeline)
+
   ;; Disable fringes (and reset them everytime treemacs is selected because it
   ;; may change due to outside factors)
   (add-hook 'treemacs-mode-hook #'doom-themes-hide-fringes-maybe)
