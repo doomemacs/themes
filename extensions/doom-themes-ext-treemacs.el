@@ -31,7 +31,7 @@ See `doom-themes-treemacs-variable-pitch-face'."
   :type 'integer
   :group 'doom-themes-treemacs)
 
-(defcustom doom-themes-treemacs-hide-modelone t
+(defcustom doom-themes-treemacs-hide-modeline t
   "If non-nil, hide the modeline in treemacs buffer."
   :type 'boolean
   :group 'doom-themes-treemacs)
