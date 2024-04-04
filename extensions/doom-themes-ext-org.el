@@ -1,6 +1,6 @@
 ;;; doom-themes-ext-org.el --- fix fontification issues in org-mode -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2017-2022 Henrik Lissner
+;; Copyright (C) 2017-2024 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
