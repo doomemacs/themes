@@ -97,7 +97,7 @@ Can be an integer to determine the exact padding."
                  ;; error, as they are used in the base theme defined in doom-themes-base.
                  (highlight      blue)
                  (vertical-bar   (doom-lighten base1 0.1))
-                 (selection      dark-blue)
+                 (selection      yellow)
                  (builtin        magenta)
                  (comments       (if doom-winter-is-coming-brighter-comments green grey))
                  (doc-comments   (doom-lighten (if doom-winter-is-coming-brighter-comments green teal) 0.25))
