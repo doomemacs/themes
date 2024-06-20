@@ -1527,6 +1527,10 @@
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)
     (window-divider-last-pixel  :inherit 'window-divider)
+    ;;;; window-tool-bar
+    (window-tool-bar-button :background bg :foreground fg)
+    (window-tool-bar-button-hover :inherit 'highlight :distant-foreground bg)
+    (window-tool-bar-button-disabled :background bg-alt :foreground fg-alt)
     ;;;; winum
     (winum-face :inherit 'bold :foreground highlight)
     ;;;; woman <built-in>
