@@ -270,8 +270,8 @@ background contrast. All other values default to \"medium\"."
    (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
-   ((show-paren-match &override) :foreground nil :background base5 :bold t)
-   ((show-paren-mismatch &override) :foreground nil :background "red")
+   ((show-paren-match &override) :foreground 'unspecified :background base5 :bold t)
+   ((show-paren-mismatch &override) :foreground 'unspecified :background "red")
    ;;;; swiper
    (swiper-line-face :background bg-alt2)
    ;;;; undo-tree
