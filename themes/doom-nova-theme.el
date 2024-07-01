@@ -89,9 +89,9 @@ determine the exact padding."
    ;; custom categories
    (current-line    base5) ; (doom-lighten bg-alt 0.04)
    (modeline-fg     blue)
-   (modeline-bg     base5) ; bg-alt
+   (modeline-bg     base3)
    (modeline-fg-alt (doom-lighten bg-alt 0.4))
-   (modeline-bg-alt base4)
+   (modeline-bg-alt bg-alt)
 
    (-modeline-pad
     (when doom-nova-padded-modeline
@@ -152,7 +152,9 @@ determine the exact padding."
    (rainbow-delimiters-depth-6-face :foreground yellow)
    (rainbow-delimiters-depth-7-face :foreground teal)
    ;;;; solaire-mode
-   (solaire-hl-line-face :inherit 'hl-line))
+   (solaire-hl-line-face :inherit 'hl-line)
+   ;;;; vertico
+   (vertico-current :background base5))
 
   ;; --- variables --------------------------
   ;; ()
