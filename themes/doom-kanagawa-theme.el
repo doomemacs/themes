@@ -184,6 +184,8 @@ Can be an integer to determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-alt))))
+   ;;;; vterm
+   (vterm-color-bright-black :inherit 'term-color-bright-black :foreground base5)
 
   ;;;; Base theme variable overrides-
   ())
