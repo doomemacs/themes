@@ -368,7 +368,7 @@
     ;; (cider-repl-stderr-face :inherit 'font-lock-warning-face)
     ;; (cider-repl-input-face :weight 'bold)
     ;; (cider-repl-result-face )
-    (cider-result-overlay-face :background base3 :box `(:line-width -1 :color base5))
+    (cider-result-overlay-face :background base3 :box `(:line-width -1 :color ,base5))
     (cider-fringe-good-face    :foreground green)
     (cider-deprecated-face     :background (doom-blend bg yellow 0.8))
     (cider-instrumented-face   :background (doom-blend bg red 0.8))
@@ -605,7 +605,7 @@
     ;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; forge
-    (forge-dimmed :foreground fg-alt)
+    (forge-dimmed :inherit 'magit-dimmed)
     (forge-pullreq-open :inherit 'forge-issue-open)
     (forge-pullreq-merged :inherit 'forge-issue-completed)
     (forge-pullreq-rejected :inherit 'forge-issue-unplanned)
@@ -914,7 +914,7 @@
     (magit-diff-removed-highlight      :foreground vc-deleted                   :background (doom-blend vc-deleted base3 0.2) :weight 'bold :extend t)
     (magit-diffstat-added              :foreground vc-added)
     (magit-diffstat-removed            :foreground vc-deleted)
-    (magit-dimmed :foreground comments)
+    (magit-dimmed :foreground fg-alt)
     (magit-hash :foreground comments)
     (magit-header-line :background dark-blue :foreground base8 :weight 'bold
                        :box `(:line-width 3 :color ,dark-blue))
@@ -1527,6 +1527,10 @@
     (window-divider :inherit 'vertical-border)
     (window-divider-first-pixel :inherit 'window-divider)
     (window-divider-last-pixel  :inherit 'window-divider)
+    ;;;; window-tool-bar
+    (window-tool-bar-button :background bg :foreground fg)
+    (window-tool-bar-button-hover :inherit 'highlight :distant-foreground bg)
+    (window-tool-bar-button-disabled :background bg-alt :foreground fg-alt)
     ;;;; winum
     (winum-face :inherit 'bold :foreground highlight)
     ;;;; woman <built-in>
