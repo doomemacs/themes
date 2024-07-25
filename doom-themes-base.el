@@ -593,7 +593,7 @@
     (flycheck-posframe-face            :inherit 'default)
     (flycheck-posframe-background-face :background bg-alt)
     (flycheck-posframe-error-face      :inherit 'flycheck-posframe-face :foreground error)
-    (flycheck-posframe-info-face       :inherit 'flycheck-posframe-face :foreground fg)
+    (flycheck-posframe-info-face       :inherit 'flycheck-posframe-face :foreground success)
     (flycheck-posframe-warning-face    :inherit 'flycheck-posframe-face :foreground warning)
     ;;;; flymake
     (flymake-error   :underline `(:style wave :color ,red))
