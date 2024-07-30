@@ -47,7 +47,7 @@ highlight interactive elements."
 
    (base0 '("black"   "black"   "black"))
    (base1 '("#111111" "#111111" "brightblack"))
-   (base2 '("#242424" "#222222" "brightblack"))
+   (base2 '("#353535" "#333333" "brightblack"))
    (base3 '("#464646" "#444444" "brightblack"))
    (base4 '("#686868" "#666666" "brightblack"))
    (base5 '("#8a8a8a" "#888888" "brightblack"))
@@ -96,11 +96,19 @@ highlight interactive elements."
    (vc-conflict magenta)
 
    ;; theme-local variables
-   (almost-invisible base3))
+   (almost-invisible base3)
+   ;; faded colors for vterm
+   (faded-red     '("#fac7c7" "#ffcccc" "red"))
+   (faded-blue    '("#abc7ff" "#aaccff" "brightblue"))
+   (faded-green   '("#7cab7c" "#77aa77" "green"))
+   (faded-yellow  '("#dcc54c" "#ddcc44" "yellow"))
+   (faded-magenta '("#e59ab3" "#ee99bb" "brightmagenta"))
+   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan")))
 
   ;; Base theme face overrides
   (((cursor &override) :background base7)
    (region :inverse-video t)
+   (lazy-highlight :foreground base0 :background (doom-darken highlight 0.1))
    (hl-line :underline doom-meltbus-hl-line)
    ((link &override) :weight 'normal :underline nil :foreground highlight)
    (link-visited :inherit 'link)
@@ -133,6 +141,8 @@ highlight interactive elements."
    (diff-changed :foreground vc-modified)
    (diff-header :foreground fg :weight 'bold)
    (diff-hunk-header :foreground base7 :background base3)
+   (diff-indicator-added :foreground vc-added)
+   (diff-indicator-removed :foreground vc-deleted)
    (diff-file-header :foreground fg :background base3 :weight 'bold)
    (diff-refine-added :foreground bg :background vc-added :distant-foreground fg)
    (diff-refine-changed :foreground bg :background vc-modified :distant-foreground fg)
@@ -144,8 +154,13 @@ highlight interactive elements."
    (dired-marked :foreground orange :weight 'bold)
    (dired-symlink :foreground doc-comments :weight 'bold)
    ;;;; diredfl
+   (diredfl-deletion :inherit 'dired-mark)
+   (diredfl-deletion-file-name :inherit 'dired-flagged)
+   (diredfl-flag-mark :inherit 'dired-mark)
+   (diredfl-flag-mark-line :inherit 'dired-marked)
    (diredfl-read-priv :foreground fg)
    (diredfl-symlink :foreground cyan :weight 'bold)
+   (diredfl-date-time :foreground base6)
    ;;;; doom-modeline
    (doom-modeline-bar :background fg :foreground bg)
    (doom-modeline-bar-inactive :background base4 :foreground bg)
@@ -156,6 +171,9 @@ highlight interactive elements."
    (doom-modeline-evil-normal-state :foreground base5)
    (doom-modeline-evil-visual-state :foreground white)
    (doom-modeline-evil-operator-state :inherit 'doom-modeline-evil-visual-state)
+   ;;;; embark
+   (embark-target :underline t)
+   (embark-keybinding :foreground builtin)
    ;;;; evil
    ((evil-ex-substitute-replacement &override) :foreground cyan)
    ;;;; evil-snipe
@@ -177,7 +195,6 @@ highlight interactive elements."
    (git-commit-comment-detached :foreground warning)
    (git-commit-comment-file :foreground doc-comments)
    ;;;; magit
-   ;; TODO reflog colours
    (magit-blame-hash :foreground fg)
    (magit-blame-date :foreground base6)
    (magit-blame-heading :inherit 'magit-log-author :background base3 :extend t)
@@ -189,8 +206,11 @@ highlight interactive elements."
    (magit-diff-base :foreground (doom-darken orange 0.2))
    (magit-diff-base-highlight :foreground orange)
    (magit-diff-context-highlight :foreground base7 :background base1)
+   (magit-diff-file-heading-selection :inherit 'magit-diff-hunk-heading-selection)
    (magit-diff-hunk-heading :inherit 'diff-hunk-header)
    (magit-diff-hunk-heading-highlight :inherit 'diff-file-header)
+   (magit-diff-hunk-heading-selection :inherit 'magit-diff-hunk-heading-highlight :foreground base7)
+   (magit-diff-lines-heading :inherit 'magit-diff-hunk-heading-highlight)
    (magit-diff-removed :inherit 'diff-removed)
    (magit-diff-removed-highlight :inherit 'magit-diff-context-highlight :foreground vc-deleted)
    (magit-diff-whitespace-warning :foreground bg :background vc-deleted)
@@ -203,9 +223,20 @@ highlight interactive elements."
    (magit-log-date :foreground fg)
    (magit-section-heading :weight 'bold :extend t)
    (magit-section-highlight :background base1)
+   (magit-section-heading-selection :foreground base7 :weight 'bold)
    (magit-tag :foreground vc-added)
    ;;;; marginalia
-   ;; TODO (uses many colours)
+   (marginalia-date :inherit 'diredfl-date-time)
+   (marginalia-documentation :foreground fg)
+   (marginalia-size :inherit 'marginalia-date)
+   (marginalia-file-priv-no :inherit 'diredfl-no-priv)
+   (marginalia-file-priv-dir :inherit 'diredfl-dir-priv)
+   (marginalia-file-priv-exec :inherit 'diredfl-exec-priv)
+   (marginalia-file-priv-link :inherit 'diredfl-link-priv)
+   (marginalia-file-priv-rare :inherit 'diredfl-rare-priv)
+   (marginalia-file-priv-read :inherit 'diredfl-read-priv)
+   (marginalia-file-priv-other :inherit 'diredfl-other-priv)
+   (marginalia-file-priv-write :inherit 'diredfl-write-priv)
    ;;;; markdown <modes:markdown-mode,gfm-mode>
    (markdown-header-face :inherit 'bold :foreground fg)
    (markdown-metadata-key-face :foreground builtin)
@@ -342,15 +373,18 @@ highlight interactive elements."
    ;;;; treemacs
    (treemacs-git-conflict-face :foreground vc-conflict)
    (treemacs-git-modified-face :foreground vc-modified)
+   ;;;; vertico
+   (vertico-current :inherit 'embark-target)
+   (vertico-group-title :inherit 'shadow)
    ;;;; vterm
-   (vterm-color-black :inherit 'term-color-black)
-   (vterm-color-red :inherit 'term-color-red)
-   (vterm-color-blue :inherit 'term-color-blue)
-   (vterm-color-green :inherit 'term-color-green)
-   (vterm-color-yellow :inherit 'term-color-yellow)
-   (vterm-color-magenta :inherit 'term-color-magenta)
-   (vterm-color-cyan :inherit 'term-color-cyan)
-   (vterm-color-white :inherit 'term-color-white)
+   (vterm-color-black :inherit 'term-color-black :background base3)
+   (vterm-color-red :inherit 'term-color-red :background faded-red)
+   (vterm-color-blue :inherit 'term-color-blue :background faded-blue)
+   (vterm-color-green :inherit 'term-color-green :background faded-green)
+   (vterm-color-yellow :inherit 'term-color-yellow :background faded-yellow)
+   (vterm-color-magenta :inherit 'term-color-magenta :background faded-magenta)
+   (vterm-color-cyan :inherit 'term-color-cyan :background faded-cyan)
+   (vterm-color-white :foreground base7 :background base8)
    ;;;; which-key
    (which-key-key-face :foreground base5)
    (which-key-group-description-face :foreground base5)
