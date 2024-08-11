@@ -191,7 +191,12 @@
     (ansi-color-magenta        :foreground magenta :background magenta)
     (ansi-color-cyan           :foreground cyan    :background cyan)
     (ansi-color-white          :foreground fg      :background fg)
-    (ansi-color-bright-black   :foreground base0   :background base2)
+    ;; This color is used effectively as grayed out foreground text.
+    ;; base5 and up have too much contrast in light themes;
+    ;; base5 and lower have too little contrast in dark themes.
+    (ansi-color-bright-black
+     (&light :foreground base4 :background base4)
+     (&dark  :foreground base6 :background base6))
     (ansi-color-bright-red     :foreground (doom-lighten red 0.15)     :background (doom-lighten red 0.15))
     (ansi-color-bright-green   :foreground (doom-lighten green 0.15)   :background (doom-lighten green 0.15))
     (ansi-color-bright-yellow  :foreground (doom-lighten yellow 0.15)  :background (doom-lighten yellow 0.15))
