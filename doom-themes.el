@@ -87,6 +87,7 @@
 ;;  - doom-spacegrey -- I'm sure you've heard of it (ported by @teesloane)
 ;;  - doom-tokyo-night -- inspired by VSCode's Tokyo Night theme (ported by @FosterHangdaan)
 ;;  - doom-tokyo-night-light -- a light variant of Tokyo Night (ported by @foster-hangdaan)
+;;  - doom-tokyo-night-moon -- a variant of Tokyo Night based on Folke's port for Neovim. (ported by @foster-hangdaan)
 ;;  - doom-tokyo-night-storm -- a variant of Tokyo Night with a lighter background. (ported by @foster-hangdaan)
 ;;  - doom-tomorrow-day -- a light variant of Tomorrow (ported by @emacswatcher)
 ;;  - doom-tomorrow-night -- One of the dark variants of Tomorrow (ported by @hlissner)
