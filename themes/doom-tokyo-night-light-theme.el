@@ -143,7 +143,7 @@
   ;; --- Extra Faces ------------------------
   (
    ((line-number-current-line &override) :foreground fg)
-   ((line-number &override) :foreground comments :background (doom-darken bg 0.025))
+   ((line-number &override) :foreground base5 :background (doom-darken bg 0.025))
 
    (font-lock-comment-face
     :foreground comments
