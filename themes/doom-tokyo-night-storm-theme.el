@@ -172,6 +172,11 @@
    (mode-line-buffer-id
     :foreground highlight)
 
+   ;;; Doom Dashboard
+   (doom-dashboard-banner :foreground comments :slant 'normal)
+   (doom-dashboard-loaded :foreground comments :slant 'normal)
+   (doom-dashboard-menu-title :foreground magenta :slant 'normal)
+
    ;;; Indentation
    (whitespace-indentation :background bg)
    (whitespace-tab :background bg)
