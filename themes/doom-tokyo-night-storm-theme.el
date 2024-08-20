@@ -287,7 +287,7 @@
    (web-mode-css-pseudo-class-face :foreground orange)
    (web-mode-css-property-name-face :foreground blue)
    (web-mode-css-selector-face :foreground teal)
-   (web-mode-css-selector-class-face :foreground keywords :slant 'nil)
+   (web-mode-css-selector-class-face :foreground keywords :slant 'normal)
    (web-mode-css-selector-tag-face :inherit 'web-mode-css-selector-class-face)
    (web-mode-css-function-face :foreground yellow)
    ;;;; HTML
