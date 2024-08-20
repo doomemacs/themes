@@ -150,10 +150,12 @@
 
    (font-lock-comment-face
     :foreground comments
-    :background (if doom-tokyo-night-comment-bg (doom-lighten bg 0.05) 'unspecified))
+    :background (if doom-tokyo-night-comment-bg (doom-lighten bg 0.05) 'unspecified)
+    :slant 'italic)
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)
+   (font-lock-keyword-face :foreground keywords :slant 'italic)
 
    ;;; Doom Modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
@@ -170,6 +172,11 @@
     :foreground (if -modeline-bright base8 highlight))
    (mode-line-buffer-id
     :foreground highlight)
+
+   ;;; Doom Dashboard
+   (doom-dashboard-banner :foreground comments :slant 'normal)
+   (doom-dashboard-loaded :foreground comments :slant 'normal)
+   (doom-dashboard-menu-title :foreground magenta :slant 'normal)
 
    ;;; Indentation
    (whitespace-indentation :background bg)
@@ -271,6 +278,7 @@
    ;;; web-mode
    (web-mode-json-context-face :foreground brown)
    (web-mode-json-key-face :foreground teal)
+   (web-mode-keyword-face :inherit 'font-lock-keyword-face)
    ;;;; Block
    (web-mode-block-delimiter-face :foreground yellow)
    ;;;; Code
@@ -280,6 +288,8 @@
    (web-mode-css-pseudo-class-face :foreground orange)
    (web-mode-css-property-name-face :foreground blue)
    (web-mode-css-selector-face :foreground teal)
+   (web-mode-css-selector-class-face :foreground keywords :slant 'nil)
+   (web-mode-css-selector-tag-face :inherit 'web-mode-css-selector-class-face)
    (web-mode-css-function-face :foreground yellow)
    ;;;; HTML
    (web-mode-html-attr-engine-face :foreground yellow)
