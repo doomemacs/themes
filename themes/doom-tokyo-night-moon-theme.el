@@ -87,7 +87,7 @@
    (keywords       magenta)
    (methods        dark-cyan)
    (operators      cyan)
-   (type           base8)
+   (type           (doom-lighten dark-blue 0.3))
    (strings        green)
    (variables      fg)
    (numbers        orange)
