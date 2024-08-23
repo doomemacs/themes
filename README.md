@@ -51,7 +51,7 @@ common defaults laid out:
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  ;; Enable custom neotree theme (nerd-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
   (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
@@ -157,8 +157,8 @@ extensions][wiki].
   file drawer; a more minimalistic icon theme plus variable pitch file/directory
   labels, as seen [in the doom-one screenshot](/../screenshots/doom-one.png).
 
-  (This requires `all-the-icons`' fonts to be installed: `M-x
-  all-the-icons-install-fonts`)
+  (This requires `nerd-icons`' fonts to be installed: `M-x
+  nerd-icons-install-fonts`)
 - `(doom-themes-treemacs-config)`: two [treemacs] icon themes, one that takes after
   [Atom]'s, and a second more colorful implementation.
 - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
@@ -228,7 +228,7 @@ support.
 [airline-doom-molokai]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-molokai-theme.png
 [airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
 [airline-themes]: https://github.com/AnthonyDiGirolamo/airline-themes
-[all-the-icons]: https://github.com/domtronn/all-the-icons.el
+[nerd-icons]: https://github.com/rainstormstudio/nerd-icons.el
 [ar1a]: https://github.com/ar1a
 [ashton]: https://github.com/ashton
 [bigardone]: https://github.com/bigardone
