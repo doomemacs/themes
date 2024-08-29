@@ -109,7 +109,7 @@
    (keywords       magenta)
    (methods        blue)
    (operators      dark-cyan)
-   (type           base8)
+   (type           teal)
    (strings        dark-green)
    (variables      base8)
    (numbers        orange)
