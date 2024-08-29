@@ -106,7 +106,7 @@
    (keywords       magenta)
    (methods        blue)
    (operators      teal)
-   (type           base0)
+   (type           teal)
    (strings        dark-green)
    (variables      fg)
    (numbers        orange)
