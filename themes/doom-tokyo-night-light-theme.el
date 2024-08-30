@@ -233,8 +233,8 @@
    (magit-branch-remote   :foreground orange)
    (magit-diff-our :foreground (doom-darken red 0.2) :background (doom-darken red 0.7))
    (magit-diff-our-highlight :foreground red :background (doom-darken red 0.5) :weight 'bold)
-   (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-darken red 0.7))
-   (magit-diff-removed-highlight :foreground red :background (doom-darken red 0.5) :weight 'bold)
+   (magit-diff-removed :foreground (doom-darken red 0.2) :background (doom-lighten red 0.7))
+   (magit-diff-removed-highlight :foreground red :background (doom-lighten red 0.5) :weight 'bold)
 
    ;; --- Major-Mode Faces -------------------
    ;;; elisp
