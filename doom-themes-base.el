@@ -121,6 +121,7 @@
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
     (font-latex-math-face         :foreground blue)
+    (font-latex-sedate-face       :inherit 'font-lock-keyword-face)
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
     (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
     (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
