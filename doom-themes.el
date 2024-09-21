@@ -418,7 +418,8 @@ theme face specs. These is a simplified spec. For example:
 
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
-  (declare (doc-string 2))
+  (declare (doc-string 2)
+           (indent 2))
   (let ((doom-themes--colors defs))
     `(let* ((bold   doom-themes-enable-bold)
             (italic doom-themes-enable-italic)
