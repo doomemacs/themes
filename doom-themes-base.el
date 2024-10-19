@@ -76,12 +76,12 @@
     (line-number
      :inherit 'default
      :foreground base5 :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
     (line-number-current-line
      :inherit '(hl-line default)
      :foreground fg :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
 
     ;;;; --- Package faces ----------------------
@@ -869,7 +869,7 @@
     (jdee-font-lock-doc-tag-face     :foreground violet)
     (jdee-font-lock-italic-face      :inherit 'italic)
     (jdee-font-lock-bold-face        :inherit 'bold)
-    (jdee-font-lock-link-face        :foreground blue :italic nil :underline t)
+    (jdee-font-lock-link-face        :foreground blue :slant nil :underline t)
     ;;;; js2-mode <modes:js2-mode,js2-jsx-mode>
     (js2-function-param    :foreground variables)
     (js2-function-call     :foreground functions)
