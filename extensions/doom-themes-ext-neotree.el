@@ -80,7 +80,7 @@ depending on whether the folder is a repo, symlink or regular folder."
 
 (defun doom-themes--neo-is-repo-dir-p (path)
   (or (file-exists-p (format "%s/.git" path))
-      (all-the-icons-dir-is-submodule path)))
+      (nerd-icons-dir-is-submodule path)))
 
 (defvar doom-themes-neotree-dir-rules
   (eval-when-compile
@@ -89,33 +89,33 @@ depending on whether the folder is a repo, symlink or regular folder."
       ("/\\.[^$/#]+$"
        :face doom-themes-neotree-hidden-file-face)
       (file-symlink-p
-       :icon (all-the-icons-octicon "file-symlink-directory"))
+       :icon (nerd-icons-octicon "nf-oct-file_symlink_directory"))
       (doom-themes--neo-is-repo-dir-p
-       :icon (all-the-icons-octicon "file-submodule"))
-      (t :icon (all-the-icons-octicon "file-directory"))))
+       :icon (nerd-icons-octicon "nf-oct-file_submodule"))
+      (t :icon (nerd-icons-octicon "nf-oct-file_directory"))))
   "TODO")
 
 (defvar doom-themes-neotree-file-rules
   (eval-when-compile
     `((file-symlink-p
-       :icon (all-the-icons-octicon "file-symlink-file"))
+       :icon (nerd-icons-octicon "nf-oct-file_symlink_file"))
       (file-executable-p
        :face doom-themes-neotree-executable-file-face
-       :icon (all-the-icons-octicon "file-binary"))
+       :icon (nerd-icons-octicon "nf-oct-file_binary"))
       ("\\.\\(?:md\\|org\\|rst\\|log\\)\\|/[A-Z_-]+\\(?:\\.[a-z]+\\)?$"
        :face doom-themes-neotree-text-file-face
-       :icon (all-the-icons-octicon "file-text"))
+       :icon (nerd-icons-octicon "nf-oct-file"))
       (,(concat "\\." (regexp-opt '("htm" "html" "phtml" "tpl" "erb" "mustache"
                                     "twig" "ejs" "erb" "jsx" "haml" "inky-haml"
                                     "inky-slim" "slim" "pug" "jade"))
                 "$")
-       :icon (all-the-icons-octicon "file-code"))
+       :icon (nerd-icons-octicon "nf-oct-file_code"))
       (,(concat "\\(?:/\\(?:Gemfile\\|Vagrantfile\\|Makefile\\|Rakefile\\|Cask\\|\\.[^$]+rc\\|\\)\\|"
                 "\\." (regexp-opt '("json" "cson" "yaml" "yml" "xml" "toml"
                                     "tpl" "ini" "erb" "mustache" "twig" "ejs"
                                     "mk" "haml" "pug" "jade"))
                 "\\)$")
-       :icon (all-the-icons-octicon "file-code"))
+       :icon (nerd-icons-octicon "nf-oct-file_code"))
       (,(concat "\\."
                 (regexp-opt '("png" "jpg" "jpeg" "gif" "ico" "tif" "tiff"
                               "svg" "bmp" "psd" "ai" "eps" "indd"         ; images
@@ -123,19 +123,16 @@ depending on whether the folder is a repo, symlink or regular folder."
                               "wav" "mp3" "ogg" "midi"))                  ; audio
                 "$")
        :face doom-themes-neotree-data-file-face
-       :icon (all-the-icons-octicon "file-media"))
+       :icon (nerd-icons-octicon "nf-oct-file_media"))
       (,(concat "\\.\\(?:[gl]?zip\\|bzip2\\|deb\\|dmg\\|iso\\|7z\\|rpm\\|pkg\\|dat\\|[rjt]ar\\(?:\\.gz\\)?\\)$")
        :face doom-themes-neotree-data-file-face
-       :icon (all-the-icons-octicon "file-zip"))
-      ("\\.pdf$"
-       :face doom-themes-neotree-data-file-face
-       :icon (all-the-icons-octicon "file-pdf"))
+       :icon (nerd-icons-octicon "nf-oct-file_zip"))
       ("\\.\\(?:lock\\|resolved\\|dll\\|so\\|pyc\\|elc\\|class\\|css\\.map\\)$"
        :face doom-themes-neotree-hidden-file-face
-       :icon (all-the-icons-octicon "file-binary"))
+       :icon (nerd-icons-octicon "nf-oct-file_binary"))
       ("/\\.[^$/#]+$"
        :face doom-themes-neotree-hidden-file-face)
-      (t :icon (all-the-icons-octicon "file-text"))))
+      (t :icon (nerd-icons-octicon "nf-oct-file"))))
   "TODO")
 
 
@@ -207,35 +204,35 @@ incorrectly, so remove them."
              (propertize
               (if icon
                   (apply (car icon) (cdr icon))
-                (all-the-icons-octicon "file-text"))
+                (nerd-icons-octicon "nf-oct-file"))
               'face `(:inherit ,faces
-                               :family ,(all-the-icons-octicon-family)
-                               :height 1.3)
+                      :family ,(nerd-icons-octicon-family)
+                      :height 1.3)
               'display '(raise 0)))
-            (t (all-the-icons-icon-for-file (neo-path--file-short-name node))))
-    (all-the-icons-fileicon "default")))
+            (t (nerd-icons-icon-for-file (neo-path--file-short-name node))))
+    (nerd-icons-fileicon "default")))
 
 (defun doom--neotree-insert-dir-icon (node type &optional faces)
   (concat (if type
-              (all-the-icons-octicon
-               (format "chevron-%s" (if (eq type 'open) "down" "right"))
+              (nerd-icons-octicon
+               (format "nf-oct-chevron_%s" (if (eq type 'open) "down" "right"))
                :v-adjust 0.1
                :height doom-themes-neotree-chevron-size
                :face `(:inherit ,faces
-                                :family ,(all-the-icons-octicon-family)
-                                :height ,doom-themes-neotree-chevron-size))
+                       :family ,(nerd-icons-octicon-family)
+                       :height ,doom-themes-neotree-chevron-size))
             "\t")
           "\t"
           (when doom-themes-neotree-enable-folder-icons
-            (all-the-icons-octicon
-             (cond ((file-symlink-p node) "file-symlink-directory")
-                   ((file-exists-p (format "%s/.git" node)) "file-submodule")
-                   ((all-the-icons-dir-is-submodule node) "file-submodule")
-                   ("file-directory"))
+            (nerd-icons-octicon
+             (cond ((file-symlink-p node) "nf-oct-file_symlink_directory")
+                   ((file-exists-p (format "%s/.git" node)) "nf-oct-file_submodule")
+                   ((nerd-icons-dir-is-submodule node) "nf-oct-file_submodule")
+                   ("nf-oct-file_directory"))
              :v-adjust 0
              :height doom-themes-neotree-folder-size
              :face `(:inherit ,faces
-                     :family ,(all-the-icons-octicon-family)
+                     :family ,(nerd-icons-octicon-family)
                      :height ,doom-themes-neotree-folder-size)))))
 
 (defun doom--neotree-insert-icon (type node &optional icon faces)
@@ -275,8 +272,8 @@ incorrectly, so remove them."
   (when (display-graphic-p)
     (insert
      (concat (propertize "\t" 'face 'neo-root-dir-face)
-             (all-the-icons-octicon
-              "repo"
+             (nerd-icons-octicon
+              "nf-oct-repo"
               :height doom-themes-neotree-project-size
               :face 'neo-root-dir-face
               :v-adjust -0.1)
@@ -359,8 +356,8 @@ incorrectly, so remove them."
 ;;; Bootstrap
 
 (with-eval-after-load 'neotree
-  (unless (require 'all-the-icons nil t)
-    (error "all-the-icons isn't installed"))
+  (unless (require 'nerd-icons nil t)
+    (error "nerd-icons isn't installed"))
 
   ;; Incompatible with this theme
   (setq neo-vc-integration nil)
