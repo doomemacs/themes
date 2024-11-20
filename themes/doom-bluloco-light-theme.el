@@ -99,6 +99,10 @@
 
 (((font-lock-operator-face &override) :foreground dark-violet)
 
+   ;; line-number
+   (line-number :foreground comments)
+   (line-number-current-line :foreground comments)
+
    ;; mode-line
    (mode-line
     :background modeline-bg :foreground modeline-fg
