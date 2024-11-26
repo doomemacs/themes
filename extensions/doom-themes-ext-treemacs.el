@@ -1,6 +1,6 @@
 ;;; doom-themes-ext-treemacs.el --- ... -*- lexical-binding: t; no-byte-compile: t -*-
 ;;
-;; Copyright (C) 2018-2022 Henrik Lissner
+;; Copyright (C) 2018-2024 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
@@ -113,7 +113,9 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
         (set-face-attribute
          face nil :inherit
          `(,doom-themes-treemacs-variable-pitch-face
-           ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
+           ,@(delq doom-themes-treemacs-variable-pitch-face
+                   (delq 'unspecified
+                         (if (listp faces) faces (list faces))))))))))
 
 (defun doom-themes-fix-treemacs-icons-dired-mode ()
   "Set `tab-width' to 1 in dired-mode if `treemacs-icons-dired-mode' is active."

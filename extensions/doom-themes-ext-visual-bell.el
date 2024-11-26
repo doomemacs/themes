@@ -1,6 +1,6 @@
 ;;; doom-themes-ext-visual-bell.el --- flash mode-line on error -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2019-2022 Henrik Lissner
+;; Copyright (C) 2019-2024 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>

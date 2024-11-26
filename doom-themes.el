@@ -1,6 +1,6 @@
 ;;; doom-themes.el --- an opinionated pack of modern color-themes -*- lexical-binding: t; -*-
 ;;
-;; Copyright (C) 2016-2022 Henrik Lissner
+;; Copyright (C) 2016-2024 Henrik Lissner
 ;;
 ;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
@@ -418,7 +418,8 @@ theme face specs. These is a simplified spec. For example:
 
 (defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
   "Define a DOOM theme, named NAME (a symbol)."
-  (declare (doc-string 2))
+  (declare (doc-string 2)
+           (indent 2))
   (let ((doom-themes--colors defs))
     `(let* ((bold   doom-themes-enable-bold)
             (italic doom-themes-enable-italic)

@@ -154,7 +154,7 @@ Can be an integer to determine the exact padding."
    (font-lock-warning-face :foreground yellow-1 :weight 'bold)
    (font-lock-keyword-face :foreground yellow :weight 'bold)
    (highlight :background base4)
-   (isearch :freground yellow-2 :weight 'bold :background base6)
+   (isearch :foreground yellow-2 :weight 'bold :background base6)
    (isearch-fail :foreground fg :background red-4)
    (lazy-highlight :foreground yellow-2 :weight 'bold :background base3)
    ((line-number &override) :foreground base7)

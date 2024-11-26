@@ -213,6 +213,9 @@ Can be an integer to determine the exact padding."
    ((org-quote &override)                        :inherit 'italic :foreground base7 :background org-quote)
    (org-todo                                     :foreground yellow :bold 'inherit)
    (org-list-dt                                  :foreground yellow)
+   ((org-block &override) :background base2)
+   ((org-block-background &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
    ;;;; php-mode
    (php-php-tag                                  :foreground orange)
    (php-function-name                            :foreground green)

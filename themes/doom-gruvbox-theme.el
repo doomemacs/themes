@@ -71,7 +71,7 @@ background contrast. All other values default to \"medium\"."
    ;; Standardized official colours from gruvbox
    (grey        '("#928374" "#909090" "brightblack"))   ; gray
    (red         '("#fb4934" "#e74c3c" "red"))           ; bright-red
-   (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
+   (magenta     '("#b16286" "#b16286" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
    (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
    (yellow      '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow
@@ -270,8 +270,8 @@ background contrast. All other values default to \"medium\"."
    (rainbow-delimiters-depth-3-face :foreground green)
    (rainbow-delimiters-depth-4-face :foreground blue)
    ;;;; show-paren <built-in>
-   ((show-paren-match &override) :foreground nil :background base5 :bold t)
-   ((show-paren-mismatch &override) :foreground nil :background "red")
+   ((show-paren-match &override) :foreground 'unspecified :background base5 :bold t)
+   ((show-paren-mismatch &override) :foreground 'unspecified :background "red")
    ;;;; swiper
    (swiper-line-face :background bg-alt2)
    ;;;; undo-tree
