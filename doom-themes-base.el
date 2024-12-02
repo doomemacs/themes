@@ -76,12 +76,12 @@
     (line-number
      :inherit 'default
      :foreground base5 :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
     (line-number-current-line
      :inherit '(hl-line default)
      :foreground fg :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
 
     ;;;; --- Package faces ----------------------
@@ -121,6 +121,7 @@
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
     (font-latex-math-face         :foreground blue)
+    (font-latex-sedate-face       :inherit 'font-lock-keyword-face)
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
     (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
     (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
@@ -747,9 +748,10 @@
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
     ;;;; hideshow <built-in>
-    (+fold-hideshow-folded-face :inherit 'font-lock-comment-face
-                                :weight 'light
-                                :background (doom-darken bg 0.125))
+    (+fold-hideshow-folded-face  ; this is defined in Doom Emacs, only
+     :inherit 'font-lock-comment-face
+     :weight 'light
+     :background (doom-darken bg 0.15))
     ;;;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
     ;;;; highlight-indentation-mode
@@ -867,7 +869,7 @@
     (jdee-font-lock-doc-tag-face     :foreground violet)
     (jdee-font-lock-italic-face      :inherit 'italic)
     (jdee-font-lock-bold-face        :inherit 'bold)
-    (jdee-font-lock-link-face        :foreground blue :italic nil :underline t)
+    (jdee-font-lock-link-face        :foreground blue :slant nil :underline t)
     ;;;; js2-mode <modes:js2-mode,js2-jsx-mode>
     (js2-function-param    :foreground variables)
     (js2-function-call     :foreground functions)
@@ -1449,6 +1451,11 @@
     ;;;; treemacs-nerd-icons
     (treemacs-nerd-icons-file-face :foreground doc-comments)
     (treemacs-nerd-icons-root-face :inherit 'font-lock-string-face :weight 'bold :height 1.2)
+    ;;;; ts-fold
+    (ts-fold-fringe-face)
+    ((ts-fold-replacement-face &inherit +fold-hideshow-folded-face))
+    ((ts-fold-replacement-mouse-face &inherit +fold-hideshow-folded-face)
+     :box '(:line-width -1 :style released-button))
     ;;;; twittering-mode
     (twitter-divider  ; custom face in Doom Emacs
      (&light :underline `(:color ,(doom-lighten vertical-bar 0.2)))
