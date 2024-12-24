@@ -3,7 +3,7 @@
 ;; Added: August 8, 2019 (7c7e871f2221)
 ;; Author: Brettm12345 <https://github.com/Brettm12345>
 ;; Maintainer:
-;; Source: https://github.com/equinusocio/vsc-material-theme
+;; Source: https://github.com/material-theme/vsc-material-theme
 ;;
 ;;; Commentary:
 ;;; Code:
