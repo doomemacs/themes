@@ -40,6 +40,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-vibrant
   "A dark theme based off of doom-one with more vibrant colors."
+  :family 'doom-one
+  :background-mode 'light
 
   ;; name        gui       256           16
   ((bg         '("#242730" "black"       "black" ))

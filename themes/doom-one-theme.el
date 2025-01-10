@@ -49,6 +49,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-one
   "A dark theme inspired by Atom One Dark."
+  :family 'doom-one
+  :background-mode 'dark
 
   ;; name        default   256           16
   ((bg         '("#282c34" "black"       "black"  ))
