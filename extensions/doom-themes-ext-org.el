@@ -85,9 +85,8 @@ N is the match index."
   3. Fontify item bullets (make them stand out)
   4. Fontify item checkboxes (and when they're marked done), like TODOs that are
      marked done.
-  5. Fontify dividers/separators (5+ dashes)
-  6. Fontify #hashtags and @at-tags, for personal convenience; see
-     `doom-org-special-tags' to disable this."
+  5. Fontify #hashtags and @at-tags, for personal convenience; see
+     `doom-themes-org-fontify-special-tags' to disable this."
   (let ((org-todo (format org-heading-keyword-regexp-format
                           org-todo-regexp))
         (org-done (format org-heading-keyword-regexp-format
@@ -120,9 +119,7 @@ N is the match index."
                ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
                 (1 'org-indent append)
                 (2 'org-list-dt append)
-                (3 'org-indent append))
-               ;; and separators/dividers
-               ("^ *\\(-----+\\)$" 1 'org-meta-line))
+                (3 'org-indent append)))
              ;; I like how org-mode fontifies checked TODOs and want this to
              ;; extend to checked checkbox items:
              (when org-fontify-done-headline
