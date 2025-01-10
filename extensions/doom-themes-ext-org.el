@@ -92,7 +92,8 @@ N is the match index."
         (org-done (format org-heading-keyword-regexp-format
                           (concat "\\(?:" (mapconcat #'regexp-quote org-done-keywords
                                                      "\\|")
-                                  "\\)"))))
+                                  "\\)")))
+        (org-indent? (featurep 'org-indent)))
     (setq
      org-font-lock-extra-keywords
      (append (org-delete-all
@@ -111,15 +112,15 @@ N is the match index."
              (when (memq 'date org-activate-links)
                '((org-activate-dates (0 'org-date prepend))))
              ;; Make checkbox statistic cookies respect underlying faces
-             '(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
+             `(("\\[\\([0-9]*%\\)\\]\\|\\[\\([0-9]*\\)/\\([0-9]*\\)\\]"
                 (0 (org-get-checkbox-statistics-face) prepend))
                ;; make plain list bullets stand out.
                ;; give spaces before and after list bullet org-indent face to
                ;; keep correct indentation on mixed-pitch-mode
                ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
-                (1 'org-indent append)
+                ,@(if org-indent? '((1 'org-indent append)))
                 (2 'org-list-dt append)
-                (3 'org-indent append)))
+                ,@(if org-indent? '((2 'org-indent append)))))
              ;; I like how org-mode fontifies checked TODOs and want this to
              ;; extend to checked checkbox items:
              (when org-fontify-done-headline
