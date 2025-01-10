@@ -120,6 +120,7 @@
     ;;;; auctex <modes:latex-mode>
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
+    (font-latex-underline-face    :inherit 'underline)
     (font-latex-math-face         :foreground blue)
     (font-latex-sedate-face       :inherit 'font-lock-keyword-face)
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
