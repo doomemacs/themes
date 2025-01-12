@@ -378,12 +378,15 @@ between 0 and 1)."
 ;;; Defining themes
 
 (defun doom-themes--prepare-facelist-1 (specs)
-  (cl-loop for spec in specs
-           collect (list (car spec)
-                         (cl-loop for (key val) on (cadr spec) by #'cddr
-                                  nconc (list key (or val 'unspecified)))
-                         (caddr spec)
-                         (cadddr spec))))
+  (dolist (spec specs specs)
+    (when spec
+      (setcar (cdr spec)
+              (cl-loop for (classes plist . rest) in (cadr spec)
+                       collect
+                       (cons classes
+                             (cons (cl-loop for (key val) on plist by #'cddr
+                                            append (list key (or val 'unspecified)))
+                                   rest)))))))
 
 (defun doom-themes-prepare-facelist (custom-faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
