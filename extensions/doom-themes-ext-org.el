@@ -120,7 +120,7 @@ N is the match index."
                ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
                 ,@(if org-indent? '((1 'org-indent append)))
                 (2 'org-list-dt append)
-                ,@(if org-indent? '((2 'org-indent append)))))
+                ,@(if org-indent? '((3 'org-indent append)))))
              ;; I like how org-mode fontifies checked TODOs and want this to
              ;; extend to checked checkbox items:
              (when org-fontify-done-headline
