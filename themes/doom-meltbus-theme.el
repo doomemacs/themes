@@ -96,14 +96,14 @@ highlight interactive elements."
    (vc-conflict magenta)
 
    ;; theme-local variables
-   (almost-invisible base3))
+   (almost-invisible base3)
    ;; faded colors for vterm
    (faded-red     '("#fac7c7" "#ffcccc" "red"))
    (faded-blue    '("#abc7ff" "#aaccff" "brightblue"))
    (faded-green   '("#7cab7c" "#77aa77" "green"))
    (faded-yellow  '("#dcc54c" "#ddcc44" "yellow"))
    (faded-magenta '("#e59ab3" "#ee99bb" "brightmagenta"))
-   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan"))
+   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan")))
 
   ;; Base theme face overrides
   (((cursor &override) :background base7)
