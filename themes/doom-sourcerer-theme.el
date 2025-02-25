@@ -110,11 +110,11 @@ Can be an integer to determine the exact padding."
 
    (modeline-bg
     (if doom-sourcerer-brighter-modeline
-        modeline-bg
+        `("#383f58" ,@(cdr base1))
       `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
    (modeline-bg-l
     (if doom-sourcerer-brighter-modeline
-        `("#383f58" ,@(cdr base1))
+        modeline-bg
       `(,(car base3) ,@(cdr base0))))
    (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
    (modeline-bg-inactive-l (doom-darken bg 0.20)))

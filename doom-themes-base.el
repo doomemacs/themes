@@ -60,8 +60,8 @@
     ;;;; tab-line/tab-bar (Emacs 27+)
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
-    (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground fg-alt)
-    (tab-line-tab-inactive-alternate :inherit 'tab-line-tab-inactive)
+    (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
+    ((tab-line-tab-inactive-alternate &inherit tab-line-tab-inactive))
     (tab-line-tab-current :background bg :foreground fg)
     ;; (tab-line-special )
     (tab-line-highlight :inherit 'tab-line-tab)
@@ -120,6 +120,7 @@
     ;;;; auctex <modes:latex-mode>
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
+    (font-latex-underline-face    :inherit 'underline)
     (font-latex-math-face         :foreground blue)
     (font-latex-sedate-face       :inherit 'font-lock-keyword-face)
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
@@ -342,7 +343,7 @@
     (custom-comment-tag             :foreground grey)
     (custom-modified                :foreground blue   :background (doom-blend blue bg 0.2))
     (custom-variable-tag            :foreground magenta)
-    (custom-visibility              :foreground blue   :underline 'unspecified)
+    (custom-visibility              :foreground blue)
     (custom-group-subtitle          :foreground red)
     (custom-group-tag               :foreground violet)
     (custom-group-tag-1             :foreground blue)
@@ -407,6 +408,9 @@
     (diff-header  :foreground cyan)
     (diff-file-header :foreground blue)
     (diff-hunk-header :foreground violet)
+    (diff-indicator-added :foreground vc-added)
+    (diff-indicator-changed :foreground vc-modified)
+    (diff-indicator-removed :foreground vc-added)
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
     (diff-refine-removed :inherit 'diff-removed :inverse-video t)
@@ -606,8 +610,8 @@
     (flymake-note    :underline `(:style wave :color ,green))
     (flymake-warning :underline `(:style wave :color ,orange))
     ;;;; flyspell <built-in>
-    (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
-    (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
+    (flyspell-incorrect :underline `(:style wave :color ,error))
+    (flyspell-duplicate :underline `(:style wave :color ,warning))
     ;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; forge
@@ -1383,10 +1387,10 @@
     (symbol-overlay-face-8 :background (doom-blend cyan bg 0.2)    :distant-foreground fg-alt)
     ;;;; swiper
     (swiper-line-face    :background blue    :foreground base0)
-    (swiper-match-face-1 :inherit 'unspecified :background base0   :foreground base5)
-    (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
-    (swiper-match-face-3 :inherit 'unspecified :background magenta :foreground base0 :weight 'bold)
-    (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base0 :weight 'bold)
+    (swiper-match-face-1 :background base0   :foreground base5)
+    (swiper-match-face-2 :background orange  :foreground base0 :weight 'bold)
+    (swiper-match-face-3 :background magenta :foreground base0 :weight 'bold)
+    (swiper-match-face-4 :background green   :foreground base0 :weight 'bold)
     ;;;; tabbar
     (tabbar-default             :foreground bg :background bg :height 1.0)
     (tabbar-highlight           :foreground fg :background selection :distant-foreground bg)

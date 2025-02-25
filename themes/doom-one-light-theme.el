@@ -40,6 +40,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-one-light
   "A light theme inspired by Atom One Light."
+  :family 'doom-one
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#fafafa" "white"   "white"        ))
