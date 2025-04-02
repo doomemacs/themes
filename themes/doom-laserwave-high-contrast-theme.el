@@ -28,7 +28,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-laserwave-high-contrast
-  "An clean 80's synthwave / outrun theme inspired by VS Code laserwave."
+    "An clean 80's synthwave / outrun theme inspired by VS Code laserwave."
 
   ;; name        default   256       16
   ((bg         '("#19151E" nil       nil             ))
@@ -180,7 +180,12 @@ determine the exact padding."
    ;;;; forge
    (forge-issue-open :foreground violet)
    (forge-issue-completed :foreground grey)
-   (forge-issue-unplanned :foreground red)
+   ;;; Set for compatibility with base themes
+   (forge-issue-unplanned :foreground red :strike-through t)
+   (forge-issue-expunged :foreground red :strike-through t)
+   (forge-discussion-open :foreground violet)
+   (forge-discussion-completed :foreground grey)
+   (forge-discussion-expunged :foreground red :strike-through t)
    ;;;; mu4e
    (mu4e-highlight-face :foreground green)
    (mu4e-unread-face :foreground blue :weight 'bold)
