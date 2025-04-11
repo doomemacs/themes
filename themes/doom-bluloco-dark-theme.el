@@ -61,6 +61,16 @@
    (cyan         '("#78F8FF" "#87ffff" "brightcyan"   ))
    (dark-cyan    '("#4d9ea3" "#5fafaf" "brightcyan"   ))
 
+   ;; custom colours
+   (rainbow-red       '("#FF6666"))
+   (rainbow-yellow    '("#f4ff78"))
+   (rainbow-blue      '("#44A5FF"))
+   (rainbow-orange    '("#ffa023"))
+   (rainbow-green     '("#92f535"))
+   (rainbow-violet    '("#ff78ff"))
+   (rainbow-cyan      '("#28e4eb"))
+   (rainbow-indigo    '("#9F7EFE"))
+
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.1))
    (selection      dark-blue)
@@ -148,6 +158,16 @@
    (markdown-language-keyword-face :foreground brown)
    (markdown-strike-through-face :foreground grey :strike-through t)
 
+   ;; outline
+   ((outline-1 &override) :foreground rainbow-red)
+   ((outline-2 &override) :foreground rainbow-yellow)
+   ((outline-3 &override) :foreground rainbow-blue)
+   ((outline-4 &override) :foreground rainbow-orange)
+   ((outline-5 &override) :foreground rainbow-green)
+   ((outline-6 &override) :foreground rainbow-violet)
+   ((outline-7 &override) :foreground rainbow-cyan)
+   ((outline-8 &override) :foreground rainbow-indigo)
+
    ;; org-mode
    ((org-block &override) :background bg-alt)
    ((org-code &override) :foreground brown :background bg)
@@ -158,20 +178,28 @@
    ((org-table &override) :foreground brown)
    ((org-verbatim &override) :foreground brown :background bg)
    (org-ellipsis :underline nil :background bg)
-   (org-level-1 :inherit 'bold :foreground blue :height 1.2)
-   (org-level-2 :inherit 'bold :foreground magenta :height 1.15)
-   (org-level-3 :inherit 'bold :foreground green :height 1.1)
-   (org-level-4 :inherit 'bold :foreground (doom-lighten blue 0.25)  :height 1.05)
+   (org-level-1 :inherit 'bold :foreground rainbow-red :height 1.2)
+   (org-level-2 :inherit 'bold :foreground rainbow-yellow :height 1.15)
+   (org-level-3 :inherit 'bold :foreground rainbow-blue :height 1.1)
+   (org-level-4 :inherit 'bold :foreground rainbow-orange :height 1.05)
+   (org-level-5 :inherit 'bold :foreground rainbow-green)
+   (org-level-6 :inherit 'bold :foreground rainbow-violet)
+   (org-level-7 :inherit 'bold :foreground rainbow-cyan)
+   (org-level-8 :inherit 'bold :foreground rainbow-indigo)
    (org-macro :foreground dark-violet)
 
    ;; org-modern-indent
    (org-modern-indent-line :inherit 'org-block-begin-line)
 
    ;; rainbow delimiters
-   (rainbow-delimiters-depth-1-face :foreground operators)
-   (rainbow-delimiters-depth-2-face :foreground green)
-   (rainbow-delimiters-depth-3-face :foreground blue)
-   (rainbow-delimiters-depth-4-face :foreground magenta)
+   (rainbow-delimiters-depth-1-face :foreground rainbow-red)
+   (rainbow-delimiters-depth-2-face :foreground rainbow-yellow)
+   (rainbow-delimiters-depth-3-face :foreground rainbow-blue)
+   (rainbow-delimiters-depth-4-face :foreground rainbow-orange)
+   (rainbow-delimiters-depth-5-face :foreground rainbow-green)
+   (rainbow-delimiters-depth-6-face :foreground rainbow-violet)
+   (rainbow-delimiters-depth-7-face :foreground rainbow-cyan)
+   (rainbow-delimiters-depth-8-face :foreground rainbow-indigo)
 
    ;; selectrum
    (selectrum-current-candidate :background base1)
