@@ -1,8 +1,4 @@
-;; doom-gruvbox-material-theme.el --- Gruvbox Material (originally by sainnhe) -*- lexical-binding: t; no-byte-compile: t; -*-
-(require 'doom-themes)
-
-;; Compiler pacifier
-(defvar modeline-bg)
+;ar modeline-bg)
 
 ;;
 (defgroup doom-gruvbox-material-theme nil
@@ -31,69 +27,117 @@ background contrast. All other values default to \"medium\"."
   "Dark theme with pastel 'retro groove' colors."
 
   ;; name        gui       256       16
-  ((bg
-    (cond ((equal doom-gruvbox-material-dark-variant "hard") '("#1d2021" "#1e1e1e" nil))   ; bg0_h
-          ((equal doom-gruvbox-material-dark-variant "soft") '("#32302f" "#323232" nil))   ; bg0_s
-          (t                                        '("#282828" "#282828" nil)))) ; bg0
+  (
+   ;; Standardized official colours from gruvbox-material-vscode
+   (bg_s           '("#32302f" "#323232" nil))
+   (bg_m           '("#292828" "#282828" nil))
+   (bg_h           '("#202020" "#1e1e1e" nil))
+   (bg0            '("#101010" "#1d1d1d" "brightblack"))
+   (bg1            '("#1c1c1c" "#282828" "brightblack"))
+   (bg2            '("#32302f" "#383838" "brightblack"))
+   (bg3            '("#383432" "#383838" "brightblack"))
+   (bg4            '("#3c3836" "#5c5c5c" "brightblack"))
+   (bg5            '("#45403d" "#5c5c5c" "brightblack"))
+   (bg6            '("#504945" "#6f6f6f" "brightblack"))
+   (bg7            '("#5a524c" "#6f6f6f" "brightblack"))
+   (bg8            '("#665c54" "#6f6f6f" "brightblack"))
+   (bg9            '("#7c6f64" "#6f6f6f" "brightblack"))
+   (grey0          '("#7c6f64" "#6f6f6f" "grey"))
+   (grey1          '("#928374" "#6f6f6f" "grey"))
+   (grey2          '("#a89984" "#6f6f6f" "brightgrey"))
+
+   (fg_m           '("#d4be98" "#cccccc" "brightwhite"))
+   (fg0            '("#ddc7a1" "#909090" "brightwhite"))
+   (fg1            '("#c5b18d" "#cccccc" "brightwhite"))
+   (red            '("#ea6962" "#e74c3c" "red"))
+   (orange         '("#e78a4e" "#fd971f" "orange"))
+   (yellow         '("#d8a657" "#fabd2f" "yellow"))
+   (green          '("#a9b665" "#b8bb26" "green"))
+   (aqua           '("#89b482" "#8ec07c" "green"))
+   (blue           '("#7daea3" "#83a598" "brightblue"))
+   (purple         '("#d3869b" "#d3869b" "brightmagenta"))
+   (dimRed         '("#b85651" "#e74c3c" "red"))
+   (dimOrange      '("#bd6f3e" "#fd971f" "orange"))
+   (dimYellow      '("#c18f41" "#fabd2f" "yellow"))
+   (dimGreen       '("#8f9a52" "#b8bb26" "green"))
+   (dimAqua        '("#72966c" "#8ec07c" "cyan"))
+   (dimBlue        '("#68948a" "#83a598" "brightblue"))
+   (dimPurple      '("#ab6c7d" "#d3869b" "brightmagenta"))
+
+
+   ;; Mapped colours onto those which Doom Themes expects
+   (bg
+    (pcase doom-gruvbox-material-dark-variant
+      ("hard"      bg_h)
+      ("soft"      bg_s)
+      (_           bg_m)))
    (bg-alt
-    (cond ((equal doom-gruvbox-material-dark-variant "hard") '("#0d1011" "black" nil))     ; (self-defined)
-          ((equal doom-gruvbox-material-dark-variant "soft") '("#282828" "#282828" nil))   ; bg0
-          (t                                        '("#1d2021" "#1e1e1e" nil)))) ; bg_h
-   (bg-alt2    '("#504945" "#504945" "brown"      )) ; bg2 (for region, selection etc.)
+    (pcase doom-gruvbox-material-dark-variant
+      ("hard"      bg1)
+      ("soft"      bg_m)
+      (_           bg_h))) ;; should be darker than bg
+   (bg-alt2
+    (pcase doom-gruvbox-material-dark-variant
+      ("hard"      bg_m)
+      ("soft"      bg3)
+      (_           bg_s))) ;; should be lighter than bg
 
-   (base0      '("#0d1011" "black"   "black"      )) ; (self-defined)
-   (base1      '("#1d2021" "#1d1d1d" "brightblack")) ; bg0_h
-   (base2      '("#282828" "#282828" "brightblack")) ; bg0
-   (base3      '("#3c3836" "#383838" "brightblack")) ; bg1
-   (base4      '("#665c54" "#5c5c5c" "brightblack")) ; bg3
-   (base5      '("#7c6f64" "#6f6f6f" "brightblack")) ; bg4
-   (base6      '("#928374" "#909090" "brightblack")) ; gray
-   (base7      '("#d5c4a1" "#cccccc" "brightblack")) ; fg2
-   (base8      '("#ffe4b6" "#fbfbfb" "brightwhite")) ; fg0
-   (fg         '("#d4be98" "#dfdfdf" "brightwhite")) ; fg/fg1
-   (fg-alt     '("#d4be98" "#cccccc" "brightwhite")) ; fg2
+   (fg             fg_m)
+   (fg-alt         fg1 )
 
-   ;; Standardized official colours from gruvbox-material
-   (grey        '("#928374" "#909090" "brightblack"))   ; gray
-   (red         '("#ea6962" "#e74c3c" "red"))           ; bright-red
-   (magenta     '("#ea6962" "#cc241d" "magenta"))       ; red
-   (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
-   (orange      '("#e78a4e" "#fd971f" "orange"))        ; bright-orange
-   (yellow      '("#d8a657" "#fabd2f" "yellow"))        ; bright-yellow
-   (dark-yellow '("#d8a657" "#fabd2f" "yellow"))        ; yellow
-   (teal        '("#89b482" "#8ec07c" "green"))         ; bright-aqua
-   (green       '("#a9b665" "#b8bb26" "green"))         ; bright-green
-   (dark-green  '("#a9b665" "#98971a" "green"))         ; green
-   (blue        '("#7daea3" "#83a598" "brightblue"))    ; bright-blue
-   (dark-blue   '("#7daea3" "#458588" "blue"))          ; blue
-   (cyan        '("#89b482" "#8ec07c" "brightcyan"))    ; bright-aqua
-   (my-black    '("#37302f" "#37302f" "black"))
-   (dark-cyan   '("#89b482" "#689d6a" "cyan"))          ; aqua
+   (base0          bg0 )
+   (base1          bg1 )
+   (base2          bg2 )
+   (base3          bg5 )
+   (base4          bg7 )
+   (base5          bg9 )
+   (base6          fg1 )
+   (base7          fg_m)
+   (base8          fg0 )
+
+   (violet         purple)
+   (teal           aqua)
+   (magenta        purple)
+   (grey           grey1)
+   (cyan           aqua)
+   (dark-cyan      dimAqua)
+   (dark-blue      dimBlue)
+   (dark-green     dimGreen)
 
    ;; face categories
+   ;; Please see https://www.sainnhe.dev/post/contributing-guide/#color-palette
+   ;; - Red: keywords
+   (keywords       red)
+   ;; - Orange: operators, modifiers
+   (operators      orange)
+   (builtin        orange)
+   ;; - Yellow: types, classes
+   (type           yellow)
+   ;; - Green: functions, methods
+   (functions      green)
+   (methods        green)
+   ;; - Aqua: strings, characters
+   (strings        aqua)
+   ;; - Blue: properties, members
+   (variables      blue)
+   ;; - Purple: values, includes, preproc, special variables
+   (constants      purple)
+   (numbers        purple)
+
+   ;; - Self-defined
    (highlight      yellow)
    (vertical-bar   bg-alt2)
    (selection      bg-alt2)
-   (builtin        orange)
    (comments       (if doom-gruvbox-material-brighter-comments magenta grey))
    (doc-comments   (if doom-gruvbox-material-brighter-comments (doom-lighten magenta 0.2) (doom-lighten fg-alt 0.25)))
-   (constants      violet)
-   (functions      green)
-   (keywords       red)
-   (methods        green)
-   (operators      fg)
-   (type           yellow)
-   (strings        green)
-   (variables      blue)
-   (numbers        violet)
    (region         bg-alt2)
    (error          red)
    (warning        yellow)
    (success        green)
 
-   (vc-modified    (doom-darken cyan 0.15))
-   (vc-added       (doom-darken green 0.15))
-   (vc-deleted     (doom-darken red 0.15))
+   (vc-modified    dimAqua)
+   (vc-added       dimGreen)
+   (vc-deleted     dimRed)
 
    ;; custom categories
    (-modeline-pad
@@ -120,11 +164,12 @@ background contrast. All other values default to \"medium\"."
    ((link &override) :foreground violet)
    (minibuffer-prompt :foreground cyan)
    (mode-line
-    :background my-black :foreground modeline-fg
+    :background bg-alt :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background bg :foreground base4
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-inactive-bg)))
+   (secondary-selection :background (doom-blend bg bg-alt2 0.6))
 
    ;;;; company
    (company-preview-common :foreground cyan)
@@ -208,7 +253,7 @@ background contrast. All other values default to \"medium\"."
    (markdown-url-face :foreground violet)
    (markdown-pre-face  :foreground cyan)
    (markdown-link-face :inherit 'underline :foreground grey)
-   ((markdown-code-face &override) :background (doom-lighten base2 0.045))
+   ((markdown-code-face &override) :background (doom-blend bg bg-alt2 0.6))
    ;;;; mu4e-view
    (mu4e-header-key-face :foreground red :weight 'bold)
    ;;;; neotree
@@ -233,6 +278,8 @@ background contrast. All other values default to \"medium\"."
    ; ((outline-6 &override) :foreground dark-yellow)
    ;;;; org <built-in>
    ((org-code &override) :foreground orange)
+   (org-block :background (doom-blend bg bg-alt 0.4))
+
    (org-date :foreground green)
    (org-document-info :foreground red)
    (org-document-title :foreground red)
