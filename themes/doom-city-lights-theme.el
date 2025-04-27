@@ -1,7 +1,19 @@
-;;; doom-city-lights-theme.el --- inspired by Atom City Lights -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-city-lights-theme.el --- inspired by Atom's City Lights theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (7d6ff334c45a)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://citylights.xyz
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-city-lights-theme nil
   "Options for the `doom-city-lights' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-city-lights-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-city-lights
   "A dark theme inspired by Atom City Lights"
 
@@ -92,7 +107,7 @@ determine the exact padding."
     (when doom-city-lights-padded-modeline
       (if (integerp doom-city-lights-padded-modeline) doom-city-lights-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -108,7 +123,7 @@ determine the exact padding."
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-city-lights-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-city-lights-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

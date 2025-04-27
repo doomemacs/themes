@@ -1,18 +1,11 @@
-;; doom-molokai-theme.el --- inspired by Textmate's Monokai -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-molokai-theme.el --- inspired by Tomas Restrepo's Molokai -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
-;;
+;; Added: September 15, 2016 (32f8b5ae5feb)
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Maintainer:
+;; Source: https://github.com/tomasr/molokai
 ;;
 ;;; Commentary:
-;;
-;; Inspired by the Molokai color scheme available in Textmate.
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -132,8 +125,8 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
   ((cursor :background magenta)
    (lazy-highlight :background violet :foreground base0 :distant-foreground base0 :bold bold)
-   ((line-number &override) :foreground base5 :distant-foreground nil)
-   ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
+   ((line-number &override) :foreground base5 :distant-foreground 'unspecified)
+   ((line-number-current-line &override) :foreground base7 :distant-foreground 'unspecified)
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))

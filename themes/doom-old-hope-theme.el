@@ -1,7 +1,19 @@
-;;; doom-one-theme.el --- inspired by An Old Hope -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-old-hope-theme.el --- inspired by An Old Hope, in a galaxy far far away -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 18, 2018 (#163)
+;; Author: teesloane <https://github.com/teesloane>
+;; Maintainer:
+;; Source: https://github.com/jesseleite/an-old-hope-syntax-atom
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-old-hope-theme nil
   "Options for the `doom-old-hope' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-old-hope-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-old-hope
   "A dark theme inspired by An Old Hope"
 
@@ -112,7 +127,7 @@ determine the exact padding."
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-old-hope-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-old-hope-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

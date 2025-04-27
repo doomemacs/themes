@@ -1,18 +1,12 @@
-;;; doom-1337-theme.el --- inspired by 1337 Theme  -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-1337-theme.el --- ported from VSCode's 1337 theme -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2017 Mark Herpich
-;;
-;; Author: ccmywish <ccmywish@users.noreply.github.com>
-;; Created: December 6, 2020
-;; Version: 1.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: May 22, 2021 (#545)
+;; Author: ccmywish <https://github.com/ccmywish>
+;; Maintainer:
+;; Source: https://github.com/microsoft/vscode-themes/tree/main/1337
+;; Source: https://github.com/MarkMichos/1337-Scheme
 ;;
 ;;; Commentary:
-;;
-;; Ported from: https://github.com/microsoft/vscode-themes/tree/main/1337
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -176,7 +170,7 @@ Can be an integer to determine the exact padding."
    (doom-themes-treemacs-file-face :foreground fg)
    ;;;; ivy
    (counsel-active-mode :foreground (doom-lighten base6 0.1))
-   (ivy-current-match :background bg)
+   (ivy-current-match :background bg-alt)
    (ivy-minibuffer-match-face-2 :foreground (doom-lighten base6 0.1) :weight 'extra-bold)
    ;;;; js2-mode
    (js2-jsdoc-tag              :foreground magenta)

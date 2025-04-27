@@ -1,7 +1,19 @@
-;;; doom-manegarm-theme.el -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-manegarm-theme.el --- an original autumn-inspired dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: December 25, 2019 (#367)
+;; Author: kenranunderscore <https://github.com/kenranunderscore>
+;; Maintainer:
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-manegarm-theme nil
   "Options for the `doom-manegarm' theme."
   :group 'doom-themes)
@@ -26,7 +38,10 @@ real file buffers will now be brighter instead."
   :group 'doom-manegarm-theme
   :type 'boolean)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-manegarm
   "A dark theme with autumn-inspired colors"
 
@@ -103,7 +118,6 @@ real file buffers will now be brighter instead."
   ((button :foreground teal :weight 'bold :underline t)
    (custom-button :foreground teal :weight 'bold :underline t :background bg)
    ((font-lock-comment-face &override)
-    :inherit 'fixed-pitch-serif
     :slant 'italic
     :background nil)
    ((line-number &override) :foreground vertical-bar)

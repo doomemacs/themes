@@ -1,5 +1,18 @@
-;;; doom-peacock-theme.el --- inspired by daylerees Peacock -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-peacock-theme.el --- inspired by daylerees' Peacock -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: November 9, 2017 (#112)
+;; Author: teesloane <https://github.com/teesloane>
+;; Maintainer:
+;; Source: https://github.com/daylerees/colour-schemes/blob/master/emacs/peacock-theme.el
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-peacock-theme nil
   "Options for the `doom-peacock' theme."
@@ -27,7 +40,10 @@ determine the exact padding."
   :group 'doom-peacock-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-peacock
   "Peacock theme from daylerees themes "
 
@@ -92,7 +108,7 @@ determine the exact padding."
     (when doom-peacock-padded-modeline
       (if (integerp doom-peacock-padded-modeline) doom-peacock-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
@@ -110,7 +126,7 @@ determine the exact padding."
   ;;;; Base theme face overrides
   ((font-lock-comment-face
     :foreground comments
-    :background (if doom-peacock-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-peacock-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)

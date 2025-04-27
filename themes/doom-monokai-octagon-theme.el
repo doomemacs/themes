@@ -1,7 +1,19 @@
-;; doom-monokai-octagon-theme.el --- Octagon filter of Monokai Pro -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-monokai-octagon-theme.el --- port of Monokai Octagon -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: May 23, 2021 (#601)
+;; Author: minikN <https://github.com/minikN>
+;; Maintainer:
+;; Source: https://monokai.pro
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
-;;; Code:
+
+;;
+;;; Variables
+
 (defgroup doom-monokai-octagon-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
@@ -23,7 +35,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-monokai-octagon-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-monokai-octagon
   "A dark, vibrant theme inspired by Textmate's Monokai."
 
@@ -197,6 +212,9 @@ Can be an integer to determine the exact padding."
    ((org-quote &override)                        :inherit 'italic :foreground base7 :background org-quote)
    (org-todo                                     :foreground yellow :bold 'inherit)
    (org-list-dt                                  :foreground yellow)
+   ((org-block &override) :background base2)
+   ((org-block-background &override) :background base2)
+   ((org-block-begin-line &override) :background base2)
    ;;;;;; php-mode
    (php-php-tag                                  :foreground orange)
    (php-function-name                            :foreground green)

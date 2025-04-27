@@ -1,7 +1,19 @@
-;;; doom-acario-light-theme.el --- Acario light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-acario-light-theme.el --- an original light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (#319)
+;; Author: gagbo <https://github.com/gagbo>
+;; Maintainer: gagbo <https://github.com/gagbo>
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
+;;
 ;;; Variables
+
 (defgroup doom-acario-light-theme nil
   "Options for the `doom-acario-light' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-acario-light-theme
   :type '(or integer boolean))
 
+
+;;
 ;;; Theme definition
+
 (def-doom-theme doom-acario-light
   "A light theme inspired by Acario light"
 
@@ -98,7 +113,7 @@ determine the exact padding."
     (when doom-acario-light-padded-modeline
       (if (integerp doom-acario-light-padded-modeline) doom-acario-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -115,7 +130,7 @@ determine the exact padding."
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
     :slant 'italic
-    :background (if doom-acario-light-comment-bg (doom-darken bg 0.05)))
+    :background (if doom-acario-light-comment-bg (doom-darken bg 0.05) 'unspecified))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground orange)
    (mode-line

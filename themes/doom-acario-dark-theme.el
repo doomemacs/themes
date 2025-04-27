@@ -1,4 +1,13 @@
-;;; doom-acario-dark-theme.el --- Acario dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-acario-dark-theme.el --- an original dark theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: August 12, 2019 (#319)
+;; Author: gagbo <https://github.com/gagbo>
+;; Maintainer: gagbo <https://github.com/gagbo>
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
 ;;; Variables
@@ -28,7 +37,10 @@ determine the exact padding."
   :group 'doom-acario-dark-theme
   :type '(or integer boolean))
 
+
+;;
 ;;; Theme definition
+
 (def-doom-theme doom-acario-dark
   "A dark theme inspired by Acario"
 
@@ -96,7 +108,7 @@ determine the exact padding."
     (when doom-acario-dark-padded-modeline
       (if (integerp doom-acario-dark-padded-modeline) doom-acario-dark-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base7)
 
    (modeline-bg
@@ -115,7 +127,9 @@ determine the exact padding."
   ((font-lock-comment-face
     :slant 'italic
     :foreground comments
-    :background (if doom-acario-dark-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-acario-dark-comment-bg
+                    (doom-lighten bg 0.05)
+                  'unspecified))
    (font-lock-doc-face
     :inherit 'font-lock-comment-face
     :foreground doc-comments)

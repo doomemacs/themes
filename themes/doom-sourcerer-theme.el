@@ -1,8 +1,19 @@
-;; doom-sourcerer-theme.el --- a more Sourcerer version of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
-;;; Commentary:
-(require 'doom-themes)
-;;; Code:
+;;; doom-sourcerer-theme.el --- a port of xero's Sourcerer -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
+;; Added: August 23, 2018 (#215)
+;; Author: fm0xb <https://github.com/fm0xb>
+;; Maintainer:
+;; Source: https://github.com/xero/sourcerer
+;;
+;;; Commentary:
+;;; Code:
+
+(require 'doom-themes)
+
+
+;;
+;;; Variables
+
 (defgroup doom-sourcerer-theme nil
   "Options for the `doom-sourcerer' theme."
   :group 'doom-themes)
@@ -31,6 +42,8 @@ Can be an integer to determine the exact padding."
 
 
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-sourcerer
   "A dark theme based off of xero's Sourcerer VIM colorscheme"
 
@@ -97,11 +110,11 @@ Can be an integer to determine the exact padding."
 
    (modeline-bg
     (if doom-sourcerer-brighter-modeline
-        modeline-bg
+        `("#383f58" ,@(cdr base1))
       `(,(doom-darken (car bg) 0.15) ,@(cdr base1))))
    (modeline-bg-l
     (if doom-sourcerer-brighter-modeline
-        `("#383f58" ,@(cdr base1))
+        modeline-bg
       `(,(car base3) ,@(cdr base0))))
    (modeline-bg-inactive   `(,(doom-darken (car bg-alt) 0.2) ,@(cdr base0)))
    (modeline-bg-inactive-l (doom-darken bg 0.20)))
@@ -109,7 +122,7 @@ Can be an integer to determine the exact padding."
   ;;;; Base theme face overrides
   ((cursor :background blue)
    ((font-lock-comment-face &override)
-    :background (if doom-sourcerer-comment-bg (doom-darken bg-alt 0.095)))
+    :background (if doom-sourcerer-comment-bg (doom-darken bg-alt 0.095) 'unspecified))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
    (mode-line

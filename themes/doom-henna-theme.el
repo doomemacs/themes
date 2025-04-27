@@ -1,7 +1,19 @@
-;;; doom-henna-theme.el --- inspired by vscode henna theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-henna-theme.el --- based on VSCode's Henna theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 18, 2020 (#441)
+;; Author: jsoa <https://github.com/jsoa>
+;; Maintainer:
+;; Source: https://github.com/httpsterio/vscode-henna
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
-;;; Code:
+
+;;
+;;; Variables
+
 (defgroup doom-henna-theme nil
   "Options for the `doom-henna' theme."
   :group 'doom-themes)
@@ -28,9 +40,12 @@ determine the exact padding."
   :group 'doom-henna-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-henna
-  "A dark theme inspired by Atom One Dark"
+  "A dark theme inspired by VSCode's Henna theme"
 
   ;; name        default   256       16
   ((bg         '("#21272e" nil       nil            ))
@@ -113,7 +128,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-henna-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-henna-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((line-number &override) :foreground base7)
    ((line-number-current-line &override) :foreground fg)
    (mode-line

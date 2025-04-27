@@ -1,4 +1,19 @@
-;;; doom-spacegrey-theme.el --- inspired by Atom Spacegrey Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-spacegrey-theme.el --- I'm sure you've heard of it -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: December 31, 2017 (#129)
+;; Author: teesloane <https://github.com/teesloane>
+;; Maintainer:
+;; Source: http://kkga.github.io/spacegray/
+;;
+;;; Commentary:
+;;; Code:
+
+(require 'doom-themes)
+
+
+;;
+;;; Variables
+
 (require 'doom-themes)
 
 (defgroup doom-spacegrey-theme nil
@@ -27,7 +42,10 @@ determine the exact padding."
   :group 'doom-spacegrey-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-spacegrey
   "A dark theme inspired by Atom Spacegrey Dark"
 
@@ -90,7 +108,7 @@ determine the exact padding."
     (when doom-spacegrey-padded-modeline
       (if (integerp doom-spacegrey-padded-modeline) doom-spacegrey-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
    (modeline-bg
     (if -modeline-bright
@@ -106,7 +124,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-spacegrey-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-spacegrey-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    (mode-line

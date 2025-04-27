@@ -1,17 +1,13 @@
 ;;; doom-one-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
-;;
+;; Added: May 23, 2016 (28620647f838)
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Maintainer: Henrik Lissner <https://github.com/hlissner>
+;; Source: https://github.com/atom/one-dark-ui
 ;;
 ;;; Commentary:
 ;;
-;; Inspired by Atom's One Dark color scheme.
+;; This themepack's flagship theme.
 ;;
 ;;; Code:
 
@@ -35,6 +31,12 @@
   :group 'doom-one-theme
   :type 'boolean)
 
+(defcustom doom-one-comment-bg doom-one-brighter-comments
+  "If non-nil, comments will have a subtle highlight to enhance their
+legibility."
+  :group 'doom-one-theme
+  :type 'boolean)
+
 (defcustom doom-one-padded-modeline doom-themes-padded-modeline
   "If non-nil, adds a 4px padding to the mode-line.
 Can be an integer to determine the exact padding."
@@ -47,6 +49,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-one
   "A dark theme inspired by Atom One Dark."
+  :family 'doom-one
+  :background-mode 'dark
 
   ;; name        default   256           16
   ((bg         '("#282c34" "black"       "black"  ))
@@ -133,7 +137,7 @@ Can be an integer to determine the exact padding."
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-one-brighter-comments (doom-lighten bg 0.05)))
+    :background (if doom-one-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

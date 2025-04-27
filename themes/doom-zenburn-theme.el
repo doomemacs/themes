@@ -1,7 +1,19 @@
-;;; doom-zenburn-theme.el ---  -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-zenburn-theme.el --- port of the popular Zenburn theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 26, 2020 (#447)
+;; Author: jsoa <https://github.com/jsoa>
+;; Maintainer:
+;; Source: https://github.com/bbatsov/zenburn-emacs
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-zenburn-theme nil
   "Options for the `doom-zenburn' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-zenburn-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-zenburn
   "An implementation of the popular Zenburn theme."
 
@@ -132,14 +147,14 @@ Can be an integer to determine the exact padding."
    (font-lock-builtin-face :foreground fg :weight 'bold)
    (font-lock-comment-delimiter-face :foreground green-2)
    ((font-lock-comment-face &override)
-    :background (if doom-zenburn-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-zenburn-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (font-lock-constant-face :foreground green+4)
    (font-lock-doc-face :foreground green+2)
    (font-lock-type-face :foreground blue-1)
    (font-lock-warning-face :foreground yellow-1 :weight 'bold)
    (font-lock-keyword-face :foreground yellow :weight 'bold)
    (highlight :background base4)
-   (isearch :freground yellow-2 :weight 'bold :background base6)
+   (isearch :foreground yellow-2 :weight 'bold :background base6)
    (isearch-fail :foreground fg :background red-4)
    (lazy-highlight :foreground yellow-2 :weight 'bold :background base3)
    ((line-number &override) :foreground base7)

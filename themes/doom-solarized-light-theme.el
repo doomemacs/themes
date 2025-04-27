@@ -1,17 +1,12 @@
-;;; doom-solarized-light-theme.el --- inspired by Atom One Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-solarized-light-theme.el --- a light variant of Solarized -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
-;; Ported by: Xi "Alexander" Fu <fuxialexander@users.noreply.github.com>
-;; Created: February 20, 2018
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: January 9, 2018 (#131)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://github.com/bbatsov/solarized-emacs
+;; Source: https://ethanschoonover.com/solarized
 ;;
 ;;; Commentary:
-;;
-;; See https://ethanschoonover.com/solarized/
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -116,7 +111,7 @@ Can be an integer to determine the exact padding."
     (when doom-solarized-light-padded-modeline
       (if (integerp doom-solarized-light-padded-modeline) doom-solarized-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
@@ -135,7 +130,8 @@ Can be an integer to determine the exact padding."
   (((font-lock-comment-face &override)
     :slant 'italic
     :background (if doom-solarized-light-brighter-comments
-                    (doom-blend teal base0 0.07)))
+                    (doom-blend teal base0 0.07)
+                  'unspecified))
    ((font-lock-type-face &override) :slant 'italic)
    ((font-lock-builtin-face &override) :slant 'italic)
    ((font-lock-function-name-face &override) :foreground type)

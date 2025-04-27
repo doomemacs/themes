@@ -1,17 +1,12 @@
-;;; doom-solarized-dark-theme.el --- inspired by VS Code Solarized Dark -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-solarized-dark-theme.el --- a dark variant of Solarized -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Ethan Schoonover <https://ethanschoonover.com/solarized/>
-;; Ported by: Emmanuel Bustos Torres <ema2159@gmail.com>
-;; Created: July 14, 2019
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: July 15, 2019 (#303)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source: https://github.com/bbatsov/solarized-emacs
+;; Source: https://ethanschoonover.com/solarized
 ;;
 ;;; Commentary:
-;;
-;; See https://ethanschoonover.com/solarized/
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -121,7 +116,7 @@ Can be an integer to determine the exact padding."
     (when doom-solarized-dark-padded-modeline
       (if (integerp doom-solarized-dark-padded-modeline) doom-solarized-dark-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -138,7 +133,7 @@ Can be an integer to determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-solarized-dark-brighter-comments (doom-lighten bg 0.05)))
+    :background (if doom-solarized-dark-brighter-comments (doom-lighten bg 0.05) 'unspecified))
    ((font-lock-keyword-face &override) :weight 'bold)
    ((font-lock-constant-face &override) :weight 'bold)
    ((line-number &override) :foreground base4)

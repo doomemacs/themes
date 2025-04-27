@@ -1,18 +1,11 @@
 ;;; doom-one-light-theme.el --- inspired by Atom One Light -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
-;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: July 31, 2017 (#96)
+;; Author: ztlevi <https://github.com/ztlevi>
+;; Maintainer: Henrik Lissner <https://github.com/hlissner>
+;; Source: https://github.com/atom/one-light-ui
 ;;
 ;;; Commentary:
-;;
-;; Inspired by Atom's One Light color scheme.
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -47,6 +40,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-one-light
   "A light theme inspired by Atom One Light."
+  :family 'doom-one
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#fafafa" "white"   "white"        ))
@@ -132,7 +127,7 @@ Can be an integer to determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-one-light-brighter-comments base0))
+    :background (if doom-one-light-brighter-comments base0 'unspecified))
    ((font-lock-doc-face &override) :slant 'italic)
    ((line-number &override) :foreground (doom-lighten base4 0.15))
    ((line-number-current-line &override) :foreground base8)
@@ -184,9 +179,9 @@ Can be an integer to determine the exact padding."
    ;;;; posframe
    (ivy-posframe               :background base0)
    ;;;; selectrum
-   (selectrum-current-candidate :background base1)
+   (selectrum-current-candidate :background base2)
    ;;;; vertico
-   (vertico-current :background base1)
+   (vertico-current :background base2)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
@@ -201,8 +196,8 @@ Can be an integer to determine the exact padding."
    ;;;; wgrep <built-in>
    (wgrep-face :background base1)
    ;;;; whitespace
-   ((whitespace-tab &override)         :background (unless (default-value 'indent-tabs-mode) base0))
-   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0)))
+   ((whitespace-tab &override)         :background (if (not (default-value 'indent-tabs-mode)) base0 'unspecified))
+   ((whitespace-indentation &override) :background (if (default-value 'indent-tabs-mode) base0 'unspecified)))
 
   ;;;; Base theme variable overrides-
   ()

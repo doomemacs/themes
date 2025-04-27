@@ -1,7 +1,19 @@
-;;; doom-dark+-theme.el --- inspired by dark+ Theme by equinusocio -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-dark+-theme.el --- ported from equinusocio's VSCode Theme, dark+ -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: January 20, 2020 (b0c255037cbd)
+;; Author: ema2159 <https://github.com/ema2159>
+;; Maintainer:
+;; Source:
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-dark+-theme nil
   "Options for the `doom-dark' theme."
   :group 'doom-themes)
@@ -17,7 +29,10 @@ Can be an integer to determine the exact padding."
   :group 'doom-dark+-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-dark+
   "A dark theme inspired by dark+ Theme by equinusocio"
 

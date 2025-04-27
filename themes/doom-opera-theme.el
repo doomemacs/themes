@@ -1,6 +1,18 @@
-;;; doom-opera-theme.el --- Opera theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-opera-theme.el --- an original light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: June 16, 2018 (#189)
+;; Author: jwintz <https://github.com/jwintz>
+;; Maintainer:
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-opera-theme nil
   "Options for the `doom-opera' theme."
@@ -33,6 +45,10 @@ determine the exact padding."
 (default)."
   :group 'doom-opera-theme
   :type 'symbol)
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-opera
   "A dark Opera theme."
@@ -96,7 +112,7 @@ determine the exact padding."
     (when doom-opera-padded-modeline
       (if (integerp doom-opera-padded-modeline) doom-opera-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -114,7 +130,7 @@ determine the exact padding."
   (((line-number &override) :foreground fg-alt)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-opera-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-opera-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))

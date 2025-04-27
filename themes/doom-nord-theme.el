@@ -1,7 +1,19 @@
-;;; doom-nord-theme.el --- inspired by Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-nord-theme.el --- dark variant of Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (c503ebdacac1)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://www.nordtheme.com
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-nord-theme nil
   "Options for the `doom-nord' theme."
   :group 'doom-themes)
@@ -35,7 +47,10 @@ determine the exact padding."
     :group 'doom-nord-theme
     :type 'symbol))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-nord
   "A dark theme inspired by Nord."
 
@@ -105,7 +120,7 @@ determine the exact padding."
     (when (memq doom-nord-region-highlight '(frost snowstorm))
       base0))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
@@ -125,7 +140,7 @@ determine the exact padding."
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
    ((font-lock-comment-face &override)
-    :background (if doom-nord-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-nord-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((tab-line &override) :background modeline-bg :foreground blue)
    ((tab-line-tab-inactive &override) :foreground dark-blue)
    (mode-line
@@ -135,7 +150,7 @@ determine the exact padding."
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground (if -modeline-bright base8 highlight))
-   ((region &override) :foreground region-fg)
+   ((region &override) :foreground (or region-fg 'unspecified))
 
    ;;;; css-mode <built-in> / scss-mode
    (css-proprietary-property :foreground orange)
@@ -154,7 +169,7 @@ determine the exact padding."
    ;;;; highlight-thing
    (highlight-thing :background (doom-lighten base4 0.1) :distant-foreground fg-alt)
    ;;;; ivy
-   ((ivy-current-match &override) :foreground region-fg :weight 'semi-bold)
+   ((ivy-current-match &override) :foreground (or region-fg 'unspecified) :weight 'semi-bold)
    ;;;; markdown-mode
    (markdown-markup-face :foreground base5)
    (markdown-header-face :inherit 'bold :foreground red)

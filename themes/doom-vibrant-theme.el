@@ -1,18 +1,11 @@
-;; doom-vibrant-theme.el --- a more vibrant version of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-vibrant-theme.el --- a more vibrant variant of doom-one -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Copyright (C) 2016-2021 Henrik Lissner
-;;
+;; Added: May 10, 2017 (7532a705db9c)
 ;; Author: Henrik Lissner <https://github.com/hlissner>
-;; Created: December 6, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Maintainer: Henrik Lissner <https://github.com/hlissner>
+;; Source: doom-one
 ;;
 ;;; Commentary:
-;;
-;; A version of `doom-one' that uses more vibrant colors.
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -47,6 +40,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-vibrant
   "A dark theme based off of doom-one with more vibrant colors."
+  :family 'doom-one
+  :background-mode 'light
 
   ;; name        gui       256           16
   ((bg         '("#242730" "black"       "black" ))
@@ -101,7 +96,7 @@ Can be an integer to determine the exact padding."
    (operators      magenta)
    (type           yellow)
    (strings        green)
-   (variables      base8)
+   (variables      (doom-lighten magenta 0.4))
    (numbers        orange)
    (region         "#3d4451")
    (error          red)
@@ -131,7 +126,7 @@ Can be an integer to determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-vibrant-brighter-comments (doom-darken bg-alt 0.095)))
+    :background (if doom-vibrant-brighter-comments (doom-darken bg-alt 0.095) 'unspecified))
    ((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground blue :bold bold)
    (mode-line

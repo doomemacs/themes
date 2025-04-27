@@ -1,5 +1,18 @@
-;;; doom-xcode-theme.el --- ibased off of Apple's Xcode Dark Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-xcode-theme.el --- based off of Apple's Xcode Dark Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 28, 2020 (#414)
+;; Author: kadenbarlow <https://github.com/kadenbarlow>
+;; Maintainer:
+;; Source: Xcode.app
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-xcode-theme nil
   "Options for the `doom-xcode' theme."
@@ -10,6 +23,10 @@
 Can be an integer to determine the exact padding."
   :group 'doom-xcode-theme
   :type '(choice integer boolean))
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-xcode
   "A theme based off of the Xcode Dark Theme"
@@ -54,7 +71,7 @@ Can be an integer to determine the exact padding."
    (comments       grey)
    (doc-comments   (doom-lighten grey 0.14))
    (constants      violet)
-   (functions      dark-blue)
+   (functions      magenta)
    (keywords       pink)
    (methods        dark-blue)
    (operators      orange)
@@ -96,12 +113,12 @@ Can be an integer to determine the exact padding."
    (doom-modeline-buffer-path       :foreground dark-blue :bold bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
    ;;;; rainbow-delimiters
-   (rainbow-delimiters-depth-1-face :foreground violet)
+   (rainbow-delimiters-depth-1-face :foreground yellow)
    (rainbow-delimiters-depth-2-face :foreground blue)
    (rainbow-delimiters-depth-3-face :foreground orange)
    (rainbow-delimiters-depth-4-face :foreground green)
    (rainbow-delimiters-depth-5-face :foreground magenta)
-   (rainbow-delimiters-depth-6-face :foreground yellow)
+   (rainbow-delimiters-depth-6-face :foreground violet)
    (rainbow-delimiters-depth-7-face :foreground teal))
 
   ;; --- variables --------------------------

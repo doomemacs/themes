@@ -1,7 +1,19 @@
-;;; doom-dracula-theme.el - based on https://draculatheme.com/ -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-dracula-theme.el --- inspired by the popular Dracula theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 8, 2018 (1337e9b2c4bb)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer: hlissner <https://github.com/hlissner>
+;; Source: https://draculatheme.com
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-dracula-theme nil
   "Options for the `doom-dracula' theme."
   :group 'doom-themes)
@@ -34,7 +46,10 @@ determine the exact padding."
   :group 'doom-dracula-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-dracula
   "A dark theme based on Dracula theme"
 
@@ -108,7 +123,7 @@ determine the exact padding."
 
    (region-alt `(,(car base3) ,@(cdr base4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -127,7 +142,7 @@ determine the exact padding."
   (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-dracula-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-dracula-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -198,7 +213,7 @@ determine the exact padding."
    (org-agenda-done :foreground base4)
    (org-agenda-structure :foreground violet)
    ((org-block &override) :background (doom-darken base1 0.125) :foreground violet)
-   ((org-block-begin-line &override) :background (doom-darken base1 0.125) :foreground comments)
+   ((org-block-begin-line &override) :background (doom-darken base1 0.125))
    ((org-code &override) :foreground yellow)
    (org-column :background base1)
    (org-column-title :background base1 :bold t :underline t)

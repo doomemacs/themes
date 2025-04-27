@@ -1,10 +1,18 @@
-;;; doom-ayu-light-theme.el --- inspired by Ayu Mirage -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ayu-light-theme.el --- inspirted by Ayu Light -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 5, 2021 (#499)
+;; Author: LoveSponge <https://github.com/LoveSponge>
+;; Maintainer:
+;; Source: https://github.com/dempfi/ayu
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
 
 
 ;;
-;; Variables
+;;; Variables
 
 (defgroup doom-ayu-light-theme nil
   "Options for the `doom-ayu-light' theme."
@@ -32,7 +40,10 @@ determine the exact padding."
   :group 'doom-ayu-light-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-ayu-light
   "A light theme inspired by Ayu Light"
 
@@ -152,7 +163,7 @@ determine the exact padding."
   (((line-number &override) :foreground base5)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-ayu-light-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-ayu-light-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -202,6 +213,7 @@ determine the exact padding."
    (org-hide :foreground hidden)
    (org-headline-done :foreground syntax-comment)
    (org-document-info-keyword :foreground comments)
+   (org-macro :foreground syntax-operator)
    ;;;; rjsx-mode
    (rjsx-tag :foreground cyan)
    (rjsx-tag-bracket-face :foreground (doom-lighten cyan 0.5))

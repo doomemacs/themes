@@ -1,7 +1,19 @@
-;;; doom-challenger-deep-theme.el --- inspired by VIM Challenger Deep -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-challenger-deep-theme.el --- inspired by Vim's Challenger Deep theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 5, 2016 (#163)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://github.com/challenger-deep-theme/vim
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-challenger-deep-theme nil
   "Options for the `doom-challenger-deep' theme."
   :group 'doom-themes)
@@ -28,13 +40,16 @@ determine the exact padding."
   :group 'doom-challenger-deep-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-challenger-deep
   "A dark theme inspired by VIM Challenger Deep"
 
   ;; name        default   256       16
-  ((bg         '("#1E1C31" "#121212" nil            ))
-   (bg-alt     '("#12111E" "#111111" nil            ))
+  ((bg         '("#1E1C31" "#121212" "black"        ))
+   (bg-alt     '("#12111E" "#111111" "black"        ))
    (base0      '("#100E23" "#080808" "black"        ))
    (base1      '("#292F37" "#262626" "brightblack"  ))
    (base2      '("#3D4551" "#3A3A3A" "brightblack"  ))
@@ -91,7 +106,7 @@ determine the exact padding."
     (when doom-challenger-deep-padded-modeline
       (if (integerp doom-challenger-deep-padded-modeline) doom-challenger-deep-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -110,7 +125,7 @@ determine the exact padding."
   (((line-number &override) :foreground base4)
    ((line-number-current-line &override) :foreground fg)
    ((font-lock-comment-face &override)
-    :background (if doom-challenger-deep-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-challenger-deep-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (mode-line
     :background modeline-bg :foreground modeline-fg
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
@@ -134,7 +149,7 @@ determine the exact padding."
    (markdown-header-face :inherit 'bold :foreground red)
    ((markdown-code-face &override) :background (doom-lighten base3 0.05))
    ;;;; outline <built-in>
-   ((outline-1 &override) :foreground blue :background nil)
+   ((outline-1 &override) :foreground blue :background 'unspecified)
    ;;;; org <built-in>
    ((org-block &override) :background base1)
    ((org-block-begin-line &override) :background base1 :foreground comments)

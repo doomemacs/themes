@@ -1,6 +1,18 @@
-;;; doom-opera-light-theme.el --- Opera-Light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-opera-light-theme.el --- an original light theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: June 16, 2018 (#189)
+;; Author: jwintz <https://github.com/jwintz>
+;; Maintainer:
+;; Source: original
+;;
+;;; Commentary:
+;;; Code:
 
 (require 'doom-themes)
+
+
+;;
+;;; Variables
 
 (defgroup doom-opera-light-theme nil
   "Options for the `doom-opera-light' theme."
@@ -33,6 +45,10 @@ determine the exact padding."
 (default)."
   :group 'doom-opera-light-theme
   :type 'symbol)
+
+
+;;
+;;; Theme definition
 
 (def-doom-theme doom-opera-light
   "A light Opera theme."
@@ -96,7 +112,7 @@ determine the exact padding."
     (when doom-opera-light-padded-modeline
       (if (integerp doom-opera-light-padded-modeline) doom-opera-light-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base5)
 
    (modeline-bg
@@ -112,7 +128,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-opera-light-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-opera-light-comment-bg (doom-lighten bg 0.05) 'unspecified))
    (lazy-highlight :background (doom-blend bg highlight 0.7) :weight 'bold)
    ((line-number &override) :foreground fg-alt)
    ((line-number-current-line &override) :foreground fg)

@@ -1,14 +1,24 @@
-;;; doom-homage-black-theme.el --- pitch-black theme version of homage-white -*- lexical-binding: t; no-byte-compile: t; -*-
-;;;
+;;; doom-homage-black-theme.el --- a minimalistic, colorless theme inspired by eziam, tao, and jbeans -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: February 4, 2021 (#497)
+;; Author: mskorzhinskiy <https://github.com/mskorzhinskiy>
+;; Maintainer:
+;; Source: original
+;;
 ;;; Commentary:
-;;;
-;;; Theme is (manually) inverted homage-white theme with a focus of having
-;;; pitch-black backgrounds. I'm also incorporated a several ideas from jbeans
-;;; theme (synic/jbeans-emacs).
+;;
+;; Theme is (manually) inverted homage-white theme with a focus of having
+;; pitch-black backgrounds. I'm also incorporated a several ideas from jbeans
+;; theme (synic/jbeans-emacs).
+;;
+;;; Code:
 
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-homage-black-theme nil
   "Options for the `doom-homage-black' theme."
   :group 'doom-themes)
@@ -19,9 +29,12 @@ determine the exact padding."
   :group 'doom-homage-black-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-homage-black
-  "A light theme inspired by Atom One"
+  "A light theme inspired by eziam"
 
   ;; name        default   256       16
   ((bg         '("#000000" nil       nil            ))
@@ -81,7 +94,7 @@ determine the exact padding."
     (when doom-homage-black-padded-modeline
       (if (integerp doom-homage-black-padded-modeline) doom-homage-black-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt (doom-blend violet base4 (if -modeline-bright 0.5 0.2)))
 
    (modeline-bg
@@ -166,9 +179,9 @@ determine the exact padding."
    ((org-todo &override) :foreground red)
    ;; make tags and dates to have pretty box around them
    ((org-tag &override)   :foreground fg :background base1
-    :box `(:line-width -1 :color ,base5 :style 'released-button))
+    :box `(:line-width -1 :color ,base5 :style released-button))
    ((org-date &override)  :foreground fg :background base1
-    :box `(:line-width -1 :color ,base5  :style 'released-button))
+    :box `(:line-width -1 :color ,base5 :style released-button))
    ;; Make drawers and special keywords (like scheduled) to be very bleak
    ((org-special-keyword &override)  :foreground grey)
    ((org-drawer          &override)  :foreground grey)

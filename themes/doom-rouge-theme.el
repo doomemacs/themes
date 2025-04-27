@@ -1,7 +1,19 @@
-;;; doom-rouge-theme.el --- ported from Rouge Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-rouge-theme.el --- ported from VSCode's Rouge Theme -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: March 20, 2020 (#418)
+;; Author: das-s <https://github.com/das-s>
+;; Maintainer:
+;; Source: https://github.com/josefaidt/rouge-theme
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-rouge-theme nil
   "Options for the `doom-rouge' theme."
   :group 'doom-themes)
@@ -16,7 +28,7 @@
   :group 'doom-rouge-theme
   :type 'boolean)
 
-(defcustom doom-rouge-comment-bg doom-rouge-brighter-comments
+(defcustom doom-rouge-comment-bg nil
   "If non-nil, comments will have a subtle, darker background. Enhancing their
 legibility."
   :group 'doom-rouge-theme
@@ -28,13 +40,16 @@ determine the exact padding."
   :group 'doom-rouge-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-rouge
   "A dark theme ported from VS Code's Rouge."
 
   ;; name        default   256       16
   ((bg         '("#172030" nil       nil            )) ;; modified
-   (bg-alt     '("#172030" nil       nil            ))
+   (bg-alt     '("#101828" nil       nil            ))
    (base0      '("#070A0E" "black"   "black"        ))
    (base1      '("#0E131D" "#1e1e1e" "brightblack"  ))
    (base2      '("#151D2B" "#2e2e2e" "brightblack"  ))
@@ -67,7 +82,7 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.2))
    (selection      base4)
    (builtin        light-red)
-   (comments       grey)
+   (comments       (if doom-rouge-brighter-comments violet grey))
    (doc-comments   green)
    (constants      red)
    (functions      salmon)
@@ -97,7 +112,7 @@ determine the exact padding."
    (tabs-bar-bg (if doom-rouge-brighter-tabs bg red))
    (tabs-marker (if doom-rouge-brighter-tabs base8 highlight))
 
-   (modeline-fg     nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base6)
    (modeline-bg base1)
    (modeline-bg-l `(,(doom-darken (car bg) 0.1) ,@(cdr base0)))
@@ -106,7 +121,9 @@ determine the exact padding."
 
 
   ;;;; Base theme face overrides
-  (((font-lock-comment-face &override) :slant 'italic)
+  (((font-lock-comment-face &override)
+    :background (if doom-rouge-comment-bg bg-alt 'unspecified)
+    :slant 'italic)
    ((font-lock-keyword-face &override) :slant 'italic)
    (font-lock-preprocessor-face :foreground magenta :slant 'italic)
    (lazy-highlight :background base4)
@@ -177,7 +194,6 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-   (solaire-hl-line-face :background base3)
    ;;;; treemacs
    (treemacs-root-face :foreground highlight :weight 'ultra-bold :height 1.2)
    (treemacs-directory-face :foreground highlight)

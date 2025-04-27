@@ -1,7 +1,19 @@
-;;; doom-Iosvkem-theme.el --- Inspired by VIM Iosvkem -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-Iosvkem-theme.el --- ported from the default dark theme for Adobe Brackets -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: September 12, 2018 (#220)
+;; Author: neutaaaaan <https://github.com/neutaaaaan>
+;; Maintainer:
+;; Source: https://github.com/neutaaaaan/iosvkem
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-Iosvkem-theme nil
   "Options for the `doom-theme.el' theme."
   :group 'doom-themes)
@@ -28,7 +40,10 @@ determine the exact padding."
   :group 'doom-Iosvkem-theme
   :type '(choice integer boolean))
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-Iosvkem
   "A dark theme inspired by VIM Iosvkem"
 
@@ -97,7 +112,7 @@ determine the exact padding."
     (when doom-Iosvkem-padded-modeline
       (if (integerp doom-Iosvkem-padded-modeline) doom-Iosvkem-padded-modeline 4)))
 
-   (modeline-fg     nil)
+   (modeline-fg     'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
@@ -114,7 +129,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-Iosvkem-comment-bg (doom-lighten bg 0.05))
+    :background (if doom-Iosvkem-comment-bg (doom-lighten bg 0.05) 'unspecified)
     :slant 'italic)
    ((font-lock-function-name-face &override) :weight 'bold)
    ((font-lock-doc-face &override) :slant 'normal)

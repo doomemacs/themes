@@ -1,7 +1,19 @@
-;;; doom-nord-light-theme.el --- inspired by Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-nord-light-theme.el --- light variant of Nord -*- lexical-binding: t; no-byte-compile: t; -*-
+;;
+;; Added: April 18, 2018 (#163)
+;; Author: fuxialexander <https://github.com/fuxialexander>
+;; Maintainer:
+;; Source: https://github.com/arcticicestudio/nord
+;;
+;;; Commentary:
+;;; Code:
+
 (require 'doom-themes)
 
+
 ;;
+;;; Variables
+
 (defgroup doom-nord-light-theme nil
   "Options for the `doom-nord-light' theme."
   :group 'doom-themes)
@@ -34,7 +46,10 @@ determine the exact padding."
   :group 'doom-nord-light-theme
   :type 'symbol)
 
+
 ;;
+;;; Theme definition
+
 (def-doom-theme doom-nord-light
   "A light theme inspired by Nord-Light."
 
@@ -100,7 +115,7 @@ determine the exact padding."
     (when doom-nord-light-padded-modeline
       (if (integerp doom-nord-light-padded-modeline) doom-nord-light-padded-modeline 4)))
 
-   (modeline-fg nil)
+   (modeline-fg 'unspecified)
    (modeline-fg-alt base6)
 
    (modeline-bg
@@ -117,7 +132,7 @@ determine the exact padding."
 
   ;;;; Base theme face overrides
   (((font-lock-comment-face &override)
-    :background (if doom-nord-light-comment-bg (doom-lighten bg 0.05)))
+    :background (if doom-nord-light-comment-bg (doom-lighten bg 0.05) 'unspecified))
    ((line-number &override) :foreground (doom-lighten 'base5 0.2))
    ((line-number-current-line &override) :foreground base7)
    (internal-border :foreground (doom-blend blue bg 0.2) :background (doom-blend blue bg 0.2))
@@ -131,7 +146,8 @@ determine the exact padding."
     :foreground (if -modeline-bright base8 highlight))
    ((region &override)
     :foreground (if (memq doom-nord-light-region-highlight '(frost snowstorm))
-                    bg-alt))
+                    bg-alt
+                  'unspecified))
 
    ;;;; css-mode <built-in> / scss-mode <built-in>
    (css-proprietary-property :foreground orange)
@@ -143,7 +159,7 @@ determine the exact padding."
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; ivy
-   (ivy-minibuffer-match-face-1 :background nil :foreground (doom-blend fg bg 0.5) :weight 'light)
+   (ivy-minibuffer-match-face-1 :foreground (doom-blend fg bg 0.5) :weight 'light)
    (ivy-virtual :foreground (doom-blend blue bg 0.8))
    ;;;; ivy-posframe
    (ivy-posframe :background (doom-blend blue bg 0.2))

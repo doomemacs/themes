@@ -1,11 +1,10 @@
 ;;; doom-themes-ext-treemacs.el --- ... -*- lexical-binding: t; no-byte-compile: t -*-
 ;;
-;; Copyright (C) 2021 Henrik Lissner
+;; Copyright (C) 2018-2024 Henrik Lissner
 ;;
-;; Author: Henrik Lissner <https://github.com/hlissner>
+;; Author: Henrik Lissner <contact@henrik.io>
 ;; Maintainer: Henrik Lissner <contact@henrik.io>
-;; Created: August 3, 2017
-;; Homepage: https://github.com/hlissner/doom-themes-ext-org
+;; Created: July 10, 2018
 ;;
 ;; This file is not part of GNU Emacs.
 ;;
@@ -108,7 +107,9 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
         (set-face-attribute
          face nil :inherit
          `(,doom-themes-treemacs-variable-pitch-face
-           ,@(delq 'unspecified (if (listp faces) faces (list faces)))))))))
+           ,@(delq doom-themes-treemacs-variable-pitch-face
+                   (delq 'unspecified
+                         (if (listp faces) faces (list faces))))))))))
 
 (defun doom-themes-fix-treemacs-icons-dired-mode ()
   "Set `tab-width' to 1 in dired-mode if `treemacs-icons-dired-mode' is active."
@@ -230,7 +231,7 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
                       "ini" "inputrc" "json" "ledgerrc" "lock" "nginx"
                       "npm-shrinkwrap.json" "npmignore" "npmrc"
                       "package-lock.json" "package.json" "phpunit" "pkg" "plist"
-                      "properties" "terminalrc" "toml" "tridactylrc"
+                      "pom.xml" "properties" "terminalrc" "toml" "tridactylrc"
                       "vimperatorrc" "vimrc" "vrapperrc" "xdefaults" "xml"
                       "xresources" "yaml" "yarn-integrity" "yarnclean"
                       "yarnignore" "yarnrc" "yml"))

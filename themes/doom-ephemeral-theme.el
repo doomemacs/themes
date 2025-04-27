@@ -1,16 +1,11 @@
-;;; doom-ephemeral-theme.el --- ephemeral -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-ephemeral-theme.el --- inspired by the Ephemeral Theme from elenapan's dotfiles -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
-;; Author: Aloysuis <aloysuis@users.noreply.github.com>
-;; Created: January 27, 2020
-;; Version: 2.0.0
-;; Keywords: custom themes, faces
-;; Homepage: https://github.com/hlissner/emacs-doom-themes
-;; Package-Requires: ((emacs "25.1") (cl-lib "0.5") (doom-themes "2.2.1"))
+;; Added: January 27, 2020 (#384)
+;; Author: karetsu <https://github.com/karetsu>
+;; Maintainer:
+;; Source: https://github.com/elenapan/dotfiles
 ;;
 ;;; Commentary:
-;;
-;; Inspired by https://github.com/elenapan/dotfiles
-;;
 ;;; Code:
 
 (require 'doom-themes)
@@ -136,7 +131,7 @@
    ((line-number-current-line &override) :foreground blue)
    (link :foreground (doom-lighten light-grey 0.3) :inherit 'underline)
    ((font-lock-comment-face &override)
-    :inherit 'bold :background (if doom-ephemeral-brighter-comments (doom-lighten bg 0.05)))
+    :inherit 'bold :background (if doom-ephemeral-brighter-comments (doom-lighten bg 0.05) 'unspecified))
    ((font-lock-builtin-face &override) :inherit 'italic)
    ((font-lock-keyword-face &override) :inherit 'bold)
    (mode-line
