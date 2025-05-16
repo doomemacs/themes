@@ -41,6 +41,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-solarized-dark-high-contrast
   "A dark theme inspired by VS Code Solarized Dark"
+  :family 'doom-solarized
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#002732" "#002732" "black"      ))
