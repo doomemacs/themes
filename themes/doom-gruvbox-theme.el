@@ -44,6 +44,8 @@ background contrast. All other values default to \"medium\"."
 
 (def-doom-theme doom-gruvbox
   "Dark theme with pastel 'retro groove' colors."
+  :family 'doom-gruvbox
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg
