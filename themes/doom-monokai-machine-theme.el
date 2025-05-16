@@ -41,6 +41,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-monokai-machine
   "A dark, vibrant theme inspired by Textmate's Monokai."
+  :family 'doom-molokai
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg         '("#273136" nil       nil            ))

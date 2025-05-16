@@ -41,6 +41,8 @@ determine the exact padding."
 
 (def-doom-theme doom-monokai-classic
   "A dark, vibrant theme inspired by Textmate's Monokai."
+  :family 'doom-molokai
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg         '("#272822" nil       nil          ))

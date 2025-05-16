@@ -30,6 +30,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-monokai-pro
   "A port of VS Code's Monokai Pro"
+  :family 'doom-molokai
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg         '("#2D2A2E" nil       nil          ))
