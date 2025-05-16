@@ -41,6 +41,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-solarized-light
   "A light theme inspired by Solarized light"
+  :family 'doom-solarized
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#FDF6E3" "#FDF6E3" "white"        ))
