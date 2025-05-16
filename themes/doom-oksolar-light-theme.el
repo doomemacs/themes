@@ -41,6 +41,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-oksolar-light
   "A light theme inspired by OKSolar."
+  :family 'doom-oksolar
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#FBF7EF" "#FBF7EF" "white"        ))
