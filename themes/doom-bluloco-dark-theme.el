@@ -26,6 +26,8 @@
 
 (def-doom-theme doom-bluloco-dark
   "A dark theme inspired by bluloco dark theme"
+  :family 'doom-bluloco
+  :background-mode 'dark
 
   ;; name        default     256       16
   ((bg           '("#282c34" "#303030" "black"        ))
