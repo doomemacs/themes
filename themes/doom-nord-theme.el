@@ -53,6 +53,8 @@ determine the exact padding."
 
 (def-doom-theme doom-nord
   "A dark theme inspired by Nord."
+  :family 'doom-nord
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#2E3440" nil       nil            ))
