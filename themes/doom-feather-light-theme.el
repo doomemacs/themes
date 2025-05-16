@@ -38,6 +38,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-feather-light
   "A light theme based on Doom One Light."
+  :family 'doom-feather
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#F0EDF4" "#ffffff" "white"        ))
