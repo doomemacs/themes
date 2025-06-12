@@ -30,6 +30,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-plain
   "Theme inspired by gko's plain."
+  :family 'doom-plain
+  :background-mode 'light
 
   ;; name      default/256/16
   ((bg         '("#ffffff"))

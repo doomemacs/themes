@@ -43,6 +43,8 @@ determine the exact padding."
 
 (def-doom-theme doom-acario-dark
   "A dark theme inspired by Acario"
+  :family 'doom-acario
+  :background-mode 'dark
 
   ;; name        default   256         16
   ((bg         '("#0D0E16" "color-233" "black"        ))

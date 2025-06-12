@@ -30,6 +30,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-tomorrow-day
   "A light theme based off of Chris Kempson's Tomorrow Dark."
+  :family 'doom-tomorrow
+  :background-mode 'light
 
   ;; name        gui       256       16
   ((bg         '("#ffffff" "white"   "white" ))

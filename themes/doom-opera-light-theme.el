@@ -52,6 +52,8 @@ determine the exact padding."
 
 (def-doom-theme doom-opera-light
   "A light Opera theme."
+  :family 'doom-opera
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil ))

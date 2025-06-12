@@ -46,6 +46,8 @@ determine the exact padding."
 
 (def-doom-theme doom-ayu-dark
   "A dark theme inspired by Ayu dark"
+  :family 'doom-ayu
+  :background-mode 'dark
 
   ;; name        default   256       16
   (

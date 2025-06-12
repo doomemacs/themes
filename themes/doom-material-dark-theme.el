@@ -30,6 +30,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-material-dark
   "A darker version of the Material Theme inspired by xrei"
+  :family 'doom-material
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#212121" nil       nil))
