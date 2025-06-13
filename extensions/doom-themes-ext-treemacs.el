@@ -31,11 +31,6 @@ See `doom-themes-treemacs-variable-pitch-face'."
   :type 'integer
   :group 'doom-themes-treemacs)
 
-(defcustom doom-themes-treemacs-hide-modeline t
-  "If non-nil, hide the modeline in treemacs buffer."
-  :type 'boolean
-  :group 'doom-themes-treemacs)
-
 (defcustom doom-themes-treemacs-theme "doom-atom"
   "Default treemacs theme."
   :type '(radio (const :doc "A minimalistic atom-inspired icon theme" "doom-atom")
@@ -91,10 +86,6 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
   "Set `line-spacing' in treemacs buffers."
   (setq line-spacing doom-themes-treemacs-line-spacing))
 
-(defun doom-themes-hide-modeline ()
-  (when doom-themes-treemacs-hide-modeline
-    (setq mode-line-format nil)))
-
 (defun doom-themes-enable-treemacs-variable-pitch-labels (&rest _)
   (when doom-themes-treemacs-enable-variable-pitch
     (dolist (face '(treemacs-root-face
@@ -136,8 +127,6 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
 
   ;; Fix #293: tabs messing up formatting in `treemacs-icons-dired-mode'
   (add-hook 'treemacs-icons-dired-mode-hook #'doom-themes-fix-treemacs-icons-dired-mode)
-
-  (add-hook 'treemacs-mode-hook #'doom-themes-hide-modeline)
 
   ;; Disable fringes (and reset them everytime treemacs is selected because it
   ;; may change due to outside factors)
