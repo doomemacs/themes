@@ -43,10 +43,13 @@ common defaults laid out:
 ```emacs-lisp
 (use-package doom-themes
   :ensure t
-  :config
+  :custom
   ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; for treemacs users
+  (doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  :config
   (load-theme 'doom-one t)
 
   ;; Enable flashing mode-line on errors
@@ -54,7 +57,6 @@ common defaults laid out:
   ;; Enable custom neotree theme (nerd-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
@@ -81,7 +83,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-challenger-deep              | [link](https://github.com/challenger-deep-theme/vim)                                   | inspired by Vim's Challenger Deep theme (ported by [@fuxialexander](https://github.com/fuxialexander))                            |
 | doom-city-lights                  | [link](https://citylights.xyz)                                                         | inspired by Atom's City Lights theme (ported by [@fuxialexander](https://github.com/fuxialexander))                               |
 | doom-dark+                        | n/a                                                                                    | ported from equinusocio's VSCode Theme, dark+ (ported by [@ema2159](https://github.com/ema2159))                                  |
-| doom-dracula                      | [link](https://draculatheme.com)                                                       | inspired by the popular Dracula theme (ported by [@fuxialexander](https://github.com/fuxialexander))                              |
+| doom-dracula                      | [link](https://draculatheme.com/doom-emacs)                                                       | inspired by the popular Dracula theme (ported by [@fuxialexander](https://github.com/fuxialexander))                              |
 | doom-earl-grey                    | original                                                                               | a gentle color scheme, for code (ported by [@JuneKelly](https://github.com/JuneKelly))                                            |
 | doom-ephemeral                    | [link](https://github.com/elenapan/dotfiles)                                           | inspired by the Ephemeral Theme from elenapan's dotfiles (ported by [@karetsu](https://github.com/karetsu))                       |
 | doom-fairy-floss                  | [link](https://github.com/sailorhg/fairyfloss)                                         | a candy colored theme by sailorhg (ported by [@ema2159](https://github.com/ema2159))                                              |
