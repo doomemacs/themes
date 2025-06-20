@@ -1,4 +1,4 @@
-;;; doom-everforest-soft-theme.el --- a port of Sainnhe's everforest-hard theme; -*- lexical-binding: t; no-byte-compile: t; -*-
+;;; doom-everforest-soft-theme.el --- A port of Sainnhe's everforest-hard theme; -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Author: Echinoidea <https://github.com/echinoidea>
 ;; Maintainer:
@@ -36,7 +36,7 @@ determine the exact padding."
 ;;; Theme definition
 
 (def-doom-theme doom-everforest-soft
-  "Green based color scheme; designed to be warm and soft."
+    "Green based color scheme; designed to be warm and soft."
 
   ;; name        gui       256       16
   ((bg         '("#293136" "#293136" nil          )) ; bg1
