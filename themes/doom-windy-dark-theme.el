@@ -198,6 +198,7 @@
 
         ;;;; font-lock-* faces
         ((font-lock-doc-face &override) :slant 'italic)
+        (font-lock-doc-markup-face :foreground violet)
         (font-lock-preprocessor-face :foreground operators)
         ((font-lock-preprocessor-char-face &inherit font-lock-processor-face) :inherit 'bold)
 
@@ -258,6 +259,12 @@
             :background (doom-lighten magenta 0.15))
         (ansi-color-bright-cyan    :foreground bcyan   :background bcyan)
         (ansi-color-bright-white   :foreground base3   :background base3)
+        ;;;; anzu
+        (anzu-match-1            :background dsky)
+        (anzu-match-2            :background dgreen)
+        (anzu-match-1            :background dyellow)
+        (anzu-mode-line          :foreground pink :weight bold)
+        (anzu-mode-line-no-match :foreground fuchsia)
         ;;;; avy
         (avy-goto-char-timer-face
             :background (doom-darken dark-blue 0.5))
@@ -319,13 +326,16 @@
         ;;;; dired
         (dired-broken-symlink :inherit 'error :background dyellow)
         ;;; doom-modeline
+        (doom-modeline-buffer-modified
+            :inherit '(doom-modeline font-lock-constant-face)
+            :weight 'bold)
         (doom-modeline-evil-emacs-state    :inherit '(doom-modeline font-lock-builtin-face))
         (doom-modeline-evil-insert-state   :inherit '(doom-modeline font-lock-type-face))
         (doom-modeline-evil-motion-state   :inherit '(doom-modeline font-lock-doc-face))
         (doom-modeline-evil-normal-state   :inherit 'doom-modeline)
         (doom-modeline-evil-operator-state :inherit '(doom-modeline font-lock-string-face))
         (doom-modeline-evil-replace-state  :inherit '(doom-modeline font-lock-warning-face))
-        (doom-modeline-evil-user-state     :inherit '(doom-modeline font-lock-constant-face))
+        (doom-modeline-evil-user-state     :inherit '(doom-modeline font-lock-doc-markup-face))
         (doom-modeline-evil-visual-state   :inherit '(doom-modeline font-lock-preprocessor-face))
         (doom-modeline-fly-insert-state    :inherit 'doom-modeline-evil-insert-state)
         (doom-modeline-fly-normal-state    :inherit 'doom-modeline-evil-normal-state)
@@ -504,21 +514,28 @@
         (markdown-link-face     :foreground strings)
         (markdown-table-face    :inherit 'org-table)
         ((markdown-url-face &override) :foreground purple)
+        ;;;; mm-decode
+        (mm-command-output :foreground red)
         ;;;; mmm-mode
         (mmm-default-submode-face :background base1)
         ;;;; message
-        ((message-header-name &override) :foreground doc-comments)
-        ((message-header-subject &override) :foreground dark-blue)
+        ((message-header-name &override) :foreground sky)
+        (message-header-other :foreground doc-comments)
+        ((message-header-subject &override) :foreground 'unspecified)
         ((message-header-to &inherit message-header-subject))
         ;;;; mu4e
+        (mu4e-flagged-face :foreground indigo)
         ((mu4e-header-highlight-face &override)
             :background base0
             :foreground 'unspecified
             (:underline (:style wave)))
+        (mu4e-header-title-face :foregrmuound lime)
+        (mu4e-header-title-value :foreground cyan)
         (mu4e-highlight-face
             :foreground indigo
             :background 'unspecified
             :weight 'bold)
+        (mu4e-unread-face :foreground fuchsia :weight 'bold)
         ;;;; nerd-icons
         (nerd-icons-blue       :foreground blue)
         (nerd-icons-blue-alt   :foreground sky)
