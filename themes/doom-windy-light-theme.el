@@ -74,6 +74,7 @@
         (bred        '("#fb2c36" "#ff0000" "brightred"))
         (red         '("#c10007" "#cd0000" "red"))
         (dred        '("#82181a" "#8b0000" "red"))
+        (orange-bg   '("#ffd6a7" "#ffd6a7" "brightyellow"))
         (orange      '("#f54900" "#ff4500" "brightred"))
         (amber       '("#e17100" "#ff8c00" "yellow"))
         (damber      '("#973c00" "#8b5a00" "yellow"))
@@ -85,18 +86,21 @@
         (dgreen      '("#0d542b" "#006400" "green"))
         (emerald     '("#007a55" "#2a8b57" "green"))
         (teal        '("#00786f" "#28b2aa" "cyan"))
+        (cyan-bg     '("#cefafe" "#bbffff" "brightcyan"))
         (bcyan       '("#00b8db" "#00ced1" "brightcyan"))
         (cyan        '("#007595" "#008b8b" "cyan"))
         (dcyan       '("#104e64" "#2f4f4f" "black"))
         (bsky        '("#74d4ff" "#00bfff" "brightblue"))
         (sky         '("#0069a8" "#009acd" "blue"))
         (dsky        '("#024a70" "#00688b" "blue"))
+        (blue-bg     '("#bedbff" "#b2dfee" "brightblue"))
         (bblue       '("#2b7fff" "#1e98ff" "brightblue"))
         (blue        '("#1447e6" "#4169e1" "blue"))
         (dblue       '("#1c398e" "#27408b" "blue"))
         (indigo      '("#432dd7" "#6a5acd" "blue"))
-        (violet      '("#5d0ec0" "#551a8b" "brightmagenta"))
+        (violet      '("#5d0ec0" "#551a8b" "magenta"))
         (purple      '("#8200db" "#8b008b" "magenta"))
+        (fuchsia-bg  '("#f6cfff" "#eed2ee" "brightmagenta"))
         (fuchsia     '("#8a0194" "#8b0a50" "magenta"))
         (pink        '("#a3004c" "#af005f" "brightred"))
         (rose        '("#c70036" "#b22222" "brightred"))
@@ -304,7 +308,7 @@
         (diff-refine-added
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten vc-added 0.7))
+            :background (doom-blend vc-added bg 0.4))
         (diff-indicator-changed :foreground vc-modified)
         (diff-changed
             :foreground 'unspecified
@@ -313,7 +317,7 @@
         (diff-refine-changed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten vc-modified 0.7))
+            :background (doom-blend vc-modified bg 0.4))
         (diff-indicator-removed :foreground vc-deleted)
         (diff-removed
             :foreground 'unspecified
@@ -322,7 +326,7 @@
         (diff-refine-removed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten vc-deleted 0.7))
+            :background (doom-blend vc-deleted bg 0.4))
         ;;;; dired
         (dired-broken-symlink :inherit 'error :background byellow)
         ;;; doom-modeline
@@ -345,35 +349,35 @@
         (ediff-current-diff-A
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend purple bg 0.1))
+            :background (doom-blend fuchsia bg 0.05))
         (ediff-fine-diff-A
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten purple 0.7))
+            :background fuchsia-bg)
         (ediff-current-diff-B
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend cyan bg 0.1))
+            :background (doom-blend cyan bg 0.05))
         (ediff-fine-diff-B
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten cyan 0.7))
+            :background cyan-bg)
         (ediff-current-diff-C
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend orange bg 0.1))
+            :background (doom-blend orange bg 0.05))
         (ediff-fine-diff-C
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten orange 0.7))
+            :background orange-bg)
         (ediff-current-diff-Ancestor
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend vc-modified bg 0.1))
+            :background (doom-blend blue bg 0.05))
         (ediff-fine-diff-Ancestor
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-lighten vc-modified 0.7))
+            :background blue-bg)
         ;;;; elisp
         (elisp-shorthand-font-lock-face :foreground sky)
         ;;;; eshell
@@ -470,10 +474,10 @@
         (ivy-posframe :background base0)
         ;;;; magit
         (magit-blame-heading          :background bg-alt :foreground stone)
-        (magit-diff-added             :background (doom-blend   vc-added bg 0.1))
-        (magit-diff-added-highlight   :background (doom-lighten vc-added 0.85))
-        (magit-diff-base              :background (doom-blend   vc-modified bg 0.1))
-        (magit-diff-base-highlight    :background (doom-lighten vc-modified 0.85))
+        (magit-diff-added             :background (doom-blend vc-added bg 0.1))
+        (magit-diff-added-highlight   :background (doom-blend vc-added bg 0.15))
+        (magit-diff-base              :background (doom-blend vc-modified bg 0.1))
+        (magit-diff-base-highlight    :background (doom-blend vc-modified bg 0.15))
         (magit-diff-context-highlight :background base0 :distant-background bg-alt)
         (magit-diff-hunk-heading
             :foreground (doom-blend bg purple 0.4)
@@ -484,8 +488,8 @@
             :background (doom-blend bg purple 0.8)
             :weight 'bold
             :extend t)
-        (magit-diff-removed           :background (doom-blend   vc-deleted bg 0.1))
-        (magit-diff-removed-highlight :background (doom-lighten vc-deleted 0.85))
+        (magit-diff-removed           :background (doom-blend vc-deleted bg 0.1))
+        (magit-diff-removed-highlight :background (doom-blend vc-deleted bg 0.15))
         (magit-diff-file-heading-selection
             :inherit 'magit-diff-file-heading
             :background modeline-bg

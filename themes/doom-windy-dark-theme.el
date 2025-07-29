@@ -75,6 +75,7 @@
         (red         '("#fb2c36" "#ff0000" "red"))
         (dred        '("#9f0712" "#8b0000" "red"))
         (orange      '("#ff6900" "#ee7600" "brightred"))
+        (orange-bg   '("#601e0b" "#8b2500" "black"))
         (amber       '("#fe9a00" "#ee9a00" "yellow"))
         (damber      '("#bb4d00" "#cd6600" "yellow"))
         (yellow      '("#fdc700" "#eec900" "brightyellow"))
@@ -88,16 +89,19 @@
         (bcyan       '("#a2f4fd" "#aeeeee" "brightcyan"))
         (cyan        '("#00d3f2" "#00cdcd" "cyan"))
         (dcyan       '("#0092b8" "#008b8b" "cyan"))
+        (cyan-bg     '("#005f78" "#2f4f4f" "black"))
         (bsky        '("#b8e6fe" "#b2dfee" "brightblue"))
         (sky         '("#00bcff" "#00bfff" "blue"))
         (dsky        '("#0084d1" "#36648b" "blue"))
         (bblue       '("#bedbff" "#b0c4de" "brightblue"))
         (blue        '("#51a2ff" "#1874cd" "blue"))
         (dblue       '("#155dfc" "#3a5fcd" "blue"))
+        (blue-bg     '("#1c398e" "#27408b" "black"))
         (indigo      '("#7c86ff" "#6a5acd" "blue"))
         (violet      '("#a684ff" "#8968cd" "brightmagenta"))
         (purple      '("#c27aff" "#b452cd" "magenta"))
         (fuchsia     '("#ed6aff" "#cd69c9" "brightmagenta"))
+        (fuchsia-bg  '("#721378" "#68228b" "black"))
         (pink        '("#fb64b6" "#ff69b4" "brightred"))
         (rose        '("#ff637e" "#ee799f" "brightred"))
         (stone       '("#a6a09b" "#8b8386" "brightblack"))
@@ -300,29 +304,29 @@
         (diff-added
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend vc-added bg 0.1))
+            :background (doom-blend vc-added bg 0.15))
         (diff-refine-added
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken vc-added 0.7))
+            :background (doom-blend vc-added bg 0.4))
         (diff-indicator-changed :foreground vc-modified)
         (diff-changed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend vc-modified bg 0.1))
+            :background (doom-blend vc-modified bg 0.15))
         (diff-refine-changed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken vc-modified 0.7))
+            :background (doom-blend vc-modified bg 0.4))
         (diff-indicator-removed :foreground vc-deleted)
         (diff-removed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend vc-deleted bg 0.1))
+            :background (doom-blend vc-deleted bg 0.15))
         (diff-refine-removed
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken vc-deleted 0.7))
+            :background (doom-blend vc-deleted bg 0.4))
         ;;;; dired
         (dired-broken-symlink :inherit 'error :background dyellow)
         ;;; doom-modeline
@@ -345,11 +349,11 @@
         (ediff-current-diff-A
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend purple bg 0.1))
+            :background (doom-blend fuchsia bg 0.1))
         (ediff-fine-diff-A
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken purple 0.7))
+            :background fuchsia-bg)
         (ediff-current-diff-B
             :foreground 'unspecified
             :distant-foreground fg
@@ -357,7 +361,7 @@
         (ediff-fine-diff-B
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken cyan 0.7))
+            :background cyan-bg)
         (ediff-current-diff-C
             :foreground 'unspecified
             :distant-foreground fg
@@ -365,15 +369,15 @@
         (ediff-fine-diff-C
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken orange 0.7))
+            :background orange-bg)
         (ediff-current-diff-Ancestor
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-blend vc-modified bg 0.1))
+            :background (doom-blend blue bg 0.1))
         (ediff-fine-diff-Ancestor
             :foreground 'unspecified
             :distant-foreground fg
-            :background (doom-darken vc-modified 0.7))
+            :background blue-bg)
         ;;;; elisp
         (elisp-shorthand-font-lock-face :foreground sky)
         ;;;; eshell
@@ -470,10 +474,10 @@
         (ivy-posframe :background base0)
         ;;;; magit
         (magit-blame-heading          :background bg-alt :foreground stone)
-        (magit-diff-added             :background (doom-blend   vc-added bg 0.1))
-        (magit-diff-added-highlight   :background (doom-darken vc-added 0.85))
-        (magit-diff-base              :background (doom-blend   vc-modified bg 0.1))
-        (magit-diff-base-highlight    :background (doom-darken vc-modified 0.85))
+        (magit-diff-added             :background (doom-blend vc-added bg 0.1))
+        (magit-diff-added-highlight   :background (doom-blend vc-added bg 0.15))
+        (magit-diff-base              :background (doom-blend vc-modified bg 0.1))
+        (magit-diff-base-highlight    :background (doom-blend vc-modified bg 0.15))
         (magit-diff-context-highlight :background base0 :distant-background bg-alt)
         (magit-diff-hunk-heading
             :foreground (doom-blend bg purple 0.4)
@@ -484,8 +488,8 @@
             :background (doom-blend bg purple 0.8)
             :weight 'bold
             :extend t)
-        (magit-diff-removed           :background (doom-blend   vc-deleted bg 0.1))
-        (magit-diff-removed-highlight :background (doom-darken vc-deleted 0.85))
+        (magit-diff-removed           :background (doom-blend vc-deleted bg 0.1))
+        (magit-diff-removed-highlight :background (doom-blend vc-deleted bg 0.15))
         (magit-diff-file-heading-selection
             :inherit 'magit-diff-file-heading
             :background modeline-bg
