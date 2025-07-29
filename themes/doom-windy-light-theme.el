@@ -78,6 +78,7 @@
         (orange      '("#f54900" "#ff4500" "brightred"))
         (amber       '("#e17100" "#ff8c00" "yellow"))
         (damber      '("#973c00" "#8b5a00" "yellow"))
+        (yellow-bg   '("#fef9c2" "#ffffe0" "brightblack"))
         (byellow     '("#fff085" "#fff68f" "brightyellow"))
         (yellow      '("#f0b100" "#eead0e" "brightyellow"))
         (lime        '("#5ea500" "#9acd32" "green"))
@@ -207,6 +208,8 @@
         ((font-lock-preprocessor-char-face &inherit font-lock-processor-face) :inherit 'bold)
 
         ;;;; Package faces
+        ;;;; adict
+        (adict-conditional-text-face :background bsky)
         ;;;; all-the-icons
         (all-the-icons-blue       :foreground blue)
         (all-the-icons-blue-alt   :foreground sky)
@@ -291,9 +294,13 @@
         ;;;; blink
         (blink-matching-paren-offscreen :foreground orange)
         ;;;; calendar
+        (diary :foreground yellow)
         (holiday :background (doom-blend bg fuchsia 0.7))
         ;;;; completions
+        (completions-common-part :foreground blue)
         (completions-group-title :foreground fg)
+        ;;;; confusingly
+        (confusingly-reordered :underline `(:color ,red :style wave))
         ;;;; css-mode / scss-mode
         (css-proprietary-property :foreground red)
         (css-property             :foreground green)
@@ -318,6 +325,9 @@
             :foreground 'unspecified
             :distant-foreground fg
             :background (doom-blend vc-modified bg 0.4))
+        (diff-changed-unspecified
+            :inherit 'diff-changed
+            :background bg-alt)
         (diff-indicator-removed :foreground vc-deleted)
         (diff-removed
             :foreground 'unspecified
@@ -328,7 +338,8 @@
             :distant-foreground fg
             :background (doom-blend vc-deleted bg 0.4))
         ;;;; dired
-        (dired-broken-symlink :inherit 'error :background byellow)
+        (dired-broken-symlink :inherit 'error :inverse-video t)
+        (dired-set-id :foreground orange)
         ;;; doom-modeline
         (doom-modeline-buffer-modified
             :inherit '(doom-modeline font-lock-constant-face)
@@ -382,8 +393,19 @@
             :foreground 'unspecified
             :distant-foreground fg
             :background blue-bg)
+        (ediff-even-diff-Ancestor
+            :background base2
+            :distant-foreground fg)
+        (ediff-odd-diff-Ancestor
+            :background base3
+            :distant-foreground fg)
         ;;;; elisp
         (elisp-shorthand-font-lock-face :foreground sky)
+        ;;;; edmacro
+        (edmacro-label :foreground blue :inherit 'bold)
+        ;;;; epa
+        (epa-mark   :inherit 'font-lock-doc-markup-face)
+        (epa-string :inherit 'font-lock-string-face)
         ;;;; eshell
         (eshell-prompt :foreground sky :bold bold)
         ;;;; evil-ex
@@ -469,6 +491,8 @@
         (icon-button :background bg-alt
             :foreground fg
             :box '(:line-width (3 . -1)))
+        ;;;; info
+        (info-menu-star :foreground rose)
         ;;;; isearch
         (isearch         :inherit 'lazy-highlight)
         (isearch-fail    :background (doom-blend bg error 0.8) :weight 'bold)
@@ -476,6 +500,22 @@
         (isearch-group-2 :background (doom-blend bg violet 0.9))
         ;;;; ivy-posframe
         (ivy-posframe :background base0)
+        ;;;; lsp
+        (lsp-installation-buffer-face
+            :foreground green)
+        (lsp-installation-finished-buffer-face
+            :foreground orange)
+        (lsp-modeline-code-actions-face
+            :foreground amber)
+        (lsp-modeline-code-actions-preferred-face
+            :foreground yellow)
+        (lsp-ui-doc-header
+            :background bsky)
+        (lsp-ui-peek-selection
+            :foreground blue
+            :inverse-video t)
+        (lsp-ui-sideline-code-action
+            :foreground blue)
         ;;;; magit
         (magit-blame-heading          :background bg-alt :foreground stone)
         (magit-diff-added             :background (doom-blend vc-added bg 0.1))
@@ -512,16 +552,19 @@
             :bold bold)
         ;;;; markdown-mode
         ((markdown-code-face &override) :background base1)
-        (markdown-header-face   :inherit 'bold :foreground dark-blue)
-        (markdown-header-face-1 :inherit 'outline-1)
-        (markdown-header-face-2 :inherit 'outline-2)
-        (markdown-header-face-3 :inherit 'outline-3)
-        (markdown-header-face-4 :inherit 'outline-4)
-        (markdown-header-face-5 :inherit 'outline-5)
-        (markdown-header-face-6 :inherit 'outline-6)
-        (markdown-link-face     :foreground strings)
-        (markdown-table-face    :inherit 'org-table)
-        ((markdown-url-face &override) :foreground purple)
+        (markdown-header-face
+            :inherit 'bold
+            :foreground dark-blue)
+        (markdown-header-face-1         :inherit 'outline-1)
+        (markdown-header-face-2         :inherit 'outline-2)
+        (markdown-header-face-3         :inherit 'outline-3)
+        (markdown-header-face-4         :inherit 'outline-4)
+        (markdown-header-face-5         :inherit 'outline-5)
+        (markdown-header-face-6         :inherit 'outline-6)
+        (markdown-highlighting-face     :background yellow-bg)
+        (markdown-link-face             :foreground strings)
+        (markdown-table-face            :inherit 'org-table)
+        ((markdown-url-face &override)  :foreground purple)
         ;;;; mm-decode
         (mm-command-output :foreground red)
         ;;;; mmm-mode
@@ -529,6 +572,7 @@
         ;;;; message
         ((message-header-name &override) :foreground sky)
         (message-header-other :foreground doc-comments)
+        (message-header-newsgroups          :foreground orange)
         ((message-header-subject &override) :foreground 'unspecified)
         ((message-header-to &inherit message-header-subject))
         ;;;; mu4e
@@ -608,17 +652,26 @@
         (org-date                  :foreground orange)
         (org-date-selected         :background (doom-blend bg orange 0.5) :foreground fg-alt)
         (org-document-info-keyword :inherit 'fixed-pitch)
+        (org-dispatcher-highlight  :background bg-alt :foreground yellow)
         (org-ellipsis
             :underline nil
             :background 'unspecified
             :foreground comments
             :weight 'extra-light)
+        (org-headline-todo         :foreground damber)
         ((org-link &override)      :foreground 'unspecified)
         (org-meta-line             :inherit 'fixed-pitch)
         (org-mode-line-clock-overrun
             :inherit 'mode-line
             :background (doom-blend bg-alt red 0.7))
         (org-property-value        :inherit 'fixed-pitch)
+        (org-roam-dim :foreground comments)
+        (org-roam-header-line
+            :inherit 'bold
+            :background bg-alt
+            :foreground light-blue
+            :extend t)
+        (org-roam-olp :foreground doc-comments)
         ((org-quote &override)     :background base1)
         (org-special-keyword       :inherit 'fixed-pitch)
         (org-table                 :inherit 'fixed-pitch :foreground fg :background bg-alt)
@@ -635,6 +688,27 @@
         (popup-scroll-bar-background-face :inherit 'hl-line)
         (popup-scroll-bar-foreground-face :inherit 'fringe)
         (popup-summery-face               :inherit 'popup-face :foreground indigo)
+        ;;;; proced
+        (proced-cpu                 :foreground indigo)
+        (proced-emacs-pid           :foreground fuchsia)
+        (proced-executable          :foreground blue)
+        (proced-interruptible-sleep-status-code
+            :foreground doc-comments)
+        (proced-mark                :foreground red)
+        (proced-marked              :foreground pink)
+        (proced-mem                 :foreground purple)
+        (proced-memory-high-usage   :foreground orange)
+        (proced-memory-low-usage    :foreground lime)
+        (proced-memory-medium-usage :foreground yellow)
+        (proced-pgrp                :foreground cyan)
+        (proced-pid                 :foreground sky)
+        (proced-ppid                :foreground teal)
+        (proced-run-status-code     :foreground green)
+        (proced-sess                :foreground dsky)
+        (proced-session-leader-pid  :foreground bblue :underline t)
+        (proced-time-colon          :foreground violet)
+        (proced-uninterruptible-sleep-status-code
+            :foreground rose)
         ;;;; pulse
         (pulse-highlight-face :background byellow)
         (pulse-highlight-start-face :inherit 'pulse-highlight-face)
@@ -671,10 +745,18 @@
         ;;;; smartparens
         (sp-wrap-overlay-opening-pair :inherit 'sp-wrap-overlay-face :foreground green)
         ;;;; transient
-        (transient-disabled-suffix :background dred   :foreground bg-alt)
-        (transient-enabled-suffix  :background bgreen :foreground fg)
-        (transient-wnabled-suffix  :background bgreen :foreground fg)
+        (transient-disabled-suffix :background dred        :foreground bg-alt)
+        (transient-enabled-suffix  :background bgreen      :foreground fg)
+        (transient-wnabled-suffix  :background bgreen      :foreground fg)
         (transient-higher-level    :box `(:line-width -1 :color ,grey))
+        (transient-key-exit        :inherit 'transient-key :foreground red)
+        (transient-key-noop        :inherit 'transient-key :foreground comments)
+        (transient-key-recurse     :inherit 'transient-key :foreground sky)
+        (transient-key-return      :inherit 'transient-key :foreground yellow)
+        (transient-key-stack       :inherit 'transient-key :foreground pink)
+        (transient-key-stay        :inherit 'transient-key :foreground green)
+        (transient-mismatched-key  :box `(:line-width -1 :color ,fuchsia))
+        (transient-nonstandard-key :box `(:line-width -1 :color ,cyan))
         ;;;; tty-menu
         (tty-menu-disabled-face :background indigo :foreground base3)
         (tty-menu-enabled-face  :background blue   :foreground base1)
