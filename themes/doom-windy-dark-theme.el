@@ -146,9 +146,9 @@
                                       (if doom-windy-dark-brighter 0.6 0.5)))
         (modeline-bg              (if doom-windy-dark-brighter
                                       bg-alt
-                                      (doom-lighten bg 0.02)))
-        (modeline-bg-alt          (doom-darken modeline-bg 0.01))
-        (modeline-bg-inactive     (doom-darken modeline-bg 0.015))
+                                      (doom-lighten bg 0.05)))
+        (modeline-bg-alt          (doom-darken modeline-bg 0.03))
+        (modeline-bg-inactive     (doom-darken modeline-bg 0.02))
 
         (-modeline-pad
             (when doom-windy-dark-padded-modeline
@@ -456,7 +456,7 @@
         ;;;; highlight-numbers-mode
         (highlight-numbers-number :foreground numbers)
         ;;;; hl-line
-        (hl-line :background base0 :distant-background bg-alt :extend t)
+        (hl-line :background (doom-blend bg base0 0.5) :distant-background bg-alt :extend t)
         ;;;; hl-todo
         (hl-todo :foreground purple :weight 'bold)
         ;;;; hyde
