@@ -120,7 +120,7 @@
         ;; error, as they are used in the base theme defined in doom-themes-base.
         (highlight      indigo)
         (vertical-bar   (doom-darken bg 0.1))
-        (selection      base4)
+        (selection      grey)
         (builtin        sky)
         (comments       (if doom-windy-dark-brighter (doom-blend purple base3 0.7) base3))
         (doc-comments   (doom-blend comments fg 0.5))
@@ -204,8 +204,9 @@
         ;;;; font-lock-* faces
         ((font-lock-doc-face &override) :slant 'italic)
         (font-lock-doc-markup-face :foreground violet)
-        (font-lock-preprocessor-face :foreground operators)
-        ((font-lock-preprocessor-char-face &inherit font-lock-processor-face) :inherit 'bold)
+        (font-lock-preprocessor-face :foreground indigo)
+        ((font-lock-preprocessor-char-face &inherit font-lock-processor-face)
+            :inherit 'bold)
 
         ;;;; Package faces
         ;;;; adict
@@ -218,43 +219,43 @@
         (all-the-icons-dblue      :foreground dblue)
         (all-the-icons-dcyan      :foreground dcyan)
         (all-the-icons-dgreen     :foreground dgreen)
-        (all-the-icons-dmaroon    :foreground (doom-darken stone 0.3))
+        (all-the-icons-dmaroon    :foreground (doom-darken damber 0.3))
         (all-the-icons-dorange    :foreground (doom-darken orange 0.3))
         (all-the-icons-dpink      :foreground (doom-darken pink 0.3))
         (all-the-icons-dpurple    :foreground (doom-darken purple 0.3))
         (all-the-icons-dred       :foreground dred)
-        (all-the-icons-dsilver    :foreground (doom-lighten grey 0.1))
+        (all-the-icons-dsilver    :foreground (doom-darken grey 0.3))
         (all-the-icons-dyellow    :foreground damber)
         (all-the-icons-green      :foreground green)
         (all-the-icons-lblue      :foreground bblue)
         (all-the-icons-lcyan      :foreground bcyan)
         (all-the-icons-lgreen     :foreground bgreen)
-        (all-the-icons-lmaroon    :foreground (doom-lighten stone 0.3))
+        (all-the-icons-lmaroon    :foreground amber)
         (all-the-icons-lorange    :foreground (doom-lighten orange 0.3))
         (all-the-icons-lpink      :foreground (doom-lighten pink 0.3))
         (all-the-icons-lpurple    :foreground (doom-lighten purple 0.3))
         (all-the-icons-lred       :foreground bred)
-        (all-the-icons-lsilver    :foreground (doom-lighten grey 0.7))
+        (all-the-icons-lsilver    :foreground (doom-lighten grey 0.3))
         (all-the-icons-lyellow    :foreground yellow)
-        (all-the-icons-maroon     :foreground stone)
+        (all-the-icons-maroon     :foreground damber)
         (all-the-icons-orange     :foreground orange)
         (all-the-icons-pink       :foreground pink)
         (all-the-icons-purple     :foreground purple)
         (all-the-icons-purple-alt :foreground violet)
         (all-the-icons-red        :foreground red)
         (all-the-icons-red-alt    :foreground rose)
-        (all-the-icons-silver     :foreground (doom-lighten grey 0.45))
+        (all-the-icons-silver     :foreground grey)
         (all-the-icons-yellow     :foreground amber)
         ;;;; ansi-color
-        (ansi-color-black          :foreground base8   :background base8)
+        (ansi-color-black          :foreground base0   :background base0)
         (ansi-color-red            :foreground red     :background red)
         (ansi-color-green          :foreground green   :background green)
         (ansi-color-yellow         :foreground yellow  :background yellow)
         (ansi-color-blue           :foreground blue    :background blue)
         (ansi-color-magenta        :foreground magenta :background magenta)
         (ansi-color-cyan           :foreground cyan    :background cyan)
-        (ansi-color-white          :foreground base0   :background base0)
-        (ansi-color-bright-black   :foreground base6   :background base6)
+        (ansi-color-white          :foreground base8   :background base8)
+        (ansi-color-bright-black   :foreground base3   :background base3)
         (ansi-color-bright-red     :foreground bred    :background bred)
         (ansi-color-bright-green   :foreground bgreen  :background bgreen)
         (ansi-color-bright-yellow
@@ -265,7 +266,7 @@
             :foreground (doom-lighten magenta 0.15)
             :background (doom-lighten magenta 0.15))
         (ansi-color-bright-cyan    :foreground bcyan   :background bcyan)
-        (ansi-color-bright-white   :foreground base3   :background base3)
+        (ansi-color-bright-white   :foreground base5   :background base5)
         ;;;; anzu
         (anzu-match-1            :background dsky)
         (anzu-match-2            :background dgreen)
@@ -478,7 +479,10 @@
         ;;;; highlight-numbers-mode
         (highlight-numbers-number :foreground numbers)
         ;;;; hl-line
-        (hl-line :background (doom-blend bg base0 0.5) :distant-background bg-alt :extend t)
+        (hl-line
+            :background (doom-blend bg base0 0.5)
+            :distant-forground cyan
+            :extend t)
         ;;;; hl-todo
         (hl-todo :foreground purple :weight 'bold)
         ;;;; hyde
@@ -539,7 +543,7 @@
             :background modeline-bg
             :foreground sky)
         (magit-diff-lines-heading
-            :foreground dyellow
+            :foreground yellow
             :background dred
             :extend t)
         (magit-header-line
@@ -554,7 +558,7 @@
         ((markdown-code-face &override) :background base1)
         (markdown-header-face
             :inherit 'bold
-            :foreground dark-blue)
+            :foreground light-blue)
         (markdown-header-face-1         :inherit 'outline-1)
         (markdown-header-face-2         :inherit 'outline-2)
         (markdown-header-face-3         :inherit 'outline-3)
@@ -570,9 +574,9 @@
         ;;;; mmm-mode
         (mmm-default-submode-face :background base1)
         ;;;; message
-        ((message-header-name &override) :foreground sky)
-        (message-header-other :foreground doc-comments)
+        ((message-header-name &override)    :foreground sky)
         (message-header-newsgroups          :foreground orange)
+        (message-header-other               :foreground doc-comments)
         ((message-header-subject &override) :foreground 'unspecified)
         ((message-header-to &inherit message-header-subject))
         ;;;; mu4e
@@ -596,32 +600,32 @@
         (nerd-icons-dblue      :foreground dark-blue)
         (nerd-icons-dcyan      :foreground dark-cyan)
         (nerd-icons-dgreen     :foreground dgreen)
-        (nerd-icons-dmaroon    :foreground (doom-darken stone 0.3))
+        (nerd-icons-dmaroon    :foreground (doom-darken damber 0.4))
         (nerd-icons-dorange    :foreground (doom-darken orange 0.3))
         (nerd-icons-dpink      :foreground (doom-darken pink 0.3))
         (nerd-icons-dpurple    :foreground (doom-darken purple 0.3))
         (nerd-icons-dred       :foreground dred)
-        (nerd-icons-dsilver    :foreground (doom-lighten grey 0.1))
+        (nerd-icons-dsilver    :foreground (doom-darken grey 0.3))
         (nerd-icons-dyellow    :foreground damber)
         (nerd-icons-green      :foreground green)
         (nerd-icons-lblue      :foreground bblue)
         (nerd-icons-lcyan      :foreground bcyan)
         (nerd-icons-lgreen     :foreground bgreen)
-        (nerd-icons-lmaroon    :foreground (doom-lighten stone 0.3))
+        (nerd-icons-lmaroon    :foreground amber)
         (nerd-icons-lorange    :foreground (doom-lighten orange 0.3))
         (nerd-icons-lpink      :foreground (doom-lighten pink 0.3))
         (nerd-icons-lpurple    :foreground (doom-lighten purple 0.3))
         (nerd-icons-lred       :foreground bred)
-        (nerd-icons-lsilver    :foreground (doom-lighten grey 0.7))
+        (nerd-icons-lsilver    :foreground (doom-lighten grey 0.3))
         (nerd-icons-lyellow    :foreground yellow)
-        (nerd-icons-maroon     :foreground stone)
+        (nerd-icons-maroon     :foreground damber)
         (nerd-icons-orange     :foreground orange)
         (nerd-icons-pink       :foreground pink)
         (nerd-icons-purple     :foreground purple)
         (nerd-icons-purple-alt :foreground violet)
         (nerd-icons-red        :foreground red)
         (nerd-icons-red-alt    :foreground rose)
-        (nerd-icons-silver     :foreground (doom-lighten grey 0.45))
+        (nerd-icons-silver     :foreground grey)
         (nerd-icons-yellow     :foreground amber)
         ;;;; outline
         ;; NOTE org-mode's org-level-N faces inherit these outline-N faces.
@@ -630,15 +634,15 @@
         ((outline-2 &override)
             :foreground (doom-blend fg purple  (if doom-windy-dark-brighter 0.25 0.33)))
         ((outline-3 &override)
-            :foreground (doom-blend fg cyan    (if doom-windy-dark-brighter 0.25 0.33)))
-        ((outline-4 &override)
             :foreground (doom-blend fg rose    (if doom-windy-dark-brighter 0.25 0.33)))
+        ((outline-4 &override)
+            :foreground (doom-blend fg orange  (if doom-windy-dark-brighter 0.25 0.33)))
         ((outline-5 &override)
-            :foreground (doom-blend fg indigo  (if doom-windy-dark-brighter 0.25 0.33)))
+            :foreground (doom-blend fg lime    (if doom-windy-dark-brighter 0.25 0.33)))
         ((outline-6 &override)
-            :foreground (doom-blend fg yellow  (if doom-windy-dark-brighter 0.25 0.33)))
+            :foreground (doom-blend fg cyan    (if doom-windy-dark-brighter 0.25 0.33)))
         ((outline-7 &override)
-            :foreground (doom-blend fg violet  (if doom-windy-dark-brighter 0.25 0.33)))
+            :foreground (doom-blend fg indigo  (if doom-windy-dark-brighter 0.25 0.33)))
         ((outline-8 &override)
             :foreground (doom-blend fg fuchsia (if doom-windy-dark-brighter 0.25 0.33)))
         ;;;; org
@@ -729,7 +733,7 @@
         (rainbow-delimiters-mismatched-face :foreground warning :overline t)
         ;;;; shr
         (shr-mark :background dyellow)
-        (shr-selected-link :inherit 'link :background bsky)
+        (shr-selected-link :inherit 'link :background dsky)
         ;;;; solaire-mode
         (solaire-default-face  :inherit 'default :background (doom-darken bg 0.08))
         (solaire-hl-line-face  :inherit 'hl-line)
@@ -745,9 +749,9 @@
         ;;;; smartparens
         (sp-wrap-overlay-opening-pair :inherit 'sp-wrap-overlay-face :foreground green)
         ;;;; transient
-        (transient-disabled-suffix :background dred        :foreground bg-alt)
-        (transient-enabled-suffix  :background bgreen      :foreground fg)
-        (transient-wnabled-suffix  :background bgreen      :foreground fg)
+        (transient-disabled-suffix :background bred        :foreground bg-alt)
+        (transient-enabled-suffix  :background dgreen      :foreground fg)
+        (transient-wnabled-suffix  :background dgreen      :foreground fg)
         (transient-higher-level    :box `(:line-width -1 :color ,grey))
         (transient-key-exit        :inherit 'transient-key :foreground red)
         (transient-key-noop        :inherit 'transient-key :foreground comments)
@@ -758,16 +762,16 @@
         (transient-mismatched-key  :box `(:line-width -1 :color ,fuchsia))
         (transient-nonstandard-key :box `(:line-width -1 :color ,cyan))
         ;;;; tty-menu
-        (tty-menu-disabled-face :background indigo :foreground base3)
-        (tty-menu-enabled-face  :background blue   :foreground base1)
-        (tty-menu-selected-face :background bblue  :foreground base0)
+        (tty-menu-disabled-face :background indigo :foreground base6)
+        (tty-menu-enabled-face  :background blue   :foreground base7)
+        (tty-menu-selected-face :background dblue  :foreground base8)
         ;;;; wgrep
         ((wgrep-face &override) :background base1)
         ;;;; whitespace
-        (whitespace-big-indent :background dred :foreground bred)
+        (whitespace-big-indent :background bred   :foreground dred)
         (whitespace-empty      :background base2)
         (whitespace-hspace     :background bg-alt :foreground white)
-        (whitespace-line    :background base0 :foreground red :weight 'bold)
+        (whitespace-line       :background base0  :foreground red :weight 'bold)
         (whitespace-missing-newline-at-eof
             :background (doom-blend bg stone 0.5)
             :foreground fg)
@@ -775,10 +779,10 @@
         (whitespace-space      :foreground base2)
         (whitespace-space-after-tab
             :background (doom-blend bg yellow 0.4)
-            :foreground dred)
+            :foreground bred)
         (whitespace-space-before-tab
             :background (doom-blend bg orange 0.4)
-            :foreground dred)
+            :foreground bred)
         (whitespace-tab
             :foreground base4
             :background (if (not (default-value 'indent-tabs-mode)) base0 'unspecified))
