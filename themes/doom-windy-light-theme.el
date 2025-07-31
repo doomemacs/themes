@@ -765,10 +765,10 @@
         ;;;; wgrep
         ((wgrep-face &override) :background base1)
         ;;;; whitespace
-        (whitespace-big-indent :background dred :foreground bred)
+        (whitespace-big-indent :background dred   :foreground bred)
         (whitespace-empty      :background base2)
         (whitespace-hspace     :background bg-alt :foreground white)
-        (whitespace-line    :background base0 :foreground red :weight 'bold)
+        (whitespace-line       :background base0  :foreground red :weight 'bold)
         (whitespace-missing-newline-at-eof
             :background (doom-blend bg stone 0.5)
             :foreground fg)

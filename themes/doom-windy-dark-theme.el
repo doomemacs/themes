@@ -61,15 +61,15 @@
         ;; These should represent a spectrum from bg to fg, where base0 is a starker
         ;; bg and base8 is a starker fg. For example, if bg is light grey and fg is
         ;; dark grey, base0 should be white and base8 should be black.
-        (base8  neutral-50)
-        (base7  neutral-100)
-        (base6  neutral-200)
-        (base5  neutral-300)
-        (base4  neutral-400)
-        (base3  neutral-500)
-        (base2  neutral-600)
-        (base1  neutral-800)
         (base0  neutral-900)
+        (base1  neutral-800)
+        (base2  neutral-600)
+        (base3  neutral-500)
+        (base4  neutral-400)
+        (base5  neutral-300)
+        (base6  neutral-200)
+        (base7  neutral-100)
+        (base8  neutral-50)
 
         (bred        '("#ffa2a2" "#ffaeb9" "brightred"))
         (red         '("#fb2c36" "#ff0000" "red"))
