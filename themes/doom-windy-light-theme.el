@@ -278,20 +278,17 @@
             :background (doom-lighten light-blue 0.5))
         (avy-lead-face :background light-blue :foreground fg-alt)
         (avy-lead-face-0
-            (&all   :inherit 'avy-lead-face)
-            (&light
-                :background (doom-darken light-blue 0.25)
-                :distant-foreground bg))
+            :inherit 'avy-lead-face
+            :background (doom-darken light-blue 0.25)
+            :distant-foreground bg)
         (avy-lead-face-1
-            (&all   :inherit 'avy-lead-face)
-            (&light
-                :background (doom-darken light-blue 0.5)
-                :foreground bg))
+            :inherit 'avy-lead-face
+            :background (doom-darken light-blue 0.5)
+            :foreground bg)
         (avy-lead-face-2
-            (&all   :inherit 'avy-lead-face)
-            (&light
-                :background (doom-darken light-blue 0.75)
-                :foreground bg))
+            :inherit 'avy-lead-face
+            :background (doom-darken light-blue 0.75)
+            :foreground bg)
         ;;;; blink
         (blink-matching-paren-offscreen :foreground orange)
         ;;;; calendar
