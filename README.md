@@ -1,8 +1,6 @@
 ![Release tag](https://img.shields.io/github/tag/doomemacs/themes.svg?label=release&style=flat-square)
 [![MELPA](http://melpa.org/packages/doom-themes-badge.svg?style=flat-square)](http://melpa.org/#/doom-themes)
-![Build status](https://img.shields.io/github/workflow/status/doomemacs/themes/CI/master?style=flat-square)
 [![Discord Server](https://img.shields.io/discord/406534637242810369?color=738adb&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://doomemacs.org/discord)
-[![Discourse server](https://img.shields.io/discourse/users?server=https%3A%2F%2Fdiscourse.doomemacs.org&logo=discourse&label=Discourse&style=flat-square&color=9cf)](https://discourse.doomemacs.org)
 
 # Doom Emacs' Theme Pack
 
