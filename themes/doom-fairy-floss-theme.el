@@ -150,6 +150,9 @@ determine the exact padding."
    (css-selector             :foreground blue)
    ;;;; doom-modeline
    (doom-modeline-bar :background blue)
+   ;;;; ediff
+   (ediff-current-diff-A :background (doom-blend red base5 0.2) :foreground red)
+   (ediff-fine-diff-A    :background (doom-blend red base5 0.3) :foreground red :weight 'bold)
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; highlight-symbol

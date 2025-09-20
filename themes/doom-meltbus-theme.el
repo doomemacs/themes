@@ -163,6 +163,8 @@ highlight interactive elements."
    (doom-modeline-evil-normal-state :foreground base5)
    (doom-modeline-evil-visual-state :foreground white)
    (doom-modeline-evil-operator-state :inherit 'doom-modeline-evil-visual-state)
+   ;;;; ediff
+   (ediff-current-diff-B :foreground green :background (doom-lighten green 0.8))
    ;;;; evil
    ((evil-ex-substitute-replacement &override) :foreground cyan)
    ;;;; evil-snipe

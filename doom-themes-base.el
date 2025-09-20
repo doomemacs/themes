@@ -491,11 +491,11 @@
     ;;;; doom-themes
     (doom-themes-visual-bell :background error)
     ;;;; ediff <built-in>
-    (ediff-fine-diff-A    :background (doom-blend selection bg 0.7) :weight 'bold :extend t)
-    (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
+    (ediff-fine-diff-A    :inherit 'diff-refine-removed)
+    (ediff-fine-diff-B    :inherit 'diff-refine-added)
     (ediff-fine-diff-C    :inherit 'ediff-fine-diff-A)
-    (ediff-current-diff-A :background (doom-blend selection bg 0.3) :extend t)
-    (ediff-current-diff-B :inherit 'ediff-current-diff-A)
+    (ediff-current-diff-A :foreground vc-deleted :background (doom-blend vc-deleted base3 0.2)  :extend t)
+    (ediff-current-diff-B :foreground vc-added   :background (doom-blend vc-added bg 0.2)       :extend t)
     (ediff-current-diff-C :inherit 'ediff-current-diff-A)
     (ediff-even-diff-A    :inherit 'hl-line)
     (ediff-even-diff-B    :inherit 'ediff-even-diff-A)
