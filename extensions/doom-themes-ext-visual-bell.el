@@ -19,19 +19,22 @@
 (defun doom-themes-visual-bell-fn ()
   "Blink the mode-line red briefly. Set `ring-bell-function' to this to use it."
   ;; Since emacs 29, the mode-line face is the parent of the new face
-  ;; mode-line-active and mode-line-inactive.  For remapping purposes, the
+  ;; mode-line-active and mode-line-inactive. For remapping purposes, the
   ;; mode-line-active face has to be used, see details at:
   ;; http://debbugs.gnu.org/cgi/bugreport.cgi?bug=53636
-  (let* ((face (if (facep 'mode-line-active)
-                   'mode-line-active
-                 'mode-line))
-         (buf (current-buffer))
-         (cookie (face-remap-add-relative face 'doom-themes-visual-bell)))
+  (let* ((buf (current-buffer))
+         (faces (if (facep 'mode-line-active)
+                   '(mode-line-active solaire-mode-line-active-face)
+                 '(mode-line solaire-mode-line-face)))
+         (cookies (mapcar (lambda (face)
+                            (when (facep face)
+                              (face-remap-add-relative face 'doom-themes-visual-bell)))
+                          faces)))
     (force-mode-line-update)
     (run-with-timer 0.15 nil
                     (lambda ()
                       (with-current-buffer buf
-                        (face-remap-remove-relative cookie)
+                        (mapc #'face-remap-remove-relative cookies)
                         (force-mode-line-update))))))
 
 ;;;###autoload
