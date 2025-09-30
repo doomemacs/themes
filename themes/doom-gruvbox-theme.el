@@ -44,6 +44,8 @@ background contrast. All other values default to \"medium\"."
 
 (def-doom-theme doom-gruvbox
   "Dark theme with pastel 'retro groove' colors."
+  :family 'doom-gruvbox
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg
@@ -71,7 +73,7 @@ background contrast. All other values default to \"medium\"."
    ;; Standardized official colours from gruvbox
    (grey        '("#928374" "#909090" "brightblack"))   ; gray
    (red         '("#fb4934" "#e74c3c" "red"))           ; bright-red
-   (magenta     '("#cc241d" "#cc241d" "magenta"))       ; red
+   (magenta     '("#b16286" "#b16286" "magenta"))       ; red
    (violet      '("#d3869b" "#d3869b" "brightmagenta")) ; bright-purple
    (orange      '("#fe8019" "#fd971f" "orange"))        ; bright-orange
    (yellow      '("#fabd2f" "#fabd2f" "yellow"))        ; bright-yellow

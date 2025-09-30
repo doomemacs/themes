@@ -109,7 +109,7 @@ Can be an integer to determine the exact padding."
       (if (integerp doom-1337-padded-modeline) doom-1337-padded-modeline 4))))
 
   ;;;; Base theme face overrides
-  (((highlight &override) :foreground base8)
+  (((highlight &override) :foreground base0)
    (lazy-highlight :background base4 :foreground fg :weight 'bold)
    (mode-line
     :background modeline-bg :foreground modeline-fg

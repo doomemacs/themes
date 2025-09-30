@@ -26,6 +26,8 @@
 
 (def-doom-theme doom-bluloco-light
   "A light theme inspired by bluloco light theme"
+  :family 'doom-bluloco
+  :background-mode 'light
 
   ;; name        default     256       16
   ((bg           '("#f9f9f9" "white"   "white"        ))
@@ -58,6 +60,16 @@
    (dark-violet  '("#7a82da" "#8787d7" "brightmagenta"))
    (cyan         '("#33c0ce" "#5fafd7" "brightcyan"   ))
    (dark-cyan    '("#217b84" "#008080" "brightcyan"   ))
+
+   ;; custom colours
+   (rainbow-red       '("#f067f0"))
+   (rainbow-yellow    '("#B3BA00"))
+   (rainbow-blue      '("#0ab6ff"))
+   (rainbow-orange    '("#ffa023"))
+   (rainbow-green     '("#1fc255"))
+   (rainbow-violet    '("#a557ff"))
+   (rainbow-cyan      '("#0e91a8"))
+   (rainbow-indigo    '("#383A42"))
 
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.1))
@@ -98,6 +110,10 @@
 ;;;; Base theme face overrides
 
 (((font-lock-operator-face &override) :foreground dark-violet)
+
+   ;; line-number
+   (line-number :foreground comments)
+   (line-number-current-line :foreground comments)
 
    ;; mode-line
    (mode-line
@@ -146,6 +162,16 @@
    (markdown-language-keyword-face :foreground brown)
    (markdown-strike-through-face :foreground grey :strike-through t)
 
+   ;; outline
+   ((outline-1 &override) :foreground rainbow-red)
+   ((outline-2 &override) :foreground rainbow-yellow)
+   ((outline-3 &override) :foreground rainbow-blue)
+   ((outline-4 &override) :foreground rainbow-orange)
+   ((outline-5 &override) :foreground rainbow-green)
+   ((outline-6 &override) :foreground rainbow-violet)
+   ((outline-7 &override) :foreground rainbow-cyan)
+   ((outline-8 &override) :foreground rainbow-indigo)
+
    ;; org-mode
    ((org-block &override) :background (doom-lighten base1 0.3))
    ((org-code &override) :foreground brown :background bg)
@@ -156,19 +182,27 @@
    ((org-table &override) :foreground brown)
    ((org-verbatim &override) :foreground brown :background bg)
    (org-ellipsis :underline nil :background bg)
-   (org-level-1 :inherit 'bold :foreground blue :height 1.2)
-   (org-level-2 :inherit 'bold :foreground magenta :height 1.15)
-   (org-level-3 :inherit 'bold :foreground green :height 1.1)
-   (org-level-4 :inherit 'bold :foreground (doom-lighten blue 0.25)  :height 1.05)
+   (org-level-1 :inherit 'bold :foreground rainbow-red :height 1.2)
+   (org-level-2 :inherit 'bold :foreground rainbow-yellow :height 1.15)
+   (org-level-3 :inherit 'bold :foreground rainbow-blue :height 1.1)
+   (org-level-4 :inherit 'bold :foreground rainbow-orange :height 1.05)
+   (org-level-5 :inherit 'bold :foreground rainbow-green)
+   (org-level-6 :inherit 'bold :foreground rainbow-violet)
+   (org-level-7 :inherit 'bold :foreground rainbow-cyan)
+   (org-level-8 :inherit 'bold :foreground rainbow-indigo)
 
    ;; org-modern-indent
    (org-modern-indent-line :inherit 'org-block-begin-line)
 
    ;; rainbow delimiters
-   (rainbow-delimiters-depth-1-face :foreground operators)
-   (rainbow-delimiters-depth-2-face :foreground green)
-   (rainbow-delimiters-depth-3-face :foreground blue)
-   (rainbow-delimiters-depth-4-face :foreground magenta)
+   (rainbow-delimiters-depth-1-face :foreground rainbow-red)
+   (rainbow-delimiters-depth-2-face :foreground rainbow-yellow)
+   (rainbow-delimiters-depth-3-face :foreground rainbow-blue)
+   (rainbow-delimiters-depth-4-face :foreground rainbow-orange)
+   (rainbow-delimiters-depth-5-face :foreground rainbow-green)
+   (rainbow-delimiters-depth-6-face :foreground rainbow-violet)
+   (rainbow-delimiters-depth-7-face :foreground rainbow-cyan)
+   (rainbow-delimiters-depth-8-face :foreground rainbow-indigo)
 
    ;; selectrum
    (selectrum-current-candidate :background base2)

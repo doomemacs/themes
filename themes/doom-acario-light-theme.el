@@ -46,6 +46,8 @@ determine the exact padding."
 
 (def-doom-theme doom-acario-light
   "A light theme inspired by Acario light"
+  :family 'doom-acario
+  :background-mode 'light
 
 ;;;; Colors
   ;; name        default   256         16

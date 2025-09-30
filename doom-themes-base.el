@@ -60,8 +60,8 @@
     ;;;; tab-line/tab-bar (Emacs 27+)
     (tab-line :background bg-alt :foreground bg-alt)
     (tab-line-tab :background bg :foreground fg)
-    (tab-line-tab-inactive :inherit 'tab-line-tab :background bg-alt :foreground fg-alt)
-    (tab-line-tab-inactive-alternate :inherit 'tab-line-tab-inactive)
+    (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
+    ((tab-line-tab-inactive-alternate &inherit tab-line-tab-inactive))
     (tab-line-tab-current :background bg :foreground fg)
     ;; (tab-line-special )
     (tab-line-highlight :inherit 'tab-line-tab)
@@ -76,12 +76,12 @@
     (line-number
      :inherit 'default
      :foreground base5 :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
     (line-number-current-line
      :inherit '(hl-line default)
      :foreground fg :distant-foreground 'unspecified
-     :weight 'normal :italic 'unspecified
+     :weight 'normal :slant 'unspecified
      :underline 'unspecified :strike-through 'unspecified)
 
     ;;;; --- Package faces ----------------------
@@ -120,7 +120,9 @@
     ;;;; auctex <modes:latex-mode>
     (font-latex-bold-face         :inherit 'bold)
     (font-latex-italic-face       :inherit 'italic)
+    (font-latex-underline-face    :inherit 'underline)
     (font-latex-math-face         :foreground blue)
+    (font-latex-sedate-face       :inherit 'font-lock-keyword-face)
     (font-latex-sectioning-0-face :foreground blue    :weight 'ultra-bold)
     (font-latex-sectioning-1-face :foreground magenta :weight 'semi-bold)
     (font-latex-sectioning-2-face :foreground violet  :weight 'semi-bold)
@@ -191,7 +193,12 @@
     (ansi-color-magenta        :foreground magenta :background magenta)
     (ansi-color-cyan           :foreground cyan    :background cyan)
     (ansi-color-white          :foreground fg      :background fg)
-    (ansi-color-bright-black   :foreground base0   :background base2)
+    ;; This color is used effectively as grayed out foreground text.
+    ;; base5 and up have too much contrast in light themes;
+    ;; base5 and lower have too little contrast in dark themes.
+    (ansi-color-bright-black
+     (&light :foreground base4 :background base4)
+     (&dark  :foreground base6 :background base6))
     (ansi-color-bright-red     :foreground (doom-lighten red 0.15)     :background (doom-lighten red 0.15))
     (ansi-color-bright-green   :foreground (doom-lighten green 0.15)   :background (doom-lighten green 0.15))
     (ansi-color-bright-yellow  :foreground (doom-lighten yellow 0.15)  :background (doom-lighten yellow 0.15))
@@ -336,7 +343,7 @@
     (custom-comment-tag             :foreground grey)
     (custom-modified                :foreground blue   :background (doom-blend blue bg 0.2))
     (custom-variable-tag            :foreground magenta)
-    (custom-visibility              :foreground blue   :underline 'unspecified)
+    (custom-visibility              :foreground blue)
     (custom-group-subtitle          :foreground red)
     (custom-group-tag               :foreground violet)
     (custom-group-tag-1             :foreground blue)
@@ -401,6 +408,9 @@
     (diff-header  :foreground cyan)
     (diff-file-header :foreground blue)
     (diff-hunk-header :foreground violet)
+    (diff-indicator-added :foreground vc-added)
+    (diff-indicator-changed :foreground vc-modified)
+    (diff-indicator-removed :foreground vc-added)
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
     (diff-refine-removed :inherit 'diff-removed :inverse-video t)
@@ -481,11 +491,11 @@
     ;;;; doom-themes
     (doom-themes-visual-bell :background error)
     ;;;; ediff <built-in>
-    (ediff-fine-diff-A    :background (doom-blend selection bg 0.7) :weight 'bold :extend t)
-    (ediff-fine-diff-B    :inherit 'ediff-fine-diff-A)
+    (ediff-fine-diff-A    :inherit 'diff-refine-removed)
+    (ediff-fine-diff-B    :inherit 'diff-refine-added)
     (ediff-fine-diff-C    :inherit 'ediff-fine-diff-A)
-    (ediff-current-diff-A :background (doom-blend selection bg 0.3) :extend t)
-    (ediff-current-diff-B :inherit 'ediff-current-diff-A)
+    (ediff-current-diff-A :foreground vc-deleted :background (doom-blend vc-deleted base3 0.2)  :extend t)
+    (ediff-current-diff-B :foreground vc-added   :background (doom-blend vc-added bg 0.2)       :extend t)
     (ediff-current-diff-C :inherit 'ediff-current-diff-A)
     (ediff-even-diff-A    :inherit 'hl-line)
     (ediff-even-diff-B    :inherit 'ediff-even-diff-A)
@@ -593,15 +603,15 @@
     (flycheck-posframe-face            :inherit 'default)
     (flycheck-posframe-background-face :background bg-alt)
     (flycheck-posframe-error-face      :inherit 'flycheck-posframe-face :foreground error)
-    (flycheck-posframe-info-face       :inherit 'flycheck-posframe-face :foreground fg)
+    (flycheck-posframe-info-face       :inherit 'flycheck-posframe-face :foreground success)
     (flycheck-posframe-warning-face    :inherit 'flycheck-posframe-face :foreground warning)
     ;;;; flymake
     (flymake-error   :underline `(:style wave :color ,red))
     (flymake-note    :underline `(:style wave :color ,green))
     (flymake-warning :underline `(:style wave :color ,orange))
     ;;;; flyspell <built-in>
-    (flyspell-incorrect :underline `(:style wave :color ,error) :inherit 'unspecified)
-    (flyspell-duplicate :underline `(:style wave :color ,warning) :inherit 'unspecified)
+    (flyspell-incorrect :underline `(:style wave :color ,error))
+    (flyspell-duplicate :underline `(:style wave :color ,warning))
     ;;;; flx-ido
     (flx-highlight-face :weight 'bold :foreground yellow :underline nil)
     ;;;; forge
@@ -742,9 +752,10 @@
     ;; (hi-black-b  :weight 'bold)
     ;; (hi-black-hb :inherit 'variable-pitch :weight 'bold :height 1.67)
     ;;;; hideshow <built-in>
-    (+fold-hideshow-folded-face :inherit 'font-lock-comment-face
-                                :weight 'light
-                                :background (doom-darken bg 0.125))
+    (+fold-hideshow-folded-face  ; this is defined in Doom Emacs, only
+     :inherit 'font-lock-comment-face
+     :weight 'light
+     :background (doom-darken bg 0.15))
     ;;;; highlight-numbers-mode
     (highlight-numbers-number :inherit 'bold :foreground numbers)
     ;;;; highlight-indentation-mode
@@ -862,7 +873,7 @@
     (jdee-font-lock-doc-tag-face     :foreground violet)
     (jdee-font-lock-italic-face      :inherit 'italic)
     (jdee-font-lock-bold-face        :inherit 'bold)
-    (jdee-font-lock-link-face        :foreground blue :italic nil :underline t)
+    (jdee-font-lock-link-face        :foreground blue :slant nil :underline t)
     ;;;; js2-mode <modes:js2-mode,js2-jsx-mode>
     (js2-function-param    :foreground variables)
     (js2-function-call     :foreground functions)
@@ -1376,10 +1387,10 @@
     (symbol-overlay-face-8 :background (doom-blend cyan bg 0.2)    :distant-foreground fg-alt)
     ;;;; swiper
     (swiper-line-face    :background blue    :foreground base0)
-    (swiper-match-face-1 :inherit 'unspecified :background base0   :foreground base5)
-    (swiper-match-face-2 :inherit 'unspecified :background orange  :foreground base0 :weight 'bold)
-    (swiper-match-face-3 :inherit 'unspecified :background magenta :foreground base0 :weight 'bold)
-    (swiper-match-face-4 :inherit 'unspecified :background green   :foreground base0 :weight 'bold)
+    (swiper-match-face-1 :background base0   :foreground base5)
+    (swiper-match-face-2 :background orange  :foreground base0 :weight 'bold)
+    (swiper-match-face-3 :background magenta :foreground base0 :weight 'bold)
+    (swiper-match-face-4 :background green   :foreground base0 :weight 'bold)
     ;;;; tabbar
     (tabbar-default             :foreground bg :background bg :height 1.0)
     (tabbar-highlight           :foreground fg :background selection :distant-foreground bg)
@@ -1444,6 +1455,11 @@
     ;;;; treemacs-nerd-icons
     (treemacs-nerd-icons-file-face :foreground doc-comments)
     (treemacs-nerd-icons-root-face :inherit 'font-lock-string-face :weight 'bold :height 1.2)
+    ;;;; ts-fold
+    (ts-fold-fringe-face)
+    ((ts-fold-replacement-face &inherit +fold-hideshow-folded-face))
+    ((ts-fold-replacement-mouse-face &inherit +fold-hideshow-folded-face)
+     :box '(:line-width -1 :style released-button))
     ;;;; twittering-mode
     (twitter-divider  ; custom face in Doom Emacs
      (&light :underline `(:color ,(doom-lighten vertical-bar 0.2)))

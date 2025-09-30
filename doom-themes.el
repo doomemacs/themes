@@ -377,6 +377,17 @@ between 0 and 1)."
 ;;
 ;;; Defining themes
 
+(defun doom-themes--prepare-facelist-1 (specs)
+  (dolist (spec specs specs)
+    (when spec
+      (setcar (cdr spec)
+              (cl-loop for (classes plist . rest) in (cadr spec)
+                       collect
+                       (cons classes
+                             (cons (cl-loop for (key val) on plist by #'cddr
+                                            append (list key (or val 'unspecified)))
+                                   rest)))))))
+
 (defun doom-themes-prepare-facelist (custom-faces)
   "Return an alist of face definitions for `custom-theme-set-faces'.
 
@@ -409,37 +420,44 @@ theme face specs. These is a simplified spec. For example:
   (declare (indent defun))
   (apply #'custom-theme-set-faces
          (or theme 'user)
-         (eval
-          `(let* ((bold   ,doom-themes-enable-bold)
-                  (italic ,doom-themes-enable-italic)
-                  ,@(cl-loop for (var . val) in doom-themes--colors
-                             collect `(,var ',val)))
-             (list ,@(mapcar #'doom-themes--build-face faces))))))
+         (doom-themes--prepare-facelist-1
+          (eval
+           `(let* ((bold   ,doom-themes-enable-bold)
+                   (italic ,doom-themes-enable-italic)
+                   ,@(cl-loop for (var . val) in doom-themes--colors
+                              collect `(,var ',val)))
+              (list ,@(mapcar #'doom-themes--build-face faces)))))))
 
-(defmacro def-doom-theme (name docstring defs &optional extra-faces extra-vars)
+(defmacro def-doom-theme (name docstring &rest properties)
   "Define a DOOM theme, named NAME (a symbol)."
-  (declare (doc-string 2))
-  (let ((doom-themes--colors defs))
-    `(let* ((bold   doom-themes-enable-bold)
-            (italic doom-themes-enable-italic)
-            ,@defs)
-       (setq doom-themes--colors
-             (list ,@(cl-loop for (var val) in defs
-                              collect `(cons ',var ,val))))
-       (deftheme ,name ,docstring)
-       (custom-theme-set-faces
-        ',name ,@(doom-themes-prepare-facelist extra-faces))
-       (custom-theme-set-variables
-        ',name ,@(doom-themes-prepare-varlist extra-vars))
-       (unless bold (set-face-bold 'bold 'unspecified))
-       (unless italic (set-face-italic 'italic 'unspecified))
-       (provide-theme ',name))))
+  (declare (doc-string 2)
+           (indent 2))
+  (let (plist)
+    (while (keywordp (car properties))
+      (cl-callf plist-put plist (pop properties) (pop properties)))
+    (cl-destructuring-bind (defs &optional extra-faces extra-vars) properties
+      (let ((doom-themes--colors defs))
+        `(let* ((bold   doom-themes-enable-bold)
+                (italic doom-themes-enable-italic)
+                ,@defs)
+           (setq doom-themes--colors
+                 (list ,@(cl-loop for (var val) in defs
+                                  collect `(cons ',var ,val))))
+           (deftheme ,name ,docstring :kind 'color-scheme ,@plist)
+           (apply #'custom-theme-set-faces
+                  ',name
+                  (doom-themes--prepare-facelist-1 (list ,@(doom-themes-prepare-facelist extra-faces))))
+           (custom-theme-set-variables
+            ',name ,@(doom-themes-prepare-varlist extra-vars))
+           (unless bold (set-face-bold 'bold 'unspecified))
+           (unless italic (set-face-italic 'italic 'unspecified))
+           (provide-theme ',name))))))
 
 ;;;###autoload
-(when (and (boundp 'custom-theme-load-path) load-file-name)
-  (let* ((base (file-name-directory load-file-name))
-         (dir (expand-file-name "themes/" base)))
-    (add-to-list 'custom-theme-load-path
+(when load-file-name
+  (add-to-list 'custom-theme-load-path
+               (let* ((base (file-name-directory load-file-name))
+                      (dir (expand-file-name "themes/" base)))
                  (or (and (file-directory-p dir) dir)
                      base))))
 

@@ -1,8 +1,6 @@
 ![Release tag](https://img.shields.io/github/tag/doomemacs/themes.svg?label=release&style=flat-square)
 [![MELPA](http://melpa.org/packages/doom-themes-badge.svg?style=flat-square)](http://melpa.org/#/doom-themes)
-![Build status](https://img.shields.io/github/workflow/status/doomemacs/themes/CI/master?style=flat-square)
 [![Discord Server](https://img.shields.io/discord/406534637242810369?color=738adb&label=Discord&logo=discord&logoColor=white&style=flat-square)](https://doomemacs.org/discord)
-[![Discourse server](https://img.shields.io/discourse/users?server=https%3A%2F%2Fdiscourse.doomemacs.org&logo=discourse&label=Discourse&style=flat-square&color=9cf)](https://discourse.doomemacs.org)
 
 # Doom Emacs' Theme Pack
 
@@ -43,18 +41,20 @@ common defaults laid out:
 ```emacs-lisp
 (use-package doom-themes
   :ensure t
-  :config
+  :custom
   ;; Global settings (defaults)
-  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  (doom-themes-enable-bold t)   ; if nil, bold is universally disabled
+  (doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; for treemacs users
+  (doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
+  :config
   (load-theme 'doom-one t)
 
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
-  ;; Enable custom neotree theme (all-the-icons must be installed!)
+  ;; Enable custom neotree theme (nerd-icons must be installed!)
   (doom-themes-neotree-config)
   ;; or for treemacs users
-  (setq doom-themes-treemacs-theme "doom-atom") ; use "doom-colors" for less minimal icon theme
   (doom-themes-treemacs-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config))
@@ -81,7 +81,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-challenger-deep              | [link](https://github.com/challenger-deep-theme/vim)                                   | inspired by Vim's Challenger Deep theme (ported by [@fuxialexander](https://github.com/fuxialexander))                            |
 | doom-city-lights                  | [link](https://citylights.xyz)                                                         | inspired by Atom's City Lights theme (ported by [@fuxialexander](https://github.com/fuxialexander))                               |
 | doom-dark+                        | n/a                                                                                    | ported from equinusocio's VSCode Theme, dark+ (ported by [@ema2159](https://github.com/ema2159))                                  |
-| doom-dracula                      | [link](https://draculatheme.com)                                                       | inspired by the popular Dracula theme (ported by [@fuxialexander](https://github.com/fuxialexander))                              |
+| doom-dracula                      | [link](https://draculatheme.com/doom-emacs)                                                       | inspired by the popular Dracula theme (ported by [@fuxialexander](https://github.com/fuxialexander))                              |
 | doom-earl-grey                    | original                                                                               | a gentle color scheme, for code (ported by [@JuneKelly](https://github.com/JuneKelly))                                            |
 | doom-ephemeral                    | [link](https://github.com/elenapan/dotfiles)                                           | inspired by the Ephemeral Theme from elenapan's dotfiles (ported by [@karetsu](https://github.com/karetsu))                       |
 | doom-fairy-floss                  | [link](https://github.com/sailorhg/fairyfloss)                                         | a candy colored theme by sailorhg (ported by [@ema2159](https://github.com/ema2159))                                              |
@@ -125,7 +125,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-opera                        | original                                                                               | an original light theme (ported by [@jwintz](https://github.com/jwintz))                                                          |
 | doom-opera-light                  | original                                                                               | an original light theme (ported by [@jwintz](https://github.com/jwintz))                                                          |
 | doom-outrun-electric              | [link](https://github.com/samrap/outrun-theme-vscode)                                  | a high contrast, neon theme inspired by Outrun Electric on VSCode (ported by [@ema2159](https://github.com/ema2159))              |
-| doom-palenight                    | [link](https://github.com/equinusocio/vsc-material-theme)                              | adapted from equinusocio's Material themes (ported by [@Brettm12345](https://github.com/Brettm12345))                             |
+| doom-palenight                    | [link](https://github.com/material-theme/vsc-material-theme)                              | adapted from equinusocio's Material themes (ported by [@Brettm12345](https://github.com/Brettm12345))                             |
 | doom-peacock                      | [link](https://github.com/daylerees/colour-schemes/blob/master/emacs/peacock-theme.el) | inspired by daylerees' Peacock (ported by [@teesloane](https://github.com/teesloane))                                             |
 | doom-pine                         | [link](https://github.com/morhetz/gruvbox)                                             | a green-tinged Gruvbox (by [@RomanHargrave](https://github.com/RomanHargrave))                                           |
 | doom-plain                        | [link](https://github.com/gko/plain/)                                                  | inspired by gko's plain theme for VSCode (ported by [@das-s](https://github.com/das-s))                                           |
@@ -158,8 +158,8 @@ extensions][wiki].
   file drawer; a more minimalistic icon theme plus variable pitch file/directory
   labels, as seen [in the doom-one screenshot](/../screenshots/doom-one.png).
 
-  (This requires `all-the-icons`' fonts to be installed: `M-x
-  all-the-icons-install-fonts`)
+  (This requires `nerd-icons`' fonts to be installed: `M-x
+  nerd-icons-install-fonts`)
 - `(doom-themes-treemacs-config)`: two [treemacs] icon themes, one that takes after
   [Atom]'s, and a second more colorful implementation.
 - `(doom-themes-org-config)`: corrects and improves some of org-mode's native
@@ -229,7 +229,7 @@ support.
 [airline-doom-molokai]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-molokai-theme.png
 [airline-doom-one]: https://github.com/AnthonyDiGirolamo/airline-themes/raw/master/screenshots/airline-doom-one-theme.png
 [airline-themes]: https://github.com/AnthonyDiGirolamo/airline-themes
-[all-the-icons]: https://github.com/domtronn/all-the-icons.el
+[nerd-icons]: https://github.com/rainstormstudio/nerd-icons.el
 [ar1a]: https://github.com/ar1a
 [ashton]: https://github.com/ashton
 [bigardone]: https://github.com/bigardone

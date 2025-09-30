@@ -53,6 +53,8 @@ determine the exact padding."
 
 (def-doom-theme doom-nord-aurora
   "A dark theme inspired by Nord. Aurora flavour."
+  :family 'doom-nord
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#2E3440" nil       nil            ))
@@ -87,8 +89,8 @@ determine the exact padding."
    (vertical-bar   (doom-darken base1 0.2))
    (selection      dark-blue)
    (builtin        magenta)
-   (comments       base6)
-   (doc-comments   base7)
+   (comments       (if doom-nord-aurora-brighter-comments cyan base6))
+   (doc-comments   (if doom-nord-aurora-brighter-comments (doom-lighten cyan 0.5) base7))
    (constants      blue)
    (functions      yellow)
    (keywords       blue)
@@ -172,10 +174,6 @@ determine the exact padding."
     :inherit 'mode-line-inactive
     :background modeline-bg-inactive-l
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive-l)))
-
-   ;; ediff
-   (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
-   (ediff-current-diff-A :background (doom-darken base0 0.25))
 
    ;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")

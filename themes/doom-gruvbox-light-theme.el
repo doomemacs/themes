@@ -52,6 +52,8 @@ background contrast. All other values default to \"medium\"."
 
 (def-doom-theme doom-gruvbox-light
   "gruvbox light theme"
+  :family 'doom-gruvbox
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg
