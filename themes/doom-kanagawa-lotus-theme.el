@@ -348,10 +348,10 @@ Can be an integer to determine the exact padding."
    ;;;; org-mode
    (org-block :background base0 :foreground base5)
    (org-block-begin-line
-    :background (if doom-kanagawa-lotus-match-org-blocks base3 lotus-blue2)
+    :background (if doom-kanagawa-lotus-match-org-blocks base0 lotus-blue2)
     :foreground (if doom-kanagawa-lotus-match-org-blocks base5 dark-blue))
    (org-block-end-line
-    :background (if doom-kanagawa-lotus-match-org-blocks base3 lotus-red4)
+    :background (if doom-kanagawa-lotus-match-org-blocks base0 lotus-red4)
     :foreground (if doom-kanagawa-lotus-match-org-blocks base5 red))
    (org-code :background base0 :foreground green)
    (org-meta-line :background lotus-green3 :foreground green)            ; Light green background

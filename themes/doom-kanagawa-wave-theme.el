@@ -348,10 +348,10 @@ Can be an integer to determine the exact padding."
    ;;;; org-mode
    (org-block :background base0 :foreground base5)
    (org-block-begin-line
-    :background (if doom-kanagawa-wave-match-org-blocks base3 winter-blue)
+    :background (if doom-kanagawa-wave-match-org-blocks base0 winter-blue)
     :foreground (if doom-kanagawa-wave-match-org-blocks base5 blue))
    (org-block-end-line
-    :background (if doom-kanagawa-wave-match-org-blocks base3 winter-red)
+    :background (if doom-kanagawa-wave-match-org-blocks base0 winter-red)
     :foreground (if doom-kanagawa-wave-match-org-blocks base5 peach-red))
    (org-code :background base0 :foreground green)
    (org-meta-line :background winter-green :foreground green)
