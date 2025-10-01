@@ -37,6 +37,11 @@ Can be an integer to determine the exact padding."
   :group 'doom-kanagawa-lotus-theme
   :type '(choice integer boolean))
 
+(defcustom doom-kanagawa-lotus-match-org-blocks nil
+  "If non-nil, org block delimiters use the same colors."
+  :group 'doom-kanagawa-lotus-theme
+  :type 'boolean)
+
 ;;
 ;;; Theme definition
 
@@ -342,8 +347,12 @@ Can be an integer to determine the exact padding."
 
    ;;;; org-mode
    (org-block :background base0 :foreground base5)
-   (org-block-begin-line :background lotus-blue2 :foreground dark-blue)  ; Light blue background
-   (org-block-end-line :background lotus-red4 :foreground red)           ; Light red/pink background
+   (org-block-begin-line
+    :background (if doom-kanagawa-lotus-match-org-blocks base3 lotus-blue2)
+    :foreground (if doom-kanagawa-lotus-match-org-blocks base5 dark-blue))
+   (org-block-end-line
+    :background (if doom-kanagawa-lotus-match-org-blocks base3 lotus-red4)
+    :foreground (if doom-kanagawa-lotus-match-org-blocks base5 red))
    (org-code :background base0 :foreground green)
    (org-meta-line :background lotus-green3 :foreground green)            ; Light green background
    (org-level-1 :foreground red :height 1.3 :bold t)

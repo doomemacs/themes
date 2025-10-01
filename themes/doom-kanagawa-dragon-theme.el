@@ -42,6 +42,11 @@ Can be an integer to determine the exact padding."
   :group 'doom-kanagawa-dragon-theme
   :type 'boolean)
 
+(defcustom doom-kanagawa-dragon-match-org-blocks nil
+  "If non-nil, org block delimiters use the same colors."
+  :group 'doom-kanagawa-dragon-theme
+  :type 'boolean)
+
 ;;
 ;;; Theme definition
 
@@ -341,8 +346,12 @@ Can be an integer to determine the exact padding."
 
    ;;;; org-mode
    (org-block :background base0 :foreground base5)
-   (org-block-begin-line :background winter-blue :foreground blue)
-   (org-block-end-line :background winter-red :foreground red)
+   (org-block-begin-line
+    :background (if doom-kanagawa-dragon-match-org-blocks base3 winter-blue)
+    :foreground (if doom-kanagawa-dragon-match-org-blocks base5 blue))
+   (org-block-end-line
+    :background (if doom-kanagawa-dragon-match-org-blocks base3 winter-red)
+    :foreground (if doom-kanagawa-dragon-match-org-blocks base5 red))
    (org-code :background base0 :foreground green)
    (org-meta-line :background winter-green :foreground green)
    (org-level-1 :foreground red :height 1.3 :bold t)
