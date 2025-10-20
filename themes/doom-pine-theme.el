@@ -128,11 +128,11 @@ determine the exact padding."
    ;;;;;;;; Doom-modeline ;;;;;;;;
    (mode-line
     :background modeline-bg-active :foreground modeline-fg-active
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-active)))
 
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-inactive
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
 
    ;; File-name
    (doom-modeline-project-dir :bold t :foreground cyan)

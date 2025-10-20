@@ -120,10 +120,10 @@ determine the exact padding."
    ((line-number-current-line &override) :foreground base7 :distant-foreground nil)
    (mode-line
     :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
 
    ;;;; centaur-tabs
    (centaur-tabs-selected-modified :inherit 'centaur-tabs-selected
