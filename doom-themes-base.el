@@ -410,7 +410,7 @@
     (diff-hunk-header :foreground violet)
     (diff-indicator-added :foreground vc-added)
     (diff-indicator-changed :foreground vc-modified)
-    (diff-indicator-removed :foreground vc-added)
+    (diff-indicator-removed :foreground vc-deleted)
     (diff-refine-added   :inherit 'diff-added :inverse-video t)
     (diff-refine-changed :inherit 'diff-changed :inverse-video t)
     (diff-refine-removed :inherit 'diff-removed :inverse-video t)
