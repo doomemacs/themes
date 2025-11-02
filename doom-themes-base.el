@@ -1349,7 +1349,7 @@
     ;;;; solaire-mode
     (solaire-default-face  :inherit 'default :background bg-alt)
     (solaire-hl-line-face  :inherit 'hl-line :background bg :extend t)
-    (solaire-org-hide      :inherit 'org-hide :foreground bg-alt)
+    (solaire-org-hide-face :inherit 'org-hide :foreground bg-alt)
     ;;;; spaceline
     (spaceline-highlight-face   :background highlight)
     (spaceline-modified         :background vc-modified)
