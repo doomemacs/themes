@@ -117,7 +117,7 @@ N is the match index."
                ;; make plain list bullets stand out.
                ;; give spaces before and after list bullet org-indent face to
                ;; keep correct indentation on mixed-pitch-mode
-               ("^\\( *\\)\\([-+]\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
+               ("^\\( *\\)\\([-+]\\(?:[ \t].*[ \t]::\\)?\\|\\(?:[0-9]+\\|[a-zA-Z]\\)[).]\\)\\([ \t]\\)"
                 ,@(if org-indent? '((1 'org-indent append)))
                 (2 'org-list-dt append)
                 ,@(if org-indent? '((3 'org-indent append)))))
