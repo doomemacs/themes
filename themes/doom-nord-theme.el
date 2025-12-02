@@ -53,6 +53,8 @@ determine the exact padding."
 
 (def-doom-theme doom-nord
   "A dark theme inspired by Nord."
+  :family 'doom-nord
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#2E3440" nil       nil            ))
@@ -159,9 +161,6 @@ determine the exact padding."
    ;;;; doom-modeline
    (doom-modeline-bar :background (if -modeline-bright modeline-bg highlight))
    (doom-modeline-project-root-dir :foreground base6)
-   ;;;; ediff <built-in>
-   (ediff-fine-diff-A    :background (doom-darken violet 0.4) :weight 'bold)
-   (ediff-current-diff-A :background (doom-darken base0 0.25))
    ;;;; elscreen
    (elscreen-tab-other-screen-face :background "#353a42" :foreground "#1e2022")
    ;;;; highlight-symbol

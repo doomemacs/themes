@@ -35,6 +35,8 @@ determine the exact padding."
 
 (def-doom-theme doom-homage-white
   "A light theme inspired by editors from 2000s"
+  :family 'doom-homage
+  :background-mode 'light
 
   ;; name        default   256       16
   ((bg         '("#fafafa" nil       nil            ))

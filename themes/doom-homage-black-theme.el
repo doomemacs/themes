@@ -35,6 +35,8 @@ determine the exact padding."
 
 (def-doom-theme doom-homage-black
   "A light theme inspired by eziam"
+  :family 'doom-homage
+  :background-mode 'dark
 
   ;; name        default   256       16
   ((bg         '("#000000" nil       nil            ))

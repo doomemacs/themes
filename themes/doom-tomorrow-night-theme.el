@@ -30,6 +30,8 @@ determine the exact padding."
 
 (def-doom-theme doom-tomorrow-night
   "A theme based off of Chris Kempson's Tomorrow Dark."
+  :family 'doom-tomorrow
+  :background-mode 'dark
 
   ;; name        gui       256       16
   ((bg         '("#1d1f21" nil       nil          ))

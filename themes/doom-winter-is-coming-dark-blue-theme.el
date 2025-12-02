@@ -54,6 +54,8 @@ Can be an integer to determine the exact padding."
 
 (def-doom-theme doom-winter-is-coming-dark-blue
                 "Rip-off of Winter is Coming theme for VSCode."
+                :family 'doom-winter-is-coming
+                :background-mode 'dark
 
                 ;; name        default   256           16
                 ((bg         '("#011627" "black"       "black"  ))
