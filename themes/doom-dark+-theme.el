@@ -209,7 +209,7 @@ Can be an integer to determine the exact padding."
    (tab-line-tab :background (if doom-dark+-alternative-tabs bg-alt bg) :foreground fg :height (when doom-dark+-alternative-tabs 0.9))
    (tab-line-tab-current :background (if (and doom-dark+-blue-modeline doom-dark+-alternative-tabs) base6 (if doom-dark+-alternative-tabs dark-violet bg)) :foreground fg :weight (when doom-dark+-alternative-tabs 'bold) :height (when doom-dark+-alternative-tabs 0.9))
    (tab-line-tab-inactive :background bg-alt :foreground fg-alt :height (when doom-dark+-alternative-tabs 0.9))
-   (tab-line-tab-modified :foreground (when doom-dark+-alternative-tabs red) :height (when doom-dark+-alternative-tabs 0.9) :inherit (unless doom-dark+-alternative-tabs 'font-lock-doc-face))
+   (tab-line-tab-modified :foreground (when doom-dark+-alternative-tabs orange) :height (when doom-dark+-alternative-tabs 0.9) :inherit (unless doom-dark+-alternative-tabs 'font-lock-doc-face))
    (tab-line-tab-special :weight (if doom-dark+-alternative-tabs 'unspecified 'bold) :slant (when doom-dark+-alternative-tabs 'italic) :height (when doom-dark+-alternative-tabs 0.9))
    ;;;; tooltip
    (tooltip :background base2 :foreground fg)
