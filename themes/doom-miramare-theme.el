@@ -119,10 +119,10 @@ determine the exact padding."
    (minibuffer-prompt :foreground cyan)
    (mode-line
     :background bg-alt2 :foreground (doom-lighten fg-alt 0.25)
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base3)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,bg-alt2)))
    (mode-line-inactive
     :background bg :foreground base4
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color base2)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,bg)))
 
    ;; vimish-fold
    ((vimish-fold-overlay &override) :inherit 'font-lock-comment-face :background bg-alt2 :weight 'light)

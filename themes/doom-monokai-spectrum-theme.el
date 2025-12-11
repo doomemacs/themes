@@ -120,9 +120,9 @@ Can be an integer to determine the exact padding."
    ((line-number-current-line &override)         :foreground base7 :distant-foreground nil)
    ;; mode-line
    (mode-line                                    :background base3 :foreground fg
-                                                 :box (if -modeline-pad `(:line-width ,-modeline-pad :color red)))
+                                                 :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,base3)))
    (mode-line-inactive                           :background bg :foreground fg
-                                                 :box (if -modeline-pad `(:line-width ,-modeline-pad :color red)))
+                                                 :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,bg)))
 
    ;;;; centaur-tabs
    (centaur-tabs-selected-modified               :inherit 'centaur-tabs-selected :foreground yellow)
