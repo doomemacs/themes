@@ -7,19 +7,19 @@ body:
 - type: markdown
   attributes:
     value: |
-      > :warning: **Our issue tracker is not for how-to or configuration questions.** Please refer to [the customization section of our readme](https://github.com/doomemacs/themes/blob/master/README.md#customization), otherwise post on [the Doom Emacs Discord](https://doomemacs.org/discord) or its [Discourse](https://discourse.doomemacs.org) instead.
-
-      **Before you proceed, please ensure the following:**
-
-      - I've searched [our issue tracker](https://github.com/doomemacs/themes/issues) for similar or duplicate issues.
-      - I've read [the README](https://github.com/doomemacs/themes) and did not find a solution.
-      - I can reproduce the issue on the **latest** commit of doom-themes.
-      - The issue can be reproduced in vanilla Emacs (with your private configuration disabled).
-      - If my issue contains an error message, I've included [a backtrace](https://discourse.doomemacs.org/t/what-is-a-backtrace-how-to-produce-them/85#how-to-produce-a-backtrace-3).
+      > [!IMPORTANT]
+      > Before you fill out this bug report, please be aware of the following:
+      >
+      > - This is not the place for feature requests, general user support, PSAs, or discussions/RFCs. Those belong on [our Github discussion board](https://doomemacs.org/discuss) or [our Discord server](https://doomemacs.org/discord) — whichever you prefer.
+      > - Make sure your issue hasn't already been reported or addressed: search the issue tracker, [documentation](https://github.com/doomemacs/themes/blob/master/README.md#customization), [discussion board](https://doomemacs.org/discuss), and [Google](https://google.com).
+      > - Read [the debugging guide](https://discourse.doomemacs.org/t/55) for ways to extract more information from your issue.
+      > - Include [backtraces](https://discourse.doomemacs.org/t/85) for any error messages.
+      >
+      > Bug reports that are unactionable, vague, or too broad (or are otherwise unhelpful to posterity) **will be closed and queued for deletion**, with notice. Please understand that we get *many* false positives and open-ended bug reports that we lack the manpower to investigate at length. Keeping them around only pollutes search engines indices and makes it harder to find and follow legitimate issues.
 - type: dropdown
   attributes:
     label: Theme(s)
-    description: What theme(s) are relevant to this issue
+    description: Select one or more theme(s) that your issue applies to
     multiple: true
     options:
       - I don't know
@@ -28,9 +28,12 @@ body:
       - doom-Iosvkem
       - doom-acario-dark
       - doom-acario-light
+      - doom-ayu-dark
       - doom-ayu-light
       - doom-ayu-mirage
       - doom-badger
+      - doom-bluloco-dark
+      - doom-bluloco-light
       - doom-challenger-deep
       - doom-city-lights
       - doom-dark+
@@ -48,6 +51,7 @@ body:
       - doom-homage-white
       - doom-horizon
       - doom-ir-black
+      - doom-lantern
       - doom-laserwave
       - doom-manegarm
       - doom-material-dark
@@ -62,6 +66,7 @@ body:
       - doom-monokai-ristretto
       - doom-monokai-spectrum
       - doom-moonlight
+      - doom-nord-aurora
       - doom-nord-light
       - doom-nord
       - doom-nova
@@ -92,26 +97,26 @@ body:
       - doom-tomorrow-night
       - doom-vibrant
       - doom-wilmersdorf
+      - doom-winter-is-coming-dark-blue
+      - doom-winter-is-coming-light
       - doom-xcode
       - doom-zenburn
 - type: textarea
   attributes:
-    label: What were you expecting?
-    placeholder: X should look like Y
-  validations:
-    required: true
-- type: textarea
-  attributes:
-    label: What actually happened?
+    label: Describe your issue
     description: |
-      - Include screenshots/casts, if possible
-      - List *all* error messages and **[include backtraces for each of them](https://doomemacs.org/d/how2backtrace)
-      - Include any suspicious logs in the **[\*Messages\*](https://doomemacs.org/d/t/55) buffer.
-      - If you include log dumps, please use [pastebin.com](https://pastebin.com)
-      - **Use [code fences](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks) for code, error messages, and backtraces.**
-      - Avoid phrases like "X does not work" or "X stopped working" without explaining what "working" means.
+      Include as much information as possible. Such as:
+
+      - **A [backtrace](https://discourse.doomemacs.org/t/85) for any error messages.**
+      - Any recent errors/warnings in the \*Messages\* buffer (`C-h e` to open it).
+      - Better explanations than "X does not work".
+      - Any attempts you made to resolve the issue yourself, and their result.
+      - Screenshots or screencasts, if possible.
+      - Please disclose what parts are written by AI.
+
+      **Please format code and large text dumps with [code fences](https://docs.github.com/en/github/writing-on-github/creating-and-highlighting-code-blocks) or use [pastebin](https://pastebin.com) (or similar).**
     placeholder: |
-      X looked like Z instead, then threw an error. Here is the backtrace:
+      When I do X, it should do Y, but it does Z instead, which throws an error. Here is the backtrace:
 
       ```
       Debugger entered--Lisp error: (error "Beep Boop")
@@ -128,32 +133,40 @@ body:
     label: Steps to reproduce
     description: How do we reproduce your issue? Walk us through a minimal test case.
     placeholder: |
-      1. Switch to doom-one theme
-      2. Open dired
-      3. Error occurs
+      1. Open Emacs,
+      2. `M-x load-theme RET doom-one`
+      3. `M-x dired`
+      4. Error occurs
   validations:
     required: true
 - type: input
   attributes:
     label: Operating system
-    placeholder: NixOS 21.11
+    placeholder: NixOS 25.05
   validations:
     required: true
 - type: input
   attributes:
     label: Emacs version
-    placeholder: Emacs 28.1 w/ native-comp
+    placeholder: Emacs 30.2 (PGTK)
   validations:
     required: true
 - type: input
   attributes:
     label: Installed commit of doom-themes
-    placeholder: 65fb964f3693
+    placeholder: 376cf4bdd7d2
   validations:
     required: true
+- type: checkboxes
+  attributes:
+    label: Disclosures
+    description:
+      Check off any that apply to help us assess your issue(s) more accurately.
+    options:
+      - label: This issue was written with/by AI.
 - type: markdown
   attributes:
     value: |
-      Before you go, please make sure your report's title is descriptive and specific. Avoid phrases like "X doesn't work" or "X stopped working". Error messages are best, but failing that, try to describe what "working" means to you.
+      -----
 
-      **Thank you for taking the time to fill out a bug report!**
+      :heart: **Thank you for taking the time to file this bug report!**
