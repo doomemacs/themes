@@ -90,6 +90,7 @@ welcome PRs to help us maintain and address inconsistencies in them.
 | doom-flatwhite                    | [link](https://github.com/biletskyy/flatwhite-syntax)                                  | inspired by Atom's Flatwhite Syntax theme (ported by [@JuneKelly](https://github.com/JuneKelly))                                  |
 | doom-gruvbox                      | [link](https://github.com/morhetz/gruvbox)                                             | inspired by morhetz's Gruvbox (ported by [@JongW](https://github.com/JongW))                                                      |
 | doom-gruvbox-light                | [link](https://github.com/morhetz/gruvbox)                                             | inspired by morhetz's Gruvbox (light) (ported by [@jsoa](https://github.com/jsoa))                                                |
+| doom-gruvbox-material             | [link](https://github.com/sainnhe/gruvbox-material-vscode)                             | a material-like (pastelle) Gruvbox (ported by [@romanZupancic](https://github.com/romanZupancic) & [@ianyepan](https://github.com/ianyepan))                                           |
 | doom-henna                        | [link](https://github.com/httpsterio/vscode-henna)                                     | based on VSCode's Henna theme (ported by [@jsoa](https://github.com/jsoa))                                                        |
 | doom-homage-black                 | original                                                                               | a minimalistic, colorless theme inspired by eziam, tao, and jbeans (ported by [@mskorzhinskiy](https://github.com/mskorzhinskiy)) |
 | doom-homage-white                 | original                                                                               | minimal white theme inspired by editors from 2000s (ported by [@mskorzhinskiy](https://github.com/mskorzhinskiy))                 |
@@ -249,9 +250,11 @@ support.
 [fuxialexander]: https://github.com/fuxialexander
 [gagbo]: https://github.com/gagbo
 [Gruvbox]: https://github.com/morhetz/gruvbox
+[Gruvbox Material]: https://github.com/sainnhe/gruvbox-material
 [Henna]: https://github.com/httpsterio/vscode-henna
 [Horizon]: https://github.com/jolaleye/horizon-theme-vscode
 [hlinum]: https://melpa.org/#/hlinum
+[ianyepan]: https://github.com/ianyepan
 [issues]: https://github.com/doomemacs/themes/issues
 [Iosvkem]: https://github.com/neutaaaaan/iosvkem
 [juanwolf]: https://github.com/juanwolf
@@ -282,6 +285,7 @@ support.
 [outrun]: https://github.com/samrap/outrun-theme-vscode
 [paladhammika]: https://github.com/paladhammika
 [plain]: https://github.com/gko/plain
+[romanZupancic]: https://github.com/romanZupancic
 [sagittaros]: https://github.com/sagittaros/
 [sailorhg]: https://sailorhg.github.io/fairyfloss/
 [screenshots]: https://github.com/doomemacs/themes/tree/screenshots
