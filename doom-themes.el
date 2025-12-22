@@ -90,6 +90,7 @@
 ;;  - doom-tomorrow-night -- One of the dark variants of Tomorrow (ported by @hlissner)
 ;;  - doom-vibrant -- a more vibrant variant of doom-one (ported by @hlissner)
 ;;  - doom-wilmersdorf -- port of Ian Pan's Wilmersdorf (ported by @ema2159)
+;;  - doom-windy -- based on Tailwind color palette (ported by @tasmo)
 ;;  - doom-xcode -- based off of Apple's Xcode Dark Theme (ported by @kadenbarlow)
 ;;  - doom-zenburn -- port of the popular Zenburn theme (ported by @jsoa)
 ;;
