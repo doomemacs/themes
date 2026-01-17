@@ -202,7 +202,7 @@ Can be an integer to determine the exact padding."
    (rjsx-tag :foreground blue)
    (rjsx-attr :foreground cyan :slant 'italic :weight 'medium)
    ;;;; tab-bar/tab-line
-   (tab-bar :background bg-alt :foreground (if doom-dark+-alternative-tabs fg bg-alt))
+   (tab-bar :background bg-alt :foreground (if doom-dark+-alternative-tabs fg fg-alt))
    (tab-bar-tab :background (if (and doom-dark+-blue-modeline doom-dark+-alternative-tabs) base6 (if doom-dark+-alternative-tabs dark-violet bg)) :foreground fg :weight (when doom-dark+-alternative-tabs 'bold) :height (when doom-dark+-alternative-tabs 1.0))
    (tab-bar-tab-inactive :background bg-alt :foreground fg-alt :height (when doom-dark+-alternative-tabs 1.0))
    (tab-line :background bg-alt :foreground (if doom-dark+-alternative-tabs fg bg-alt))
