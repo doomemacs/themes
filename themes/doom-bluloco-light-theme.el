@@ -51,7 +51,7 @@
    (orange       '("#df631c" "#d75f00" "brightred"    ))
    (brown        '("#a05a48" "#af5f5f" "brown"        ))
    (green        '("#23974a" "#00875f" "green"        ))
-   (teal         '("#40B8C5" "#5fafd7" "brightgreen"  ))
+   (teal         '("#40b8c5" "#5fafd7" "brightgreen"  ))
    (yellow       '("#c5a332" "#d7af5f" "yellow"       ))
    (blue         '("#0098dd" "#0087d7" "brightblue"   ))
    (dark-blue    '("#275fe4" "#005fd7" "blue"         ))
@@ -63,13 +63,13 @@
 
    ;; custom colours
    (rainbow-red       '("#f067f0"))
-   (rainbow-yellow    '("#B3BA00"))
+   (rainbow-yellow    '("#b3ba00"))
    (rainbow-blue      '("#0ab6ff"))
    (rainbow-orange    '("#ffa023"))
    (rainbow-green     '("#1fc255"))
    (rainbow-violet    '("#a557ff"))
    (rainbow-cyan      '("#0e91a8"))
-   (rainbow-indigo    '("#383A42"))
+   (rainbow-indigo    '("#383a42"))
 
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.1))
@@ -88,7 +88,8 @@
    (numbers        magenta)
    (region         `(,(doom-darken (car bg-alt) 0.075) ,@(doom-darken (cdr base0) 0.075)))
    (error          red)
-   (warning        orange)
+   (warning        '("#ff8f3a"))
+   (info           '("#0099e1"))
    (success        green)
    (vc-modified    orange)
    (vc-added       green)
@@ -123,6 +124,15 @@
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground highlight)
+
+   ;; doom-modeline
+   (doom-modeline-evil-normal-state     :foreground blue)
+   (doom-modeline-evil-operator-state   :foreground blue)
+   (doom-modeline-evil-insert-state     :foreground dark-blue)
+   (doom-modeline-evil-visual-state     :foreground violet)
+   (doom-modeline-evil-motion-state     :foreground violet)
+   (doom-modeline-evil-user-state       :foreground violet)
+   (doom-modeline-info                  :foreground info)
 
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground brown :background base2)

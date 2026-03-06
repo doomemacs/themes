@@ -33,15 +33,15 @@
   ((bg           '("#282c34" "#303030" "black"        ))
    (fg           '("#abb2bf" "#b2b2b2" "white"        ))
 
-   (bg-alt       '("#23252A" "#262626" "black"        ))
+   (bg-alt       '("#23252a" "#262626" "black"        ))
    (fg-alt       '("#7a808b" "#808080" "white"        ))
 
    (base0        '("#1e222a" "#262626" "black"        ))
-   (base1        '("#2E333C" "#303030" "brightblack"  ))
+   (base1        '("#2e333c" "#303030" "brightblack"  ))
    (base2        '("#404450" "#3a3a3a" "brightblack"  ))
    (base3        '("#494e57" "#4e4e4e" "brightblack"  ))
    (base4        '("#595e68" "#5f5f5f" "brightblack"  ))
-   (base5        '("#7a808b" "#808080" "white"  ))
+   (base5        '("#7a808b" "#808080" "white"        ))
    (base6        '("#8a919c" "#949494" "white"        ))
    (base7        '("#9ba1ae" "#9e9e9e" "white"        ))
    (base8        '("#b5bbc9" "#bcbcbc" "white"        ))
@@ -58,18 +58,18 @@
    (magenta      '("#ff78f8" "#ff87ff" "magenta"      ))
    (violet       '("#9f7efe" "#af87ff" "brightmagenta"))
    (dark-violet  '("#7a82da" "#8787d7" "brightmagenta"))
-   (cyan         '("#78F8FF" "#87ffff" "brightcyan"   ))
+   (cyan         '("#78f8ff" "#87ffff" "brightcyan"   ))
    (dark-cyan    '("#4d9ea3" "#5fafaf" "brightcyan"   ))
 
    ;; custom colours
-   (rainbow-red       '("#FF6666"))
+   (rainbow-red       '("#ff6666"))
    (rainbow-yellow    '("#f4ff78"))
-   (rainbow-blue      '("#44A5FF"))
+   (rainbow-blue      '("#44a5ff"))
    (rainbow-orange    '("#ffa023"))
    (rainbow-green     '("#92f535"))
    (rainbow-violet    '("#ff78ff"))
    (rainbow-cyan      '("#28e4eb"))
-   (rainbow-indigo    '("#9F7EFE"))
+   (rainbow-indigo    '("#9f7efe"))
 
    (highlight      blue)
    (vertical-bar   (doom-darken base1 0.1))
@@ -88,7 +88,8 @@
    (numbers        magenta)
    (region         `(,(doom-lighten (car bg-alt) 0.15) ,@(doom-lighten (cdr base1) 0.35)))
    (error          red)
-   (warning        yellow)
+   (warning        '("#da7a43"))
+   (info           dark-blue)
    (success        green)
    (vc-modified    orange)
    (vc-added       green)
@@ -119,6 +120,15 @@
     :background modeline-bg-inactive :foreground modeline-fg-alt
     :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (mode-line-emphasis :foreground highlight)
+
+   ;; doom-modeline
+   (doom-modeline-evil-normal-state     :foreground blue)
+   (doom-modeline-evil-operator-state   :foreground blue)
+   (doom-modeline-evil-insert-state     :foreground dark-blue)
+   (doom-modeline-evil-visual-state     :foreground violet)
+   (doom-modeline-evil-motion-state     :foreground violet)
+   (doom-modeline-evil-user-state       :foreground violet)
+   (doom-modeline-info                  :foreground info)
 
    ;; css-mode / scss-mode
    (css-proprietary-property :foreground brown :background base2)
