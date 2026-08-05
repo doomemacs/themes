@@ -118,6 +118,9 @@ highlight interactive elements."
    (mode-line-highlight :foreground fg :weight 'bold :distant-foreground bg)
    (mode-line-inactive :foreground base5)
 
+   ;;;; ansi-term <built-in>
+   ;; Fix bright black producing full black making some text unreadable.
+   (ansi-color-bright-black :foreground base3 :background base3)
    ;;;; compilation <built-in>
    (compilation-line-number :foreground fg :weight 'bold)
    ;;;; custom <built-in>
