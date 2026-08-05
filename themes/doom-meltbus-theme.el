@@ -279,6 +279,14 @@ highlight interactive elements."
    (message-header-xheader :inherit 'message-header-other)
    (message-header-mml :inherit 'message-header-other)
    (message-header-separator :foreground highlight)
+   ;;;; mu4e
+   (mu4e-header-face :foreground base4)
+   (mu4e-header-highlight-face :inherit 'hl-line)
+   (mu4e-thread-fold-face :inherit 'mu4e-header-face)
+   (mu4e-unread-face :foreground fg)
+   (mu4e-flagged-face :foreground yellow)
+   (mu4e-related-face :inherit 'mu4e-header-face :slant 'italic)
+   (mu4e-replied-face :foreground faded-blue)
    ;;;; neotree
    ((neo-vc-added-face &inherit treemacs-git-added-face))
    ((neo-vc-conflict-face &inherit treemacs-git-conflict-face))
