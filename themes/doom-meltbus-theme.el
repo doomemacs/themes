@@ -341,6 +341,7 @@ highlight interactive elements."
    (org-ref-glossary-face :foreground dark-red)
    (org-ref-label-face :foreground blue)
    (org-ref-ref-face :foreground teal)
+   (+org-todo-cancel :inherit '(font-lock-doc-face org-todo)) ; Subdue canceled TODOs
    ;;;; outline
    (outline-1 :height (if doom-meltbus-uniform-font-size 1.0 1.5)
               :background base1 :weight 'bold)
