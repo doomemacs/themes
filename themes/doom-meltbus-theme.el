@@ -175,8 +175,19 @@ highlight interactive elements."
    (doom-modeline-evil-normal-state :foreground base5)
    (doom-modeline-evil-visual-state :foreground white)
    (doom-modeline-evil-operator-state :inherit 'doom-modeline-evil-visual-state)
-   ;;;; ediff
-   (ediff-current-diff-B :foreground green :background (doom-lighten green 0.8))
+   ;;;; ediff <built-in>
+   (ediff-current-diff-A :background base2 :inherit 'diff-removed)
+   (ediff-current-diff-B :background base2 :inherit 'diff-added)
+   (ediff-current-diff-C :background base2 :inherit 'diff-changed)
+   (ediff-fine-diff-A :inherit 'diff-refine-removed)
+   (ediff-fine-diff-B :inherit 'diff-refine-added)
+   (ediff-fine-diff-C :inherit 'diff-refine-changed)
+   (ediff-even-diff-A :background base3)
+   (ediff-even-diff-B :background base3)
+   (ediff-even-diff-C :background base3)
+   (ediff-odd-diff-A :background base3)
+   (ediff-odd-diff-B :background base3)
+   (ediff-odd-diff-C :background base3)
    ;;;; embark
    (embark-target :underline t)
    (embark-keybinding :foreground builtin)
