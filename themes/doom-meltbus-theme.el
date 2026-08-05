@@ -15,7 +15,7 @@
 ;;; Variables
 
 (defgroup doom-meltbus-theme nil
-  "Options for the `meltbus' theme"
+  "Options for the `meltbus' theme."
   :group 'doom-themes)
 
 (defcustom doom-meltbus-hl-line t
@@ -99,8 +99,8 @@ highlight interactive elements."
    (warning     orange)
    (success     green)
    (vc-modified orange)
-   (vc-added    green)
-   (vc-deleted  red)
+   (vc-added    faded-green)
+   (vc-deleted  faded-red)
    (vc-conflict magenta)
 
    ;; theme-local variables
@@ -109,8 +109,9 @@ highlight interactive elements."
   ;; Base theme face overrides
   (((cursor &override) :background base7)
    (region :inverse-video t)
+   (lazy-highlight :foreground base0 :background (doom-darken highlight 0.1))
    (hl-line :underline doom-meltbus-hl-line)
-   ((link &override) :weight 'normal :underline nil :foreground highlight)
+   ((link &override) :weight 'normal :underline 'unspecified :foreground highlight)
    (link-visited :inherit 'link)
    (minibuffer-prompt :foreground base5 :background base2 :weight 'bold)
    (mode-line-emphasis :foreground fg :weight 'bold :distant-foreground bg)
@@ -180,14 +181,13 @@ highlight interactive elements."
    (flymake-warning :underline `(:style wave :color ,warning))
    ;;;; flx-ido
    ((flx-highlight-face &override) :foreground highlight)
-   ;;;; git-commit
+   ;;;; git-commit (part of magit)
    ((git-commit-keyword &override) :foreground keywords)
    (git-commit-comment-branch-local :inherit 'magit-branch-local)
    (git-commit-comment-branch-remote :inherit 'magit-branch-remote)
    (git-commit-comment-detached :foreground warning)
    (git-commit-comment-file :foreground doc-comments)
    ;;;; magit
-   ;; TODO reflog colours
    (magit-blame-hash :foreground fg)
    (magit-blame-date :foreground base6)
    (magit-blame-heading :inherit 'magit-log-author :background base3 :extend t)
@@ -224,8 +224,8 @@ highlight interactive elements."
    (markdown-url-face :inherit 'link)
    (markdown-italic-face :inherit 'italic)
    (markdown-bold-face :inherit 'bold)
-   (markdown-blockquote-face :inherit 'org-quote)
-   (markdown-code-face :inherit 'org-code)
+   ((markdown-blockquote-face &inherit org-quote))
+   ((markdown-code-face &inherit org-code))
    ;;;; message <built-in>
    (message-cited-text-1  :foreground base7 :background base2)
    (message-cited-text-2 :foreground base5 :background base2)
@@ -241,9 +241,9 @@ highlight interactive elements."
    (message-header-mml :inherit 'message-header-other)
    (message-header-separator :foreground highlight)
    ;;;; neotree
-   (neo-vc-added-face :inherit 'treemacs-git-added-face)
-   (neo-vc-conflict-face :inherit 'treemacs-git-conflict-face)
-   (neo-vc-modified-face :inherit 'treemacs-git-modified-face)
+   ((neo-vc-added-face &inherit treemacs-git-added-face))
+   ((neo-vc-conflict-face &inherit treemacs-git-conflict-face))
+   ((neo-vc-modified-face &inherit treemacs-git-modified-face))
    (doom-neotree-data-file-face :foreground comments)
    ;;;; notmuch
    (notmuch-crypto-signature-bad :foreground error)
@@ -275,7 +275,7 @@ highlight interactive elements."
    (org-done :foreground success :weight 'bold)
    (org-done-keyword-face :foreground success)
    (org-drawer :foreground comments)
-   (org-block :foreground fg :background nil :weight 'normal :slant 'normal :underline nil :inverse-video nil)
+   (org-block :foreground fg :background 'unspecified :weight 'normal :slant 'normal :underline 'unspecified :inverse-video 'unspecified)
    (org-block-begin-line :foreground base5 :weight 'bold)
    (org-block-end-line :inherit 'org-block-begin-line)
    (org-footnote :foreground doc-comments)
@@ -306,27 +306,27 @@ highlight interactive elements."
    (outline-1 :height (if doom-meltbus-uniform-font-size 1.0 1.5)
               :background base1 :weight 'bold)
    (outline-2 :height (if doom-meltbus-uniform-font-size 1.0 1.4)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.2))
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.2) 'unspecified)
               :background base1 :weight 'bold)
    (outline-3 :height (if doom-meltbus-uniform-font-size 1.0 1.3)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.3))
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.3) 'unspecified)
               :background base1 :weight 'bold)
    (outline-4 :height (if doom-meltbus-uniform-font-size 1.0 1.2)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.4))
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.4) 'unspecified)
               :background base1 :weight 'bold)
    (outline-5 :height (if doom-meltbus-uniform-font-size 1.0 1.1)
               :background base1
               :weight (if doom-meltbus-uniform-font-size 'normal 'bold))
    (outline-6 :height (if doom-meltbus-uniform-font-size 1.0 1.0)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.2))
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.2) 'unspecified)
               :background base1
               :weight (if doom-meltbus-uniform-font-size 'normal 'bold))
    (outline-7 :height (if doom-meltbus-uniform-font-size 1.0 1.0)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.3))
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.3) 'unspecified)
               :background base1 :weight 'normal)
    (outline-8 :height (if doom-meltbus-uniform-font-size 1.0 1.0)
-              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.4))
-              :background base1 :foreground base5 :weight 'normal)
+              :foreground (if doom-meltbus-uniform-font-size (doom-darken fg 0.4) 'unspecified)
+              :background base1 :weight 'normal)
    ;;;; pkgbuild-mode <modes:pkgbuild-mode>
    (pkgbuild-error-face :underline `(:style wave :color ,error))
    ;;;; popup
@@ -343,7 +343,7 @@ highlight interactive elements."
    (rainbow-delimiters-depth-9-face :inherit 'rainbow-delimiters-depth-3-face)
    (rainbow-delimiters-base-face :inherit 'default)
    ;;;; smerge-tool
-   (smerge-markers :inherit 'magit-diff-conflict-heading)
+   ((smerge-markers &inherit magit-diff-conflict-heading))
    (smerge-lower :inherit 'diff-added)
    (smerge-upper :inherit 'diff-removed)
    (smerge-base :inherit 'diff-changed)
