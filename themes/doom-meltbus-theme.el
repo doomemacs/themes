@@ -172,6 +172,9 @@ highlight interactive elements."
    (doom-modeline-evil-operator-state :inherit 'doom-modeline-evil-visual-state)
    ;;;; ediff
    (ediff-current-diff-B :foreground green :background (doom-lighten green 0.8))
+   ;;;; embark
+   (embark-target :underline t)
+   (embark-keybinding :foreground builtin)
    ;;;; evil
    ((evil-ex-substitute-replacement &override) :foreground cyan)
    ;;;; evil-snipe
@@ -224,7 +227,18 @@ highlight interactive elements."
    (magit-section-heading-selection :foreground base7 :weight 'bold)
    (magit-tag :foreground vc-added)
    ;;;; marginalia
-   ;; TODO (uses many colours)
+   ((marginalia-date &inherit diredfl-date-time))
+   (marginalia-documentation :foreground fg)
+   (marginalia-size :inherit 'marginalia-date)
+   ((marginalia-file-priv-no &inherit diredfl-no-priv))
+   ((marginalia-file-priv-dir &inherit diredfl-dir-priv))
+   ((marginalia-file-priv-exec &inherit diredfl-exec-priv))
+   ((marginalia-file-priv-link &inherit diredfl-link-priv))
+   ((marginalia-file-priv-rare &inherit diredfl-rare-priv))
+   ((marginalia-file-priv-rare &inherit diredfl-rare-priv))
+   ((marginalia-file-priv-read &inherit diredfl-read-priv))
+   ((marginalia-file-priv-other &inherit diredfl-other-priv))
+   ((marginalia-file-priv-write &inherit diredfl-write-priv))
    ;;;; markdown <modes:markdown-mode,gfm-mode>
    (markdown-header-face :inherit 'bold :foreground fg)
    (markdown-metadata-key-face :foreground builtin)
@@ -361,6 +375,9 @@ highlight interactive elements."
    ;;;; treemacs
    (treemacs-git-conflict-face :foreground vc-conflict)
    (treemacs-git-modified-face :foreground vc-modified)
+   ;;;; vertico
+   ((vertico-current &inherit embark-target))
+   (vertico-group-title :inherit 'shadow)
    ;;;; vterm
    ((vterm-color-black &override) :background base0 :foreground base3)
    ((vterm-color-red &override) :background red :foreground faded-red)
@@ -378,6 +395,8 @@ highlight interactive elements."
    (vterm-color-bright-magenta :foreground faded-magenta :background faded-magenta)
    (vterm-color-bright-cyan :foreground faded-cyan :background faded-cyan)
    (vterm-color-bright-white :foreground base8 :background base8)
+   ;;;; wgrep
+   (wgrep-face :background base2)
    ;;;; which-key
    (which-key-key-face :foreground base5)
    (which-key-group-description-face :foreground base5)
