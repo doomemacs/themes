@@ -47,7 +47,7 @@ highlight interactive elements."
 
    (base0 '("black"   "black"   "black"))
    (base1 '("#111111" "#111111" "brightblack"))
-   (base2 '("#242424" "#222222" "brightblack"))
+   (base2 '("#353535" "#333333" "brightblack"))
    (base3 '("#464646" "#444444" "brightblack"))
    (base4 '("#686868" "#666666" "brightblack"))
    (base5 '("#8a8a8a" "#888888" "brightblack"))
