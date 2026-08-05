@@ -56,19 +56,27 @@ highlight interactive elements."
    (base8 '("#efefef" "#eeeeee" "white"))
 
    (grey base4)
-   (red       '("#f8b0b0" "#ffaaaa" "red"))
+   (red       '("#f88080" "#ff8888" "red"))
    (dark-red  '("#b22222" "#bb2222" "red"))
    (orange    '("#da8548" "#dd8844" "brightred"))
    (green     '("#448844" "#448844" "green"))
    (teal      '("#c0f860" "#aaffaa" "brightgreen"))
    (yellow    '("#cdad00" "#ccaa00" "yellow"))
    (blue      '("#87afff" "#88aaff" "brightblue"))
-   (dark-blue '("#7070aa" "#6666aa" "blue"))
+   (dark-blue '("#6c8ccc" "#6688cc" "blue"))
    (magenta   '("#db7093" "#ee6688" "brightmagenta"))
    (violet    '("#a9a1e1" "#a9a1e1" "magenta"))
-   (cyan      '("#46D9FF" "#46D9FF" "brightcyan"))
-   (dark-cyan '("#5699AF" "#5699AF" "cyan"))
+   (cyan      '("#3fc3e5" "#33ccee" "brightcyan"))
+   (dark-cyan '("#5699af" "#5599ff" "cyan"))
    (white     '("#ffffff" "#ffffff" "white"))
+
+   ;; faded colors for running text
+   (faded-red     '("#fac7c7" "#ffcccc" "red"))
+   (faded-blue    '("#abc7ff" "#aaccff" "brightblue"))
+   (faded-green   '("#7cab7c" "#77aa77" "green"))
+   (faded-yellow  '("#dcc54c" "#ddcc44" "yellow"))
+   (faded-magenta '("#e59ab3" "#ee99bb" "brightmagenta"))
+   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan"))
 
    ;; "universal syntax classes"; *mandatory*
    (highlight blue)
@@ -96,14 +104,7 @@ highlight interactive elements."
    (vc-conflict magenta)
 
    ;; theme-local variables
-   (almost-invisible base3)
-   ;; faded colors for vterm
-   (faded-red     '("#fac7c7" "#ffcccc" "red"))
-   (faded-blue    '("#abc7ff" "#aaccff" "brightblue"))
-   (faded-green   '("#7cab7c" "#77aa77" "green"))
-   (faded-yellow  '("#dcc54c" "#ddcc44" "yellow"))
-   (faded-magenta '("#e59ab3" "#ee99bb" "brightmagenta"))
-   (faded-cyan    '("#7de4ff" "#77eeff" "brightcyan")))
+   (almost-invisible base3))
 
   ;; Base theme face overrides
   (((cursor &override) :background base7)
@@ -352,14 +353,22 @@ highlight interactive elements."
    (treemacs-git-conflict-face :foreground vc-conflict)
    (treemacs-git-modified-face :foreground vc-modified)
    ;;;; vterm
-   ((vterm-color-black &override) :background base3)
-   ((vterm-color-red &override) :background faded-red)
-   ((vterm-color-blue &override) :background faded-blue)
-   ((vterm-color-green &override) :background faded-green)
-   ((vterm-color-yellow &override) :background faded-yellow)
-   ((vterm-color-magenta &override) :background faded-magenta)
-   ((vterm-color-cyan &override) :background faded-cyan)
-   ((vterm-color-white &override) :foreground base7 :background base8)
+   ((vterm-color-black &override) :background base0 :foreground base3)
+   ((vterm-color-red &override) :background red :foreground faded-red)
+   ((vterm-color-blue &override) :background blue :foreground faded-blue)
+   ((vterm-color-green &override) :background green :foreground faded-green)
+   ((vterm-color-yellow &override) :background yellow :foreground faded-yellow)
+   ((vterm-color-magenta &override) :background magenta :foreground faded-magenta)
+   ((vterm-color-cyan &override) :background cyan :foreground faded-cyan)
+   ((vterm-color-white &override) :background base7 :foreground base8)
+   (vterm-color-bright-black :foreground base3 :background base3)
+   (vterm-color-bright-red :foreground faded-red :background faded-red)
+   (vterm-color-bright-blue :foreground faded-blue :background faded-blue)
+   (vterm-color-bright-green :foreground faded-green :background faded-green)
+   (vterm-color-bright-yellow :foreground faded-yellow :background faded-yellow)
+   (vterm-color-bright-magenta :foreground faded-magenta :background faded-magenta)
+   (vterm-color-bright-cyan :foreground faded-cyan :background faded-cyan)
+   (vterm-color-bright-white :foreground base8 :background base8)
    ;;;; which-key
    (which-key-key-face :foreground base5)
    (which-key-group-description-face :foreground base5)
