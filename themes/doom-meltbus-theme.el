@@ -123,6 +123,8 @@ highlight interactive elements."
    (ansi-color-bright-black :foreground base3 :background base3)
    ;;;; compilation <built-in>
    (compilation-line-number :foreground fg :weight 'bold)
+   ;;;; coq
+   (coq-solve-tactics-face :foreground highlight)
    ;;;; custom <built-in>
    ((custom-button &override) :foreground highlight)
    ((custom-button-unraised &override) :foreground comments)
@@ -357,6 +359,18 @@ highlight interactive elements."
    (pkgbuild-error-face :underline `(:style wave :color ,error))
    ;;;; popup
    (popup-tip-face :inherit 'popup-face :foreground fg :background bg :bold bold :underline t)
+   ;;;; proof
+   (proof-boring-face :foreground comments)
+   (proof-debug-message-face :foreground doc-comments)
+   (proof-error-face :foreground error)
+   (proof-locked-face :background (doom-lighten base1 0.05))
+   (proof-queue-face :foreground warning)
+   (proof-warning-face :foreground warning)
+   (proof-script-highlight-error-face :foreground error :weight 'bold)
+   (proof-script-sticky-error-face :foreground error)
+   (proof-tactics-name-face :foreground builtin)
+   (proof-tacticals-name-face :foreground keywords :weight 'bold)
+   (proof-eager-annotation-face :foreground success)
    ;;;; rainbow-delimiters
    (rainbow-delimiters-depth-1-face :foreground green)
    (rainbow-delimiters-depth-2-face :foreground dark-red)
