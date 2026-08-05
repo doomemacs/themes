@@ -153,8 +153,13 @@ highlight interactive elements."
    (dired-marked :foreground orange :weight 'bold)
    (dired-symlink :foreground doc-comments :weight 'bold)
    ;;;; diredfl
+   (diredfl-deletion :inherit 'dired-mark)
+   (diredfl-deletion-file-name :inherit 'dired-flagged)
+   (diredfl-flag-mark :inherit 'dired-mark)
+   (diredfl-flag-mark-line :inherit 'dired-marked)
    (diredfl-read-priv :foreground fg)
    (diredfl-symlink :foreground cyan :weight 'bold)
+   (diredfl-date-time :foreground base6)
    ;;;; doom-modeline
    (doom-modeline-bar :background fg :foreground bg)
    (doom-modeline-bar-inactive :background base4 :foreground bg)
