@@ -674,7 +674,7 @@
     (gnus-group-news-6-empty     :inherit 'gnus-group-news-1-empty)
     (gnus-group-mail-low         :inherit 'gnus-group-mail-1 :weight 'normal)
     (gnus-group-mail-low-empty   :inherit 'gnus-group-mail-1-empty)
-    (gnus-group-news-low-empty   :inherit 'gnus-group-news-low :weight 'normal)
+    (gnus-group-news-low-empty   :inherit 'gnus-group-mail-1-empty :weight 'normal)
     (gnus-group-news-low         :inherit 'gnus-group-mail-1 :foreground base5)
     (gnus-header-content         :inherit 'message-header-other)
     (gnus-header-from            :inherit 'message-header-other)
