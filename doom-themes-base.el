@@ -1197,7 +1197,7 @@
     (org-meta-line                :foreground doc-comments)
     (org-priority                 :foreground red)
     (org-property-value           :foreground doc-comments)
-    (org-quote                    :inherit 'org-block :slant 'italic)
+    (org-quote                    :inherit 'org-block :slant 'italic :extend t)
     (org-special-keyword          :foreground doc-comments)
     (org-table                    :foreground violet)
     (org-tag                      :foreground doc-comments :weight 'normal)
