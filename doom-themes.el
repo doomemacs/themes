@@ -35,6 +35,7 @@
 ;;  - doom-fairy-floss -- a candy colored theme by sailorhg (ported by @ema2159)
 ;;  - doom-feather-dark -- a purple-tinted theme, inspired by doom-one (by @Plunne)
 ;;  - doom-feather-light -- a light variable of feather-dark, inspired by doom-one (by @Plunne)
+;;  - doom-flate -- a dark vibrant theme inspired by VSCode Flate (by @Arsenic)
 ;;  - doom-flatwhite -- inspired by Atom's Flatwhite Syntax theme (ported by @JuneKelly)
 ;;  - doom-gruvbox -- inspired by morhetz's Gruvbox (ported by @JongW)
 ;;  - doom-gruvbox-light -- inspired by morhetz's Gruvbox (light) (ported by @jsoa)
