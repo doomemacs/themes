@@ -68,7 +68,7 @@
     (header-line :inherit 'mode-line)
     (header-line-highlight :inherit 'mode-line-highlight)
     ;;;; tab-line/tab-bar (Emacs 27+)
-    (tab-line :background bg-alt :foreground bg-alt)
+    (tab-line :background bg-alt :foreground fg-alt)
     (tab-line-tab :background bg :foreground fg)
     (tab-line-tab-inactive :background bg-alt :foreground fg-alt)
     ((tab-line-tab-inactive-alternate &inherit tab-line-tab-inactive))
