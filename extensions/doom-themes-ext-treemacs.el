@@ -253,31 +253,55 @@ Only takes effect if `doom-themes-treemacs-enable-variable-pitch' is non-nil."
       :config
       (progn
         (treemacs-create-icon
-         :icon (format " %s\t" (nerd-icons-octicon "nf-oct-repo" :height 1.2 :v-adjust -0.1 :face 'doom-themes-treemacs-root-face))
-         :extensions (root-open))
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_down" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_open" :v-adjust 0 :face face-spec))
+         :extensions (dir-open))
         (treemacs-create-icon
-         :icon (format " %s\t" (nerd-icons-octicon "nf-oct-repo" :height 1.2 :v-adjust -0.1 :face 'doom-themes-treemacs-root-face))
-         :extensions (root-closed))
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_right" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_oct" :v-adjust 0 :face face-spec))
+         :extensions (dir-closed))
         (treemacs-create-icon
-         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-flame" :height 0.8 :v-adjust 0 :face 'nerd-icons-red))
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_down" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_open" :v-adjust 0 :face face-spec))
+         :extensions ("git-open"))
+        (treemacs-create-icon
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_right" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_git" :v-adjust 0 :face face-spec))
+         :extensions ("git-closed"))
+        (treemacs-create-icon
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_down" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_open" :v-adjust 0 :face face-spec))
+         :extensions ("github-open"))
+        (treemacs-create-icon
+         :icon (format "%s\t%s\t"
+                       (nerd-icons-octicon "nf-oct-chevron_right" :height 0.75 :v-adjust 0.1 :face face-spec)
+                       (nerd-icons-sucicon "nf-custom-folder_github" :v-adjust 0 :face face-spec))
+         :extensions ("github-closed"))
+        (treemacs-create-icon
+         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-flame" :height 1.0 :v-adjust 0 :face 'nerd-icons-red))
          :extensions (error))
         (treemacs-create-icon
-         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-stop" :height 0.8 :v-adjust 0 :face 'nerd-icons-yellow))
+         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-stop" :height 1.0 :v-adjust 0 :face 'nerd-icons-yellow))
          :extensions (warning))
         (treemacs-create-icon
-         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-info" :height 0.75 :v-adjust 0.1 :face 'nerd-icons-green))
+         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-info" :height 1.0 :v-adjust 0 :face 'nerd-icons-green))
          :extensions (info))
         (treemacs-create-icon
-         :icon (format "  %s\t" (nerd-icons-faicon "nf-fa-git_alt" :height 0.85 :v-adjust 0.0 :face 'nerd-icons-red))
+         :icon (format "  %s\t" (nerd-icons-faicon "nf-fa-git_alt" :height 1.0 :v-adjust 0 :face 'nerd-icons-red))
          :extensions ("gitignore" "git" "gitattributes" "gitconfig" "gitmodules"))
         (treemacs-create-icon
-         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-book" :height 1.0 :v-adjust 0.0 :face 'nerd-icons-blue))
+         :icon (format "%s\t" (nerd-icons-octicon "nf-oct-book" :height 1.0 :v-adjust 0 :face 'nerd-icons-blue))
          :extensions (license))
 
         (dolist (item nerd-icons-extension-icon-alist)
           (let* ((extension (car item))
                  (func (cadr item))
-                 (args (append (list (cadr (cdr item))) '(:v-adjust -0.05 :height 0.85) (cdr (cddr item))))
+                 (args (append (list (cadr (cdr item))) '(:v-adjust 0 :height 1.0) (cdr (cddr item))))
                  (icon (apply func args)))
             (let* ((icon-pair (cons (format "  %s\t" icon) " "))
                    (gui-icons (treemacs-theme->gui-icons treemacs--current-theme))
