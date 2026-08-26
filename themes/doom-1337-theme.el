@@ -25,8 +25,8 @@ Can be an integer to determine the exact padding."
   :group 'doom-1337-theme
   :type '(choice integer boolean))
 
-(defcustom doom-1337-blue-modeline nil
-  "If non-nil, mode-line's color will be blue instead of the default purple."
+(defcustom doom-1337-purple-modeline nil
+  "If non-nil, mode-line's color will be purple instead of the default blue."
   :group 'doom-1337-theme
   :type '(choice integer boolean))
 
@@ -99,7 +99,7 @@ Can be an integer to determine the exact padding."
    (vc-deleted     red)
 
    ;; custom categories
-   (modeline-bg     (if doom-1337-blue-modeline base8 bottomline-blue))
+   (modeline-bg     (if doom-1337-purple-modeline dark-violet bottomline-blue))
    (modeline-bg-alt (doom-darken bg 0.01))
    (modeline-fg     base8)
    (modeline-fg-alt blue)
@@ -148,7 +148,7 @@ Can be an integer to determine the exact padding."
    (dired-k-ignored :foreground cyan)
    (dired-k-added    :foreground vc-added)
    ;;;; doom-modeline
-   (doom-modeline-bar :background (if doom-1337-blue-modeline base8 bottomline-blue))
+   (doom-modeline-bar :background (if doom-1337-purple-modeline dark-violet bottomline-blue))
    (doom-modeline-buffer-file :inherit 'mode-line-emphasis :weight 'bold)
    (doom-modeline-buffer-major-mode :inherit 'doom-modeline-buffer-path)
    (doom-modeline-buffer-minor-mode :inherit 'mode-line-emphasis :weight 'bold)
