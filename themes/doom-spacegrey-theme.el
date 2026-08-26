@@ -157,8 +157,8 @@ determine the exact padding."
    ((outline-7 &override) :foreground (doom-blend magenta blue 0.6))
    ((outline-8 &override) :foreground fg)
    ;;;; org <built-in>
-   (org-block            :background (doom-darken bg-alt 0.04))
-   (org-block-begin-line :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
+   ((org-block &override) :background (doom-darken bg-alt 0.04))
+   ((org-block-begin-line &override) :foreground base4 :slant 'italic :background (doom-darken bg 0.04))
    (org-ellipsis         :underline nil :background bg    :foreground red)
    ((org-quote &override) :background base1)
    (org-hide :foreground bg)
