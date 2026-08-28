@@ -52,10 +52,10 @@ determine the exact padding."
   ;; name        default   256       16
   (
    ;; common
-   (common-accent   '("#ff9940" "orange"  "orange" ))
-   (common-bg       '("#fafafa" "black"   "black"  ))
-   (common-fg       '("#575f66" "grey"    "grey"   ))
-   (common-ui       '("#ba9199" "grey"    "grey"   ))
+   (common-accent   '("#ffaa33" "orange"  "orange" ))
+   (common-bg       '("#f8f9fa" "black"   "black"  ))
+   (common-fg       '("#5c6166" "grey"    "grey"   ))
+   (common-ui       '("#8a9199" "grey"    "grey"   ))
    (test            '("#2ea8e6" "grey"    "grey"   ))
    ;; syntax
    (syntax-tag      '("#55b4d4" "cyan"    "blue"   ))
@@ -66,10 +66,10 @@ determine the exact padding."
    (syntax-markup   '("#f07171" "red"     "red"    ))
    (syntax-keyword  '("#fa8d3e" "orange"  "orange" ))
    (syntax-special  '("#e6ba7e" "yellow"  "yellow" ))
-   (syntax-comment  '("#abb0b6" "grey"    "grey"   ))
+   (syntax-comment  '("#abadb1" "grey"    "grey"   ))
    (syntax-constant '("#a37acc" "magenta" "purple" ))
    (syntax-operator '("#ed9366" "orange"  "orange" ))
-   (syntax-error    '("#f51818" "red"     "red"    ))
+   (syntax-error    '("#e65050" "red"     "red"    ))
    ;; ui
    (ui-line               (doom-darken common-bg 0.07))
    (ui-panel-shadow       (doom-lighten common-bg 0.35))
