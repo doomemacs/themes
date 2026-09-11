@@ -83,6 +83,7 @@
 ;;  - doom-solarized-dark -- a dark variant of Solarized (ported by @ema2159)
 ;;  - doom-solarized-dark-high-contrast -- a high-contrast variant of Solarized Dark (ported by @jmorag)
 ;;  - doom-solarized-light -- a light variant of Solarized (ported by @fuxialexander)
+;;  - doom-sonokai -- port of Sonokai's default style (ported by @Mihir-Null)
 ;;  - doom-sourcerer -- a port of xero's Sourcerer (ported by @fm0xb)
 ;;  - doom-spacegrey -- I'm sure you've heard of it (ported by @teesloane)
 ;;  - doom-tokyo-night -- inspired by VSCode's Tokyo Night theme (ported by @FosterHangdaan)
