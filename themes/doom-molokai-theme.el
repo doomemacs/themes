@@ -131,10 +131,10 @@ Can be an integer to determine the exact padding."
    ((line-number-current-line &override) :foreground base7 :distant-foreground 'unspecified)
    (mode-line
     :background modeline-bg :foreground modeline-fg
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg)))
    (mode-line-inactive
     :background modeline-bg-inactive :foreground modeline-fg-alt
-    :box (if -modeline-pad `(:line-width ,-modeline-pad :color modeline-bg-inactive)))
+    :box (if -modeline-pad `(:line-width ,-modeline-pad :color ,modeline-bg-inactive)))
    (isearch :foreground base0 :background green)
 
    ;;;; centaur-tabs

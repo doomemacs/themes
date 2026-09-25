@@ -141,8 +141,8 @@ determine the exact padding."
    (outline-7 :inherit 'outline-6)
    (outline-8 :inherit 'outline-7)
    ;;;; org <built-in>
-   (org-block-begin-line :foreground base2 :background base3)
-   (org-block-end-line :foreground base2 :background base3)
+   ((org-block &override) :background base3)
+   ((org-block-begin-line &override) :foreground base2)
    ;;;; solaire-mode
    (solaire-mode-line-face
     :inherit 'mode-line
