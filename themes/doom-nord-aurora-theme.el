@@ -1,4 +1,4 @@
-;;; doom-nord-aurora-theme.el --- a light variant of Nord -*- no-byte-compile: t; -*-
+;;; doom-nord-aurora-theme.el --- a light variant of Nord -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Added: January 27, 2022 (#703)
 ;; Author: MoskitoHero <https://github.com/MoskitoHero>

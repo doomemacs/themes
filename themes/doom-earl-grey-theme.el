@@ -1,4 +1,4 @@
-;;; doom-earl-grey-theme.el --- a gentle color scheme, for code -*- no-byte-compile: t; -*-
+;;; doom-earl-grey-theme.el --- a gentle color scheme, for code -*- lexical-binding: t; no-byte-compile: t; -*-
 ;;
 ;; Added: August 30, 2021 (#653)
 ;; Author: JuneKelly <https://github.com/JuneKelly>
